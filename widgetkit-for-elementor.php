@@ -10,6 +10,7 @@ Plugin URI: http://widgetkit.themesgrove.com/
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 @package  WidgetKit_For_Elementor
+Domain Path:       /languages
 */
 
     if( !function_exists('add_action') ) {
@@ -43,7 +44,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.txt
             add_action( 'elementor/widgets/widgets_registered', array( $this, 'widgetkit_for_elementor_widget_bundle') );
         }
 
-        // Wings widget bundle
+        // widgetkit widget bundle
         function widgetkit_for_elementor_widget_bundle(){
 
             // Portfolio elements
@@ -93,6 +94,9 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.txt
             // Custom Feature elements
             require_once WKFE_PATH . '/elements/image-feature/widget.php';
 
+            // Animation text elements
+            require_once WKFE_PATH . '/elements/animation-text/widget.php';
+
 
             // Custom carousel elements
             require_once WKFE_PATH . '/elements/carousel/widget.php';
@@ -122,11 +126,11 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
         // Css include
         function widgetkit_for_elementor_css(){
-            // Bootstrap css
-            wp_enqueue_style( 'bootstrap', plugins_url('/assets/css/bootstrap.css',__FILE__ ));
+            // Base css
+            wp_enqueue_style( 'widgetkit_base', plugins_url('/assets/css/base.css',__FILE__ ));
 
             // owl-carousel css
-            wp_enqueue_style( 'owl-carousel', plugins_url('/assets/css/owl.carousel.min.css',__FILE__ ));
+            wp_enqueue_style( 'owl-css', plugins_url('/assets/css/owl.carousel.min.css',__FILE__ ));
 
             // Animation css
             wp_enqueue_style( 'animate', plugins_url('/assets/css/animate.css',__FILE__ ));
@@ -138,10 +142,10 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.txt
             wp_enqueue_style( 'ionsicon', plugins_url('/assets/css/ionicons.min.css',__FILE__ ));
 
             // Plugin-demo css
-            wp_enqueue_style( 'wings_demo', plugins_url('/assets/css/plugin-demo.css',__FILE__ ));
+            wp_enqueue_style( 'widgetkit_demo', plugins_url('/assets/css/plugin-demo.css',__FILE__ ));
 
-            // main plugin css
-            wp_enqueue_style( 'wings_main', plugins_url('/assets/css/widgetkit.css',__FILE__ ));
+            // Main plugin css
+            wp_enqueue_style( 'widgetkit_main', plugins_url('/assets/css/widgetkit.css',__FILE__ ));
 
         }
 
@@ -160,19 +164,23 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.txt
             // Mordernizer js
             wp_enqueue_script( 'modernizr', plugins_url('/assets/js/modernizr.min.js', __FILE__ ) , array('jquery'), false, true);
 
+              // Animate text js
+            wp_enqueue_script( 'animate-text', plugins_url('/assets/js/animate-text.js', __FILE__ ) , array('jquery'), false, true);
+
             // Mixitup js
             wp_enqueue_script( 'mixitup-js', plugins_url('/assets/js/mixitup.min.js', __FILE__ ) , array('jquery'), false, true);
 
-           wp_enqueue_script( 'imagesloaded', plugins_url('/assets/js/imagesloaded.pkgd.min.js',  __FILE__ ), array('jquery'), false, true);
+            // Imagepackagelaod Js
+           wp_enqueue_script( 'widgetkit-imagesloaded', plugins_url('/assets/js/imagesloaded.pkgd.min.js',  __FILE__ ), array('jquery'), '4.1.1', true);
            
             // Anime js
             wp_enqueue_script( 'anime', plugins_url('/assets/js/anime.min.js', __FILE__ ) , array('jquery'), false, true);
 
             // Slider 3 js
-            wp_enqueue_script( 'wings-slider-3', plugins_url('/assets/js/slider-3.js', __FILE__ ) , array('jquery'), false, true);
+            wp_enqueue_script( 'widgetkit-slider-3', plugins_url('/assets/js/slider-3.js', __FILE__ ) , array('jquery'), false, true);
 
             // Main plugin js
-            wp_enqueue_script( 'wings-main', plugins_url('/assets/js/widgetkit.js', __FILE__ ) , array('jquery'), false, true);
+            wp_enqueue_script( 'widgetkit-main', plugins_url('/assets/js/widgetkit.js', __FILE__ ) , array('jquery'), false, true);
         }
 
     }

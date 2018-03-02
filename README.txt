@@ -25,7 +25,7 @@ We aim to enhance your experience, it does not matter whether you are a develope
 
 You can only decide to use Widgetkit after viewing by yourself. See it by yourself from here-
 
-LIVE DEMO
+##<a href="http://widgetkit.themesgrove.com/">Live Demo</a>
 
 
 
@@ -58,42 +58,42 @@ WidgetKit for Elementor is useful for :
 
 This plugin offers following Elementor extensions or addons.
 <ul>
-	<li><a href="http://widgetkit.themesgrove.com/slider-demo/#box-slider">Slider Box</a>allows you to create slider with collapse animation.</li>
-	<li><a href="http://widgetkit.themesgrove.com/slider-demo/#parallax-slider">Slider Parallax</a>is a regular slider element with navbar and beautiful effects.</li>
-	<li><a href="http://widgetkit.themesgrove.com/slider-demo/#animation-slider">Slider Animation</a>allows you to create professional slider with huge animation effect and other customizations. </li>
+	<li><a href="http://widgetkit.themesgrove.com/slider-demo/#box-slider">Slider Box</a> allows you to create slider with collapse animation.</li>
+	<li><a href="http://widgetkit.themesgrove.com/slider-demo/#parallax-slider">Slider Parallax </a>is a regular slider element with navbar and beautiful effects.</li>
+	<li><a href="http://widgetkit.themesgrove.com/slider-demo/#animation-slider">Slider Animation </a>allows you to create professional slider with huge animation effect and other customizations. </li>
 
 
-	<li><a href="http://widgetkit.themesgrove.com/feature-demo/">Feature Image/Icon Box</a>allows you to create both icon and image based featured content with different animations. </li>
+	<li><a href="http://widgetkit.themesgrove.com/feature-demo/">Feature Image/Icon Box </a>allows you to create both icon and image based featured content with different animations. </li>
 
-	<li><a href="http://widgetkit.themesgrove.com/portfolio-demo/">Multiple Portfolio</a>allows you to create stunning portfolio entries in a lucrative responsive grid.</li>
+	<li><a href="http://widgetkit.themesgrove.com/portfolio-demo/">Multiple Portfolio </a>allows you to create stunning portfolio entries in a lucrative responsive grid.</li>
 
 
-	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-animation">Team Animation</a> displays team information in a different animation with click.</li>
-	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-overlay">Team Overlay</a> shows the information of all team members in a section.</li>
-	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-social-verticle">Team Vertical Icon</a> shows the information of team members with different style.</li>
-	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-circle">Team Circle</a> allows you to display information of team members with unique animation and style.</li>
-	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-talent">Team Circle</a> displays team information in a deafult way color gardient.</li>
+	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-animation">Team Animation </a> displays team information in a different animation with click.</li>
+	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-overlay">Team Overlay </a> shows the information of all team members in a section.</li>
+	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-social-verticle">Team Vertical Icon </a> shows the information of team members with different style.</li>
+	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-circle">Team Circle </a> allows you to display information of team members with unique animation and style.</li>
+	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-talent">Team Circle </a> displays team information in a deafult way color gardient.</li>
 
-	<li><a href="http://widgetkit.themesgrove.com/pricing-demo/#single-pricing">Pricing Single</a>displays pricing table in order to generate more sales.</li>
-	<li><a href="http://widgetkit.themesgrove.com/pricing-demo/#icon-pricing">Pricing Icon</a>is similar to Pricing 1 but with different customization and options.</li>
-	<li><a href="http://widgetkit.themesgrove.com/pricing-demo/#tab-pricing">Pricing Tab</a>comes with regular pricing options with tabbed style.</li>
+	<li><a href="http://widgetkit.themesgrove.com/pricing-demo/#single-pricing">Pricing Single </a>displays pricing table in order to generate more sales.</li>
+	<li><a href="http://widgetkit.themesgrove.com/pricing-demo/#icon-pricing">Pricing Icon </a>is similar to Pricing 1 but with different customization and options.</li>
+	<li><a href="http://widgetkit.themesgrove.com/pricing-demo/#tab-pricing">Pricing Tab </a>comes with regular pricing options with tabbed style.</li>
 
-	<li><a href="http://widgetkit.themesgrove.com/testimonial-demo/#testimonial-carousel">Testimonial Carousel</a>shows you good things that your customers says about you. </li>
-	<li><a href="http://widgetkit.themesgrove.com/testimonial-demo/#testimonial-single">Testimonial Carousel</a>is a fully responsive slider that shows testimonials. </li>
+	<li><a href="http://widgetkit.themesgrove.com/testimonial-demo/#testimonial-carousel">Testimonial Carousel </a>shows you good things that your customers says about you. </li>
+	<li><a href="http://widgetkit.themesgrove.com/testimonial-demo/#testimonial-single">Testimonial Carousel </a>is a fully responsive slider that shows testimonials. </li>
 
-	<li><a href="http://widgetkit.themesgrove.com/button-demo/">Button</a>lets you create stunning buttons with 10 hover animation.</li>
+	<li><a href="http://widgetkit.themesgrove.com/button-demo/">Button </a>lets you create stunning buttons with 10 hover animation.</li>
 
-	<li><a href="http://widgetkit.themesgrove.com/modal-demo/">Modal</a> with 5 animations. You can use video, shortcode or any animation, that totally depends upon you.</li>
+	<li><a href="http://widgetkit.themesgrove.com/modal-demo/">Modal </a>with 5 animations. You can use video, shortcode or any animation, that totally depends upon you.</li>
 
-	<li><a href="http://widgetkit.themesgrove.com/carousel/"> Post Carousel</a> lets you make 3 types of Post Carousels - Custom, Standard, & Sticky.</li>
+	<li><a href="http://widgetkit.themesgrove.com/carousel/"> Post Carousel </a>lets you make 3 types of Post Carousels - Custom, Standard, & Sticky.</li>
 
-	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-sidebar">Blog Sidebar</a> lets you make 3 types of Post Carousels - Custom, Standard, & Sticky.</li>
-	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-carousel">Blog Carousel</a> displays blog posts with carousel.</li>
-	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-revert">Blog Revert</a> displays blog with regular settings and exclusive customization of thumbnail.</li>
-	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-image">Blog Image</a> allows you to aligment thumbnail image left to right.</li>
-	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-hover">Blog Hover Animation</a> allows you to show blogs with transparent background and other effects.</li>
+	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-sidebar">Blog Sidebar </a> lets you make 3 types of Post Carousels - Custom, Standard, & Sticky.</li>
+	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-carousel">Blog Carousel </a> displays blog posts with carousel.</li>
+	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-revert">Blog Revert </a> displays blog with regular settings and exclusive customization of thumbnail.</li>
+	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-image">Blog Image </a> allows you to aligment thumbnail image left to right.</li>
+	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-hover">Blog Hover Animation </a> allows you to show blogs with transparent background and other effects.</li>
 
-	<li><a href="http://widgetkit.themesgrove.com/social-share/">Social Share Animation</a>  allows you to show social profile of yours with lucrative animations.</li>
+	<li><a href="http://widgetkit.themesgrove.com/social-share/">Social Share Animation </a>  allows you to show social profile of yours with lucrative animations.</li>
 
 </ul>
  
@@ -106,12 +106,11 @@ This plugin offers following Elementor extensions or addons.
 
 == Screenshots ==
 
-1. Elements.
-2. Slider.
-3. Feature.
-4. Team.
-5. Pricing.
-6. Custom Blog.
+1. Recent Posts
+2. Slider
+3. Team Elements
+4. Pricing Table
+5. Featured Image and Icon box
 
 
 
@@ -142,16 +141,11 @@ PHP 5.4 or greater.
 == Changelog ==
 
 = 1.0.2 =
-* February 19, 2018
-* Upgrade - Default color
-* Fixed - Responsive with real device
+* Fixed - Bug
 
 = 1.0.1 =
-* February 14, 2018
-* Fixed - Change Name and domain
-* Fixed - Check all text domain
+* Fixed - Responsive issue
 
 = 1.0.0 =
-* February 6, 2018
 * Public Release
 

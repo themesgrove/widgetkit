@@ -525,7 +525,7 @@ class wkfe_pricing_1 extends Widget_Base {
         $this->add_responsive_control(
             'features_list_padding',
             [
-                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
+                'label' => esc_html__( 'Margin', 'widgetkit-for-elementor' ),
                 'type'  => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -540,6 +540,7 @@ class wkfe_pricing_1 extends Widget_Base {
                 'label' => esc_html__( 'Color', 'widgetkit-for-elementor' ),
                 'type'  => Controls_Manager::COLOR,
                 'separator' => 'before',
+                'default'   => '#333',
                 'selectors' => [
                     '{{WRAPPER}} .tgx-price-table__features-list' => 'color: {{VALUE}}',
                 ],

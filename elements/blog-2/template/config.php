@@ -199,7 +199,7 @@ class wkfe_blog_2 extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Title & Meta Hover Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#255cdc',
+				'default'   => '#ed485f',
 				'selectors' => [
 					'{{WRAPPER}} .tgx-blog-2 .entry-header a:hover'  => 'color: {{VALUE}};',
 					'{{WRAPPER}} .tgx-blog-2 .custom-sticky-post .author-meta a:hover'  => 'color: {{VALUE}} !important;',

@@ -1,1 +1,8 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+.idea
 node_modules
+bower_components
+npm_debug.log
+widgetkit-for-elementor
+widgetkit-for-elementor.zip

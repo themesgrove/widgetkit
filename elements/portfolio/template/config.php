@@ -222,7 +222,7 @@ class wkfe_portfolio extends Widget_Base {
 				[
 					'label'     => esc_html__( 'Hover Effect', 'widgetkit-for-elementor' ),
 					'type'      => Controls_Manager::SELECT,
-					'default'   => 'hover_1',
+					'default'   => 'hover_3',
 					'options'   => [
 						'hover_1'     => esc_html__( 'Hover 1', 'widgetkit-for-elementor' ),
 						'hover_2'     => esc_html__( 'Hover 2', 'widgetkit-for-elementor' ),

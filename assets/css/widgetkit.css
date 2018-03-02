@@ -1,7 +1,3 @@
-html{
-	font-size: 16px;
-}
-
 /************************************************************************
 *  Slider 1 css
 ************************************************************************/
@@ -76,13 +72,18 @@ html{
 }
 .tgx-slider-1 .carousel .carousel-inner .item .carousel-caption .slider-title {
   color: #fff;
-  font-size: 60px;
+  font-size: 52px;
+}
+.tgx-slider-2 .carousel .carousel-inner .item .carousel-caption .slider-description{
+	font-size: 18px;
 }
 .tgx-slider-1 .carousel .carousel-inner .item .carousel-caption .btn-slider {
   letter-spacing: 1px;
   transition: all 0.3s ease;
   line-height: 30px;
   border-radius: 4px;
+  padding: 10px 30px;
+  display: inline-block;
 }
 .tgx-slider-1 .carousel .carousel-inner .item .carousel-caption .slider-description {
   margin: auto;
@@ -179,6 +180,7 @@ html{
   margin-top: 12px;
   text-shadow: none;
   transition: all 0.3s ease;
+  position: static;
 }
 .tgx-slider-1 .carousel .carousel-control.left {
   margin-left: -50px;
@@ -317,6 +319,9 @@ html{
 	  letter-spacing: 1px;
 	  transition: all 0.3s ease;
 	  line-height: 30px;
+	  border-radius: 0;
+	  padding: 10px 30px;
+  	  display: inline-block;
 	}
 
 
@@ -371,6 +376,8 @@ html{
 	  -ms-transition: all .4s;
 	  -o-transition: all .4s;
 	  transition: all .4s;
+	  position: absolute;
+
 	}
 	.tgx-slider-2 .carousel .carousel-control:hover:before {
 	  opacity: 0;
@@ -404,12 +411,15 @@ html{
 	  margin-left: 35px;
 	  transition: all 0.3s ease;
 	}
-	.tgx-slider-2 .carousel .carousel-control i {
-	  vertical-align: middle;
-	  font-size: 25px;
-	  margin-top: 12px;
-	  text-shadow: none;
-	  transition: all 0.3s ease;
+	.tgx-slider-2 .carousel .carousel-control span {
+	     vertical-align: middle;
+	    font-size: 25px;
+	    margin-top: 0;
+	    text-shadow: none;
+	    transition: all 0.3s ease;
+	    line-height: 33px;
+	    left: 20px;
+	    top: 7px;
 	}
 	.tgx-slider-2 .carousel .carousel-control.left {
 	  margin-left: -50px;
@@ -608,6 +618,7 @@ html{
 .tgx-slider-3 .slide__title {
 	position: relative;
 	font-size: 100px;
+	font-weight: 600;
 	margin: 0;
 	cursor: default;
 	line-height: 1;
@@ -723,7 +734,15 @@ html{
 	  opacity: 1;
 	}
 
+	.tgx-image-feature .block .feature-title{
+		transition: all 0.3s ease;
+		font-size: 24px;
+    	font-weight: 600;
+	}
 
+	.tgx-image-feature .block:hover .feature-title{
+		transition: all 0.3s ease;
+	}
 
 	.tgx-image-feature .hover-angle {
 	    border: 1px solid transparent;
@@ -824,9 +843,10 @@ html{
     position: relative;
     z-index: 1;
     overflow: hidden;
-    padding: 15px 30px;
+    padding: 13px 30px;
     font-size: 14px;
     font-weight: 600;
+    border:1px solid #ddd;
 }
 
 .modal-container .button-normal {
@@ -986,8 +1006,8 @@ html{
   color: #f0d7e4;
 }
 .modal-container .btn-hover-door:hover:before {
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translateY(-49%);
+          transform: translateY(-49%);
 }
 .modal-container .btn-hover-door:hover:after {
   -webkit-transform: translateY(50%);
@@ -1071,16 +1091,16 @@ html{
   color: #dacde7;
 }
 .modal-container .btn-hover-fourcorner:hover:before {
-  -webkit-transform: translate(-48%, -48%);
-          transform: translate(-48%, -48%);
+  -webkit-transform: translate(-49%, -49%);
+          transform: translate(-49%, -49%);
 }
 .modal-container .btn-hover-fourcorner:hover:after {
-  -webkit-transform: translate(-48%, 48%);
-          transform: translate(-48%, 48%);
+  -webkit-transform: translate(-49%, 49%);
+          transform: translate(-49%, 49%);
 }
 .modal-container .btn-hover-fourcorner:hover span:before {
-  -webkit-transform: translate(50%, -50%);
-          transform: translate(50%, -50%);
+  -webkit-transform: translate(49%, -49%);
+          transform: translate(49%, -49%);
 }
 .modal-container .btn-hover-fourcorner:hover span:after {
   -webkit-transform: translate(50%, 50%);
@@ -1177,6 +1197,7 @@ html{
     top: 5px;
     cursor: pointer;
     font-size: 30px;
+    color: #444;
 }
 
 .tgx-animate-zoom {
@@ -1300,10 +1321,11 @@ html{
 	margin-bottom: 40px;
 }
 .tgx-portfolio .portfolio-filter li a{
-	font-size:14px;
-	padding:15px 0;
-	outline: none;
+	font-size: 16px;
+    padding: 10px 15px;
+    outline: none;
     text-decoration: none;
+    font-weight: 600;
 }
 .tgx-portfolio .portfolio-filter li a.active, 
 .tgx-portfolio .portfolio-filter li a:hover,
@@ -1336,7 +1358,7 @@ html{
 }
 .portfolio-filter.border > li {
   display: inline-block;
-  padding: 5px 10px;
+  padding: 10px 10px;
 }
 .portfolio-filter.border > li a {
   transition: all .4s ease;
@@ -1438,7 +1460,7 @@ html{
   position: relative;
   border: 1px solid #ece9f0;
   display: inline-block;
-   padding: 5px 15px;
+   padding: 10px 15px;
    margin: 0;
 }
 .portfolio-filter.round > div {
@@ -1492,6 +1514,12 @@ html{
 
 
 /*Hover effect 1 start*/
+
+.overlay{
+	background:inherit;
+	position: inherit;
+	opacity: 1;
+}
 
 .tgx-portfolio #hover-1 .item:hover .portfolio-buttons {
   opacity: 1;
@@ -1590,6 +1618,7 @@ html{
   color: #6d6be7;
   border-color: #fff;
 }
+
 .tgx-portfolio .hover-2 .overlay:hover .overlay-spin:before {
   opacity: 0.90;
 }
@@ -1803,7 +1832,9 @@ html{
     top: 0;
 }
 
-
+.icon-link:before{
+	content:"";
+}
 
 /*Hover Effect 4*/
 
@@ -1900,10 +1931,14 @@ html{
 .tgx-project .title {
   opacity: 0;
   margin: 20px 0;
+  font-size: 18px
 }
 
 .tgx-project .center .title {
   opacity: 1;
+}
+.tgx-project .project-wrap .title a{
+	color: #444;
 }
 .tgx-project .center .project-image {
   position: relative;
@@ -2714,7 +2749,7 @@ html{
 	  margin: 0 15px 1.5em;
 	}
 	.tgx-blog-1 .post-wrapper .post-details {
-	  padding: 0 20px;
+	  padding:20px;
 	  transition: all 0.3s ease;
 	  display: inline-block;
 	  background-color:#fff;
@@ -2742,7 +2777,7 @@ html{
 	}
 
 	.tgx-blog-1 .post-wrapper .entry-footer {
-	  padding: 0px 0 30px;
+	  padding: 15px 0 30px;
 	}
 	.tgx-blog-1 .post-wrapper .entry-footer .content-btn i {
 	  padding-left: 5px;
@@ -2849,7 +2884,7 @@ html{
 		margin: 0;
 	}
 	.tgx-blog-2 .custom-sticky-post .entry-title{
-	  font-size: 26px;
+	  font-size: 24px;
 	}
 
 	.tgx-blog-2 .custom-sticky-post:hover .post-thumbnail:before {
@@ -2889,7 +2924,8 @@ html{
 	.tgx-blog-2 .custom-sticky-post .blog-details .author-meta{
 	    font-size: 14px;
 	    display: block;
-	    margin: 0px 0 20px;
+	    margin: 5px 0 20px;
+    	color: #333;
 	}
 
 	.tgx-blog-2 .custom-sticky-post .entry-content p{
@@ -3035,6 +3071,12 @@ html{
 ************************************************************************/
 
 /*Hover effect 1*/
+
+.tgx-blog-4 .entry-title,
+.tgx-blog-5 .entry-title {
+    font-size: 24px;
+    font-weight: 600;
+}
 
 .hover-effect-1 .menu-content {
   margin: 0;
@@ -3265,6 +3307,7 @@ html{
 }
 .hover-effect-2 .menu-content {
   float: right;
+  margin: 0;
 
 }
 .hover-effect-2 .menu-content li {
@@ -3319,6 +3362,7 @@ html{
   line-height: 1;
   position: relative;
   font-weight: 700;
+  background: inherit;
 }
 .hover-effect-2 .button::after {
   content: '\2192';
@@ -3360,6 +3404,7 @@ html{
 
 .tgx-blog-5 .content {
   color: #aaa;
+  padding: 0;
 }
 
 .tgx-blog-5 .card-container {
@@ -3418,13 +3463,16 @@ html{
 
 .tgx-blog-5 .card-read {
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 12px;
   letter-spacing: 6px;
   margin: 5px 0 20px;
   position: relative;
   text-align: right;
   text-transform: uppercase;
+}
+
+.tgx-blog-5 .card-read a{
+	background: inherit;
 }
 
 .tgx-blog-5 .card-read:after {
@@ -3515,8 +3563,8 @@ html{
 	  margin: 5px -10px;
 	}
 	.tgx-testimonial-1 .testimoni-wrapper .author .designation {
-	  font-size: 12px;
-	  margin: -5px -10px;
+	   font-size: 14px;
+       margin: 5px -10px;
 	}
 	.tgx-testimonial-1 .testimoni-wrapper:hover {
 	  box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.1);
@@ -3564,8 +3612,8 @@ html{
   margin: 5px -10px;
 }
 .tgx-testimonial-2 .testimoni-wrapper .designation {
-  font-size: 12px;
-  margin: -5px -10px;
+  font-size: 14px;
+   margin: 5px -10px;
 }
 .tgx-testimonial-2 .owl-carousel-left,
 .tgx-testimonial-2 .owl-carousel-right {
@@ -3672,12 +3720,16 @@ html{
     margin-left: -40px;
 }
 
+.tgx-price-table__features-list li{
+    list-style: none;;
+}
+
 .tgx-price-table__feature-inner i {
     margin-right: 5px;
 }
 
 .tgx-price-table__button{
-	padding:5px 20px;
+	padding:10px 20px;
 	border: 1px solid #ed485f;
 	color: #fff;
     background: #ed485f;
@@ -3722,12 +3774,13 @@ html{
    	clip-path: ellipse(45% 70% at 50% 2%);
     height: 130px;
     text-align: center;
-    padding-top: 25px;
+    padding-top: 8px;
 }
 
 .tgx-single-pricing .tgx-single-heading .price .amount {
     font-size: 40px;
     font-weight: 700;
+    color: #fff;
 }
 
 .tgx-single-pricing .tgx-single-heading .price .curency,
@@ -3742,6 +3795,9 @@ html{
 .tgx-single-pricing .tgx-single-about .tgx-single-title{
 	font-size: 32px;
 	color:  #ed485f;
+}
+.tgx-single-pricing .tgx-single-features-list{
+	list-style: none;
 }
 
 
@@ -3761,7 +3817,7 @@ html{
 
 .tgx-single-pricing .tgx-single-footer .tgx-single-btn {
     background-color: #ed485f;
-    padding: 10px 20px;
+    padding: 15px 20px;
     width: 100%;
     display: inline-block;
     text-align: center;
@@ -3839,7 +3895,7 @@ html{
 		animation:showTab 250ms ease-in-out;
 	}
 	.pricing-tab>.pricing-content{
-		background:#fff;
+		/*background:#fff;*/
 		display:none;
 	}
 	.pricing-tab{
@@ -3884,6 +3940,7 @@ html{
 	.tgx-pricing-tab-feature ul li{
 	    padding: 7px 0;
 	    color: #444;
+	    list-style: none;
 	}
 	.tgx-pricing-tab-feature ul li i {
 	    margin-right: 10px;
@@ -3895,7 +3952,7 @@ html{
 	    clip-path: ellipse(45% 70% at 50% 2%);
 	    height: 120px;
 	    text-align: center;
-	    padding-top: 20px;
+	    padding-top: 10px;
 	}
 
 	.tgx-pricing-tab-image{
@@ -3961,13 +4018,17 @@ html{
 	.tgx-pricing-tab-2 .tgx-pricing-tab-image{
 		margin: 10px 40px;
 	}
+	.tgx-pricing-tab-0 .tgx-pricing-tab-heading .cost .amount,
+	.tgx-pricing-tab-1 .tgx-pricing-tab-heading .cost .amount,
 	.tgx-pricing-tab-2 .tgx-pricing-tab-heading .cost .amount{
 		font-size: 32px;
+		color: #fff;
 	}
 
 
 	.tgx-pricing-tab-2 .tgx-pricing-tab-title{
 		color:#2ecc71;
+		font-size: 30px;
 	}
 
 	.tgx-pricing-tab-2 .tgx-pricing-tab-footer .tgx-pricing-tab-btn{
@@ -3982,7 +4043,8 @@ html{
 
 
 	.tgx-pricing-tab-footer .tgx-pricing-tab-btn{
-		padding: 10px 20px;
+		padding: 15px 20px;
+		font-size: 16px;
 	    width: 100%;
 	    display: inline-block;
 	    text-align: center;

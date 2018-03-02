@@ -106,7 +106,7 @@ class wkfe_slider_2 extends Widget_Base {
 		    'slider_content',
 		      	[
 		          'label' => esc_html__( 'Slider Description', 'widgetkit-for-elementor' ),
-		          'type'  => Controls_Manager::WYSIWYG,
+		          'type'  => Controls_Manager::TEXTAREA,
 		          'default' => esc_html__( 'Corem ipsum dolor si amet consectetur adipisic ingelit sed do adipisicido executiv
 						sunse pit lore kome.', 'widgetkit-for-elementor' ),
 		      	]
@@ -401,7 +401,7 @@ class wkfe_slider_2 extends Widget_Base {
 					'type'      => Controls_Manager::COLOR,
 					'default'   => '#fff',
 					'selectors' => [
-						'{{WRAPPER}} .tgx-slider-2 .carousel-inner .carousel-caption p' => 'color: {{VALUE}};',
+						'{{WRAPPER}} .tgx-slider-2 .carousel-inner .carousel-caption .slider-description' => 'color: {{VALUE}};',
 					],
 				]
 		);
@@ -412,7 +412,7 @@ class wkfe_slider_2 extends Widget_Base {
 					'name'     => 'content_typography',
 					'label'    => esc_html__( 'Content Typography', 'widgetkit-for-elementor' ),
 					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-					'selector' => '{{WRAPPER}} .tgx-slider-2 .carousel-inner .carousel-caption p',
+					'selector' => '{{WRAPPER}} .tgx-slider-2 .carousel-inner .carousel-caption .slider-description',
 				]
 		);
 

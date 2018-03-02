@@ -60,7 +60,7 @@ class wkfe_blog_3 extends Widget_Base {
 				[
 					'label'     => esc_html__( 'Post Show', 'widgetkit-for-elementor' ),
 					'type'      => Controls_Manager::SELECT,
-					'default'   => '4',
+					'default'   => '3',
 					'options'   => [
 						'2'     => esc_html__( 'Show 2', 'widgetkit-for-elementor' ),
 						'3'     => esc_html__( 'Show 3', 'widgetkit-for-elementor' ),
@@ -77,9 +77,9 @@ class wkfe_blog_3 extends Widget_Base {
 					'type'      => Controls_Manager::SELECT,
 					'default'   => '4',
 					'options'   => [
-						'6'     => esc_html__( 'Col 2', 'widgetkit-for-elementor' ),
-						'4'     => esc_html__( 'Col 3', 'widgetkit-for-elementor' ),
-						'3'     => esc_html__( 'Col 4 ', 'widgetkit-for-elementor' ),
+						'6'     => esc_html__( 'Column 2', 'widgetkit-for-elementor' ),
+						'4'     => esc_html__( 'Column 3', 'widgetkit-for-elementor' ),
+						'3'     => esc_html__( 'Column 4 ', 'widgetkit-for-elementor' ),
 					],
 				]
 		);

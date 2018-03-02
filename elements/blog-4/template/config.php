@@ -111,7 +111,7 @@ class wkfe_blog_4 extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Overlay', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#00000069',
+				'default'   => '#ed485f',
 				'selectors' => [
 					'{{WRAPPER}} .hover-effect-2 .wrapper:before' => 'background: linear-gradient(to bottom, rgba(255,0,0,0), {{VALUE}});',
 				],
@@ -224,7 +224,7 @@ class wkfe_blog_4 extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Date Bg Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#77d7b9',
+				'default'   => '#ed485f',
 				'selectors' => [
 					'{{WRAPPER}} .hover-effect-1 .date' => 'background-color: {{VALUE}};',
 				],
@@ -313,7 +313,7 @@ class wkfe_blog_4 extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Title & Meta Hover Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#77d7b9',
+				'default'   => '#ed485f',
 				'selectors' => [
 					'{{WRAPPER}} .hover-effect-1 .wrapper .entry-title a:hover,
 					 {{WRAPPER}} .hover-effect-2 .wrapper .entry-title a:hover'  => 'color: {{VALUE}};',
@@ -437,7 +437,7 @@ class wkfe_blog_4 extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Meta Bg Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#77d7b9',
+				'default'   => '#ed485f',
 				'selectors' => [
 					'{{WRAPPER}} .hover-effect-1 .menu-content' => 'background-color: {{VALUE}};',
 				],
@@ -564,7 +564,7 @@ class wkfe_blog_4 extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Hover Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#77d7b9',
+				'default'   => '#fff',
 				'selectors' => [
 					'{{WRAPPER}} .hover-effect-2 .button:hover,
 					 {{WRAPPER}} .hover-effect-2 .button:hover::after' => 'color: {{VALUE}};',

@@ -54,7 +54,7 @@
                             <?php if ($settings['blog_5_layout_item_show'] == '12'): ?>
                             <?php echo "col-md-7"; ?>
                             <?php else: ?>
-                            <?php echo "col-md-6"; ?>
+                            <?php echo "col-md-8"; ?>
                             <?php endif; ?>">
 
                             <?php if ($settings['blog_5_count_enable'] == 'yes'): ?>
@@ -98,7 +98,7 @@
                         <?php if ($settings['blog_5_image_postion'] == 'right'): ?>
                             <div class="image pull-right text-right
                                 <?php if ($settings['blog_5_layout_item_show'] == '12'): ?>
-                                <?php echo "col-md-5"; ?>
+                                <?php echo "col-md-4"; ?>
                                 <?php else: ?>
                                 <?php echo "col-md-6"; ?>
                                 <?php endif; ?>">

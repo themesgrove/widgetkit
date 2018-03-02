@@ -12,19 +12,18 @@
                 <div class="testimony"> <p> <?php echo $testimonial_1['testimoni_content_1'];?></p></div>
                 <div class="author">
 
-                    <?php
-                        if ($settings['testimonial_items'] == '1'):?>
-                          <div class="col-md-1">
+                    <?php if ($settings['testimonial_items'] == '1'):?>
+                        <div class="col-md-1">
                     <?php elseif ($settings['testimonial_items'] == '2'):?>
                         <div class="col-md-3">
                     <?php else:?>
                        <div class="col-md-4">
                     <?php endif;?>
 
-                       <?php if ($testimonial_1['testimoni_image_1']):?>
-                              <span>
-                                  <img class="testimoni-image" src="<?php echo $testimonial_1['testimoni_image_1']['url']; ?>" alt="<?php the_title(); ?>">
-                              </span>
+                       <?php if ($testimonial_1['testimoni_image_1']['url']):?>
+                            <span>
+                                <img class="testimoni-image" src="<?php echo $testimonial_1['testimoni_image_1']['url']; ?>" alt="<?php the_title(); ?>">
+                            </span>
                       <?php endif;?>
                         
                     </div>

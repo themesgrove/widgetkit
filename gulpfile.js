@@ -40,7 +40,7 @@ gulp.task('generatePot', function () {
       .pipe(wpPot( {
         domain: 'widgetkit-for-elementor',
         destFile:'widgetkit-for-elementor.pot',
-        package: 'widgetkit-for-elementor',
+        package: 'WidgetKit_For_Elementor',
         bugReport: 'https://themesgrove.com',
         lastTranslator: 'themesgrove <info@themesgrove.com>',
         team: 'themesgrove <info@themesgrove.com>'
