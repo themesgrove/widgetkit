@@ -412,7 +412,7 @@ class wkfe_image_feature extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Border Hover Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#ed485f',
+				'default'   => '#056ddc',
 				'selectors' => [
 					'{{WRAPPER}} .tgx-image-feature .block .hover-round:after' => 'border: 1px solid {{VALUE}};',
 					'{{WRAPPER}} .tgx-image-feature .block:hover .hover-angle' => 
@@ -439,7 +439,7 @@ class wkfe_image_feature extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Title Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#333',
+				'default'   => '#555',
 				'selectors' => [
 					'{{WRAPPER}} .tgx-image-feature .feature-title' => 'color: {{VALUE}};',
 				],
@@ -468,18 +468,6 @@ class wkfe_image_feature extends Widget_Base {
 					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-image-feature .feature-title',
 				]
-		);
-
-		$this->add_control(
-			'title_hover_color',
-			[
-				'label'     => esc_html__( 'Title Hover Color', 'widgetkit-for-elementor' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
-				'selectors' => [
-					'{{WRAPPER}} .tgx-image-feature .block:hover .feature-title' => 'color: {{VALUE}} !important;',
-				],
-			]
 		);
 
 

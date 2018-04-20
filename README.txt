@@ -4,8 +4,8 @@ Contributors: Themesgrove
 Donate link: https://themesgrove.com/
 Tags: Elementor, Elementor Page Builder, Elements, Widget, Elementor Addons, Add-ons, Page Builder, Countdown, Timer, Slider, Team, E-commerce, Testimonial, Blog, Social-share, Button, Modal, Carousel, Portfolio, Pricing, Image-box, Icon-box, Element Kit, Widgetkit
 Requires at least: 4.0
-Tested up to: 4.9.4
-Stable tag: 1.0.2
+Tested up to: 4.9.5
+Stable tag: 1.0.5
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -45,7 +45,7 @@ WidgetKit for Elementor is useful for :
 * Slider with animation.
 * Countdown.
 * 4 style team block 
-* Portfolio 3 style with filter 
+* Portfolio 4 style with filter 
 * Custom blog 5 items
 * Testimonial 3 styles
 * 4 Differents pricing with tab
@@ -54,6 +54,9 @@ WidgetKit for Elementor is useful for :
 * Button with 10 hover animation 
 * Modal with shortcode and video
 * Feature hover effect with image and icon
+* Title Animation
+* Hover Image
+* Call to action
 
 
 This plugin offers following Elementor extensions or addons.
@@ -72,14 +75,14 @@ This plugin offers following Elementor extensions or addons.
 	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-overlay">Team Overlay </a> shows the information of all team members in a section.</li>
 	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-social-verticle">Team Vertical Icon </a> shows the information of team members with different style.</li>
 	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-circle">Team Circle </a> allows you to display information of team members with unique animation and style.</li>
-	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-talent">Team Circle </a> displays team information in a deafult way color gardient.</li>
+	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-talent">Team Gardient </a> displays team information in a deafult way color gardient.</li>
 
 	<li><a href="http://widgetkit.themesgrove.com/pricing-demo/#single-pricing">Pricing Single </a>displays pricing table in order to generate more sales.</li>
 	<li><a href="http://widgetkit.themesgrove.com/pricing-demo/#icon-pricing">Pricing Icon </a>is similar to Pricing 1 but with different customization and options.</li>
 	<li><a href="http://widgetkit.themesgrove.com/pricing-demo/#tab-pricing">Pricing Tab </a>comes with regular pricing options with tabbed style.</li>
 
-	<li><a href="http://widgetkit.themesgrove.com/testimonial-demo/#testimonial-carousel">Testimonial Carousel </a>shows you good things that your customers says about you. </li>
-	<li><a href="http://widgetkit.themesgrove.com/testimonial-demo/#testimonial-single">Testimonial Carousel </a>is a fully responsive slider that shows testimonials. </li>
+	<li><a href="http://widgetkit.themesgrove.com/testimonial-demo/#testimonial-carousel">Testimonial </a>shows you good things that your customers says about you. </li>
+	<li><a href="http://widgetkit.themesgrove.com/testimonial-demo/#testimonial-single">Single Testimonial</a>is a fully responsive slider that shows testimonials. </li>
 
 	<li><a href="http://widgetkit.themesgrove.com/button-demo/">Button </a>lets you create stunning buttons with 10 hover animation.</li>
 
@@ -94,6 +97,10 @@ This plugin offers following Elementor extensions or addons.
 	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-hover">Blog Hover Animation </a> allows you to show blogs with transparent background and other effects.</li>
 
 	<li><a href="http://widgetkit.themesgrove.com/social-share/">Social Share Animation </a>  allows you to show social profile of yours with lucrative animations.</li>
+	<li><a href="http://widgetkit.themesgrove.com/text-animation/">Title Animation</a> 4 different of animation styles.</li>
+
+	<li><a href="http://widgetkit.themesgrove.com/countdown-demo/">Countdown</a> helps to makes multi variation countdown.</li>
+	<li><a href="http://widgetkit.themesgrove.com/hover-image/">Image with Hover</a> Get 5 differents hover effect with overlay color.</li>
 
 </ul>
  
@@ -111,6 +118,8 @@ This plugin offers following Elementor extensions or addons.
 3. Team Elements
 4. Pricing Table
 5. Featured Image and Icon box
+6. Ttile Animaiton
+7. Countdown
 
 
 
@@ -139,6 +148,18 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+
+= 1.0.5 = 
+* Fixed - Bug
+
+= 1.0.4 =
+* Add New Element - Image Box with Hover Effect  
+* Fixed - Bug
+
+= 1.0.3 =
+* Add New Element - Title Animantion 
+* Add New Element - Countdown 
+* Fixed - Bug
 
 = 1.0.2 =
 * Fixed - Bug

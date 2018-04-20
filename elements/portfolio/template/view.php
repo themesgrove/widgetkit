@@ -128,7 +128,7 @@
                     <?php foreach ( $settings['portfolio_content'] as $portfolio ) : ?>
                         <?php $tags = explode(',', $portfolio['filter_tag']);
                         ?>
-                        <div class="col-md-<?php echo $settings['colmun_layout'];?> clearfix mix mix-<?php echo $id?> item <?php foreach($tags as $tag ): echo strtolower($tag.'-'.$id).' '; endforeach;?>">
+                        <div class="col-md-<?php echo $settings['colmun_layout'];?> mix mix-<?php echo $id?> portfolio-item <?php foreach($tags as $tag ): echo strtolower($tag.'-'.$id).' '; endforeach;?>">
 
 
                             <?php if ($settings['portfolio_hover_effect'] == 'hover_1'): ?>

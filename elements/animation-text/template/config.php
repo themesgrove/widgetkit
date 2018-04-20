@@ -92,6 +92,17 @@ class wkfe_animation_text extends Widget_Base {
                 'title_field' => '{{{ animate_text }}}',
             ]
         );
+
+
+
+        $this->add_control(
+		    'suffix_title',
+		      	[
+		          'label' => esc_html__( 'Suffix Title', 'widgetkit-for-elementor' ),
+		          'type'  => Controls_Manager::TEXTAREA,
+		          'default' => esc_html__( '', 'widgetkit-for-elementor' ),
+		    	]
+	    );
 	$this->end_controls_section();
 	// Content options End
 
@@ -163,9 +174,42 @@ class wkfe_animation_text extends Widget_Base {
 				'default'   => '#ed485f',
 				'selectors' => [
 					'{{WRAPPER}} .animation-text .text-slide .cd-headline b' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .cd-headline.loading-bar .cd-words-wrapper:after' => 'background: {{VALUE}};',
 				],
 			]
 		);
+
+
+		$this->add_responsive_control(
+			'text_animation_align',
+			[
+				'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
+				'type'  => Controls_Manager::CHOOSE,
+				'default'   => 'left',
+				'options' => [
+					'left'    => [
+						'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
+						'icon'  => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
+						'icon'  => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
+						'icon'  => 'fa fa-align-right',
+					],
+					'justify' => [
+						'title' => esc_html__( 'Justified', 'widgetkit-for-elementor' ),
+						'icon'  => 'fa fa-align-justify',
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .animation-text .text-slide .cd-headline' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+
 
 	$this->end_controls_section();
 

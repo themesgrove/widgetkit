@@ -33,6 +33,9 @@
                         <b class="<?php echo ($text == 0) ? 'is-visible': ''; ?>"><?php echo $animation_text['animate_text'];?></b>
                     <?php $text++; endforeach; ?>
                 </span>
+                 <?php if ($settings['suffix_title']): ?>  
+                    <span><?php echo $settings['suffix_title']; ?></span>
+                <?php endif ?>
             </h2> <!-- cd-headline -->
         </div> <!-- text-slide -->
     </div><!-- animation-text -->

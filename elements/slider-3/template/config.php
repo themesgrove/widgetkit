@@ -522,6 +522,23 @@ $this->end_controls_section();
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
+
+             $this->add_responsive_control(
+                'slider_3_height',
+                    [
+                        'label'  => esc_html__( 'Slider Height', 'widgetkit-for-elementor' ),
+                        'type'   => Controls_Manager::SLIDER,
+                        'range'  => [
+                            'px' => [
+                                'min' => 10,
+                                'max' => 1000,
+                            ],
+                        ],
+                        'selectors' => [
+                            '{{WRAPPER}} .tgx-slider-3 .slideshow' => 'height: {{SIZE}}{{UNIT}} !important;',
+                        ],
+                    ]
+            );
             $this->add_control(
                 'overlay_color',
                 [

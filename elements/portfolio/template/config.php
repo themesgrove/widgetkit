@@ -212,7 +212,7 @@ class wkfe_portfolio extends Widget_Base {
 						],
 					],
 					'selectors' => [
-						'{{WRAPPER}} .tgx-portfolio .item' => 'padding: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .tgx-portfolio .portfolio-item' => 'padding: {{SIZE}}{{UNIT}};',
 					],
 				]
 		);
@@ -222,7 +222,7 @@ class wkfe_portfolio extends Widget_Base {
 				[
 					'label'     => esc_html__( 'Hover Effect', 'widgetkit-for-elementor' ),
 					'type'      => Controls_Manager::SELECT,
-					'default'   => 'hover_3',
+					'default'   => 'hover_1',
 					'options'   => [
 						'hover_1'     => esc_html__( 'Hover 1', 'widgetkit-for-elementor' ),
 						'hover_2'     => esc_html__( 'Hover 2', 'widgetkit-for-elementor' ),
@@ -328,7 +328,7 @@ class wkfe_portfolio extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Border Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#ed485f',
+				'default'   => '#056ddc',
 				'selectors' => [
 					'{{WRAPPER}} .portfolio-filter.border > li a.active:after, 
 					 {{WRAPPER}}  .portfolio-filter.border > li a.active:before,
@@ -422,7 +422,7 @@ class wkfe_portfolio extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Active/Hove Background Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#ed485f',
+				'default'   => '#51bbe5',
 				'selectors' => [
 					'{{WRAPPER}} .portfolio-filter.round > li a.mixitup-control-active,
 					 {{WRAPPER}} .portfolio-filter.round > li a.active,
@@ -462,7 +462,7 @@ class wkfe_portfolio extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Active/hover Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#ed485f',
+				'default'   => '#056ddc',
 				'selectors' => [
 					'{{WRAPPER}} .portfolio-filter.slash > li a.mixitup-control-active, 
 					 {{WRAPPER}} .portfolio-filter.slash > li a.active, 
@@ -488,9 +488,9 @@ class wkfe_portfolio extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Item Overlay', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#ed485fe8',
+				'default'   => '#056ddce8',
 				'selectors' => [
-					'{{WRAPPER}} .tgx-portfolio .hover-1 .item a div,
+					'{{WRAPPER}} .tgx-portfolio .hover-1 .portfolio-item a div,
 					{{WRAPPER}}  .tgx-portfolio .hover-2 .overlay .overlay-spin:before,
 					{{WRAPPER}}  .tgx-portfolio .hover-3 .effect-3 .info,
 					{{WRAPPER}}  .tgx-portfolio .hover-4 .overlay-spin:before
@@ -515,7 +515,7 @@ class wkfe_portfolio extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .tgx-portfolio .item .title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .tgx-portfolio .portfolio-item .title' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .tgx-portfolio .hover-4 .overlay .portfolio-content .title:before' => 'background: {{VALUE}};',
 				],
 			]
@@ -528,7 +528,7 @@ class wkfe_portfolio extends Widget_Base {
 					'name'     => 'overlay_title_typography',
 					'label'    => esc_html__( 'Ttile Typography', 'widgetkit-for-elementor' ),
 					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-					'selector' => '{{WRAPPER}} .tgx-portfolio .item .title',
+					'selector' => '{{WRAPPER}} .tgx-portfolio .portfolio-item .title',
 				]
 		);
 
@@ -572,7 +572,7 @@ class wkfe_portfolio extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .tgx-portfolio .item .desc ' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .tgx-portfolio .portfolio-item .desc ' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -583,7 +583,7 @@ class wkfe_portfolio extends Widget_Base {
 					'name'     => 'overlay_desc_typography',
 					'label'    => esc_html__( 'Desc Typography', 'widgetkit-for-elementor' ),
 					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-					'selector' => '{{WRAPPER}} .tgx-portfolio .item .desc',
+					'selector' => '{{WRAPPER}} .tgx-portfolio .portfolio-item .desc',
 				]
 		);
 
@@ -603,7 +603,7 @@ class wkfe_portfolio extends Widget_Base {
                 'type'  => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tgx-portfolio #hover-1 .item .portfolio-buttons a,
+                    '{{WRAPPER}} .tgx-portfolio #hover-1 .portfolio-item .portfolio-buttons a,
                     {{WRAPPER}} .tgx-portfolio .hover-2 .portfolio-btn a,
                     {{WRAPPER}} .tgx-portfolio .hover-3 .effect-3 .external-link li a
                     ' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -616,9 +616,9 @@ class wkfe_portfolio extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Icon Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#ed485f',
+				'default'   => '#056ddc',
 				'selectors' => [
-					'{{WRAPPER}} .tgx-portfolio #hover-1 .item .portfolio-buttons a,
+					'{{WRAPPER}} .tgx-portfolio #hover-1 .portfolio-item .portfolio-buttons a,
 					 {{WRAPPER}} .tgx-portfolio .hover-2 .portfolio-btn a,
 					 {{WRAPPER}} .tgx-portfolio .hover-3 .effect-3 .external-link li a' => 'color: {{VALUE}};',
 					],
@@ -632,10 +632,10 @@ class wkfe_portfolio extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .tgx-portfolio #hover-1 .item .portfolio-buttons a,
+					'{{WRAPPER}} .tgx-portfolio #hover-1 .portfolio-item .portfolio-buttons a,
 					{{WRAPPER}} .tgx-portfolio .hover-2 .portfolio-btn a,
 					 {{WRAPPER}} .tgx-portfolio .hover-3 .effect-3 .external-link li a' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .tgx-portfolio #hover-1 .item .portfolio-buttons a:hover,
+					'{{WRAPPER}} .tgx-portfolio #hover-1 .portfolio-item .portfolio-buttons a:hover,
 					{{WRAPPER}} .tgx-portfolio .hover-2 .portfolio-btn a:hover,
 					 {{WRAPPER}} .tgx-portfolio .hover-3 .effect-3 .external-link li a:hover' => 'color: {{VALUE}};',
 					],
@@ -647,9 +647,9 @@ class wkfe_portfolio extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Icon Hover Bg Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#ed485f',
+				'default'   => '#056ddc',
 				'selectors' => [
-					'{{WRAPPER}} .tgx-portfolio #hover-1 .item .portfolio-buttons a:hover,
+					'{{WRAPPER}} .tgx-portfolio #hover-1 .portfolio-item .portfolio-buttons a:hover,
 
 					 {{WRAPPER}} .tgx-portfolio .hover-3 .effect-3 .external-link li a:hover,
 					 {{WRAPPER}} .tgx-portfolio .hover-2 .portfolio-btn a:hover' => 'background-color: {{VALUE}};',

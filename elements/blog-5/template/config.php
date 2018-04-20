@@ -262,7 +262,7 @@ class wkfe_blog_5 extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Title & Meta Hover Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#ed485f',
+				'default'   => '#255cdc',
 				'selectors' => [
 					'{{WRAPPER}} .tgx-blog-5 .entry-title a:hover'  => 'color: {{VALUE}};',
 					'{{WRAPPER}} .tgx-blog-5 .author-details a:hover'  => 'color: {{VALUE}};',
@@ -435,7 +435,7 @@ class wkfe_blog_5 extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Hover Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#ed485f',
+				'default'   => '#77d7b9',
 				'selectors' => [
 					'{{WRAPPER}} .tgx-blog-5 .card-read a:hover' => 'color: {{VALUE}};',
 				],
@@ -473,7 +473,7 @@ class wkfe_blog_5 extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Line Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#ddd',
+				'default'   => '#77d7b9',
 				'selectors' => [
 					'{{WRAPPER}} .tgx-blog-5 .card-read:after' => 'color: {{VALUE}};',
 				],

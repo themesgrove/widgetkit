@@ -72,10 +72,10 @@ class wkfe_modal_button extends Widget_Base {
 					'default'   => 'lfr',
 					'options'   => [
 						'default'    => esc_html__( 'Default', 'widgetkit-for-elementor' ),
-						'lfr'        => esc_html__( 'Right From Left ', 'widgetkit-for-elementor' ),
+						'lfr'        => esc_html__( 'Left From Right', 'widgetkit-for-elementor' ),
 						'afl'        => esc_html__( 'Angle From Left', 'widgetkit-for-elementor' ),
 						'bfm'        => esc_html__( 'Both From Middle', 'widgetkit-for-elementor' ),
-						'piramid'    => esc_html__( 'Pyramids', 'widgetkit-for-elementor' ),
+						'piramid'    => esc_html__( 'Piramid', 'widgetkit-for-elementor' ),
 						'door'    	 => esc_html__( 'Door', 'widgetkit-for-elementor' ),
 						'ctm'    	 => esc_html__( 'Corner to Middle', 'widgetkit-for-elementor' ),
 						'fourcorner' => esc_html__( 'Four Corner', 'widgetkit-for-elementor' ),
@@ -152,24 +152,6 @@ class wkfe_modal_button extends Widget_Base {
 			]
 		);
 
-		// $this->add_control(
-		// 	'video_options_select',
-		// 		[
-		// 			'label'     => esc_html__( 'Choose Video Option', 'widgetkit-for-elementor' ),
-		// 			'type'      => Controls_Manager::SELECT,
-		// 			'default'   => 'embed',
-		// 			'options'   => [
-		// 				'embed'   => esc_html__( 'Embeded', 'widgetkit-for-elementor' ),
-		// 				'link'    => esc_html__( 'Link', 'widgetkit-for-elementor' ),
-		// 			],
-		// 			'condition' => [
-		// 				'modal_content' => 'modal_video',
-		// 				'button_options_select' => 'modal',
-		// 			],
-		// 		]
-		// );
-
-
 		$this->add_control(
 			'modal_video',
 			[
@@ -179,26 +161,9 @@ class wkfe_modal_button extends Widget_Base {
 				'condition' => [
 					'modal_content' => 'modal_video',
 					'button_options_select' => 'modal',
-					//'video_options_select' => 'embed',
 				],
 			]
 		);
-
-		// $this->add_control(
-		// 	'modal_video_link',
-		// 	[
-		// 		'label' => esc_html__( 'Direct Link', 'widgetkit-for-elementor' ),
-		// 		'type'  => Controls_Manager::TEXTAREA,
-		// 		'default' => esc_html__( '', 'widgetkit-for-elementor' ),
-		// 		'condition' => [
-		// 			'modal_content' => 'modal_video',
-		// 			'button_options_select' => 'modal',
-		// 			'video_options_select' => 'link',
-		// 		],
-		// 	]
-		// );
-
-
 
 
 		$this->add_control(
@@ -431,7 +396,7 @@ class wkfe_modal_button extends Widget_Base {
 			[
 				'label' => esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
 				'type'  => Controls_Manager::COLOR,
-				'default' => '#ed485f',
+				'default' => '#056ddc',
 				'selectors' => [
 					'{{WRAPPER}} .modal-container .btn-hover-default:hover,
 					 {{WRAPPER}} .modal-container .btn-hover-lfr:before,
@@ -465,7 +430,7 @@ class wkfe_modal_button extends Widget_Base {
 			[
 				'label' => esc_html__( 'Border Color', 'widgetkit-for-elementor' ),
 				'type'  => Controls_Manager::COLOR,
-				'default'   => '#ed485f',
+				'default'   => '#056ddc',
 				'selectors' => [
 					'{{WRAPPER}} .modal-container .click-btn button:hover,
 					{{WRAPPER}} .modal-container .click-btn .button-normal:hover' => 'border-color: {{VALUE}};',

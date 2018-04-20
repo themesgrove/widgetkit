@@ -2,7 +2,7 @@
 /*
 Plugin Name: WidgetKit for Elementor
 Description: Huge collection of pro quality element or section for use in Elementor page builder,which you help to create any kind of complicated design without coding.  Elementor Page Builder must be installed and activated.
-Version: 1.0.2
+Version: 1.0.5
 Text Domain: widgetkit-for-elementor
 Author: Themesgrove
 Author URI: https://themesgrove.com
@@ -10,7 +10,7 @@ Plugin URI: http://widgetkit.themesgrove.com/
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 @package  WidgetKit_For_Elementor
-Domain Path:       /languages
+Domain Path: /languages
 */
 
     if( !function_exists('add_action') ) {
@@ -39,80 +39,214 @@ Domain Path:       /languages
             flush_rewrite_rules();
         }
 
+    
+
         // Widget register
         function __construct() {
             add_action( 'elementor/widgets/widgets_registered', array( $this, 'widgetkit_for_elementor_widget_bundle') );
         }
 
+       function widgetkit_for_elementor_widget_register() {
+            $this->widgetkit_for_elementor_widget_bundle();
+            $this->widgetkit_for_elementor_script();
+        }
+
         // widgetkit widget bundle
         function widgetkit_for_elementor_widget_bundle(){
+          $widgetkit_elements_keys = [
+                'widget-slider-animation', 
+                'widget-slider-content-animation', 
+                'widget-slider-box-animation', 
+                'widget-portfolio',
+                'widget-pricing-single', 
+                'widget-pricing-icon', 
+                'widget-pricing-tab', 
+                'widget-testimonial-single',
+                'widget-testimonial-center',
+                'widget-team-overlay',
+                'widget-team-verticle-icon',
+                'widget-team-round',
+                'widget-team-animation',
+                'widget-blog-carousel',
+                'widget-blog-sidebar',
+                'widget-blog-revert',
+                'widget-blog-hover-animation',
+                'widget-blog-image',
+                'widget-countdown',
+                'widget-animation-text',
+                'widget-post-carousel',
+                'widget-button',
+                'widget-hover-image',
+                'widget-feature-box',
+                'widget-social-share-animation',
+                'widget-social-share-collapse',
+            ];
+            $widgetkit_default_settings = array_fill_keys( $widgetkit_elements_keys, true ); 
 
-            // Portfolio elements
-            require_once WKFE_PATH . '/elements/portfolio/widget.php';
-            // Pricing 1 elements
-            require_once WKFE_PATH . '/elements/pricing-1/widget.php';
-            // Pricing 2 elements
-            require_once WKFE_PATH . '/elements/pricing-2/widget.php';
-            // Pricing tab elements
-            require_once WKFE_PATH . '/elements/pricing-tab/widget.php';
+            $check_component_active = get_option( 'widgetkit_save_settings', $widgetkit_default_settings );
 
-            // Testimonial-1 elements
-            require_once WKFE_PATH . '/elements/testimonial-1/widget.php';
-            // Testimonial-2 elements
-            require_once WKFE_PATH . '/elements/testimonial-2/widget.php';
+                      // Portfolio Elements
+            if( $check_component_active['widget-portfolio'] ) {
+                // Portfolio elements
+                require_once WKFE_PATH . '/elements/portfolio/widget.php';
+            }
 
+                        // Pricing Elements
+            if( $check_component_active['widget-pricing-single'] ) {
+                // Pricing-1 = Pricing Single
+                require_once WKFE_PATH . '/elements/pricing-1/widget.php';
+            }
 
-            // Team-1 elements
-            require_once WKFE_PATH . '/elements/team-1/widget.php';
-            // Team-2 elements
-            require_once WKFE_PATH . '/elements/team-2/widget.php';
-            // Team-3 elements
-            require_once WKFE_PATH . '/elements/team-3/widget.php';
-            // Team-4 elements
-            require_once WKFE_PATH . '/elements/team-4/widget.php';
+            if( $check_component_active['widget-pricing-icon'] ) {
+                // Pricing-2 = Pricing Icon
+                require_once WKFE_PATH . '/elements/pricing-2/widget.php';
+            }
 
-
-            // Custom blog elements 1
-            require_once WKFE_PATH . '/elements/blog-1/widget.php';
-            // Custom blog elements 2
-            require_once WKFE_PATH . '/elements/blog-2/widget.php';
-            // Custom blog elements 3
-            require_once WKFE_PATH . '/elements/blog-3/widget.php';
-            // Custom blog elements 4
-            require_once WKFE_PATH . '/elements/blog-4/widget.php';
-            // Custom blog elements 5
-            require_once WKFE_PATH . '/elements/blog-5/widget.php';
-
-            // Slider 1 elements
-            require_once WKFE_PATH . '/elements/slider-1/widget.php';
-            // Slider 2 elements
-            require_once WKFE_PATH . '/elements/slider-2/widget.php';
-            // Slider 3 elements
-            require_once WKFE_PATH . '/elements/slider-3/widget.php';
-
-
-            // Custom Feature elements
-            require_once WKFE_PATH . '/elements/image-feature/widget.php';
-
-            // Animation text elements
-            require_once WKFE_PATH . '/elements/animation-text/widget.php';
-
-
-            // Custom carousel elements
-            require_once WKFE_PATH . '/elements/carousel/widget.php';
-            // Button modal elements
-            require_once WKFE_PATH . '/elements/button-modal/widget.php';
+            if( $check_component_active['widget-pricing-tab'] ) {
+                // Pricing-tab
+                require_once WKFE_PATH . '/elements/pricing-tab/widget.php';
+            }
 
 
+                        // Testimonial Elements
+            if( $check_component_active['widget-testimonial-center'] ) {
+                // Testimonial-1 = Testimonial Center
+                require_once WKFE_PATH . '/elements/testimonial-1/widget.php';
+            }
+            if( $check_component_active['widget-testimonial-single'] ) {
+                // Testimonial-2 = Testimonial Single
+                require_once WKFE_PATH . '/elements/testimonial-2/widget.php';
+            }
 
-            // Social Share 1 elements
-            require_once WKFE_PATH . '/elements/social-share-1/widget.php';
-            // Social Share 2 elements
-            require_once WKFE_PATH . '/elements/social-share-2/widget.php';
+
+
+                            // Team Elements
+            if( $check_component_active['widget-team-overlay'] ) {
+                // Team 1 = Team Overlay
+                require_once WKFE_PATH . '/elements/team-1/widget.php';
+            }
+            if( $check_component_active['widget-team-verticle-icon'] ) {
+                // Team-2 = Team Verticle Icon
+                require_once WKFE_PATH . '/elements/team-2/widget.php';
+            }
+            if( $check_component_active['widget-team-round'] ) {
+                // Team-3 = Team Round
+                require_once WKFE_PATH . '/elements/team-3/widget.php';
+            }
+            if( $check_component_active['widget-team-animation'] ) {
+                // Team-4 = Team Animation
+                require_once WKFE_PATH . '/elements/team-4/widget.php';
+            }
+
+
+
+                            // Blogs Elements
+            if( $check_component_active['widget-blog-carousel'] ) {
+                // Blog-1 = Blog Carousel
+                require_once WKFE_PATH . '/elements/blog-1/widget.php';
+            }
+
+            if( $check_component_active['widget-blog-sidebar'] ) {
+                // Blog-2 = Blog Sidebar
+                require_once WKFE_PATH . '/elements/blog-2/widget.php';
+            }
+
+            if( $check_component_active['widget-blog-revert'] ) {
+                // Blog-3 = Blog Revert
+                require_once WKFE_PATH . '/elements/blog-3/widget.php';
+            }
+
+            if( $check_component_active['widget-blog-hover-animation'] ) {
+                // Blog-4 = Blog Hover Animation
+                require_once WKFE_PATH . '/elements/blog-4/widget.php';
+            }
+            if( $check_component_active['widget-blog-image'] ) {
+                // Blog-5 = Blog Image
+                require_once WKFE_PATH . '/elements/blog-5/widget.php';
+            }
+
+
+
+                            // Slider Elements
+            if( $check_component_active['widget-slider-animation'] ) {
+                // Slider-1 = Slider Animation
+                require_once WKFE_PATH . '/elements/slider-1/widget.php';
+            }
+
+            if( $check_component_active['widget-slider-content-animation'] ) {
+                // Slider-2 = Slider Content Animation
+                require_once WKFE_PATH . '/elements/slider-2/widget.php';
+            }
+
+            if( $check_component_active['widget-slider-box-animation'] ) {
+                // Slider-3 = Slider Box Animation
+                require_once WKFE_PATH . '/elements/slider-3/widget.php';
+            }
+
+
+
+                            // Feature Elements
+            if( $check_component_active['widget-feature-box'] ) {
+                // Feature box
+                require_once WKFE_PATH . '/elements/image-feature/widget.php';
+            }
+
+
+                             // Countdown Elements
+            if( $check_component_active['widget-countdown'] ) {
+                // Countdown
+                require_once WKFE_PATH . '/elements/countdown/widget.php';
+            }
+
+
+                             // Animation Text Elements
+            if( $check_component_active['widget-animation-text'] ) {
+                // Animation Text
+                require_once WKFE_PATH . '/elements/animation-text/widget.php';
+            }
+
+
+                            // Post Carousel Elements
+            if( $check_component_active['widget-post-carousel'] ) {
+                // Post Carousel
+                require_once WKFE_PATH . '/elements/carousel/widget.php';
+            }
+
+
+                            // Button Elements
+            if( $check_component_active['widget-button'] ) {
+                // Button + Modal 
+                require_once WKFE_PATH . '/elements/button-modal/widget.php';
+            }
+
+
+                            // Hover Image Elements
+            if( $check_component_active['widget-hover-image'] ) {
+                // Hover Image
+                require_once WKFE_PATH . '/elements/hover-image/widget.php';
+            }
+
+
+                            // Social Share Elements
+            if( $check_component_active['widget-social-share-animation'] ) {
+                // Social-Share-1  = Social Share Animation
+                require_once WKFE_PATH . '/elements/social-share-1/widget.php';
+            }
+            if( $check_component_active['widget-social-share-collapse'] ) {
+                // Social-Share-2  = Social Share Collapse
+                require_once WKFE_PATH . '/elements/social-share-2/widget.php';
+            }
 
 
             // helper functions
             require_once WKFE_PATH . '/elements/helper-functions.php';
+
+
+            //Admin init
+            require_once WKFE_PATH . '/admin/admin-init.php';
+
+            // System Info
+            require_once WKFE_PATH . '/admin/includes/system-info.php';
         }
 
 
@@ -133,7 +267,7 @@ Domain Path:       /languages
             wp_enqueue_style( 'owl-css', plugins_url('/assets/css/owl.carousel.min.css',__FILE__ ));
 
             // Animation css
-            wp_enqueue_style( 'animate', plugins_url('/assets/css/animate.css',__FILE__ ));
+            wp_enqueue_style( 'animate-css', plugins_url('/assets/css/animate.css',__FILE__ ));
 
             // Fontawesome css
             wp_enqueue_style( 'fontawesome', plugins_url('/assets/css/font-awesome.min.css',__FILE__ ));
@@ -151,6 +285,37 @@ Domain Path:       /languages
 
         // Script include
         function widgetkit_for_elementor_script(){
+            $widgetkit_elements_keys = [
+                'widget-slider-animation', 
+                'widget-slider-content-animation', 
+                'widget-slider-box-animation', 
+                'widget-portfolio',
+                'widget-pricing-single', 
+                'widget-pricing-icon', 
+                'widget-pricing-tab', 
+                'widget-testimonial-single',
+                'widget-testimonial-center',
+                'widget-team-overlay',
+                'widget-team-verticle-icon',
+                'widget-team-round',
+                'widget-team-animation',
+                'widget-blog-carousel',
+                'widget-blog-sidebar',
+                'widget-blog-revert',
+                'widget-blog-hover-animation',
+                'widget-blog-image',
+                'widget-countdown',
+                'widget-animation-text',
+                'widget-post-carousel',
+                'widget-button',
+                'widget-hover-image',
+                'widget-feature-box',
+                'widget-social-share-animation',
+                'widget-social-share-collapse',
+            ];
+            $widgetkit_default_settings = array_fill_keys( $widgetkit_elements_keys, true ); 
+
+            $check_component_active = get_option( 'widgetkit_save_settings', $widgetkit_default_settings );
 
             // Bootstarp Script
             wp_enqueue_script( 'bootstarp-js', plugins_url('/assets/js/bootstrap.js', __FILE__ ) , array('jquery'), false, true);
@@ -158,30 +323,46 @@ Domain Path:       /languages
             // Owl-carousel js
             wp_enqueue_script( 'owl-carousel', plugins_url('/assets/js/owl.carousel.min.js', __FILE__ ) , array('jquery'), false, true);
 
-            // Hoverdie js
-            wp_enqueue_script( 'hoverdir', plugins_url('/assets/js/jquery.hoverdir.js', __FILE__ ) , array('jquery'), false, true);
+
+            if( $check_component_active['widget-portfolio'] ) {
+                // Hoverdie js
+                wp_enqueue_script( 'hoverdir', plugins_url('/assets/js/jquery.hoverdir.js', __FILE__ ) , array('jquery'), false, true);
+            }
 
             // Mordernizer js
             wp_enqueue_script( 'modernizr', plugins_url('/assets/js/modernizr.min.js', __FILE__ ) , array('jquery'), false, true);
 
               // Animate text js
-            wp_enqueue_script( 'animate-text', plugins_url('/assets/js/animate-text.js', __FILE__ ) , array('jquery'), false, true);
+            wp_enqueue_script( 'animate-js', plugins_url('/assets/js/animate-text.js', __FILE__ ) , array('jquery'), false, true);
 
-            // Mixitup js
-            wp_enqueue_script( 'mixitup-js', plugins_url('/assets/js/mixitup.min.js', __FILE__ ) , array('jquery'), false, true);
 
-            // Imagepackagelaod Js
-           wp_enqueue_script( 'widgetkit-imagesloaded', plugins_url('/assets/js/imagesloaded.pkgd.min.js',  __FILE__ ), array('jquery'), '4.1.1', true);
+            if( $check_component_active['widget-portfolio'] ) {
+                // Mixitup js
+                wp_enqueue_script( 'mixitup-js', plugins_url('/assets/js/mixitup.min.js', __FILE__ ) , array('jquery'), false, true);
+            }
            
             // Anime js
             wp_enqueue_script( 'anime', plugins_url('/assets/js/anime.min.js', __FILE__ ) , array('jquery'), false, true);
 
-            // Slider 3 js
-            wp_enqueue_script( 'widgetkit-slider-3', plugins_url('/assets/js/slider-3.js', __FILE__ ) , array('jquery'), false, true);
+            if( $check_component_active['widget-slider-box-animation'] ) {
+                // Imagepackagelaod Js
+               wp_enqueue_script( 'widgetkit-imagesloaded', plugins_url('/assets/js/imagesloaded.pkgd.min.js',  __FILE__ ), array('jquery'), '4.1.1', true);
+
+                // Slider 3 js
+                wp_enqueue_script( 'widgetkit-slider-3', plugins_url('/assets/js/slider-3.js', __FILE__ ) , array('jquery'), false, true);
+            }
+
+
+            if( $check_component_active['widget-countdown'] ) {
+                // Countdown js
+                wp_enqueue_script( 'countdown-js', plugins_url('/assets/js/countdown.js', __FILE__ ) , array('jquery'), false, true);
+            }
 
             // Main plugin js
             wp_enqueue_script( 'widgetkit-main', plugins_url('/assets/js/widgetkit.js', __FILE__ ) , array('jquery'), false, true);
         }
+
+
 
     }
 

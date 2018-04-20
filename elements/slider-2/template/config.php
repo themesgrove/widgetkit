@@ -809,6 +809,23 @@ $this->start_controls_section(
 	          ]
 	    );
 
+	    	$this->add_responsive_control(
+				'slider_2_height',
+					[
+						'label'  => esc_html__( 'Slider Height', 'widgetkit-for-elementor' ),
+						'type'   => Controls_Manager::SLIDER,
+						'range'  => [
+							'px' => [
+								'min' => 10,
+								'max' => 1000,
+							],
+						],
+						'selectors' => [
+							'{{WRAPPER}} .tgx-slider-2 .carousel .carousel-inner .item' => 'height: {{SIZE}}{{UNIT}} !important;',
+						],
+					]
+			);
+
 		    $this->add_control(
 				'slider_interval',
 				[

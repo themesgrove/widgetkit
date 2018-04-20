@@ -409,7 +409,7 @@ class wkfe_pricing_1 extends Widget_Base {
             [
                 'label'   => esc_html__( 'Color', 'widgetkit-for-elementor' ),
                 'type'    => Controls_Manager::COLOR,
-                'default' => '#ed485f',
+                'default' => '#056ddc',
                 'selectors' => [
                     '{{WRAPPER}} .tgx-price-table__currency,
                      {{WRAPPER}} .tgx-price-table__integer-part, 
@@ -525,7 +525,7 @@ class wkfe_pricing_1 extends Widget_Base {
         $this->add_responsive_control(
             'features_list_padding',
             [
-                'label' => esc_html__( 'Margin', 'widgetkit-for-elementor' ),
+                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
                 'type'  => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -540,7 +540,6 @@ class wkfe_pricing_1 extends Widget_Base {
                 'label' => esc_html__( 'Color', 'widgetkit-for-elementor' ),
                 'type'  => Controls_Manager::COLOR,
                 'separator' => 'before',
-                'default'   => '#333',
                 'selectors' => [
                     '{{WRAPPER}} .tgx-price-table__features-list' => 'color: {{VALUE}}',
                 ],
@@ -733,7 +732,7 @@ class wkfe_pricing_1 extends Widget_Base {
             [
                 'label' => esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
                 'type'  => Controls_Manager::COLOR,
-                'default'   => '#ed485f',
+                'default'   => '#056ddc',
                 'selectors' => [
                     '{{WRAPPER}} .tgx-price-table__button' => 'background-color: {{VALUE}};',
                 ],
@@ -803,7 +802,7 @@ class wkfe_pricing_1 extends Widget_Base {
             [
                 'label' => esc_html__( 'Text Color', 'widgetkit-for-elementor' ),
                 'type'  => Controls_Manager::COLOR,
-                'default'   => '#ed485f',
+                'default'   => '#056ddc',
                 'selectors' => [
                     '{{WRAPPER}} .tgx-price-table__button:hover' => 'color: {{VALUE}};',
                 ],
@@ -833,7 +832,7 @@ class wkfe_pricing_1 extends Widget_Base {
             [
                 'label' => esc_html__( 'Border Color', 'widgetkit-for-elementor' ),
                 'type'  => Controls_Manager::COLOR,
-                'default'   => '#ed485f',
+                'default'   => '#056ddc',
                 'selectors' => [
                     '{{WRAPPER}} .tgx-price-table__button:hover' => 'border: 1px solid  {{VALUE}};',
                 ],

@@ -9,34 +9,34 @@
  * http://www.codrops.com
  */
 
-{
-    setTimeout(() => document.body.classList.add('render'), 60);
-    const navdemos = Array.from(document.querySelectorAll('nav.demos > .demo'));
-    const navigate = (linkEl) => {
-        document.body.classList.remove('render');
-        document.body.addEventListener('transitionend', () => window.location = linkEl.href);
-    };
-    navdemos.forEach(link => link.addEventListener('click', (ev) => {
-        ev.preventDefault();
-        navigate(ev.target);
-    }));
-}
+// {
+//     setTimeout(() => document.body.classList.add('render'), 60);
+//     const navdemos = Array.from(document.querySelectorAll('nav.demos > .demo'));
+//     const navigate = (linkEl) => {
+//         document.body.classList.remove('render');
+//         document.body.addEventListener('transitionend', () => window.location = linkEl.href);
+//     };
+//     navdemos.forEach(link => link.addEventListener('click', (ev) => {
+//         ev.preventDefault();
+//         navigate(ev.target);
+//     }));
+// }
  
 {
     // From https://davidwalsh.name/javascript-debounce-function.
-	function debounce(func, wait, immediate) {
-		var timeout;
-		return function() {
-			var context = this, args = arguments;
-			var later = function() {
-				timeout = null;
-				if (!immediate) func.apply(context, args);
-			};
-			var callNow = immediate && !timeout;
-			clearTimeout(timeout);
-			timeout = setTimeout(later, wait);
-			if (callNow) func.apply(context, args);
-		};
+    function debounce(func, wait, immediate) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
     };
     
     class Slideshow {
@@ -187,6 +187,8 @@
         }
     };
 
-    new Slideshow(document.querySelector('.slideshow'));
-    imagesLoaded('.slide__img', { background: true }, () => document.body.classList.remove('loading'));
+    if (document.querySelector('.slideshow')) {
+        new Slideshow(document.querySelector('.slideshow'));
+        imagesLoaded('.slide__img', { background: true }, () => document.body.classList.remove('loading'));
+    }
 };

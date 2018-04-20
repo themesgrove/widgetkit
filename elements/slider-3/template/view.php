@@ -25,7 +25,7 @@
                                 <?php endif; ?>
 
                         </div> <!-- slider -->
-                    <?php $a++; endforeach;  ?>
+                    <?php endforeach; $a++; ?>
                 </div><!-- Slides --> 
 
 
