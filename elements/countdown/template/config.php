@@ -7,6 +7,7 @@ use Elementor\Widget_Base;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Group_Control_Border;
+use Elementor\Group_Control_Box_Shadow;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -279,10 +280,116 @@ class wkfe_countdown extends Widget_Base {
 
 		$this->end_controls_section();
 
+
+        $this->start_controls_section(
+        	'widgetkit_countdown_layout_style', 
+            [
+                'label'         => esc_html__('Layout', 'widgetkit-for-elementor'),
+                'tab'           => Controls_Manager::TAB_STYLE,
+            ]
+          );
+        $this->add_control(
+			'widgetkit_countdown_item_bg_color',
+			[
+				'label' 		=> esc_html__( 'Item Bg Color', 'widgetkit-for-elementor' ),
+				'type' 			=> Controls_Manager::COLOR,
+				'selectors'		=> [
+					'{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section' => 'background-color: {{VALUE}};'
+				]
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name'    => 'image_box_shadow',
+				'exclude' => [
+					'box_shadow_position',
+				],
+				'selector' => '{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section',
+			]
+		);
+
+
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+                [
+                    'name'          => 'widgetkit_countdown_digits_border',
+                    'selector'      => '{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section',
+                ]
+        );
+
+
+        $this->add_control('widgetkit_countdown_digit_border_radius',
+                [
+                    'label'         => esc_html__('Border Radius', 'widgetkit-for-elementor'),
+                    'type'          => Controls_Manager::SLIDER,
+                    'size_units'    => ['px', '%', 'em'],
+                    'selectors'     => [
+                        '{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section' => 'border-radius: {{SIZE}}{{UNIT}};'
+                        ]
+                    ]
+                );
+
+
+            $this->add_responsive_control(
+			'widgetkit_countdown_separator_width',
+			[
+				'label'			=> esc_html__( 'Separator Width', 'widgetkit-for-elementor' ),
+				'type' 			=> Controls_Manager::SLIDER,
+				'default' 		=> [
+					'size' =>15,
+				],
+				'range' 		=> [
+					'px' 	=> [
+						'min' => 0,
+						'max' => 200,
+					]
+				],
+				'selectors'		=> [
+					'{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section' => 'margin: {{SIZE}}{{UNIT}};'
+				]
+			]
+		);
+
+        $this->add_control(
+            'widgetkit_countdown_item_alignment',
+            [
+                'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::CHOOSE,
+                'label_block' => false,
+                'default' => esc_html__( 'center', 'widgetkit-for-elementor' ),
+                'options' => [
+                    'left' => [
+                        'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
+                        'icon'  => 'fa fa-align-left',
+                    ],
+                    'center' => [
+                        'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
+                        'icon'  => 'fa fa-align-center',
+                    ],
+                    'right' => [
+                        'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
+                        'icon'  => 'fa fa-align-right',
+                    ],
+                   	'justify' => [
+						'title' => __( 'Justified', 'elementor' ),
+						'icon' => 'fa fa-align-justify',
+					],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}}  .widgetkit_countdown-row' => 'text-align: {{VALUE}}',
+                ],
+            ]
+        );
+        
+
+		$this->end_controls_section();
+
 		$this->start_controls_section(
 			'widgetkit_countdown_typhography',
 			[
-				'label' => esc_html__( 'Count' , 'widgetkit-for-elementor' ),
+				'label' => esc_html__( 'Number' , 'widgetkit-for-elementor' ),
 				'tab' 			=> Controls_Manager::TAB_STYLE
 			]
 		);
@@ -340,45 +447,8 @@ class wkfe_countdown extends Widget_Base {
 				]
 		  	]
 		);
-        
-        $this->add_group_control(
-            Group_Control_Border::get_type(),
-                [
-                    'name'          => 'widgetkit_countdown_digits_border',
-                    'selector'      => '{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section',
-                ]);
-
-        $this->add_control('widgetkit_countdown_digit_border_radius',
-                [
-                    'label'         => esc_html__('Border Radius', 'widgetkit-for-elementor'),
-                    'type'          => Controls_Manager::SLIDER,
-                    'size_units'    => ['px', '%', 'em'],
-                    'selectors'     => [
-                        '{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section .widgetkit_countdown-amount' => 'border-radius: {{SIZE}}{{UNIT}};'
-                        ]
-                    ]
-                );
 
 
-            $this->add_responsive_control(
-			'widgetkit_countdown_separator_width',
-			[
-				'label'			=> esc_html__( 'Separator Width', 'widgetkit-for-elementor' ),
-				'type' 			=> Controls_Manager::SLIDER,
-				'default' 		=> [
-					'size' =>15,
-				],
-				'range' 		=> [
-					'px' 	=> [
-						'min' => 0,
-						'max' => 200,
-					]
-				],
-				'selectors'		=> [
-					'{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section' => 'margin: {{SIZE}}{{UNIT}};'
-				]
-			]
-		);
         
         $this->end_controls_section();
         

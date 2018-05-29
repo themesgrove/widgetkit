@@ -4727,13 +4727,26 @@
 
 .widgetkit_countdown-row {
     display: block;
-    text-align: center;
+
+    
+   /* text-align: center;*/
+/*    display: -webkit-flex;
+	display: flex;
+	flex-wrap: wrap;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;*/
 }
 
 .widgetkit-countdown .widgetkit_countdown-section {
     display: inline-block;
     max-width: 100%;
     margin-bottom: 15px;
+
+/*    background: #FF5722;
+	border-radius: 15px;
+	box-shadow: 0px 6px 22px 0px rgba(0, 0, 0, 0.14);
+	padding: 20px;
+	flex-grow: 1;*/
 }
 
 .widgetkit-countdown .widgetkit_countdown-section:last-child {
