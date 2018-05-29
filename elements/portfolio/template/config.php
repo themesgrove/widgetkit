@@ -2,7 +2,6 @@
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Scheme_Color;
 use Elementor\Repeater;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;

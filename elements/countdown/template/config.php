@@ -6,7 +6,6 @@ use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
-use Elementor\Scheme_Color;
 use Elementor\Group_Control_Border;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -293,10 +292,6 @@ class wkfe_countdown extends Widget_Base {
 			[
 				'label' 		=> esc_html__( 'Color', 'widgetkit-for-elementor' ),
 				'type' 			=> Controls_Manager::COLOR,
-				'scheme' 		=> [
-				    'type' 	=> Scheme_Color::get_type(),
-				    'value' => Scheme_Color::COLOR_2,
-				],
 				'selectors'		=> [
 					'{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section .widgetkit_countdown-amount' => 'color: {{VALUE}};'
 				]
@@ -320,10 +315,6 @@ class wkfe_countdown extends Widget_Base {
 			[
 				'label' 		=> esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
 				'type' 			=> Controls_Manager::COLOR,
-				'scheme' 		=> [
-				    'type' 	=> Scheme_Color::get_type(),
-				    'value' => Scheme_Color::COLOR_1,
-				],
 				'selectors'		=> [
 					'{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section .widgetkit_countdown-amount' => 'background-color: {{VALUE}};'
 				]
@@ -403,10 +394,6 @@ class wkfe_countdown extends Widget_Base {
 			[
 				'label' 		=> esc_html__( ' Color', 'widgetkit-for-elementor' ),
 				'type' 			=> Controls_Manager::COLOR,
-				'scheme' 		=> [
-				    'type' 	=> Scheme_Color::get_type(),
-				    'value' => Scheme_Color::COLOR_2,
-				],
 				'selectors'		=> [
 					'{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section .widgetkit_countdown-period' => 'color: {{VALUE}};'
 				]
@@ -428,10 +415,6 @@ class wkfe_countdown extends Widget_Base {
 			[
 				'label' 		=> esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
 				'type' 			=> Controls_Manager::COLOR,
-				'scheme' 		=> [
-				    'type' 	=> Scheme_Color::get_type(),
-				    'value' => Scheme_Color::COLOR_2,
-				],
 				'selectors'		=> [
 					'{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section .widgetkit_countdown-period' => 'background-color: {{VALUE}};'
 				]

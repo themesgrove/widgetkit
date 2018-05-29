@@ -3,7 +3,6 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Utils;
-use Elementor\Scheme_Color;
 use Elementor\Repeater;
 use Elementor\Scheme_Typography;
 use Elementor\Group_Control_Typography;
@@ -389,10 +388,6 @@ class wkfe_slider_3 extends Widget_Base
                 'label' => esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
                 'type'  => Controls_Manager::COLOR,
                 'default' => '#ed485f',
-                'scheme'  => [
-                  'value' => Scheme_Color::COLOR_4,
-                  
-                ],
                 'selectors' => [
                   '{{WRAPPER}} .tgx-slider-3 .slide__link' => 'background-color: {{VALUE}};',
                 ],

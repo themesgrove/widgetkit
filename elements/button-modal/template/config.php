@@ -2,12 +2,11 @@
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Scheme_Color;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Group_Control_Border;
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 
 /**
  * Elementor WidgetKit Button Modal
@@ -23,7 +22,7 @@ class wkfe_modal_button extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Button+Modal', 'widgetkit-for-elementor' );
+		return esc_html__( 'Button + Modal', 'widgetkit-for-elementor' );
 	}
 
 	public function get_icon() {
@@ -72,10 +71,11 @@ class wkfe_modal_button extends Widget_Base {
 					'default'   => 'lfr',
 					'options'   => [
 						'default'    => esc_html__( 'Default', 'widgetkit-for-elementor' ),
+						'border'     => esc_html__( 'Border Square', 'widgetkit-for-elementor' ),
 						'lfr'        => esc_html__( 'Left From Right', 'widgetkit-for-elementor' ),
 						'afl'        => esc_html__( 'Angle From Left', 'widgetkit-for-elementor' ),
 						'bfm'        => esc_html__( 'Both From Middle', 'widgetkit-for-elementor' ),
-						'piramid'    => esc_html__( 'Piramid', 'widgetkit-for-elementor' ),
+						'piramid'    => esc_html__( 'Pyramid', 'widgetkit-for-elementor' ),
 						'door'    	 => esc_html__( 'Door', 'widgetkit-for-elementor' ),
 						'ctm'    	 => esc_html__( 'Corner to Middle', 'widgetkit-for-elementor' ),
 						'fourcorner' => esc_html__( 'Four Corner', 'widgetkit-for-elementor' ),
@@ -226,7 +226,8 @@ class wkfe_modal_button extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
 					'{{WRAPPER}} .modal-container .click-btn button i,
-					 {{WRAPPER}} .modal-container .click-btn .button-normal i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					 {{WRAPPER}} .modal-container .click-btn .button-normal i,
+					 {{WRAPPER}} .modal-container .btn-line i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
 					'modal_icon!' => '',
@@ -262,6 +263,7 @@ class wkfe_modal_button extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .modal-container .click-btn,
+					{{WRAPPER}} .modal-container .btn-border-modal,
 					{{WRAPPER}} .modal-container .click-btn .button-normal' => 'text-align: {{VALUE}};',
 				],
 			]
@@ -286,7 +288,8 @@ class wkfe_modal_button extends Widget_Base {
 				'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
 				'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
 				'selector' => '{{WRAPPER}} .modal-container .click-btn button,
-				{{WRAPPER}} .modal-container .click-btn .button-normal',
+				{{WRAPPER}} .modal-container .click-btn .button-normal,
+				{{WRAPPER}} .modal-container .btn-line a p',
 			]
 		);
 
@@ -307,7 +310,8 @@ class wkfe_modal_button extends Widget_Base {
 				'default' => '#444',
 				'selectors' => [
 					'{{WRAPPER}} .modal-container .click-btn button,
-					{{WRAPPER}} .modal-container .click-btn .button-normal' => 'color: {{VALUE}};',
+					 {{WRAPPER}} .modal-container .click-btn .button-normal,
+					 {{WRAPPER}} .modal-container .btn-line p' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -317,14 +321,11 @@ class wkfe_modal_button extends Widget_Base {
 			[
 				'label' => esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
 				'type'  => Controls_Manager::COLOR,
-				'scheme' => [
-					'type'  => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_4,
-				],
 				'default' => '#fff',
 				'selectors' => [
 					'{{WRAPPER}} .modal-container .click-btn button,
-					 {{WRAPPER}} .modal-container .click-btn .button-normal' => 'background-color: {{VALUE}};',
+					 {{WRAPPER}} .modal-container .click-btn .button-normal,
+					 {{WRAPPER}} .modal-container .btn-line a' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -337,7 +338,8 @@ class wkfe_modal_button extends Widget_Base {
 				'placeholder' => '1px',
 				'default'   => '1px',
 				'selector'  => '{{WRAPPER}} .modal-container .click-btn button, 
-				{{WRAPPER}} .modal-container .click-btn .button-normal',
+				{{WRAPPER}} .modal-container .click-btn .button-normal,
+				{{WRAPPER}} .modal-container .btn-line a',
 				'separator' => 'before',
 			]
 		);
@@ -350,7 +352,8 @@ class wkfe_modal_button extends Widget_Base {
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
 					'{{WRAPPER}} .modal-container .click-btn button,
-					{{WRAPPER}} .modal-container .click-btn .button-normal' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					{{WRAPPER}} .modal-container .click-btn .button-normal,
+					{{WRAPPER}} .modal-container .btn-line a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -363,7 +366,8 @@ class wkfe_modal_button extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
 					'{{WRAPPER}} .modal-container .click-btn button,
-					{{WRAPPER}} .modal-container .click-btn .button-normal' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					{{WRAPPER}} .modal-container .click-btn .button-normal,
+					{{WRAPPER}} .modal-container .btn-line a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
@@ -386,7 +390,8 @@ class wkfe_modal_button extends Widget_Base {
 				'default' => '#fff',
 				'selectors' => [
 					'{{WRAPPER}} .modal-container .click-btn button:hover,
-					 {{WRAPPER}} .modal-container .click-btn .button-normal:hover' => 'color: {{VALUE}};',
+					 {{WRAPPER}} .modal-container .click-btn .button-normal:hover,
+					 {{WRAPPER}} .modal-container .btn-line a:hover p' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -405,7 +410,8 @@ class wkfe_modal_button extends Widget_Base {
 					 {{WRAPPER}} .modal-container .btn-hover-fourcorner:before, 
 					 {{WRAPPER}} .modal-container .btn-hover-fourcorner:after, 
 					 {{WRAPPER}} .modal-container .btn-hover-fourcorner span:before, 
-					 {{WRAPPER}} .modal-container .btn-hover-fourcorner span:after' => 'background-color: {{VALUE}};',
+					 {{WRAPPER}} .modal-container .btn-hover-fourcorner span:after,
+					 {{WRAPPER}} .modal-container .btn-line a:hover' => 'background-color: {{VALUE}};',
 
 					'{{WRAPPER}} .modal-container .btn-hover-afl:before,
 					 {{WRAPPER}} .modal-container .btn-hover-piramid:before, 
@@ -433,7 +439,27 @@ class wkfe_modal_button extends Widget_Base {
 				'default'   => '#056ddc',
 				'selectors' => [
 					'{{WRAPPER}} .modal-container .click-btn button:hover,
-					{{WRAPPER}} .modal-container .click-btn .button-normal:hover' => 'border-color: {{VALUE}};',
+					{{WRAPPER}} .modal-container .click-btn .button-normal:hover,' => 'border-color: {{VALUE}};',
+					
+					'{{WRAPPER}} .modal-container .btn-line a span' => 'background: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'modal_btn_border_width',
+			[
+				'label' => esc_html__( 'Border Width', 'widgetkit-for-elementor' ),
+				'type'  => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%' ],
+				'selectors'  => [
+					'{{WRAPPER}} .modal-container .btn-line a span.top,
+					{{WRAPPER}} .modal-container .btn-line a span.bottom' => 'height: {{TOP}}{{UNIT}} ;',
+					'{{WRAPPER}} .modal-container .btn-line a span.left,
+					{{WRAPPER}} .modal-container .btn-line a span.right' => 'width: {{LEFT}}{{UNIT}};',
+				],
+				'condition' => [
+					'button_modal_hover_effect' => 'border',
 				],
 			]
 		);

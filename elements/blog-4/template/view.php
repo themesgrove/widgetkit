@@ -11,6 +11,7 @@
         <?php
             $blog_post_formats = array('audio', 'image', 'video', 'link', 'gallery');
             $blog_4 = array(
+                'cat' => $settings['cat_name'],
                 'post_type'         => 'post',
                 'post_status'       => 'publish',
                 'posts_per_page'    => $settings['blog_4_post_item_show'],
@@ -60,9 +61,11 @@
 
                         <div class="data">
                             <div class="content">
-                                <span class="author-details">
-                                    <a href="#"><?php the_author(); ?></a>
-                                </span><!-- author-details -->
+                                <?php if ($settings['blog_4_author_enable'] == 'yes'): ?>
+                                    <span class="author-details">
+                                        <a href="<?php the_author_link(); ?>"><?php the_author(); ?></a>
+                                    </span><!-- author-details -->
+                                <?php endif; ?>
 
                                  <header class="entry-header">
                                     <h4 class="entry-title">
@@ -75,7 +78,7 @@
 
                                 <?php if (!in_array(get_post_format(), $blog_post_formats)):?>
                                     <div class="entry-content">
-                                        <p><?php esc_html_e(wp_trim_words( get_the_content(),20, ''), 'widgetkit-for-elementor'); ?></p>
+                                        <p><?php esc_html_e(wp_trim_words( get_the_content(),$settings['blog_4_show_content'], ''), 'widgetkit-for-elementor'); ?></p>
                                     </div><!-- .entry-content -->
                                 <?php endif; ?>
 
@@ -136,9 +139,11 @@
 
                         <div class="data">
                             <div class="content">
-                                <span class="author-details">
-                                    <a href="#"><?php the_author(); ?></a>
-                                </span><!-- author-details -->
+                                <?php if ($settings['blog_4_author_enable'] == 'yes'): ?>
+                                    <span class="author-details">
+                                        <a href="<?php the_author_link(); ?>"><?php the_author(); ?></a>
+                                    </span><!-- author-details -->
+                                <?php endif; ?>
 
                                  <header class="entry-header">
                                     <h4 class="entry-title">
@@ -151,7 +156,7 @@
 
                                 <?php if (!in_array(get_post_format(), $blog_post_formats)):?>
                                     <div class="entry-content">
-                                        <p><?php esc_html_e(wp_trim_words( get_the_content(),20, ''), 'widgetkit-for-elementor'); ?>
+                                        <p><?php esc_html_e(wp_trim_words( get_the_content(), $settings['blog_4_show_content'], ''), 'widgetkit-for-elementor'); ?>
                                             
                                         </p>
 
@@ -159,7 +164,10 @@
                                 <?php endif; ?>
 
                                 <?php if ($settings['blog_4_button_enable'] == 'yes'): ?>
-                                    <a href="<?php the_permalink();?>" class="button"><?php esc_html_e('Read More', 'widgetkit-for-elementor');?>     
+                                    <a href="<?php the_permalink();?>" class="button">
+                                        <?php if ($settings['blog_4_button_enable'] == 'yes'): ?>
+                                            <?php echo esc_html($settings['blog_4_btn_text']);?>
+                                        <?php endif; ?>     
                                     </a>
                                 <?php endif ?>
 

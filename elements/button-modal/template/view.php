@@ -10,18 +10,43 @@
 
 
 <div id="<?php echo $id;?>" class="modal-container">
-    <div class="click-btn">
+    <div class="
+    <?php if ($settings['button_modal_hover_effect'] == 'border'){
+        echo "btn-border-modal";
+        }else{
+            echo "click-btn ";
+        }
+        ?>">
 
     <?php if ($settings['button_options_select'] == 'modal'):?>
 
         <button onclick="document.getElementById('modal-button-<?php echo $id;?>').style.display='block'" class="btn-hover-<?php echo $settings['button_modal_hover_effect'];?>  booking-button">
-        <?php if ($settings['button_modal_hover_effect'] == 'bfm' || $settings['button_modal_hover_effect'] == 'fourcorner' ): ?>
+
+
+        <?php if ($settings['button_modal_hover_effect'] == 'border'): ?>
+            <div class="btn-line btn-normal btn-hover-<?php echo $settings['button_modal_hover_effect'];?>">
+                <a href="#">
+                    <p> <?php echo $settings['modal_text'];?>
+                            <?php if ($settings['modal_icon']):?>
+                        <i style="float:<?php echo $settings['modal_icon_align'];?>;" class="<?php echo $settings['modal_icon'];?>"></i>
+                    <?php endif; ?>
+                        
+                    </p>
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
+                </a>
+            </div>
+
+        <?php elseif($settings['button_modal_hover_effect'] == 'bfm' || $settings['button_modal_hover_effect'] == 'fourcorner'): ?>
             <span>
                 <?php echo $settings['modal_text'];?>
                 <?php if ($settings['modal_icon']):?>
                     <i style="float:<?php echo $settings['modal_icon_align'];?>;" class="<?php echo $settings['modal_icon'];?>"></i>
                 <?php endif; ?>
             </span>
+
         
         <?php else: ?>
             <?php echo $settings['modal_text'];?>
@@ -30,23 +55,49 @@
                 <?php endif; ?>
             <?php endif; ?>
         </button> <!-- /button -->
+
+
+
+
+
+
     <?php else: ?>
-        <a  href="<?php echo $settings['normal_btn_link']['url'];?>" class="btn-hover-<?php echo $settings['button_modal_hover_effect'];?>  button-normal">
-        <?php if ($settings['button_modal_hover_effect'] == 'bfm' || $settings['button_modal_hover_effect'] == 'fourcorner' ): ?>
-            <span>
-                <?php echo $settings['modal_text'];?>
-                <?php if ($settings['modal_icon']):?>
-                    <i style="float:<?php echo $settings['modal_icon_align'];?>;" class="<?php echo $settings['modal_icon'];?>"></i>
-                <?php endif; ?>
-            </span>
-        
+
+        <?php if ($settings['button_modal_hover_effect'] == 'border'): ?>
+            <div class="btn-line btn-hover-<?php echo $settings['button_modal_hover_effect'];?>">
+                <a href="<?php echo $settings['normal_btn_link']['url'];?>">
+                    <p> <?php echo $settings['modal_text'];?>
+                            <?php if ($settings['modal_icon']):?>
+                        <i style="float:<?php echo $settings['modal_icon_align'];?>;" class="<?php echo $settings['modal_icon'];?>"></i>
+                    <?php endif; ?>
+                        
+                    </p>
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
+                </a>
+            </div>
         <?php else: ?>
-            <?php echo $settings['modal_text'];?>
-                <?php if ($settings['modal_icon']):?>
-                    <i style="float:<?php echo $settings['modal_icon_align'];?>;" class="<?php echo $settings['modal_icon'];?>"></i>
+        <a  href="<?php echo $settings['normal_btn_link']['url'];?>" class="btn-hover-<?php echo $settings['button_modal_hover_effect'];?>  button-normal">
+            <?php if ($settings['button_modal_hover_effect'] == 'bfm' || $settings['button_modal_hover_effect'] == 'fourcorner' ): ?>
+                <span>
+                    <?php echo $settings['modal_text'];?>
+                    <?php if ($settings['modal_icon']):?>
+                        <i style="float:<?php echo $settings['modal_icon_align'];?>;" class="<?php echo $settings['modal_icon'];?>"></i>
+                    <?php endif; ?>
+                </span>
+        
+            <?php else: ?>
+                <?php echo $settings['modal_text'];?>
+                    <?php if ($settings['modal_icon']):?>
+                        <i style="float:<?php echo $settings['modal_icon_align'];?>;" class="<?php echo $settings['modal_icon'];?>"></i>
+                    <?php endif; ?>
                 <?php endif; ?>
-            <?php endif; ?>
-        </a> <!-- /button -->
+            </a> <!-- /button -->
+        <?php endif; ?>
+
+
     <?php endif;?>
 
 

@@ -2,7 +2,6 @@
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Scheme_Color;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Group_Control_Border;
@@ -294,10 +293,6 @@ class wkfe_hover_image extends Widget_Base {
 					{{WRAPPER}} .tgx-hover-image .bubba-effect .hover-image,
 					{{WRAPPER}} .tgx-hover-image .goliath-effect:hover .image-caption' => 'background: linear-gradient(to bottom, transparent 0%, {{VALUE}} 75%);',
 				],
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_4,
-				],
 
 				'condition' => [
 					'hover_image_over_color' => 'gradient',
@@ -318,10 +313,6 @@ class wkfe_hover_image extends Widget_Base {
 				{{WRAPPER}} .tgx-hover-image .bubba-effect .hover-image,
 				{{WRAPPER}} .tgx-hover-image .goliath-effect:hover .image-caption' => 'background: {{VALUE}};',
 
-				],
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_3,
 				],
 
 				'condition' => [
@@ -402,10 +393,6 @@ class wkfe_hover_image extends Widget_Base {
 					'{{WRAPPER}} .tgx-hover-image .bubba-effect .hover-image::before' => 'border-color: {{VALUE}};',
 					'{{WRAPPER}} .tgx-hover-image .bubba-effect .hover-image::after' => 'border-color: {{VALUE}};',
 				],
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_3,
-				],
 				'condition' => [
 					'hover_image_hover_animation' => 'bubba-effect',
 				],
@@ -465,10 +452,6 @@ class wkfe_hover_image extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .tgx-hover-image .image-caption .caption-title' => 'color: {{VALUE}};',
 				],
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_3,
-				],
 			]
 		);
 
@@ -489,10 +472,6 @@ class wkfe_hover_image extends Widget_Base {
 				'default' => '#fff',
 				'selectors' => [
 					'{{WRAPPER}} .tgx-hover-image .image-caption .caption-content' => 'color: {{VALUE}};',
-				],
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_3,
 				],
 			]
 		);
@@ -564,10 +543,6 @@ class wkfe_hover_image extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}}  .tgx-hover-image .default-effect .image-caption,
 					{{WRAPPER}}  .tgx-hover-image .goliath-effect .image-caption .caption-content' => 'background-color: {{VALUE}};',
-				],
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_3,
 				],
 
 				'condition' => [

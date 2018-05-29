@@ -45,7 +45,16 @@ class wkfe_blog_4 extends Widget_Base {
 
 	protected function _register_controls() {
 
-		
+		$terms = get_terms( array(
+            'taxonomy' => 'category',
+            'hide_empty' => false,
+        ) );
+        $cat_names = array();
+        foreach( $terms as $t ):
+            $cat_names[$t->term_id] = $t->name;
+        endforeach;
+
+
 		$this->start_controls_section(
 			'blog_4_section_style',
 				[
@@ -53,6 +62,16 @@ class wkfe_blog_4 extends Widget_Base {
 					'tab'   => Controls_Manager::TAB_STYLE,
 				]
 			);
+
+		    $this->add_control(
+	            'cat_name',
+		            [
+		                'label'       => __( 'From Category', 'widgetkit-for-elementor' ),
+		                'type' => Controls_Manager::SELECT,
+		                'default' => 'uncategorized',
+		                'options' => $cat_names,
+		            ]
+        	);
 
 			$this->add_control(
 			'blog_4_post_item_show',
@@ -77,9 +96,9 @@ class wkfe_blog_4 extends Widget_Base {
 					'type'      => Controls_Manager::SELECT,
 					'default'   => '4',
 					'options'   => [
-						'4'     => esc_html__( 'column 3', 'widgetkit-for-elementor' ),
-						'3'     => esc_html__( 'column 4 ', 'widgetkit-for-elementor' ),
-						'6'     => esc_html__( 'column 2', 'widgetkit-for-elementor' ),
+						'4'     => esc_html__( 'Column 3', 'widgetkit-for-elementor' ),
+						'3'     => esc_html__( 'Column 4 ', 'widgetkit-for-elementor' ),
+						'6'     => esc_html__( 'Column 2', 'widgetkit-for-elementor' ),
 					],
 				]
 		);
@@ -111,7 +130,7 @@ class wkfe_blog_4 extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Overlay', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#00000069',
+				'default'   => 'rgba(255,114,114,0.99))',
 				'selectors' => [
 					'{{WRAPPER}} .hover-effect-2 .wrapper:before' => 'background: linear-gradient(to bottom, rgba(255,0,0,0), {{VALUE}});',
 				],
@@ -323,6 +342,27 @@ class wkfe_blog_4 extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+            'blog_4_hover_autho_heading',
+            [
+                'label' => esc_html__( 'Author', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_control(
+			'blog_4_author_enable',
+				[
+					'label'     => esc_html__( 'Enable/Disable', 'widgetkit-for-elementor' ),
+					'type'      => Controls_Manager::SWITCHER,
+					'default'   => 'yes',
+					'enable'    => esc_html__( 'Enable', 'widgetkit-for-elementor' ),
+					'disable'   => esc_html__( 'Disable', 'widgetkit-for-elementor' ),
+				]
+		);
+
+
 
 		$this->end_controls_section();
 
@@ -357,6 +397,16 @@ class wkfe_blog_4 extends Widget_Base {
                 'scheme'  => Scheme_Typography::TYPOGRAPHY_3,
             ]
         );
+
+		$this->add_control(
+			'blog_4_show_content',
+			[
+				'label' => esc_html__( 'Content Word', 'widgetkit-for-elementor' ),
+				'type'  => Controls_Manager::TEXT,
+				'default'     => esc_html__( '20', 'widgetkit-for-elementor' ),
+				'placeholder' => esc_html__( '20', 'widgetkit-for-elementor' ),
+			]
+		);
 
 		$this->add_responsive_control(
 			'blog_4_content_space',
@@ -474,6 +524,19 @@ class wkfe_blog_4 extends Widget_Base {
 		);
 
 		$this->add_control(
+			'blog_4_btn_text',
+			[
+				'label' => esc_html__( 'Button Text', 'widgetkit-for-elementor' ),
+				'type'  => Controls_Manager::TEXT,
+				'default'     => esc_html__( 'Read More', 'widgetkit-for-elementor' ),
+				'placeholder' => esc_html__( 'Read More', 'widgetkit-for-elementor' ),
+				 'condition' => [
+					'blog_4_button_enable' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
 			'blog_4_button_color',
 			[
 				'label'     => esc_html__( 'Color', 'widgetkit-for-elementor' ),
@@ -555,6 +618,9 @@ class wkfe_blog_4 extends Widget_Base {
                 'selectors' => [
                     '{{WRAPPER}}  .hover-effect-2 .button' => 'text-align: {{VALUE}}',
                 ],
+                'condition' => [
+					'blog_4_button_enable' => 'yes',
+				],
             ]
         );
 

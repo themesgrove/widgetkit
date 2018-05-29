@@ -4,7 +4,6 @@ use Elementor\Group_Control_Border;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
 use Elementor\Widget_Base;
-use Elementor\Scheme_Color;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Group_Control_Box_Shadow;
@@ -556,10 +555,6 @@ class wkfe_social_share_2 extends Widget_Base {
 			[
 				'label' => esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
 				'type'  => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_4,
-				],
 				'default' => '#fff',
 				'selectors' => [
 					'{{WRAPPER}} .tgx-social-share-2.profile .box a' => 'background-color: {{VALUE}};',

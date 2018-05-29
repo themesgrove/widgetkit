@@ -6,7 +6,6 @@ use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
-use Elementor\Scheme_Color;
 use Elementor\Utils;
 use Elementor\Group_Control_Border;
 

@@ -4,8 +4,8 @@ Contributors: Themesgrove
 Donate link: https://themesgrove.com/
 Tags: Elementor, Elementor Page Builder, Elements, Widget, Elementor Addons, Add-ons, Page Builder, Countdown, Timer, Slider, Team, E-commerce, Testimonial, Blog, Social-share, Button, Modal, Carousel, Portfolio, Pricing, Image-box, Icon-box, Element Kit, Widgetkit
 Requires at least: 4.0
-Tested up to: 4.9.5
-Stable tag: 1.0.5
+Tested up to: 4.9.6
+Stable tag: 1.1.1
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -149,16 +149,25 @@ PHP 5.4 or greater.
 
 == Changelog ==
 
+= 1.1.1 = 
+* Update - Blog Hover Effect Option
+* Fixed - Bug
+
+= 1.1.0 = 
+* New     - Element Enable/Disable Option from Dashboard
+* Update - Button Hover Effect Option
+* Fixed - Bug
+
 = 1.0.5 = 
 * Fixed - Bug
 
 = 1.0.4 =
-* Add New Element - Image Box with Hover Effect  
+* New Element - Image Box with Hover Effect  
 * Fixed - Bug
 
 = 1.0.3 =
-* Add New Element - Title Animantion 
-* Add New Element - Countdown 
+* New Element - Title Animantion 
+* New Element - Countdown 
 * Fixed - Bug
 
 = 1.0.2 =

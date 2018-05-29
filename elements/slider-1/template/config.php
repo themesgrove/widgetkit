@@ -4,7 +4,6 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
-use Elementor\Scheme_Color;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Group_Control_Border;
@@ -573,11 +572,6 @@ $this->end_controls_section();
 	            'label' => esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
 	            'type'  => Controls_Manager::COLOR,
 	            'default' => 'transparent',
-	            'scheme'  => [
-	              'type'  => Scheme_Color::get_type(),
-	              'value' => Scheme_Color::COLOR_4,
-	              
-	            ],
 	            'selectors' => [
 	              '{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .carousel-caption .btn-slider' => 'background-color: {{VALUE}};',
 	            ],
