@@ -69,13 +69,13 @@ Domain Path: /languages
             if (!$this_plugin) {
                 $this_plugin = plugin_basename(__FILE__);
             }
-            $settings_links = sprintf( '<a href="admin.php?page=widgetkit-settings">' . __( 'Settings', 'widgetkit-for-elementor' ) . '</a>' );
+            $settings_links = sprintf( '<a href="admin.php?page=widgetkit-settings#widgetkit-elements">' . __( 'Settings', 'widgetkit-for-elementor' ) . '</a>' );
 
         if(! class_exists( 'WidgetKit_Pro' ) ) {
             // check to make sure we are on the correct plugin
             if ($file == $this_plugin) {
                 // link to what ever you want
-                $plugin_links['WidgetKit_Pro'] = sprintf( '<a href="https://themesgrove.com/product/widgetkit/" target="_blank" style="color:#39a700eb; font-weight: bold;">' . __( 'Get Pro', 'widgetkit-for-elementor' ) . '</a>' );
+                $plugin_links['WidgetKit_Pro'] = sprintf( '<a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank" style="color:#39a700eb; font-weight: bold;">' . __( 'Get Pro', 'widgetkit-for-elementor' ) . '</a>' );
                  
          
                 // add the links to the list of links already there

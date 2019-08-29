@@ -10,7 +10,7 @@ Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-15 Premium Addons for Elementor Page Builder.
+Premium Addons for Elementor Page Builder.
 Huge collection of elements with premium quality for using in Elementor Page Builder, which helps you to create any kind of complicated design without coding in shortest time.Elementor Page Builder must be installed and activated.
 
 == Description ==
