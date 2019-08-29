@@ -2,7 +2,7 @@
 /*
 Plugin Name: WidgetKit for Elementor
 Description: Huge collection of pro quality element or section for use in Elementor page builder,which you help to create any kind of complicated design without coding.  Elementor Page Builder must be installed and activated.
-Version: 1.5.3
+Version: 1.5.4
 Text Domain: widgetkit-for-elementor
 Author: Themesgrove
 Author URI: https://themesgrove.com
