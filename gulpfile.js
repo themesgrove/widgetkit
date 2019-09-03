@@ -1,8 +1,36 @@
 var gulp = require('gulp');
-var zip = require('gulp-zip');
+var sass = require('gulp-sass');
+var gulpFilter = require('gulp-filter');
+var minify = require('gulp-minify-css');
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
+var runSequence = require('gulp-run-sequence');
+var clean = require('gulp-clean');
 var wpPot = require('gulp-wp-pot');
 var sort = require('gulp-sort');
+var zip = require('gulp-zip');
+const del = require('del');
 
+gulp.task('styles', () => {
+  return gulp.src('assets/scss/*.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(minify())
+      .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('clean', () => {
+  return del([
+      'css/main.css',
+  ]);
+});
+
+gulp.task('watch', () => {
+  gulp.watch('assets/scss/*.scss', (done) => {
+      gulp.series(['clean', 'styles'])(done);
+  });
+});
+
+gulp.task('default', gulp.series(['clean', 'styles']));
 
 gulp.task('package', async function () {
   gulp.src([
