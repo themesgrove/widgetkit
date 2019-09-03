@@ -2,6 +2,7 @@
 
 
 use Elementor\Widget_Base;
+use Elementor\Utils;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
 use Elementor\Group_Control_Typography;
@@ -96,7 +97,7 @@ class wkfe_slider_2 extends Widget_Base {
 		          'label' => esc_html__( 'Upload Slider Image', 'widgetkit-for-elementor' ),
 		          'type'  => Controls_Manager::MEDIA,
 		           'default'  => [
-						'url' => plugins_url('/widgetkit-for-elementor/assets/images/demo-bg.jpg'),
+						'url' => Utils::get_placeholder_image_src(),
 					],
 		        ]
 	    );
@@ -184,7 +185,7 @@ class wkfe_slider_2 extends Widget_Base {
 		          'label' => esc_html__( 'Upload Slider Animation Image', 'widgetkit-for-elementor' ),
 		          'type'  => Controls_Manager::MEDIA,
 		           'default'  => [
-						'url' => plugins_url('/widgetkit-for-elementor/assets/images/team.jpg'),
+						'url' => Utils::get_placeholder_image_src(),
 					],
 		        ]
 	    );

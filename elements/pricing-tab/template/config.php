@@ -182,7 +182,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				'label' => _x( 'Image', 'Background Control', 'widgetkit-for-elementor' ),
 				'type'  => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => plugins_url('/widgetkit-for-elementor/assets/images/pricing-2.png'),
+					'url' => Utils::get_placeholder_image_src(),
 				],
 				'selectors' => [
 					'{{WRAPPER}} {{CURRENT_ITEM}} .slick-slide-bg' => 'background-image: url({{URL}})',
@@ -400,7 +400,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				'label' => _x( 'Image', 'Background Control', 'widgetkit-for-elementor' ),
 				'type'  => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => plugins_url('/widgetkit-for-elementor/assets/images/pricing-2.png'),
+					'url' => Utils::get_placeholder_image_src(),
 				],
 				'selectors' => [
 					'{{WRAPPER}} {{CURRENT_ITEM}} .slick-slide-bg' => 'background-image: url({{URL}})',
@@ -618,7 +618,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				'label' => _x( 'Image', 'Background Control', 'widgetkit-for-elementor' ),
 				'type'  => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => plugins_url('/widgetkit-for-elementor/assets/images/pricing-2.png'),
+					'url' => Utils::get_placeholder_image_src(),
 				],
 				'selectors' => [
 					'{{WRAPPER}} {{CURRENT_ITEM}} .slick-slide-bg' => 'background-image: url({{URL}})',

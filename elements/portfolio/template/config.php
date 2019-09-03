@@ -1,6 +1,7 @@
 <?php
 
 use Elementor\Widget_Base;
+use Elementor\Utils;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
 use Elementor\Group_Control_Typography;
@@ -86,7 +87,7 @@ class wkfe_portfolio extends Widget_Base {
 		          'label' => esc_html__( 'Upload Thumb Image', 'widgetkit-for-elementor' ),
 		          'type'  => Controls_Manager::MEDIA,
 		           'default'  => [
-						'url' => plugins_url('/widgetkit-for-elementor/assets/images/portfolio-demo.jpg'),
+						'url' => Utils::get_placeholder_image_src(),
 					],
 		        ]
 	    );
@@ -97,7 +98,7 @@ class wkfe_portfolio extends Widget_Base {
 		          'label' => esc_html__( 'Upload Full Image', 'widgetkit-for-elementor' ),
 		          'type'  => Controls_Manager::MEDIA,
 		           'default'  => [
-						'url' => plugins_url('/widgetkit-for-elementor/assets/images/portfolio-demo.jpg'),
+						'url' => Utils::get_placeholder_image_src(),
 					],
 		        ]
 	    );

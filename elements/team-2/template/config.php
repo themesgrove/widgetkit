@@ -4,6 +4,7 @@
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
 use Elementor\Widget_Base;
+use Elementor\Utils;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 
@@ -56,7 +57,7 @@ class wkfe_team_2 extends Widget_Base {
 		          'label' => esc_html__( 'Upload Team Image', 'widgetkit-for-elementor' ),
 		          'type'  => Controls_Manager::MEDIA,
 		          'default' => [
-						'url' => plugins_url('/widgetkit-for-elementor/assets/images/team.jpg'),
+						'url' => Utils::get_placeholder_image_src(),
 				  	],
 		        ]
 	    );

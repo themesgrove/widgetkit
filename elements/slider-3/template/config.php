@@ -64,7 +64,7 @@ class wkfe_slider_3 extends Widget_Base
                     'label' => esc_html__( 'Slider Image', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::MEDIA,
                     'default' => [
-                        'url' => plugins_url('/widgetkit-for-elementor/assets/images/demo-bg.jpg'),
+                        'url' => Utils::get_placeholder_image_src(),
                     ],
                 ]
             );
