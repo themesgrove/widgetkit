@@ -33,15 +33,30 @@ class wkfe_portfolio extends Widget_Base {
 	public function get_categories() {
 		return [ 'widgetkit_elementor' ];
 	}
-
+	/**
+	 * A list of style that the widgets is depended in
+	 **/
+	public function get_style_depends() {
+        return [
+            'widgetkit_base',
+            'widgetkit_demo',
+            'widgetkit_main',
+        ];
+    }
 	/**
 	 * A list of scripts that the widgets is depended in
-	 * @since 1.3.0
 	 **/
 	public function get_script_depends() {
-		return [ 'widgetkit-for-elementor-portfolio' ];
+		return [ 
+			'hoverdir',
+			'modernizr',
+			'animate-js',
+			'mixitup-js',
+			'anime-js',
+			'widgetkit-main',
+		 ];
 	}
-
+	
 	protected function _register_controls() {
 			// Content options Start
 	$this->start_controls_section(

@@ -81,15 +81,15 @@ class Widgetkit_Admin {
         add_action('admin_menu', array($this, 'widgetkit_for_elementor_admin_options'));
         // Build admin notice
         //add_action('admin_notices', array($this, 'switch_lite_welcome_admin_notice'));
+        
         // Build admin script
-        add_action('init', array( $this, 'widgetkit_for_elementor_admin_page_scripts' ) );
+        add_action('admin_enqueue_scripts', array( $this, 'widgetkit_for_elementor_admin_page_scripts' ) );
 
         // Param check
         add_action('admin_init', array( $this, 'widgetkit_for_elementor_admin_get_param_check' ) );
         // Build admin view and save
         add_action( 'wp_ajax_widgetkit_save_admin_addons_settings', array( $this, 'widgetkit_for_elementor_sections_with_ajax') );
 
-        add_action('admin_enqueue_scripts', array( $this, 'widgetkit_for_elementor_admin_script'));
     }
 
 
@@ -97,35 +97,17 @@ class Widgetkit_Admin {
  * Register scripts
  */
     public function widgetkit_for_elementor_admin_page_scripts () {
-    	// admin css
         wp_enqueue_style( 'widgetkit-admin',  plugins_url('/assets/css/admin.css', __FILE__  ));
-
-        // sweetalart css
         wp_enqueue_style( 'widgetkit-sweetalert2-css', plugins_url('/assets/css/sweetalert2.min.css', __FILE__ ));
-
-        // Admin script
+        
         wp_enqueue_script('widgetkit-elementor-admin-js', plugins_url('/assets/js/admin.js', __FILE__) , array('jquery','jquery-ui-tabs'), '1.0' , true );
-
-        // Core script
         wp_enqueue_script( 'widgetkit-sweet-js',  plugins_url('/assets/js/core.js', __FILE__), array( 'jquery' ), '1.0', true );
-
-        // Sweetalert2 script
 		wp_enqueue_script( 'widgetkit-sweetalert2-js', plugins_url('/assets/js/sweetalert2.min.js', __FILE__), array( 'jquery', 'widgetkit-sweet-js' ), '1.0', true );
-
-
+        wp_enqueue_script( 'admin-notice-js', plugins_url('/assets/js/admin-notice.js', __FILE__), array( 'jquery' ), '1.0', true );
        
     }
 
 
-
-
-
-
-
-function widgetkit_for_elementor_admin_script(){
-
-    wp_enqueue_script( 'admin-notice-js', plugins_url('/assets/js/admin-notice.js', __FILE__), array( 'jquery' ), '1.0', true );
-}
 
 function widgetkit_for_elementor_admin_get_param_check(){
 
