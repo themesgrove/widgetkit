@@ -45,7 +45,7 @@ class WKFE_Addons_Integration{
         wp_register_script( 'anime-js', WKFE_URL.'assets/js/anime.min.js' , array('jquery'), WKFE_VERSION, true);
         wp_register_script( 'widgetkit-imagesloaded', WKFE_URL.'assets/js/imagesloaded.pkgd.min.js', array('jquery'), WKFE_VERSION, true);
         wp_register_script( 'widgetkit-slider', WKFE_URL.'assets/js/slider-3.js' , array('jquery'), WKFE_VERSION, true);
-        wp_register_script( 'countdown-js', WKFE_URL.'assets/js/countdown.js' , array('jquery'), WKFE_VERSION, true);
+        wp_register_script( 'countdown', WKFE_URL.'assets/js/countdown.js' , array('jquery'), WKFE_VERSION, true);
         wp_register_script( 'widgetkit-main', WKFE_URL.'assets/js/widgetkit.js' , array('jquery'), WKFE_VERSION, true);
     }
 

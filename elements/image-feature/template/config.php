@@ -36,11 +36,21 @@ class wkfe_image_feature extends Widget_Base {
 	}
 
 	/**
+	 * A list of style that the widgets is depended in
+	 **/
+	public function get_style_depends() {
+        return [
+            'widgetkit_bs',
+            'widgetkit_main',
+        ];
+    }
+	/**
 	 * A list of scripts that the widgets is depended in
-	 * @since 1.3.0
 	 **/
 	public function get_script_depends() {
-		return [ 'widgetkit-for-elementor-image-feature' ];
+		return [ 
+			'widgetkit-main',
+		 ];
 	}
 
 	protected function _register_controls() {
