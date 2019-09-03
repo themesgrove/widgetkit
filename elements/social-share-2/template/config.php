@@ -42,7 +42,7 @@ class wkfe_social_share_2 extends Widget_Base {
 	public function get_style_depends() {
         return [
             'widgetkit_bs',
-            'fontawesome',
+            'ionsicon',
             'widgetkit_main',
         ];
     }
