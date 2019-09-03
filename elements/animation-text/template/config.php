@@ -35,11 +35,23 @@ class wkfe_animation_text extends Widget_Base {
 	}
 
 	/**
+	 * A list of style that the widgets is depended in
+	 **/
+	public function get_style_depends() {
+        return [
+            'widgetkit_bs',
+            'widgetkit_main',
+            'animate-css',
+        ];
+    }
+	/**
 	 * A list of scripts that the widgets is depended in
-	 * @since 1.3.0
 	 **/
 	public function get_script_depends() {
-		return [ 'animation-text' ];
+		return [ 
+			'animate-text',
+			'widgetkit-main',
+		 ];
 	}
 
 	protected function _register_controls() {

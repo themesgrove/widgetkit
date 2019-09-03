@@ -39,8 +39,7 @@ class wkfe_portfolio extends Widget_Base {
 	 **/
 	public function get_style_depends() {
         return [
-            'widgetkit_base',
-            'widgetkit_demo',
+            'widgetkit_bs',
             'widgetkit_main',
         ];
     }
@@ -51,7 +50,7 @@ class wkfe_portfolio extends Widget_Base {
 		return [ 
 			'hoverdir',
 			'modernizr',
-			'animate-js',
+			'animate-text',
 			'mixitup-js',
 			'anime-js',
 			'widgetkit-main',
