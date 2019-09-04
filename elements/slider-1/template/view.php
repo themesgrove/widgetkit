@@ -63,10 +63,10 @@
                 </div> <!-- /.inner -->
                 <?php if ($settings['arrow_enable_1']):?>
                     <a class="hidden-xs left carousel-control" href="#<?php echo $id; ?>" data-slide="prev">
-                        <i class="fa fa-long-arrow-left"></i>
+                        <i class="fas fa-long-arrow-alt-left"></i>
                     </a>
                     <a class="hidden-xs right carousel-control" href="#<?php echo $id; ?>" data-slide="next">
-                        <i class="fa fa-long-arrow-right "></i>
+                        <i class="fas fa-long-arrow-alt-right "></i>
                     </a>
                 <?php endif; ?>
         </div><!-- /.id -->

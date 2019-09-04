@@ -43,7 +43,7 @@ class wkfe_slider_1 extends Widget_Base {
         return [
             'widgetkit_bs',
 			'owl-css',
-            'animate-css',			
+			'animate-css',	
             'widgetkit_main',
         ];
     }
