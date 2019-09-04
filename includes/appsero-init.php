@@ -24,7 +24,7 @@ class WKFE_Appsero_Init{
         require_once WKFE_PATH . '/vendor/appsero/client/src/Client.php';
         }
 
-        $client = new Appsero\Client( '91bf222e-d4ce-4fdb-97dc-30a95fa0bff7', 'widgetkit-for-elementor', WKFE_FILE );
+        $client = new Appsero\Client( '91bf222e-d4ce-4fdb-97dc-30a95fa0bff7', 'Widgetkit For Elementor', WKFE_FILE );
 
         $client->insights()->init();
 
