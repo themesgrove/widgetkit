@@ -1,8 +1,67 @@
 var gulp = require('gulp');
-var zip = require('gulp-zip');
+var sass = require('gulp-sass');
+var minify = require('gulp-minify-css');
+var uglify = require('gulp-uglify-es').default;
 var wpPot = require('gulp-wp-pot');
 var sort = require('gulp-sort');
+var zip = require('gulp-zip');
+var del = require('del');
 
+gulp.task('styles', () => {
+  return gulp.src(['assets/scss/*.scss', 'assets/css/*.css'])
+      .pipe(sass().on('error', sass.logError))
+      .pipe(minify())
+      .pipe(gulp.dest('./dist/css/'));
+});
+
+gulp.task('js', () => {
+  return gulp.src('assets/js/*.js')
+      .pipe(uglify())
+      .pipe(gulp.dest('./dist/js/'));
+});
+
+gulp.task('fonts', function () {
+  return gulp.src('assets/fonts/*')
+      .pipe(gulp.dest('./dist/fonts/'));
+});
+
+gulp.task('images', function () {
+  return gulp.src('assets/images/*.{jpg,png}')
+      .pipe(gulp.dest('./dist/images/'));
+});
+
+gulp.task('copy-css-from-node-modules', function(){
+  return gulp.src([
+      'node_modules/animate.css/animate.min.css',
+      'node_modules/bootstrap/dist/css/bootstrap.min.css',
+      'node_modules/owl.carousel/dist/assets/owl.carousel.min.css',
+      'node_modules/owl.carousel/dist/assets/owl.theme.default.min.css',
+    ])
+      .pipe(gulp.dest('./dist/css/'));
+});
+gulp.task('copy-js-from-node-modules', function(){
+  return gulp.src([
+      'node_modules/bootstrap/dist/js/bootstrap.min.js',
+      'node_modules/owl.carousel/dist/owl.carousel.min.js',
+    ])
+      .pipe(gulp.dest('./dist/js/'));
+});
+
+gulp.task('copy-resource', gulp.series(['copy-css-from-node-modules', 'copy-js-from-node-modules']));
+
+gulp.task('clean', () => {
+  return del([
+      'dist/',
+  ]);
+});
+
+gulp.task('watch', () => {
+  gulp.watch('assets/scss/**/*', gulp.series(['styles']));
+  gulp.watch('assets/js/*', gulp.series(['js']));
+});
+
+gulp.task('build', gulp.series(['clean', 'copy-resource', 'styles', 'js', 'fonts', 'images']));
+gulp.task('default', gulp.series(['build', 'watch']));
 
 gulp.task('package', async function () {
   gulp.src([
@@ -12,12 +71,15 @@ gulp.task('package', async function () {
       '!./node_modules/**',
       '!./bower_components',
       '!./node_modules',
+      '!./assets',
       '!./vendor/composer/**',
       '!./vendor/autoload.php',
       '!gulpfile.js',
       '!package.json',
       '!composer.json',
       '!*.json',
+      '!*.log',
+      '!*.zip',
       '!*.config.js',
       '!*.lock',
       '!*.phar',

@@ -1,6 +1,5 @@
 jQuery(document).ready(function($){
 
-
 /* ========================================================================= */
 /*  Portfolio filter js
 /* ========================================================================= */ 
@@ -38,8 +37,6 @@ jQuery(document).ready(function($){
         });
       };
 
-
-
       [1,2,3,4].forEach(function(i) {
         if($('.hover-' + i).length){
           $('.hover-'+ i).mixItUp({
@@ -55,11 +52,6 @@ jQuery(document).ready(function($){
     jQuery(document).ready(function(){
       $('#hover-1 .portfolio-item').each( function() { $(this).hoverdir(); } );
     });
-
-    // $(document).ready(function(){
-    //     $("a[data-rel^='lightcase']").lightcase();
-    // });
-
 
 /* ========================================================================= */
 /*  SLider height browser js
@@ -97,8 +89,6 @@ if($('.tgx-project').length){
         }
      });
   };
-
-
 
 });
 
