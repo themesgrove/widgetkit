@@ -17,7 +17,7 @@
                 <?php if ($testimonial['testimoni_image_2']):?>
                   <div class="author">
                         <span>
-                            <img class="testimony-image" src="<?php echo $testimonial['testimoni_image_2']['url']; ?>" alt="<?php the_title(); ?>">
+                            <img class="testimonial-image" src="<?php echo $testimonial['testimoni_image_2']['url']; ?>" alt="<?php the_title(); ?>">
                         </span>     
                   </div>
                 <?php endif;?>

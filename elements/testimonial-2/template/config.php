@@ -307,8 +307,7 @@ class wkfe_testimonial_2 extends Widget_Base {
 				'label' => esc_html__( 'Border', 'widgetkit-for-elementor' ),
 				'placeholder' => '1px',
 				'default'  => '1px',
-				'selector' => '
-				{{WRAPPER}} .tgx-testimonial-2 .testimoni-image',
+				'selector' => '{{WRAPPER}} .tgx-testimonial-2 .testimonial-image',
 				'separator' => 'before',
 			]
 		);
@@ -321,7 +320,7 @@ class wkfe_testimonial_2 extends Widget_Base {
 				'type'  => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .tgx-testimonial-2 .testimoni-image' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .tgx-testimonial-2 .testimonial-image' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
