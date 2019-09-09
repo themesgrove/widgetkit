@@ -131,7 +131,7 @@ class WKFE_Elements{
         if( $check_component_active['widget-social-share-collapse'] ) {
             require_once WKFE_PATH . '/elements/social-share-2/widget.php';
         }
-        require_once WKFE_PATH . '/elements/pros-cons/widget.php';
+        require_once WKFE_PATH . '/elements/feature-list/widget.php';
 
     }
 

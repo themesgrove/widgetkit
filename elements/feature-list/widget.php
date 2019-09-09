@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class Widgetkit_For_Elementor_Pros_Cons{
+class Widgetkit_For_Elementor_Feature_List{
 
 	/**
 	 * Constructor
@@ -55,7 +55,7 @@ class Widgetkit_For_Elementor_Pros_Cons{
 	 * @access private
 	 */
 	private function includes() {
-		require_once WKFE_PATH  . '/elements/pros-cons/template/config.php';
+		require_once WKFE_PATH  . '/elements/feature-list/template/config.php';
 	}
 
 	/**
@@ -66,8 +66,8 @@ class Widgetkit_For_Elementor_Pros_Cons{
 	 * @access private
 	 */
 	private function register_widget() {
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new WKFE_Pros_Cons_Config() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new WKFE_Feature_List_Config() );
 	}
 }
 
-new Widgetkit_For_Elementor_Pros_Cons();
+new Widgetkit_For_Elementor_Feature_List();

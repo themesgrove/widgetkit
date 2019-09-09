@@ -533,29 +533,29 @@ class wkfe_blog_1 extends Widget_Base {
 
 
 
-       $this->add_responsive_control(
+       	$this->add_responsive_control(
 			'blog_1_btn_text_size',
-				[
-					'label'   => esc_html__( 'Icon Size', 'widgetkit-for-elementor' ),
-					'type'    => Controls_Manager::SLIDER,
-					'default' => [
-						'size' =>20,
+			[
+				'label'   => esc_html__( 'Icon Size', 'widgetkit-for-elementor' ),
+				'type'    => Controls_Manager::SLIDER,
+				'default' => [
+					'size' =>20,
+				],
+				'range'  => [
+					'px' => [
+						'min' => 16,
+						'max' => 24,
 					],
-					'range'  => [
-						'px' => [
-							'min' => 16,
-							'max' => 24,
-						],
-					],
-					'selectors' => [
-						'{{WRAPPER}} .tgx-blog-1 .owl-carousel-left i, 
-						{{WRAPPER}} .tgx-blog-1 .owl-carousel-right i' => 'font-size: {{SIZE}}{{UNIT}};',
-					],
-					'condition' => [
-						'blog_1_nav_enable' => 'yes',
-					],
-				]
-			);
+				],
+				'selectors' => [
+					'{{WRAPPER}} .tgx-blog-1 .owl-carousel-left i, 
+					{{WRAPPER}} .tgx-blog-1 .owl-carousel-right i' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'blog_1_nav_enable' => 'yes',
+				],
+			]
+		);
 
 
 	$this->start_controls_tabs( 'blog_1_tabs_button_style' );
