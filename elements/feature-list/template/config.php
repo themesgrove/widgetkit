@@ -49,6 +49,80 @@ class WKFE_Feature_List_Config extends Widget_Base {
 	}
 
 	protected function _register_controls() {
+
+	$this->start_controls_section(
+		'heading_layout', 
+		[
+			'label' => esc_html__('Layout', 'widgetkit-for-elementor')
+		]
+	);
+		$this->add_responsive_control(
+			'layout_align',
+			[
+				'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
+				'type'  => Controls_Manager::CHOOSE,
+				'default'   => 'left',
+				'options' => [
+					'left'    => [
+						'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
+						'icon'  => 'eicon-h-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
+						'icon'  => 'eicon-v-align-bottom',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
+						'icon'  => 'eicon-h-align-right',
+					],
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'title_icon_width',
+			[
+				'label'   => esc_html__( 'Icon Width', 'widgetkit-for-elementor' ),
+				'type'    => Controls_Manager::SLIDER,
+				'default' => [
+					'size' =>50,
+				],
+				'range'  => [
+					'px' => [
+						'min' => 0,
+						'max' => 200,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .wkfe-feature-list h2.title span.icon' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'layout_align' => ['center','right'],
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'title_icon_radius',
+			[
+				'label'   => esc_html__( 'Icon Width', 'widgetkit-for-elementor' ),
+				'type'    => Controls_Manager::SLIDER,
+				'default' => [
+					'size' =>50,
+				],
+				'range'  => [
+					'px' => [
+						'min' => 0,
+						'max' => 200,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .wkfe-feature-list h2.title span.icon' => 'border-radius: {{SIZE}}{{UNIT}}',
+				],
+				'condition' => [
+					'layout_align' => ['center','right'],
+				],
+			]
+		);
+	$this->end_controls_section();
 	
 	$this->start_controls_section(
 		'section_feature_content',
@@ -152,6 +226,18 @@ class WKFE_Feature_List_Config extends Widget_Base {
 			],
 		]
 	);
+	// $this->add_control(
+	// 	'title_background',
+	// 	[
+	// 		'label'     => esc_html__( 'Background', 'widgetkit-for-elementor' ),
+	// 		'type'      => Controls_Manager::COLOR,
+	// 		'default'   => '#f5f5f5',
+	// 		'selectors' => [
+	// 			'{{WRAPPER}} .wkfe-feature-list h2.title' => 'background-color: {{VALUE}};',
+	// 		],
+	// 	]
+	// );
+	
 	$this->add_control(
 		'title_background',
 		[
@@ -161,8 +247,41 @@ class WKFE_Feature_List_Config extends Widget_Base {
 			'selectors' => [
 				'{{WRAPPER}} .wkfe-feature-list h2.title' => 'background-color: {{VALUE}};',
 			],
+			'condition' => [
+				'layout_align' => ['left', 'right'],
+			]
 		]
 	);
+
+	$this->add_control(
+		'title_background_center',
+		[
+			'label'     => esc_html__( 'Background', 'widgetkit-for-elementor' ),
+			'type'      => Controls_Manager::COLOR,
+			'default'   => '#f5f5f5',
+			'selectors' => [
+				'{{WRAPPER}} .wkfe-feature-list h2.title span.title-text' => 'display:block; background-color: {{VALUE}};',
+			],
+			'condition' => [
+				'layout_align' => ['center'],
+			]
+		]
+	);
+	$this->add_control(
+		'title_box_bg',
+		[
+			'label'     => esc_html__( 'Box Background', 'widgetkit-for-elementor' ),
+			'type'      => Controls_Manager::COLOR,
+			'default'   => '#f5f5f5',
+			'selectors' => [
+				'{{WRAPPER}} .wkfe-feature-list h2.title' => 'background-color: {{VALUE}};',
+			],
+			'condition' => [
+				'layout_align' => ['center'],
+			]
+		]
+	);
+
 	$this->add_responsive_control(
 		'title_padding',
 		[
@@ -172,9 +291,26 @@ class WKFE_Feature_List_Config extends Widget_Base {
 			'selectors'  => [
 				'{{WRAPPER}} .wkfe-feature-list h2.title span.title-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 			],
-			// 'separator' => 'before',
+			'condition' => [
+				'layout_align' => ['left', 'right'],
+			]
 		]
 	);
+	$this->add_responsive_control(
+		'title_center_padding',
+		[
+			'label' => esc_html__( 'Title Padding', 'widgetkit-for-elementor' ),
+			'type'  => Controls_Manager::DIMENSIONS,
+			'size_units' => [ 'px', '%' ],
+			'selectors'  => [
+				'{{WRAPPER}} .wkfe-feature-list h2.title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+			],
+			'condition' => [
+				'layout_align' => ['center'],
+			]
+		]
+	);
+	
 	$this->add_control(
 		'title_border_color',
 		[
@@ -270,8 +406,35 @@ class WKFE_Feature_List_Config extends Widget_Base {
 			'selectors' => [
 				'{{WRAPPER}} .wkfe-feature-list h2.title span.icon' => 'margin-right: {{SIZE}}{{UNIT}};',
 			],
+			'condition' => [
+				'layout_align' => ['left', 'right'],
+			]
 		]
 	);
+	
+	$this->add_responsive_control(
+		'title_icon_center_spacing',
+		[
+			'label'   => esc_html__( 'Icon Spacing', 'widgetkit-for-elementor' ),
+			'type'    => Controls_Manager::SLIDER,
+			'default' => [
+				'size' =>10,
+			],
+			'range'  => [
+				'px' => [
+					'min' => 0,
+					'max' => 200,
+				],
+			],
+			'selectors' => [
+				'{{WRAPPER}} .wkfe-feature-list h2.title span.icon' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+			],
+			'condition' => [
+				'layout_align' => ['center'],
+			]
+		]
+	);
+
 	$this->add_responsive_control(
 		'title_icon_padding',
 		[

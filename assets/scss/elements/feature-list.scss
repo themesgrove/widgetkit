@@ -46,5 +46,38 @@
             }
         }
     }
+    .column{
+        .layout-right{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            span.icon{
+                justify-content: center;
+                &:after{
+                    content: none;
+                }
+            }
+        }
+    }
+    .column{
+        .layout-center{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            span.icon{
+                justify-content: center;
+                margin:0;
+                &:after{
+                    content: none;
+                }
+            }
+            span.title-text{
+                width:100%;
+                text-align: center;
+            }
+        }
+        
+    }
     
 }

@@ -71,7 +71,7 @@ gulp.task('package', async function () {
       '!./node_modules/**',
       '!./bower_components',
       '!./node_modules',
-      '!./assets',
+      '!./assets/**',
       '!./vendor/composer/**',
       '!./vendor/autoload.php',
       '!gulpfile.js',

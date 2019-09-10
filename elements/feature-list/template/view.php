@@ -1,5 +1,6 @@
 <?php
     $settings = $this->get_settings();
+    $alignment = widgetkit_for_elementor_array_get($settings, 'layout_align');
     $title = widgetkit_for_elementor_array_get($settings, 'feature_title');
     $icon = widgetkit_for_elementor_array_get($settings, 'feature_icon');
     $lists = widgetkit_for_elementor_array_get($settings, 'feature_lists');
@@ -9,7 +10,7 @@
         <div class="feature-list-wrapper">
 
             <div class="col-md-12 column">
-                <h2 class="title">
+                <h2 class="title <?php echo 'layout-'.$alignment ?>">
                     <span class="icon">
                         <i class="<?php echo $icon; ?>"></i>
                     </span>
