@@ -40,8 +40,8 @@ class wkfe_animation_text extends Widget_Base {
 	public function get_style_depends() {
         return [
             'widgetkit_bs',
+            'animate-text',
             'widgetkit_main',
-            'animate-css',
         ];
     }
 	/**
