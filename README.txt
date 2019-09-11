@@ -23,6 +23,17 @@ Elementor is a great tool for building website, but without proper addons it mig
 
 We aim to enhance your experience, it does not matter whether you are a developer or a designer. Our goal is to give you the perfect tool that is build for WordPress professionals. 
 
+== Some of the best WP themes built with WidgetKit ==
+
+
+
+> <a href="https://1.envato.market/0OjO">Education WordPress Theme</a> with all major LMS eg: LifterLMS, LearnDash, Sensei supported.
+> <a href="https://1.envato.market/my0QZ">Tour & Travel Agency WordPress Theme</a> with booking, packaging and page builder.
+> Best <a href="https://1.envato.market/q6BPO">Games & Movie Review WP Themes</a> with review, rating, IMDB integration
+> <a href="https://1.envato.market/QdWkz">Event WordPress Theme</a> for tech, music, festival and social events.
+
+
+
 You can only decide to use Widgetkit after viewing by yourself. See it by yourself from here-
 
 ##<a href="http://widgetkit.themesgrove.com/">Live Demo</a>
@@ -148,6 +159,11 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+= 1.5.5 = 
+* New - Pros and Cons Element
+* Fixed - Spacing issue of Slider Animation 
+* Update - Code structure
+
 = 1.5.4 = 
 * Fixed - Bug
 

@@ -16,7 +16,7 @@ class WKFE_Feature_List_Config extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Feature List', 'widgetkit-for-elementor' );
+		return esc_html__( 'Pros & Cons', 'widgetkit-for-elementor' );
 	}
 
 	public function get_icon() {
@@ -174,11 +174,23 @@ class WKFE_Feature_List_Config extends Widget_Base {
                 'fields'  => array_values( $repeater->get_controls() ),
                 'default' => [
                     [
-                        'single_feature_input' => esc_html__( 'Feature 1', 'widgetkit-for-elementor' ),
+                        'single_feature_input' => esc_html__( 'This is my awesome feature.', 'widgetkit-for-elementor' ),
                         'single_feature_icon' => esc_html__( 'fa fa-check', 'widgetkit-for-elementor' ),
                     ],
                     [
-                        'single_feature_input' => esc_html__( 'Feature 2', 'widgetkit-for-elementor' ),
+                        'single_feature_input' => esc_html__( 'My product feature is beautiful.', 'widgetkit-for-elementor' ),
+                        'single_feature_icon' => esc_html__( 'fa fa-check', 'widgetkit-for-elementor' ),
+					],
+					[
+                        'single_feature_input' => esc_html__( 'It will serve you whatever you want.', 'widgetkit-for-elementor' ),
+                        'single_feature_icon' => esc_html__( 'fa fa-check', 'widgetkit-for-elementor' ),
+					],
+					[
+                        'single_feature_input' => esc_html__( 'My product is developed based on market niche.', 'widgetkit-for-elementor' ),
+                        'single_feature_icon' => esc_html__( 'fa fa-check', 'widgetkit-for-elementor' ),
+					],
+					[
+                        'single_feature_input' => esc_html__( 'I am very proud of my product.', 'widgetkit-for-elementor' ),
                         'single_feature_icon' => esc_html__( 'fa fa-check', 'widgetkit-for-elementor' ),
                     ],
                     
@@ -226,17 +238,6 @@ class WKFE_Feature_List_Config extends Widget_Base {
 			],
 		]
 	);
-	// $this->add_control(
-	// 	'title_background',
-	// 	[
-	// 		'label'     => esc_html__( 'Background', 'widgetkit-for-elementor' ),
-	// 		'type'      => Controls_Manager::COLOR,
-	// 		'default'   => '#f5f5f5',
-	// 		'selectors' => [
-	// 			'{{WRAPPER}} .wkfe-feature-list h2.title' => 'background-color: {{VALUE}};',
-	// 		],
-	// 	]
-	// );
 	
 	$this->add_control(
 		'title_background',
@@ -577,7 +578,7 @@ class WKFE_Feature_List_Config extends Widget_Base {
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/feature-list/template/view.php';
+		require WKFE_PATH . '/elements/pros-cons/template/view.php';
 	}
 
 

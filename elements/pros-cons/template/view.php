@@ -19,7 +19,7 @@
                 <ul class="lists">
                     <?php foreach($lists as $list): ?>
                         <li>
-                            <i class="<?echo $list['single_feature_icon']; ?>"></i>
+                            <i class="<?php echo $list['single_feature_icon']; ?>"></i>
                             <span>
                                 <?php echo $list['single_feature_input']; ?>
                             </span>
