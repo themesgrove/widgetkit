@@ -5,7 +5,7 @@ Donate link: https://themesgrove.com/
 Tags: Elementor, Elementor Page Builder, Elements, Widget, Elementor Addons, Add-ons, Page Builder, Countdown, Timer, Slider, Team, E-commerce, Testimonial, Blog, Social-share, Button, Modal, Carousel, Portfolio, Pricing, Image-box, Icon-box, Element Kit, Widgetkit
 Requires at least: 4.0
 Tested up to: 5.2.2
-Stable tag: 1.5.4
+Stable tag: 1.5.5
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,18 +19,19 @@ Simple & Visually appealing site always attracts the attention of viewer. Creati
 
 Merge WidgetKit with Elementor and take the experience of ultimate page building. WIth Widgetkit build any layouts in shortest time, it doesn’t matter whether the layout is simple or complex. If you can think it, you can build it with Widgetkit. 
 
-Elementor is a great tool for building website, but without proper addons it might take more time and money. Even sometimes you do not get your preferred layouts and sections in spite of using premium addons. 
-
-We aim to enhance your experience, it does not matter whether you are a developer or a designer. Our goal is to give you the perfect tool that is build for WordPress professionals. 
-
 == Some of the best WP themes built with WidgetKit ==
-
 
 
 > <a href="https://1.envato.market/0OjO">Education WordPress Theme</a> with all major LMS eg: LifterLMS, LearnDash, Sensei supported.
 > <a href="https://1.envato.market/my0QZ">Tour & Travel Agency WordPress Theme</a> with booking, packaging and page builder.
 > Best <a href="https://1.envato.market/q6BPO">Games & Movie Review WP Themes</a> with review, rating, IMDB integration
 > <a href="https://1.envato.market/QdWkz">Event WordPress Theme</a> for tech, music, festival and social events.
+
+
+
+Elementor is a great tool for building website, but without proper addons it might take more time and money. Even sometimes you do not get your preferred layouts and sections in spite of using premium addons. 
+
+We aim to enhance your experience, it does not matter whether you are a developer or a designer. Our goal is to give you the perfect tool that is build for WordPress professionals. 
 
 
 
