@@ -56,7 +56,7 @@ class WKFE_Feature_List_Config extends Widget_Base {
 			'label' => esc_html__('Layout', 'widgetkit-for-elementor')
 		]
 	);
-		$this->add_responsive_control(
+		$this->add_control(
 			'layout_align',
 			[
 				'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
