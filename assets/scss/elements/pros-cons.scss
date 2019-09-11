@@ -8,6 +8,10 @@
             margin:0;
             border-bottom:solid 1px $heading-bg-color;
             background-color:$heading-bg-color;
+
+            //this before is only for twenty nineteen theme
+            &::before{content: none;}
+
             span.icon{
                 background:white;
                 padding:8px 24px;
@@ -41,6 +45,7 @@
             padding:0;
             list-style-type: none;
             padding:20px;
+            font-size:$default-font-size;
             li{
                 line-height:1.5;
             }

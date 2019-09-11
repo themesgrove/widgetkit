@@ -306,6 +306,14 @@ class WKFE_Feature_List_Config extends Widget_Base {
 			'selectors'  => [
 				'{{WRAPPER}} .wkfe-feature-list h2.title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 			],
+			'default' => [
+				'top' => '15',
+				'right' => '15',
+				'bottom' => '0',
+				'left' => '15',
+				'unit' => 'px',
+				'isLinked' => false,
+			],
 			'condition' => [
 				'layout_align' => ['center'],
 			]
@@ -372,7 +380,7 @@ class WKFE_Feature_List_Config extends Widget_Base {
 		[
 			'label'     => esc_html__( 'Icon Color', 'widgetkit-for-elementor' ),
 			'type'      => Controls_Manager::COLOR,
-			'default'   => '#333',
+			'default'   => '#fff',
 			'selectors' => [
 				'{{WRAPPER}} .wkfe-feature-list h2.title span.icon' => 'color: {{VALUE}};',
 			],
@@ -383,7 +391,7 @@ class WKFE_Feature_List_Config extends Widget_Base {
 		[
 			'label'     => esc_html__( 'Icon Background', 'widgetkit-for-elementor' ),
 			'type'      => Controls_Manager::COLOR,
-			'default'   => '#fff',
+			'default'   => '#23a455',
 			'selectors' => [
 				'{{WRAPPER}} .wkfe-feature-list h2.title span.icon' => 'background-color: {{VALUE}};',
 				'{{WRAPPER}} .wkfe-feature-list h2.title span.icon:after' => 'border-left-color: {{VALUE}};',
@@ -419,7 +427,7 @@ class WKFE_Feature_List_Config extends Widget_Base {
 			'label'   => esc_html__( 'Icon Spacing', 'widgetkit-for-elementor' ),
 			'type'    => Controls_Manager::SLIDER,
 			'default' => [
-				'size' =>10,
+				'size' => 0,
 			],
 			'range'  => [
 				'px' => [
@@ -528,7 +536,7 @@ class WKFE_Feature_List_Config extends Widget_Base {
 		[
 			'label'     => esc_html__( 'Icon Color', 'widgetkit-for-elementor' ),
 			'type'      => Controls_Manager::COLOR,
-			'default'   => '#333',
+			'default'   => '#23a455',
 			'selectors' => [
 				'{{WRAPPER}} .wkfe-feature-list li i' => 'color: {{VALUE}};',
 			],
