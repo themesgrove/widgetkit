@@ -132,6 +132,7 @@ class WKFE_Elements{
             require_once WKFE_PATH . '/elements/social-share-2/widget.php';
         }
         require_once WKFE_PATH . '/elements/pros-cons/widget.php';
+        require_once WKFE_PATH . '/elements/click-tweet/widget.php';
 
     }
 

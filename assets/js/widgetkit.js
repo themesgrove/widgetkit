@@ -63,8 +63,8 @@ jQuery(document).ready(function($){
         $('#tgx-hero-unit .carousel-inner .item') .css({'height': (($(window).height()))+'px'});
     });
 
-if($('.tgx-project').length){
-  jQuery(".tgx-project").addClass("owl-carousel").owlCarousel({
+  if($('.tgx-project').length){
+    jQuery(".tgx-project").addClass("owl-carousel").owlCarousel({
         pagination: true,
         center: true,
         margin:100,
@@ -90,6 +90,18 @@ if($('.tgx-project').length){
      });
   };
 
+  /**
+   * click to tweet 
+   */
+  $('.wkfe-click-to-tweet .wkfe-tweet').on('click', function(){
+    var siteLink = window.location.href.split('?')[0];
+    var tweetText = $(this).parentsUntil(".wkfe-click-to-tweet").find('.tweet-text').text().trim();
+    var tweetUrl = "https://twitter.com/share?url=" + encodeURIComponent(siteLink) +  "&text=" + encodeURIComponent(tweetText);
+    window.open(tweetUrl, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=100,width=720,height=500");
+  })
+
+
+// end of wrapper function  
 });
 
 
