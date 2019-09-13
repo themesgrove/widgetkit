@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var minify = require('gulp-minify-css');
+// var minify = require('gulp-minify-css');
 var uglify = require('gulp-uglify-es').default;
 var wpPot = require('gulp-wp-pot');
 var sort = require('gulp-sort');
@@ -10,7 +10,7 @@ var del = require('del');
 gulp.task('styles', () => {
   return gulp.src(['assets/scss/*.scss', 'assets/css/*.css'])
       .pipe(sass().on('error', sass.logError))
-      .pipe(minify())
+      // .pipe(minify())
       .pipe(gulp.dest('./dist/css/'));
 });
 
@@ -36,6 +36,7 @@ gulp.task('copy-css-from-node-modules', function(){
       'node_modules/bootstrap/dist/css/bootstrap.min.css',
       'node_modules/owl.carousel/dist/assets/owl.carousel.min.css',
       'node_modules/owl.carousel/dist/assets/owl.theme.default.min.css',
+      'node_modules/uikit/dist/css/uikit.min.css',
     ])
       .pipe(gulp.dest('./dist/css/'));
 });
@@ -43,6 +44,8 @@ gulp.task('copy-js-from-node-modules', function(){
   return gulp.src([
       'node_modules/bootstrap/dist/js/bootstrap.min.js',
       'node_modules/owl.carousel/dist/owl.carousel.min.js',
+      'node_modules/uikit/dist/js/uikit.min.js',
+      'node_modules/uikit/dist/js/uikit-icons.min.js',
     ])
       .pipe(gulp.dest('./dist/js/'));
 });
