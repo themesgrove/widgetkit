@@ -53,28 +53,33 @@ class Widgetkit_Admin {
     }
 
 
-/**
- * Register a custom opitons.
- */
-	function widgetkit_for_elementor_admin_options(){
+    /**
+     * Register a custom opitons.
+     */
+	public function widgetkit_for_elementor_admin_options(){
 	    add_menu_page( 
-
 	        'Admin Menu',
-	        __( 'Widgetkit', 'widgetkit-for-elementor' ),
+	        __( 'WidgetKit', 'widgetkit-for-elementor' ),
 	        'manage_options',
 	        'widgetkit-settings',
 	        array($this, 'display_settings_pages'),
-	        plugins_url('/assets/images/menu-icon.png', __FILE__ ), 100
-	    ); 
+	        plugins_url('/assets/images/menu-icon.png', __FILE__ ), 30
+        ); 
+        add_submenu_page( 
+            'widgetkit-settings', 
+            '', 
+            '<span class="dashicons dashicons-star-filled" style="color:#f44336; font-size: 17px"></span> ' . __( 'Go Pro', 'widgetkit-for-elementor' ) ,
+            'manage_options', 
+            'widgetkit-gopro', 
+            array($this, 'handle_external_redirects')
+        );
 	}
 
-	
 
 
-
-/**
- * Register all hooks
- */
+    /**
+     * Register all hooks
+     */
     public function init_hooks() {
 
         // Build admin main menu
@@ -93,9 +98,9 @@ class Widgetkit_Admin {
     }
 
 
-/**
- * Register scripts
- */
+    /**
+     * Register scripts
+     */
     public function widgetkit_for_elementor_admin_page_scripts () {
         wp_enqueue_style( 'widgetkit-admin',  plugins_url('/assets/css/admin.css', __FILE__  ));
         wp_enqueue_style( 'widgetkit-sweetalert2-css', plugins_url('/assets/css/sweetalert2.min.css', __FILE__ ));
@@ -109,16 +114,26 @@ class Widgetkit_Admin {
 
 
 
-function widgetkit_for_elementor_admin_get_param_check(){
+    public function widgetkit_for_elementor_admin_get_param_check(){
+        if (isset($_GET['dismissed']) && $_GET['dismissed'] == 1) {
+            update_option("notice_dissmissed", 1);
+        }
+        $this->handle_external_redirects();
+    }
 
-if (isset($_GET['dismissed']) && $_GET['dismissed'] == 1) {
-    update_option("notice_dissmissed", 1);
-}
-}
+    public function handle_external_redirects() {
+        if ( empty( $_GET['page'] ) ) {
+            return;
+        }
+        if ( 'widgetkit-gopro' === $_GET['page'] ) {
+            wp_redirect( 'https://themesgrove.com/widgetkit-for-elementor/?utm_source=wp-menu&utm_campaign=widgetkit_gopro&utm_medium=wp-dash' );
+            exit;
+        }
+    }
 
     /**
- * Register display view
- */
+     * Register display view
+     */
 
     public function display_settings_pages() {
 
