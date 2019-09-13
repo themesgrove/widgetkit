@@ -2,7 +2,7 @@
 /*
 Plugin Name: WidgetKit for Elementor
 Description: Huge collection of pro quality element or section for use in Elementor page builder,which you help to create any kind of complicated design without coding.  Elementor Page Builder must be installed and activated.
-Version: 1.5.6
+Version: 1.5.7
 Text Domain: widgetkit-for-elementor
 Author: Themesgrove
 Author URI: https://themesgrove.com
@@ -42,13 +42,16 @@ Domain Path: /languages
 
         public function plugin_setup() {
             $this->load_text_domain();
-            $this->load_admin_files();
+            if(is_admin()){
+                $this->check_dependency();
+                $this->load_admin_files();
+            }
         }
         public function load_admin_files() {
             require_once(WKFE_PATH. 'includes/appsero-init.php');
             require_once(WKFE_PATH. 'includes/widgetkit-pro-init.php');
             require_once(WKFE_PATH. 'includes/elements.php');
-
+            
             WKFE_Appsero_Init::init();
             WKFE_PRO_Init::init();
             WKFE_Elements::init();
@@ -62,12 +65,15 @@ Domain Path: /languages
         }
         public function elementor_addons() {
             require_once ( WKFE_PATH . 'includes/addons-integration.php' );
-            require_once ( WKFE_PATH . 'includes/addons-integration-old.php' );
             WKFE_Addons_Integration::init();
-            // WKFE_Addons_Integration_Old::init();
         }
         public function elementor_resources() {
             $this->elementor_addons();
+        }
+
+        public function check_dependency(){
+            require_once(WKFE_PATH. 'includes/dependency.php');
+            WKFE_Dependency::init();
         }
 
     }

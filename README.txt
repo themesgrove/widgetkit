@@ -160,7 +160,7 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
-= 1.5.5 = 
+= 1.5.6 = 
 * New - Click to Tweet Element
 
 = 1.5.5 = 
