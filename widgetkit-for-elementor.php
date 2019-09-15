@@ -42,9 +42,9 @@ Domain Path: /languages
 
         public function plugin_setup() {
             $this->load_text_domain();
+            $this->load_admin_files();
             if(is_admin()){
                 $this->check_dependency();
-                $this->load_admin_files();
             }
         }
         public function load_admin_files() {
