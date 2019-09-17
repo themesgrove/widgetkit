@@ -187,6 +187,34 @@ class wkfe_team_4 extends Widget_Base {
 
 		$this->end_controls_section();
 
+			
+	/**
+	 * Pro control panel 
+	 */
+	if(!apply_filters('check_pro', false)):
+		$this->start_controls_section(
+			'section_widgetkit_pro_box',
+			[
+				'label' => esc_html__( 'Go Premium for more layout & feature', 'widgetkit-for-elementor' ),
+			]
+		);
+			$this->add_control(
+				'wkfe_control_go_pro',
+				[
+					'label' => __('Unlock more possibilities', 'widgetkit-for-elementor'),
+					'type' => Controls_Manager::CHOOSE,
+					'default' => '1',
+					'description' => '<div class="elementor-nerd-box">
+					<div class="elementor-nerd-box-message"> Get the  <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">Pro version</a> of <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">WidgetKit</a> for more stunning elements and customization options.</div>
+					<a class="widgetkit-go-pro elementor-nerd-box-link elementor-button elementor-button-default elementor-go-pro" href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">Go Pro</a>
+					</div>',
+				]
+			);
+		$this->end_controls_section();
+	endif;
+
+	
+
 		$this->start_controls_section(
 			'team_4_title_icon_style',
 			[
