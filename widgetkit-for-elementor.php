@@ -31,6 +31,7 @@ Domain Path: /languages
             add_action( 'plugins_loaded', array( $this, 'plugin_setup' ) );
             add_action( 'elementor/init', array( $this, 'elementor_init' ) );
             add_action( 'init', array( $this, 'elementor_resources' ), -999 );
+            add_action('admin_head', array($this, 'remove_all_admin_notice'));
         }
 
         public function activate(){
@@ -76,6 +77,16 @@ Domain Path: /languages
         public function check_dependency(){
             require_once(WKFE_PATH. 'includes/dependency.php');
             WKFE_Dependency::init();
+        }
+        public function remove_all_admin_notice(){
+            global $wp;  
+            $current_url = add_query_arg(array($_GET), $wp->request);
+            $current_url_slug = explode("=", $current_url);
+            if($current_url && $current_url_slug[1] === 'widgetkit-settings'){
+                if (is_super_admin()) {
+                    remove_all_actions('admin_notices');
+                }
+            }
         }
 
     }
