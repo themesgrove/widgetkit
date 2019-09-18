@@ -1,4 +1,4 @@
-=== WidgetKit for Elementor ===
+=== All-in-One Addons for Elementor - WidgetKit ===
 
 Contributors: Themesgrove, parvezvai, themexpert
 Donate link: https://themesgrove.com/
