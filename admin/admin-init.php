@@ -1,18 +1,17 @@
-<?php 
+<?php
 
-class Widgetkit_Admin {
+class Widgetkit_Admin
+{
+    // Widgets keys
 
-
-// Widgets keys
-
-     public $widgetkit_elements_keys = [
-        'widget-slider-animation', 
-        'widget-slider-content-animation', 
-        'widget-slider-box-animation', 
+    public $widgetkit_elements_keys = [
+        'widget-slider-animation',
+        'widget-slider-content-animation',
+        'widget-slider-box-animation',
         'widget-portfolio',
-        'widget-pricing-single', 
-        'widget-pricing-icon', 
-        'widget-pricing-tab', 
+        'widget-pricing-single',
+        'widget-pricing-icon',
+        'widget-pricing-tab',
         'widget-testimonial-single',
         'widget-testimonial-center',
         'widget-team-overlay',
@@ -34,24 +33,21 @@ class Widgetkit_Admin {
         'widget-social-share-collapse',
     ];
 
-	// Default settings
-	private $widgetkit_default_settings;
-	// Switch settings
-	private $widgetkit_settings;
+    // Default settings
+    private $widgetkit_default_settings;
+    // Switch settings
+    private $widgetkit_settings;
     // Switch get settings
     private $widgetkit_get_settings;
 
-
-/**
- * Register construct
- */
-	public function __construct() {
-
+    /**
+     * Register construct
+     */
+    public function __construct()
+    {
         //$this->includes();
         $this->init_hooks();
-
     }
-
 
     /**
      * Register a custom opitons.
@@ -73,30 +69,26 @@ class Widgetkit_Admin {
             'widgetkit-gopro', 
             array($this, 'handle_external_redirects')
         );
-	}
-
-
+    }
 
     /**
      * Register all hooks
      */
-    public function init_hooks() {
-
+    public function init_hooks()
+    {
         // Build admin main menu
-        add_action('admin_menu', array($this, 'widgetkit_for_elementor_admin_options'));
+        add_action('admin_menu', [$this, 'widgetkit_for_elementor_admin_options']);
         // Build admin notice
         //add_action('admin_notices', array($this, 'switch_lite_welcome_admin_notice'));
-        
+
         // Build admin script
-        add_action('admin_enqueue_scripts', array( $this, 'widgetkit_for_elementor_admin_page_scripts' ) );
+        add_action('admin_enqueue_scripts', [$this, 'widgetkit_for_elementor_admin_page_scripts']);
 
         // Param check
-        add_action('admin_init', array( $this, 'widgetkit_for_elementor_admin_get_param_check' ) );
+        add_action('admin_init', [$this, 'widgetkit_for_elementor_admin_get_param_check']);
         // Build admin view and save
-        add_action( 'wp_ajax_widgetkit_save_admin_addons_settings', array( $this, 'widgetkit_for_elementor_sections_with_ajax') );
-
+        add_action('wp_ajax_widgetkit_save_admin_addons_settings', [$this, 'widgetkit_for_elementor_sections_with_ajax']);
     }
-
 
     /**
      * Register scripts
@@ -109,27 +101,34 @@ class Widgetkit_Admin {
         wp_enqueue_script( 'widgetkit-sweet-js',  plugins_url('/assets/js/core.js', __FILE__), array( 'jquery' ), '1.0', true );
 		wp_enqueue_script( 'widgetkit-sweetalert2-js', plugins_url('/assets/js/sweetalert2.min.js', __FILE__), array( 'jquery', 'widgetkit-sweet-js' ), '1.0', true );
         wp_enqueue_script( 'admin-notice-js', plugins_url('/assets/js/admin-notice.js', __FILE__), array( 'jquery' ), '1.0', true );
-       // Uikit
-       wp_enqueue_style( 'uikit',  plugins_url('/dist/css/uikit.min.css', dirname(__FILE__)  ));
-       wp_enqueue_script( 'uikit',  plugins_url('/dist/js/uikit.min.js', dirname(__FILE__)  ));
-       wp_enqueue_script( 'uikit-icon',  plugins_url('/dist/js/uikit-icons.min.js', dirname(__FILE__)  ));
+       /**
+        * Load uikit only inside widgetkit setting page
+        */
+        global $wp;  
+        $current_url = add_query_arg(array($_GET), $wp->request);
+        $current_url_slug = explode("=", $current_url);
+        if($current_url && $current_url_slug[1] === 'widgetkit-settings' ){
+            wp_enqueue_style( 'uikit',  plugins_url('/dist/css/uikit.min.css', dirname(__FILE__)  ));
+            wp_enqueue_script( 'uikit',  plugins_url('/dist/js/uikit.min.js', dirname(__FILE__)  ));
+            wp_enqueue_script( 'uikit-icon',  plugins_url('/dist/js/uikit-icons.min.js', dirname(__FILE__)  ));
+        }
     }
 
-
-
-    public function widgetkit_for_elementor_admin_get_param_check(){
+    public function widgetkit_for_elementor_admin_get_param_check()
+    {
         if (isset($_GET['dismissed']) && $_GET['dismissed'] == 1) {
-            update_option("notice_dissmissed", 1);
+            update_option('notice_dissmissed', 1);
         }
         $this->handle_external_redirects();
     }
 
-    public function handle_external_redirects() {
-        if ( empty( $_GET['page'] ) ) {
+    public function handle_external_redirects()
+    {
+        if (empty($_GET['page'])) {
             return;
         }
-        if ( 'widgetkit-gopro' === $_GET['page'] ) {
-            wp_redirect( 'https://themesgrove.com/widgetkit-for-elementor/?utm_source=wp-menu&utm_campaign=widgetkit_gopro&utm_medium=wp-dash' );
+        if ('widgetkit-gopro' === $_GET['page']) {
+            wp_redirect('https://themesgrove.com/widgetkit-for-elementor/?utm_source=wp-menu&utm_campaign=widgetkit_gopro&utm_medium=wp-dash');
             exit;
         }
     }
@@ -137,13 +136,12 @@ class Widgetkit_Admin {
     /**
      * Register display view
      */
-
-    public function display_settings_pages() {
-
-        $js_info = array(
-			'ajaxurl' => admin_url( 'admin-ajax.php' )
-		);
-		wp_localize_script( 'widgetkit-elementor-admin-js', 'settings', $js_info );
+    public function display_settings_pages()
+    {
+        $js_info = [
+            'ajaxurl' => admin_url('admin-ajax.php')
+        ];
+        wp_localize_script('widgetkit-elementor-admin-js', 'settings', $js_info);
        
 	   $this->widgetkit_default_settings = array_fill_keys( $this->widgetkit_elements_keys, true );
        
@@ -155,7 +153,7 @@ class Widgetkit_Admin {
 	   	$widgetkit_updated_settings = array_merge( $this->widgetkit_get_settings, $widgetkit_new_settings );
 	   	update_option( 'widgetkit_save_settings', $widgetkit_updated_settings );
 	   }
-	   $this->widgetkit_get_settings = get_option( 'widgetkit_save_settings', $this->widgetkit_default_settings );
+       $this->widgetkit_get_settings = get_option( 'widgetkit_save_settings', $this->widgetkit_default_settings );
 
 ?>
 
@@ -175,7 +173,9 @@ class Widgetkit_Admin {
                             <li><a href="#"><span class="uk-icon uk-margin-small-right" uk-icon="home"></span> Overview</a></li>
                             <li><a href="#"><span class="uk-icon uk-margin-small-right" uk-icon="thumbnails"></span> Elements</a></li>
                             <li><a href="#"><span class="uk-icon uk-margin-small-right" uk-icon="info"></span> Info</a></li>
-                            <li><a class="uk-text-danger" href="#"><span class="uk-icon uk-margin-small-right" uk-icon="star"></span> Go Premium</a></li>
+                            <?php if (!apply_filters('wkpro_enabled', false)) :?>
+                                <li><a class="uk-text-danger" href="#"><span class="uk-icon uk-margin-small-right" uk-icon="star"></span> Go Premium</a></li>
+                            <?php endif;?>
                         </ul>
                     </div>
                     <div class="uk-width-1-5 uk-text-right">
@@ -223,69 +223,6 @@ class Widgetkit_Admin {
                                                     <span class="rectangle round"></span>
                                                 </label>
                                                 <!-- <div class="uk-position-top-left uk-label">Pro</div> -->
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
-                                                <?php echo esc_html__('Pricing Single', 'widgetkit-for-elementor'); ?>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="widget-pricing-single" name="widget-pricing-single" <?php checked(1, $this->widgetkit_get_settings['widget-pricing-single'], true) ?>>
-                                                    <span class="rectangle round"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
-                                                <?php echo esc_html__('Button & Modal', 'widgetkit-for-elementor'); ?>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="widget-button" name="widget-button" <?php checked(1, $this->widgetkit_get_settings['widget-button'], true) ?>>
-                                                    <span class="rectangle round"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
-                                                <?php echo esc_html__('Testimonial Single', 'widgetkit-for-elementor'); ?>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="widget-testimonial-single" name="widget-testimonial-single" <?php checked(1, $this->widgetkit_get_settings['widget-testimonial-single'], true) ?>>
-                                                    <span class="rectangle round"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
-                                                <?php echo esc_html__('Slider Content Animation', 'widgetkit-for-elementor'); ?>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="widget-slider-content-animation" name="widget-slider-content-animation" <?php checked(1, $this->widgetkit_get_settings['widget-slider-content-animation'], true) ?>>
-                                                    <span class="rectangle round"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
-                                                <?php echo esc_html__('Pricing Icon', 'widgetkit-for-elementor'); ?>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="widget-pricing-icon" name="widget-pricing-icon" <?php checked(1, $this->widgetkit_get_settings['widget-pricing-icon'], true) ?>>
-                                                    <span class="rectangle round"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
-                                                <?php echo esc_html__('Hover Image', 'widgetkit-for-elementor'); ?>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="widget-hover-image" name="widget-hover-image" <?php checked(1, $this->widgetkit_get_settings['widget-hover-image'], true) ?>>
-                                                    <span class="rectangle round"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
-                                                <?php echo esc_html__('Testimonial Center', 'widgetkit-for-elementor'); ?>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="widget-testimonial-center" name="widget-testimonial-center" <?php checked(1, $this->widgetkit_get_settings['widget-testimonial-center'], true) ?>>
-                                                    <span class="rectangle round"></span>
-                                                </label>
                                             </div>
                                         </div>
                                         <div>
@@ -463,6 +400,7 @@ class Widgetkit_Admin {
                                         <?php echo nl2br(widgetkit_get_sysinfo()); ?>
                                     </pre>
                                 </li>
+                                <?php if (!apply_filters('wkpro_enabled', false)) :?>
                                 <li>
                                     <h3 class="uk-text-center"><?php echo esc_html__('Unlock the true power of WidgetKit.','widgetkit-for-elementor');?></h3>
                                     <div class="uk-card uk-card-default uk-card-body uk-padding-small uk-text-center">
@@ -471,16 +409,19 @@ class Widgetkit_Admin {
                                         <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank" class="uk-button uk-button-primary "><span class="uk-icon uk-margin-small-right" uk-icon="unlock"></span>Upgrade to Pro</a>
                                     </div>
                                 </li>
+                                <?php endif;?>
                             </ul>
                         </div>
                     </div>
                     <div class="uk-width-1-4">
+                    <?php if (!apply_filters('wkpro_enabled', false)) :?>
                         <div class="uk-card uk-card-default uk-card-body uk-padding-small uk-text-center">
                             <img class="uk-margin-small-top" src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="200" uk-svg>
                             <p class="uk-text-muted">Get the pro version of <strong>WidgetKit</strong> for more stunning elements and customization options.</p>
                             <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank" class="uk-button uk-button-primary "><span class="uk-icon uk-margin-small-right" uk-icon="unlock"></span>Upgrade to Pro</a>
                         </div>
                     </div>
+                    <?php endif;?>
                 </div>
             </div>
 
@@ -490,96 +431,86 @@ class Widgetkit_Admin {
     <script type="text/javascript">!function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});</script>
     <script type="text/javascript">window.Beacon('init', '940f4d8a-7f6f-432c-ae31-0ed5819fdbe4')</script>
 <?php
-
     }
-/**
- * Register sections
- */
-    public function widgetkit_for_elementor_sections_with_ajax() {
 
-        if( isset( $_POST['fields'] ) ) {
-            parse_str( $_POST['fields'], $settings );
-        }else {
+    /**
+     * Register sections
+     */
+    public function widgetkit_for_elementor_sections_with_ajax()
+    {
+        if (isset($_POST['fields'])) {
+            parse_str($_POST['fields'], $settings);
+        } else {
             return;
         }
 
-        $this->widgetkit_settings = array(
-        	// Slider Animation 
-            'widget-slider-animation'     => intval( $settings['widget-slider-animation'] ? 1 : 0 ),
-            // Slider Content Animation 
-            'widget-slider-content-animation'  => intval( $settings['widget-slider-content-animation'] ? 1 : 0 ),
-            // Slider Box Animation 
-            'widget-slider-box-animation'  => intval( $settings['widget-slider-box-animation'] ? 1 : 0 ),
-
+        $this->widgetkit_settings = [
+            // Slider Animation
+            'widget-slider-animation' => intval($settings['widget-slider-animation'] ? 1 : 0),
+            // Slider Content Animation
+            'widget-slider-content-animation' => intval($settings['widget-slider-content-animation'] ? 1 : 0),
+            // Slider Box Animation
+            'widget-slider-box-animation' => intval($settings['widget-slider-box-animation'] ? 1 : 0),
 
             // Portfolio
-            'widget-portfolio'          => intval( $settings['widget-portfolio'] ? 1 : 0 ),
+            'widget-portfolio' => intval($settings['widget-portfolio'] ? 1 : 0),
             // Feature section
-            'widget-feature-box'        => intval( $settings['widget-feature-box'] ? 1 : 0 ),
+            'widget-feature-box' => intval($settings['widget-feature-box'] ? 1 : 0),
 
             // Animation Text
-            'widget-animation-text'     => intval( $settings['widget-animation-text'] ? 1 : 0 ),
+            'widget-animation-text' => intval($settings['widget-animation-text'] ? 1 : 0),
             // Countdown
-            'widget-countdown'          => intval( $settings['widget-countdown'] ? 1 : 0 ),
-
+            'widget-countdown' => intval($settings['widget-countdown'] ? 1 : 0),
 
             // Pricing Single
-            'widget-pricing-single'     => intval( $settings['widget-pricing-single'] ? 1 : 0 ),
+            'widget-pricing-single' => intval($settings['widget-pricing-single'] ? 1 : 0),
             // Pricing Icon
-            'widget-pricing-icon'       => intval( $settings['widget-pricing-icon'] ? 1 : 0 ),
+            'widget-pricing-icon' => intval($settings['widget-pricing-icon'] ? 1 : 0),
             // Pricing Tab
-            'widget-pricing-tab'        => intval( $settings['widget-pricing-tab'] ? 1 : 0 ),
-
+            'widget-pricing-tab' => intval($settings['widget-pricing-tab'] ? 1 : 0),
 
             // Team Round
-            'widget-team-round'         => intval( $settings['widget-team-round'] ? 1 : 0 ),
+            'widget-team-round' => intval($settings['widget-team-round'] ? 1 : 0),
             // Team Animation
-            'widget-team-animation'     => intval( $settings['widget-team-animation'] ? 1 : 0 ),
+            'widget-team-animation' => intval($settings['widget-team-animation'] ? 1 : 0),
             // Team Verticle Icon
-            'widget-team-verticle-icon' => intval( $settings['widget-team-verticle-icon'] ? 1 : 0 ),
+            'widget-team-verticle-icon' => intval($settings['widget-team-verticle-icon'] ? 1 : 0),
             // Team Overlay
-            'widget-team-overlay'       => intval( $settings['widget-team-overlay'] ? 1 : 0 ),
-
+            'widget-team-overlay' => intval($settings['widget-team-overlay'] ? 1 : 0),
 
             // Button
-            'widget-button'             => intval( $settings['widget-button'] ? 1 : 0 ),
+            'widget-button' => intval($settings['widget-button'] ? 1 : 0),
             // Hover Image
-            'widget-hover-image'        => intval( $settings['widget-hover-image'] ? 1 : 0 ),
+            'widget-hover-image' => intval($settings['widget-hover-image'] ? 1 : 0),
             // Post Carousel
-            'widget-post-carousel'      => intval( $settings['widget-post-carousel'] ? 1 : 0 ),
+            'widget-post-carousel' => intval($settings['widget-post-carousel'] ? 1 : 0),
 
-
-             // Blog Revert
-            'widget-blog-revert'        => intval( $settings['widget-blog-revert'] ? 1 : 0 ),
+            // Blog Revert
+            'widget-blog-revert' => intval($settings['widget-blog-revert'] ? 1 : 0),
             // Blog Hover Animation
-            'widget-blog-hover-animation'     => intval( $settings['widget-blog-hover-animation'] ? 1 : 0 ),
+            'widget-blog-hover-animation' => intval($settings['widget-blog-hover-animation'] ? 1 : 0),
             // Blog Image
-            'widget-blog-image'          => intval( $settings['widget-blog-image'] ? 1 : 0 ),
+            'widget-blog-image' => intval($settings['widget-blog-image'] ? 1 : 0),
             // Blog carousel
-            'widget-blog-carousel'       => intval( $settings['widget-blog-carousel'] ? 1 : 0 ),
+            'widget-blog-carousel' => intval($settings['widget-blog-carousel'] ? 1 : 0),
             // Blog Sidebar
-            'widget-blog-sidebar'        => intval( $settings['widget-blog-sidebar'] ? 1 : 0 ),
-
+            'widget-blog-sidebar' => intval($settings['widget-blog-sidebar'] ? 1 : 0),
 
             // Testimonial Single
-            'widget-testimonial-single'  => intval( $settings['widget-testimonial-single'] ? 1 : 0 ),
+            'widget-testimonial-single' => intval($settings['widget-testimonial-single'] ? 1 : 0),
             // Testimonial Center
-            'widget-testimonial-center'   => intval( $settings['widget-testimonial-center'] ? 1 : 0 ),
+            'widget-testimonial-center' => intval($settings['widget-testimonial-center'] ? 1 : 0),
 
             // Social Share Animation
-            'widget-social-share-animation'  => intval( $settings['widget-social-share-animation'] ? 1 : 0 ),
+            'widget-social-share-animation' => intval($settings['widget-social-share-animation'] ? 1 : 0),
             // Social Share collapse
-            'widget-social-share-collapse'   => intval( $settings['widget-social-share-collapse'] ? 1 : 0 ),
-        );
-        update_option( 'widgetkit_save_settings', $this->widgetkit_settings );
-        
+            'widget-social-share-collapse' => intval($settings['widget-social-share-collapse'] ? 1 : 0),
+        ];
+        update_option('widgetkit_save_settings', $this->widgetkit_settings);
+
         return true;
         die();
-
-
     }
-
 }
-
 
 new Widgetkit_Admin;

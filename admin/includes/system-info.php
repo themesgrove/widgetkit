@@ -1,8 +1,11 @@
-<?php 
+<?php
 
-if( !defined( 'ABSPATH' ) ) exit; //Exit if accessed directly
+if (!defined('ABSPATH')) {
+    exit;
+} //Exit if accessed directly
 
-function widgetkit_get_sysinfo() {
+function widgetkit_get_sysinfo()
+{
     global $wpdb;
 
     // Get theme info
@@ -12,7 +15,7 @@ function widgetkit_get_sysinfo() {
     $return = '### <strong>Begin System Info</strong> ###' . "\n\n";
 
     // Start with the basics...
-    $return .= '-- Site Info' . "\n\n";
+    $return .= '-- Site Info' . "\n";
     $return .= 'Site URL:                 ' . site_url() . "\n";
     $return .= 'Home URL:                 ' . home_url() . "\n";
     $return .= 'Multisite:                ' . (is_multisite() ? 'Yes' : 'No') . "\n";
@@ -20,14 +23,13 @@ function widgetkit_get_sysinfo() {
     // Theme info
     // $plugin = get_plugin_data(PREMIUM_ADDONS_FILE);
 
-
     // Plugin configuration
-    $return .= "\n" . '-- Plugin Configuration' . "\n\n";
+    // $return .= "\n" . '-- Plugin Configuration' . "\n\n";
     // $return .= 'Name:                     ' . $plugin['Name'] . "\n";
     // $return .= 'Version:                  ' . $plugin['Version'] . "\n";
 
     // WordPress configuration
-    $return .= "\n" . '-- WordPress Configuration' . "\n\n";
+    $return .= "\n" . '-- WordPress Configuration' . "\n";
     $return .= 'Version:                  ' . get_bloginfo('version') . "\n";
     $return .= 'Language:                 ' . (defined('WPLANG') && WPLANG ? WPLANG : 'en_US') . "\n";
     $return .= 'Permalink Structure:      ' . (get_option('permalink_structure') ? get_option('permalink_structure') : 'Default') . "\n";
@@ -45,7 +47,6 @@ function widgetkit_get_sysinfo() {
 
     $return .= 'ABSPATH:                  ' . ABSPATH . "\n";
 
-
     $return .= 'WP_DEBUG:                 ' . (defined('WP_DEBUG') ? WP_DEBUG ? 'Enabled' : 'Disabled' : 'Not set') . "\n";
     $return .= 'Memory Limit:             ' . WP_MEMORY_LIMIT . "\n";
     $return .= 'Registered Post Stati:    ' . implode(', ', get_post_stati()) . "\n";
@@ -54,25 +55,27 @@ function widgetkit_get_sysinfo() {
     $updates = get_plugin_updates();
 
     // WordPress active plugins
-    $return .= "\n" . '-- WordPress Active Plugins' . "\n\n";
+    $return .= "\n" . '-- WordPress Active Plugins' . "\n";
 
     $plugins = get_plugins();
-    $active_plugins = get_option('active_plugins', array());
+    $active_plugins = get_option('active_plugins', []);
 
     foreach ($plugins as $plugin_path => $plugin) {
-        if (!in_array($plugin_path, $active_plugins))
+        if (!in_array($plugin_path, $active_plugins)) {
             continue;
+        }
 
         $update = (array_key_exists($plugin_path, $updates)) ? ' (needs update - ' . $updates[$plugin_path]->update->new_version . ')' : '';
         $return .= $plugin['Name'] . ': ' . $plugin['Version'] . $update . "\n";
     }
 
     // WordPress inactive plugins
-    $return .= "\n" . '-- WordPress Inactive Plugins' . "\n\n";
+    $return .= "\n" . '-- WordPress Inactive Plugins' . "\n";
 
     foreach ($plugins as $plugin_path => $plugin) {
-        if (in_array($plugin_path, $active_plugins))
+        if (in_array($plugin_path, $active_plugins)) {
             continue;
+        }
 
         $update = (array_key_exists($plugin_path, $updates)) ? ' (needs update - ' . $updates[$plugin_path]->update->new_version . ')' : '';
         $return .= $plugin['Name'] . ': ' . $plugin['Version'] . $update . "\n";
@@ -80,16 +83,17 @@ function widgetkit_get_sysinfo() {
 
     if (is_multisite()) {
         // WordPress Multisite active plugins
-        $return .= "\n" . '-- Network Active Plugins' . "\n\n";
+        $return .= "\n" . '-- Network Active Plugins' . "\n";
 
         $plugins = wp_get_active_network_plugins();
-        $active_plugins = get_site_option('active_sitewide_plugins', array());
+        $active_plugins = get_site_option('active_sitewide_plugins', []);
 
         foreach ($plugins as $plugin_path) {
             $plugin_base = plugin_basename($plugin_path);
 
-            if (!array_key_exists($plugin_base, $active_plugins))
+            if (!array_key_exists($plugin_base, $active_plugins)) {
                 continue;
+            }
 
             $update = (array_key_exists($plugin_path, $updates)) ? ' (needs update - ' . $updates[$plugin_path]->update->new_version . ')' : '';
             $plugin = get_plugin_data($plugin_path);
@@ -98,13 +102,13 @@ function widgetkit_get_sysinfo() {
     }
 
     // Server configuration (really just versioning)
-    $return .= "\n" . '-- Webserver Configuration' . "\n\n";
+    $return .= "\n" . '-- Webserver Configuration' . "\n";
     $return .= 'PHP Version:              ' . PHP_VERSION . "\n";
     $return .= 'MySQL Version:            ' . $wpdb->db_version() . "\n";
     $return .= 'Webserver Info:           ' . $_SERVER['SERVER_SOFTWARE'] . "\n";
 
     // PHP configs... now we're getting to the important stuff
-    $return .= "\n" . '-- PHP Configuration' . "\n\n";
+    $return .= "\n" . '-- PHP Configuration' . "\n";
     $return .= 'Memory Limit:             ' . ini_get('memory_limit') . "\n";
     $return .= 'Upload Max Size:          ' . ini_get('upload_max_filesize') . "\n";
     $return .= 'Post Max Size:            ' . ini_get('post_max_size') . "\n";
@@ -116,7 +120,7 @@ function widgetkit_get_sysinfo() {
     $return = apply_filters('edd_sysinfo_after_php_config', $return);
 
     // PHP extensions and such
-    $return .= "\n" . '-- PHP Extensions' . "\n\n";
+    $return .= "\n" . '-- PHP Extensions' . "\n";
     $return .= 'cURL:                     ' . (function_exists('curl_init') ? 'Supported' : 'Not Supported') . "\n";
     $return .= 'fsockopen:                ' . (function_exists('fsockopen') ? 'Supported' : 'Not Supported') . "\n";
     $return .= 'SOAP Client:              ' . (class_exists('SoapClient') ? 'Installed' : 'Not Installed') . "\n";
@@ -126,4 +130,3 @@ function widgetkit_get_sysinfo() {
 
     return $return;
 }
-
