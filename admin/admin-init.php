@@ -61,6 +61,7 @@ class Widgetkit_Admin
 	        array($this, 'display_settings_pages'),
 	        plugins_url('/assets/images/wk-icon-white.svg', __FILE__ ), 55
         ); 
+        if(!apply_filters('wkpro_enabled', false)):
         add_submenu_page( 
             'widgetkit-settings', 
             '', 
@@ -69,6 +70,7 @@ class Widgetkit_Admin
             'widgetkit-gopro', 
             array($this, 'handle_external_redirects')
         );
+        endif;
     }
 
     /**
