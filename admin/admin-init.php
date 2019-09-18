@@ -59,7 +59,7 @@ class Widgetkit_Admin
 	        'manage_options',
 	        'widgetkit-settings',
 	        array($this, 'display_settings_pages'),
-	        plugins_url('/assets/images/wk-icon-white.svg', __FILE__ ), 30
+	        plugins_url('/assets/images/wk-icon-white.svg', __FILE__ ), 55
         ); 
         add_submenu_page( 
             'widgetkit-settings', 
