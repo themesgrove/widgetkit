@@ -2,7 +2,7 @@
 
 Contributors: Themesgrove, parvezvai, themexpert
 Donate link: https://themesgrove.com/
-Tags: Elementor, Elementor Page Builder, Elements, Widget, Elementor Addons, Add-ons, Page Builder, Countdown, Timer, Slider, Team, E-commerce, Testimonial, Blog, Social-share, Button, Modal, Carousel, Portfolio, Pricing, Image-box, Icon-box, Element Kit, Widgetkit
+Tags: elementor, add-ons, elementor addons, elementor widgets, woocommerce, learndash, learnpress, widgets, woocommerce addons, learndash addons, countdown, timer, slider, team, testimonial, social-share, carousel, portfolio, pricing, widgetkit
 Requires at least: 4.0
 Tested up to: 5.2
 Stable tag: 1.5.6
@@ -10,12 +10,11 @@ Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Premium Addons for Elementor Page Builder.
-Huge collection of elements with premium quality for using in Elementor Page Builder, which helps you to create any kind of complicated design without coding in shortest time.Elementor Page Builder must be installed and activated.
+All-in-One Addons for Elementor - WidgetKit
+Everything you need to create a stunning website with Elementor, WooCommerce, LearnDash, LearnPress and more. Growing collection of premium quality elements for FREE. Content widgets, creative widgets, dynamic widgets and more to count on.
 
 == Description ==
-
-Simple & Visually appealing site always attracts the attention of viewer. Creating stunning websites is just minutes away now, all you need to do is choose the right tools. 
+Visually stunning and simple to use premium addons for Elementor page builder. Growing collection of free Elementor widgets, pre-designed section and page templates, extensions and much more.
 
 Merge WidgetKit with Elementor and take the experience of ultimate page building. WIth Widgetkit build any layouts in shortest time, it doesn’t matter whether the layout is simple or complex. If you can think it, you can build it with Widgetkit. 
 

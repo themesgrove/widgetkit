@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: WidgetKit for Elementor
-Description: Huge collection of pro quality element or section for use in Elementor page builder,which you help to create any kind of complicated design without coding.  Elementor Page Builder must be installed and activated.
+Plugin Name: All-in-One Addons for Elementor - WidgetKit
+Description: Everything you need to create a stunning website with <strong>Elementor, WooCommerce, LearnDash, LearnPress</strong> and more.
 Version: 1.5.7
 Text Domain: widgetkit-for-elementor
 Author: Themesgrove
 Author URI: https://themesgrove.com
-Plugin URI: http://widgetkit.themesgrove.com/
+Plugin URI: https://themesgrove.com/widgetkit-for-elementor/
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 @package  WidgetKit_For_Elementor
@@ -19,10 +19,10 @@ Domain Path: /languages
      */
     if( !defined( 'ABSPATH' ) ) exit; 
 
-    define('WKFE_VERSION', '1.5.4');
-    define('WKFE_FILE', __FILE__); 
-    define('WKFE_URL', plugins_url('/', __FILE__ ) );
-    define('WKFE_PATH', plugin_dir_path( __FILE__ ) );
+    define('WK_VERSION', '1.5.4');
+    define('WK_FILE', __FILE__); 
+    define('WK_URL', plugins_url('/', __FILE__ ) );
+    define('WK_PATH', plugin_dir_path( __FILE__ ) );
 
 
     class WidgetKit_For_Elementor {
@@ -49,10 +49,10 @@ Domain Path: /languages
             }
         }
         public function load_admin_files() {
-            require_once(WKFE_PATH. 'includes/appsero-init.php');
-            require_once(WKFE_PATH. 'includes/widgetkit-pro-init.php');
-            require_once(WKFE_PATH. 'includes/elements.php');
-            require_once(WKFE_PATH. 'includes/widgetkit-admin-resources.php');
+            require_once(WK_PATH. 'includes/appsero-init.php');
+            require_once(WK_PATH. 'includes/widgetkit-pro-init.php');
+            require_once(WK_PATH. 'includes/elements.php');
+            require_once(WK_PATH. 'includes/widgetkit-admin-resources.php');
             
             WKFE_Appsero_Init::init();
             WKFE_PRO_Init::init();
@@ -64,10 +64,10 @@ Domain Path: /languages
         }
 
         public function elementor_init(){
-            require_once ( WKFE_PATH . 'includes/elementor-integration.php' );
+            require_once ( WK_PATH . 'includes/elementor-integration.php' );
         }
         public function elementor_addons() {
-            require_once ( WKFE_PATH . 'includes/addons-integration.php' );
+            require_once ( WK_PATH . 'includes/addons-integration.php' );
             WKFE_Addons_Integration::init();
         }
         public function elementor_resources() {
@@ -75,7 +75,7 @@ Domain Path: /languages
         }
 
         public function check_dependency(){
-            require_once(WKFE_PATH. 'includes/dependency.php');
+            require_once(WK_PATH. 'includes/dependency.php');
             WKFE_Dependency::init();
         }
         public function remove_all_admin_notice(){
