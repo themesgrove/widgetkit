@@ -55,7 +55,7 @@ class widgetkit_for_elementor_slider_3 {
 	 * @access private
 	 */
 	private function includes() {
-		require_once WKFE_PATH  . '/elements/slider-3/template/config.php';
+		require_once WK_PATH  . '/elements/slider-3/template/config.php';
 	}
 
 	/**

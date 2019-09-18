@@ -712,7 +712,7 @@ class wkfe_pricing_2 extends Widget_Base {
 	} // End Tab section
 
 	protected function render() {
-		require WKFE_PATH . '/elements/pricing-2/template/view.php';
+		require WK_PATH . '/elements/pricing-2/template/view.php';
 	}
 
 

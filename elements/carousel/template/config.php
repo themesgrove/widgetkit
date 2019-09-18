@@ -486,7 +486,7 @@ $this->end_controls_section();
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/carousel/template/view.php';
+		require WK_PATH . '/elements/carousel/template/view.php';
 	}
 
 

@@ -510,7 +510,7 @@ class wkfe_team_1 extends Widget_Base {
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/team-1/template/view.php';
+		require WK_PATH . '/elements/team-1/template/view.php';
 	}
 
 

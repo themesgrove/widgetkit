@@ -475,7 +475,7 @@ class wkfe_testimonial_2 extends Widget_Base {
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/testimonial-2/template/view.php';
+		require WK_PATH . '/elements/testimonial-2/template/view.php';
 	}
 
 

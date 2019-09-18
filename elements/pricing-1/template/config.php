@@ -929,7 +929,7 @@ class wkfe_pricing_1 extends Widget_Base {
     }
 
 	protected function render() {
-		require WKFE_PATH . '/elements/pricing-1/template/view.php';
+		require WK_PATH . '/elements/pricing-1/template/view.php';
 	}
 
 

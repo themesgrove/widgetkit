@@ -14,7 +14,7 @@ class WKFE_Admin_Resources{
         add_action( 'elementor/editor/before_enqueue_scripts', array($this, 'style_resources') );
     }
     public function style_resources(){
-        wp_enqueue_style( 'widgetkit_admin_resource', WKFE_URL.'dist/css/widgetkit-admin.css', array(), WKFE_VERSION, 'all');
+        wp_enqueue_style( 'widgetkit_admin_resource', WK_URL.'dist/css/widgetkit-admin.css', array(), WK_VERSION, 'all');
     }
 }
 

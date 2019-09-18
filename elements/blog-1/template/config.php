@@ -724,7 +724,7 @@ $this->end_controls_section();
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/blog-1/template/view.php';
+		require WK_PATH . '/elements/blog-1/template/view.php';
 	}
 
 

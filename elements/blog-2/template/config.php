@@ -446,7 +446,7 @@ class wkfe_blog_2 extends Widget_Base {
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/blog-2/template/view.php';
+		require WK_PATH . '/elements/blog-2/template/view.php';
 	}
 
 

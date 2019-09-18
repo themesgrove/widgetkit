@@ -716,7 +716,7 @@ class wkfe_portfolio extends Widget_Base {
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/portfolio/template/view.php';
+		require WK_PATH . '/elements/portfolio/template/view.php';
 	}
 
 

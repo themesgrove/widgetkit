@@ -625,7 +625,7 @@ class wkfe_hover_image extends Widget_Base {
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/hover-image/template/view.php';
+		require WK_PATH . '/elements/hover-image/template/view.php';
 	}
 
 

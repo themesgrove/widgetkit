@@ -21,7 +21,7 @@ class Widgetkit_For_Elementor_Click_To_Tweet{
 	}
 
 	private function include_files() {
-		require_once WKFE_PATH  . '/elements/click-tweet/template/config.php';
+		require_once WK_PATH  . '/elements/click-tweet/template/config.php';
 	}
 
 	private function init_config() {

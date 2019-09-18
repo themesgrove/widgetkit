@@ -589,7 +589,7 @@ class wkfe_countdown extends Widget_Base {
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/countdown/template/view.php';
+		require WK_PATH . '/elements/countdown/template/view.php';
 	}
 
 

@@ -695,7 +695,7 @@ class wkfe_social_share_2 extends Widget_Base {
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/social-share-2/template/view.php';
+		require WK_PATH . '/elements/social-share-2/template/view.php';
 	}
 
 

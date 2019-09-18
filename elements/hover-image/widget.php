@@ -55,7 +55,7 @@ class widgetkit_for_elementor_hover_image{
 	 * @access private
 	 */
 	private function includes() {
-		require_once WKFE_PATH  . '/elements/hover-image/template/config.php';
+		require_once WK_PATH  . '/elements/hover-image/template/config.php';
 	}
 
 	/**

@@ -55,7 +55,7 @@ class widgetkit_for_elementor_countdown {
 	 * @access private
 	 */
 	private function includes() {
-		require_once WKFE_PATH  . '/elements/countdown/template/config.php';
+		require_once WK_PATH  . '/elements/countdown/template/config.php';
 	}
 
 	/**

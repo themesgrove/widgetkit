@@ -55,7 +55,7 @@ class widgetkit_for_elementor_team_4 {
 	 * @access private
 	 */
 	private function includes() {
-		require_once WKFE_PATH  . '/elements/team-4/template/config.php';
+		require_once WK_PATH  . '/elements/team-4/template/config.php';
 	}
 
 	/**

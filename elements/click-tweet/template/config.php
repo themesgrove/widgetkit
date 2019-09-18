@@ -325,7 +325,7 @@ class WKFE_Feature_Click_Tweet_Config extends Widget_Base {
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/click-tweet/template/view.php';
+		require WK_PATH . '/elements/click-tweet/template/view.php';
 	}
 
 

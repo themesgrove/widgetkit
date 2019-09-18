@@ -929,7 +929,7 @@ $this->end_controls_section();
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/slider-1/template/view.php';
+		require WK_PATH . '/elements/slider-1/template/view.php';
 	}
 
 

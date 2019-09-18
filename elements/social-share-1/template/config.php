@@ -610,7 +610,7 @@ class wkfe_social_share_1 extends Widget_Base {
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/social-share-1/template/view.php';
+		require WK_PATH . '/elements/social-share-1/template/view.php';
 	}
 
 

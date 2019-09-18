@@ -19,13 +19,13 @@ class WKFE_Addons_Integration{
     }
     
     public function widgetkit_register_frontend_styles(){
-        wp_register_style( 'widgetkit_bs', WKFE_URL.'dist/css/bootstrap.min.css', array(), WKFE_VERSION, 'all');
-        wp_register_style( 'owl-css', WKFE_URL.'dist/css/owl.carousel.min.css', array(), WKFE_VERSION, 'all');
-        wp_register_style( 'animate-text', WKFE_URL.'dist/css/animate-text.css', array(), WKFE_VERSION, 'all');
-        wp_register_style( 'animate-css', WKFE_URL.'dist/css/animate.min.css', array(), WKFE_VERSION, 'all');
-        wp_register_style( 'fontawesome', WKFE_URL.'dist/css/font-awesome.min.css', array(), WKFE_VERSION, 'all');
-        wp_register_style( 'ionsicon', WKFE_URL.'dist/css/ionicons.min.css', array(), WKFE_VERSION, 'all');
-        wp_register_style( 'widgetkit_main', WKFE_URL.'dist/css/widgetkit.css', array(), WKFE_VERSION, 'all');
+        wp_register_style( 'widgetkit_bs', WK_URL.'dist/css/bootstrap.min.css', array(), WK_VERSION, 'all');
+        wp_register_style( 'owl-css', WK_URL.'dist/css/owl.carousel.min.css', array(), WK_VERSION, 'all');
+        wp_register_style( 'animate-text', WK_URL.'dist/css/animate-text.css', array(), WK_VERSION, 'all');
+        wp_register_style( 'animate-css', WK_URL.'dist/css/animate.min.css', array(), WK_VERSION, 'all');
+        wp_register_style( 'fontawesome', WK_URL.'dist/css/font-awesome.min.css', array(), WK_VERSION, 'all');
+        wp_register_style( 'ionsicon', WK_URL.'dist/css/ionicons.min.css', array(), WK_VERSION, 'all');
+        wp_register_style( 'widgetkit_main', WK_URL.'dist/css/widgetkit.css', array(), WK_VERSION, 'all');
     }
     
     public function widgetkit_enqueue_preview_styles() {
@@ -36,17 +36,17 @@ class WKFE_Addons_Integration{
     }
 
     public function widgetkit_register_frontend_scripts(){
-        wp_register_script( 'bootstarp-js', WKFE_URL.'dist/js/bootstrap.min.js' , array('jquery'), WKFE_VERSION, true);
-        wp_register_script( 'owl-carousel', WKFE_URL.'dist/js/owl.carousel.min.js' , array('jquery'), WKFE_VERSION, true);
-        wp_register_script( 'hoverdir', WKFE_URL.'dist/js/jquery.hoverdir.js' , array('jquery'), WKFE_VERSION, true);
-        wp_register_script( 'modernizr', WKFE_URL.'dist/js/modernizr.min.js' , array('jquery'), WKFE_VERSION, true);
-        wp_register_script( 'animate-text', WKFE_URL.'dist/js/animate-text.js' , array('jquery'), WKFE_VERSION, true);
-        wp_register_script( 'mixitup-js', WKFE_URL.'dist/js/mixitup.min.js' , array('jquery'), WKFE_VERSION, true);
-        wp_register_script( 'anime-js', WKFE_URL.'dist/js/anime.min.js' , array('jquery'), WKFE_VERSION, true);
-        wp_register_script( 'widgetkit-imagesloaded', WKFE_URL.'dist/js/imagesloaded.pkgd.min.js', array('jquery'), WKFE_VERSION, true);
-        wp_register_script( 'widgetkit-slider', WKFE_URL.'dist/js/slider-3.js' , array('jquery'), WKFE_VERSION, true);
-        wp_register_script( 'countdown', WKFE_URL.'dist/js/countdown.js' , array('jquery'), WKFE_VERSION, true);
-        wp_register_script( 'widgetkit-main', WKFE_URL.'dist/js/widgetkit.js' , array('jquery'), WKFE_VERSION, true);
+        wp_register_script( 'bootstarp-js', WK_URL.'dist/js/bootstrap.min.js' , array('jquery'), WK_VERSION, true);
+        wp_register_script( 'owl-carousel', WK_URL.'dist/js/owl.carousel.min.js' , array('jquery'), WK_VERSION, true);
+        wp_register_script( 'hoverdir', WK_URL.'dist/js/jquery.hoverdir.js' , array('jquery'), WK_VERSION, true);
+        wp_register_script( 'modernizr', WK_URL.'dist/js/modernizr.min.js' , array('jquery'), WK_VERSION, true);
+        wp_register_script( 'animate-text', WK_URL.'dist/js/animate-text.js' , array('jquery'), WK_VERSION, true);
+        wp_register_script( 'mixitup-js', WK_URL.'dist/js/mixitup.min.js' , array('jquery'), WK_VERSION, true);
+        wp_register_script( 'anime-js', WK_URL.'dist/js/anime.min.js' , array('jquery'), WK_VERSION, true);
+        wp_register_script( 'widgetkit-imagesloaded', WK_URL.'dist/js/imagesloaded.pkgd.min.js', array('jquery'), WK_VERSION, true);
+        wp_register_script( 'widgetkit-slider', WK_URL.'dist/js/slider-3.js' , array('jquery'), WK_VERSION, true);
+        wp_register_script( 'countdown', WK_URL.'dist/js/countdown.js' , array('jquery'), WK_VERSION, true);
+        wp_register_script( 'widgetkit-main', WK_URL.'dist/js/widgetkit.js' , array('jquery'), WK_VERSION, true);
     }
 
 }

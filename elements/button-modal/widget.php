@@ -55,7 +55,7 @@ class widgetkit_for_elementor_button{
 	 * @access private
 	 */
 	private function includes() {
-		require_once WKFE_PATH  . '/elements/button-modal/template/config.php';
+		require_once WK_PATH  . '/elements/button-modal/template/config.php';
 	}
 
 	/**

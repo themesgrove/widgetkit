@@ -55,7 +55,7 @@ class widgetkit_for_elementor_animation_text{
 	 * @access private
 	 */
 	private function includes() {
-		require_once WKFE_PATH  . '/elements/animation-text/template/config.php';
+		require_once WK_PATH  . '/elements/animation-text/template/config.php';
 	}
 
 	/**

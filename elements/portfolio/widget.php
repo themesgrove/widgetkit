@@ -55,7 +55,7 @@ class widgetkit_for_elementor_portfolio {
 	 * @access private
 	 */
 	private function includes() {
-		require_once WKFE_PATH  . '/elements/portfolio/template/config.php';
+		require_once WK_PATH  . '/elements/portfolio/template/config.php';
 	}
 
 	/**

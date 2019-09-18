@@ -55,7 +55,7 @@ class widgetkit_for_elementor_blog_5 {
 	 * @access private
 	 */
 	private function includes() {
-		require_once WKFE_PATH  . '/elements/blog-5/template/config.php';
+		require_once WK_PATH  . '/elements/blog-5/template/config.php';
 	}
 
 	/**

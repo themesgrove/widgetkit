@@ -612,7 +612,7 @@ class WKFE_Feature_List_Config extends Widget_Base {
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/pros-cons/template/view.php';
+		require WK_PATH . '/elements/pros-cons/template/view.php';
 	}
 
 

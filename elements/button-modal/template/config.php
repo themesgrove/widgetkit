@@ -607,7 +607,7 @@ class wkfe_modal_button extends Widget_Base {
 
 
 	protected function render() {
-		require WKFE_PATH . '/elements/button-modal/template/view.php';
+		require WK_PATH . '/elements/button-modal/template/view.php';
 	}
 
 

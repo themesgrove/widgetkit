@@ -55,7 +55,7 @@ class widgetkit_for_elementor_image_feature{
 	 * @access private
 	 */
 	private function includes() {
-		require_once WKFE_PATH  . '/elements/image-feature/template/config.php';
+		require_once WK_PATH  . '/elements/image-feature/template/config.php';
 	}
 
 	/**

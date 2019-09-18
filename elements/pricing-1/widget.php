@@ -55,7 +55,7 @@ class widgetkit_for_elementor_pricing_1 {
 	 * @access private
 	 */
 	private function includes() {
-		require_once WKFE_PATH  . '/elements/pricing-1/template/config.php';
+		require_once WK_PATH  . '/elements/pricing-1/template/config.php';
 	}
 
 	/**

@@ -21,7 +21,7 @@ class Widgetkit_For_Elementor_Pros_Cons{
 	}
 
 	private function include_files() {
-		require_once WKFE_PATH  . '/elements/pros-cons/template/config.php';
+		require_once WK_PATH  . '/elements/pros-cons/template/config.php';
 	}
 
 	private function init_config() {

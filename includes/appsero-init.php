@@ -21,10 +21,10 @@ class WKFE_Appsero_Init{
     protected function appsero_tracker_init() {
 
         if ( ! class_exists( 'Appsero\Client' ) ) {
-        require_once WKFE_PATH . '/vendor/appsero/client/src/Client.php';
+        require_once WK_PATH . '/vendor/appsero/client/src/Client.php';
         }
 
-        $client = new Appsero\Client( '91bf222e-d4ce-4fdb-97dc-30a95fa0bff7', 'Widgetkit For Elementor', WKFE_FILE );
+        $client = new Appsero\Client( '91bf222e-d4ce-4fdb-97dc-30a95fa0bff7', 'Widgetkit For Elementor', WK_FILE );
 
         $client->insights()->init();
 

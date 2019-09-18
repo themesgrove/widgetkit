@@ -2120,7 +2120,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	} // End Tab section
 
 	protected function render() {
-		require WKFE_PATH . '/elements/pricing-tab/template/view.php';
+		require WK_PATH . '/elements/pricing-tab/template/view.php';
 	}
 
 

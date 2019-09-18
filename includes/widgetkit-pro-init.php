@@ -17,7 +17,7 @@ class WKFE_PRO_Init{
         static $this_plugin;
      
         if (!$this_plugin) {
-            $this_plugin = plugin_basename(WKFE_FILE);
+            $this_plugin = plugin_basename(WK_FILE);
         }
         
         $settings_links = sprintf( '<a href="admin.php?page=widgetkit-settings#widgetkit-elements">' . __( 'Settings', 'widgetkit-for-elementor' ) . '</a>' );

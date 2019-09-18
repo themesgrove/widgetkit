@@ -686,7 +686,7 @@ class wkfe_blog_4 extends Widget_Base {
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/blog-4/template/view.php';
+		require WK_PATH . '/elements/blog-4/template/view.php';
 	}
 
 

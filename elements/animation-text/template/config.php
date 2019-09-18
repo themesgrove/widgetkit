@@ -255,7 +255,7 @@ class wkfe_animation_text extends Widget_Base {
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/animation-text/template/view.php';
+		require WK_PATH . '/elements/animation-text/template/view.php';
 	}
 
 

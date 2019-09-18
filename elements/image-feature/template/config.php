@@ -631,7 +631,7 @@ class wkfe_image_feature extends Widget_Base {
 	}
 
 	protected function render() {
-		require WKFE_PATH . '/elements/image-feature/template/view.php';
+		require WK_PATH . '/elements/image-feature/template/view.php';
 	}
 
 
