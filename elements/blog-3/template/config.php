@@ -372,7 +372,7 @@ class wkfe_blog_3 extends Widget_Base {
 	/**
 	 * Pro control panel 
 	 */
-	if(!apply_filters('check_pro', false)):
+	if(!apply_filters('wkpro_enabled', false)):
 		$this->start_controls_section(
 			'section_widgetkit_pro_box',
 			[
