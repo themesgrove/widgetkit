@@ -200,7 +200,7 @@ class Widgetkit_Admin
                                         <div>
                                             <div class="uk-card uk-card-secondary uk-card-body">
                                                 <h3  class="uk-card-title"><?php echo  __( 'Need Any Help?');?></h3>
-                                                <p>Feel free to join us in our <a target="_blank" href="https://www.facebook.com/themesgrove/">Facebook Group</a> . If you need more help just shoot us an email <code>help@themesgrove.com</code>.</p>
+                                                <p>Feel free to join us in our <a target="_blank" href="https://www.facebook.com/themesgrove/">Official Facebook Group</a>  and also <a target="_blank" href="https://www.facebook.com/groups/375093230075321/">Widgetkit Community</a>. If you need more help just shoot us an email <code>help@themesgrove.com</code>.</p>
                                             </div>
                                         </div>
                                         <div class="uk-width-1-1">
