@@ -10,7 +10,6 @@ Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-All-in-One Addons for Elementor - WidgetKit
 Everything you need to create a stunning website with Elementor, WooCommerce, LearnDash, LearnPress and more. Growing collection of premium quality elements for FREE. Content widgets, creative widgets, dynamic widgets and more to count on.
 
 == Description ==
