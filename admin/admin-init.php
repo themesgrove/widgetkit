@@ -163,7 +163,8 @@ class Widgetkit_Admin
     <div class="wrap">
         <div class="response-wrap"></div>
         <form action="" method="POST" id="widgetkit-settings" name="widgetkit-settings">
-            <div class="wk-header uk-padding-small uk-card uk-card-default">
+        <div class="uk-container">
+            <div class="wk-header uk-padding-small uk-card uk-card-default uk-margin-medium-top">
                 <div class="wk-header__top uk-margin-small-bottom">
                     <div class="">
                         <img src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="120" uk-svg>
@@ -174,9 +175,9 @@ class Widgetkit_Admin
                         <ul class="uk-tab-bottom uk-margin-remove-bottom" uk-tab="connect: #wk-options; animation: uk-animation-slide-left-small, uk-animation-slide-right-small">
                             <li><a href="#"><span class="uk-icon uk-margin-small-right" uk-icon="home"></span> Overview</a></li>
                             <li><a href="#"><span class="uk-icon uk-margin-small-right" uk-icon="thumbnails"></span> Elements</a></li>
-                            <li><a href="#"><span class="uk-icon uk-margin-small-right" uk-icon="info"></span> Info</a></li>
+                            <!-- <li><a href="#"><span class="uk-icon uk-margin-small-right" uk-icon="info"></span> Info</a></li>-->
                             <?php if (!apply_filters('wkpro_enabled', false)) :?>
-                                <li><a class="uk-text-danger" href="#"><span class="uk-icon uk-margin-small-right" uk-icon="star"></span> Go Premium</a></li>
+                                <li><a class="uk-text-danger" href="#"><span class="uk-icon uk-margin-small-right" uk-icon="star"></span> Pro Features</a></li>
                             <?php endif;?>
                         </ul>
                     </div>
@@ -189,10 +190,10 @@ class Widgetkit_Admin
             <div class="wk-main uk-margin">
                 <div class="uk-grid">
                     <div class="uk-width-3-4">
-                        <div class="uk-card uk-card-default uk-card-body uk-card-small">
+                        <div class="uk-card-small">
                             <ul id="wk-options" class="uk-switcher">
                                 <li>
-                                    <div class="uk-grid uk-child-width-1-2" uk-grid>
+                                    <div class="uk-grid uk-child-width-1-2 uk-grid-match" uk-grid>
                                         <div>
                                             <div class="uk-card uk-card-default uk-card-body">
                                                 <h4>Documentation</h4>
@@ -202,7 +203,7 @@ class Widgetkit_Admin
                                         <div>
                                             <div class="uk-card uk-card-secondary uk-card-body">
                                                 <h3  class="uk-card-title"><?php echo  __( 'Need Any Help?');?></h3>
-                                                <p>Feel free to join us in our <a target="_blank" href="https://www.facebook.com/themesgrove/">Official Facebook Group</a>  and also <a target="_blank" href="https://www.facebook.com/groups/375093230075321/">Widgetkit Community</a>. If you need more help just shoot us an email <code>help@themesgrove.com</code>.</p>
+                                                <p>Feel free to join us in our <a target="_blank" href="https://www.facebook.com/groups/375093230075321/">Official Facebook Group</a> for discussion, support and chill. If you need more help just shoot us an email <code>help@themesgrove.com</code>.</p>
                                             </div>
                                         </div>
                                         <div class="uk-width-1-1">
@@ -459,19 +460,86 @@ class Widgetkit_Admin
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <h3><?php echo esc_html__('System setup information useful for debugging purposes.','widgetkit-for-elementor');?></h3>
-                                    <pre>
-                                        <?php echo nl2br(widgetkit_get_sysinfo()); ?>
-                                    </pre>
-                                </li>
+
                                 <?php if (!apply_filters('wkpro_enabled', false)) :?>
                                 <li>
-                                    <h3 class="uk-text-center"><?php echo esc_html__('Unlock the true power of WidgetKit.','widgetkit-for-elementor');?></h3>
-                                    <div class="uk-card uk-card-default uk-card-body uk-padding-small uk-text-center">
-                                        <img class="uk-margin-small-top" src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="200" uk-svg>
-                                        <p class="uk-text-muted">Get the pro version of <strong>WidgetKit</strong> for more stunning elements and customization options.</p>
-                                        <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank" class="uk-button uk-button-primary "><span class="uk-icon uk-margin-small-right" uk-icon="unlock"></span>Upgrade to Pro</a>
+                                    <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                                        <div class="uk-card-media-left uk-cover-container">
+                                            <img src="https://themesgrove.com/wp-content/uploads/2018/12/wigetkit-banner-bg.png" alt="" uk-cover>
+                                            <canvas width="100" height="120"></canvas>
+                                        </div>
+                                        <div>
+                                            <div class="uk-card-body">
+                                                <h3 class="uk-card-title">Upgrade to WidgetKit Pro!</h3>
+                                                <p>Seems to be convinced, You need more to empower your Elementor capabilities.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="uk-text-center uk-h2"><?php echo esc_html__('Awesome Post Widgets','widgetkit-for-elementor');?></h3>
+                                    <div class="uk-child-width-1-3@m uk-grid-match" uk-grid>
+                                        <div>
+                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                                <img src="<?php echo plugins_url('/assets/images/premium/post-grid-slider.jpg', __FILE__)?>" alt="">
+                                                <h4 class="uk-margin-small-top uk-text-light">Ajax based grid slider</h4>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                                <img src="<?php echo plugins_url('/assets/images/premium/post-tabs.jpg', __FILE__)?>" alt="">
+                                                <h4 class="uk-margin-small-top uk-text-light">Posts tab with ajax</h4>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                                <img src="<?php echo plugins_url('/assets/images/premium/post-smart-list.jpg', __FILE__)?>" alt="">
+                                                <h4 class="uk-margin-small-top uk-text-light">Smart list widget</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="uk-text-center uk-h2"><?php echo esc_html__('Premium WooCommerce Widgets','widgetkit-for-elementor');?></h3>
+                                    <div class="uk-child-width-1-3@m uk-grid-match" uk-grid>
+                                        <div>
+                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                                <img src="<?php echo plugins_url('/assets/images/premium/woo-smart-products.jpg', __FILE__)?>" alt="">
+                                                <h4 class="uk-margin-small-top uk-text-light">Woo smart products</h4>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                                <img src="<?php echo plugins_url('/assets/images/premium/woo-smart-cat.jpg', __FILE__)?>" alt="">
+                                                <h4 class="uk-margin-small-top uk-text-light">Woo smart categories</h4>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                                <img src="<?php echo plugins_url('/assets/images/premium/woo-ajax-cart.jpg', __FILE__)?>" alt="">
+                                                <h4 class="uk-margin-small-top uk-text-light">Ajax add to cart</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="uk-text-center uk-h2"><?php echo esc_html__('LearnDash Widgets','widgetkit-for-elementor');?></h3>
+                                    <div class="uk-child-width-1-3@m uk-grid-match" uk-grid>
+                                        <div>
+                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                                <img src="https://themesgrove.com/wp-content/uploads/Themes/Switch_Pro/Thumbnel.webp" alt="">
+                                                <h4 class="uk-margin-small-top uk-text-light">Ajax based grid slider</h4>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                                <img src="https://themesgrove.com/wp-content/uploads/Themes/Switch_Pro/Thumbnel.webp" alt="">
+                                                <h4 class="uk-margin-small-top uk-text-light">Ajax based grid slider</h4>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                                <img src="https://themesgrove.com/wp-content/uploads/Themes/Switch_Pro/Thumbnel.webp" alt="">
+                                                <h4 class="uk-margin-small-top uk-text-light">Ajax based grid slider</h4>
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-1-1 uk-text-center">
+                                            <div><a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank" class="uk-button uk-button-primary">And Many More <span uk-icon="icon: arrow-right"></span></a></div>
+                                        </div>
                                     </div>
                                 </li>
                                 <?php endif;?>
@@ -480,16 +548,18 @@ class Widgetkit_Admin
                     </div>
                     <div class="uk-width-1-4">
                     <?php if (!apply_filters('wkpro_enabled', false)) :?>
-                        <div class="uk-card uk-card-default uk-card-body uk-padding-small uk-text-center">
-                            <img class="uk-margin-small-top" src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="200" uk-svg>
-                            <p class="uk-text-muted">Get the pro version of <strong>WidgetKit</strong> for more stunning elements and customization options.</p>
-                            <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank" class="uk-button uk-button-primary "><span class="uk-icon uk-margin-small-right" uk-icon="unlock"></span>Upgrade to Pro</a>
+                        <div uk-sticky="offset: 40">
+                            <div class="uk-card uk-card-default uk-card-body uk-padding-small uk-text-center">
+                                <img class="uk-margin-small-top" src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="200" uk-svg>
+                                <p class="uk-text-muted">Get the pro version of <strong>WidgetKit</strong> for more stunning elements and customization options.</p>
+                                <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank" class="uk-button uk-button-primary "><span class="uk-icon uk-margin-small-right" uk-icon="unlock"></span>Upgrade to Pro</a>
+                            </div>
                         </div>
                     </div>
                     <?php endif;?>
                 </div>
             </div>
-
+        </div>
         </form>
     </div>
 

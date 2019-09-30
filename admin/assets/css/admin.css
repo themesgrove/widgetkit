@@ -1,5 +1,7 @@
 /*pro css*/
-
+html{
+    background: transparent !important;
+}
 .btn-pro {
     padding: 10px 30px;
     border: 1px solid #ed485f;
