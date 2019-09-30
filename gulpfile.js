@@ -1,5 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var less = require('gulp-less');
+// var path = require('path');
 // var minify = require('gulp-minify-css');
 var uglify = require('gulp-uglify-es').default;
 var wpPot = require('gulp-wp-pot');
@@ -29,17 +31,33 @@ gulp.task('images', function () {
   return gulp.src('assets/images/*.{jpg,png}')
       .pipe(gulp.dest('./dist/images/'));
 });
+/**
+ * copy bootstrap less folder
+ */
+gulp.task('copy-bs-less', function(){
+  return gulp.src([
+    'node_modules/bootstrap/less/*.less',
+    'node_modules/bootstrap/less/*/*.less',
+  ]).pipe(gulp.dest('./assets/bootstrap/'));
+});
+
+gulp.task('compile-bs-less', function () {
+  return gulp.src('./assets/bootstrap/bootstrap.less')
+    .pipe(less())
+    .pipe(gulp.dest('./assets/css/'));
+});
 
 gulp.task('copy-css-from-node-modules', function(){
   return gulp.src([
       'node_modules/animate.css/animate.min.css',
-      'node_modules/bootstrap/dist/css/bootstrap.min.css',
+      // 'node_modules/bootstrap/dist/css/bootstrap.min.css',
       'node_modules/owl.carousel/dist/assets/owl.carousel.min.css',
       'node_modules/owl.carousel/dist/assets/owl.theme.default.min.css',
       'node_modules/uikit/dist/css/uikit.min.css',
     ])
       .pipe(gulp.dest('./dist/css/'));
 });
+
 gulp.task('copy-js-from-node-modules', function(){
   return gulp.src([
       'node_modules/bootstrap/dist/js/bootstrap.min.js',
@@ -57,13 +75,20 @@ gulp.task('clean', () => {
       'dist/',
   ]);
 });
+gulp.task('cleanBs', () => {
+  return del([
+      'assets/css/bootstrap.css',
+  ]);
+});
 
 gulp.task('watch', () => {
   gulp.watch('assets/scss/**/*', gulp.series(['styles']));
   gulp.watch('assets/js/*', gulp.series(['js']));
 });
 
-gulp.task('build', gulp.series(['clean', 'copy-resource', 'styles', 'js', 'fonts', 'images']));
+gulp.task('getBs', gulp.series(['clean','copy-bs-less']));
+gulp.task('setBs', gulp.series(['cleanBs', 'compile-bs-less']));
+gulp.task('build', gulp.series(['clean', 'setBs', 'copy-resource', 'styles', 'js', 'fonts', 'images']));
 gulp.task('default', gulp.series(['build', 'watch']));
 
 gulp.task('package', async function () {

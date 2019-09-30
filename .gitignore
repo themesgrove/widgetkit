@@ -4,3 +4,4 @@ composer.lock
 vendor/
 *.zip
 dist/
+assets/bootstrap/

@@ -19,7 +19,7 @@ class WKFE_Addons_Integration{
     }
     
     public function widgetkit_register_frontend_styles(){
-        wp_register_style( 'widgetkit_bs', WK_URL.'dist/css/bootstrap.min.css', array(), WK_VERSION, 'all');
+        wp_register_style( 'widgetkit_bs', WK_URL.'dist/css/bootstrap.css', array(), WK_VERSION, 'all');
         wp_register_style( 'owl-css', WK_URL.'dist/css/owl.carousel.min.css', array(), WK_VERSION, 'all');
         wp_register_style( 'animate-text', WK_URL.'dist/css/animate-text.css', array(), WK_VERSION, 'all');
         wp_register_style( 'animate-css', WK_URL.'dist/css/animate.min.css', array(), WK_VERSION, 'all');
