@@ -5,7 +5,7 @@ Donate link: https://themesgrove.com/
 Tags: elementor, add-ons, elementor addons, elementor widgets, woocommerce, learndash, learnpress, widgets, woocommerce addons, learndash addons, sensei, sensei addons, countdown, timer, slider, team, testimonial, social-share, carousel, portfolio, pricing, widgetkit
 Requires at least: 4.0
 Tested up to: 5.2
-Stable tag: 1.5.7.1
+Stable tag: 1.5.8
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -158,6 +158,10 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+= 1.5.8 = 
+* Fix - Menu problem with oceanwp theme
+* Update - Dashboard
+
 = 1.5.7.1 = 
 * Update - Add missing elements
 
