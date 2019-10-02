@@ -94,17 +94,33 @@ class wkfe_image_feature extends Widget_Base {
 	    );
 
 
+		// $this->add_control(
+		// 	'feature_icon',
+		// 	[
+		// 		'label' => esc_html__( 'Feature Icon', 'widgetkit-for-elementor' ),
+		// 		'type'  => Controls_Manager::ICON,
+		// 		'default'    => 'fa fa-clock-o',
+		// 		 'condition' => [
+		// 				'choose_media' => 'icon',
+		// 			],
+		// 	]
+		// );
 		$this->add_control(
-			'feature_icon',
-			[
-				'label' => esc_html__( 'Feature Icon', 'widgetkit-for-elementor' ),
-				'type'  => Controls_Manager::ICON,
-				'default'    => 'fa fa-clock-o',
-				 'condition' => [
-						'choose_media' => 'icon',
-					],
-			]
-		);
+            'feature_icon_updated',
+            [
+                'label' => esc_html__( 'Feature Icon', 'widgetkit-for-elementor' ),
+                'type'              => Controls_Manager::ICONS,
+                'fa4compatibility'  => 'feature_icon',
+                'default'    =>  [
+                    'value'     => 'fa fa-clock-o',
+                    'library'   => 'fa-solid',
+                ],
+                'condition' => [
+                    'choose_media' => 'icon',
+                ],
+                'label_block'   => true,
+            ]
+        );
 		   
 			$this->add_control(
 			    'feature_title',

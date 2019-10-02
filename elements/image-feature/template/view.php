@@ -1,8 +1,8 @@
 <?php
 // Silence is golden.
+    use Elementor\Icons_Manager;
 
     $settings = $this->get_settings();
-
 
 ?>
 
@@ -40,10 +40,12 @@
                         <?php endif; ?>
 
                     <?php else: ?>
-
-                        <?php if( $settings['feature_icon']):?>
-                            <i class="feature-icon fa <?php echo $settings['feature_icon'];?>"></i>
-                        <?php endif; ?>
+                        <?php 
+                        Icons_Manager::render_icon( $settings['feature_icon_updated'], [ 'aria-hidden' => 'true' ] );
+                        ?>
+                        <?php //if( $settings['feature_icon']):?>
+                            <!-- <i class="feature-icon fa <?php //echo $settings['feature_icon'];?>"></i> -->
+                        <?php //endif; ?>
 
                     <?php endif ?>
                 </div><!-- .custom-icon -->
@@ -58,10 +60,12 @@
                         <?php endif; ?>
 
                     <?php else: ?>
-
-                        <?php if( $settings['feature_icon']):?>
-                             <i class="feature-icon fa <?php echo $settings['feature_icon'];?>"></i>
-                        <?php endif; ?>
+                        <?php 
+                            Icons_Manager::render_icon( $settings['feature_icon_updated'], [ 'aria-hidden' => 'true', 'class' => 'feature-icon' ] );
+                        ?>
+                        <?php //if( $settings['feature_icon']):?>
+                             <!-- <i class="feature-icon fa <?php //echo $settings['feature_icon'];?>"></i> -->
+                        <?php //endif; ?>
                         
                     <?php endif ?>
 
