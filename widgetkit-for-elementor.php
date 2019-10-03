@@ -19,7 +19,7 @@ Domain Path: /languages
      */
     if( !defined( 'ABSPATH' ) ) exit; 
 
-    define('WK_VERSION', '1.5.7.1');
+    define('WK_VERSION', '1.5.8');
     define('WK_FILE', __FILE__); 
     define('WK_URL', plugins_url('/', __FILE__ ) );
     define('WK_PATH', plugin_dir_path( __FILE__ ) );
