@@ -29,7 +29,7 @@
 
                       <?php if ( ! empty( $settings['pricing_2_icon_image']['url'] ) ) : ?>
                           <div class="tgx-single-image">
-                            <img src="<?php echo $settings['pricing_2_icon_image']['url']; ?>" alt="<?php echo $settings['single_pricing_title']; ?>" />
+                            <img src="<?php echo $settings['pricing_2_icon_image']['url']; ?>" alt="<?php echo $settings['pricing_2_pricing_title']; ?>" />
                           </div><!-- .table-image -->
                       <?php endif; ?>
 
