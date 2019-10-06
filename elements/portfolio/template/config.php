@@ -295,14 +295,48 @@ class wkfe_portfolio extends Widget_Base {
 		);
 
 		$this->add_control(
+			'filter_layout_align',
+			[
+				'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
+				'type'  => Controls_Manager::CHOOSE,
+				'default'   => 'center',
+				'options' => [
+					'left'    => [
+						'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
+						'icon'  => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
+						'icon'  => 'eicon-text-align-center',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
+						'icon'  => 'eicon-text-align-left',
+					],
+				],
+				'condition' => [
+					'filter_enable' => 'yes',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .tgx-portfolio .portfolio-filter' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'filter_hr',
+			[
+			'type' => \Elementor\Controls_Manager::DIVIDER,
+			]
+		);
+		$this->add_control(
 			'portfolio_filter_show_title',
 			[
 				'label'   => esc_html__( 'Title', 'widgetkit-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
 				'default' => esc_html__( 'Show All', 'widgetkit-for-elementor' ),
 				'condition' => [
-		                'filter_enable' => 'yes',
-		            ],
+					'filter_enable' => 'yes',
+				],
 			]
 		);
 
@@ -313,7 +347,7 @@ class wkfe_portfolio extends Widget_Base {
 					'label'  => esc_html__( 'Spacing', 'widgetkit-for-elementor' ),
 					'type'   => Controls_Manager::SLIDER,
 					'default'  => [
-						'size' => 40,
+						'size' => 10,
 					],
 					'range'  => [
 						'px' => [
