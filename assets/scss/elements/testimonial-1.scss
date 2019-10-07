@@ -27,12 +27,14 @@
 	  margin-bottom: 35px;
 	}
 	.tgx-testimonial-1 .testimoni-wrapper .testimony:before {
-	  content: "\f10d";
-	  font: normal normal normal 14px/1 FontAwesome;
-	  color: #ece9f0;
-	  font-size: 26px;
-	  display: block;
-	  margin-bottom: 15px;
+	  	content: "\f10d";
+		// font: normal normal normal 14px/1 FontAwesome;
+		font-family: "Font Awesome 5 Free"; 
+		font-weight: 900; 
+	  	color: #ece9f0;
+	  	font-size: 26px;
+	  	display: block;
+	  	margin-bottom: 15px;
 	}
 /*	.tgx-testimonial-1 .testimoni-wrapper .testimony p {
 	  line-height: 30px;
