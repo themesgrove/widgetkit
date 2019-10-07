@@ -525,24 +525,24 @@ class Widgetkit_Admin
                                     <div class="uk-child-width-1-3@m uk-grid-match" uk-grid>
                                         <div>
                                             <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
-                                                <img src="https://themesgrove.com/wp-content/uploads/Themes/Switch_Pro/Thumbnel.webp" alt="">
-                                                <h4 class="uk-margin-small-top uk-text-light">Ajax based grid slider</h4>
+                                                <img src="<?php echo plugins_url('/assets/images/premium/ld1.png', __FILE__)?>" alt="">
+                                                <h4 class="uk-margin-small-top uk-text-light">Course List Style</h4>
                                             </div>
                                         </div>
                                         <div>
                                             <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
-                                                <img src="https://themesgrove.com/wp-content/uploads/Themes/Switch_Pro/Thumbnel.webp" alt="">
-                                                <h4 class="uk-margin-small-top uk-text-light">Ajax based grid slider</h4>
+                                                <img src="<?php echo plugins_url('/assets/images/premium/ld2.png', __FILE__)?>" alt="">
+                                                <h4 class="uk-margin-small-top uk-text-light">Course Tab Style</h4>
                                             </div>
                                         </div>
                                         <div>
                                             <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
-                                                <img src="https://themesgrove.com/wp-content/uploads/Themes/Switch_Pro/Thumbnel.webp" alt="">
-                                                <h4 class="uk-margin-small-top uk-text-light">Ajax based grid slider</h4>
+                                                <img src="<?php echo plugins_url('/assets/images/premium/ld3.png', __FILE__)?>" alt="">
+                                                <h4 class="uk-margin-small-top uk-text-light">Course Carousel Style</h4>
                                             </div>
                                         </div>
                                         <div class="uk-width-1-1 uk-text-center">
-                                            <div><a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank" class="uk-button uk-button-primary">And Many More <span uk-icon="icon: arrow-right"></span></a></div>
+                                            <div><a href="https://themesgrove.com/widgetkit-for-elementor/?utm_campaign=widgetkit-pro&utm_medium=wp-admin&utm_source=pro-feature-button" target="_blank" class="uk-button uk-button-primary">And Many More <span uk-icon="icon: arrow-right"></span></a></div>
                                         </div>
                                     </div>
                                 </li>
@@ -557,7 +557,7 @@ class Widgetkit_Admin
                             <div class="uk-card uk-card-default uk-card-body uk-padding-small uk-text-center">
                                 <img class="uk-margin-small-top" src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="200" uk-svg>
                                 <p class="uk-text-muted">Get the pro version of <strong>WidgetKit</strong> for more stunning elements and customization options.</p>
-                                <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank" class="uk-button uk-button-primary "><span class="uk-icon uk-margin-small-right" uk-icon="unlock"></span>Upgrade to Pro</a>
+                                <a href="https://themesgrove.com/widgetkit-for-elementor/?utm_campaign=widgetkit-pro&utm_medium=wp-admin&utm_source=pro-feature-button" target="_blank" class="uk-button uk-button-primary "><span class="uk-icon uk-margin-small-right" uk-icon="unlock"></span>Upgrade to Pro</a>
                             </div>
                         </div>
                     </div>
