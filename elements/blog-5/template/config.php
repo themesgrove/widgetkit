@@ -192,7 +192,7 @@ class wkfe_blog_5 extends Widget_Base {
 				[
 					'label'     => esc_html__( 'Enable/Disable', 'widgetkit-for-elementor' ),
 					'type'      => Controls_Manager::SWITCHER,
-					'default'   => 'yes',
+					'default'   => '',
 					'enable'    => esc_html__( 'Enable', 'widgetkit-for-elementor' ),
 					'disable'   => esc_html__( 'Disable', 'widgetkit-for-elementor' ),
 				]
