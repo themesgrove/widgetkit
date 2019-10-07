@@ -159,8 +159,17 @@ PHP 5.4 or greater.
 
 == Changelog ==
 = 1.5.8 = 
-* Fix - Menu problem with oceanwp theme
+* New - Theme integration added for OceanWP, Astra.
+* New - Alignment option added in Filter Portfolio Element.
+* New - New icon field set added for Featured Image Element
 * Update - Dashboard
+* Update - Carousel Style update in Testimonial Single Element.
+* Update - Carousel Style update in Blog Carousel Element. 
+* Update - Default config and style updated in Blog Image Element. 
+* Update - Post Carousel Element Style updated.
+* Update - Typography Style updated in Social Share Element.
+* Fix - Undefined variable issue in Pricing Icon Element.
+* Fix - Typography updated in Frontend Builder mode. 
 
 = 1.5.7.1 = 
 * Update - Add missing elements
