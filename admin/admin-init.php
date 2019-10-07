@@ -189,7 +189,11 @@ class Widgetkit_Admin
 
             <div class="wk-main uk-margin">
                 <div class="uk-grid">
+                    <?php if (!apply_filters('wkpro_enabled', false)) :?>
                     <div class="uk-width-3-4">
+                    <?php else: ?>
+                    <div class="uk-width-1-1">
+                    <?php endif; ?>
                         <div class="uk-card-small">
                             <ul id="wk-options" class="uk-switcher">
                                 <li>
@@ -546,8 +550,9 @@ class Widgetkit_Admin
                             </ul>
                         </div>
                     </div>
-                    <div class="uk-width-1-4">
+                    
                     <?php if (!apply_filters('wkpro_enabled', false)) :?>
+                    <div class="uk-width-1-4">
                         <div uk-sticky="offset: 40">
                             <div class="uk-card uk-card-default uk-card-body uk-padding-small uk-text-center">
                                 <img class="uk-margin-small-top" src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="200" uk-svg>
