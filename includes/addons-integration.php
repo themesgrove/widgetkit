@@ -25,6 +25,7 @@ class WKFE_Addons_Integration{
         wp_register_style( 'animate-css', WK_URL.'dist/css/animate.min.css', array(), WK_VERSION, 'all');
         wp_register_style( 'fontawesome', WK_URL.'dist/css/font-awesome.min.css', array(), WK_VERSION, 'all');
         wp_register_style( 'ionsicon', WK_URL.'dist/css/ionicons.min.css', array(), WK_VERSION, 'all');
+        wp_register_style( 'uikit', WK_URL.'dist/css/uikit.min.css', array(), WK_VERSION, 'all');
         wp_register_style( 'widgetkit_main', WK_URL.'dist/css/widgetkit.css', array(), WK_VERSION, 'all');
     }
     
@@ -47,6 +48,8 @@ class WKFE_Addons_Integration{
         wp_register_script( 'widgetkit-slider', WK_URL.'dist/js/slider-3.js' , array('jquery'), WK_VERSION, true);
         wp_register_script( 'countdown', WK_URL.'dist/js/countdown.js' , array('jquery'), WK_VERSION, true);
         wp_register_script( 'widgetkit-main', WK_URL.'dist/js/widgetkit.js' , array('jquery'), WK_VERSION, true);
+        wp_register_script( 'uikit-js', WK_URL.'dist/js/uikit.min.js' , array('jquery'), WK_VERSION, true);
+        wp_register_script( 'uikit-icons', WK_URL.'dist/js/uikit-icons.min.js' , array('jquery'), WK_VERSION, true);
     }
 
 }
