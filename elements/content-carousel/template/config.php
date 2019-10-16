@@ -187,44 +187,31 @@ class wkfe_content_carousel extends Widget_Base {
                         'item_option' => 'custom_post',
                     ],
               ]
-          );
+            );
 
 
 
+	        $this->add_control(
+	            'post_show',
+	            [
+	                'label'   => __( 'Number of Post', 'magmax' ),
+	                'type'    => Controls_Manager::NUMBER,
+	                'default' => 4,
+	                'min'     => -1,
+	                'max'     => 100,
+	                'step'    => 1,
+	            ]
+	        );
 
-
-
-
-		$this->add_control(
-            'post_show',
-                [
-                    'label'    => esc_html__( 'Show Post', 'widgetkit-for-elementor' ),
-                    'type'     => Controls_Manager::SELECT,
-                    'default'  => '4',
-                    'options'  => [
-                        '1'    => esc_html__( '1', 'widgetkit-for-elementor' ),
-                        '2'    => esc_html__( '2', 'widgetkit-for-elementor' ),
-                        '3'    => esc_html__( '3', 'widgetkit-for-elementor' ),
-                        '4'    => esc_html__( '4', 'widgetkit-for-elementor' ),
-                        '-1'   => esc_html__( 'Unlimited', 'widgetkit-for-elementor' ),
-                    ],
-                    'separator' => 'before',
-
-                    'condition' => [
-                        'item_option' => 'blog_post',
-                    ],
-                ]
-        );
-
-           $this->add_control(
+            $this->add_control(
                 'items_order',
                 [
                     'label' => esc_html__( 'Order', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::SELECT,
                     'default'  => 'ASC',
                     'options'  => [
-                        'ASC'  => esc_html__( 'ASC', 'widgetkit-for-elementor' ),
-                        'DSC'  => esc_html__( 'DSC', 'widgetkit-for-elementor' ),
+                        'ASC'  => esc_html__( 'Asscending', 'widgetkit-for-elementor' ),
+                        'DSC'  => esc_html__( 'Descending', 'widgetkit-for-elementor' ),
                     ],
                     'condition' => [
                         'item_option' => 'blog_post',
@@ -296,7 +283,7 @@ class wkfe_content_carousel extends Widget_Base {
             $this->add_control(
                 'content_enable',
                     [
-                        'label'     => esc_html__( 'Enable/Disable', 'widgetkit-for-elementor' ),
+                        'label'     => esc_html__( 'Display Content', 'widgetkit-for-elementor' ),
                         'type'      => Controls_Manager::SWITCHER,
                         'default'   => 'disable',
                         'enable'    => esc_html__( 'Enable', 'widgetkit-for-elementor' ),
@@ -323,6 +310,8 @@ class wkfe_content_carousel extends Widget_Base {
                     ],
                 ]
             );
+
+
 
         $this->end_controls_section();
 
@@ -352,25 +341,36 @@ class wkfe_content_carousel extends Widget_Base {
 	                ]
 	            );
 
+		        $this->add_control(
+	                'center_mode_enable',
+	                    [
+	                        'label'     => esc_html__( 'Display Center', 'widgetkit-for-elementor' ),
+	                        'type'      => Controls_Manager::SWITCHER,
+	                        'default'   => 'disable',
+	                        'enable'    => esc_html__( 'Enable', 'widgetkit-for-elementor' ),
+	                        'disable'   => esc_html__( 'Disable', 'widgetkit-for-elementor' ),
+	                    ]
+	            );
 
-	           $this->add_control(
-	            'item_column',
-	            [
-	                'label'       => __( 'Column', 'widgetkit-for-elementor' ),
-	                'type' => Controls_Manager::SELECT,
-	                'default' => '3',
-	                'options' => [
-	                    '1'   => __( '1', 'widgetkit-for-elementor' ),
-	                    '2'   => __( '2', 'widgetkit-for-elementor' ),
-	                    '3'   => __( '3', 'widgetkit-for-elementor' ),
-	                    '4'   => __( '4', 'widgetkit-for-elementor' ),
-	                ],
 
+
+
+            $this->add_control(
+                'item_column',
+                [
+                    'label'   => __( 'Number of Colum', 'widgetkit-for-elementor' ),
+                    'type'    => Controls_Manager::NUMBER,
+                    'default' => 3,
+                    'min'     => 1,
+                    'max'     => 10,
+                    'step'    => 1,
+                   
 	                'condition' => [
-                        'item_layout' => 'false',
+                        'center_mode_enable' => 'disable',
                     ],
-	            ]
-	        );
+                ]
+            );
+
 	        $this->end_controls_section();
 
 		    $this->start_controls_section(
@@ -508,8 +508,8 @@ class wkfe_content_carousel extends Widget_Base {
 	                            ],
 	                        ],
 	                        'selectors' => [
-	                            '{{WRAPPER}} .content-carousel .uk-card .uk-card-media-top' => 'max-height: {{SIZE}}{{UNIT}}; overflow:hidden;',
-	                            '{{WRAPPER}} .content-carousel .uk-card .uk-card-media-bottom' => 'max-height: {{SIZE}}{{UNIT}}; overflow:hidden;',
+	                            '{{WRAPPER}} .content-carousel .wk-card .wk-card-media-top' => 'max-height: {{SIZE}}{{UNIT}}; overflow:hidden;',
+	                            '{{WRAPPER}} .content-carousel .wk-card .wk-card-media-bottom' => 'max-height: {{SIZE}}{{UNIT}}; overflow:hidden;',
 	                        ],
 	                    ]
 	                );
@@ -544,7 +544,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                'type'      => Controls_Manager::COLOR,
 	                'default'   => '#777',
 	                'selectors' => [
-	                    '{{WRAPPER}} .content-carousel .uk-card .uk-card-body span a, {{WRAPPER}} .content-carousel .uk-card .uk-card-body span ' => 'color: {{VALUE}};',
+	                    '{{WRAPPER}} .content-carousel .wk-card .wk-card-body span a, {{WRAPPER}} .content-carousel .wk-card .wk-card-body span ' => 'color: {{VALUE}};',
 	                ],
 	            ]
 	        );
@@ -555,7 +555,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                    'name'     => 'category_typography',
 	                    'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
 	                    'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-	                    'selector' => '{{WRAPPER}} .content-carousel .uk-card .uk-card-body span',
+	                    'selector' => '{{WRAPPER}} .content-carousel .wk-card .wk-card-body span',
 	                ]
 	        );
 
@@ -566,7 +566,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                    'type'      => Controls_Manager::COLOR,
 	                    'default'   => '',
 	                    'selectors' => [
-	                        '{{WRAPPER}} .content-carousel .uk-card .uk-card-body span a:hover' => 'color: {{VALUE}};',
+	                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-body span a:hover' => 'color: {{VALUE}};',
 	                    ],
 	                ]
 	            );
@@ -587,7 +587,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                        ],
 	                    ],
 	                    'selectors' => [
-	                        '{{WRAPPER}} .content-carousel .uk-card .uk-card-body span' => 'margin: {{SIZE}}{{UNIT}} 0;',
+	                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-body span' => 'margin: {{SIZE}}{{UNIT}} 0;',
 	                    ],
 	                ]
 	            );
@@ -609,7 +609,7 @@ class wkfe_content_carousel extends Widget_Base {
                     'type'      => Controls_Manager::COLOR,
                     'default'   => '#222',
                     'selectors' => [
-                        '{{WRAPPER}} .content-carousel .uk-card .uk-card-body .uk-card-title a' => 'color: {{VALUE}};',
+                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-body .wk-card-title a' => 'color: {{VALUE}};',
                     ],
                 ]
             );
@@ -620,7 +620,7 @@ class wkfe_content_carousel extends Widget_Base {
                         'name'     => 'title_typography',
                         'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
                         'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-                        'selector' => '{{WRAPPER}} .content-carousel .uk-card .uk-card-body .uk-card-title',
+                        'selector' => '{{WRAPPER}} .content-carousel .wk-card .wk-card-body .wk-card-title',
                     ]
             );
 
@@ -631,7 +631,7 @@ class wkfe_content_carousel extends Widget_Base {
                     'type'      => Controls_Manager::COLOR,
                     'default'   => '#0073aa',
                     'selectors' => [
-                        '{{WRAPPER}} .content-carousel .uk-card .uk-card-body .uk-card-title a:hover' => 'color: {{VALUE}}; text-decoration:none;',
+                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-body .wk-card-title a:hover' => 'color: {{VALUE}}; text-decoration:none;',
                     ],
                 ]
             );
@@ -651,7 +651,7 @@ class wkfe_content_carousel extends Widget_Base {
                             ],
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .content-carousel .uk-card .uk-card-body .uk-card-title' => 'padding: {{SIZE}}{{UNIT}} 0;',
+                            '{{WRAPPER}} .content-carousel .wk-card .wk-card-body .wk-card-title' => 'padding: {{SIZE}}{{UNIT}} 0;',
                         ],
                     ]
             );
@@ -674,7 +674,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                    'type'      => Controls_Manager::COLOR,
 	                    'default'   => '#777',
 	                    'selectors' => [
-	                        '{{WRAPPER}} .content-carousel .uk-card .uk-card-body p' => 'color: {{VALUE}};',
+	                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-body p' => 'color: {{VALUE}};',
 	                    ],
 	                ]
 	            );
@@ -685,7 +685,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                        'name'     => 'content_typography',
 	                        'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
 	                        'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-	                        'selector' => '{{WRAPPER}} .content-carousel .uk-card .uk-card-body p',
+	                        'selector' => '{{WRAPPER}} .content-carousel .wk-card .wk-card-body p',
 	                    ]
 	            );
 
@@ -697,7 +697,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                    'type'      => Controls_Manager::COLOR,
 	                    'default'   => '',
 	                    'selectors' => [
-	                        '{{WRAPPER}} .content-carousel .uk-card' => 'background: {{VALUE}};',
+	                        '{{WRAPPER}} .content-carousel .wk-card' => 'background: {{VALUE}};',
 	                    ],
 	                    'separator' => 'before',
 	                ]
@@ -711,7 +711,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                    'exclude' => [
 	                        'box_shadow_position',
 	                    ],
-	                    'selector' => '{{WRAPPER}} .content-carousel .uk-card',
+	                    'selector' => '{{WRAPPER}} .content-carousel .wk-card',
 	                ]
 	            );
 	        // endif;
@@ -737,7 +737,7 @@ class wkfe_content_carousel extends Widget_Base {
 						],
 					],
 					'selectors' => [
-						'{{WRAPPER}} .content-carousel .uk-card-body' => 'text-align: {{VALUE}};',
+						'{{WRAPPER}} .content-carousel .wk-card-body' => 'text-align: {{VALUE}};',
 					],
 				]
 			);
@@ -785,7 +785,7 @@ class wkfe_content_carousel extends Widget_Base {
                         'type'  => Controls_Manager::COLOR,
                         'default'   => '#ddd',
                         'selectors' => [
-                          '{{WRAPPER}} .content-carousel .uk-light .uk-slidenav' => 'background: {{VALUE}}; width: 40px;height: 40px;line-height: 28px;',
+                          '{{WRAPPER}} .content-carousel .wk-light .wk-slidenav' => 'background: {{VALUE}}; width: 40px;height: 40px;line-height: 28px;',
                         ],
 
                        'condition' => [
@@ -884,7 +884,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                    'selectors' => [
 	                        
 
-	                        '{{WRAPPER}} .content-carousel .uk-dotnav li a' => 'width: {{SIZE}}{{UNIT}}; height:{{SIZE}}{{UNIT}}; transition: all 0.3s ease;',
+	                        '{{WRAPPER}} .content-carousel .wk-dotnav li a' => 'width: {{SIZE}}{{UNIT}}; height:{{SIZE}}{{UNIT}}; transition: all 0.3s ease;',
 	                    ],
 	                    'condition' => [
                         	'dot_enable' => 'yes',
@@ -899,7 +899,7 @@ class wkfe_content_carousel extends Widget_Base {
                         'type'  => Controls_Manager::COLOR,
                         'default'   => 'transparent',
                         'selectors' => [
-                          '{{WRAPPER}} .content-carousel .uk-dotnav li a' => 'background-color: {{VALUE}};',
+                          '{{WRAPPER}} .content-carousel .wk-dotnav li a' => 'background-color: {{VALUE}};',
                         ],
                         'condition' => [
                         	'dot_enable' => 'yes',
@@ -916,7 +916,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                'placeholder' => '1px',
 	                'default'  => '1px',
 	                'selector' => '
-	                    {{WRAPPER}} .content-carousel .uk-dotnav li a',
+	                    {{WRAPPER}} .content-carousel .wk-dotnav li a',
 	                'separator' => 'before',
 	                'condition' => [
                         'dot_enable' => 'yes',
@@ -931,7 +931,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                'type'  => Controls_Manager::DIMENSIONS,
 	                'size_units' => [ 'px', '%' ],
 	                'selectors'  => [
-	                    '{{WRAPPER}} .content-carousel .uk-dotnav li a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+	                    '{{WRAPPER}} .content-carousel .wk-dotnav li a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 	                ],
 	                'condition' => [
                         'dot_enable' => 'yes',
@@ -969,7 +969,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                    'selectors' => [
 	                        
 
-	                        '{{WRAPPER}} .content-carousel .uk-dotnav .uk-active a' => 'width: {{SIZE}}{{UNIT}}; transition: all 0.3s ease; border-radius: 10px;',
+	                        '{{WRAPPER}} .content-carousel .wk-dotnav .wk-active a' => 'width: {{SIZE}}{{UNIT}}; transition: all 0.3s ease; border-radius: 10px;',
 	                    ],
 	                    'condition' => [
                         	'dot_enable' => 'yes',
@@ -984,7 +984,7 @@ class wkfe_content_carousel extends Widget_Base {
 		                'type'  => Controls_Manager::COLOR,
 		                'default'   => '',
 		                'selectors' => [
-		                  '{{WRAPPER}} .content-carousel .uk-dotnav .uk-active a' => 'background-color: {{VALUE}}; border-color: {{VALUE}};',
+		                  '{{WRAPPER}} .content-carousel .wk-dotnav .wk-active a' => 'background-color: {{VALUE}}; border-color: {{VALUE}};',
 		                ],
 		                'condition' => [
                         	'dot_enable' => 'yes',
