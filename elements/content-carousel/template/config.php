@@ -365,9 +365,9 @@ class wkfe_content_carousel extends Widget_Base {
                     'max'     => 10,
                     'step'    => 1,
                    
-	                'condition' => [
-                        'center_mode_enable' => 'disable',
-                    ],
+	                // 'condition' => [
+                 //        'center_mode_enable' => '0',
+                 //    ],
                 ]
             );
 
@@ -893,7 +893,7 @@ class wkfe_content_carousel extends Widget_Base {
             );
 
             $this->add_control(
-                'background_color',
+                'dot_background_color',
                     [
                         'label' => esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
                         'type'  => Controls_Manager::COLOR,

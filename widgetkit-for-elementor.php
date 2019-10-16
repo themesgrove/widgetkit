@@ -35,7 +35,7 @@ Domain Path: /languages
             add_filter( 'elementor/utils/get_placeholder_image_src', [ __CLASS__, 'wk_placeholder_image' ] );
         }
 
-        public function wk_placeholder_image() {
+        public static function wk_placeholder_image() {
             return WK_URL . 'dist/images/placeholder.jpg';
     }
 

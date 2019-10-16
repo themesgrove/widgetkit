@@ -2,25 +2,17 @@
     $contents = $settings = $this->get_settings();
     $id = $this->get_id();?>
 
-        <?php if ($contents['item_layout']): ?>
-            <div class="content-carousel" wk-slider="center: <?php echo $contents['item_layout'];?>">
-        <?php else: ?>
-            <div class="content-carousel" wk-slider="center:true">
-        <?php endif; ?>
+        <div class="content-carousel" wk-slider="center:<?php echo $contents['center_mode_enable'] == 'yes'? 'true' :'false'; ?>">
             <div class="wk-visible-toggle wk-light" tabindex="-1">
-                <?php if ($contents['item_layout'] == 'false'): ?>
-                    <ul class="wk-grid-small wk-slider-items wk-flex wk-child-width-1-<?php echo $contents['item_column'];?>@m wk-child-width-1-1@s wk-child-width-1-<?php echo $contents['item_column'];?>@l">
-                <?php else: ?>
+                <?php if ($contents['center_mode_enable'] == 'yes'): ?>
                     <ul class="wk-grid-small wk-slider-items wk-child-width-1-2@s wk-grid">
+                <?php else: ?>
+                      <ul class="wk-grid-small wk-slider-items wk-flex wk-child-width-1-<?php echo $contents['item_column'];?>@m wk-child-width-1-1@s wk-child-width-1-<?php echo $contents['item_column'];?>@l">
                 <?php endif; ?>
                     <?php if ($contents['item_option'] == 'custom_post'): ?>
                         <?php foreach ( $contents['custom_content'] as $content ) : ?>
                              <li class="wk-flex wk-flex-center wk-grid-match">
-                                <?php //if(apply_filters('wkpro_enabled', false)):?>
-                                    <div class="wk-card wk-card-default wk-margin-small-right wk-margin-small-bottom">
-                                <?php //else: ?>
-                                    <!-- <div class="wk-card wk-margin-small-right wk-margin-small-bottom"> -->
-                                <?php //endif; ?>
+                                <div class="wk-card wk-card-default wk-margin-small-right wk-margin-small-bottom">
                                     <?php if($content['content_thumb_image']):?>
                                         <?php if($contents['thumbnail_position'] == 'top'): ;?>
                                             <div class="wk-card-media-top">
@@ -30,7 +22,6 @@
                                             </div>
                                         <?php endif; ?> 
                                     <?php endif; ?> 
-                                    
 
                                     <div class="wk-card-body">
                                         <?php if ($content['content_meta']): ?>
@@ -49,6 +40,7 @@
                                             <p class=" wk-margin-small-bottom"><?php echo $content['content_content']; ?></p>
                                         <?php endif; ?>
                                     </div>
+                                    
                                     <?php if($contents['thumbnail_position'] == 'bottom'):?>
                                         <div class="wk-card-media-bottom">
                                             <a href="<?php echo $content['content_demo_link']; ?>">
