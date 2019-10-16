@@ -110,7 +110,7 @@ class Widgetkit_Admin
         $current_url = add_query_arg(array($_GET), $wp->request);
         $current_url_slug = explode("=", $current_url);
         if($current_url && $current_url_slug[1] === 'widgetkit-settings' ){
-            wp_enqueue_style( 'uikit',  plugins_url('/dist/css/uikit.min.css', dirname(__FILE__)  ));
+            wp_enqueue_style( 'uikit',  plugins_url('/dist/css/uikit.custom.min.css', dirname(__FILE__)  ));
             wp_enqueue_script( 'uikit',  plugins_url('/dist/js/uikit.min.js', dirname(__FILE__)  ));
             wp_enqueue_script( 'uikit-icon',  plugins_url('/dist/js/uikit-icons.min.js', dirname(__FILE__)  ));
         }
@@ -163,77 +163,77 @@ class Widgetkit_Admin
     <div class="wrap">
         <div class="response-wrap"></div>
         <form action="" method="POST" id="widgetkit-settings" name="widgetkit-settings">
-        <div class="uk-container">
-            <div class="wk-header uk-padding-small uk-card uk-card-default uk-margin-medium-top">
-                <div class="wk-header__top uk-margin-small-bottom">
+        <div class="wk-container">
+            <div class="wk-header wk-padding-small wk-card wk-card-default wk-margin-medium-top">
+                <div class="wk-header__top wk-margin-small-bottom">
                     <div class="">
-                        <img src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="120" uk-svg>
+                        <img src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="120" wk-svg>
                     </div>
                 </div>
-                <div class="wk-navbar uk-margin-small-top" uk-grid>
-                    <div class="uk-width-expand">
-                        <ul class="uk-tab-bottom uk-margin-remove-bottom" uk-tab="connect: #wk-options; animation: uk-animation-slide-left-small, uk-animation-slide-right-small">
-                            <li><a href="#"><span class="uk-icon uk-margin-small-right" uk-icon="home"></span> Overview</a></li>
-                            <li><a href="#"><span class="uk-icon uk-margin-small-right" uk-icon="thumbnails"></span> Elements</a></li>
-                            <!-- <li><a href="#"><span class="uk-icon uk-margin-small-right" uk-icon="info"></span> Info</a></li>-->
+                <div class="wk-navbar wk-margin-small-top" wk-grid>
+                    <div class="wk-width-expand">
+                        <ul class="wk-tab-bottom wk-margin-remove-bottom" wk-tab="connect: #wk-options; animation: wk-animation-slide-left-small, wk-animation-slide-right-small">
+                            <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="home"></span> Overview</a></li>
+                            <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="thumbnails"></span> Elements</a></li>
+                            <!-- <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="info"></span> Info</a></li>-->
                             <?php if (!apply_filters('wkpro_enabled', false)) :?>
-                                <li><a class="uk-text-danger" href="#"><span class="uk-icon uk-margin-small-right" uk-icon="star"></span> Pro Features</a></li>
+                                <li><a class="wk-text-danger" href="#"><span class="wk-icon wk-margin-small-right" wk-icon="star"></span> Pro Features</a></li>
                             <?php endif;?>
                         </ul>
                     </div>
-                    <div class="uk-width-1-5 uk-text-right">
-                        <button type="submit" class="uk-button uk-button-danger widgetkit-save-button uk-flex uk-flex-right">Save Settings</button>
+                    <div class="wk-width-1-5 wk-text-right">
+                        <button type="submit" class="wk-button wk-button-danger widgetkit-save-button wk-flex wk-flex-right">Save Settings</button>
                     </div>
                 </div>
             </div>
 
-            <div class="wk-main uk-margin">
-                <div class="uk-grid">
+            <div class="wk-main wk-margin">
+                <div class="wk-grid">
                     <?php if (!apply_filters('wkpro_enabled', false)) :?>
-                    <div class="uk-width-3-4">
+                    <div class="wk-width-3-4">
                     <?php else: ?>
-                    <div class="uk-width-1-1">
+                    <div class="wk-width-1-1">
                     <?php endif; ?>
-                        <div class="uk-card-small">
-                            <ul id="wk-options" class="uk-switcher">
+                        <div class="wk-card-small">
+                            <ul id="wk-options" class="wk-switcher">
                                 <li>
-                                    <div class="uk-grid uk-child-width-1-2 uk-grid-match" uk-grid>
+                                    <div class="wk-grid wk-child-width-1-2 wk-grid-match" wk-grid>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-body">
+                                            <div class="wk-card wk-card-default wk-card-body">
                                                 <h4>Documentation</h4>
                                                 <p>It’s highly recommended to check out documentation and FAQ before using this plugin. <a target="_blank" href="https://themesgrove.com/support/">Click Here </a> for more details.</p>
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-secondary uk-card-body">
-                                                <h3  class="uk-card-title"><?php echo  __( 'Need Any Help?');?></h3>
+                                            <div class="wk-card wk-card-secondary wk-card-body">
+                                                <h3  class="wk-card-title"><?php echo  __( 'Need Any Help?');?></h3>
                                                 <p>Feel free to join us in our <a target="_blank" href="https://www.facebook.com/groups/375093230075321/">Official Facebook Group</a> for discussion, support and chill. If you need more help just shoot us an email <code>help@themesgrove.com</code>.</p>
                                             </div>
                                         </div>
-                                        <div class="uk-width-1-1">
-                                            <div class="uk-card uk-card-primary uk-card-body">
-                                                <h3  class="uk-card-title"><?php echo  __( 'Show your Love?');?></h3>
+                                        <div class="wk-width-1-1">
+                                            <div class="wk-card wk-card-primary wk-card-body">
+                                                <h3  class="wk-card-title"><?php echo  __( 'Show your Love?');?></h3>
                                                 <p>We love to have you in Themesgrove family. We are making WidgetKit more awesome everyday. Take your 2 minutes to review the plugin and spread the love to encourage us to keep it going.</p>
-                                                <a href="https://wordpress.org/support/plugin/widgetkit-for-elementor/reviews/" target="_blank" class="uk-button uk-button-default"><span class="uk-margin-small-right" uk-icon="icon: heart"></span> Leave a Review</a>
+                                                <a href="https://wordpress.org/support/plugin/widgetkit-for-elementor/reviews/" target="_blank" class="wk-button wk-button-default"><span class="wk-margin-small-right" wk-icon="icon: heart"></span> Leave a Review</a>
                                             </div>
                                         </div>
                                     </div>
                                     
                                 </li>
                                 <li>
-                                    <div class="uk-grid uk-grid-small uk-child-width-1-3" uk-grid>
+                                    <div class="wk-grid wk-grid-small wk-child-width-1-3" wk-grid>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo __('Slider Animation', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-slider-animation" name="widget-slider-animation" <?php checked(1, $this->widgetkit_get_settings['widget-slider-animation'], true) ?>>
                                                     <span class="rectangle round"></span>
                                                 </label>
-                                                <!-- <div class="uk-position-top-left uk-label">Pro</div> -->
+                                                <!-- <div class="wk-position-top-left wk-label">Pro</div> -->
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo __('Pricing Single', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-pricing-single" name="widget-pricing-single" <?php checked(1, $this->widgetkit_get_settings['widget-pricing-single'], true) ?>>
@@ -242,7 +242,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Button & Modal', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-button" name="widget-button" <?php checked(1, $this->widgetkit_get_settings['widget-button'], true) ?>>
@@ -251,7 +251,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Testimonial Single', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-testimonial-single" name="widget-testimonial-single" <?php checked(1, $this->widgetkit_get_settings['widget-testimonial-single'], true) ?>>
@@ -260,7 +260,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Slider Content Animation', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-slider-content-animation" name="widget-slider-content-animation" <?php checked(1, $this->widgetkit_get_settings['widget-slider-content-animation'], true) ?>>
@@ -269,7 +269,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Pricing Icon', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-pricing-icon" name="widget-pricing-icon" <?php checked(1, $this->widgetkit_get_settings['widget-pricing-icon'], true) ?>>
@@ -278,7 +278,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Hover Image', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-hover-image" name="widget-hover-image" <?php checked(1, $this->widgetkit_get_settings['widget-hover-image'], true) ?>>
@@ -287,7 +287,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Testimonial Center', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-testimonial-center" name="widget-testimonial-center" <?php checked(1, $this->widgetkit_get_settings['widget-testimonial-center'], true) ?>>
@@ -296,7 +296,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Slider Box Animation', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-slider-box-animation" name="widget-slider-box-animation" <?php checked(1, $this->widgetkit_get_settings['widget-slider-box-animation'], true) ?>>
@@ -305,7 +305,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Pricing Tabs', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-pricing-tab" name="widget-pricing-tab" <?php checked(1, $this->widgetkit_get_settings['widget-pricing-tab'], true) ?>>
@@ -315,7 +315,7 @@ class Widgetkit_Admin
                                         </div>
                                         
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Social Share Animation', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-social-share-animation" name="widget-social-share-animation" <?php checked(1, $this->widgetkit_get_settings['widget-social-share-animation'], true) ?>>
@@ -324,7 +324,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Portfolio', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-portfolio" name="widget-portfolio" <?php checked(1, $this->widgetkit_get_settings['widget-portfolio'], true) ?>>
@@ -333,7 +333,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Team Round', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-team-round" name="widget-team-round" <?php checked(1, $this->widgetkit_get_settings['widget-team-round'], true) ?>>
@@ -342,7 +342,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Blog Hover Animation', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-blog-hover-animation" name="widget-blog-hover-animation" <?php checked(1, $this->widgetkit_get_settings['widget-blog-hover-animation'], true) ?>>
@@ -351,7 +351,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Social Share Collapse', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-social-share-collapse" name="widget-social-share-collapse" <?php checked(1, $this->widgetkit_get_settings['widget-social-share-collapse'], true) ?>>
@@ -360,7 +360,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Feature Box', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-feature-box" name="widget-feature-box" <?php checked(1, $this->widgetkit_get_settings['widget-feature-box'], true) ?>>
@@ -369,7 +369,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Team Animation', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-team-animation" name="widget-team-animation" <?php checked(1, $this->widgetkit_get_settings['widget-team-animation'], true) ?>>
@@ -378,7 +378,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Blog Image', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-blog-image" name="widget-blog-image" <?php checked(1, $this->widgetkit_get_settings['widget-blog-image'], true) ?>>
@@ -387,7 +387,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Post Carousel', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-post-carousel" name="widget-post-carousel" <?php checked(1, $this->widgetkit_get_settings['widget-post-carousel'], true) ?>>
@@ -396,7 +396,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Animation Text', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-animation-text" name="widget-animation-text" <?php checked(1, $this->widgetkit_get_settings['widget-animation-text'], true) ?>>
@@ -405,7 +405,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Team Verticle Icon', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-team-verticle-icon" name="widget-team-verticle-icon" <?php checked(1, $this->widgetkit_get_settings['widget-team-verticle-icon'], true) ?>>
@@ -414,7 +414,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Blog Carousel', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-blog-carousel" name="widget-blog-carousel" <?php checked(1, $this->widgetkit_get_settings['widget-blog-carousel'], true) ?>>
@@ -423,7 +423,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Countdown', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-countdown" name="widget-countdown" <?php checked(1, $this->widgetkit_get_settings['widget-countdown'], true) ?>>
@@ -432,7 +432,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Team Overlay', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-team-overlay" name="widget-team-overlay" <?php checked(1, $this->widgetkit_get_settings['widget-team-overlay'], true) ?>>
@@ -441,11 +441,11 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         
-                                        <div class="uk-width-1-1">
+                                        <div class="wk-width-1-1">
                                             <h3>Legacy Widgets</h3>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Blog Sidebar', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-blog-sidebar" name="widget-blog-sidebar" <?php checked(1, $this->widgetkit_get_settings['widget-blog-sidebar'], true) ?>>
@@ -454,7 +454,7 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Blog Revert', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
                                                     <input type="checkbox" id="widget-blog-revert" name="widget-blog-revert" <?php checked(1, $this->widgetkit_get_settings['widget-blog-revert'], true) ?>>
@@ -467,82 +467,82 @@ class Widgetkit_Admin
 
                                 <?php if (!apply_filters('wkpro_enabled', false)) :?>
                                 <li>
-                                    <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-                                        <div class="uk-card-media-left uk-cover-container">
-                                            <img src="https://themesgrove.com/wp-content/uploads/2018/12/wigetkit-banner-bg.png" alt="" uk-cover>
+                                    <div class="wk-card wk-card-default wk-grid-collapse wk-child-width-1-2@s wk-margin" wk-grid>
+                                        <div class="wk-card-media-left wk-cover-container">
+                                            <img src="https://themesgrove.com/wp-content/uploads/2018/12/wigetkit-banner-bg.png" alt="" wk-cover>
                                             <canvas width="100" height="120"></canvas>
                                         </div>
                                         <div>
-                                            <div class="uk-card-body">
-                                                <h3 class="uk-card-title">Upgrade to WidgetKit Pro!</h3>
+                                            <div class="wk-card-body">
+                                                <h3 class="wk-card-title">Upgrade to WidgetKit Pro!</h3>
                                                 <p>Seems to be convinced, You need more to empower your Elementor capabilities.</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <h3 class="uk-text-center uk-h2"><?php echo esc_html__('Awesome Post Widgets','widgetkit-for-elementor');?></h3>
-                                    <div class="uk-child-width-1-3@m uk-grid-match" uk-grid>
+                                    <h3 class="wk-text-center wk-h2"><?php echo esc_html__('Awesome Post Widgets','widgetkit-for-elementor');?></h3>
+                                    <div class="wk-child-width-1-3@m wk-grid-match" wk-grid>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
                                                 <img src="<?php echo plugins_url('/assets/images/premium/post-grid-slider.jpg', __FILE__)?>" alt="">
-                                                <h4 class="uk-margin-small-top uk-text-light">Ajax based grid slider</h4>
+                                                <h4 class="wk-margin-small-top wk-text-light">Ajax based grid slider</h4>
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
                                                 <img src="<?php echo plugins_url('/assets/images/premium/post-tabs.jpg', __FILE__)?>" alt="">
-                                                <h4 class="uk-margin-small-top uk-text-light">Posts tab with ajax</h4>
+                                                <h4 class="wk-margin-small-top wk-text-light">Posts tab with ajax</h4>
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
                                                 <img src="<?php echo plugins_url('/assets/images/premium/post-smart-list.jpg', __FILE__)?>" alt="">
-                                                <h4 class="uk-margin-small-top uk-text-light">Smart list widget</h4>
+                                                <h4 class="wk-margin-small-top wk-text-light">Smart list widget</h4>
                                             </div>
                                         </div>
                                     </div>
-                                    <h3 class="uk-text-center uk-h2"><?php echo esc_html__('Premium WooCommerce Widgets','widgetkit-for-elementor');?></h3>
-                                    <div class="uk-child-width-1-3@m uk-grid-match" uk-grid>
+                                    <h3 class="wk-text-center wk-h2"><?php echo esc_html__('Premium WooCommerce Widgets','widgetkit-for-elementor');?></h3>
+                                    <div class="wk-child-width-1-3@m wk-grid-match" wk-grid>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
                                                 <img src="<?php echo plugins_url('/assets/images/premium/woo-smart-products.jpg', __FILE__)?>" alt="">
-                                                <h4 class="uk-margin-small-top uk-text-light">Woo smart products</h4>
+                                                <h4 class="wk-margin-small-top wk-text-light">Woo smart products</h4>
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
                                                 <img src="<?php echo plugins_url('/assets/images/premium/woo-smart-cat.jpg', __FILE__)?>" alt="">
-                                                <h4 class="uk-margin-small-top uk-text-light">Woo smart categories</h4>
+                                                <h4 class="wk-margin-small-top wk-text-light">Woo smart categories</h4>
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
                                                 <img src="<?php echo plugins_url('/assets/images/premium/woo-ajax-cart.jpg', __FILE__)?>" alt="">
-                                                <h4 class="uk-margin-small-top uk-text-light">Ajax add to cart</h4>
+                                                <h4 class="wk-margin-small-top wk-text-light">Ajax add to cart</h4>
                                             </div>
                                         </div>
                                     </div>
-                                    <h3 class="uk-text-center uk-h2"><?php echo esc_html__('LearnDash Widgets','widgetkit-for-elementor');?></h3>
-                                    <div class="uk-child-width-1-3@m uk-grid-match" uk-grid>
+                                    <h3 class="wk-text-center wk-h2"><?php echo esc_html__('LearnDash Widgets','widgetkit-for-elementor');?></h3>
+                                    <div class="wk-child-width-1-3@m wk-grid-match" wk-grid>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
                                                 <img src="<?php echo plugins_url('/assets/images/premium/ld1.png', __FILE__)?>" alt="">
-                                                <h4 class="uk-margin-small-top uk-text-light">Course List Style</h4>
+                                                <h4 class="wk-margin-small-top wk-text-light">Course List Style</h4>
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
                                                 <img src="<?php echo plugins_url('/assets/images/premium/ld2.png', __FILE__)?>" alt="">
-                                                <h4 class="uk-margin-small-top uk-text-light">Course Tab Style</h4>
+                                                <h4 class="wk-margin-small-top wk-text-light">Course Tab Style</h4>
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
                                                 <img src="<?php echo plugins_url('/assets/images/premium/ld3.png', __FILE__)?>" alt="">
-                                                <h4 class="uk-margin-small-top uk-text-light">Course Carousel Style</h4>
+                                                <h4 class="wk-margin-small-top wk-text-light">Course Carousel Style</h4>
                                             </div>
                                         </div>
-                                        <div class="uk-width-1-1 uk-text-center">
-                                            <div><a href="https://themesgrove.com/widgetkit-for-elementor/?utm_campaign=widgetkit-pro&utm_medium=wp-admin&utm_source=pro-feature-button" target="_blank" class="uk-button uk-button-primary">And Many More <span uk-icon="icon: arrow-right"></span></a></div>
+                                        <div class="wk-width-1-1 wk-text-center">
+                                            <div><a href="https://themesgrove.com/widgetkit-for-elementor/?utm_campaign=widgetkit-pro&utm_medium=wp-admin&utm_source=pro-feature-button" target="_blank" class="wk-button wk-button-primary">And Many More <span wk-icon="icon: arrow-right"></span></a></div>
                                         </div>
                                     </div>
                                 </li>
@@ -552,12 +552,12 @@ class Widgetkit_Admin
                     </div>
                     
                     <?php if (!apply_filters('wkpro_enabled', false)) :?>
-                    <div class="uk-width-1-4">
-                        <div uk-sticky="offset: 40">
-                            <div class="uk-card uk-card-default uk-card-body uk-padding-small uk-text-center">
-                                <img class="uk-margin-small-top" src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="200" uk-svg>
-                                <p class="uk-text-muted">Get the pro version of <strong>WidgetKit</strong> for more stunning elements and customization options.</p>
-                                <a href="https://themesgrove.com/widgetkit-for-elementor/?utm_campaign=widgetkit-pro&utm_medium=wp-admin&utm_source=pro-feature-button" target="_blank" class="uk-button uk-button-primary "><span class="uk-icon uk-margin-small-right" uk-icon="unlock"></span>Upgrade to Pro</a>
+                    <div class="wk-width-1-4">
+                        <div wk-sticky="offset: 40">
+                            <div class="wk-card wk-card-default wk-card-body wk-padding-small wk-text-center">
+                                <img class="wk-margin-small-top" src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="200" wk-svg>
+                                <p class="wk-text-muted">Get the pro version of <strong>WidgetKit</strong> for more stunning elements and customization options.</p>
+                                <a href="https://themesgrove.com/widgetkit-for-elementor/?utm_campaign=widgetkit-pro&utm_medium=wp-admin&utm_source=pro-feature-button" target="_blank" class="wk-button wk-button-primary "><span class="wk-icon wk-margin-small-right" wk-icon="unlock"></span>Upgrade to Pro</a>
                             </div>
                         </div>
                     </div>
