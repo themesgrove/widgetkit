@@ -1426,7 +1426,7 @@ ini@^1.3.4, ini@~1.3.0:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
 
-interpret@^1.1.0:
+interpret@^1.0.0, interpret@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.2.0.tgz#d5061a6224be58e8083985f5014d844359576296"
 
@@ -2673,6 +2673,15 @@ set-value@^2.0.0, set-value@^2.0.1:
     is-plain-object "^2.0.3"
     split-string "^3.0.1"
 
+shelljs@^0.8.3:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.3.tgz#a7f3319520ebf09ee81275b2368adb286659b097"
+  integrity sha512-fc0BKlAWiLpwZljmOvAOTE/gXawtCoNrP5oaY7KIaQbbyHeQVg01pSEuEGvGh3HEdBU4baCD7wQBwADmM/7f7A==
+  dependencies:
+    glob "^7.0.0"
+    interpret "^1.0.0"
+    rechoir "^0.6.2"
+
 signal-exit@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
@@ -3029,9 +3038,10 @@ uglify-to-browserify@~1.0.0:
   resolved "https://registry.yarnpkg.com/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
   integrity sha1-bgkk1r2mta/jSeOabWMoUKD4grc=
 
-uikit@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.2.0.tgz#5f975c84c1bf6379e1e47bb242aeafeebb6760fa"
+uikit@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.2.1.tgz#859122a260cb1e482c85a63d564af55ba96b7891"
+  integrity sha512-8mhv3n7m9/kGYv1+YPjTDGbI7HKK1o79wOyhpznoNYVTGhr1cwaTACITVVoUYONJxdqmIIGBA2OkKhMQ8zXwBg==
 
 unc-path-regex@^0.1.2:
   version "0.1.2"

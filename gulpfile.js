@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var less = require('gulp-less');
+var shell = require("shelljs");
 // var path = require('path');
 // var minify = require('gulp-minify-css');
 var uglify = require('gulp-uglify-es').default;
@@ -42,7 +43,7 @@ gulp.task('copy-bs-less', function(){
 });
 
 gulp.task('compile-bs-less', function () {
-  return gulp.src('./assets/bootstrap/bootstrap.less')
+  return gulp.src('./assets/libs/less/bootstrap.less')
     .pipe(less())
     .pipe(gulp.dest('./assets/css/'));
 });
@@ -50,10 +51,11 @@ gulp.task('compile-bs-less', function () {
 gulp.task('copy-css-from-node-modules', function(){
   return gulp.src([
       'node_modules/animate.css/animate.min.css',
-      // 'node_modules/bootstrap/dist/css/bootstrap.min.css',
       'node_modules/owl.carousel/dist/assets/owl.carousel.min.css',
       'node_modules/owl.carousel/dist/assets/owl.theme.default.min.css',
-      'node_modules/uikit/dist/css/uikit.min.css',
+      // 'node_modules/uikit/dist/css/uikit.custom.min.css',
+      // 'node_modules/bootstrap/dist/css/bootstrap.min.css',
+      // 'node_modules/uikit/dist/css/uikit.min.css',
     ])
       .pipe(gulp.dest('./dist/css/'));
 });
@@ -62,8 +64,8 @@ gulp.task('copy-js-from-node-modules', function(){
   return gulp.src([
       'node_modules/bootstrap/dist/js/bootstrap.min.js',
       'node_modules/owl.carousel/dist/owl.carousel.min.js',
-      'node_modules/uikit/dist/js/uikit.min.js',
-      'node_modules/uikit/dist/js/uikit-icons.min.js',
+      // 'node_modules/uikit/dist/js/uikit.min.js',
+      // 'node_modules/uikit/dist/js/uikit-icons.min.js',
     ])
       .pipe(gulp.dest('./dist/js/'));
 });
@@ -85,6 +87,30 @@ gulp.task('watch', () => {
   gulp.watch('assets/scss/**/*', gulp.series(['styles']));
   gulp.watch('assets/js/*', gulp.series(['js']));
 });
+/**
+ * get uikit 
+ */
+gulp.task('prepareUikit', () => {
+  console.log("---- preparing uikit for dev ----");
+  
+  var cmds = [
+    'cd ./node_modules/uikit/',
+    'rm -rf custom',
+    'mkdir custom && cp ../../assets/libs/uikit/less/custom.less ./custom/',
+    'yarn',
+    'yarn compile',
+    'yarn prefix -- -p wk',
+    'cp ./dist/css/uikit.custom.min.css ../../assets/css/',
+    'cp ./dist/js/uikit.min.js ../../assets/js/',
+    'cp ./dist/js/uikit-icons.min.js ../../assets/js/',
+  ]
+  return new Promise(function(resolve, reject) {
+    shell.exec(cmds.join(" && "));
+    console.log("---- ready to run gulp command ----");
+    resolve();
+  });
+  
+})
 
 gulp.task('getBs', gulp.series(['clean','copy-bs-less']));
 gulp.task('setBs', gulp.series(['cleanBs', 'compile-bs-less']));

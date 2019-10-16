@@ -27,7 +27,7 @@ class WKFE_Addons_Integration{
         wp_register_style( 'animate-css', WK_URL.'dist/css/animate.min.css', array(), WK_VERSION, 'all');
         wp_register_style( 'fontawesome', WK_URL.'dist/css/font-awesome.min.css', array(), WK_VERSION, 'all');
         wp_register_style( 'ionsicon', WK_URL.'dist/css/ionicons.min.css', array(), WK_VERSION, 'all');
-        wp_register_style( 'uikit', WK_URL.'dist/css/uikit.min.css', array(), WK_VERSION, 'all');
+        wp_register_style( 'uikit', WK_URL.'dist/css/uikit.custom.min.css', array(), WK_VERSION, 'all');
         wp_register_style( 'widgetkit_main', WK_URL.'dist/css/widgetkit.css', array(), WK_VERSION, 'all');
     }
     
