@@ -42,7 +42,7 @@ class WKFE_Elements{
             'widget-blog-image',
             'widget-countdown',
             'widget-animation-text',
-            'widget-post-carousel',
+            'widget-content-carousel',
             'widget-button',
             'widget-hover-image',
             'widget-feature-box',
@@ -116,8 +116,8 @@ class WKFE_Elements{
         if( $check_component_active['widget-animation-text'] ) {
             require_once WK_PATH . '/elements/animation-text/widget.php';
         }
-        if( $check_component_active['widget-post-carousel'] ) {
-            require_once WK_PATH . '/elements/carousel/widget.php';
+        if( $check_component_active['widget-content-carousel'] ) {
+            require_once WK_PATH . '/elements/content-carousel/widget.php';
         }
         if( $check_component_active['widget-button'] ) {
             require_once WK_PATH . '/elements/button-modal/widget.php';

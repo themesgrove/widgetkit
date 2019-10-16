@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class widgetkit_for_elementor_carousel {
+class widgetkit_for_elementor_content_carousel {
 
 	/**
 	 * Constructor
@@ -55,7 +55,7 @@ class widgetkit_for_elementor_carousel {
 	 * @access private
 	 */
 	private function includes() {
-		require_once WK_PATH  . '/elements/carousel/template/config.php';
+		require_once WK_PATH  . '/elements/content-carousel/template/config.php';
 	}
 
 	/**
@@ -66,10 +66,10 @@ class widgetkit_for_elementor_carousel {
 	 * @access private
 	 */
 	private function register_widget() {
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new wkfe_carousel() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new wkfe_content_carousel() );
 	}
 }
 
-new widgetkit_for_elementor_carousel();
+new widgetkit_for_elementor_content_carousel();
 
 

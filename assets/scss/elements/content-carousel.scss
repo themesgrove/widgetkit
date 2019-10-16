@@ -1,0 +1,23 @@
+.content-carousel{
+  .uk-card{
+    .uk-card-body{
+      padding: 15px 30px 15px;
+    }
+    .uk-card-media-top,
+     .uk-card-media-bottom{
+      overflow: hidden;
+       img{
+        transform: scale(1);
+        transition: all 0.3s ease;
+      }
+
+     }
+   
+    &:hover{
+      img{
+        transform: scale(1.1);
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
