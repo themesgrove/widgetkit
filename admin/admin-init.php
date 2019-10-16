@@ -25,7 +25,7 @@ class Widgetkit_Admin
         'widget-blog-image',
         'widget-countdown',
         'widget-animation-text',
-        'widget-post-carousel',
+        'widget-content-carousel',
         'widget-button',
         'widget-hover-image',
         'widget-feature-box',
@@ -388,9 +388,9 @@ class Widgetkit_Admin
                                         </div>
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                <?php echo esc_html__('Post Carousel', 'widgetkit-for-elementor'); ?>
+                                                <?php echo esc_html__('Content Carousel', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
-                                                    <input type="checkbox" id="widget-post-carousel" name="widget-post-carousel" <?php checked(1, $this->widgetkit_get_settings['widget-post-carousel'], true) ?>>
+                                                    <input type="checkbox" id="widget-content-carousel" name="widget-content-carousel" <?php checked(1, $this->widgetkit_get_settings['widget-content-carousel'], true) ?>>
                                                     <span class="rectangle round"></span>
                                                 </label>
                                             </div>
@@ -623,7 +623,7 @@ class Widgetkit_Admin
             // Hover Image
             'widget-hover-image' => intval($settings['widget-hover-image'] ? 1 : 0),
             // Post Carousel
-            'widget-post-carousel' => intval($settings['widget-post-carousel'] ? 1 : 0),
+            'widget-content-carousel' => intval($settings['widget-content-carousel'] ? 1 : 0),
 
             // Blog Revert
             'widget-blog-revert' => intval($settings['widget-blog-revert'] ? 1 : 0),
