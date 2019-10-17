@@ -283,7 +283,6 @@ class wkfe_content_carousel extends Widget_Base {
                     'condition' => [
                         'item_option' => 'blog_post',
                     ],
-                    //'separator' => 'after',
                 ]
             );
 
@@ -439,7 +438,7 @@ class wkfe_content_carousel extends Widget_Base {
 	        $this->add_control(
 	            'column_gap',
 	                [
-	                    'label'       => __( 'Column Gap', 'widgetkit-for-elementor' ),
+	                    'label'       => __( 'Colum Gap', 'widgetkit-for-elementor' ),
 	                    'type' => Controls_Manager::SELECT,
 	                    'default' => 'medium',
 	                    'options' => [
@@ -694,7 +693,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                    'size'    => 100,
 	                    ],
 	                    'range'   => [
-	                        '%'  => [
+	                        '%'   => [
 	                            'min' => 10,
 	                            'max' => 100,
 	                        ],
@@ -781,7 +780,8 @@ class wkfe_content_carousel extends Widget_Base {
 	                    'type'      => Controls_Manager::COLOR,
 	                    'default'   => '',
 	                    'selectors' => [
-	                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-body span a:hover' => 'color: {{VALUE}};',
+	                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-body span a:hover,
+	                        {{WRAPPER}} .content-carousel .wk-card .wk-card-body span:hover' => 'color: {{VALUE}};',
 	                    ],
 	                ]
 	            );
@@ -802,7 +802,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                        ],
 	                    ],
 	                    'selectors' => [
-	                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-body span' => 'margin: {{SIZE}}{{UNIT}} 0;',
+	                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-body span' => 'margin: {{SIZE}}{{UNIT}} 0 0;',
 	                    ],
 	                ]
 	            );
@@ -1088,9 +1088,6 @@ class wkfe_content_carousel extends Widget_Base {
                         'default'   => 'no',
                         'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
                         'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-                     //    'condition' => [
-                     //    	'arrow_position' => 'in',
-                    	// ],
                     	'condition' => [
 							'arrow_enable' => 'yes',
 							'arrow_position' => 'in',
@@ -1295,20 +1292,6 @@ class wkfe_content_carousel extends Widget_Base {
 
 
 	    $this->end_controls_tabs();
-
-
-            // $this->add_control(
-            //     'navigation_notice_heading',
-            //     [
-            //         'label' => __( 'Please enable navigaion from content', 'widgetkit-for-elementor' ),
-            //         'type' => Controls_Manager::HEADING,
-            //         'separator' => 'before',
-            //        'condition' => [
-            //             'dot_enable' => 'no',
-            //             'arrow_enable' => 'no',
-            //         ],
-            //     ]
-            // );
 
 	$this->end_controls_section();
 
