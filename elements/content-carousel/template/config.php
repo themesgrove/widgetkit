@@ -429,7 +429,7 @@ class wkfe_content_carousel extends Widget_Base {
                     'type'    => Controls_Manager::NUMBER,
                     'default' => 3,
                     'min'     => 1,
-                    'max'     => 10,
+                    'max'     => 6,
                     'step'    => 1,
                 ]
             );
