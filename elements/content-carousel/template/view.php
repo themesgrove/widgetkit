@@ -56,6 +56,7 @@
                             <?php
                                 $content = array(
                                     'post_type' => 'post',
+                                    'category__in' => $contents['cat_multiple_id'],
                                     'order' => $contents['items_order'],
                                     'orderby' => $contents['items_orderby'],
                                     'post_status'       => 'publish',

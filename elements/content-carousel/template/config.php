@@ -61,6 +61,16 @@ class wkfe_content_carousel extends Widget_Base {
 
 	protected function _register_controls() {
 
+
+		$terms = get_terms( array(
+            'taxonomy' => 'category',
+            'hide_empty' => false,
+        ) );
+        $cat_names = array();
+        foreach( $terms as $t ):
+            $cat_names[$t->term_id] = $t->name;
+        endforeach;
+
 	$this->start_controls_section(
 		'section_content',
 		[
@@ -120,7 +130,7 @@ class wkfe_content_carousel extends Widget_Base {
                 'content_content',
                     [
                       'label'   => esc_html__( 'Content', 'widgetkit-for-elementor' ),
-                      'type' => Controls_Manager::WYSIWYG,
+                      'type'    => Controls_Manager::WYSIWYG,
                       'default' => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
                     ]
             );
@@ -129,12 +139,12 @@ class wkfe_content_carousel extends Widget_Base {
 				'content_demo_link',
 				[
 					'label' => __( 'Link', 'widgetkit-for-elementor' ),
-					'type' => Controls_Manager::URL,
+					'type'  => Controls_Manager::URL,
 					'dynamic' => [
-						'active' => true,
+						'active'  => true,
 					],
 					'placeholder' => __( 'https://your-link.com', 'widgetkit-for-elementor' ),
-					'separator' => 'before',
+					'separator'   => 'before',
 				]
 			);
 
@@ -193,7 +203,7 @@ class wkfe_content_carousel extends Widget_Base {
 				'custom_header_tag',
 				[
 					'label' => __( 'HTML Tag', 'widgetkit-for-elementor' ),
-					'type' => Controls_Manager::SELECT,
+					'type'  => Controls_Manager::SELECT,
 					'options' => [
 						'h1' => 'H1',
 						'h2' => 'H2',
@@ -212,12 +222,23 @@ class wkfe_content_carousel extends Widget_Base {
 				]
 			);
 
-
+	        $this->add_control(
+	            'cat_multiple_id',
+	            [
+	                'label' => __( 'From Category', 'widgetkit-for-elementor' ),
+	                'type' => Controls_Manager::SELECT2,
+	                'options' => $cat_names,
+	                'multiple' => true,
+	                 'condition' => [
+                        'item_option' => 'blog_post',
+                    ],
+	            ]
+	        );
 
 	        $this->add_control(
 	            'post_show',
 	            [
-	                'label'   => __( 'Number of Post', 'magmax' ),
+	                'label'   => __( 'Number of Post', 'widgetkit-for-elementor' ),
 	                'type'    => Controls_Manager::NUMBER,
 	                'default' => 4,
 	                'min'     => -1,
@@ -271,7 +292,7 @@ class wkfe_content_carousel extends Widget_Base {
                 'meta_enable_heading',
                 [
                     'label' => __( 'Meta', 'widgetkit-for-elementor' ),
-                    'type' => Controls_Manager::HEADING,
+                    'type'  => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition' => [
                         'item_option' => 'blog_post',
@@ -283,7 +304,7 @@ class wkfe_content_carousel extends Widget_Base {
                     [
                         'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
                         'type'      => Controls_Manager::SWITCHER,
-                        'default'   => 'no',
+                        'default'   => 'yes',
                         'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
                         'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
                         'condition' => [
@@ -296,7 +317,7 @@ class wkfe_content_carousel extends Widget_Base {
                 'title_enable_heading',
                 [
                     'label' => __( 'Title', 'widgetkit-for-elementor' ),
-                    'type' => Controls_Manager::HEADING,
+                    'type'  => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition' => [
                         'item_option' => 'blog_post',
@@ -402,7 +423,6 @@ class wkfe_content_carousel extends Widget_Base {
             ]
         );
 
-
             $this->add_control(
                 'item_column',
                 [
@@ -431,31 +451,29 @@ class wkfe_content_carousel extends Widget_Base {
 	                ]
 	        );
 
-
-
 	        $this->end_controls_section();
 
 
 	       	$this->start_controls_section(
-	            'section_animation',
+	            'section_controls',
 	            [
-	                'label' => esc_html__( 'Animation', 'widgetkit-for-elementor' ),
+	                'label' => esc_html__( 'Controls', 'widgetkit-for-elementor' ),
 	            ]
 	        );
 
-	            $this->add_control(
-		            'content_set_mode',
-		                [
-		                    'label' => __( 'Sets Mode', 'widgetkit-for-elementor' ),
-		                    'type'  => Controls_Manager::HEADING,
-		                    'separator' => 'before',
-		                ]
-		            );
+	            // $this->add_control(
+		           //  'content_set_mode',
+		           //      [
+		           //          'label' => __( 'Sets Mode', 'widgetkit-for-elementor' ),
+		           //          'type'  => Controls_Manager::HEADING,
+		           //          'separator' => 'before',
+		           //      ]
+		           //  );
 
 	            $this->add_control(
 	                'set_mode_enable',
 	                    [
-	                        'label'     => esc_html__( 'Display Sets', 'widgetkit-for-elementor' ),
+	                        'label'     => esc_html__( 'Sets', 'widgetkit-for-elementor' ),
 	                        'type'      => Controls_Manager::SWITCHER,
 	                        'default'   => 'no',
 	                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
@@ -463,19 +481,20 @@ class wkfe_content_carousel extends Widget_Base {
 	                    ]
 	        	);
 
-	            $this->add_control(
-		            'content_center_mode',
-		                [
-		                    'label' => __( 'Center Mode', 'widgetkit-for-elementor' ),
-		                    'type'  => Controls_Manager::HEADING,
-		                    'separator' => 'before',
-		                ]
-		            );
+	            // $this->add_control(
+		           //  'content_center_mode',
+		           //      [
+		           //          'label' => __( 'Center Mode', 'widgetkit-for-elementor' ),
+		           //          'type'  => Controls_Manager::HEADING,
+		           //          'separator' => 'before',
+		           //      ]
+		           //  );
 
 		       	$this->add_control(
 	                'center_mode_enable',
 	                    [
-	                        'label'     => esc_html__( 'Display Center', 'widgetkit-for-elementor' ),
+	                        'label'     => esc_html__( 'Center', 'widgetkit-for-elementor' ),
+	                        'description' => 'You must have at least 4 items',
 	                        'type'      => Controls_Manager::SWITCHER,
 	                        'default'   => 'no',
 	                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
@@ -484,18 +503,18 @@ class wkfe_content_carousel extends Widget_Base {
 		        );
 
 
-		       	$this->add_control(
-		            'content_autoplay_mode',
-		                [
-		                    'label' => __( 'Autoplay Mode', 'widgetkit-for-elementor' ),
-		                    'type'  => Controls_Manager::HEADING,
-		                    'separator' => 'before',
-		                ]
-		            );
+		       	// $this->add_control(
+		        //     'content_autoplay_mode',
+		        //         [
+		        //             'label' => __( 'Autoplay Mode', 'widgetkit-for-elementor' ),
+		        //             'type'  => Controls_Manager::HEADING,
+		        //             'separator' => 'before',
+		        //         ]
+		        //     );
 	            $this->add_control(
 	                'autoplay_mode_enable',
 	                    [
-	                        'label'     => esc_html__( 'Display Autoplay', 'widgetkit-for-elementor' ),
+	                        'label'     => esc_html__( 'Autoplay', 'widgetkit-for-elementor' ),
 	                        'type'      => Controls_Manager::SWITCHER,
 	                        'default'   => 'no',
 	                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
@@ -522,14 +541,14 @@ class wkfe_content_carousel extends Widget_Base {
 	         //            ]
 		        // );
 
-		        $this->add_control(
-		            'content_interval',
-		                [
-		                    'label' => __( 'Interval', 'widgetkit-for-elementor' ),
-		                    'type'  => Controls_Manager::HEADING,
-		                    'separator' => 'before',
-		                ]
-		            );
+		        // $this->add_control(
+		        //     'content_interval',
+		        //         [
+		        //             'label' => __( 'Interval', 'widgetkit-for-elementor' ),
+		        //             'type'  => Controls_Manager::HEADING,
+		        //             'separator' => 'before',
+		        //         ]
+		        //     );
 
 	            $this->add_control(
 	                'content_interval_option',
@@ -586,7 +605,7 @@ class wkfe_content_carousel extends Widget_Base {
 		                    [
 		                        'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
 		                        'type'      => Controls_Manager::SWITCHER,
-		                        'default'   => 'no',
+		                        'default'   => 'yes',
 		                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
 		                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
 		                    ]
@@ -666,11 +685,34 @@ class wkfe_content_carousel extends Widget_Base {
 	                ]
 	            );
 
+	           $this->add_responsive_control(
+	            'image_size',
+	                [
+	                    'label'   => esc_html__( 'Size(%)', 'widgetkit-for-elementor' ),
+	                    'type'    => Controls_Manager::SLIDER,
+	                    'default' => [
+	                    'size'    => 100,
+	                    ],
+	                    'range'   => [
+	                        '%'  => [
+	                            'min' => 10,
+	                            'max' => 100,
+	                        ],
+	                    ],
+	                    'selectors' => [
+	                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-media-top img, {{WRAPPER}} .content-carousel .wk-card .wk-card-media-bottom img' => 'width: {{SIZE}}%;',
+	                    ],
+	                    'condition'  => [
+	                        'item_option' => 'custom_post',
+	                    ],
+	                ]
+	            );
+
 
 	            $this->add_responsive_control(
 	                'thumbnail_height_custom',
 	                    [
-	                        'label'   => esc_html__( 'Height', 'widgetkit-for-elementor' ),
+	                        'label'   => esc_html__( 'Height(px)', 'widgetkit-for-elementor' ),
 	                        'type'    => Controls_Manager::SLIDER,
 	                        'default' => [
 	                           'size' =>190,
@@ -906,7 +948,7 @@ class wkfe_content_carousel extends Widget_Base {
 						],
 					],
 					'selectors' => [
-						'{{WRAPPER}} .content-carousel .wk-card-body' => 'text-align: {{VALUE}};',
+						'{{WRAPPER}} .content-carousel .wk-card' => 'text-align: {{VALUE}};',
 					],
 				]
 			);
@@ -919,6 +961,10 @@ class wkfe_content_carousel extends Widget_Base {
                 [
                     'label' => esc_html__( 'Navigation', 'widgetkit-for-elementor' ),
                     'tab'   => Controls_Manager::TAB_STYLE,
+                    // 'condition' => [
+                    //     'dot_enable' => 'yes',
+                        
+                    // ],
                 ]
         );
 
@@ -1030,9 +1076,13 @@ class wkfe_content_carousel extends Widget_Base {
                         'default'   => 'no',
                         'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
                         'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-                        'condition' => [
-                        	'arrow_position' => 'in',
-                    	],
+                     //    'condition' => [
+                     //    	'arrow_position' => 'in',
+                    	// ],
+                    	'condition' => [
+							'arrow_enable' => 'yes',
+							'arrow_position' => 'in',
+						],
                     ]
 	        );
 
@@ -1233,6 +1283,20 @@ class wkfe_content_carousel extends Widget_Base {
 
 
 	    $this->end_controls_tabs();
+
+
+            // $this->add_control(
+            //     'navigation_notice_heading',
+            //     [
+            //         'label' => __( 'Please enable navigaion from content', 'widgetkit-for-elementor' ),
+            //         'type' => Controls_Manager::HEADING,
+            //         'separator' => 'before',
+            //        'condition' => [
+            //             'dot_enable' => 'no',
+            //             'arrow_enable' => 'no',
+            //         ],
+            //     ]
+            // );
 
 	$this->end_controls_section();
 
