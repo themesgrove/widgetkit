@@ -953,6 +953,18 @@ class wkfe_content_carousel extends Widget_Base {
 				]
 			);
 
+			$this->add_control(
+	            'content_padding',
+	            [
+	                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
+	                'type'  => Controls_Manager::DIMENSIONS,
+	                'size_units' => [ 'px', '%' ],
+	                'selectors'  => [
+	                    '{{WRAPPER}} .content-carousel .wk-card .wk-card-body' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+	                ],
+	            ]
+	        );
+
         $this->end_controls_section();
 
 		// Navigation options Start

@@ -111,8 +111,8 @@
                     <?php endif; ?>
                 </ul>
                 <?php if ($contents['arrow_enable']):?>
-                    <a class=" <?php echo $contents['arrow_position'] == 'out'? 'wk-position-center-left-out' : 'wk-position-center-left'; ?> wk-position-medium wk-slidenav-small <?php echo $contents['arrow_on_hover'] == 'yes'? 'wk-hidden-hover' : ''; ?>" href="#" wk-slidenav-previous wk-slider-item="previous"></a>
-                    <a class="<?php echo $contents['arrow_position'] == 'out'? 'wk-position-center-right-out' : 'wk-position-center-right'; ?> wk-position-medium  wk-slidenav-small <?php echo $contents['arrow_on_hover'] == 'yes'? 'wk-hidden-hover' : ''; ?>" href="#" wk-slidenav-next wk-slider-item="next"></a>
+                    <a class=" <?php echo $contents['arrow_position'] == 'out'? 'wk-position-center-left-out' : 'wk-position-center-left'; ?> wk-position-medium wk-slidenav-small <?php echo $contents['arrow_on_hover'] == 'yes'? 'wk-hidden-hover' : ''; ?> " href="#" wk-slidenav-previous wk-slider-item="previous"></a>
+                    <a class="<?php echo $contents['arrow_position'] == 'out'? 'wk-position-center-right-out' : 'wk-position-center-right'; ?> wk-position-medium  wk-slidenav-small <?php echo $contents['arrow_on_hover'] == 'yes'? 'wk-hidden-hover' : ''; ?>  " href="#" wk-slidenav-next wk-slider-item="next"></a>
                 <?php endif; ?>
 
             </div>
