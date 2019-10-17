@@ -3,7 +3,6 @@
     $settings = $this->get_settings();
     $id = $this->get_id();
 
-
 ?>
 
 
@@ -65,7 +64,11 @@
 
         <?php if ($settings['button_modal_hover_effect'] == 'border'): ?>
             <div class="btn-line btn-hover-<?php echo $settings['button_modal_hover_effect'];?>">
-                <a href="<?php echo $settings['normal_btn_link']['url'];?>">
+                <a 
+                href="<?php echo $settings['normal_btn_link']['url'];?>" 
+                target="<?php echo $settings['normal_btn_link']['is_external'] ? '_blank' : '';  ?>"
+                rel="<?php echo $settings['normal_btn_link']['nofollow'] ? 'nofollow' : ''; ?>"
+                >
                     <p> <?php echo $settings['modal_text'];?>
                             <?php if ($settings['modal_icon']):?>
                         <i style="float:<?php echo $settings['modal_icon_align'];?>;" class="<?php echo $settings['modal_icon'];?>"></i>
@@ -79,7 +82,12 @@
                 </a>
             </div>
         <?php else: ?>
-        <a  href="<?php echo $settings['normal_btn_link']['url'];?>" class="btn-hover-<?php echo $settings['button_modal_hover_effect'];?>  button-normal">
+        <a  
+        href="<?php echo $settings['normal_btn_link']['url'];?>" 
+        class="btn-hover-<?php echo $settings['button_modal_hover_effect'];?>  button-normal"
+        target="<?php echo $settings['normal_btn_link']['is_external'] ? '_blank' : '';  ?>"
+        rel="<?php echo $settings['normal_btn_link']['nofollow'] ? 'nofollow' : ''; ?>"
+        >
             <?php if ($settings['button_modal_hover_effect'] == 'bfm' || $settings['button_modal_hover_effect'] == 'fourcorner' ): ?>
                 <span>
                     <?php echo $settings['modal_text'];?>
