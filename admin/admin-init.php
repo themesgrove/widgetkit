@@ -14,6 +14,7 @@ class Widgetkit_Admin
         'widget-pricing-tab',
         'widget-testimonial-single',
         'widget-testimonial-center',
+        'widget-team',
         'widget-team-overlay',
         'widget-team-verticle-icon',
         'widget-team-round',
@@ -333,6 +334,16 @@ class Widgetkit_Admin
                                                 </label>
                                             </div>
                                         </div>
+
+                                        <div>
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                <?php echo esc_html__('Team', 'widgetkit-for-elementor'); ?>
+                                                <label class="switch">
+                                                    <input type="checkbox" id="widget-team" name="widget-team" <?php checked(1, $this->widgetkit_get_settings['widget-team'], true) ?>>
+                                                    <span class="rectangle round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Team Round', 'widgetkit-for-elementor'); ?>
@@ -619,6 +630,9 @@ class Widgetkit_Admin
             'widget-pricing-icon' => intval($settings['widget-pricing-icon'] ? 1 : 0),
             // Pricing Tab
             'widget-pricing-tab' => intval($settings['widget-pricing-tab'] ? 1 : 0),
+
+            // Team 
+            'widget-team' => intval($settings['widget-team'] ? 1 : 0),
 
             // Team Round
             'widget-team-round' => intval($settings['widget-team-round'] ? 1 : 0),

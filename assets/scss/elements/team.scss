@@ -1,0 +1,85 @@
+
+
+/*=================================================================
+ Team Layout 1 start
+==================================================================*/
+
+.wk-team{
+    .wk-card{
+        .wk-card-body{
+            padding: 10px 30px 30px;
+            .wk-grid-small{
+                margin-bottom:-10px;
+            }
+              .wk-card-title{
+                font-size:20px;
+              }
+              .social-icons{
+                a{
+                    margin-left: 0px;
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    display: inline-block;
+                    line-height: 32px;
+                    transition:all 0.3s ease;
+                    .wk-icon {
+                        svg{
+                          height:16px;
+                        }
+                    }
+
+                }
+              
+              }
+            
+      
+            .wk-card-designation{
+              font-size:14px;
+            }
+            .wk-text-normal{
+              font-size:16px;
+            }
+
+        }
+    }
+
+    .style-1{
+        .wk-card-media-top,
+         .wk-card-media-bottom{
+           img{
+            transform: scale(1);
+            transition: all 0.3s ease;
+          }
+
+         }
+        &:hover{
+            img{
+              transform: scale(1.1);
+              transition: all 0.3s ease;
+            }
+          }
+    }
+
+    .style-2{
+        background:transparent;
+        .social-icons{
+          margin-top:10px;
+        }
+        .wk-card-media-top,
+         .wk-card-media-bottom{
+           img{
+            border-radius:100%;
+          }
+
+         }
+    }
+
+    .style-3{
+      .social-icons{
+        a{
+          margin-left: -9px !important;
+        }
+      }
+    }
+}

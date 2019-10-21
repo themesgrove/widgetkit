@@ -1,5 +1,5 @@
 <?php
-    $contents = $settings = $this->get_settings();
+    $contents = $settings = $this->get_settings(); 
     $id = $this->get_id();?>
 
         <div class="content-carousel" wk-slider="center:<?php echo $contents['center_mode_enable'] == 'yes'? 'true' :'false'; ?>; sets:<?php echo $contents['set_mode_enable'] == 'yes'? 'true' :'false'; ?>; autoplay:<?php echo $contents['autoplay_mode_enable'] == 'yes'? 'true' :'false'; ?>; autoplay-interval:<?php echo $contents['content_interval_option'];?>;">

@@ -42,7 +42,7 @@ class wkfe_content_carousel extends Widget_Base {
 	public function get_style_depends() {
         return [
             'widgetkit_bs',
-            'owl-css',
+            //'owl-css',
             'widgetkit_main',
             'uikit',
         ];
@@ -52,7 +52,7 @@ class wkfe_content_carousel extends Widget_Base {
 	 **/
 	public function get_script_depends() {
 		return [ 
-			'owl-carousel',
+			//'owl-carousel',
 			'widgetkit-main',
 			'uikit-js',
             'uikit-icons',
@@ -74,7 +74,7 @@ class wkfe_content_carousel extends Widget_Base {
 	$this->start_controls_section(
 		'section_content',
 		[
-			'label' => esc_html__( 'Content', 'widgetkit-for-elementor' ),
+			'label' => esc_html__( 'Content', 'widgetkit-for-elementor' ), 
 		]
 	);
 
@@ -225,7 +225,7 @@ class wkfe_content_carousel extends Widget_Base {
 	        $this->add_control(
 	            'cat_multiple_id',
 	            [
-	                'label' => __( 'From Category', 'widgetkit-for-elementor' ),
+	                'label' => __( 'From Category', 'widgetkit-for-elementor' ), 
 	                'type' => Controls_Manager::SELECT2,
 	                'options' => $cat_names,
 	                'multiple' => true,
