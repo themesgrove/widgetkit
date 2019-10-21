@@ -31,6 +31,7 @@ class Widgetkit_Admin
         'widget-feature-box',
         'widget-social-share-animation',
         'widget-social-share-collapse',
+        'widget-post-carousel',
     ];
 
     // Default settings
@@ -462,6 +463,16 @@ class Widgetkit_Admin
                                                 </label>
                                             </div>
                                         </div>
+
+                                        <div>
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                <?php echo esc_html__('Post Carousel', 'widgetkit-for-elementor'); ?>
+                                                <label class="switch">
+                                                    <input type="checkbox" id="widget-post-carousel" name="widget-post-carousel" <?php checked(1, $this->widgetkit_get_settings['widget-post-carousel'], true) ?>>
+                                                    <span class="rectangle round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </li>
 
@@ -635,16 +646,16 @@ class Widgetkit_Admin
             'widget-blog-carousel' => intval($settings['widget-blog-carousel'] ? 1 : 0),
             // Blog Sidebar
             'widget-blog-sidebar' => intval($settings['widget-blog-sidebar'] ? 1 : 0),
-
             // Testimonial Single
             'widget-testimonial-single' => intval($settings['widget-testimonial-single'] ? 1 : 0),
             // Testimonial Center
             'widget-testimonial-center' => intval($settings['widget-testimonial-center'] ? 1 : 0),
-
             // Social Share Animation
             'widget-social-share-animation' => intval($settings['widget-social-share-animation'] ? 1 : 0),
             // Social Share collapse
             'widget-social-share-collapse' => intval($settings['widget-social-share-collapse'] ? 1 : 0),
+             // Post carousel
+            'widget-post-carousel' => intval($settings['widget-post-carousel'] ? 1 : 0),
         ];
         update_option('widgetkit_save_settings', $this->widgetkit_settings);
 

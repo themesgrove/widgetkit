@@ -48,6 +48,7 @@ class WKFE_Elements{
             'widget-feature-box',
             'widget-social-share-animation',
             'widget-social-share-collapse',
+            'widget-post-carousel',
         ];
         $widgetkit_default_settings = array_fill_keys( $widgetkit_elements_keys, true ); 
 
@@ -130,6 +131,9 @@ class WKFE_Elements{
         }
         if( $check_component_active['widget-social-share-collapse'] ) {
             require_once WK_PATH . '/elements/social-share-2/widget.php';
+        }
+        if( $check_component_active['widget-post-carousel'] ) {
+            require_once WK_PATH . '/elements/carousel/widget.php';
         }
         require_once WK_PATH . '/elements/pros-cons/widget.php';
         require_once WK_PATH . '/elements/click-tweet/widget.php';
