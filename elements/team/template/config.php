@@ -527,8 +527,8 @@ class wkfe_team extends Widget_Base {
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '',
 						'selectors' => [
-							'{{WRAPPER}} .wk-team .style-3 .wk-card-media-left:before' => 'background: {{VALUE}};',
-							'{{WRAPPER}} .wk-team .style-3 .wk-card-media-right:before' => 'background: {{VALUE}};',
+							'{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-left:before' => 'background: {{VALUE}};',
+							'{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-right:before' => 'background: {{VALUE}};',
 						],
 						'condition'   => [
                         	'item_styles' => '3',
@@ -841,13 +841,14 @@ class wkfe_team extends Widget_Base {
 								'bottom' => '17',
 								'left' => '5',
 							],
-					                'selectors'  => [
+					        'selectors'  => [
 		                    '{{WRAPPER}} .wk-team .wk-style-4 .wk-card-body' => 'right: {{RIGHT}}{{UNIT}}; bottom: {{BOTTOM}}{{UNIT}};
 		                    left: {{LEFT}}{{UNIT}};',
-		                    'condition'   => [
-                        		'item_styles' => '4',
-                    		],
+		                    
 		                ],
+		                'condition'   => [
+                        	'item_styles' => '4',
+                    	],
 		            ]
 		        );
 
@@ -865,10 +866,11 @@ class wkfe_team extends Widget_Base {
 						],
 		                'selectors'  => [
 		                    '{{WRAPPER}} .wk-team .wk-style-4 .wk-card-body' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-		                    'condition'   => [
-                        		'item_styles' => '4',
-                    		],
+		                   
 		                ],
+		                'condition'   => [
+                        	'item_styles' => '4',
+                    	],
 		            ]
 		        );
 
