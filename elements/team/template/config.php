@@ -504,6 +504,37 @@ class wkfe_team extends Widget_Base {
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
+	            $this->add_control(
+	                'image_position',
+	                [
+	                    'label'       => __( 'Position', 'widgetkit-for-elementor' ),
+	                    'type' => Controls_Manager::SELECT,
+	                    'default' => 'left',
+	                    'options' => [
+	                        'left'   => __( 'Left', 'widgetkit-for-elementor' ),
+	                        'right'  => __( 'Right', 'widgetkit-for-elementor' ),
+	                    ],
+	                    'condition'   => [
+                        	'item_styles' => '3',
+                    	],
+	                ]
+	            );
+	           
+	        	$this->add_control(
+					'image_border_color',
+					[
+						'label'     => esc_html__( 'Border Color', 'widgetkit-for-elementor' ),
+						'type'      => Controls_Manager::COLOR,
+						'default'   => '',
+						'selectors' => [
+							'{{WRAPPER}} .wk-team .style-3 .wk-card-media-left:before' => 'background: {{VALUE}};',
+							'{{WRAPPER}} .wk-team .style-3 .wk-card-media-right:before' => 'background: {{VALUE}};',
+						],
+						'condition'   => [
+                        	'item_styles' => '3',
+                    	],
+					]
+				);
 
 	           $this->add_responsive_control(
 	            'image_size',
@@ -520,8 +551,13 @@ class wkfe_team extends Widget_Base {
 	                        ],
 	                    ],
 	                    'selectors' => [
-	                        '{{WRAPPER}} .wk-team .wk-card .wk-card-media-top img' => 'width: {{SIZE}}%;',
+	                        '{{WRAPPER}} .wk-team .wk-card .wk-card-media-top img'   => 'width: {{SIZE}}%;',
+	                        // '{{WRAPPER}} .wk-team .wk-card .wk-card-media-left img'  => 'width: {{SIZE}}%;',
+	                        // '{{WRAPPER}} .wk-team .wk-card .wk-card-media-right img' => 'width: {{SIZE}}%;',
 	                    ],
+	                    'condition'   => [
+                        	'item_styles' => ['1', '2'],
+                    	],
 	                ]
 	            );
 
@@ -537,13 +573,17 @@ class wkfe_team extends Widget_Base {
 	                        'range'  => [
 	                            '%' => [
 	                                'min' => 10,
-	                                'max' => 100,
+	                                'max' => 1000,
 	                            ],
 	                        ],
 	                        'selectors' => [
 	                            '{{WRAPPER}} .wk-team .wk-card .wk-card-media-top' => 'max-height: {{SIZE}}{{UNIT}};',
-	                            // '{{WRAPPER}} .content-carousel .wk-card .wk-card-media-bottom' => 'max-height: {{SIZE}}{{UNIT}};',
+	                             '{{WRAPPER}} .wk-team .wk-card .wk-card-media-left' => 'max-height: {{SIZE}}{{UNIT}};',
+	                             '{{WRAPPER}} .wk-team .wk-card .wk-card-media-right' => 'max-height: {{SIZE}}{{UNIT}};',
 	                        ],
+	                        'condition'   => [
+                        		'item_styles' => ['1', '2'],
+                    		],
 	                    ]
 	                );
 
@@ -554,7 +594,10 @@ class wkfe_team extends Widget_Base {
 		                'type'  => Controls_Manager::DIMENSIONS,
 		                'size_units' => [ 'px', '%' ],
 		                'selectors'  => [
-		                    '{{WRAPPER}} .wk-team .wk-card .wk-card-media-top img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                    '{{WRAPPER}} .wk-team .wk-card .wk-style-2 .wk-card-media-top img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                    '{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-left:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                    '{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-right:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                    '{{WRAPPER}} .wk-team .wk-style-4 .wk-card-wrapper img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                ],
 		            ]
 		        );
@@ -586,7 +629,7 @@ class wkfe_team extends Widget_Base {
 					'type'      => Controls_Manager::COLOR,
 					'default'   => '#404040',
 					'selectors' => [
-						'{{WRAPPER}} .wk-team .wk-card .wk-card-body .wk-grid-small .wk-card-title a' => 'color: {{VALUE}};',
+						'{{WRAPPER}} .wk-team .wk-card .wk-card-body  .wk-card-title a' => 'color: {{VALUE}};',
 					],
 				]
 			);
@@ -596,7 +639,7 @@ class wkfe_team extends Widget_Base {
 						'name'     => 'title_typography',
 						'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
 						'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-						'selector' => '{{WRAPPER}} .wk-team .wk-card .wk-card-body .wk-grid-small .wk-card-title',
+						'selector' => '{{WRAPPER}} .wk-team .wk-card .wk-card-body .wk-card-title',
 					]
 			);
 			$this->add_control(
@@ -606,7 +649,7 @@ class wkfe_team extends Widget_Base {
 	                    'type'      => Controls_Manager::COLOR,
 	                    'default'   => '#0073aa',
 	                    'selectors' => [
-	                        '{{WRAPPER}} .wk-team .wk-card .wk-card-body .wk-grid-small .wk-card-title a:hover' => 'color: {{VALUE}}; text-decoration:none;',
+	                        '{{WRAPPER}} .wk-team .wk-card .wk-card-body .wk-card-title a:hover' => 'color: {{VALUE}}; text-decoration:none;',
 	                    ],
 	                ]
 	            );
@@ -628,6 +671,7 @@ class wkfe_team extends Widget_Base {
 	                        ],
 	                        'selectors' => [
 	                            '{{WRAPPER}} .wk-team .wk-card .wk-card-body .wk-grid-small' => 'padding: {{SIZE}}{{UNIT}} 0 0;',
+	                            '{{WRAPPER}} .wk-team .wk-card .wk-card-body .wk-card-title' => 'padding: 0 0 {{SIZE}}{{UNIT}};',
 	                        ],
 	                    ]
 	            );
@@ -724,7 +768,10 @@ class wkfe_team extends Widget_Base {
 	                    'type'      => Controls_Manager::COLOR,
 	                    'default'   => '',
 	                    'selectors' => [
-	                        '{{WRAPPER}} .wk-team .wk-card' => 'background: {{VALUE}};',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-1' => 'background: {{VALUE}};',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-2' => 'background: {{VALUE}};',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-3' => 'background: {{VALUE}};',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-4 .wk-card-body' => 'background: {{VALUE}};',
 	                    ],
 	                    'separator' => 'before',
 	                ]
@@ -742,7 +789,7 @@ class wkfe_team extends Widget_Base {
 	                ]
 	            );
 
-			    $this->add_control(
+			    $this->add_responsive_control(
 					'content_layout_align',
 					[
 						'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
@@ -768,7 +815,7 @@ class wkfe_team extends Widget_Base {
 					]
 				);
 
-				$this->add_control(
+				$this->add_responsive_control(
 		            'content_padding',
 		            [
 		                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
@@ -776,6 +823,51 @@ class wkfe_team extends Widget_Base {
 		                'size_units' => [ 'px', '%' ],
 		                'selectors'  => [
 		                    '{{WRAPPER}} .wk-team .wk-card .wk-card-body' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                    '{{WRAPPER}} .wk-team .wk-card .wk-card-body .info-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                ],
+		            ]
+		        );
+
+		       	$this->add_responsive_control(
+		            'content_position',
+		            [
+		                'label' => esc_html__( 'Position', 'widgetkit-for-elementor' ),
+		                'type'  => Controls_Manager::DIMENSIONS,
+		                'size_units' => [ 'px', '%' ],
+		                'allowed_dimensions' => [ 'right', 'bottom', 'left' ],
+		                	'placeholder' => [
+								'top' => '',
+								'right' => '60',
+								'bottom' => '17',
+								'left' => '5',
+							],
+					                'selectors'  => [
+		                    '{{WRAPPER}} .wk-team .wk-style-4 .wk-card-body' => 'right: {{RIGHT}}{{UNIT}}; bottom: {{BOTTOM}}{{UNIT}};
+		                    left: {{LEFT}}{{UNIT}};',
+		                    'condition'   => [
+                        		'item_styles' => '4',
+                    		],
+		                ],
+		            ]
+		        );
+
+		        $this->add_control(
+		            'content_border_radius',
+		            [
+		                'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
+		                'type'  => Controls_Manager::DIMENSIONS,
+		                'size_units' => [ 'px', '%' ],
+		                'placeholder' => [
+							'top' => '0',
+							'right' => '10',
+							'bottom' => '0',
+							'left' => '10',
+						],
+		                'selectors'  => [
+		                    '{{WRAPPER}} .wk-team .wk-style-4 .wk-card-body' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                    'condition'   => [
+                        		'item_styles' => '4',
+                    		],
 		                ],
 		            ]
 		        );
