@@ -71,6 +71,7 @@ class wkfe_team extends Widget_Base {
 				[
 					'label'     => esc_html__( 'Choose Content', 'widgetkit-for-elementor' ),
 					'type'      => Controls_Manager::SELECT,
+					'description' =>  esc_html__('Single content must be use with multiple colum and Repeat content use with single colum', 'widgetkit-for-elementor'),
 					'default'   => 'single_content',
 					'options'   => [
 						'single_content'    => esc_html__( 'Single', 'widgetkit-for-elementor' ),
