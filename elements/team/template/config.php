@@ -2,6 +2,7 @@
 
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Controls_Manager;
+use Elementor\Icons_Manager;
 use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Utils;
@@ -67,20 +68,6 @@ class wkfe_team extends Widget_Base {
 
 
 		$this->add_control(
-			'item_option',
-				[
-					'label'     => esc_html__( 'Choose Content', 'widgetkit-for-elementor' ),
-					'type'      => Controls_Manager::SELECT,
-					'description' =>  esc_html__('Single content must be use with multiple colum and Repeat content use with single colum', 'widgetkit-for-elementor'),
-					'default'   => 'single_content',
-					'options'   => [
-						'single_content'    => esc_html__( 'Single', 'widgetkit-for-elementor' ),
-						'repeat_content'    => esc_html__( 'Repeat', 'widgetkit-for-elementor' ),
-					],
-				]
-		);
-
-		$this->add_control(
 	       'single_image',
 		        [
 		            'label' => esc_html__( 'Image', 'widgetkit-for-elementor' ),
@@ -88,9 +75,6 @@ class wkfe_team extends Widget_Base {
 					'default' => [
 						'url' => Utils::get_placeholder_image_src(),
 				  	],
-				  	'condition'   => [
-                        'item_option' => 'single_content',
-                    ],
 		     ]
 	    );
 
@@ -100,11 +84,8 @@ class wkfe_team extends Widget_Base {
 		    'single_title',
 		      	[
 		           'label' => esc_html__( 'Title', 'widgetkit-for-elementor' ),
-		           'type'  => Controls_Manager::TEXTAREA,
+		           'type'  => Controls_Manager::TEXT,
 		           'default' => esc_html__( 'Alex Prokopenko', 'widgetkit-for-elementor' ),
-		           'condition'   => [
-                        'item_option' => 'single_content',
-                    ],
 		    	]
 	    );
 
@@ -113,11 +94,8 @@ class wkfe_team extends Widget_Base {
 		    'single_designation',
 		      	[
 		           'label' => esc_html__( 'Designation', 'widgetkit-for-elementor' ),
-		           'type'  => Controls_Manager::TEXTAREA,
+		           'type'  => Controls_Manager::TEXT,
 		           'default' => esc_html__( 'Graphics Designer', 'widgetkit-for-elementor' ),
-		           'condition'   => [
-                        'item_option' => 'single_content',
-                    ],
 		      	]
 		);
 
@@ -127,9 +105,6 @@ class wkfe_team extends Widget_Base {
 		            'label' => esc_html__( 'Description', 'widgetkit-for-elementor' ),
 		            'type'  => Controls_Manager::TEXTAREA,
 		            'default' => esc_html__( 'This is the place to present the bio of Jason. He is a cat and dog loving person, who loves sunday ice creams, Lady Gaga and everything Apple related.', 'widgetkit-for-elementor' ),
-		            'condition'   => [
-                        'item_option' => 'single_content',
-                    ],
 		      	]
 		);
 
@@ -148,15 +123,10 @@ class wkfe_team extends Widget_Base {
                         'item_option' => 'single_content',
                     ],
                     'default' => [
-							'url' => 'https://www.themesgrove.com', 
-						],
+						'url' => 'https://www.themesgrove.com', 
+					],
 				]
 			);
-
-
-
-
-
 
 			$repeater = new Repeater();
 
@@ -195,6 +165,86 @@ class wkfe_team extends Widget_Base {
 		        );
 
 
+				// $repeater->add_control(
+				// 	'social_icon',
+				// 	[
+				// 		'label' => __( 'Icon', 'widgetkit-for-elementor' ),
+				// 		'type' => Controls_Manager::ICONS,
+				// 		'fa4compatibility' => 'social',
+				// 		'label_block' => true,
+				// 		'default' => [
+				// 			'value' => 'fa fa-facebook',
+				// 			'library' => 'fa-brands',
+				// 		],
+				// 		'recommended' => [
+				// 			'fa-brands' => [
+				// 				'android',
+				// 				'apple',
+				// 				'behance',
+				// 				'bitbucket',
+				// 				'codepen',
+				// 				'delicious',
+				// 				'deviantart',
+				// 				'digg',
+				// 				'dribbble',
+				// 				'elementor',
+				// 				'facebook',
+				// 				'flickr',
+				// 				'foursquare',
+				// 				'free-code-camp',
+				// 				'github',
+				// 				'gitlab',
+				// 				'globe',
+				// 				'google-plus',
+				// 				'houzz',
+				// 				'instagram',
+				// 				'jsfiddle',
+				// 				'linkedin',
+				// 				'medium',
+				// 				'meetup',
+				// 				'mixcloud',
+				// 				'odnoklassniki',
+				// 				'pinterest',
+				// 				'product-hunt',
+				// 				'reddit',
+				// 				'shopping-cart',
+				// 				'skype',
+				// 				'slideshare',
+				// 				'snapchat',
+				// 				'soundcloud',
+				// 				'spotify',
+				// 				'stack-overflow',
+				// 				'steam',
+				// 				'stumbleupon',
+				// 				'telegram',
+				// 				'thumb-tack',
+				// 				'tripadvisor',
+				// 				'tumblr',
+				// 				'twitch',
+				// 				'twitter',
+				// 				'viber',
+				// 				'vimeo',
+				// 				'vk',
+				// 				'weibo',
+				// 				'weixin',
+				// 				'whatsapp',
+				// 				'wordpress',
+				// 				'xing',
+				// 				'yelp',
+				// 				'youtube',
+				// 				'500px',
+				// 			],
+				// 			'fa-solid' => [
+				// 				'envelope',
+				// 				'link',
+				// 				'rss',
+				// 			],
+				// 		],
+				// 	]
+				// );
+
+
+
 			$this->add_control(
 			    'social_share',
 			      [
@@ -223,171 +273,13 @@ class wkfe_team extends Widget_Base {
 			          ],
 			          'fields'      => array_values( $repeater->get_controls() ),
 			          'title_field' => '{{{title}}}',
-			          'condition'   => [
-                        	'item_option' => 'single_content',
-                    	],
 			      ]
 			  );
-
-
-
-
-
-		$repeater = new Repeater();
-
-            $repeater->add_control(
-               'repeater_image',
-                    [
-                      'label' => esc_html__( 'Image', 'widgetkit-for-elementor' ),
-                      'type'  => Controls_Manager::MEDIA,
-                      'default' => [
-                        'url'   => Utils::get_placeholder_image_src(),
-                      ],
-                    ]
-            );
-
-            $repeater->add_control(
-                'repeater_title',
-                    [
-                      'label'   => esc_html__( 'Title', 'widgetkit-for-elementor' ),
-                      'type'    => Controls_Manager::TEXT,
-                      'default' => esc_html__( 'Alex Prokopenko', 'widgetkit-for-elementor' ),
-                    ]
-            );
-
-            $repeater->add_control(
-                'repeater_designation',
-                    [
-                      'label'   => esc_html__( 'Designation', 'widgetkit-for-elementor' ),
-                      'type'    => Controls_Manager::TEXT,
-                      'default' => esc_html__( 'Business Development', 'widgetkit-for-elementor' ),
-                    ]
-            );
-
-            $repeater->add_control(
-                'repeater_content',
-                    [
-                      'label'   => esc_html__( 'Content', 'widgetkit-for-elementor' ),
-                      'type'    => Controls_Manager::TEXTAREA,
-                      'default' => esc_html__( '', 'widgetkit-for-elementor' ),
-                    ]
-            );
-
-	        $repeater->add_control(
-				'repeater_demo_link',
-				[
-					'label' => __( 'Link', 'widgetkit-for-elementor' ),
-					'type'  => Controls_Manager::URL,
-					'dynamic' => [
-						'active'  => true,
-					],
-					'placeholder' => __( 'https://your-link.com', 'widgetkit-for-elementor' ),
-					'separator'   => 'before',
-				]
-			);
-
-			$repeater->add_control(
-		                'social_heading',
-		                [
-		                    'label' => __( 'Social Links', 'widgetkit-for-elementor' ),
-		                    'type'  => Controls_Manager::HEADING,
-		                    //'separator' => 'before',
-		                ]
-		            );
-
-			$repeater->add_control(
-				'repeater_facebook_link',
-					[
-						'label' => __( 'Facebook', 'widgetkit-for-elementor' ),
-						'type'  => Controls_Manager::URL,
-						'dynamic' => [
-							'active'  => true,
-						],
-						'placeholder' => __( 'https://facebook.com/themesgrove', 'widgetkit-for-elementor' ),					]
-				);
-
-			 $repeater->add_control(
-				'repeater_twitter_link',
-					[
-						'label' => __( 'Twitter', 'widgetkit-for-elementor' ),
-						'type'  => Controls_Manager::URL,
-						'dynamic' => [
-							'active'  => true,
-						],
-						'placeholder' => __( 'https://twitter.com/themesgrove', 'widgetkit-for-elementor' ),
-						'separator'   => 'before',
-					]
-				);
-
-			 $repeater->add_control(
-				'repeater_linkeding_link',
-					[
-						'label' => __( 'Linkeding', 'widgetkit-for-elementor' ),
-						'type'  => Controls_Manager::URL,
-						'dynamic' => [
-							'active'  => true,
-						],
-						'placeholder' => __( 'https://linkedin.com/themesgrove', 'widgetkit-for-elementor' ),
-						'separator'   => 'before',
-					]
-				);
-
-
-
-        $this->add_control(
-            'repeater_content',
-              [
-                    'label'       => esc_html__( 'Repeater Contents', 'widgetkit-for-elementor' ),
-                    'type'        => Controls_Manager::REPEATER,
-                    'show_label'  => true,
-                    'separator'  => 'before',
-                    'default'     => [
-                      [
-                      	'repeater_image' => '',
-                      	'repeater_title'       => esc_html__( 'Alex Prokopenko', 'widgetkit-for-elementor' ),
-                        'repeater_designation'    => esc_html__( 'Business Development', 'widgetkit-for-elementor' ),
-                        'repeater_content'     => esc_html__( '', 'widgetkit-for-elementor' ), 
-                        'repeater_demo_link'   => '#',
-                        'repeater_facebook_link'    =>'#',
-                        'repeater_twitter_link'     => '#', 
-                        'repeater_linkdeing_link'   => '#',
-         
-                      ],
-                       [
-                      	'repeater_image' => '',
-                      	'repeater_title'       => esc_html__( 'Arturo Turcotte', 'widgetkit-for-elementor' ),
-                        'repeater_designation'    => esc_html__( 'Technology Officer', 'widgetkit-for-elementor' ),
-                        'repeater_content'     => esc_html__( '', 'widgetkit-for-elementor' ), 
-                        'repeater_demo_link'   => '#',
-                        'repeater_facebook_link'    =>'#',
-                        'repeater_twitter_link'     => '#', 
-                        'repeater_linkdeing_link'   => '#',
-         
-                      ],
-                      [
-                      	'repeater_image' => '',
-                      	'repeater_title'       => esc_html__( 'Carley Mante', 'widgetkit-for-elementor' ),
-                        'repeater_designation'    => esc_html__( 'UI/UX Designer', 'widgetkit-for-elementor' ),
-                        'repeater_content'     => esc_html__( '', 'widgetkit-for-elementor' ), 
-                        'repeater_demo_link'   => '#',
-                        'repeater_facebook_link'    =>'#',
-                        'repeater_twitter_link'     => '#', 
-                        'repeater_linkdeing_link'   => '#',
-         
-                      ],
-                  ],
-                  'fields'      => array_values( $repeater->get_controls() ),
-                  'title_field' => '{{{repeater_title}}}',
-                  'condition'   => [
-                        'item_option' => 'repeat_content',
-                    ],
-              ]
-            );
 
             $this->add_control(
 				'header_tag',
 				[
-					'label' => __( 'HTML Tag', 'widgetkit-for-elementor' ),
+					'label' => __( 'Title Heading Tag', 'widgetkit-for-elementor' ),
 					'type' => Controls_Manager::SELECT,
 					'options' => [
 						'h1' => 'H1',
@@ -420,79 +312,46 @@ class wkfe_team extends Widget_Base {
 	        $this->add_control(
 	            'item_styles',
 	                [
-	                    'label'       => __( 'Choose Style', 'widgetkit-for-elementor' ),
+	                    'label'       => __( 'Choose Screen', 'widgetkit-for-elementor' ),
 	                    'type' => Controls_Manager::SELECT,
-	                    'default' => '1',
+	                    'default' => 'screen_1',
 	                    'options' => [
-	                        '1'   => __( '1', 'widgetkit-for-elementor' ),
-	                        '2'   => __( '2', 'widgetkit-for-elementor' ),
-	                        '3'   => __( '3', 'widgetkit-for-elementor' ),
-	                        '4'   => __( '4', 'widgetkit-for-elementor' ),
+	                        'screen_1'   => __( 'Screen 1', 'widgetkit-for-elementor' ),
+	                        'screen_2'   => __( 'Screen 2', 'widgetkit-for-elementor' ),
+	                        'screen_3'   => __( 'Screen 3', 'widgetkit-for-elementor' ),
+	                        'screen_4'   => __( 'Screen 4', 'widgetkit-for-elementor' ),
+	                        'screen_5'   => __( 'Screen 5', 'widgetkit-for-elementor' ),
+	                        'screen_6'   => __( 'Screen 6', 'widgetkit-for-elementor' ),
 	                    ],
 	                ]
 	        );
-
-            $this->add_control(
-                'item_column',
-                [
-                    'label'   => __( 'Number of Colum', 'widgetkit-for-elementor' ),
-                    'type'    => Controls_Manager::NUMBER,
-                    'default' => 3,
-                    'min'     => 1,
-                    'max'     => 6,
-                    'step'    => 1,
-                    'condition'   => [
-                        'item_option' => 'repeat_content',
-                    ],
-                ]
-            );
-
-
-	        $this->add_control(
-	            'column_gap',
-	                [
-	                    'label'       => __( 'Colum Gap', 'widgetkit-for-elementor' ),
-	                    'type' => Controls_Manager::SELECT,
-	                    'default' => 'medium',
-	                    'options' => [
-	                        'collapse'=> __( 'None', 'widgetkit-for-elementor' ),
-	                        'small'   => __( 'Small', 'widgetkit-for-elementor' ),
-	                        'medium'  => __( 'Medium', 'widgetkit-for-elementor' ),
-	                        'large'   => __( 'Large', 'widgetkit-for-elementor' ),
-	                    ],
-	                    'condition'   => [
-                        	'item_option' => 'repeat_content',
-                    	],
-	                ]
-	        );
-
-	        $this->end_controls_section();
+	    $this->end_controls_section();
 
 			
-	/**
-	 * Pro control panel 
-	 */
-	if(!apply_filters('wkpro_enabled', false)):
-		$this->start_controls_section(
-			'section_widgetkit_pro_box',
-			[
-				'label' => esc_html__( 'Go Premium for more layout & feature', 'widgetkit-for-elementor' ),
-			]
-		);
-			$this->add_control(
-				'wkfe_control_go_pro',
+		/**
+		 * Pro control panel 
+		 */
+		if(!apply_filters('wkpro_enabled', false)):
+			$this->start_controls_section(
+				'section_widgetkit_pro_box',
 				[
-					'label' => __('Unlock more possibilities', 'widgetkit-for-elementor'),
-					'type' => Controls_Manager::CHOOSE,
-					'default' => '1',
-					'description' => '<div class="elementor-nerd-box">
-					<div class="elementor-nerd-box-message"> Get the  <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">Pro version</a> of <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">WidgetKit</a> for more stunning elements and customization options.</div>
-					<a class="widgetkit-go-pro elementor-nerd-box-link elementor-button elementor-button-default elementor-go-pro" href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">Go Pro</a>
-					</div>',
+					'label' => esc_html__( 'Go Premium for more layout & feature', 'widgetkit-for-elementor' ),
 				]
 			);
-		$this->end_controls_section();
-	endif;
+				$this->add_control(
+					'wkfe_control_go_pro',
+					[
+						'label' => __('Unlock more possibilities', 'widgetkit-for-elementor'),
+						'type' => Controls_Manager::CHOOSE,
+						'default' => '1',
+						'description' => '<div class="elementor-nerd-box">
+						<div class="elementor-nerd-box-message"> Get the  <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">Pro version</a> of <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">WidgetKit</a> for more stunning elements and customization options.</div>
+						<a class="widgetkit-go-pro elementor-nerd-box-link elementor-button elementor-button-default elementor-go-pro" href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">Go Pro</a>
+						</div>',
+					]
+				);
+			$this->end_controls_section();
+		endif;
 
 	
 
@@ -505,37 +364,30 @@ class wkfe_team extends Widget_Base {
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
-	            $this->add_control(
-	                'image_position',
-	                [
-	                    'label'       => __( 'Position', 'widgetkit-for-elementor' ),
-	                    'type' => Controls_Manager::SELECT,
-	                    'default' => 'left',
-	                    'options' => [
-	                        'left'   => __( 'Left', 'widgetkit-for-elementor' ),
-	                        'right'  => __( 'Right', 'widgetkit-for-elementor' ),
-	                    ],
-	                    'condition'   => [
-                        	'item_styles' => '3',
-                    	],
-	                ]
-	            );
-	           
-	        	$this->add_control(
-					'image_border_color',
+
+			    $this->add_control(
+					'image_position',
 					[
-						'label'     => esc_html__( 'Border Color', 'widgetkit-for-elementor' ),
-						'type'      => Controls_Manager::COLOR,
-						'default'   => '',
-						'selectors' => [
-							'{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-left:before' => 'background: {{VALUE}};',
-							'{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-right:before' => 'background: {{VALUE}};',
+						'label' => __( 'Position', 'elementor' ),
+						'type' => Controls_Manager::CHOOSE,
+						'default' => 'left',
+						'options' => [
+							'left' => [
+								'title' => __( 'Left', 'elementor' ),
+								'icon' => 'eicon-h-align-left',
+							],
+							'right' => [
+								'title' => __( 'Right', 'elementor' ),
+								'icon' => 'eicon-h-align-right',
+							],
 						],
+						'toggle' => false,
 						'condition'   => [
-                        	'item_styles' => '3',
+                        	'item_styles' => 'screen_3',
                     	],
 					]
 				);
+	          
 
 	           $this->add_responsive_control(
 	            'image_size',
@@ -552,12 +404,12 @@ class wkfe_team extends Widget_Base {
 	                        ],
 	                    ],
 	                    'selectors' => [
-	                        '{{WRAPPER}} .wk-team .wk-card .wk-card-media-top img'   => 'width: {{SIZE}}%;',
-	                        // '{{WRAPPER}} .wk-team .wk-card .wk-card-media-left img'  => 'width: {{SIZE}}%;',
-	                        // '{{WRAPPER}} .wk-team .wk-card .wk-card-media-right img' => 'width: {{SIZE}}%;',
+	                        '{{WRAPPER}} .wk-team .wk-card .wk-card-media-top img' => 'width: {{SIZE}}%;',
+	                        '{{WRAPPER}} .wk-team .wk-card .wk-card-wrapper img'  => 'width: {{SIZE}}%;',
+	                        //'{{WRAPPER}} .wk-team .wk-style-6 .wk-card-link' => 'width: {{SIZE}}%;',
 	                    ],
 	                    'condition'   => [
-                        	'item_styles' => ['1', '2'],
+                        	'item_styles' => ['screen_1', 'screen_2', 'screen_5'],
                     	],
 	                ]
 	            );
@@ -574,7 +426,7 @@ class wkfe_team extends Widget_Base {
 	                        'range'  => [
 	                            '%' => [
 	                                'min' => 10,
-	                                'max' => 1000,
+	                                'max' => 10000,
 	                            ],
 	                        ],
 	                        'selectors' => [
@@ -583,11 +435,98 @@ class wkfe_team extends Widget_Base {
 	                             '{{WRAPPER}} .wk-team .wk-card .wk-card-media-right' => 'max-height: {{SIZE}}{{UNIT}};',
 	                        ],
 	                        'condition'   => [
-                        		'item_styles' => ['1', '2'],
+                        		'item_styles' => ['screen_1', 'screen_3'],
                     		],
 	                    ]
-	                );
+	            );
 
+	            $this->add_control(
+					'image_shape_bg_color',
+					[
+						'label'     => esc_html__( 'Shape Color', 'widgetkit-for-elementor' ),
+						'type'      => Controls_Manager::COLOR,
+						'default'   => '',
+						'selectors' => [
+							'{{WRAPPER}} .wk-team .wk-style-6 .wk-card-wrapper .wk-card-link' => 'background-color: {{VALUE}};',
+						],
+						'condition'   => [
+                        	'item_styles' => 'screen_6',
+                    	],
+					]
+				);
+
+				$this->add_control(
+		            'image_shape_radius',
+		            [
+		                'label' => esc_html__( 'Shape Radius', 'widgetkit-for-elementor' ),
+		                'type'  => Controls_Manager::DIMENSIONS,
+		                'size_units' => [ 'px', '%' ],
+		                'placeholder' => [
+								'top' => '60',
+								'right' => '60',
+								'bottom' => '40',
+								'left' => '40',
+							],
+		                'selectors'  => [
+		                    '{{WRAPPER}} .wk-team .wk-style-6 .wk-card-wrapper .wk-card-link' => 'border-radius:50% 50% 50% 50%/{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                ],
+		                'condition'   => [
+                        	'item_styles' =>'screen_6',
+                    	],
+		            ]
+		        );
+
+        		$this->add_control(
+					'image_hover_overlay_color',
+					[
+						'label'     => esc_html__( 'Hover Overlay Color', 'widgetkit-for-elementor' ),
+						'type'      => Controls_Manager::COLOR,
+						'default'   => '',
+						'selectors' => [
+							'{{WRAPPER}} .wk-team .wk-style-6 .wk-card-wrapper:not(.nohover):hover' => 'background-color: {{VALUE}};',
+						],
+						'condition'   => [
+                        	'item_styles' => 'screen_6',
+                    	],
+					]
+				);
+
+				$this->add_control(
+	                'image_bg_position',
+	                [
+	                    'label'       => __( 'Background Size', 'widgetkit-for-elementor' ),
+	                    'type' => Controls_Manager::SELECT,
+	                    'default' => 'contain',
+	                    'options' => [
+	                        'auto'     => __( 'Auto', 'widgetkit-for-elementor' ),
+	                        'contain'  => __( 'Contain', 'widgetkit-for-elementor' ),
+	                        'cover'    => __( 'Cover', 'widgetkit-for-elementor' ),
+	                    ],
+	                    'condition'   => [
+                        	'item_styles' => 'screen_6',
+                    	],
+                    	'selectors' => [
+							'{{WRAPPER}} .wk-team .wk-style-6 .wk-card-wrapper .wk-card-hover-bg' => 'background-size: {{VALUE}};',
+						],
+                    	
+	                ]
+	            );
+
+	        	$this->add_control(
+					'image_border_color',
+					[
+						'label'     => esc_html__( 'Border Color', 'widgetkit-for-elementor' ),
+						'type'      => Controls_Manager::COLOR,
+						'default'   => '',
+						'selectors' => [
+							'{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-left:before' => 'background: {{VALUE}};',
+							'{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-right:before' => 'background: {{VALUE}};',
+						],
+						'condition'   => [
+                        	'item_styles' => 'screen_3',
+                    	],
+					]
+				);
 		        $this->add_control(
 		            'image_border_radius',
 		            [
@@ -595,11 +534,15 @@ class wkfe_team extends Widget_Base {
 		                'type'  => Controls_Manager::DIMENSIONS,
 		                'size_units' => [ 'px', '%' ],
 		                'selectors'  => [
-		                    '{{WRAPPER}} .wk-team .wk-card .wk-style-2 .wk-card-media-top img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                    '{{WRAPPER}} .wk-team .wk-card.wk-style-2 .wk-card-media-top img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                    '{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-left:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                    '{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-right:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                    '{{WRAPPER}} .wk-team .wk-style-4 .wk-card-wrapper img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                    '{{WRAPPER}} .wk-team .wk-style-5 .wk-card-wrapper img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                ],
+		                'condition'   => [
+                        	'item_styles' => ['screen_2', 'screen_3', 'screen_4' , 'screen_5'],
+                    	],
 		            ]
 		        );
 
@@ -614,36 +557,36 @@ class wkfe_team extends Widget_Base {
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
-       		$this->add_control(
-                'title_heading',
-                [
-                    'label' => __( 'Title', 'widgetkit-for-elementor' ),
-                    'type'  => Controls_Manager::HEADING,
-                    'separator' => 'before',
-                ]
-            );
+	       		$this->add_control(
+	                'title_heading',
+	                [
+	                    'label' => __( 'Title', 'widgetkit-for-elementor' ),
+	                    'type'  => Controls_Manager::HEADING,
+	                    'separator' => 'before',
+	                ]
+	            );
 
-			$this->add_control(
-				'title_color',
-				[
-					'label'     => esc_html__( 'Color', 'widgetkit-for-elementor' ),
-					'type'      => Controls_Manager::COLOR,
-					'default'   => '#404040',
-					'selectors' => [
-						'{{WRAPPER}} .wk-team .wk-card .wk-card-body  .wk-card-title a' => 'color: {{VALUE}};',
-					],
-				]
-			);
-			$this->add_group_control(
-				Group_Control_Typography::get_type(),
+				$this->add_control(
+					'title_color',
 					[
-						'name'     => 'title_typography',
-						'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-						'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-						'selector' => '{{WRAPPER}} .wk-team .wk-card .wk-card-body .wk-card-title',
+						'label'     => esc_html__( 'Color', 'widgetkit-for-elementor' ),
+						'type'      => Controls_Manager::COLOR,
+						'default'   => '#404040',
+						'selectors' => [
+							'{{WRAPPER}} .wk-team .wk-card .wk-card-body  .wk-card-title a' => 'color: {{VALUE}};',
+						],
 					]
-			);
-			$this->add_control(
+				);
+				$this->add_group_control(
+					Group_Control_Typography::get_type(),
+						[
+							'name'     => 'title_typography',
+							'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
+							'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+							'selector' => '{{WRAPPER}} .wk-team .wk-card .wk-card-body .wk-card-title',
+						]
+				);
+				$this->add_control(
 	                'title_hover_color',
 	                [
 	                    'label'     => esc_html__( 'Hover Color', 'widgetkit-for-elementor' ),
@@ -651,6 +594,7 @@ class wkfe_team extends Widget_Base {
 	                    'default'   => '#0073aa',
 	                    'selectors' => [
 	                        '{{WRAPPER}} .wk-team .wk-card .wk-card-body .wk-card-title a:hover' => 'color: {{VALUE}}; text-decoration:none;',
+	                        '{{WRAPPER}} .wk-team .wk-style-6 .wk-card-wrapper:hover .wk-card-title a' => 'color: {{VALUE}} !important;',
 	                    ],
 	                ]
 	            );
@@ -708,6 +652,21 @@ class wkfe_team extends Widget_Base {
 						]
 				);
 
+				$this->add_control(
+	                'designation_hover_color',
+	                [
+	                    'label'     => esc_html__( 'Hover Color', 'widgetkit-for-elementor' ),
+	                    'type'      => Controls_Manager::COLOR,
+	                    'default'   => '#fff',
+	                    'selectors' => [
+	                        '{{WRAPPER}} .wk-team .wk-style-6 .wk-card-wrapper:hover .wk-card-designation' => 'color: {{VALUE}} !important;',
+	                    ],
+	                    'condition'   => [
+                        	'item_styles' => 'screen_6',
+                    	],
+	                ]
+	            );
+
 
 	            $this->add_responsive_control(
 	                'designation_spacing',
@@ -759,24 +718,48 @@ class wkfe_team extends Widget_Base {
 							'selector' => '{{WRAPPER}} .wk-team .wk-card .wk-card-body .wk-text-normal',
 						]
 				);
-
-
-
 				$this->add_control(
+	                'description_hover_color',
+	                [
+	                    'label'     => esc_html__( 'Hover Color', 'widgetkit-for-elementor' ),
+	                    'type'      => Controls_Manager::COLOR,
+	                    'default'   => '#fff',
+	                    'selectors' => [
+	                        '{{WRAPPER}} .wk-team .wk-style-6 .wk-card-wrapper:hover .wk-text-normal' => 'color: {{VALUE}} !important;',
+	                    ],
+	                    'condition'   => [
+                        	'item_styles' => 'screen_6',
+                    	],
+	                ]
+	            );
+
+
+ 				$this->add_control(
+	                'common_heading',
+	                [
+	                    'label' => __( 'Common', 'widgetkit-for-elementor' ),
+	                    'type'  => Controls_Manager::HEADING,
+	                    'separator' => 'before',
+	                ]
+	            );
+
+	            $this->add_control(
 	                'content_bg_color',
 	                [
 	                    'label'     => esc_html__( 'Bg Color', 'widgetkit-for-elementor' ),
 	                    'type'      => Controls_Manager::COLOR,
 	                    'default'   => '',
 	                    'selectors' => [
-	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-1' => 'background: {{VALUE}};',
-	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-2' => 'background: {{VALUE}};',
-	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-3' => 'background: {{VALUE}};',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-1 .wk-card-body' => 'background: {{VALUE}};',
 	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-4 .wk-card-body' => 'background: {{VALUE}};',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-5 .wk-card-body' => 'background: {{VALUE}};',
 	                    ],
-	                    'separator' => 'before',
+	                     'condition'   => [
+                        	'item_styles' => ['screen_1', 'screen_4', 'screen_5'],
+                    	],
 	                ]
 	            );
+
 
 
 	            $this->add_group_control(
@@ -795,7 +778,7 @@ class wkfe_team extends Widget_Base {
 					[
 						'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
 						'type'  => Controls_Manager::CHOOSE,
-						'default'   => 'left',
+						'default'   =>'' ,
 						'options'   => [
 							'left'    => [
 								'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
@@ -813,6 +796,9 @@ class wkfe_team extends Widget_Base {
 						'selectors' => [
 							'{{WRAPPER}} .wk-team .wk-card' => 'text-align: {{VALUE}};',
 						],
+						'condition'   => [
+                        	'item_styles' => ['screen_2', 'screen_3', 'screen_4', 'screen_5'],
+                    	],
 					]
 				);
 
@@ -835,7 +821,7 @@ class wkfe_team extends Widget_Base {
 		                'label' => esc_html__( 'Position', 'widgetkit-for-elementor' ),
 		                'type'  => Controls_Manager::DIMENSIONS,
 		                'size_units' => [ 'px', '%' ],
-		                'allowed_dimensions' => [ 'right', 'bottom', 'left' ],
+		                'allowed_dimensions' => ['right', 'bottom', 'left' ],
 		                	'placeholder' => [
 								'top' => '',
 								'right' => '60',
@@ -848,7 +834,7 @@ class wkfe_team extends Widget_Base {
 		                    
 		                ],
 		                'condition'   => [
-                        	'item_styles' => '4',
+                        	'item_styles' => 'screen_4',
                     	],
 		            ]
 		        );
@@ -867,13 +853,42 @@ class wkfe_team extends Widget_Base {
 						],
 		                'selectors'  => [
 		                    '{{WRAPPER}} .wk-team .wk-style-4 .wk-card-body' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                    '{{WRAPPER}} .wk-team .wk-style-5 .wk-card-body' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                    '{{WRAPPER}} .wk-team .wk-style-6, {{WRAPPER}}  .wk-team .wk-style-6 .wk-card-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+
+
 		                   
 		                ],
 		                'condition'   => [
-                        	'item_styles' => '4',
+                        	'item_styles' => ['screen_4', 'screen_5', 'screen_6'],
                     	],
 		            ]
 		        );
+		        $this->add_control(
+	                'global_heading',
+	                [
+	                    'label' => __( 'Global', 'widgetkit-for-elementor' ),
+	                    'type'  => Controls_Manager::HEADING,
+	                    'separator' => 'before',
+	                ]
+	            );
+
+		        $this->add_control(
+	                'content_item_bg_color',
+	                [
+	                    'label'     => esc_html__( 'Item Bg Color', 'widgetkit-for-elementor' ),
+	                    'type'      => Controls_Manager::COLOR,
+	                    'default'   => '',
+	                    'selectors' => [
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-1' => 'background: {{VALUE}};',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-2' => 'background: {{VALUE}};',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-3' => 'background: {{VALUE}};',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-4' => 'background: {{VALUE}};',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-5' => 'background: {{VALUE}};',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-6' => 'background: {{VALUE}};',
+	                    ],
+	                ]
+	            );
 
 		$this->end_controls_section();
 
@@ -1012,47 +1027,6 @@ class wkfe_team extends Widget_Base {
 				$this->end_controls_tab();
 
 			$this->end_controls_tabs();
-
-
-
-
-		// $this->add_control(
-		// 	'icon_hover_color',
-		// 	[
-		// 		'label'     => esc_html__( 'Hover Color', 'widgetkit-for-elementor' ),
-		// 		'type'      => Controls_Manager::COLOR,
-		// 		'default'   => '',
-		// 		'selectors' => [
-		// 			'{{WRAPPER}} .wk-team .wk-card .wk-card-body .wk-grid-small .wk-icon svg:hover' => 'color: {{VALUE}};',
-		// 		],
-		// 	]
-		// );
-
-
-		// $this->add_responsive_control(
-		// 	'icon_bottom_space',
-		// 	[
-		// 		'label' => esc_html__( 'Spacing', 'widgetkit-for-elementor' ),
-		// 		'type'  => Controls_Manager::SLIDER,
-		// 		'default'  => [
-		// 			'size' => 10,
-		// 		],
-		// 		'range' => [
-		// 			'px' => [
-		// 				'min' => -10,
-		// 				'max' => 50,
-		// 			],
-		// 		],
-		// 		'selectors' => [
-		// 			'{{WRAPPER}} .tgx-team-1 .team-container .team-each-wrap .team-social' => 'margin: {{SIZE}}{{UNIT}} 0;',
-		// 		],
-		// 	]
-		// );
-
-
-
-
-
 
 	$this->end_controls_section();
 	}
