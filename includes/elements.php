@@ -28,7 +28,10 @@ class WKFE_Elements{
             'widget-portfolio',
             'widget-pricing-single', 
             'widget-pricing-icon', 
-            'widget-pricing-tab', 
+            'widget-pricing-tab',
+
+            'widget-testimonial',
+
             'widget-testimonial-single',
             'widget-testimonial-center',
             'widget-team-overlay',
@@ -65,6 +68,11 @@ class WKFE_Elements{
         if( $check_component_active['widget-pricing-tab'] ) {
             require_once WK_PATH . '/elements/pricing-tab/widget.php';
         }
+
+        if( $check_component_active['widget-testimonial'] ) {
+            require_once WK_PATH . '/elements/testimonial/widget.php';
+        }
+
         if( $check_component_active['widget-testimonial-center'] ) {
             require_once WK_PATH . '/elements/testimonial-1/widget.php';
         }

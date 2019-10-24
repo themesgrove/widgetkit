@@ -61,16 +61,6 @@ class wkfe_testimonial extends Widget_Base {
 
 	protected function _register_controls() {
 
-
-		$terms = get_terms( array(
-            'taxonomy' => 'category',
-            'hide_empty' => false,
-        ) );
-        $cat_names = array();
-        foreach( $terms as $t ):
-            $cat_names[$t->term_id] = $t->name;
-        endforeach;
-
 	$this->start_controls_section(
 		'section_content',
 		[
@@ -80,45 +70,34 @@ class wkfe_testimonial extends Widget_Base {
 
 
 
-		$this->add_control(
-			'item_option',
-				[
-					'label'     => esc_html__( 'Choose Content', 'widgetkit-for-elementor' ),
-					'type'      => Controls_Manager::SELECT,
-					'default'   => 'custom_post',
-					'options'   => [
-						'custom_post'    => esc_html__( 'Custom', 'widgetkit-for-elementor' ),
-						'blog_post'      => esc_html__( 'Post', 'widgetkit-for-elementor' ),
-					],
-				]
-		);
+		// $this->add_control(
+		// 	'item_option',
+		// 		[
+		// 			'label'     => esc_html__( 'Choose Content', 'widgetkit-for-elementor' ),
+		// 			'type'      => Controls_Manager::SELECT,
+		// 			'default'   => 'custom_post',
+		// 			'options'   => [
+		// 				'custom_post'    => esc_html__( 'Custom', 'widgetkit-for-elementor' ),
+		// 				'blog_post'      => esc_html__( 'Post', 'widgetkit-for-elementor' ),
+		// 			],
+		// 		]
+		// );
 
 
 
 		$repeater = new Repeater();
 
-            $repeater->add_control(
-               'content_thumb_image',
+		    $repeater->add_control(
+                'testimonial_content',
                     [
-                      'label' => esc_html__( 'Image', 'widgetkit-for-elementor' ),
-                      'type'  => Controls_Manager::MEDIA,
-                      'default' => [
-                        'url'   => Utils::get_placeholder_image_src(),
-                      ],
+                      'label'   => esc_html__( 'Content', 'widgetkit-for-elementor' ),
+                      'type'    => Controls_Manager::WYSIWYG,
+                      'default' => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
                     ]
             );
 
             $repeater->add_control(
-                'content_meta',
-                    [
-                      'label'   => esc_html__( 'Meta', 'widgetkit-for-elementor' ),
-                      'type'    => Controls_Manager::TEXT,
-                      'default' => esc_html__( 'Business', 'widgetkit-for-elementor' ),
-                    ]
-            );
-
-            $repeater->add_control(
-                'content_title',
+                'testimonial_title',
                     [
                       'label'   => esc_html__( 'Title', 'widgetkit-for-elementor' ),
                       'type'    => Controls_Manager::TEXT,
@@ -127,11 +106,22 @@ class wkfe_testimonial extends Widget_Base {
             );
 
             $repeater->add_control(
-                'content_content',
+                'testimonial_designation',
                     [
-                      'label'   => esc_html__( 'Content', 'widgetkit-for-elementor' ),
-                      'type'    => Controls_Manager::WYSIWYG,
-                      'default' => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
+                      'label'   => esc_html__( 'Designation', 'widgetkit-for-elementor' ),
+                      'type'    => Controls_Manager::TEXT,
+                      'default' => esc_html__( 'Business', 'widgetkit-for-elementor' ),
+                    ]
+            );
+
+            $repeater->add_control(
+               'testimonial_thumb_image',
+                    [
+                      'label' => esc_html__( 'Image', 'widgetkit-for-elementor' ),
+                      'type'  => Controls_Manager::MEDIA,
+                      'default' => [
+                        'url'   => Utils::get_placeholder_image_src(),
+                      ],
                     ]
             );
 
@@ -151,51 +141,34 @@ class wkfe_testimonial extends Widget_Base {
 
 
         $this->add_control(
-            'custom_content',
+            'testimonial_content',
               [
-                  'label'       => esc_html__( 'Custom Contents', 'widgetkit-for-elementor' ),
+                  'label'       => esc_html__( 'Testimonials', 'widgetkit-for-elementor' ),
                   'type'        => Controls_Manager::REPEATER,
                   'show_label'  => true,
                    'separator'  => 'before',
                   'default'     => [
                       [
-                        'content_category'    => esc_html__( 'Business', 'widgetkit-for-elementor' ),
-                        'content_title'       => esc_html__( 'Healthcare giant overcomes', 'widgetkit-for-elementor' ),
-                        'content_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
-                        'content_thumb_image' => '',
+                      	'testimonial_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
+                      	'testimonial_title'       => esc_html__( 'Diego Alejandro', 'widgetkit-for-elementor' ),
+                        'testimonial_designation'    => esc_html__( 'Whitero CEO, USA', 'widgetkit-for-elementor' ),
+                        
+                        'testimonial_thumb_image' => '',
                         'content_demo_link'   => '#',
          
                       ],
-                      [
-                        'content_category'    => esc_html__( 'Consumer', 'widgetkit-for-elementor' ),
-                        'content_title'       => esc_html__( 'A technology company', 'widgetkit-for-elementor' ),
-                        'content_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
-                        'content_thumb_image' => '',
+        			  [
+                      	'testimonial_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
+                      	'testimonial_title'       => esc_html__( 'Miguel Angel', 'widgetkit-for-elementor' ),
+                        'testimonial_designation'    => esc_html__( 'Managing Director', 'widgetkit-for-elementor' ),
+                        
+                        'testimonial_thumb_image' => '',
                         'content_demo_link'   => '#',
          
                       ],
-                      [
-                        'content_category'    => esc_html__( 'Travel', 'widgetkit-for-elementor' ),
-                        'content_title'       => esc_html__( 'Focus on core delivers', 'widgetkit-for-elementor' ),
-                        'content_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
-                        'content_thumb_image' => '',
-                        'content_demo_link'   => '#',
-     
-                        ],
-                        [
-                        'content_category'    => esc_html__( 'Corporate', 'widgetkit-for-elementor' ),
-                        'content_title'       => esc_html__( 'Focus on core delivers', 'widgetkit-for-elementor' ),
-                        'content_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
-                        'content_thumb_image' => '',
-                        'content_demo_link'   => '#',
-     
-                        ],
                   ],
                   'fields'      => array_values( $repeater->get_controls() ),
-                  'title_field' => '{{{content_title}}}',
-                  'condition'   => [
-                        'item_option' => 'custom_post',
-                    ],
+                  'title_field' => '{{{testimonial_title}}}',
               ]
             );
 
@@ -216,75 +189,8 @@ class wkfe_testimonial extends Widget_Base {
 						'p' => 'p',
 					],
 					'default' => 'h2',
-					'condition' => [
-                        'item_option' => 'custom_post',
-                    ],
 				]
 			);
-
-	        $this->add_control(
-	            'cat_multiple_id',
-	            [
-	                'label' => __( 'From Category', 'widgetkit-for-elementor' ), 
-	                'type' => Controls_Manager::SELECT2,
-	                'options' => $cat_names,
-	                'multiple' => true,
-	                 'condition' => [
-                        'item_option' => 'blog_post',
-                    ],
-	            ]
-	        );
-
-	        $this->add_control(
-	            'post_show',
-	            [
-	                'label'   => __( 'Number of Post', 'widgetkit-for-elementor' ),
-	                'type'    => Controls_Manager::NUMBER,
-	                'default' => 4,
-	                'min'     => -1,
-	                'max'     => 100,
-	                'step'    => 1,
-	                'condition' => [
-                        'item_option' => 'blog_post',
-                    ],
-	            ]
-	        );
-
-            $this->add_control(
-                'items_order',
-                [
-                    'label' => esc_html__( 'Order', 'widgetkit-for-elementor' ),
-                    'type'  => Controls_Manager::SELECT,
-                    'default'  => 'ASC',
-                    'options'  => [
-                        'ASC'  => esc_html__( 'Asscending', 'widgetkit-for-elementor' ),
-                        'DSC'  => esc_html__( 'Descending', 'widgetkit-for-elementor' ),
-                    ],
-                    'condition' => [
-                        'item_option' => 'blog_post',
-                    ],
-                ]
-            );
-            $this->add_control(
-                'items_orderby',
-                [
-                    'label' => esc_html__( 'Orderby', 'widgetkit-for-elementor' ),
-                    'type'  => Controls_Manager::SELECT,
-                    'default' => 'title',
-                    'options' => [
-                        'title'  => esc_html__( 'Title', 'widgetkit-for-elementor' ),
-                        'date'   => esc_html__( 'Date', 'widgetkit-for-elementor' ),
-                        'rand'   => esc_html__( 'Count', 'widgetkit-for-elementor' ),
-                        'ID'     => esc_html__( 'Id', 'widgetkit-for-elementor' ),
-                        'name'   => esc_html__( 'Name', 'widgetkit-for-elementor' ),
-                        'comment_count'  => esc_html__( 'Comment Count', 'widgetkit-for-elementor' ),
-                        'meta_value'     => esc_html__( 'Meta Value', 'widgetkit-for-elementor' ),
-                    ],
-                    'condition' => [
-                        'item_option' => 'blog_post',
-                    ],
-                ]
-            );
 
 
             $this->add_control(
@@ -293,9 +199,7 @@ class wkfe_testimonial extends Widget_Base {
                     'label' => __( 'Meta', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::HEADING,
                     'separator' => 'before',
-                    'condition' => [
-                        'item_option' => 'blog_post',
-                    ],
+
                 ]
             );
             $this->add_control(
@@ -306,9 +210,6 @@ class wkfe_testimonial extends Widget_Base {
                         'default'   => 'yes',
                         'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
                         'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-                        'condition' => [
-                            'item_option' => 'blog_post',
-                        ],
                     ]
             );
 
@@ -318,50 +219,9 @@ class wkfe_testimonial extends Widget_Base {
                     'label' => __( 'Title', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::HEADING,
                     'separator' => 'before',
-                    'condition' => [
-                        'item_option' => 'blog_post',
-                    ],
                 ]
             );
 
-            $this->add_control(
-                'title_word',
-                [
-                    'label'       => __( 'Word Count', 'widgetkit-for-elementor' ),
-                    'type'    => Controls_Manager::NUMBER,
-                    'default' => 5,
-                    'min'     => 1,
-                    'max'     => 100,
-                    'step'    => 1,
-                    'condition' => [
-                        'item_option' => 'blog_post',
-                    ],
-                   
-                ]
-            );
-
-           	$this->add_control(
-				'post_header_tag',
-				[
-					'label' => __( 'HTML Tag', 'widgetkit-for-elementor' ),
-					'type' => Controls_Manager::SELECT,
-					'options' => [
-						'h1' => 'H1',
-						'h2' => 'H2',
-						'h3' => 'H3',
-						'h4' => 'H4',
-						'h5' => 'H5',
-						'h6' => 'H6',
-						'div' => 'div',
-						'span' => 'span',
-						'p' => 'p',
-					],
-					'default' => 'h2',
-					'condition' => [
-                        'item_option' => 'blog_post',
-                    ],
-				]
-			);
 
 
             $this->add_control(
@@ -370,9 +230,6 @@ class wkfe_testimonial extends Widget_Base {
                     'label' => __( 'Content', 'widgetkit-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
-                    'condition' => [
-                        'item_option' => 'blog_post',
-                    ],
                 ]
             );
 
@@ -384,27 +241,7 @@ class wkfe_testimonial extends Widget_Base {
                         'default'   => 'no',
                         'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
                         'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-                        'condition' => [
-                            'item_option' => 'blog_post',
-                        ],
                     ]
-            );
-
-
-            $this->add_control(
-                'content_word',
-                [
-                    'label'   => __( 'Word Count', 'widgetkit-for-elementor' ),
-                    'type'    => Controls_Manager::NUMBER,
-                    'default' => 20,
-                    'min'     => 1,
-                    'max'     => 100,
-                    'step'    => 1,
-                    'condition' => [
-                        'content_enable' => 'yes',
-                        'item_option' => 'blog_post',
-                    ],
-                ]
             );
 
 
@@ -665,25 +502,6 @@ class wkfe_testimonial extends Widget_Base {
 	            );
 	           
 
-	            $this->add_control(
-	                'thumbnail_size',
-	                [
-	                    'label'       => __( 'Size', 'widgetkit-for-elementor' ),
-	                    'type' => Controls_Manager::SELECT,
-	                    'default' => 'large',
-	                    'options' => [
-	                    	'thumbnail'  => __( 'Thumbnail', 'widgetkit-for-elementor' ),
-	                        'medium'     => __( 'Medium', 'widgetkit-for-elementor' ),
-	                        'medium_large'  => __( 'Medium Large', 'widgetkit-for-elementor' ),
-	                        'large'  => __( 'Large', 'widgetkit-for-elementor' ),
-	                        'full'   => __( 'Full', 'widgetkit-for-elementor' ),
-	                    ],
-	                    'condition'  => [
-	                        'item_option' => 'blog_post',
-	                    ],
-	                ]
-	            );
-
 	           $this->add_responsive_control(
 	            'image_size',
 	                [
@@ -700,9 +518,6 @@ class wkfe_testimonial extends Widget_Base {
 	                    ],
 	                    'selectors' => [
 	                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-media-top img, {{WRAPPER}} .content-carousel .wk-card .wk-card-media-bottom img' => 'width: {{SIZE}}%;',
-	                    ],
-	                    'condition'  => [
-	                        'item_option' => 'custom_post',
 	                    ],
 	                ]
 	            );

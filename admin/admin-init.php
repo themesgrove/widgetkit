@@ -12,6 +12,9 @@ class Widgetkit_Admin
         'widget-pricing-single',
         'widget-pricing-icon',
         'widget-pricing-tab',
+
+        'widget-testimonial',
+
         'widget-testimonial-single',
         'widget-testimonial-center',
         'widget-team-overlay',
@@ -252,9 +255,9 @@ class Widgetkit_Admin
                                         </div>
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                <?php echo esc_html__('Testimonial Single', 'widgetkit-for-elementor'); ?>
+                                                <?php echo esc_html__('Testimonial', 'widgetkit-for-elementor'); ?>
                                                 <label class="switch">
-                                                    <input type="checkbox" id="widget-testimonial-single" name="widget-testimonial-single" <?php checked(1, $this->widgetkit_get_settings['widget-testimonial-single'], true) ?>>
+                                                    <input type="checkbox" id="widget-testimonial" name="widget-testimonial" <?php checked(1, $this->widgetkit_get_settings['widget-testimonial'], true) ?>>
                                                     <span class="rectangle round"></span>
                                                 </label>
                                             </div>
@@ -286,15 +289,7 @@ class Widgetkit_Admin
                                                 </label>
                                             </div>
                                         </div>
-                                        <div>
-                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                <?php echo esc_html__('Testimonial Center', 'widgetkit-for-elementor'); ?>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="widget-testimonial-center" name="widget-testimonial-center" <?php checked(1, $this->widgetkit_get_settings['widget-testimonial-center'], true) ?>>
-                                                    <span class="rectangle round"></span>
-                                                </label>
-                                            </div>
-                                        </div>
+                                 
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Slider Box Animation', 'widgetkit-for-elementor'); ?>
@@ -462,6 +457,27 @@ class Widgetkit_Admin
                                                 </label>
                                             </div>
                                         </div>
+
+                                        <div>
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                <?php echo esc_html__('Testimonial Single', 'widgetkit-for-elementor'); ?>
+                                                <label class="switch">
+                                                    <input type="checkbox" id="widget-testimonial-single" name="widget-testimonial-single" <?php checked(1, $this->widgetkit_get_settings['widget-testimonial-single'], true) ?>>
+                                                    <span class="rectangle round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                <?php echo esc_html__('Testimonial Center', 'widgetkit-for-elementor'); ?>
+                                                <label class="switch">
+                                                    <input type="checkbox" id="widget-testimonial-center" name="widget-testimonial-center" <?php checked(1, $this->widgetkit_get_settings['widget-testimonial-center'], true) ?>>
+                                                    <span class="rectangle round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </li>
 
@@ -635,6 +651,9 @@ class Widgetkit_Admin
             'widget-blog-carousel' => intval($settings['widget-blog-carousel'] ? 1 : 0),
             // Blog Sidebar
             'widget-blog-sidebar' => intval($settings['widget-blog-sidebar'] ? 1 : 0),
+
+             // Testimonial
+            'widget-testimonial' => intval($settings['widget-testimonial'] ? 1 : 0),
 
             // Testimonial Single
             'widget-testimonial-single' => intval($settings['widget-testimonial-single'] ? 1 : 0),
