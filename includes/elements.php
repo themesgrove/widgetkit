@@ -25,32 +25,41 @@ class WKFE_Elements{
             'widget-slider-animation', 
             'widget-slider-content-animation', 
             'widget-slider-box-animation', 
+            
             'widget-portfolio',
+
             'widget-pricing-single', 
             'widget-pricing-icon', 
             'widget-pricing-tab', 
-            'widget-testimonial-single',
 
-           
+            'widget-testimonial-single',
             'widget-testimonial-center',
+
             'widget-team',
+
             'widget-team-overlay',
             'widget-team-verticle-icon',
             'widget-team-round',
+
             'widget-team-animation',
+
             'widget-blog-carousel',
             'widget-blog-sidebar',
             'widget-blog-revert',
             'widget-blog-hover-animation',
             'widget-blog-image',
+
             'widget-countdown',
             'widget-animation-text',
+
             'widget-content-carousel',
             'widget-button',
             'widget-hover-image',
             'widget-feature-box',
+
             'widget-social-share-animation',
             'widget-social-share-collapse',
+
             'widget-post-carousel',
         ];
         $widgetkit_default_settings = array_fill_keys( $widgetkit_elements_keys, true ); 

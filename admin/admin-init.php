@@ -344,15 +344,7 @@ class Widgetkit_Admin
                                                 </label>
                                             </div>
                                         </div>
-                                        <div>
-                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                <?php echo esc_html__('Team Round', 'widgetkit-for-elementor'); ?>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="widget-team-round" name="widget-team-round" <?php checked(1, $this->widgetkit_get_settings['widget-team-round'], true) ?>>
-                                                    <span class="rectangle round"></span>
-                                                </label>
-                                            </div>
-                                        </div>
+                         
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Blog Hover Animation', 'widgetkit-for-elementor'); ?>
@@ -380,15 +372,7 @@ class Widgetkit_Admin
                                                 </label>
                                             </div>
                                         </div>
-                                        <div>
-                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                <?php echo esc_html__('Team Animation', 'widgetkit-for-elementor'); ?>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="widget-team-animation" name="widget-team-animation" <?php checked(1, $this->widgetkit_get_settings['widget-team-animation'], true) ?>>
-                                                    <span class="rectangle round"></span>
-                                                </label>
-                                            </div>
-                                        </div>
+                                
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Blog Image', 'widgetkit-for-elementor'); ?>
@@ -416,15 +400,7 @@ class Widgetkit_Admin
                                                 </label>
                                             </div>
                                         </div>
-                                        <div>
-                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                <?php echo esc_html__('Team Verticle Icon', 'widgetkit-for-elementor'); ?>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="widget-team-verticle-icon" name="widget-team-verticle-icon" <?php checked(1, $this->widgetkit_get_settings['widget-team-verticle-icon'], true) ?>>
-                                                    <span class="rectangle round"></span>
-                                                </label>
-                                            </div>
-                                        </div>
+                                   
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                 <?php echo esc_html__('Blog Carousel', 'widgetkit-for-elementor'); ?>
@@ -443,15 +419,7 @@ class Widgetkit_Admin
                                                 </label>
                                             </div>
                                         </div>
-                                        <div>
-                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                <?php echo esc_html__('Team Overlay', 'widgetkit-for-elementor'); ?>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="widget-team-overlay" name="widget-team-overlay" <?php checked(1, $this->widgetkit_get_settings['widget-team-overlay'], true) ?>>
-                                                    <span class="rectangle round"></span>
-                                                </label>
-                                            </div>
-                                        </div>
+                                
                                         
                                         <div class="wk-width-1-1">
                                             <h3>Legacy Widgets</h3>
@@ -484,7 +452,45 @@ class Widgetkit_Admin
                                                 </label>
                                             </div>
                                         </div>
+                                        <div>
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                <?php echo esc_html__('Team Overlay', 'widgetkit-for-elementor'); ?>
+                                                <label class="switch">
+                                                    <input type="checkbox" id="widget-team-overlay" name="widget-team-overlay" <?php checked(1, $this->widgetkit_get_settings['widget-team-overlay'], true) ?>>
+                                                    <span class="rectangle round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                <?php echo esc_html__('Team Animation', 'widgetkit-for-elementor'); ?>
+                                                <label class="switch">
+                                                    <input type="checkbox" id="widget-team-animation" name="widget-team-animation" <?php checked(1, $this->widgetkit_get_settings['widget-team-animation'], true) ?>>
+                                                    <span class="rectangle round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                <?php echo esc_html__('Team Round', 'widgetkit-for-elementor'); ?>
+                                                <label class="switch">
+                                                    <input type="checkbox" id="widget-team-round" name="widget-team-round" <?php checked(1, $this->widgetkit_get_settings['widget-team-round'], true) ?>>
+                                                    <span class="rectangle round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                <?php echo esc_html__('Team Verticle Icon', 'widgetkit-for-elementor'); ?>
+                                                <label class="switch">
+                                                    <input type="checkbox" id="widget-team-verticle-icon" name="widget-team-verticle-icon" <?php checked(1, $this->widgetkit_get_settings['widget-team-verticle-icon'], true) ?>>
+                                                    <span class="rectangle round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+
                                     </div>
+
                                 </li>
 
                                 <?php if (!apply_filters('wkpro_enabled', false)) :?>
