@@ -119,9 +119,9 @@ class wkfe_testimonial extends Widget_Base {
                     [
                       'label' => esc_html__( 'Image', 'widgetkit-for-elementor' ),
                       'type'  => Controls_Manager::MEDIA,
-                      'default' => [
-                        'url'   => Utils::get_placeholder_image_src(),
-                      ],
+                      // 'default' => [
+                      //   'url'   => Utils::get_placeholder_image_src(),
+                      // ],
                     ]
             );
 
@@ -188,61 +188,61 @@ class wkfe_testimonial extends Widget_Base {
 						'span' => 'span',
 						'p' => 'p',
 					],
-					'default' => 'h2',
+					'default' => 'h4',
 				]
 			);
 
 
-            $this->add_control(
-                'meta_enable_heading',
-                [
-                    'label' => __( 'Meta', 'widgetkit-for-elementor' ),
-                    'type'  => Controls_Manager::HEADING,
-                    'separator' => 'before',
+            // $this->add_control(
+            //     'meta_enable_heading',
+            //     [
+            //         'label' => __( 'Meta', 'widgetkit-for-elementor' ),
+            //         'type'  => Controls_Manager::HEADING,
+            //         'separator' => 'before',
 
-                ]
-            );
-            $this->add_control(
-                'meta_enable',
-                    [
-                        'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
-                        'type'      => Controls_Manager::SWITCHER,
-                        'default'   => 'yes',
-                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-                    ]
-            );
+            //     ]
+            // );
+            // $this->add_control(
+            //     'meta_enable',
+            //         [
+            //             'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
+            //             'type'      => Controls_Manager::SWITCHER,
+            //             'default'   => 'yes',
+            //             'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+            //             'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
+            //         ]
+            // );
 
-            $this->add_control(
-                'title_enable_heading',
-                [
-                    'label' => __( 'Title', 'widgetkit-for-elementor' ),
-                    'type'  => Controls_Manager::HEADING,
-                    'separator' => 'before',
-                ]
-            );
+            // $this->add_control(
+            //     'title_enable_heading',
+            //     [
+            //         'label' => __( 'Title', 'widgetkit-for-elementor' ),
+            //         'type'  => Controls_Manager::HEADING,
+            //         'separator' => 'before',
+            //     ]
+            // );
 
 
 
-            $this->add_control(
-                'content_enable_heading',
-                [
-                    'label' => __( 'Content', 'widgetkit-for-elementor' ),
-                    'type' => Controls_Manager::HEADING,
-                    'separator' => 'before',
-                ]
-            );
+            // $this->add_control(
+            //     'content_enable_heading',
+            //     [
+            //         'label' => __( 'Content', 'widgetkit-for-elementor' ),
+            //         'type' => Controls_Manager::HEADING,
+            //         'separator' => 'before',
+            //     ]
+            // );
 
-            $this->add_control(
-                'content_enable',
-                    [
-                        'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
-                        'type'      => Controls_Manager::SWITCHER,
-                        'default'   => 'no',
-                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-                    ]
-            );
+            // $this->add_control(
+            //     'content_enable',
+            //         [
+            //             'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
+            //             'type'      => Controls_Manager::SWITCHER,
+            //             'default'   => 'no',
+            //             'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+            //             'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
+            //         ]
+            // );
 
 
 
@@ -258,13 +258,29 @@ class wkfe_testimonial extends Widget_Base {
                 'label' => esc_html__( 'Layout', 'widgetkit-for-elementor' ),
             ]
         );
+        	$this->add_control(
+	            'item_styles',
+	                [
+	                    'label'       => __( 'Choose Screen', 'widgetkit-for-elementor' ),
+	                    'type' => Controls_Manager::SELECT,
+	                    'default' => 'screen_1',
+	                    'options' => [
+	                        'screen_1'   => __( 'Screen 1', 'widgetkit-for-elementor' ),
+	                        'screen_2'   => __( 'Screen 2', 'widgetkit-for-elementor' ),
+	                        'screen_3'   => __( 'Screen 3', 'widgetkit-for-elementor' ),
+	                        'screen_4'   => __( 'Screen 4', 'widgetkit-for-elementor' ),
+	                        'screen_5'   => __( 'Screen 5', 'widgetkit-for-elementor' ),
+	                        'screen_6'   => __( 'Screen 6', 'widgetkit-for-elementor' ),
+	                    ],
+	                ]
+	        );
 
             $this->add_control(
                 'item_column',
                 [
                     'label'   => __( 'Number of Colum', 'widgetkit-for-elementor' ),
                     'type'    => Controls_Manager::NUMBER,
-                    'default' => 3,
+                    'default' => 2,
                     'min'     => 1,
                     'max'     => 6,
                     'step'    => 1,
@@ -488,18 +504,53 @@ class wkfe_testimonial extends Widget_Base {
         );
 
         
+
+			    $this->add_control(
+					'thumbnail_position_vertical',
+					[
+						'label' => __( 'Position', 'widgetkit-for-elementor' ),
+						'type' => Controls_Manager::CHOOSE,
+						'default' => 'top',
+						'options' => [
+							'top' => [
+								'title' => __( 'Top', 'widgetkit-for-elementor' ),
+								'icon' => 'eicon-v-align-top',
+							],
+							'bottom' => [
+								'title' => __( 'Bottom', 'widgetkit-for-elementor' ),
+								'icon' => 'eicon-v-align-bottom',
+							],
+						],
+						'toggle' => false,
+						'condition'   => [
+                        	'item_styles' => ['screen_1', 'screen_2'],
+                    	],
+					]
+				);
+
 	            $this->add_control(
-	                'thumbnail_position',
-	                [
-	                    'label'       => __( 'Position', 'widgetkit-for-elementor' ),
-	                    'type' => Controls_Manager::SELECT,
-	                    'default' => 'top',
-	                    'options' => [
-	                        'top'     => __( 'Top', 'widgetkit-for-elementor' ),
-	                        'bottom'  => __( 'Bottom', 'widgetkit-for-elementor' ),
-	                    ],
-	                ]
-	            );
+					'thumbnail_position_horizontal',
+					[
+						'label' => __( 'Position', 'widgetkit-for-elementor' ),
+						'type' => Controls_Manager::CHOOSE,
+						'default' => 'left',
+						'options' => [
+							'left' => [
+								'title' => __( 'Left', 'widgetkit-for-elementor' ),
+								'icon' => 'eicon-h-align-left',
+							],
+							'right' => [
+								'title' => __( 'Right', 'widgetkit-for-elementor' ),
+								'icon' => 'eicon-h-align-right',
+							],
+						],
+						'toggle' => false,
+						'condition'   => [
+                        	'item_styles' => ['screen_3'],
+                    	],
+					]
+				);
+
 	           
 
 	           $this->add_responsive_control(
@@ -508,7 +559,7 @@ class wkfe_testimonial extends Widget_Base {
 	                    'label'   => esc_html__( 'Size(%)', 'widgetkit-for-elementor' ),
 	                    'type'    => Controls_Manager::SLIDER,
 	                    'default' => [
-	                    'size'    => 100,
+	                    'size'    => 20,
 	                    ],
 	                    'range'   => [
 	                        '%'   => [
@@ -517,32 +568,25 @@ class wkfe_testimonial extends Widget_Base {
 	                        ],
 	                    ],
 	                    'selectors' => [
-	                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-media-top img, {{WRAPPER}} .content-carousel .wk-card .wk-card-media-bottom img' => 'width: {{SIZE}}%;',
+	                        '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-top img, {{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-bottom img' => 'width: {{SIZE}}%;',
+	                        '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-left img, {{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-right img' => 'width: {{SIZE}}%;',
 	                    ],
 	                ]
 	            );
 
+	           	$this->add_control(
+		            'image_radius',
+		            [
+		                'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
+		                'type'  => Controls_Manager::DIMENSIONS,
+		                'size_units' => [ 'px', '%' ],
+		                'selectors'  => [
+		                    '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-top img, {{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-bottom img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                    '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-left img, {{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-right img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                ],
+		            ]
+		        );
 
-	            $this->add_responsive_control(
-	                'thumbnail_height_custom',
-	                    [
-	                        'label'   => esc_html__( 'Height(px)', 'widgetkit-for-elementor' ),
-	                        'type'    => Controls_Manager::SLIDER,
-	                        'default' => [
-	                           'size' =>190,
-	                        ],
-	                        'range'  => [
-	                            'px' => [
-	                                'min' => 100,
-	                                'max' => 2000,
-	                            ],
-	                        ],
-	                        'selectors' => [
-	                            '{{WRAPPER}} .content-carousel .wk-card .wk-card-media-top' => 'max-height: {{SIZE}}{{UNIT}};',
-	                            '{{WRAPPER}} .content-carousel .wk-card .wk-card-media-bottom' => 'max-height: {{SIZE}}{{UNIT}};',
-	                        ],
-	                    ]
-	                );
 
 
          $this->end_controls_section();
@@ -552,138 +596,11 @@ class wkfe_testimonial extends Widget_Base {
 	    $this->start_controls_section(
             'section_style',
             [
-                'label' => esc_html__( 'Contents', 'widgetkit-for-elementor' ),
+                'label' => esc_html__( 'Content', 'widgetkit-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
 
-	        $this->add_control(
-	            'meta_heading',
-	            [
-	                'label' => __( 'Meta', 'widgetkit-for-elementor' ),
-	                'type'  => Controls_Manager::HEADING,
-	                'separator' => 'before',
-	            ]
-	        );
-
-	        $this->add_control(
-	            'meta_color',
-	            [
-	                'label'     => esc_html__( 'Color', 'widgetkit-for-elementor' ),
-	                'type'      => Controls_Manager::COLOR,
-	                'default'   => '#777',
-	                'selectors' => [
-	                    '{{WRAPPER}} .content-carousel .wk-card .wk-card-body span a, {{WRAPPER}} .content-carousel .wk-card .wk-card-body span ' => 'color: {{VALUE}};',
-	                ],
-	            ]
-	        );
-
-	        $this->add_group_control(
-	            Group_Control_Typography::get_type(),
-	                [
-	                    'name'     => 'meta_typography',
-	                    'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-	                    'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-	                    'selector' => '{{WRAPPER}} .content-carousel .wk-card .wk-card-body span',
-	                ]
-	        );
-
-	            $this->add_control(
-	                'meta_hover_color',
-	                [
-	                    'label'     => esc_html__( 'Hover Color', 'widgetkit-for-elementor' ),
-	                    'type'      => Controls_Manager::COLOR,
-	                    'default'   => '',
-	                    'selectors' => [
-	                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-body span a:hover,
-	                        {{WRAPPER}} .content-carousel .wk-card .wk-card-body span:hover' => 'color: {{VALUE}};',
-	                    ],
-	                ]
-	            );
-
-
-	        $this->add_responsive_control(
-	            'meta_spacing',
-	                [
-	                    'label'   => esc_html__( 'Spacing', 'widgetkit-for-elementor' ),
-	                    'type'    => Controls_Manager::SLIDER,
-	                    'default' => [
-	                    'size'    => 0,
-	                    ],
-	                    'range'   => [
-	                        'px'  => [
-	                            'min' => -10,
-	                            'max' => 100,
-	                        ],
-	                    ],
-	                    'selectors' => [
-	                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-body span' => 'margin: {{SIZE}}{{UNIT}} 0 0;',
-	                    ],
-	                ]
-	            );
-
-            $this->add_control(
-                'title_heading',
-                [
-                    'label' => __( 'Title', 'widgetkit-for-elementor' ),
-                    'type'  => Controls_Manager::HEADING,
-                    'separator' => 'before',
-                ]
-            );
-
-            $this->add_control(
-                'title_color',
-                [
-                    'label'     => esc_html__( 'Color', 'widgetkit-for-elementor' ),
-                    'type'      => Controls_Manager::COLOR,
-                    'default'   => '#222',
-                    'selectors' => [
-                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-body .wk-card-title a' => 'color: {{VALUE}};',
-                    ],
-                ]
-            );
-
-            $this->add_group_control(
-                Group_Control_Typography::get_type(),
-                    [
-                        'name'     => 'title_typography',
-                        'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-                        'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-                        'selector' => '{{WRAPPER}} .content-carousel .wk-card .wk-card-body .wk-card-title',
-                    ]
-            );
-
-            $this->add_control(
-                'title_hover_color',
-                [
-                    'label'     => esc_html__( 'Hover Color', 'widgetkit-for-elementor' ),
-                    'type'      => Controls_Manager::COLOR,
-                    'default'   => '#0073aa',
-                    'selectors' => [
-                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-body .wk-card-title a:hover' => 'color: {{VALUE}}; text-decoration:none;',
-                    ],
-                ]
-            );
-
-            $this->add_responsive_control(
-                'title_spacing',
-                    [
-                        'label'   => esc_html__( 'Spacing', 'widgetkit-for-elementor' ),
-                        'type'    => Controls_Manager::SLIDER,
-                        'default' => [
-                        'size'    => 0,
-                        ],
-                        'range'  => [
-                            'px' => [
-                                'min' => 0,
-                                'max' => 100,
-                            ],
-                        ],
-                        'selectors' => [
-                            '{{WRAPPER}} .content-carousel .wk-card .wk-card-body .wk-card-title' => 'padding: {{SIZE}}{{UNIT}} 0;',
-                        ],
-                    ]
-            );
 
 	            $this->add_control(
 	                'content_heading',
@@ -699,9 +616,9 @@ class wkfe_testimonial extends Widget_Base {
 	                [
 	                    'label'     => esc_html__( 'Color', 'widgetkit-for-elementor' ),
 	                    'type'      => Controls_Manager::COLOR,
-	                    'default'   => '#777',
+	                    'default'   => '#4c5b6d',
 	                    'selectors' => [
-	                        '{{WRAPPER}} .content-carousel .wk-card .wk-card-body p' => 'color: {{VALUE}};',
+	                        '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body p' => 'color: {{VALUE}};',
 	                    ],
 	                ]
 	            );
@@ -712,10 +629,147 @@ class wkfe_testimonial extends Widget_Base {
 	                        'name'     => 'content_typography',
 	                        'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
 	                        'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-	                        'selector' => '{{WRAPPER}} .content-carousel .wk-card .wk-card-body p',
+	                        'selector' => '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body p',
 	                    ]
 	            );
 
+	            $this->add_responsive_control(
+		            'content_spacing',
+		                [
+		                    'label'   => esc_html__( 'Spacing', 'widgetkit-for-elementor' ),
+		                    'type'    => Controls_Manager::SLIDER,
+		                    'default' => [
+		                    'size'    => 0,
+		                    ],
+		                    'range'   => [
+		                        'px'  => [
+		                            'min' => 0,
+		                            'max' => 100,
+		                        ],
+		                    ],
+		                    'selectors' => [
+		                        '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body p' => 'margin: 0 0 {{SIZE}}{{UNIT}};',
+		                    ],
+		                ]
+		        );
+
+
+	            // $this->add_control(
+	            //     'designation_hover_color',
+	            //     [
+	            //         'label'     => esc_html__( 'Hover Color', 'widgetkit-for-elementor' ),
+	            //         'type'      => Controls_Manager::COLOR,
+	            //         'default'   => '',
+	            //         'selectors' => [
+	            //             '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body span a:hover,
+	            //             {{WRAPPER}} .wk-testimonial .wk-card .wk-card-body span:hover' => 'color: {{VALUE}};',
+	            //         ],
+	            //     ]
+	            // );
+
+	            $this->add_control(
+	                'title_heading',
+	                [
+	                    'label' => __( 'Title', 'widgetkit-for-elementor' ),
+	                    'type'  => Controls_Manager::HEADING,
+	                    'separator' => 'before',
+	                ]
+	            );
+
+	            $this->add_control(
+	                'title_color',
+	                [
+	                    'label'     => esc_html__( 'Color', 'widgetkit-for-elementor' ),
+	                    'type'      => Controls_Manager::COLOR,
+	                    'default'   => '#1379fe',
+	                    'selectors' => [
+	                        '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body .wk-card-title a' => 'color: {{VALUE}};',
+	                    ],
+	                ]
+	            );
+
+	            $this->add_group_control(
+	                Group_Control_Typography::get_type(),
+	                    [
+	                        'name'     => 'title_typography',
+	                        'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
+	                        'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+	                        'selector' => '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body .wk-card-title',
+	                    ]
+	            );
+
+	            // $this->add_control(
+	            //     'title_hover_color',
+	            //     [
+	            //         'label'     => esc_html__( 'Hover Color', 'widgetkit-for-elementor' ),
+	            //         'type'      => Controls_Manager::COLOR,
+	            //         'default'   => '#0073aa',
+	            //         'selectors' => [
+	            //             '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body .wk-card-title a:hover' => 'color: {{VALUE}}; text-decoration:none;',
+	            //         ],
+	            //     ]
+	            // );
+
+	            // $this->add_responsive_control(
+	            //     'title_spacing',
+	            //         [
+	            //             'label'   => esc_html__( 'Spacing', 'widgetkit-for-elementor' ),
+	            //             'type'    => Controls_Manager::SLIDER,
+	            //             'default' => [
+	            //             'size'    => 0,
+	            //             ],
+	            //             'range'  => [
+	            //                 'px' => [
+	            //                     'min' => 0,
+	            //                     'max' => 100,
+	            //                 ],
+	            //             ],
+	            //             'selectors' => [
+	            //                 '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body .wk-card-title' => 'padding: {{SIZE}}{{UNIT}} 0;',
+	            //             ],
+	            //         ]
+	            // );
+
+	            $this->add_control(
+		            'designation_heading',
+		            [
+		                'label' => __( 'Designation', 'widgetkit-for-elementor' ),
+		                'type'  => Controls_Manager::HEADING,
+		                'separator' => 'before',
+		            ]
+		        );
+
+		        $this->add_control(
+		            'designation_color',
+		            [
+		                'label'     => esc_html__( 'Color', 'widgetkit-for-elementor' ),
+		                'type'      => Controls_Manager::COLOR,
+		                'default'   => '#192330',
+		                'selectors' => [
+		                    '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body span a, {{WRAPPER}} .wk-testimonial .wk-card .wk-card-body span ' => 'color: {{VALUE}};',
+		                ],
+		            ]
+		        );
+
+		        $this->add_group_control(
+		            Group_Control_Typography::get_type(),
+		                [
+		                    'name'     => 'designation_typography',
+		                    'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
+		                    'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+		                    'selector' => '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body span',
+		                ]
+		        );
+
+
+	            $this->add_control(
+		            'global_heading',
+		            [
+		                'label' => __( 'Global', 'widgetkit-for-elementor' ),
+		                'type'  => Controls_Manager::HEADING,
+		                'separator' => 'before',
+		            ]
+		        );
 
 	            $this->add_control(
 	                'content_bg_color',
@@ -724,9 +778,9 @@ class wkfe_testimonial extends Widget_Base {
 	                    'type'      => Controls_Manager::COLOR,
 	                    'default'   => '',
 	                    'selectors' => [
-	                        '{{WRAPPER}} .content-carousel .wk-card' => 'background: {{VALUE}};',
+	                        '{{WRAPPER}} .wk-testimonial .wk-card' => 'background: {{VALUE}};',
 	                    ],
-	                    'separator' => 'before',
+	                    // 'separator' => 'before',
 	                ]
 	            );
 
@@ -738,45 +792,58 @@ class wkfe_testimonial extends Widget_Base {
 	                    'exclude' => [
 	                        'box_shadow_position',
 	                    ],
-	                    'selector' => '{{WRAPPER}} .content-carousel .wk-card',
+	                    'selector' => '{{WRAPPER}} .wk-testimonial .wk-card',
 	                ]
 	            );
 
-		    $this->add_control(
-				'content_layout_align',
-				[
-					'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
-					'type'  => Controls_Manager::CHOOSE,
-					'default'   => 'center',
-					'options'   => [
-						'left'    => [
-							'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
-							'icon'  => 'eicon-text-align-left',
+			    $this->add_control(
+					'content_layout_align',
+					[
+						'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
+						'type'  => Controls_Manager::CHOOSE,
+						'default'   => 'left',
+						'options'   => [
+							'left'    => [
+								'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
+								'icon'  => 'eicon-text-align-left',
+							],
+							'center' => [
+								'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
+								'icon'  => 'eicon-text-align-center',
+							],
+							'right' => [
+								'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
+								'icon'  => 'eicon-text-align-left',
+							],
 						],
-						'center' => [
-							'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
-							'icon'  => 'eicon-text-align-center',
+						'selectors' => [
+							'{{WRAPPER}} .wk-testimonial .wk-card' => 'text-align: {{VALUE}};',
 						],
-						'right' => [
-							'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
-							'icon'  => 'eicon-text-align-left',
-						],
-					],
-					'selectors' => [
-						'{{WRAPPER}} .content-carousel .wk-card' => 'text-align: {{VALUE}};',
-					],
-				]
-			);
+					]
+				);
 
-			$this->add_control(
-	            'content_padding',
+				$this->add_control(
+		            'content_padding',
+		            [
+		                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
+		                'type'  => Controls_Manager::DIMENSIONS,
+		                'size_units' => [ 'px', '%' ],
+		                'selectors'  => [
+		                    '{{WRAPPER}} .wk-testimonial .wk-card' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                ],
+		            ]
+		        );
+
+		    $this->add_group_control(
+	            Group_Control_Border::get_type(),
 	            [
-	                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
-	                'type'  => Controls_Manager::DIMENSIONS,
-	                'size_units' => [ 'px', '%' ],
-	                'selectors'  => [
-	                    '{{WRAPPER}} .content-carousel .wk-card .wk-card-body' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-	                ],
+	                'name'  => 'item_border',
+	                'label' => esc_html__( 'Border', 'widgetkit-for-elementor' ),
+	                'placeholder' => '1px',
+	                'default'  => '1px',
+	                'selector' => '
+	                    {{WRAPPER}} .wk-testimonial .wk-card',
+	                'separator' => 'before',
 	            ]
 	        );
 
@@ -814,7 +881,7 @@ class wkfe_testimonial extends Widget_Base {
                         'type'  => Controls_Manager::COLOR,
                         'default'   => '#fff',
                         'selectors' => [
-                          '{{WRAPPER}} .content-carousel .wk-slidenav svg' => 'color: {{VALUE}};',
+                          '{{WRAPPER}} .wk-testimonial .wk-slidenav svg' => 'color: {{VALUE}};',
                         ],
 
                        'condition' => [
@@ -838,7 +905,7 @@ class wkfe_testimonial extends Widget_Base {
 	                        ],
 	                    ],
 	                    'selectors' => [
-	                        '{{WRAPPER}} .content-carousel .wk-slidenav svg' => 'width: {{SIZE}}{{UNIT}}; height:30px;',
+	                        '{{WRAPPER}} .wk-testimonial .wk-slidenav svg' => 'width: {{SIZE}}{{UNIT}}; height:30px;',
 	                    ],
 	                    'condition' => [
                         	'arrow_enable' => 'yes',
@@ -854,7 +921,7 @@ class wkfe_testimonial extends Widget_Base {
                         'type'  => Controls_Manager::COLOR,
                         'default'   => '#ddd',
                         'selectors' => [
-                          '{{WRAPPER}} .content-carousel .wk-slidenav' => 'background: {{VALUE}}; transition:all 0.3s ease;',
+                          '{{WRAPPER}} .wk-testimonial .wk-slidenav' => 'background: {{VALUE}}; transition:all 0.3s ease;',
                         ],
 
                        'condition' => [
@@ -870,7 +937,7 @@ class wkfe_testimonial extends Widget_Base {
                         'type'  => Controls_Manager::COLOR,
                         'default'   => '#0073aa',
                         'selectors' => [
-                          '{{WRAPPER}} .content-carousel .wk-slidenav:hover' => 'background: {{VALUE}}; transition:all 0.3s ease;',
+                          '{{WRAPPER}} .wk-testimonial .wk-slidenav:hover' => 'background: {{VALUE}}; transition:all 0.3s ease;',
                         ],
 
                        'condition' => [
@@ -917,7 +984,7 @@ class wkfe_testimonial extends Widget_Base {
 	                'type'  => Controls_Manager::DIMENSIONS,
 	                'size_units' => [ 'px', '%' ],
 	                'selectors'  => [
-	                    '{{WRAPPER}} .content-carousel .wk-slidenav' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+	                    '{{WRAPPER}} .wk-testimonial .wk-slidenav' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 	                ],
 	                'condition' => [
                         'arrow_enable' => 'yes',
@@ -969,7 +1036,7 @@ class wkfe_testimonial extends Widget_Base {
 	                    'selectors' => [
 	                        
 
-	                        '{{WRAPPER}} .content-carousel .wk-dotnav li a' => 'width: {{SIZE}}{{UNIT}}; height:{{SIZE}}{{UNIT}}; transition: all 0.3s ease;',
+	                        '{{WRAPPER}} .wk-testimonial .wk-dotnav li a' => 'width: {{SIZE}}{{UNIT}}; height:{{SIZE}}{{UNIT}}; transition: all 0.3s ease;',
 	                    ],
 	                    'condition' => [
                         	'dot_enable' => 'yes',
@@ -984,7 +1051,7 @@ class wkfe_testimonial extends Widget_Base {
                         'type'  => Controls_Manager::COLOR,
                         'default'   => '#777',
                         'selectors' => [
-                          '{{WRAPPER}} .content-carousel .wk-dotnav li a' => 'background-color: {{VALUE}};',
+                          '{{WRAPPER}} .wk-testimonial .wk-dotnav li a' => 'background-color: {{VALUE}};',
                         ],
                         'condition' => [
                         	'dot_enable' => 'yes',
@@ -1001,7 +1068,7 @@ class wkfe_testimonial extends Widget_Base {
 	                'placeholder' => '1px',
 	                'default'  => '1px',
 	                'selector' => '
-	                    {{WRAPPER}} .content-carousel .wk-dotnav li a',
+	                    {{WRAPPER}} .wk-testimonial .wk-dotnav li a',
 	                'separator' => 'before',
 	                'condition' => [
                         'dot_enable' => 'yes',
@@ -1016,7 +1083,7 @@ class wkfe_testimonial extends Widget_Base {
 	                'type'  => Controls_Manager::DIMENSIONS,
 	                'size_units' => [ 'px', '%' ],
 	                'selectors'  => [
-	                    '{{WRAPPER}} .content-carousel .wk-dotnav li a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+	                    '{{WRAPPER}} .wk-testimonial .wk-dotnav li a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 	                ],
 	                'condition' => [
                         'dot_enable' => 'yes',
@@ -1080,7 +1147,7 @@ class wkfe_testimonial extends Widget_Base {
 	                    'selectors' => [
 	                        
 
-	                        '{{WRAPPER}} .content-carousel .wk-dotnav .wk-active a' => 'width: {{SIZE}}{{UNIT}}; transition: all 0.3s ease; border-radius: 10px;',
+	                        '{{WRAPPER}} .wk-testimonial .wk-dotnav .wk-active a' => 'width: {{SIZE}}{{UNIT}}; transition: all 0.3s ease; border-radius: 10px;',
 	                    ],
 	                    'condition' => [
                         	'dot_enable' => 'yes',
@@ -1095,7 +1162,7 @@ class wkfe_testimonial extends Widget_Base {
 		                'type'  => Controls_Manager::COLOR,
 		                'default'   => '#0073aa',
 		                'selectors' => [
-		                  '{{WRAPPER}} .content-carousel .wk-dotnav .wk-active a' => 'background-color: {{VALUE}}; border-color: {{VALUE}};',
+		                  '{{WRAPPER}} .wk-testimonial .wk-dotnav .wk-active a' => 'background-color: {{VALUE}}; border-color: {{VALUE}};',
 		                ],
 		                'condition' => [
                         	'dot_enable' => 'yes',
