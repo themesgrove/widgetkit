@@ -5,6 +5,9 @@
 ==================================================================*/
 
 .wk-team{
+    a{
+      cursor:pointer;
+    }
     .wk-card{
         .wk-card-body{
             padding: 15px 30px 30px;
@@ -21,7 +24,7 @@
                     height: 30px;
                     text-align: center;
                     display: inline-block;
-                    line-height: 32px;
+                    line-height: 36px;
                     transition:all 0.3s ease;
                     .wk-icon {
                         svg{
@@ -54,6 +57,8 @@
     }
 
     .wk-style-1{
+        background:#fff;
+        box-shadow: 1px 1px 10px #00000008;
         .wk-card-media-top,
          .wk-card-media-bottom{
           max-height:200px;
@@ -93,8 +98,16 @@
         }
         .wk-card-media-top,
          .wk-card-media-bottom{
+           margin-bottom:20px;
+           a{
+            border-radius:100%;
+            overflow:hidden;
+            margin:auto;
+           }
            img{
             border-radius:100%;
+            transform: scale(1);
+            transition: all 0.3s ease;
           }
 
         }
@@ -104,6 +117,12 @@
              text-transform:uppercase;
           }
       }
+        &:hover{
+            img{
+              transform: scale(1.1);
+              transition: all 0.3s ease;
+            }
+        }
     }
 
     .wk-style-3{
@@ -122,6 +141,10 @@
             margin: auto;
             border-radius: 100px 0 0 100px;
         }
+        img{
+            transform: scale(1);
+            transition: all 0.3s ease;
+        }
 
       }
       .wk-card-media-right{
@@ -139,8 +162,18 @@
             margin: auto;
             border-radius: 0px 100px 100px 0px;
         }
+        img{
+            transform: scale(1);
+            transition: all 0.3s ease;
+        }
 
       }
+      &:hover{
+          img{
+              transform: scale(1.1);
+              transition: all 0.3s ease;
+            }
+        }
 
       .social-icons{
         margin-top:25px;
@@ -149,18 +182,30 @@
       }
     }
 
+
+
+
     .wk-style-4{
       .wk-card-wrapper{
+        border-radius: 10px;
         img{
           border-radius:10px;
+          transform: scale(1);
+          transition: all 0.3s ease;
         }
       }
       .wk-card-body{
-          bottom: 17px;
+          bottom: 5px;
           left: 5px;
           right: 60px;
           border-radius: 0px 10px 0 10px;
       }
+        &:hover{
+            img{
+              transform: scale(1.1);
+              transition: all 0.3s ease;
+            }
+        }
 
     }
 
@@ -187,7 +232,7 @@
           box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
           border-radius: 10px;
           .wk-card-wrapper{
-                transition: all .2s cubic-bezier(.175,.885,0,1);
+                transition: all .3s cubic-bezier(.175,.885,0,1);
                 position: relative;
                 overflow: hidden;
                 border-radius:10px;

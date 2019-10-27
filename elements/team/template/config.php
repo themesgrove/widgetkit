@@ -404,8 +404,9 @@ class wkfe_team extends Widget_Base {
 	                        ],
 	                    ],
 	                    'selectors' => [
-	                        '{{WRAPPER}} .wk-team .wk-card .wk-card-media-top img' => 'width: {{SIZE}}%;',
-	                        '{{WRAPPER}} .wk-team .wk-card .wk-card-wrapper img'  => 'width: {{SIZE}}%;',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-1 .wk-card-media-top img' => 'width: {{SIZE}}%;',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-5 .wk-card-wrapper img'  => 'width: {{SIZE}}%;',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-2 .wk-card-media-top a'  => 'width: {{SIZE}}%;',
 	                        //'{{WRAPPER}} .wk-team .wk-style-6 .wk-card-link' => 'width: {{SIZE}}%;',
 	                    ],
 	                    'condition'   => [
@@ -424,9 +425,9 @@ class wkfe_team extends Widget_Base {
 	                           'size' =>'',
 	                        ],
 	                        'range'  => [
-	                            '%' => [
+	                            'px' => [
 	                                'min' => 10,
-	                                'max' => 10000,
+	                                'max' => 1000,
 	                            ],
 	                        ],
 	                        'selectors' => [
@@ -538,6 +539,8 @@ class wkfe_team extends Widget_Base {
 		                    '{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-left:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                    '{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-right:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                    '{{WRAPPER}} .wk-team .wk-style-4 .wk-card-wrapper img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+
+		                     '{{WRAPPER}} .wk-team .wk-style-4 .wk-card-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                    '{{WRAPPER}} .wk-team .wk-style-5 .wk-card-wrapper img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                ],
 		                'condition'   => [
@@ -553,7 +556,7 @@ class wkfe_team extends Widget_Base {
 		$this->start_controls_section(
 			'content_style',
 			[
-				'label' => esc_html__( 'Contents', 'widgetkit-for-elementor' ),
+				'label' => esc_html__( 'Content', 'widgetkit-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -932,6 +935,26 @@ class wkfe_team extends Widget_Base {
 	                ],
 	            ]
 	        );
+
+	       	$this->add_responsive_control(
+                'social_width_height',
+                    [
+                        'label'   => esc_html__( 'Width & Height', 'widgetkit-for-elementor' ),
+                        'type'    => Controls_Manager::SLIDER,
+                        'default' => [
+                        'size'    => 30,
+                        ],
+                        'range'  => [
+                            'px' => [
+                                'min' => 0,
+                                'max' => 100,
+                            ],
+                        ],
+                        'selectors' => [
+                            '{{WRAPPER}} .wk-team .wk-card .wk-card-body .social-icons a' => 'width: {{SIZE}}{{UNIT}};height:{{SIZE}}{{UNIT}}; line-height: calc({{SIZE}}{{UNIT}} + 6{{UNIT}});',
+                        ],
+                    ]
+            );
 
 
 		$this->start_controls_tabs( 'tabs_social_style' );
