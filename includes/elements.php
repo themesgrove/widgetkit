@@ -25,29 +25,42 @@ class WKFE_Elements{
             'widget-slider-animation', 
             'widget-slider-content-animation', 
             'widget-slider-box-animation', 
+            
             'widget-portfolio',
+
             'widget-pricing-single', 
             'widget-pricing-icon', 
             'widget-pricing-tab', 
+
             'widget-testimonial-single',
             'widget-testimonial-center',
+
+            'widget-team',
+
             'widget-team-overlay',
             'widget-team-verticle-icon',
             'widget-team-round',
+
             'widget-team-animation',
+
             'widget-blog-carousel',
             'widget-blog-sidebar',
             'widget-blog-revert',
             'widget-blog-hover-animation',
             'widget-blog-image',
+
             'widget-countdown',
             'widget-animation-text',
-            'widget-post-carousel',
+
+            'widget-content-carousel',
             'widget-button',
             'widget-hover-image',
             'widget-feature-box',
+
             'widget-social-share-animation',
             'widget-social-share-collapse',
+
+            'widget-post-carousel',
         ];
         $widgetkit_default_settings = array_fill_keys( $widgetkit_elements_keys, true ); 
 
@@ -71,6 +84,10 @@ class WKFE_Elements{
         if( $check_component_active['widget-testimonial-single'] ) {
             require_once WK_PATH . '/elements/testimonial-2/widget.php';
         }
+        if( $check_component_active['widget-team'] ) {
+            require_once WK_PATH . '/elements/team/widget.php';
+        }
+
         if( $check_component_active['widget-team-overlay'] ) {
             require_once WK_PATH . '/elements/team-1/widget.php';
         }
@@ -116,8 +133,8 @@ class WKFE_Elements{
         if( $check_component_active['widget-animation-text'] ) {
             require_once WK_PATH . '/elements/animation-text/widget.php';
         }
-        if( $check_component_active['widget-post-carousel'] ) {
-            require_once WK_PATH . '/elements/carousel/widget.php';
+        if( $check_component_active['widget-content-carousel'] ) {
+            require_once WK_PATH . '/elements/content-carousel/widget.php';
         }
         if( $check_component_active['widget-button'] ) {
             require_once WK_PATH . '/elements/button-modal/widget.php';
@@ -130,6 +147,9 @@ class WKFE_Elements{
         }
         if( $check_component_active['widget-social-share-collapse'] ) {
             require_once WK_PATH . '/elements/social-share-2/widget.php';
+        }
+        if( $check_component_active['widget-post-carousel'] ) {
+            require_once WK_PATH . '/elements/carousel/widget.php';
         }
         require_once WK_PATH . '/elements/pros-cons/widget.php';
         require_once WK_PATH . '/elements/click-tweet/widget.php';

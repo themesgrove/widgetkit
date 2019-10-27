@@ -32,7 +32,12 @@ Domain Path: /languages
             add_action( 'elementor/init', array( $this, 'elementor_init' ) );
             add_action( 'init', array( $this, 'elementor_resources' ), -999 );
             add_action('admin_head', array($this, 'remove_all_admin_notice'));
+            add_filter( 'elementor/utils/get_placeholder_image_src', [ __CLASS__, 'wk_placeholder_image' ] );
         }
+
+        public static function wk_placeholder_image() {
+            return WK_URL . 'dist/images/placeholder.jpg';
+    }
 
         public function activate(){
             flush_rewrite_rules();
@@ -65,6 +70,7 @@ Domain Path: /languages
 
         public function elementor_init(){
             require_once ( WK_PATH . 'includes/elementor-integration.php' );
+
         }
         public function elementor_addons() {
             require_once ( WK_PATH . 'includes/addons-integration.php' );

@@ -4,6 +4,8 @@ if( ! defined( 'ABSPATH' ) ) exit();
 
 class WKFE_Addons_Integration{
 
+
+
     private static $instance;
     public static function init(){
         if(null === self::$instance ){
@@ -53,3 +55,4 @@ class WKFE_Addons_Integration{
     }
 
 }
+
