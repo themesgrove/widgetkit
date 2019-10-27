@@ -511,19 +511,19 @@ class Widgetkit_Admin
                                     <div class="wk-child-width-1-3@m wk-grid-match" wk-grid>
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
-                                                <img src="<?php echo plugins_url('/assets/images/premium/post-grid-slider.jpg', __FILE__)?>" alt="">
+                                                <img width="100%" src="<?php echo plugins_url('/assets/images/premium/post-grid-slider.jpg', __FILE__)?>" alt="">
                                                 <h4 class="wk-margin-small-top wk-text-light">Ajax based grid slider</h4>
                                             </div>
                                         </div>
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
-                                                <img src="<?php echo plugins_url('/assets/images/premium/post-tabs.jpg', __FILE__)?>" alt="">
+                                                <img width="100%" src="<?php echo plugins_url('/assets/images/premium/post-tabs.jpg', __FILE__)?>" alt="">
                                                 <h4 class="wk-margin-small-top wk-text-light">Posts tab with ajax</h4>
                                             </div>
                                         </div>
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
-                                                <img src="<?php echo plugins_url('/assets/images/premium/post-smart-list.jpg', __FILE__)?>" alt="">
+                                                <img width="100%" src="<?php echo plugins_url('/assets/images/premium/post-smart-list.jpg', __FILE__)?>" alt="">
                                                 <h4 class="wk-margin-small-top wk-text-light">Smart list widget</h4>
                                             </div>
                                         </div>
@@ -532,19 +532,19 @@ class Widgetkit_Admin
                                     <div class="wk-child-width-1-3@m wk-grid-match" wk-grid>
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
-                                                <img src="<?php echo plugins_url('/assets/images/premium/woo-smart-products.jpg', __FILE__)?>" alt="">
+                                                <img width="100%" src="<?php echo plugins_url('/assets/images/premium/woo-smart-products.jpg', __FILE__)?>" alt="">
                                                 <h4 class="wk-margin-small-top wk-text-light">Woo smart products</h4>
                                             </div>
                                         </div>
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
-                                                <img src="<?php echo plugins_url('/assets/images/premium/woo-smart-cat.jpg', __FILE__)?>" alt="">
+                                                <img width="100%" src="<?php echo plugins_url('/assets/images/premium/woo-smart-cat.jpg', __FILE__)?>" alt="">
                                                 <h4 class="wk-margin-small-top wk-text-light">Woo smart categories</h4>
                                             </div>
                                         </div>
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
-                                                <img src="<?php echo plugins_url('/assets/images/premium/woo-ajax-cart.jpg', __FILE__)?>" alt="">
+                                                <img width="100%" src="<?php echo plugins_url('/assets/images/premium/woo-ajax-cart.jpg', __FILE__)?>" alt="">
                                                 <h4 class="wk-margin-small-top wk-text-light">Ajax add to cart</h4>
                                             </div>
                                         </div>
@@ -553,19 +553,19 @@ class Widgetkit_Admin
                                     <div class="wk-child-width-1-3@m wk-grid-match" wk-grid>
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
-                                                <img src="<?php echo plugins_url('/assets/images/premium/ld1.png', __FILE__)?>" alt="">
+                                                <img width="100%" src="<?php echo plugins_url('/assets/images/premium/ld1.png', __FILE__)?>" alt="">
                                                 <h4 class="wk-margin-small-top wk-text-light">Course List Style</h4>
                                             </div>
                                         </div>
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
-                                                <img src="<?php echo plugins_url('/assets/images/premium/ld2.png', __FILE__)?>" alt="">
+                                                <img width="100%" src="<?php echo plugins_url('/assets/images/premium/ld2.png', __FILE__)?>" alt="">
                                                 <h4 class="wk-margin-small-top wk-text-light">Course Tab Style</h4>
                                             </div>
                                         </div>
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-text-center">
-                                                <img src="<?php echo plugins_url('/assets/images/premium/ld3.png', __FILE__)?>" alt="">
+                                                <img width="100%" src="<?php echo plugins_url('/assets/images/premium/ld3.png', __FILE__)?>" alt="">
                                                 <h4 class="wk-margin-small-top wk-text-light">Course Carousel Style</h4>
                                             </div>
                                         </div>
