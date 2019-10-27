@@ -209,7 +209,7 @@ class Widgetkit_Admin
                                         <div>
                                             <div class="wk-card wk-card-secondary wk-card-body">
                                                 <h3  class="wk-card-title"><?php echo  __( 'Need Any Help?');?></h3>
-                                                <p>Feel free to join us in our <a target="_blank" href="https://www.facebook.com/groups/375093230075321/">Official Facebook Group</a> for discussion, support and chill. If you need more help just shoot us an email <code>help@themesgrove.com</code>.</p>
+                                                <p>Feel free to join us in our <a target="_blank" href="https://www.facebook.com/groups/widgetkitcommunity/">Official Facebook Group</a> for discussion, support and chill. If you need more help just shoot us an email <code>help@themesgrove.com</code>.</p>
                                             </div>
                                         </div>
                                         <div class="wk-width-1-1">
