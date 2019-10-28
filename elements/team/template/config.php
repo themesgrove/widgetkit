@@ -243,21 +243,30 @@ class wkfe_team extends Widget_Base {
 			          'default'     => [
 			              [
 			              	'title'       => esc_html__( 'Facebook', 'widgetkit-for-elementor' ),
-			              	'social_icon' => 'fa fa-facebook',
+			              	'social_icon' => [
+								'value' => 'fa fa-facebook',
+								'library' => 'fa-solid',
+							],
 			                'social_link' => esc_html__( 'https://www.facebook.com/themesgrove', 'widgetkit-for-elementor' ),
 			                
 			 
 			              ],
 			              [
 			              	'title'       => esc_html__( 'Twitter', 'widgetkit-for-elementor' ),
-			              	'social_icon' => 'fa fa-twitter',
+			              	'social_icon' => [
+								'value' => 'fa fa-twitter',
+								'library' => 'fa-solid',
+							],
 			                'social_link' => esc_html__( 'https://www.twitter.com/themesgrove', 'widgetkit-for-elementor' ),
 			               
 			 
 			              ],
 			              [
 			              	'title'       => esc_html__( 'Linkedin', 'widgetkit-for-elementor' ),
-			              	'social_icon' => 'fa fa-linkedin',
+			                'social_icon' => [
+								'value' => 'fa fa-linkedin',
+								'library' => 'fa-solid',
+							],
 			                'social_link' => esc_html__( 'https://www.linkedin.com/themesgrove', 'widgetkit-for-elementor' ),
 			              
 			 
