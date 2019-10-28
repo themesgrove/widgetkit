@@ -202,7 +202,7 @@ class wkfe_content_carousel extends Widget_Base {
 	        $this->add_control(
 				'custom_header_tag',
 				[
-					'label' => __( 'HTML Tag', 'widgetkit-for-elementor' ),
+					'label' => __( 'Title HTML Tag', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::SELECT,
 					'options' => [
 						'h1' => 'H1',
@@ -343,7 +343,7 @@ class wkfe_content_carousel extends Widget_Base {
            	$this->add_control(
 				'post_header_tag',
 				[
-					'label' => __( 'HTML Tag', 'widgetkit-for-elementor' ),
+					'label' => __( 'Title HTML Tag', 'widgetkit-for-elementor' ),
 					'type' => Controls_Manager::SELECT,
 					'options' => [
 						'h1' => 'H1',
@@ -737,7 +737,7 @@ class wkfe_content_carousel extends Widget_Base {
 	    $this->start_controls_section(
             'section_style',
             [
-                'label' => esc_html__( 'Contents', 'widgetkit-for-elementor' ),
+                'label' => esc_html__( 'Content', 'widgetkit-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -901,17 +901,25 @@ class wkfe_content_carousel extends Widget_Base {
 	                    ]
 	            );
 
+                $this->add_control(
+                    'global_heading',
+                        [
+                            'label' => __( 'Global', 'widgetkit-for-elementor' ),
+                            'type'  => Controls_Manager::HEADING,
+                            'separator' => 'before',
+                        ]
+                );
+
 
 	            $this->add_control(
 	                'content_bg_color',
 	                [
-	                    'label'     => esc_html__( 'Bg Color', 'widgetkit-for-elementor' ),
+	                    'label'     => esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
 	                    'type'      => Controls_Manager::COLOR,
 	                    'default'   => '',
 	                    'selectors' => [
 	                        '{{WRAPPER}} .content-carousel .wk-card' => 'background: {{VALUE}};',
 	                    ],
-	                    'separator' => 'before',
 	                ]
 	            );
 
@@ -1051,7 +1059,7 @@ class wkfe_content_carousel extends Widget_Base {
             $this->add_control(
                 'arrow_hover_background_color',
                     [
-                        'label' => esc_html__( 'Hover Bg Color', 'widgetkit-for-elementor' ),
+                        'label' => esc_html__( 'Hover Background Color', 'widgetkit-for-elementor' ),
                         'type'  => Controls_Manager::COLOR,
                         'default'   => '#0073aa',
                         'selectors' => [

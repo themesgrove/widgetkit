@@ -199,10 +199,15 @@
           left: 5px;
           right: 60px;
           border-radius: 0px 10px 0 10px;
+          transition: all 0.3s ease;
       }
         &:hover{
             img{
               transform: scale(1.1);
+              transition: all 0.3s ease;
+            }
+            .wk-card-body{
+              right:5px;
               transition: all 0.3s ease;
             }
         }
@@ -268,7 +273,7 @@
                 height:100%;
             }
             .wk-card-body{
-              padding:20px 30px 20px;
+              padding:15px 30px 30px;
             }
 
             .wk-card-link{
