@@ -4,7 +4,6 @@
 
 .wk-testimonial{
 	.wk-card{
-	    padding:35px;
 		.wk-card-body{
 			
 			p{
@@ -32,6 +31,7 @@
 			height:40px;
 			line-height:60px;
 			text-align:center;
+			border-radius:50px;
 		}
 	}
 
@@ -117,6 +117,50 @@
 			img{width:20%;}
 		}
 		.wk-card-body{
+			.quote {
+			    left: 0;
+			    right: 0;
+			    top: 45px;
+			    text-align: center;
+			    svg{
+			        width: 80px;
+				    height: 80px;
+				    color: #efefef;
+			    }
+			}
 		}
 	}
+
+	.wk-testimonial-5{
+		background:#fff;
+		box-shadow:1px 1px 10px rgba(0, 0, 0, 0.04);
+		border-radius:10px;
+		transition:all 0.3s ease;
+		opacity:0.5;
+		margin:5px;
+		.wk-card-media-left, .wk-card-media-right{
+			img{border:1px dotted #ddd; padding:5px; border-radius:50px;}
+		}
+		.wk-card-body{
+			.quote {
+			    left: 20px;
+			    top: 20px;
+			    text-align: left;
+			    svg{
+			        width: 80px;
+				    height: 80px;
+				    color: #efefef;
+			    }
+			}
+		}
+	}
+
+	.wk-active{
+		.wk-testimonial-5{
+			opacity:1;
+		}
+
+	}
+
+
 }

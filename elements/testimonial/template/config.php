@@ -546,7 +546,7 @@ class wkfe_testimonial extends Widget_Base {
 						],
 						'toggle' => false,
 						'condition'   => [
-                        	'item_styles' => ['screen_3'],
+                        	'item_styles' => ['screen_3', 'screen_5'],
                     	],
 					]
 				);
@@ -568,9 +568,13 @@ class wkfe_testimonial extends Widget_Base {
 	                        ],
 	                    ],
 	                    'selectors' => [
-	                        '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-top img, {{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-bottom img' => 'width: {{SIZE}}%;',
+	                        '{{WRAPPER}} .wk-testimonial .wk-card. .wk-card-media-top img, {{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-bottom img' => 'width: {{SIZE}}%;',
 	                        '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-left img, {{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-right img' => 'width: {{SIZE}}%;',
+	                        '{{WRAPPER}} .wk-testimonial .wk-card.wk-testimonial-5 .wk-card-media-left img, {{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-right img' => 'width: auto;',
 	                    ],
+	                    'condition'   => [
+                        	'item_styles' => ['screen_1', 'screen_2', 'screen_3', 'screen_4'],
+                    	],
 	                ]
 	            );
 
@@ -586,6 +590,36 @@ class wkfe_testimonial extends Widget_Base {
 		                ],
 		            ]
 		        );
+		        $this->add_control(
+	                'quote_color',
+	                [
+	                    'label'     => esc_html__( 'Quote Color', 'widgetkit-for-elementor' ),
+	                    'type'      => Controls_Manager::COLOR,
+	                    'default'   => 'rgba(0,0,0,0.05)',
+	                    'selectors' => [
+	                        '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body .quote svg' => 'color: {{VALUE}};',
+	                    ],
+	                    'condition'   => [
+                        	'item_styles' => ['screen_4'],
+                    	],
+	                ]
+	            );
+
+	        $this->add_group_control(
+	            Group_Control_Border::get_type(),
+	            [
+	                'name'  => 'image_border',
+	                'label' => esc_html__( 'Border', 'widgetkit-for-elementor' ),
+	                'placeholder' => '1px',
+	                'default'  => '1px',
+	                'selector' => '
+	                    {{WRAPPER}} .wk-testimonial .wk-testimonial-5 .wk-card-media-left img, {{WRAPPER}} .wk-testimonial .wk-testimonial-5 .wk-card-media-right img',
+	                'separator' => 'before',
+	                'condition'   => [
+                        'item_styles' => ['screen_5'],
+                    ],
+	            ]
+	        );
 
 
 
@@ -623,6 +657,8 @@ class wkfe_testimonial extends Widget_Base {
 	                ]
 	            );
 
+
+
 	            $this->add_group_control(
 	                Group_Control_Typography::get_type(),
 	                    [
@@ -631,6 +667,22 @@ class wkfe_testimonial extends Widget_Base {
 	                        'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
 	                        'selector' => '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body p',
 	                    ]
+	            );
+
+	            $this->add_control(
+	                'content_hover_color',
+	                [
+	                    'label'     => esc_html__( 'Hover Color', 'widgetkit-for-elementor' ),
+	                    'type'      => Controls_Manager::COLOR,
+	                    'default'   => '#fff',
+	                    'selectors' => [
+	                        '{{WRAPPER}} .wk-testimonial .wk-card:hover .wk-card-body p' => 'color: {{VALUE}};',
+	                        // '{{WRAPPER}} .wk-testimonial .wk-card:hover .wk-card-body .quote svg' => 'color: {{VALUE}}; opacity:0.2;',
+	                    ],
+	                    'condition'   => [
+                        	'item_styles' => ['screen_4'],
+                    	],
+	                ]
 	            );
 
 	            $this->add_responsive_control(
@@ -698,6 +750,21 @@ class wkfe_testimonial extends Widget_Base {
 	                    ]
 	            );
 
+	           	$this->add_control(
+	                'title_hover_color',
+	                [
+	                    'label'     => esc_html__( 'Hover Color', 'widgetkit-for-elementor' ),
+	                    'type'      => Controls_Manager::COLOR,
+	                    'default'   => '#fff',
+	                    'selectors' => [
+	                        '{{WRAPPER}} .wk-testimonial .wk-card:hover .wk-card-body .wk-card-title a' => 'color: {{VALUE}};',
+	                    ],
+	                    'condition'   => [
+                        	'item_styles' => ['screen_4'],
+                    	],
+	                ]
+	            );
+
 	            // $this->add_control(
 	            //     'title_hover_color',
 	            //     [
@@ -760,6 +827,22 @@ class wkfe_testimonial extends Widget_Base {
 		                    'selector' => '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body span',
 		                ]
 		        );
+		        $this->add_control(
+	                'designation_hover_color',
+	                [
+	                    'label'     => esc_html__( 'Hover Color', 'widgetkit-for-elementor' ),
+	                    'type'      => Controls_Manager::COLOR,
+	                    'default'   => '#fff',
+	                    'selectors' => [
+	                        '{{WRAPPER}} .wk-testimonial .wk-card:hover .wk-card-body span' => 'color: {{VALUE}};',
+	                    ],
+	                    'condition'   => [
+                        	'item_styles' => ['screen_4'],
+                    	],
+	                ]
+	            );
+
+
 
 		       	$this->add_control(
 					'designation_position',
@@ -817,7 +900,11 @@ class wkfe_testimonial extends Widget_Base {
 	                    'default'   => '',
 	                    'selectors' => [
 	                        '{{WRAPPER}} .wk-testimonial .wk-card:hover' => 'background: {{VALUE}};',
+	                        
 	                    ],
+	                    'condition'   => [
+                        	'item_styles' => ['screen_4'],
+                    	],
 	                ]
 	            );
 
