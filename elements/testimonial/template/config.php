@@ -12,9 +12,9 @@ use Elementor\Group_Control_Box_Shadow;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
- * Elementor WidgetKit carousel
+ * Elementor WidgetKit Testimonial
  *
- * Elementor widget for WidgetKit carousel
+ * Elementor widget for WidgetKit Testimonial
  *
  * @since 1.0.0
  */
@@ -402,30 +402,30 @@ class wkfe_testimonial extends Widget_Base {
 	        $this->end_controls_section();
 
 
-		/**
-		 * Pro control panel 
-		 */
-		if(!apply_filters('wkpro_enabled', false)):
-			$this->start_controls_section(
-				'section_widgetkit_pro_box',
-				[
-					'label' => esc_html__( 'Go Premium for more layout & feature', 'widgetkit-for-elementor' ),
-				]
-			);
-				$this->add_control(
-					'wkfe_control_go_pro',
+			/**
+			 * Pro control panel 
+			 */
+			if(!apply_filters('wkpro_enabled', false)):
+				$this->start_controls_section(
+					'section_widgetkit_pro_box',
 					[
-						'label' => __('Unlock more possibilities', 'widgetkit-for-elementor'),
-						'type'  => Controls_Manager::CHOOSE,
-						'default' => '1',
-						'description' => '<div class="elementor-nerd-box">
-						<div class="elementor-nerd-box-message"> Get the  <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">Pro version</a> of <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">WidgetKit</a> for more stunning elements and customization options.</div>
-						<a class="widgetkit-go-pro elementor-nerd-box-link elementor-button elementor-button-default elementor-go-pro" href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">Go Pro</a>
-						</div>',
+						'label' => esc_html__( 'Go Premium for more layout & feature', 'widgetkit-for-elementor' ),
 					]
 				);
-			$this->end_controls_section();
-		endif;
+					$this->add_control(
+						'wkfe_control_go_pro',
+						[
+							'label' => __('Unlock more possibilities', 'widgetkit-for-elementor'),
+							'type'  => Controls_Manager::CHOOSE,
+							'default' => '1',
+							'description' => '<div class="elementor-nerd-box">
+							<div class="elementor-nerd-box-message"> Get the  <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">Pro version</a> of <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">WidgetKit</a> for more stunning elements and customization options.</div>
+							<a class="widgetkit-go-pro elementor-nerd-box-link elementor-button elementor-button-default elementor-go-pro" href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">Go Pro</a>
+							</div>',
+						]
+					);
+				$this->end_controls_section();
+			endif;
 
 
 
@@ -458,7 +458,7 @@ class wkfe_testimonial extends Widget_Base {
 						],
 						'toggle' => false,
 						'condition'   => [
-                        	'item_styles' => ['screen_1', 'screen_2'],
+                        	'item_styles' => ['screen_1', 'screen_2', 'screen_4'],
                     	],
 					]
 				);
@@ -491,21 +491,21 @@ class wkfe_testimonial extends Widget_Base {
 	           $this->add_responsive_control(
 	            'image_size',
 	                [
-	                    'label'   => esc_html__( 'Size(%)', 'widgetkit-for-elementor' ),
+	                    'label'   => esc_html__( 'Size(px)', 'widgetkit-for-elementor' ),
 	                    'type'    => Controls_Manager::SLIDER,
 	                    'default' => [
 	                    'size'    => '',
 	                    ],
 	                    'range'   => [
-	                        '%'   => [
+	                        'px'   => [
 	                            'min' => 10,
-	                            'max' => 100,
+	                            'max' => 500,
 	                        ],
 	                    ],
 	                    'selectors' => [
-	                        '{{WRAPPER}} .wk-testimonial .wk-card. .wk-card-media-top img, {{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-bottom img' => 'width: {{SIZE}}%;',
-	                        '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-left img, {{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-right img' => 'width: {{SIZE}}%;',
-	                        '{{WRAPPER}} .wk-testimonial .wk-card.wk-testimonial-5 .wk-card-media-left img, {{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-right img' => 'width: auto;',
+	                        '{{WRAPPER}} .wk-testimonial .wk-card-media-top img, {{WRAPPER}} .wk-testimonial .wk-card-media-bottom img' => 'width: {{SIZE}}px;',
+	                        '{{WRAPPER}} .wk-testimonial  .wk-card-media-left img, {{WRAPPER}} .wk-testimonial  .wk-card-media-right img' => 'width: {{SIZE}}px;',
+	                        '{{WRAPPER}} .wk-testimonial .wk-testimonial-5 .wk-card-media-left img, {{WRAPPER}} .wk-testimonial .wk-testimonial-5  .wk-card-media-right img' => 'width: auto;',
 	                    ],
 	                    'condition'   => [
                         	'item_styles' => ['screen_1', 'screen_2', 'screen_4'],
@@ -662,6 +662,21 @@ class wkfe_testimonial extends Widget_Base {
 		                        '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body .wk-text-normal' => 'margin: 0 0 {{SIZE}}{{UNIT}};',
 		                    ],
 		                ]
+		        );
+
+		        $this->add_control(
+		            'content_padding',
+		            [
+		                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
+		                'type'  => Controls_Manager::DIMENSIONS,
+		                'size_units' => [ 'px', '%' ],
+		                'selectors'  => [
+		                    '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body .wk-text-normal' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                ],
+		                'condition'   => [
+                        	'item_styles' => ['screen_2'],
+                    	],
+		            ]
 		        );
 
 
@@ -878,10 +893,23 @@ class wkfe_testimonial extends Widget_Base {
 	                Group_Control_Box_Shadow::get_type(),
 	                [
 	                    'name' => 'content_box_shadow',
+	                    'label'     => esc_html__( 'Normal Box Shadow', 'widgetkit-for-elementor' ),
 	                    'exclude' => [
 	                        'box_shadow_position',
 	                    ],
 	                    'selector' => '{{WRAPPER}} .wk-testimonial .wk-card',
+	                ]
+	            );
+
+	           	$this->add_group_control(
+	                Group_Control_Box_Shadow::get_type(),
+	                [
+	                    'name' => 'content_hover_box_shadow',
+	                    'label'     => esc_html__( 'Hover Box Shadow', 'widgetkit-for-elementor' ),
+	                    'exclude' => [
+	                        'box_shadow_position',
+	                    ],
+	                    'selector' => '{{WRAPPER}} .wk-testimonial .wk-card:hover',
 	                ]
 	            );
 
@@ -915,7 +943,7 @@ class wkfe_testimonial extends Widget_Base {
 				);
 
 				$this->add_control(
-		            'content_padding',
+		            'content_item_padding',
 		            [
 		                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
 		                'type'  => Controls_Manager::DIMENSIONS,

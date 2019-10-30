@@ -29,6 +29,15 @@
                                         <?php if ($testimonial['testimonial_content']): ?>
                                             <div class="wk-text-normal"><?php echo $testimonial['testimonial_content']; ?></div>
                                         <?php endif; ?>
+                                        
+                                        <?php if($testimonial['testimonial_thumb_image']['url']):?>
+                                            <?php if($testimonials['thumbnail_position_vertical'] == 'bottom'):?>
+                                          
+                                              <div class="wk-card-media-bottom wk-overflow-hidden">
+                                                  <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                              </div>
+                                            <?php endif; ?> 
+                                        <?php endif; ?> 
 
                                          <?php if ($testimonial['testimonial_designation']): ?>
                                               <?php if ($testimonials['designation_position'] == 'vertical_top'): ?>
@@ -59,15 +68,6 @@
                                               <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
-
-                                    <?php if($testimonial['testimonial_thumb_image']['url']):?>
-                                        <?php if($testimonials['thumbnail_position_vertical'] == 'bottom'):?>
-                                      
-                                          <div class="wk-card-media-bottom wk-overflow-hidden">
-                                              <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
-                                          </div>
-                                        <?php endif; ?> 
-                                    <?php endif; ?> 
                                 
                                 </div>
                             </div>
@@ -87,6 +87,16 @@
                                         <?php if ($testimonial['testimonial_content']): ?>
                                             <div class="wk-text-normal"><?php echo $testimonial['testimonial_content']; ?></div>
                                         <?php endif; ?>
+
+
+                                      <?php if($testimonial['testimonial_thumb_image']['url']):?>
+                                          <?php if($testimonials['thumbnail_position_vertical'] == 'bottom'):?>
+                                        
+                                            <div class="wk-card-media-bottom">
+                                                <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                            </div>
+                                          <?php endif; ?> 
+                                      <?php endif; ?> 
 
                                         <?php if ($testimonial['testimonial_designation']): ?>
                                               <?php if ($testimonials['designation_position'] == 'vertical_top'): ?>
@@ -115,15 +125,6 @@
                                               <?php endif; ?>
                                           <?php endif; ?>
                                     </div>
-
-                                    <?php if($testimonial['testimonial_thumb_image']['url']):?>
-                                        <?php if($testimonials['thumbnail_position_vertical'] == 'bottom'):?>
-                                      
-                                          <div class="wk-card-media-bottom">
-                                              <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
-                                          </div>
-                                        <?php endif; ?> 
-                                    <?php endif; ?> 
                                 
                                 </div>
                               </div>
@@ -204,13 +205,26 @@
                                       <?php endif; ?>
 
                                       <div class="wk-card-body wk-padding-remove">
-                                          <div class="wk-position-absolute quote" wk-icon="quote-right"></div>
+                                        <?php if($testimonial['testimonial_thumb_image']['url'] && $testimonials['thumbnail_position_vertical'] == 'top'):?>
+                                            <div></div>
+                                        <?php else: ?>
+                                            <div class="wk-position-absolute quote" wk-icon="quote-right"></div>
+                                        <?php endif; ?>
                                           <?php if ($testimonial['testimonial_content']): ?>
                                               <div class="wk-position-relative wk-text-normal">
                                                 <?php echo $testimonial['testimonial_content']; ?>
                                                   
                                                 </div>
                                           <?php endif; ?>
+
+                                          <?php if($testimonial['testimonial_thumb_image']['url']):?>
+                                              <?php if($testimonials['thumbnail_position_vertical'] == 'bottom'):?>
+                                            
+                                                <div class="wk-card-media-bottom wk-overflow-hidden">
+                                                    <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                </div>
+                                              <?php endif; ?> 
+                                          <?php endif; ?> 
 
                                            <?php if ($testimonial['testimonial_designation']): ?>
                                                 <?php if ($testimonials['designation_position'] == 'vertical_top'): ?>
@@ -241,15 +255,6 @@
                                                 <?php endif; ?>
                                           <?php endif; ?>
                                       </div>
-
-                                      <?php if($testimonial['testimonial_thumb_image']['url']):?>
-                                          <?php if($testimonials['thumbnail_position_vertical'] == 'bottom'):?>
-                                        
-                                            <div class="wk-card-media-bottom wk-overflow-hidden">
-                                                <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
-                                            </div>
-                                          <?php endif; ?> 
-                                      <?php endif; ?> 
                                   
                                   </div>
                               </div>
