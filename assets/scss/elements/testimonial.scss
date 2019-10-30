@@ -40,11 +40,11 @@
 		background:transparent;
 		.wk-card-media-top{
 			padding-bottom:30px;
-			img{width:10%;}
+			img{width:15%;padding:5px;}
 		}
 		.wk-card-media-bottom{
 			padding-top:30px;
-			img{width:10%;}
+			img{width:15%;padding:5px;}
 		}
 		.wk-card-body{
 			.wk-text-meta.right{
@@ -57,11 +57,11 @@
 		background:transparent;
 		.wk-card-media-top{
 			padding-bottom:30px;
-			img{width:10%;}
+			img{width:15%;padding:3px;}
 		}
 		.wk-card-media-bottom{
 			padding-top:30px;
-			img{width:10%;}
+			img{width:15%; padding:3px;}
 		}
 		.wk-card-body{
 			.wk-text-normal{
@@ -79,14 +79,16 @@
 
 	.wk-testimonial-3{
 		background:transparent;
-		height:450px;
-		overflow:hidden;
 		.wk-card-media-left{
 			padding-bottom:30px;
+			max-height:450px;
+		    overflow:hidden;
 			img{width:100%;}
 		}
 		.wk-card-media-right{
 			padding-top:30px;
+			max-height:450px;
+			overflow:hidden;
 			img{width:100%;}
 		}
 		.wk-card-body{
@@ -112,11 +114,11 @@
 		
 		.wk-card-media-top{
 			padding-bottom:30px;
-			img{width:20%;}
+			img{width:15%; padding:5px;}
 		}
 		.wk-card-media-bottom{
 			padding-top:30px;
-			img{width:20%;}
+			img{width:15%;padding:5px;}
 		}
 		.wk-card-body{
 			.quote {

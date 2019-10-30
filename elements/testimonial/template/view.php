@@ -130,7 +130,7 @@
 
                             <?php elseif($testimonials['item_styles'] == 'screen_3'): ?>
                                 <div class="wk-flex wk-flex-center wk-grid-match">
-                                    <div class="wk-card wk-card-default wk-grid-collapse wk-margin wk-testimonial-3" wk-grid>
+                                    <div class="wk-card wk-card-default wk-grid-collapse wk-margin wk-testimonial-3 wk-flex-middle" wk-grid>
                                   
                                     <?php if($testimonials['thumbnail_position_horizontal'] == 'left'): ;?>
                                       <div class="wk-cover-container wk-width-auto">

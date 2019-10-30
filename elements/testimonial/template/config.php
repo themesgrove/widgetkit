@@ -513,6 +513,30 @@ class wkfe_testimonial extends Widget_Base {
 	                ]
 	            );
 
+
+	           $this->add_responsive_control(
+	            'image_height',
+	                [
+	                    'label'   => esc_html__( 'Height(px)', 'widgetkit-for-elementor' ),
+	                    'type'    => Controls_Manager::SLIDER,
+	                    'default' => [
+	                    'size'    => '',
+	                    ],
+	                    'range'   => [
+	                        'px'   => [
+	                            'min' => 10,
+	                            'max' => 1000,
+	                        ],
+	                    ],
+	                    'selectors' => [
+	                        '{{WRAPPER}} .wk-testimonial .wk-testimonial-3 .wk-card-media-left, {{WRAPPER}} .wk-testimonial .wk-testimonial-3 .wk-card-media-right' => 'max-height: {{SIZE}}px;',
+	                    ],
+	                    'condition'   => [
+                        	'item_styles' => ['screen_3'],
+                    	],
+	                ]
+	            );
+
 	           	$this->add_control(
 		            'image_radius',
 		            [
@@ -548,10 +572,10 @@ class wkfe_testimonial extends Widget_Base {
 	                'placeholder' => '1px',
 	                'default'  => '1px',
 	                'selector' => '
-	                    {{WRAPPER}} .wk-testimonial .wk-testimonial-5 .wk-card-media-left img, {{WRAPPER}} .wk-testimonial .wk-testimonial-5 .wk-card-media-right img',
+	                    {{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-left img, {{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-right img,  {{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-top img,  {{WRAPPER}} .wk-testimonial .wk-card .wk-card-media-bottom img',
 	                'separator' => 'before',
 	                'condition'   => [
-                        'item_styles' => ['screen_5'],
+                        'item_styles' => ['screen_1', 'screen_2','screen_4','screen_5'],
                     ],
 	            ]
 	        );
@@ -645,7 +669,7 @@ class wkfe_testimonial extends Widget_Base {
 					Group_Control_Border::get_type(),
 					[
 						'name' => 'content_border',
-						'label' => __( 'Border', 'elementor' ),
+						'label' => __( 'Border', 'widgetkit-for-elementor' ),
 						'fields_options' => [
 							'border' => [
 								'default' => 'solid',
