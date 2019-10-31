@@ -139,8 +139,85 @@ class wkfe_team extends Widget_Base {
 			      ]
 			    );
 
-
 				$repeater->add_control(
+		            'social_icon',
+		            [
+		                'label' => esc_html__( 'Social Icon', 'widgetkit-for-elementor' ), 
+		                'type'              => Controls_Manager::ICONS,
+		                'fa4compatibility'  => 'social',
+		                'default'    =>  [
+		                    'value'     => 'fa fa-facebook',
+		                    'library'   => 'fa-solid',
+		                ],
+		                'recommended' => [
+							'fa-brands' => [
+								'android',
+								'apple',
+								'behance',
+								'bitbucket',
+								'codepen',
+								'delicious',
+								'deviantart',
+								'digg',
+								'dribbble',
+								'elementor',
+								'facebook',
+								'flickr',
+								'foursquare',
+								'free-code-camp',
+								'github',
+								'gitlab',
+								'globe',
+								'google-plus',
+								'houzz',
+								'instagram',
+								'jsfiddle',
+								'linkedin',
+								'medium',
+								'meetup',
+								'mixcloud',
+								'odnoklassniki',
+								'pinterest',
+								'product-hunt',
+								'reddit',
+								'shopping-cart',
+								'skype',
+								'slideshare',
+								'snapchat',
+								'soundcloud',
+								'spotify',
+								'stack-overflow',
+								'steam',
+								'stumbleupon',
+								'telegram',
+								'thumb-tack',
+								'tripadvisor',
+								'tumblr',
+								'twitch',
+								'twitter',
+								'viber',
+								'vimeo',
+								'vk',
+								'weibo',
+								'weixin',
+								'whatsapp',
+								'wordpress',
+								'xing',
+								'yelp',
+								'youtube',
+								'500px',
+							],
+							'fa-solid' => [
+								'envelope',
+								'link',
+								'rss',
+							],
+						],
+		                'label_block'   => true,
+		            ]
+		        );
+
+		        $repeater->add_control(
 		            'social_link',
 		            [
 		                'label' => esc_html__( 'Social Link', 'widgetkit-for-elementor' ),
@@ -155,94 +232,6 @@ class wkfe_team extends Widget_Base {
 		            ]
 		        );
 
-		        $repeater->add_control(
-		            'social_icon',
-		            [
-		                'label' => esc_html__( 'Social Icon', 'widgetkit-for-elementor' ),
-		                'type'  => Controls_Manager::ICON,
-		                'default' => 'fa fa-facebook',
-		            ]
-		        );
-
-
-				// $repeater->add_control(
-				// 	'social_icon',
-				// 	[
-				// 		'label' => __( 'Icon', 'widgetkit-for-elementor' ),
-				// 		'type' => Controls_Manager::ICONS,
-				// 		'fa4compatibility' => 'social',
-				// 		'label_block' => true,
-				// 		'default' => [
-				// 			'value' => 'fa fa-facebook',
-				// 			'library' => 'fa-brands',
-				// 		],
-				// 		'recommended' => [
-				// 			'fa-brands' => [
-				// 				'android',
-				// 				'apple',
-				// 				'behance',
-				// 				'bitbucket',
-				// 				'codepen',
-				// 				'delicious',
-				// 				'deviantart',
-				// 				'digg',
-				// 				'dribbble',
-				// 				'elementor',
-				// 				'facebook',
-				// 				'flickr',
-				// 				'foursquare',
-				// 				'free-code-camp',
-				// 				'github',
-				// 				'gitlab',
-				// 				'globe',
-				// 				'google-plus',
-				// 				'houzz',
-				// 				'instagram',
-				// 				'jsfiddle',
-				// 				'linkedin',
-				// 				'medium',
-				// 				'meetup',
-				// 				'mixcloud',
-				// 				'odnoklassniki',
-				// 				'pinterest',
-				// 				'product-hunt',
-				// 				'reddit',
-				// 				'shopping-cart',
-				// 				'skype',
-				// 				'slideshare',
-				// 				'snapchat',
-				// 				'soundcloud',
-				// 				'spotify',
-				// 				'stack-overflow',
-				// 				'steam',
-				// 				'stumbleupon',
-				// 				'telegram',
-				// 				'thumb-tack',
-				// 				'tripadvisor',
-				// 				'tumblr',
-				// 				'twitch',
-				// 				'twitter',
-				// 				'viber',
-				// 				'vimeo',
-				// 				'vk',
-				// 				'weibo',
-				// 				'weixin',
-				// 				'whatsapp',
-				// 				'wordpress',
-				// 				'xing',
-				// 				'yelp',
-				// 				'youtube',
-				// 				'500px',
-				// 			],
-				// 			'fa-solid' => [
-				// 				'envelope',
-				// 				'link',
-				// 				'rss',
-				// 			],
-				// 		],
-				// 	]
-				// );
-
 
 
 			$this->add_control(
@@ -254,20 +243,32 @@ class wkfe_team extends Widget_Base {
 			          'default'     => [
 			              [
 			              	'title'       => esc_html__( 'Facebook', 'widgetkit-for-elementor' ),
+			              	'social_icon' => [
+								'value' => 'fa fa-facebook',
+								'library' => 'fa-solid',
+							],
 			                'social_link' => esc_html__( 'https://www.facebook.com/themesgrove', 'widgetkit-for-elementor' ),
-			                'social_icon' => 'fa fa-facebook',
+			                
 			 
 			              ],
 			              [
 			              	'title'       => esc_html__( 'Twitter', 'widgetkit-for-elementor' ),
+			              	'social_icon' => [
+								'value' => 'fa fa-twitter',
+								'library' => 'fa-solid',
+							],
 			                'social_link' => esc_html__( 'https://www.twitter.com/themesgrove', 'widgetkit-for-elementor' ),
-			                'social_icon' => 'fa fa-twitter',
+			               
 			 
 			              ],
 			              [
 			              	'title'       => esc_html__( 'Linkedin', 'widgetkit-for-elementor' ),
+			                'social_icon' => [
+								'value' => 'fa fa-linkedin',
+								'library' => 'fa-solid',
+							],
 			                'social_link' => esc_html__( 'https://www.linkedin.com/themesgrove', 'widgetkit-for-elementor' ),
-			                'social_icon' => 'fa fa-linkedin',
+			              
 			 
 			              ]
 			          ],
@@ -404,9 +405,9 @@ class wkfe_team extends Widget_Base {
 	                        ],
 	                    ],
 	                    'selectors' => [
-	                        '{{WRAPPER}} .wk-team .wk-card .wk-card-media-top img' => 'width: {{SIZE}}%;',
-	                        '{{WRAPPER}} .wk-team .wk-card .wk-card-wrapper img'  => 'width: {{SIZE}}%;',
-	                        //'{{WRAPPER}} .wk-team .wk-style-6 .wk-card-link' => 'width: {{SIZE}}%;',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-1 .wk-card-media-top img' => 'width: {{SIZE}}%;',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-5 .wk-card-wrapper img'  => 'width: {{SIZE}}%;',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-2 .wk-card-media-top a'  => 'width: {{SIZE}}%;',
 	                    ],
 	                    'condition'   => [
                         	'item_styles' => ['screen_1', 'screen_2', 'screen_5'],
@@ -424,9 +425,9 @@ class wkfe_team extends Widget_Base {
 	                           'size' =>'',
 	                        ],
 	                        'range'  => [
-	                            '%' => [
+	                            'px' => [
 	                                'min' => 10,
-	                                'max' => 10000,
+	                                'max' => 1000,
 	                            ],
 	                        ],
 	                        'selectors' => [
@@ -475,6 +476,31 @@ class wkfe_team extends Widget_Base {
                     	],
 		            ]
 		        );
+
+
+		       //  $this->add_responsive_control(
+	        //         'image_shape_radius',
+	        //             [
+	        //                 'label'   => esc_html__( 'Shape Radius', 'widgetkit-for-elementor' ),
+	        //                 'type'    => Controls_Manager::SLIDER,
+	        //                 'default' => [
+	        //                 'size'    => 0,
+	        //                 ],
+	        //                 'range'  => [
+	        //                     '%' => [
+	        //                         'min' => 0,
+	        //                         'max' => 100,
+	        //                     ],
+	        //                 ],
+  							// 'selectors'  => [
+		       //              	'{{WRAPPER}} .wk-team .wk-style-6 .wk-card-wrapper .wk-card-link' => 'border-radius:50% 50% 50% 50%/{{SIZE}}{{UNIT}} 50% calc({{SIZE}}{{UNIT}} - 20%) calc({{SIZE}}{{UNIT}} - 30%);',
+		       //          	],
+
+	        //                 'condition'   => [
+         //                		'item_styles' =>'screen_6',
+         //            		],
+	        //             ]
+	        //     );
 
         		$this->add_control(
 					'image_hover_overlay_color',
@@ -538,6 +564,8 @@ class wkfe_team extends Widget_Base {
 		                    '{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-left:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                    '{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-right:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                    '{{WRAPPER}} .wk-team .wk-style-4 .wk-card-wrapper img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+
+		                     '{{WRAPPER}} .wk-team .wk-style-4 .wk-card-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                    '{{WRAPPER}} .wk-team .wk-style-5 .wk-card-wrapper img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                ],
 		                'condition'   => [
@@ -553,7 +581,7 @@ class wkfe_team extends Widget_Base {
 		$this->start_controls_section(
 			'content_style',
 			[
-				'label' => esc_html__( 'Contents', 'widgetkit-for-elementor' ),
+				'label' => esc_html__( 'Content', 'widgetkit-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -746,7 +774,7 @@ class wkfe_team extends Widget_Base {
 	            $this->add_control(
 	                'content_bg_color',
 	                [
-	                    'label'     => esc_html__( 'Bg Color', 'widgetkit-for-elementor' ),
+	                    'label'     => esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
 	                    'type'      => Controls_Manager::COLOR,
 	                    'default'   => '',
 	                    'selectors' => [
@@ -876,7 +904,7 @@ class wkfe_team extends Widget_Base {
 		        $this->add_control(
 	                'content_item_bg_color',
 	                [
-	                    'label'     => esc_html__( 'Item Bg Color', 'widgetkit-for-elementor' ),
+	                    'label'     => esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
 	                    'type'      => Controls_Manager::COLOR,
 	                    'default'   => '',
 	                    'selectors' => [
@@ -916,7 +944,7 @@ class wkfe_team extends Widget_Base {
 						],
 					],
 					'selectors' => [
-						'{{WRAPPER}}  .wk-team .wk-card .wk-card-body .wk-icon svg' => 'height: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}}  .wk-team .wk-card .wk-card-body .social-icons a' => 'font-size: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -932,6 +960,26 @@ class wkfe_team extends Widget_Base {
 	                ],
 	            ]
 	        );
+
+	       	$this->add_responsive_control(
+                'social_width_height',
+                    [
+                        'label'   => esc_html__( 'Width & Height', 'widgetkit-for-elementor' ),
+                        'type'    => Controls_Manager::SLIDER,
+                        'default' => [
+                        'size'    => 30,
+                        ],
+                        'range'  => [
+                            'px' => [
+                                'min' => 0,
+                                'max' => 100,
+                            ],
+                        ],
+                        'selectors' => [
+                            '{{WRAPPER}} .wk-team .wk-card .wk-card-body .social-icons a' => 'width: {{SIZE}}{{UNIT}};height:{{SIZE}}{{UNIT}}; line-height: calc({{SIZE}}{{UNIT}} + 2{{UNIT}});',
+                        ],
+                    ]
+            );
 
 
 		$this->start_controls_tabs( 'tabs_social_style' );
@@ -950,7 +998,7 @@ class wkfe_team extends Widget_Base {
 								'type'      => Controls_Manager::COLOR,
 								'default'   => '',
 								'selectors' => [
-									'{{WRAPPER}} .wk-team .wk-card .wk-card-body .wk-icon svg' => 'color: {{VALUE}};',
+									'{{WRAPPER}} .wk-team .wk-card .wk-card-body .social-icons a' => 'color: {{VALUE}};',
 								],
 							]
 						);
@@ -958,7 +1006,7 @@ class wkfe_team extends Widget_Base {
 						$this->add_control(
 							'icon_bg_color',
 							[
-								'label'     => esc_html__( 'Bg Color', 'widgetkit-for-elementor' ),
+								'label'     => esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
 								'type'      => Controls_Manager::COLOR,
 								'default'   => '',
 								'selectors' => [
@@ -996,7 +1044,7 @@ class wkfe_team extends Widget_Base {
 								'type'      => Controls_Manager::COLOR,
 								'default'   => '',
 								'selectors' => [
-									'{{WRAPPER}} .wk-team .wk-card .wk-card-body .social-icons a:hover svg' => 'color: {{VALUE}};',
+									'{{WRAPPER}} .wk-team .wk-card .wk-card-body .social-icons a:hover i' => 'color: {{VALUE}};',
 								],
 							]
 						);
@@ -1004,7 +1052,7 @@ class wkfe_team extends Widget_Base {
 						$this->add_control(
 							'icon_hover_bg_color',
 							[
-								'label'     => esc_html__( 'Bg Color', 'widgetkit-for-elementor' ),
+								'label'     => esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
 								'type'      => Controls_Manager::COLOR,
 								'default'   => '',
 								'selectors' => [

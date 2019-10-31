@@ -1,5 +1,6 @@
 <?php
 // Silence is golden.
+    use Elementor\Icons_Manager;
     $team = $this->get_settings();
     $id = $this->get_id();
 
@@ -41,10 +42,8 @@
                                         <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                         
                                         <?php 
-                                            $icon = explode(" ", $social['social_icon']);
-                                            $social_name = explode('-', $icon['1']);
-                                         ?>
-                                        <span class="<?php echo $social_name[1]; ?>" wk-icon="<?php echo $social_name[1]; ?>"></span>
+                                           Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
+                                        ?>
                                     </a>
                                 <?php endforeach; ?>
                             </div> <!-- wk-width-auto-->
@@ -97,10 +96,9 @@
                                         <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                         
                                         <?php 
-                                            $icon = explode(" ", $social['social_icon']);
-                                            $social_name = explode('-', $icon['1']);
-                                         ?>
-                                        <span class="<?php echo $social_name[1]; ?>" wk-icon="<?php echo $social_name[1]; ?>"></span>
+                                           Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
+                                        ?>
+                                        
                                     </a>
                                 <?php endforeach; ?>
                             </div> <!-- wk-width-auto-->
@@ -117,7 +115,7 @@
             <?php elseif($team['item_styles'] == 'screen_3'): ?>
                 <div class="wk-card wk-card-default wk-grid-collapse wk-style-3 wk-flex-middle" wk-grid>
                     <?php if ($team['image_position'] == 'left'):?> 
-                        <div class="wk-card-media-left wk-cover-container wk-width-1-2@m wk-position-relative">
+                        <div class="wk-card-media-left wk-cover-container wk-width-1-2@m wk-position-relative wk-overflow-hidden">
                             <?php if( $team['single_content_link']):?>
                                 <a class="wk-display-block" href="<?php echo $team['single_content_link']['url']; ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                     <img src="<?php echo $team['single_image']['url']; ?>" alt="">
@@ -155,10 +153,8 @@
                                             <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                             
                                             <?php 
-                                                $icon = explode(" ", $social['social_icon']);
-                                                $social_name = explode('-', $icon['1']);
-                                             ?>
-                                            <span class="<?php echo $social_name[1]; ?>" wk-icon="<?php echo $social_name[1]; ?>"></span>
+                                                Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
+                                            ?>
                                         </a>
                                     <?php endforeach; ?>
                                 </div> <!-- wk-width-auto-->
@@ -166,7 +162,7 @@
                         </div> <!-- wk-card-body -->
                     </div>
                     <?php if ($team['image_position'] == 'right'):?> 
-                        <div class="wk-card-media-right wk-cover-container wk-width-1-2@m wk-position-relative">
+                        <div class="wk-card-media-right wk-cover-container wk-width-1-2@m wk-position-relative wk-overflow-hidden">
                             <?php if( $team['single_content_link']):?>
                                 <a class="wk-display-block" href="<?php echo $team['single_content_link']['url']; ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                     <img src="<?php echo $team['single_image']['url']; ?>" alt="">
@@ -181,7 +177,7 @@
 
             <?php elseif($team['item_styles'] == 'screen_4'): ?>
                 <div class="wk-card wk-style-4 ">
-                    <div class="wk-card-wrapper wk-position-relative wk-transition-toggle">
+                    <div class="wk-card-wrapper wk-position-relative wk-transition-toggle wk-overflow-hidden">
                         <?php if( $team['single_content_link']):?>
                             <a class="wk-display-block" href="<?php echo $team['single_content_link']['url']; ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                 <img src="<?php echo $team['single_image']['url']; ?>" alt="">
@@ -214,11 +210,9 @@
                                             <a href="<?php echo $social['social_link']['url']; ?>" 
                                                 <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                                 
-                                                <?php 
-                                                    $icon = explode(" ", $social['social_icon']);
-                                                    $social_name = explode('-', $icon['1']);
-                                                 ?>
-                                                <span class="<?php echo $social_name[1]; ?>" wk-icon="<?php echo $social_name[1]; ?>"></span>
+                                            <?php 
+                                               Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
+                                            ?>
                                             </a>
                                         <?php endforeach; ?>
                                     </div> <!-- wk-width-auto-->
@@ -270,11 +264,9 @@
                                             <a href="<?php echo $social['social_link']['url']; ?>" 
                                                 <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                                 
-                                                <?php 
-                                                    $icon = explode(" ", $social['social_icon']);
-                                                    $social_name = explode('-', $icon['1']);
-                                                 ?>
-                                                <span class="<?php echo $social_name[1]; ?>" wk-icon="<?php echo $social_name[1]; ?>"></span>
+                                            <?php 
+                                                Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
+                                            ?>
                                             </a>
                                         <?php endforeach; ?>
                                     </div> <!-- wk-width-auto-->
@@ -322,10 +314,8 @@
                                             <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                             
                                             <?php 
-                                                $icon = explode(" ", $social['social_icon']);
-                                                $social_name = explode('-', $icon['1']);
-                                             ?>
-                                            <span class="<?php echo $social_name[1]; ?>" wk-icon="<?php echo $social_name[1]; ?>"></span>
+                                                Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
+                                            ?>
                                         </a>
                                     <?php endforeach; ?>
                                 </div> <!-- wk-width-auto-->
@@ -367,12 +357,9 @@
                                     <?php foreach ( $team['social_share'] as $social ) : ?>
                                         <a href="<?php echo $social['social_link']['url']; ?>" 
                                             <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                            
-                                            <?php 
-                                                $icon = explode(" ", $social['social_icon']);
-                                                $social_name = explode('-', $icon['1']);
-                                             ?>
-                                            <span class="<?php echo $social_name[1]; ?>" wk-icon="<?php echo $social_name[1]; ?>"></span>
+                                                <?php 
+                                                   Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
+                                                ?>
                                         </a>
                                     <?php endforeach; ?>
                                 </div> <!-- wk-width-auto-->

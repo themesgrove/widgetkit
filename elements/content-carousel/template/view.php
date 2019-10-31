@@ -3,7 +3,7 @@
     $id = $this->get_id();?>
 
         <div class="content-carousel" wk-slider="center:<?php echo $contents['center_mode_enable'] == 'yes'? 'true' :'false'; ?>; sets:<?php echo $contents['set_mode_enable'] == 'yes'? 'true' :'false'; ?>; autoplay:<?php echo $contents['autoplay_mode_enable'] == 'yes'? 'true' :'false'; ?>; autoplay-interval:<?php echo $contents['content_interval_option'];?>;">
-            <div class="wk-visible-toggle wk-light " tabindex="-1">
+            <div class="wk-visible-toggle wk-light <?php echo $contents['arrow_position'] == 'in'? 'wk-position-relative' : ' '; ?> " tabindex="-1">
                 <?php if ($contents['center_mode_enable'] == 'yes'): ?>
                     <ul class="wk-grid-<?php echo $contents['column_gap']?> wk-slider-items wk-child-width-1-2@s" wk-grid>
                 <?php else: ?>
