@@ -378,6 +378,41 @@ class wkfe_testimonial extends Widget_Base {
 		                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
 		                    ]
 		            );
+
+
+
+		            $this->add_control(
+		                'arrow_position',
+		                [
+		                    'label'       => __( 'Position', 'widgetkit-for-elementor' ),
+		                    'type' => Controls_Manager::SELECT,
+		                    'default'  => 'in',
+		                    'options'  => [
+		                        'in'   => __( 'In', 'widgetkit-for-elementor' ),
+		                        'out'  => __( 'Out', 'widgetkit-for-elementor' ),
+		                    ],
+		                   'condition' => [
+		                        'arrow_enable' => 'yes',
+		                    ],
+		                ]
+		            );
+
+		            $this->add_control(
+		                'arrow_on_hover',
+		                    [
+		                        'label'     => esc_html__( 'On Hover Mode', 'widgetkit-for-elementor' ),
+		                        'type'      => Controls_Manager::SWITCHER,
+		                        'default'   => 'no',
+		                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+		                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
+		                    	'condition' => [
+									'arrow_enable' => 'yes',
+									'arrow_position' => 'in',
+								],
+		                    ]
+			        );
+
+		            
 					$this->add_control(
 		                'content_nav_heading',
 		                [
@@ -499,7 +534,7 @@ class wkfe_testimonial extends Widget_Base {
 	                    'range'   => [
 	                        'px'   => [
 	                            'min' => 10,
-	                            'max' => 500,
+	                            'max' => 1920,
 	                        ],
 	                    ],
 	                    'selectors' => [
@@ -664,22 +699,6 @@ class wkfe_testimonial extends Widget_Base {
 		                ]
 		        );
 
-		        $this->add_control(
-		            'content_padding',
-		            [
-		                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
-		                'type'  => Controls_Manager::DIMENSIONS,
-		                'size_units' => [ 'px', '%' ],
-		                'selectors'  => [
-		                    '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body .wk-text-normal' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-		                ],
-		                'condition'   => [
-                        	'item_styles' => ['screen_2'],
-                    	],
-		            ]
-		        );
-
-
 		        $this->add_group_control(
 					Group_Control_Border::get_type(),
 					[
@@ -709,6 +728,21 @@ class wkfe_testimonial extends Widget_Base {
                     	],
 					]
 				);
+
+				$this->add_control(
+		            'content_padding',
+		            [
+		                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
+		                'type'  => Controls_Manager::DIMENSIONS,
+		                'size_units' => [ 'px', '%' ],
+		                'selectors'  => [
+		                    '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body .wk-text-normal' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                ],
+		                'condition'   => [
+                        	'item_styles' => ['screen_2'],
+                    	],
+		            ]
+		        );
 
 
 	            $this->add_control(
@@ -1063,9 +1097,9 @@ class wkfe_testimonial extends Widget_Base {
             $this->add_control(
                 'arrow_hover_background_color',
                     [
-                        'label' => esc_html__( 'Hover Bg Color', 'widgetkit-for-elementor' ),
+                        'label' => esc_html__( 'Hover Background Color', 'widgetkit-for-elementor' ),
                         'type'  => Controls_Manager::COLOR,
-                        'default'   => '#0073aa',
+                        'default'   => '#1379fe',
                         'selectors' => [
                           '{{WRAPPER}} .wk-testimonial .wk-slide-nav .wk-icon:hover' => 'background: {{VALUE}}; transition:all 0.3s ease;',
                         ],
@@ -1076,36 +1110,6 @@ class wkfe_testimonial extends Widget_Base {
                     ]
             );
 
-            $this->add_control(
-                'arrow_position',
-                [
-                    'label'       => __( 'Position', 'widgetkit-for-elementor' ),
-                    'type' => Controls_Manager::SELECT,
-                    'default'  => 'in',
-                    'options'  => [
-                        'in'   => __( 'In', 'widgetkit-for-elementor' ),
-                        'out'  => __( 'Out', 'widgetkit-for-elementor' ),
-                    ],
-                   'condition' => [
-                        'arrow_enable' => 'yes',
-                    ],
-                ]
-            );
-
-            $this->add_control(
-                'arrow_on_hover',
-                    [
-                        'label'     => esc_html__( 'On Hover Mode', 'widgetkit-for-elementor' ),
-                        'type'      => Controls_Manager::SWITCHER,
-                        'default'   => 'no',
-                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-                    	'condition' => [
-							'arrow_enable' => 'yes',
-							'arrow_position' => 'in',
-						],
-                    ]
-	        );
 
             $this->add_control(
 	            'arrow_border_radius',

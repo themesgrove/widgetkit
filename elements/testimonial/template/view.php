@@ -134,7 +134,7 @@
                                     <div class="wk-card wk-card-default wk-grid-collapse wk-margin wk-testimonial-3 wk-flex-middle" wk-grid>
                                   
                                     <?php if($testimonials['thumbnail_position_horizontal'] == 'left'): ;?>
-                                      <div class="wk-cover-container wk-width-auto">
+                                      <div class="wk-cover-container wk-width-1-2@m">
                                           <?php if($testimonial['testimonial_thumb_image']['url']):?>
                                        
                                               <div class="wk-card-media-left wk-overflow-hidden wk-padding-bottom">
@@ -180,7 +180,7 @@
                                         </div>
                                     </div>
                                      <?php if($testimonials['thumbnail_position_horizontal'] == 'right'): ;?>
-                                        <div class="wk-cover-container wk-width-auto">
+                                        <div class="wk-cover-container wk-width-1-2@m">
                                             <?php if($testimonial['testimonial_thumb_image']['url']):?>
                                              
                                                 <div class="wk-card-media-right wk-overflow-hidden wk-padding-bottom">
