@@ -41,6 +41,7 @@ class wkfe_gallery extends Widget_Base {
         return [
             'widgetkit_bs',
             'widgetkit_main',
+            'uikit',
         ];
     }
 	/**
@@ -48,12 +49,9 @@ class wkfe_gallery extends Widget_Base {
 	 **/
 	public function get_script_depends() {
 		return [ 
-			'hoverdir',
-			'modernizr',
-			'animate-text',
-			'mixitup-js',
-			'anime-js',
 			'widgetkit-main',
+			'uikit-js',
+            'uikit-icons',
 		 ];
 	}
 	
@@ -129,6 +127,20 @@ class wkfe_gallery extends Widget_Base {
 			]
 		);
 
+		$repeater->add_control(
+            'item_order',
+                [
+                    'label'       => __( 'Orderby', 'widgetkit-for-elementor' ),
+                    'type' => Controls_Manager::SELECT,
+                    'default' => 'default',
+                    'options' => [
+                        'default' => __( 'Defualt', 'widgetkit-for-elementor' ),
+                        'first'   => __( 'First', 'widgetkit-for-elementor' ),
+                        'last'    => __( 'Last', 'widgetkit-for-elementor' ),
+                    ],
+                ]
+        );
+
 
 		$repeater->add_control(
 			'demo_link',
@@ -193,7 +205,110 @@ class wkfe_gallery extends Widget_Base {
 
 	$this->end_controls_section();
 	// Content options End
-	
+
+
+
+		$this->start_controls_section(
+			'item_layout',
+			[
+				'label' => esc_html__( 'Layout', 'widgetkit-for-elementor' ),
+				// 'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+
+		$this->add_control(
+			'colmun_layout',
+				[
+					'label'     => esc_html__( 'Number of Column', 'widgetkit-for-elementor' ),
+					'type'      => Controls_Manager::SELECT,
+					'default'   => '4',
+					'options'   => [
+						'1'     => esc_html__( '1', 'widgetkit-for-elementor' ),
+						'2'     => esc_html__( '2', 'widgetkit-for-elementor' ),
+						'3'     => esc_html__( '3', 'widgetkit-for-elementor' ),
+						'4'     => esc_html__( '4', 'widgetkit-for-elementor' ),
+						'5'     => esc_html__( '5', 'widgetkit-for-elementor' ),
+						'6'     => esc_html__( '6', 'widgetkit-for-elementor' ),
+					],
+				]
+		);
+
+
+        $this->add_control(
+            'column_gap',
+                [
+                    'label'       => __( 'Colum Gap', 'widgetkit-for-elementor' ),
+                    'type' => Controls_Manager::SELECT,
+                    'default' => 'medium',
+                    'options' => [
+                        'collapse'=> __( 'None', 'widgetkit-for-elementor' ),
+                        'small'   => __( 'Small', 'widgetkit-for-elementor' ),
+                        'medium'  => __( 'Medium', 'widgetkit-for-elementor' ),
+                        'large'   => __( 'Large', 'widgetkit-for-elementor' ),
+                    ],
+                ]
+        );
+
+
+		// $this->add_responsive_control(
+		// 	'item_spacing',
+		// 		[
+		// 			'label'  => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
+		// 			'type'   => Controls_Manager::SLIDER,
+		// 			'range'  => [
+		// 				'px' => [
+		// 					'min' => 0,
+		// 					'max' => 10,
+		// 				],
+		// 			],
+		// 			'selectors' => [
+		// 				'{{WRAPPER}} .tgx-portfolio .portfolio-item' => 'padding: {{SIZE}}{{UNIT}};',
+		// 			],
+		// 		]
+		// );
+
+		$this->add_control(
+			'hover_effect',
+				[
+					'label'     => esc_html__( 'Hover Effect', 'widgetkit-for-elementor' ),
+					'type'      => Controls_Manager::SELECT,
+					'default'   => 'hover_1',
+					'options'   => [
+						'hover_1'     => esc_html__( 'Hover 1', 'widgetkit-for-elementor' ),
+						'hover_2'     => esc_html__( 'Hover 2', 'widgetkit-for-elementor' ),
+						'hover_3'     => esc_html__( 'Hover 3', 'widgetkit-for-elementor' ),
+						'hover_4'     => esc_html__( 'Hover 4', 'widgetkit-for-elementor' ),
+					],
+				]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_content_filter',
+			[
+				'label' => esc_html__( 'Filter', 'widgetkit-for-elementor' ),
+				// 'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+
+		$this->add_control(
+			'filter_enable',
+			[
+				'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
+				'type'      => Controls_Manager::SWITCHER,
+				'default'   => 'yes',
+				'enable'    => esc_html__( 'Enable', 'widgetkit-for-elementor' ),
+				'disable'   => esc_html__( 'Disable', 'widgetkit-for-elementor' ),
+			]
+		);
+
+		$this->end_controls_section();
+
+
+
 	/**
 	 * Pro control panel 
 	 */
@@ -219,68 +334,6 @@ class wkfe_gallery extends Widget_Base {
 		$this->end_controls_section();
 	endif;
 
-	
-
-
-		$this->start_controls_section(
-			'item_layout',
-			[
-				'label' => esc_html__( 'Layout', 'widgetkit-for-elementor' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-
-		$this->add_control(
-			'colmun_layout',
-				[
-					'label'     => esc_html__( 'Number of Column', 'widgetkit-for-elementor' ),
-					'type'      => Controls_Manager::SELECT,
-					'default'   => '4',
-					'options'   => [
-						'1'     => esc_html__( '1', 'widgetkit-for-elementor' ),
-						'2'     => esc_html__( '2', 'widgetkit-for-elementor' ),
-						'3'     => esc_html__( '3', 'widgetkit-for-elementor' ),
-						'4'     => esc_html__( '4', 'widgetkit-for-elementor' ),
-						'5'     => esc_html__( '5', 'widgetkit-for-elementor' ),
-						'6'     => esc_html__( '6', 'widgetkit-for-elementor' ),
-					],
-				]
-		);
-
-		$this->add_responsive_control(
-			'item_spacing',
-				[
-					'label'  => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
-					'type'   => Controls_Manager::SLIDER,
-					'range'  => [
-						'px' => [
-							'min' => 0,
-							'max' => 10,
-						],
-					],
-					'selectors' => [
-						'{{WRAPPER}} .tgx-portfolio .portfolio-item' => 'padding: {{SIZE}}{{UNIT}};',
-					],
-				]
-		);
-
-		$this->add_control(
-			'hover_effect',
-				[
-					'label'     => esc_html__( 'Hover Effect', 'widgetkit-for-elementor' ),
-					'type'      => Controls_Manager::SELECT,
-					'default'   => 'hover_1',
-					'options'   => [
-						'hover_1'     => esc_html__( 'Hover 1', 'widgetkit-for-elementor' ),
-						'hover_2'     => esc_html__( 'Hover 2', 'widgetkit-for-elementor' ),
-						'hover_3'     => esc_html__( 'Hover 3', 'widgetkit-for-elementor' ),
-						'hover_4'     => esc_html__( 'Hover 4', 'widgetkit-for-elementor' ),
-					],
-				]
-		);
-
-		$this->end_controls_section();
 
 		$this->start_controls_section(
 			'section_style',
@@ -290,17 +343,6 @@ class wkfe_gallery extends Widget_Base {
 			]
 		);
 
-
-		$this->add_control(
-			'filter_enable',
-			[
-				'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
-				'type'      => Controls_Manager::SWITCHER,
-				'default'   => 'yes',
-				'enable'    => esc_html__( 'Enable', 'widgetkit-for-elementor' ),
-				'disable'   => esc_html__( 'Disable', 'widgetkit-for-elementor' ),
-			]
-		);
 
 		$this->add_control(
 			'filter_layout_align',
@@ -330,12 +372,12 @@ class wkfe_gallery extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'filter_hr',
-			[
-			'type' => \Elementor\Controls_Manager::DIVIDER,
-			]
-		);
+		// $this->add_control(
+		// 	'filter_hr',
+		// 	[
+		// 	'type' => \Elementor\Controls_Manager::DIVIDER,
+		// 	]
+		// );
 		$this->add_control(
 			'filter_show_title',
 			[
@@ -349,28 +391,28 @@ class wkfe_gallery extends Widget_Base {
 		);
 
 
-		$this->add_responsive_control(
-			'filter_spacing',
-				[
-					'label'  => esc_html__( 'Spacing', 'widgetkit-for-elementor' ),
-					'type'   => Controls_Manager::SLIDER,
-					'default'  => [
-						'size' => 10,
-					],
-					'range'  => [
-						'px' => [
-							'min' => 0,
-							'max' => 100,
-						],
-					],
-					'selectors' => [
-						'{{WRAPPER}} .tgx-portfolio .portfolio-filter' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-					],
-					'condition' => [
-		                'filter_enable' => 'yes',
-		            ],
-				]
-		);
+		// $this->add_responsive_control(
+		// 	'filter_spacing',
+		// 		[
+		// 			'label'  => esc_html__( 'Spacing', 'widgetkit-for-elementor' ),
+		// 			'type'   => Controls_Manager::SLIDER,
+		// 			'default'  => [
+		// 				'size' => 10,
+		// 			],
+		// 			'range'  => [
+		// 				'px' => [
+		// 					'min' => 0,
+		// 					'max' => 100,
+		// 				],
+		// 			],
+		// 			'selectors' => [
+		// 				'{{WRAPPER}} .tgx-portfolio .portfolio-filter' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+		// 			],
+		// 			'condition' => [
+		//                 'filter_enable' => 'yes',
+		//             ],
+		// 		]
+		// );
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
