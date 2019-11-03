@@ -24,7 +24,8 @@ class WKFE_Elements{
         $widgetkit_elements_keys = [
             'widget-slider-animation', 
             'widget-slider-content-animation', 
-            'widget-slider-box-animation', 
+            'widget-slider-box-animation',
+            'widget-gallery',
             'widget-portfolio',
             'widget-pricing-single', 
             'widget-pricing-icon', 
@@ -52,6 +53,11 @@ class WKFE_Elements{
         $widgetkit_default_settings = array_fill_keys( $widgetkit_elements_keys, true ); 
 
         $check_component_active = get_option( 'widgetkit_save_settings', $widgetkit_default_settings );
+
+        if( $check_component_active['widget-gallery'] ) {
+            require_once WK_PATH . '/elements/gallery/widget.php';
+        }
+        
 
         if( $check_component_active['widget-portfolio'] ) {
             require_once WK_PATH . '/elements/portfolio/widget.php';
