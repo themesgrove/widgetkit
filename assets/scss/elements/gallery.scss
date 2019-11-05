@@ -1,0 +1,78 @@
+.wk-gallery{
+  .wk-tab{
+    li{
+      a{
+        padding:5px 15px;
+        background:rgba(245, 245, 245, 0.93);
+        font-size: 14px;
+        text-transform: uppercase;
+        color:#3e4b5c;
+        border:1px solid #ddd;
+        &:hover{
+          color:#63b570;
+          box-shadow: 0px 2px 2px #ddd;
+
+        }
+      }
+    }
+    .wk-active{
+      a{
+        color:#63b570;
+        box-shadow:0px 2px 2px #ddd;
+      }
+    }
+  }
+
+  .wk-card{
+      transition:all 0.3s ease;
+      &:before{
+        content:"";
+        position:absolute;
+        left:100px;
+        right:0;
+        width:100%;
+        height:100%;
+        background:rgba(0, 0, 0, 0.58);
+        top:0;
+        bottom:0;
+        opacity:0;
+         transition:all 0.3s ease;
+      }
+    .wk-card-body{
+      .wk-card-title{
+        font-size:24px;
+      }
+      color:#fff;
+      a{
+        color:#fff;
+      }
+      opacity:0;
+      transition:all 0.3s ease;
+        .gallery-lightbox{
+            a{
+              display:inline-block;
+              background: transparent;
+              width: 40px;
+              height: 40px;
+              line-height: 37px;
+              margin: 0 5px;
+              border:1px solid #fff;
+              border-radius: 50px;
+               transition:all 0.3s ease;
+               color:#fff;
+            }
+          }
+    }
+    &:hover{
+      &:before{
+        opacity:1;
+        transition:all 0.3s ease;
+        left:0;
+      }
+       .wk-card-body{
+          opacity:1;
+          transition:all 0.3s ease;
+        }
+    }
+  }
+}
