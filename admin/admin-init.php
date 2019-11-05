@@ -101,7 +101,7 @@ class Widgetkit_Admin
      * Register scripts
      */
     public function widgetkit_for_elementor_admin_page_scripts () {
-        wp_enqueue_style( 'widgetkit-admin',  plugins_url('/assets/css/admin.css', __FILE__  ));
+        wp_enqueue_style( 'widgetkit-admin',  WK_URL.'/dist/css/wk-dashboard.css', array(), WK_VERSION, '' );
         wp_enqueue_style( 'widgetkit-sweetalert2-css', plugins_url('/assets/css/sweetalert2.min.css', __FILE__ ));
         
         wp_enqueue_script('widgetkit-elementor-admin-js', plugins_url('/assets/js/admin.js', __FILE__) , array('jquery','jquery-ui-tabs'), '1.0' , true );
@@ -165,14 +165,14 @@ class Widgetkit_Admin
 ?>
 
 
-    <div class="wrap">
+    <div class="wrap wk-dashboard-wrapper">
         <div class="response-wrap"></div>
         <form action="" method="POST" id="widgetkit-settings" name="widgetkit-settings">
         <div class="wk-container">
             <div class="wk-header wk-padding-small wk-card wk-card-default wk-margin-medium-top">
                 <div class="wk-header__top wk-margin-small-bottom">
-                    <div class="">
-                        <img src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="120" wk-svg>
+                    <div class="wk-text-center wk-padding-small">
+                        <img src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="200" wk-svg>
                     </div>
                 </div>
                 <div class="wk-navbar wk-margin-small-top" wk-grid>
@@ -192,7 +192,7 @@ class Widgetkit_Admin
                 </div>
             </div>
 
-            <div class="wk-main wk-margin">
+            <div class="wk-main wk-margin wk-padding-small wk-background-default">
                 <div class="wk-grid">
                     <?php if (!apply_filters('wkpro_enabled', false)) :?>
                     <div class="wk-width-3-4">
@@ -202,22 +202,28 @@ class Widgetkit_Admin
                         <div class="wk-card-small">
                             <ul id="wk-options" class="wk-switcher">
                                 <li>
-                                    <div class="wk-grid wk-child-width-1-2 wk-grid-match" wk-grid>
+                                    <div class="wk-grid wk-child-width-1-3 wk-grid-match" wk-grid>
                                         <div>
                                             <div class="wk-card wk-card-default wk-card-body">
-                                                <h4>Documentation</h4>
-                                                <p>It’s highly recommended to check out documentation and FAQ before using this plugin. <a target="_blank" href="https://themesgrove.com/support/">Click Here </a> for more details.</p>
+                                                <h3 class="wk-card-title wk-margin-remove-top">Documentation</h3>
+                                                <p>It’s highly recommended to check out documentation and FAQ before using this plugin. <a class="wk-alert-primary" target="_blank" href="https://themesgrove.com/support/"><code class="wk-alert-primary">Click Here</code></a> for more details.</p>
                                             </div>
                                         </div>
                                         <div>
                                             <div class="wk-card wk-card-secondary wk-card-body">
-                                                <h3  class="wk-card-title"><?php echo  __( 'Need Any Help?');?></h3>
-                                                <p>Feel free to join us in our <a target="_blank" href="https://www.facebook.com/groups/widgetkitcommunity/">Official Facebook Group</a> for discussion, support and chill. If you need more help just shoot us an email <code>help@themesgrove.com</code>.</p>
+                                                <h3 class="wk-card-title wk-margin-remove-top"><?php echo  __( 'Need Any Help?');?></h3>
+                                                <p>If you need help just shoot us an email <code>help@themesgrove.com</code>.</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="wk-card wk-card-default wk-card-body">
+                                                <h3 class="wk-card-title wk-margin-remove-top"><?php echo  __( 'Social Community');?></h3>
+                                                <p>Feel free to join us in our <a target="_blank" href="https://www.facebook.com/groups/widgetkitcommunity/"><code class="wk-alert-primary">Official Facebook Group</code></a> for discussion, support and chill.
                                             </div>
                                         </div>
                                         <div class="wk-width-1-1">
                                             <div class="wk-card wk-card-primary wk-card-body">
-                                                <h3  class="wk-card-title"><?php echo  __( 'Show your Love?');?></h3>
+                                                <h3 class="wk-card-title wk-margin-remove-top"><?php echo  __( 'Show your Love?');?></h3>
                                                 <p>We love to have you in Themesgrove family. We are making WidgetKit more awesome everyday. Take your 2 minutes to review the plugin and spread the love to encourage us to keep it going.</p>
                                                 <a href="https://wordpress.org/support/plugin/widgetkit-for-elementor/reviews/" target="_blank" class="wk-button wk-button-default"><span class="wk-margin-small-right" wk-icon="icon: heart"></span> Leave a Review</a>
                                             </div>
@@ -598,7 +604,7 @@ class Widgetkit_Admin
                     <div class="wk-width-1-4">
                         <div wk-sticky="offset: 40">
                             <div class="wk-card wk-card-default wk-card-body wk-padding-small wk-text-center">
-                                <img class="wk-margin-small-top" src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="200" wk-svg>
+                                <img class="wk-margin-small-top" src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="150" wk-svg>
                                 <p class="wk-text-muted">Get the pro version of <strong>WidgetKit</strong> for more stunning elements and customization options.</p>
                                 <a href="https://themesgrove.com/widgetkit-for-elementor/?utm_campaign=widgetkit-pro&utm_medium=wp-admin&utm_source=pro-feature-button" target="_blank" class="wk-button wk-button-primary "><span class="wk-icon wk-margin-small-right" wk-icon="unlock"></span>Upgrade to Pro</a>
                             </div>
