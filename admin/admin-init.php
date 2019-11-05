@@ -604,7 +604,7 @@ class Widgetkit_Admin
                     <div class="wk-width-1-4">
                         <div wk-sticky="offset: 40">
                             <div class="wk-card wk-card-default wk-card-body wk-padding-small wk-text-center">
-                                <img class="wk-margin-small-top" src="<?php echo plugins_url('/assets/images/logo-t.svg', __FILE__)?>" width="150" wk-svg>
+                                <img class="wk-margin-small-top" src="<?php echo plugins_url('/assets/images/widgetkit-pro.svg', __FILE__)?>" width="150" wk-svg>
                                 <p class="wk-text-muted">Get the pro version of <strong>WidgetKit</strong> for more stunning elements and customization options.</p>
                                 <a href="https://themesgrove.com/widgetkit-for-elementor/?utm_campaign=widgetkit-pro&utm_medium=wp-admin&utm_source=pro-feature-button" target="_blank" class="wk-button wk-button-primary "><span class="wk-icon wk-margin-small-right" wk-icon="unlock"></span>Upgrade to Pro</a>
                             </div>
