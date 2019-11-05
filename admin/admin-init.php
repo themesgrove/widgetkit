@@ -115,9 +115,9 @@ class Widgetkit_Admin
         $current_url = add_query_arg(array($_GET), $wp->request);
         $current_url_slug = explode("=", $current_url);
         if($current_url && $current_url_slug[1] === 'widgetkit-settings' ){
-            wp_enqueue_style( 'uikit',  plugins_url('/dist/css/uikit.custom.min.css', dirname(__FILE__)  ));
-            wp_enqueue_script( 'uikit',  plugins_url('/dist/js/uikit.min.js', dirname(__FILE__)  ));
-            wp_enqueue_script( 'uikit-icon',  plugins_url('/dist/js/uikit-icons.min.js', dirname(__FILE__)  ));
+            wp_enqueue_style( 'wkkit',  plugins_url('/dist/css/uikit.custom.min.css', dirname(__FILE__)  ));
+            wp_enqueue_script( 'wkkit',  plugins_url('/dist/js/uikit.min.js', dirname(__FILE__)  ));
+            wp_enqueue_script( 'wkkit-icon',  plugins_url('/dist/js/uikit-icons.min.js', dirname(__FILE__)  ));
         }
     }
 
