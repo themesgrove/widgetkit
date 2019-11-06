@@ -180,6 +180,7 @@ class Widgetkit_Admin
                         <ul class="wk-tab-bottom wk-margin-remove-bottom" wk-tab="connect: #wk-options; animation: wk-animation-slide-left-small, wk-animation-slide-right-small">
                             <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="home"></span> Overview</a></li>
                             <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="thumbnails"></span> Elements</a></li>
+                            <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="thumbnails"></span>Pro Elements</a></li>
                             <!-- <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="info"></span> Info</a></li>-->
                             <?php if (!apply_filters('wkpro_enabled', false)) :?>
                                 <li><a class="wk-text-danger" href="#"><span class="wk-icon wk-margin-small-right" wk-icon="star"></span> Pro Features</a></li>
@@ -512,6 +513,49 @@ class Widgetkit_Admin
 
                                     </div>
 
+                                </li>
+                                <li>
+                                    <div class="wk-grid wk-child-width-1-2 wk-grid-match" wk-grid>
+                                        <div>
+                                            <div class="" wk-grid>
+                                                <div class="wk-width-auto@m wk-card-media-left wk-cover-container">
+                                                    <img src="<?php echo plugins_url('/assets/images/woocommerce-logo.svg', __FILE__)?>" width="100">
+                                                </div>
+                                                <div class="wk-width-expand@m">
+                                                    <div class="wk-card-body wk-padding-remove">
+                                                        <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
+                                                            <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('WooCommerce', 'widgetkit-for-elementor')?></h3>
+                                                            <label class="switch">
+                                                                <input type="checkbox" id="widgetkit-pro-woocommerce" name="widgetkit-pro-woocommerce" <?php checked(1, 'widgetkit-pro-woocommerce', true) ?>>
+                                                                <span class="rectangle round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <p><?php esc_html_e('Build your shop quickly with our powerful WooCommerce Elements', 'widgetkit-for-elementor');?></p>
+                                                        <a href="#"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="wk-card wk-card-secondary wk-card-body">
+                                                <h3 class="wk-card-title wk-margin-remove-top"><?php echo  __( 'Need Any Help?');?></h3>
+                                                <p>If you need help just shoot us an email <code>help@themesgrove.com</code>.</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="wk-card wk-card-default wk-card-body">
+                                                <h3 class="wk-card-title wk-margin-remove-top"><?php echo  __( 'Social Community');?></h3>
+                                                <p>Feel free to join us in our <a target="_blank" href="https://www.facebook.com/groups/widgetkitcommunity/"><code class="wk-alert-primary">Official Facebook Group</code></a> for discussion, support and chill.
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="wk-card wk-card-default wk-card-body">
+                                                <h3 class="wk-card-title wk-margin-remove-top"><?php echo  __( 'Social Community');?></h3>
+                                                <p>Feel free to join us in our <a target="_blank" href="https://www.facebook.com/groups/widgetkitcommunity/"><code class="wk-alert-primary">Official Facebook Group</code></a> for discussion, support and chill.
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
                                 </li>
 
                                 <?php if (!apply_filters('wkpro_enabled', false)) :?>
