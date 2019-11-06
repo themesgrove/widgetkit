@@ -271,6 +271,68 @@ class wkfe_gallery extends Widget_Base {
 		$this->end_controls_section();
 
 		$this->start_controls_section(
+			'section_contorls',
+			[
+				'label' => esc_html__( 'Controls', 'widgetkit-for-elementor' ),
+				// 'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+			$this->add_control(
+				'masonary_enable',
+				[
+					'label'     => esc_html__( 'Masonary', 'widgetkit-for-elementor' ),
+					'type'      => Controls_Manager::SWITCHER,
+					'default'   => 'yes',
+					'enable'    => esc_html__( 'Enable', 'widgetkit-for-elementor' ),
+					'disable'   => esc_html__( 'Disable', 'widgetkit-for-elementor' ),
+				]
+			);
+
+			$this->add_control(
+				'lightcase_enable',
+				[
+					'label'     => esc_html__( 'Lightcase', 'widgetkit-for-elementor' ),
+					'type'      => Controls_Manager::SWITCHER,
+					'default'   => 'yes',
+					'enable'    => esc_html__( 'Enable', 'widgetkit-for-elementor' ),
+					'disable'   => esc_html__( 'Disable', 'widgetkit-for-elementor' ),
+				]
+			);
+
+			$this->add_control(
+				'lightcase_animation',
+					[
+						'label'     => esc_html__('Animation', 'widgetkit-for-elementor' ),
+						'type'      => Controls_Manager::SELECT,
+						'default'   => 'scale',
+						'options'   => [
+							'none'     => esc_html__( 'None', 'widgetkit-for-elementor' ),
+							'slide'    => esc_html__( 'Slide', 'widgetkit-for-elementor' ),
+							'fade'     => esc_html__( 'Fade', 'widgetkit-for-elementor' ),
+							'scale'    => esc_html__( 'Scale', 'widgetkit-for-elementor' ),
+						],
+						'condition' => [
+							'lightcase_enable' => 'yes',
+						],
+					]
+			);
+
+			$this->add_control(
+				'link_enable',
+				[
+					'label'     => esc_html__( 'Link', 'widgetkit-for-elementor' ),
+					'type'      => Controls_Manager::SWITCHER,
+					'default'   => 'yes',
+					'enable'    => esc_html__( 'Enable', 'widgetkit-for-elementor' ),
+					'disable'   => esc_html__( 'Disable', 'widgetkit-for-elementor' ),
+				]
+			);
+
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
 			'section_content_filter',
 			[
 				'label' => esc_html__( 'Filter', 'widgetkit-for-elementor' ),
@@ -337,6 +399,9 @@ class wkfe_gallery extends Widget_Base {
 			[
 				'label' => esc_html__( 'Filter', 'widgetkit-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
+				'condition'=> [
+			        'filter_enable' => 'yes',
+			    ],
 			]
 		);
 

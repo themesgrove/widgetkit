@@ -25,6 +25,7 @@
 
   .wk-card{
       transition:all 0.3s ease;
+      background:transparent;
       &:before{
         content:"";
         position:absolute;
@@ -39,10 +40,13 @@
          transition:all 0.3s ease;
       }
     .wk-card-body{
+       color:#fff;
+       background:transparent;
       .wk-card-title{
         font-size:24px;
+         color:#fff;
       }
-      color:#fff;
+     
       a{
         color:#fff;
       }
