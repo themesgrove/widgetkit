@@ -180,7 +180,7 @@ class Widgetkit_Admin
                         <ul class="wk-tab-bottom wk-margin-remove-bottom" wk-tab="connect: #wk-options; animation: wk-animation-slide-left-small, wk-animation-slide-right-small">
                             <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="home"></span> Overview</a></li>
                             <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="thumbnails"></span> Elements</a></li>
-                            <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="thumbnails"></span>Pro Elements</a></li>
+                            <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="bolt"></span>Pro Integration</a></li>
                             <!-- <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="info"></span> Info</a></li>-->
                             <?php if (!apply_filters('wkpro_enabled', false)) :?>
                                 <li><a class="wk-text-danger" href="#"><span class="wk-icon wk-margin-small-right" wk-icon="star"></span> Pro Features</a></li>
@@ -515,8 +515,9 @@ class Widgetkit_Admin
 
                                 </li>
                                 <li>
-                                    <div class="wk-grid wk-child-width-1-2 wk-grid-match" wk-grid>
-                                        <div>
+                                    <div class="wk-pro-integrated-plugin">
+                                        <!-- WooCommerce -->
+                                        <div class="wk-padding-small wk-background-muted">
                                             <div class="" wk-grid>
                                                 <div class="wk-width-auto@m wk-card-media-left wk-cover-container">
                                                     <img src="<?php echo plugins_url('/assets/images/woocommerce-logo.svg', __FILE__)?>" width="100">
@@ -525,33 +526,94 @@ class Widgetkit_Admin
                                                     <div class="wk-card-body wk-padding-remove">
                                                         <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
                                                             <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('WooCommerce', 'widgetkit-for-elementor')?></h3>
-                                                            <label class="switch">
-                                                                <input type="checkbox" id="widgetkit-pro-woocommerce" name="widgetkit-pro-woocommerce" <?php checked(1, 'widgetkit-pro-woocommerce', true) ?>>
-                                                                <span class="rectangle round"></span>
-                                                            </label>
+                                                            <?php if (!apply_filters('wkpro_enabled', false)): ?>
+                                                                <span class="wk-label">Pro</span>
+                                                            <?php else:?>
+                                                                <label class="switch">
+                                                                    <input type="checkbox" id="widgetkit-pro-woocommerce" name="widgetkit-pro-woocommerce" <?php checked(1, 'widgetkit-pro-woocommerce', true) ?>>
+                                                                    <span class="rectangle round"></span>
+                                                                </label>
+                                                            <?php endif; ?>
                                                         </div>
-                                                        <p><?php esc_html_e('Build your shop quickly with our powerful WooCommerce Elements', 'widgetkit-for-elementor');?></p>
+                                                        <p><?php esc_html_e('Build your shop quickly with our powerful WooCommerce Elements.', 'widgetkit-for-elementor');?></p>
                                                         <a href="#"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div>
-                                            <div class="wk-card wk-card-secondary wk-card-body">
-                                                <h3 class="wk-card-title wk-margin-remove-top"><?php echo  __( 'Need Any Help?');?></h3>
-                                                <p>If you need help just shoot us an email <code>help@themesgrove.com</code>.</p>
+                                        <!-- LearnDash -->
+                                        <div class="wk-padding-small wk-background-muted">
+                                            <div class="" wk-grid>
+                                                <div class="wk-width-auto@m wk-card-media-left wk-cover-container">
+                                                    <img src="<?php echo plugins_url('/assets/images/learndash-logo.png', __FILE__)?>" width="100">
+                                                </div>
+                                                <div class="wk-width-expand@m">
+                                                    <div class="wk-card-body wk-padding-remove">
+                                                        <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
+                                                            <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('LearnDash', 'widgetkit-for-elementor')?></h3>
+                                                            <?php if (!apply_filters('wkpro_enabled', false)): ?>
+                                                                <span class="wk-label">Pro</span>
+                                                            <?php else:?>
+                                                                <label class="switch">
+                                                                    <input type="checkbox" id="widgetkit-pro-woocommerce" name="widgetkit-pro-woocommerce" <?php checked(1, 'widgetkit-pro-woocommerce', true) ?>>
+                                                                    <span class="rectangle round"></span>
+                                                                </label>
+                                                            <?php endif; ?>
+                                                        </div>
+                                                        <p><?php esc_html_e('Our learndash elments helps you to create your course landing page more smoothly.', 'widgetkit-for-elementor');?></p>
+                                                        <a href="#"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div>
-                                            <div class="wk-card wk-card-default wk-card-body">
-                                                <h3 class="wk-card-title wk-margin-remove-top"><?php echo  __( 'Social Community');?></h3>
-                                                <p>Feel free to join us in our <a target="_blank" href="https://www.facebook.com/groups/widgetkitcommunity/"><code class="wk-alert-primary">Official Facebook Group</code></a> for discussion, support and chill.
+                                        <!-- LearnPress -->
+                                        <div class="wk-padding-small wk-background-muted">
+                                            <div class="" wk-grid>
+                                                <div class="wk-width-auto@m wk-card-media-left wk-cover-container">
+                                                    <img src="<?php echo plugins_url('/assets/images/learnpress-logo.png', __FILE__)?>" width="100">
+                                                </div>
+                                                <div class="wk-width-expand@m">
+                                                    <div class="wk-card-body wk-padding-remove">
+                                                        <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
+                                                            <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('LearnPress', 'widgetkit-for-elementor')?></h3>
+                                                            <?php if (!apply_filters('wkpro_enabled', false)): ?>
+                                                                <span class="wk-label">Pro</span>
+                                                            <?php else:?>
+                                                                <label class="switch">
+                                                                    <input type="checkbox" id="widgetkit-pro-woocommerce" name="widgetkit-pro-woocommerce" <?php checked(1, 'widgetkit-pro-woocommerce', true) ?>>
+                                                                    <span class="rectangle round"></span>
+                                                                </label>
+                                                            <?php endif; ?>
+                                                        </div>
+                                                        <p><?php esc_html_e('Our more customizable learnpress elements lets you to build your site more quickly.', 'widgetkit-for-elementor');?></p>
+                                                        <a href="#"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div>
-                                            <div class="wk-card wk-card-default wk-card-body">
-                                                <h3 class="wk-card-title wk-margin-remove-top"><?php echo  __( 'Social Community');?></h3>
-                                                <p>Feel free to join us in our <a target="_blank" href="https://www.facebook.com/groups/widgetkitcommunity/"><code class="wk-alert-primary">Official Facebook Group</code></a> for discussion, support and chill.
+                                        <!-- Sensei -->
+                                        <div class="wk-padding-small wk-background-muted">
+                                            <div class="" wk-grid>
+                                                <div class="wk-width-auto@m wk-card-media-left wk-cover-container">
+                                                    <img src="<?php echo plugins_url('/assets/images/sensei-logo.png', __FILE__)?>" width="100">
+                                                </div>
+                                                <div class="wk-width-expand@m">
+                                                    <div class="wk-card-body wk-padding-remove">
+                                                        <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
+                                                            <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('Sensei', 'widgetkit-for-elementor')?></h3>
+                                                            <?php if (!apply_filters('wkpro_enabled', false)): ?>
+                                                                <span class="wk-label">Pro</span>
+                                                            <?php else:?>
+                                                                <label class="switch">
+                                                                    <input type="checkbox" id="widgetkit-pro-woocommerce" name="widgetkit-pro-woocommerce" <?php checked(1, 'widgetkit-pro-woocommerce', true) ?>>
+                                                                    <span class="rectangle round"></span>
+                                                                </label>
+                                                            <?php endif; ?>
+                                                        </div>
+                                                        <p><?php esc_html_e('We are working hard to bring some niche elements which are integrated with Sensei.', 'widgetkit-for-elementor');?></p>
+                                                        <a href="#"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         
@@ -647,7 +709,7 @@ class Widgetkit_Admin
                     <?php if (!apply_filters('wkpro_enabled', false)) :?>
                     <div class="wk-width-1-4">
                         <div wk-sticky="offset: 40">
-                            <div class="wk-card wk-card-default wk-card-body wk-padding-small wk-text-center">
+                            <div class="wk-card wk-card-default wk-card-body  wk-background-small wk-text-center">
                                 <img class="wk-margin-small-top" src="<?php echo plugins_url('/assets/images/widgetkit-pro.svg', __FILE__)?>" width="150" wk-svg>
                                 <p class="wk-text-muted">Get the pro version of <strong>WidgetKit</strong> for more stunning elements and customization options.</p>
                                 <a href="https://themesgrove.com/widgetkit-for-elementor/?utm_campaign=widgetkit-pro&utm_medium=wp-admin&utm_source=pro-feature-button" target="_blank" class="wk-button wk-button-primary "><span class="wk-icon wk-margin-small-right" wk-icon="unlock"></span>Upgrade to Pro</a>
