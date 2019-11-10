@@ -38,12 +38,42 @@ class Widgetkit_Admin
         'widget-post-carousel',
     ];
 
+    public $widgetkit_woo_keys = [
+        'wke-woo-product',
+        'wke-woo-product-carousel',
+        'wke-woo-categories',
+        'wke-woo-recent-product',
+    ];
+
+    public $widgetkit_ld_keys = [
+        'wke-ld-course-list',
+        'wke-ld-course-tab',
+    ];
+
+    public $widgetkit_lp_keys = [
+        'wke-lp-course-list',
+        'wke-lp-course-tab',
+    ];
+    
+    public $widgetkit_sensei_keys = [
+        'wke-sensei-course-list',
+        'wke-sensei-course-tab',
+    ];
+
     // Default settings
     private $widgetkit_default_settings;
-    // Switch settings
+    private $widgetkit_woo_settings;
+    private $widgetkit_ld_settings;
+    private $widgetkit_lp_settings;
+    private $widgetkit_sensei_settings;
+    // widgetkit settings
     private $widgetkit_settings;
-    // Switch get settings
+    // widgetkit get settings
     private $widgetkit_get_settings;
+    private $widgetkit_get_woo_settings;
+    private $widgetkit_get_ld_settings;
+    private $widgetkit_get_lp_settings;
+    private $widgetkit_get_sensei_settings;
 
     /**
      * Register construct
@@ -151,8 +181,17 @@ class Widgetkit_Admin
         wp_localize_script('widgetkit-elementor-admin-js', 'settings', $js_info);
        
 	   $this->widgetkit_default_settings = array_fill_keys( $this->widgetkit_elements_keys, true );
+       $this->widgetkit_woo_settings = array_fill_keys( $this->widgetkit_woo_keys, false );
+       //    $this->widgetkit_ld_settings = array_fill_keys( $this->widgetkit_ld_keys, true );
+       //    $this->widgetkit_lp_settings = array_fill_keys( $this->widgetkit_lp_keys, true );
+       //    $this->widgetkit_sensei_settings = array_fill_keys( $this->widgetkit_sensei_keys, true );
        
-	   $this->widgetkit_get_settings = get_option( 'widgetkit_save_settings', $this->widgetkit_default_settings );
+	    $this->widgetkit_get_settings = get_option( 'widgetkit_save_settings', $this->widgetkit_default_settings );
+        $this->widgetkit_get_woo_settings = get_option( 'widgetkit_save_woo_settings', $this->widgetkit_woo_settings );
+        var_dump($this->widgetkit_get_woo_settings);
+	//    $this->widgetkit_get_ld_settings = get_option( 'widgetkit_save_settings', $this->widgetkit_ld_settings );
+	//    $this->widgetkit_get_lp_settings = get_option( 'widgetkit_save_settings', $this->widgetkit_lp_settings );
+	//    $this->widgetkit_get_sensei_settings = get_option( 'widgetkit_save_settings', $this->widgetkit_sensei_settings );
        
 	   $widgetkit_new_settings = array_diff_key( $this->widgetkit_default_settings, $this->widgetkit_get_settings );
        
@@ -526,7 +565,7 @@ class Widgetkit_Admin
                                                     <div class="wk-card-body wk-padding-remove">
                                                         <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
                                                             <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('WooCommerce', 'widgetkit-for-elementor')?></h3>
-                                                            <a class="demo-button-for-pro wk-button-primary" href="https://widgetkit.themesgrove.com/woocommerce/"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
+                                                            <a class="demo-button-for-pro wk-button-primary" href="https://themesgrove.com/woocommerce/"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
                                                             <!-- <?php //if (!apply_filters('wkpro_enabled', false)): ?>
                                                                 <span class="wk-label">Pro</span>
                                                             <?php //else:?>
@@ -552,7 +591,7 @@ class Widgetkit_Admin
                                                 <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                     <?php echo __('Woo Product Carousel', 'widgetkit-for-elementor'); ?>
                                                     <label class="switch">
-                                                        <input type="checkbox" id="wke-woo-categories" name="wke-woo-categories" <?php checked(1, $this->widgetkit_get_settings['wke-woo-categories'], false) ?>>
+                                                        <input type="checkbox" id="wke-woo-product-carousel" name="wke-woo-product-carousel" <?php checked(1, $this->widgetkit_get_settings['wke-woo-product-carousel'], false) ?>>
                                                         <span class="rectangle round"></span>
                                                     </label>
                                                 </div>
@@ -566,7 +605,7 @@ class Widgetkit_Admin
                                                 <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                     <?php echo __('Woo Recent Product', 'widgetkit-for-elementor'); ?>
                                                     <label class="switch">
-                                                        <input type="checkbox" id="wke-woo-categories" name="wke-woo-categories" <?php checked(1, $this->widgetkit_get_settings['wke-woo-categories'], false) ?>>
+                                                        <input type="checkbox" id="wke-woo-recent-product" name="wke-woo-recent-product" <?php checked(1, $this->widgetkit_get_settings['wke-woo-recent-product'], false) ?>>
                                                         <span class="rectangle round"></span>
                                                     </label>
                                                 </div>
@@ -582,7 +621,7 @@ class Widgetkit_Admin
                                                     <div class="wk-card-body wk-padding-remove">
                                                         <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
                                                             <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('LearnDash', 'widgetkit-for-elementor')?></h3>
-                                                            <a class="demo-button-for-pro wk-button-primary" href="https://widgetkit.themesgrove.com/learndash/"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
+                                                            <a class="demo-button-for-pro wk-button-primary" href="https://themesgrove.com/learndash/"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
                                                         </div>
                                                         <p><?php esc_html_e('Our learndash elments helps you to create your course landing page more smoothly.', 'widgetkit-for-elementor');?></p>
                                                     </div>
@@ -615,7 +654,7 @@ class Widgetkit_Admin
                                                     <div class="wk-card-body wk-padding-remove">
                                                         <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
                                                             <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('LearnPress', 'widgetkit-for-elementor')?></h3>
-                                                            <a class="demo-button-for-pro wk-button-primary" href="https://widgetkit.themesgrove.com/learnpress/"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
+                                                            <a class="demo-button-for-pro wk-button-primary" href="https://themesgrove.com/learnpress/"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
                                                         </div>
                                                         <p><?php esc_html_e('Our more customizable learnpress elements lets you to build your site more quickly.', 'widgetkit-for-elementor');?></p>
                                                     </div>
@@ -648,7 +687,7 @@ class Widgetkit_Admin
                                                     <div class="wk-card-body wk-padding-remove">
                                                         <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
                                                             <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('Sensei', 'widgetkit-for-elementor')?></h3>
-                                                            <a class="demo-button-for-pro wk-button-primary" href="https://widgetkit.themesgrove.com/sensei/"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
+                                                            <a class="demo-button-for-pro wk-button-primary" href="https://themesgrove.com/sensei/"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
                                                         </div>
                                                         <p><?php esc_html_e('We are working hard to bring some niche elements which are integrated with Sensei.', 'widgetkit-for-elementor');?></p>
                                                     </div>
