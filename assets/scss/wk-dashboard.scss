@@ -415,8 +415,29 @@ input:checked + .rectangle:before {
     .wk-main{
         .wk-pro-integrated-plugin{
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(1, 1fr);
             grid-gap: 20px;
+            .wk-label{
+                background:#ff0001;
+                border-radius:4px;
+            }
+            .demo-button-for-pro{
+                padding:3px 10px;
+                text-decoration: none;
+                margin-top:5px;
+                display:inline-block;
+                font-size: 14px;
+                font-weight: normal;
+                margin-left:10px;
+            }
+            .woo-elements{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 20px;
+                padding: 10px 0px;
+                margin-top: 10px;
+            }
         }
+        
     }
 }
