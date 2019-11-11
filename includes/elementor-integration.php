@@ -17,6 +17,7 @@ class WKFE_Elementor_Category {
 
     public function __construct(){
         $this->elementor_integration();
+        $this->elementor_deprecate_integration();
     }
 
     public function elementor_integration(){
@@ -29,33 +30,11 @@ class WKFE_Elementor_Category {
             1
         );
     }
-
-}
-return WKFE_Elementor_Category::init();
-
-
-
-
-class WKFE_Elementor_Deprecate_Category {
-
-    private static $instance = null;
-
-    public static function init(){
-        if(null === self::$instance ){
-            self::$instance = new self;
-        }
-        return self::$instance;
-    }
-
-    public function __construct(){
-        $this->elementor_deprecate_integration();
-    }
-
     public function elementor_deprecate_integration(){
         Plugin::instance()->elements_manager->add_category(
-            'widgetkit_deprecate_elementor',
+            'widgetkit_deprecated_elements',
             [
-                'title'  => 'WidgetKit Deprecate Elements',
+                'title'  => 'WidgetKit Legacy Elements',
                 'icon'   => 'eicon-font'
             ],
             1
@@ -63,6 +42,7 @@ class WKFE_Elementor_Deprecate_Category {
     }
 
 }
-return WKFE_Elementor_Deprecate_Category::init();
+return WKFE_Elementor_Category::init();
+
 
 

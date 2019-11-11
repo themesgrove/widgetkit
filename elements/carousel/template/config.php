@@ -32,7 +32,7 @@ class wkfe_carousel extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'widgetkit_deprecate_elementor' ];
+		return [ 'widgetkit_deprecated_elements' ];
 	}
 
 	/**
