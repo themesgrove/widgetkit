@@ -312,21 +312,30 @@ class Widgetkit_Admin
                                     </li>
                                     <li>
                                         <div class="wk-grid wk-grid-small wk-child-width-1-3" wk-grid>
+                                            
                                             <div>
                                                 <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo __('Slider Animation', 'widgetkit-for-elementor'); ?>
+                                                    <?php echo esc_html__('Animation Text', 'widgetkit-for-elementor'); ?>
                                                     <label class="switch">
-                                                        <input type="checkbox" id="widget-slider-animation" name="widget-slider-animation" <?php checked(1, $this->widgetkit_get_settings['widget-slider-animation'], true) ?>>
+                                                        <input type="checkbox" id="widget-animation-text" name="widget-animation-text" <?php checked(1, $this->widgetkit_get_settings['widget-animation-text'], true) ?>>
                                                         <span class="rectangle round"></span>
                                                     </label>
-                                                    <!-- <div class="wk-position-top-left wk-label">Pro</div> -->
                                                 </div>
                                             </div>
                                             <div>
                                                 <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo __('Pricing Single', 'widgetkit-for-elementor'); ?>
+                                                    <?php echo esc_html__('Blog Carousel', 'widgetkit-for-elementor'); ?>
                                                     <label class="switch">
-                                                        <input type="checkbox" id="widget-pricing-single" name="widget-pricing-single" <?php checked(1, $this->widgetkit_get_settings['widget-pricing-single'], true) ?>>
+                                                        <input type="checkbox" id="widget-blog-carousel" name="widget-blog-carousel" <?php checked(1, $this->widgetkit_get_settings['widget-blog-carousel'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Blog Image', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-blog-image" name="widget-blog-image" <?php checked(1, $this->widgetkit_get_settings['widget-blog-image'], true) ?>>
                                                         <span class="rectangle round"></span>
                                                     </label>
                                                 </div>
@@ -342,122 +351,9 @@ class Widgetkit_Admin
                                             </div>
                                             <div>
                                                 <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo esc_html__('Testimonial', 'widgetkit-for-elementor'); ?>
-                                                    <label class="switch">
-                                                        <input type="checkbox" id="widget-testimonial" name="widget-testimonial" <?php checked(1, $this->widgetkit_get_settings['widget-testimonial'], true) ?>>
-                                                        <span class="rectangle round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo esc_html__('Slider Content Animation', 'widgetkit-for-elementor'); ?>
-                                                    <label class="switch">
-                                                        <input type="checkbox" id="widget-slider-content-animation" name="widget-slider-content-animation" <?php checked(1, $this->widgetkit_get_settings['widget-slider-content-animation'], true) ?>>
-                                                        <span class="rectangle round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo esc_html__('Pricing Icon', 'widgetkit-for-elementor'); ?>
-                                                    <label class="switch">
-                                                        <input type="checkbox" id="widget-pricing-icon" name="widget-pricing-icon" <?php checked(1, $this->widgetkit_get_settings['widget-pricing-icon'], true) ?>>
-                                                        <span class="rectangle round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo esc_html__('Hover Image', 'widgetkit-for-elementor'); ?>
-                                                    <label class="switch">
-                                                        <input type="checkbox" id="widget-hover-image" name="widget-hover-image" <?php checked(1, $this->widgetkit_get_settings['widget-hover-image'], true) ?>>
-                                                        <span class="rectangle round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                    
-                                            <div>
-                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo esc_html__('Slider Box Animation', 'widgetkit-for-elementor'); ?>
-                                                    <label class="switch">
-                                                        <input type="checkbox" id="widget-slider-box-animation" name="widget-slider-box-animation" <?php checked(1, $this->widgetkit_get_settings['widget-slider-box-animation'], true) ?>>
-                                                        <span class="rectangle round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo esc_html__('Pricing Tabs', 'widgetkit-for-elementor'); ?>
-                                                    <label class="switch">
-                                                        <input type="checkbox" id="widget-pricing-tab" name="widget-pricing-tab" <?php checked(1, $this->widgetkit_get_settings['widget-pricing-tab'], true) ?>>
-                                                        <span class="rectangle round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            
-                                            <div>
-                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo esc_html__('Social Share Animation', 'widgetkit-for-elementor'); ?>
-                                                    <label class="switch">
-                                                        <input type="checkbox" id="widget-social-share-animation" name="widget-social-share-animation" <?php checked(1, $this->widgetkit_get_settings['widget-social-share-animation'], true) ?>>
-                                                        <span class="rectangle round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo esc_html__('Portfolio', 'widgetkit-for-elementor'); ?>
-                                                    <label class="switch">
-                                                        <input type="checkbox" id="widget-portfolio" name="widget-portfolio" <?php checked(1, $this->widgetkit_get_settings['widget-portfolio'], true) ?>>
-                                                        <span class="rectangle round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo esc_html__('Team', 'widgetkit-for-elementor'); ?>
-                                                    <label class="switch">
-                                                        <input type="checkbox" id="widget-team" name="widget-team" <?php checked(1, $this->widgetkit_get_settings['widget-team'], true) ?>>
-                                                        <span class="rectangle round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                            
-                                            <div>
-                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                     <?php echo esc_html__('Blog Hover Animation', 'widgetkit-for-elementor'); ?>
                                                     <label class="switch">
                                                         <input type="checkbox" id="widget-blog-hover-animation" name="widget-blog-hover-animation" <?php checked(1, $this->widgetkit_get_settings['widget-blog-hover-animation'], true) ?>>
-                                                        <span class="rectangle round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo esc_html__('Social Share Collapse', 'widgetkit-for-elementor'); ?>
-                                                    <label class="switch">
-                                                        <input type="checkbox" id="widget-social-share-collapse" name="widget-social-share-collapse" <?php checked(1, $this->widgetkit_get_settings['widget-social-share-collapse'], true) ?>>
-                                                        <span class="rectangle round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo esc_html__('Feature Box', 'widgetkit-for-elementor'); ?>
-                                                    <label class="switch">
-                                                        <input type="checkbox" id="widget-feature-box" name="widget-feature-box" <?php checked(1, $this->widgetkit_get_settings['widget-feature-box'], true) ?>>
-                                                        <span class="rectangle round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                    
-                                            <div>
-                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo esc_html__('Blog Image', 'widgetkit-for-elementor'); ?>
-                                                    <label class="switch">
-                                                        <input type="checkbox" id="widget-blog-image" name="widget-blog-image" <?php checked(1, $this->widgetkit_get_settings['widget-blog-image'], true) ?>>
                                                         <span class="rectangle round"></span>
                                                     </label>
                                                 </div>
@@ -473,25 +369,6 @@ class Widgetkit_Admin
                                             </div>
                                             <div>
                                                 <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo esc_html__('Animation Text', 'widgetkit-for-elementor'); ?>
-                                                    <label class="switch">
-                                                        <input type="checkbox" id="widget-animation-text" name="widget-animation-text" <?php checked(1, $this->widgetkit_get_settings['widget-animation-text'], true) ?>>
-                                                        <span class="rectangle round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                    
-                                            <div>
-                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo esc_html__('Blog Carousel', 'widgetkit-for-elementor'); ?>
-                                                    <label class="switch">
-                                                        <input type="checkbox" id="widget-blog-carousel" name="widget-blog-carousel" <?php checked(1, $this->widgetkit_get_settings['widget-blog-carousel'], true) ?>>
-                                                        <span class="rectangle round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                     <?php echo esc_html__('Countdown', 'widgetkit-for-elementor'); ?>
                                                     <label class="switch">
                                                         <input type="checkbox" id="widget-countdown" name="widget-countdown" <?php checked(1, $this->widgetkit_get_settings['widget-countdown'], true) ?>>
@@ -499,7 +376,125 @@ class Widgetkit_Admin
                                                     </label>
                                                 </div>
                                             </div>
-                                    
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Feature Box', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-feature-box" name="widget-feature-box" <?php checked(1, $this->widgetkit_get_settings['widget-feature-box'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Hover Image', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-hover-image" name="widget-hover-image" <?php checked(1, $this->widgetkit_get_settings['widget-hover-image'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo __('Pricing Single', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-pricing-single" name="widget-pricing-single" <?php checked(1, $this->widgetkit_get_settings['widget-pricing-single'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Pricing Icon', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-pricing-icon" name="widget-pricing-icon" <?php checked(1, $this->widgetkit_get_settings['widget-pricing-icon'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Pricing Tabs', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-pricing-tab" name="widget-pricing-tab" <?php checked(1, $this->widgetkit_get_settings['widget-pricing-tab'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Portfolio', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-portfolio" name="widget-portfolio" <?php checked(1, $this->widgetkit_get_settings['widget-portfolio'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo __('Slider Animation', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-slider-animation" name="widget-slider-animation" <?php checked(1, $this->widgetkit_get_settings['widget-slider-animation'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                    <!-- <div class="wk-position-top-left wk-label">Pro</div> -->
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Slider Content Animation', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-slider-content-animation" name="widget-slider-content-animation" <?php checked(1, $this->widgetkit_get_settings['widget-slider-content-animation'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Slider Box Animation', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-slider-box-animation" name="widget-slider-box-animation" <?php checked(1, $this->widgetkit_get_settings['widget-slider-box-animation'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Social Share Animation', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-social-share-animation" name="widget-social-share-animation" <?php checked(1, $this->widgetkit_get_settings['widget-social-share-animation'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Social Share Collapse', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-social-share-collapse" name="widget-social-share-collapse" <?php checked(1, $this->widgetkit_get_settings['widget-social-share-collapse'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Testimonial', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-testimonial" name="widget-testimonial" <?php checked(1, $this->widgetkit_get_settings['widget-testimonial'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Team', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-team" name="widget-team" <?php checked(1, $this->widgetkit_get_settings['widget-team'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                            
                                             
                                             <div class="wk-width-1-1">
                                                 <h3>Legacy Widgets</h3>

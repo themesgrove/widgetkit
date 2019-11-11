@@ -68,44 +68,11 @@ class WKFE_Elements{
 
         $check_component_active = get_option( 'widgetkit_save_settings', $widgetkit_default_settings );
 
-        if( $check_component_active['widget-portfolio'] ) {
-            require_once WK_PATH . '/elements/portfolio/widget.php';
+        if( $check_component_active['widget-animation-text'] ) {
+            require_once WK_PATH . '/elements/animation-text/widget.php';
         }
-        if( $check_component_active['widget-pricing-single'] ) {
-            require_once WK_PATH . '/elements/pricing-1/widget.php';
-        }
-        if( $check_component_active['widget-pricing-icon'] ) {
-            require_once WK_PATH . '/elements/pricing-2/widget.php';
-        }
-        if( $check_component_active['widget-pricing-tab'] ) {
-            require_once WK_PATH . '/elements/pricing-tab/widget.php';
-        }
-
-        if( $check_component_active['widget-testimonial'] ) {
-            require_once WK_PATH . '/elements/testimonial/widget.php';
-        }
-
-        if( $check_component_active['widget-testimonial-center'] ) {
-            require_once WK_PATH . '/elements/testimonial-1/widget.php';
-        }
-        if( $check_component_active['widget-testimonial-single'] ) {
-            require_once WK_PATH . '/elements/testimonial-2/widget.php';
-        }
-        if( $check_component_active['widget-team'] ) {
-            require_once WK_PATH . '/elements/team/widget.php';
-        }
-
-        if( $check_component_active['widget-team-overlay'] ) {
-            require_once WK_PATH . '/elements/team-1/widget.php';
-        }
-        if( $check_component_active['widget-team-verticle-icon'] ) {
-            require_once WK_PATH . '/elements/team-2/widget.php';
-        }
-        if( $check_component_active['widget-team-round'] ) {
-            require_once WK_PATH . '/elements/team-3/widget.php';
-        }
-        if( $check_component_active['widget-team-animation'] ) {
-            require_once WK_PATH . '/elements/team-4/widget.php';
+        if( $check_component_active['widget-button'] ) {
+            require_once WK_PATH . '/elements/button-modal/widget.php';
         }
         if( $check_component_active['widget-blog-carousel'] ) {
             require_once WK_PATH . '/elements/blog-1/widget.php';
@@ -122,6 +89,35 @@ class WKFE_Elements{
         if( $check_component_active['widget-blog-image'] ) {
             require_once WK_PATH . '/elements/blog-5/widget.php';
         }
+        if( $check_component_active['widget-countdown'] ) {
+            require_once WK_PATH . '/elements/countdown/widget.php';
+        }
+        if( $check_component_active['widget-content-carousel'] ) {
+            require_once WK_PATH . '/elements/content-carousel/widget.php';
+        }
+        if( $check_component_active['widget-post-carousel'] ) {
+            require_once WK_PATH . '/elements/carousel/widget.php';
+        }
+        require_once WK_PATH . '/elements/click-tweet/widget.php';
+        if( $check_component_active['widget-feature-box'] ) {
+            require_once WK_PATH . '/elements/image-feature/widget.php'; // Feature Image/Icon Box
+        }
+        if( $check_component_active['widget-portfolio'] ) {
+            require_once WK_PATH . '/elements/portfolio/widget.php'; // Filterable Portfolio
+        }
+        if( $check_component_active['widget-hover-image'] ) {
+            require_once WK_PATH . '/elements/hover-image/widget.php';
+        }
+        if( $check_component_active['widget-pricing-single'] ) {
+            require_once WK_PATH . '/elements/pricing-1/widget.php';
+        }
+        if( $check_component_active['widget-pricing-icon'] ) {
+            require_once WK_PATH . '/elements/pricing-2/widget.php';
+        }
+        if( $check_component_active['widget-pricing-tab'] ) {
+            require_once WK_PATH . '/elements/pricing-tab/widget.php';
+        }
+        require_once WK_PATH . '/elements/pros-cons/widget.php';
         if( $check_component_active['widget-slider-animation'] ) {
             require_once WK_PATH . '/elements/slider-1/widget.php';
         }
@@ -131,35 +127,38 @@ class WKFE_Elements{
         if( $check_component_active['widget-slider-box-animation'] ) {
             require_once WK_PATH . '/elements/slider-3/widget.php';
         }
-        if( $check_component_active['widget-feature-box'] ) {
-            require_once WK_PATH . '/elements/image-feature/widget.php';
-        }
-        if( $check_component_active['widget-countdown'] ) {
-            require_once WK_PATH . '/elements/countdown/widget.php';
-        }
-        if( $check_component_active['widget-animation-text'] ) {
-            require_once WK_PATH . '/elements/animation-text/widget.php';
-        }
-        if( $check_component_active['widget-content-carousel'] ) {
-            require_once WK_PATH . '/elements/content-carousel/widget.php';
-        }
-        if( $check_component_active['widget-button'] ) {
-            require_once WK_PATH . '/elements/button-modal/widget.php';
-        }
-        if( $check_component_active['widget-hover-image'] ) {
-            require_once WK_PATH . '/elements/hover-image/widget.php';
-        }
         if( $check_component_active['widget-social-share-animation'] ) {
             require_once WK_PATH . '/elements/social-share-1/widget.php';
         }
         if( $check_component_active['widget-social-share-collapse'] ) {
             require_once WK_PATH . '/elements/social-share-2/widget.php';
         }
-        if( $check_component_active['widget-post-carousel'] ) {
-            require_once WK_PATH . '/elements/carousel/widget.php';
+        if( $check_component_active['widget-testimonial'] ) {
+            require_once WK_PATH . '/elements/testimonial/widget.php';
         }
-        require_once WK_PATH . '/elements/pros-cons/widget.php';
-        require_once WK_PATH . '/elements/click-tweet/widget.php';
+        if( $check_component_active['widget-testimonial-center'] ) {
+            require_once WK_PATH . '/elements/testimonial-1/widget.php';
+        }
+        if( $check_component_active['widget-testimonial-single'] ) {
+            require_once WK_PATH . '/elements/testimonial-2/widget.php';
+        }
+        if( $check_component_active['widget-team'] ) {
+            require_once WK_PATH . '/elements/team/widget.php';
+        }
+        if( $check_component_active['widget-team-overlay'] ) {
+            require_once WK_PATH . '/elements/team-1/widget.php';
+        }
+        if( $check_component_active['widget-team-verticle-icon'] ) {
+            require_once WK_PATH . '/elements/team-2/widget.php';
+        }
+        if( $check_component_active['widget-team-round'] ) {
+            require_once WK_PATH . '/elements/team-3/widget.php';
+        }
+        if( $check_component_active['widget-team-animation'] ) {
+            require_once WK_PATH . '/elements/team-4/widget.php';
+        }
+        
+        
 
     }
 
