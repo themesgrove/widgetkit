@@ -59,7 +59,8 @@ class Widgetkit_Admin
         'wke-sensei-course-list',
         'wke-sensei-course-tab',
     ];
-
+    private $pro_enable_status;
+    
     // Default settings
     private $widgetkit_default_settings;
     private $widgetkit_woo_settings;
@@ -86,6 +87,7 @@ class Widgetkit_Admin
     {
         //$this->includes();
         $this->init_hooks();
+        
     }
 
     /**
@@ -129,6 +131,7 @@ class Widgetkit_Admin
         add_action('admin_init', [$this, 'widgetkit_for_elementor_admin_get_param_check']);
         // Build admin view and save
         add_action('wp_ajax_widgetkit_save_admin_addons_settings', [$this, 'widgetkit_for_elementor_sections_with_ajax']);
+        
     }
 
     /**
@@ -183,6 +186,8 @@ class Widgetkit_Admin
             'ajaxurl' => admin_url('admin-ajax.php')
         ];
         wp_localize_script('widgetkit-elementor-admin-js', 'settings', $js_info);
+
+        $this->pro_enable_status = apply_filters('wkpro_enabled', false);
        
 	    $this->widgetkit_default_settings = array_fill_keys( $this->widgetkit_elements_keys, true );
         $this->widgetkit_woo_settings = array_fill_keys( $this->widgetkit_woo_keys, true );
@@ -617,29 +622,29 @@ class Widgetkit_Admin
                                                 <div class="woo-elements">
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Woo Products', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch">
-                                                            <input type="checkbox" id="wke-woo-product" name="wke-woo-product" <?php checked(1, $this->widgetkit_get_woo_settings['wke-woo-product'], true) ?>>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-woo-product" name="wke-woo-product" <?php checked(1, $this->widgetkit_get_woo_settings['wke-woo-product'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Woo Product Carousel', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch">
-                                                            <input type="checkbox" id="wke-woo-product-carousel" name="wke-woo-product-carousel" <?php checked(1, $this->widgetkit_get_woo_settings['wke-woo-product-carousel'], true) ?>>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-woo-product-carousel" name="wke-woo-product-carousel" <?php checked(1, $this->widgetkit_get_woo_settings['wke-woo-product-carousel'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Woo Categories', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch">
-                                                            <input type="checkbox" id="wke-woo-categories" name="wke-woo-categories" <?php checked(1, $this->widgetkit_get_woo_settings['wke-woo-categories'], true) ?>>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-woo-categories" name="wke-woo-categories" <?php checked(1, $this->widgetkit_get_woo_settings['wke-woo-categories'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Woo Recent Product', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch">
-                                                            <input type="checkbox" id="wke-woo-recent-product" name="wke-woo-recent-product" <?php checked(1, $this->widgetkit_get_woo_settings['wke-woo-recent-product'], true) ?>>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-woo-recent-product" name="wke-woo-recent-product" <?php checked(1, $this->widgetkit_get_woo_settings['wke-woo-recent-product'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
@@ -664,15 +669,15 @@ class Widgetkit_Admin
                                                 <div class="woo-elements">
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('LearnDash Course List', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch">
-                                                            <input type="checkbox" id="wke-ld-course-list" name="wke-ld-course-list" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-list'], true) ?>>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-ld-course-list" name="wke-ld-course-list" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-list'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('LearnDash Course Tab', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch">
-                                                            <input type="checkbox" id="wke-ld-course-tab" name="wke-ld-course-tab" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-tab'], true) ?>>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-ld-course-tab" name="wke-ld-course-tab" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-tab'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
@@ -697,15 +702,15 @@ class Widgetkit_Admin
                                                 <div class="woo-elements">
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('LearnPress Course List', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch">
-                                                            <input type="checkbox" id="wke-lp-course-list" name="wke-lp-course-list" <?php checked(1, $this->widgetkit_get_lp_settings['wke-lp-course-list'], true) ?>>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-lp-course-list" name="wke-lp-course-list" <?php checked(1, $this->widgetkit_get_lp_settings['wke-lp-course-list'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('LearnPress Course Tab', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch">
-                                                            <input type="checkbox" id="wke-lp-course-tab" name="wke-lp-course-tab" <?php checked(1, $this->widgetkit_get_lp_settings['wke-lp-course-tab'], true) ?>>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-lp-course-tab" name="wke-lp-course-tab" <?php checked(1, $this->widgetkit_get_lp_settings['wke-lp-course-tab'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
@@ -730,15 +735,16 @@ class Widgetkit_Admin
                                                 <div class="woo-elements">
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Sensei Course List', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch">
-                                                            <input type="checkbox" id="wke-sensei-course-list" name="wke-sensei-course-list" <?php checked(1, $this->widgetkit_get_sensei_settings['wke-sensei-course-list'], true) ?>>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-sensei-course-list" name="wke-sensei-course-list" <?php checked(1, $this->widgetkit_get_sensei_settings['wke-sensei-course-list'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                        
                                                         <?php echo __('Sensei Course Tab', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch">
-                                                            <input type="checkbox" id="wke-sensei-course-tab" name="wke-sensei-course-tab" <?php checked(1, $this->widgetkit_get_sensei_settings['wke-sensei-course-tab'], true) ?>>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-sensei-course-tab" name="wke-sensei-course-tab" <?php checked(1, $this->widgetkit_get_sensei_settings['wke-sensei-course-tab'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>

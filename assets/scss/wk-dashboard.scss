@@ -421,6 +421,9 @@ input:checked + .rectangle:before {
                 background:#ff0001;
                 border-radius:4px;
             }
+            .disable{
+                pointer-events: none;
+            }
             .demo-button-for-pro{
                 padding:3px 10px;
                 text-decoration: none;
