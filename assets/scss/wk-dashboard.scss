@@ -413,6 +413,15 @@ input:checked + .rectangle:before {
         }
     }
     .wk-main{
+        .pro-text{
+            background:red;
+            color:white;
+            padding:1px 5px;
+            border-radius:3px;
+        }
+        .disable{
+            pointer-events: none;
+        }
         .wk-pro-integrated-plugin{
             display: grid;
             grid-template-columns: repeat(1, 1fr);
@@ -420,9 +429,6 @@ input:checked + .rectangle:before {
             .wk-label{
                 background:#ff0001;
                 border-radius:4px;
-            }
-            .disable{
-                pointer-events: none;
             }
             .demo-button-for-pro{
                 padding:3px 10px;

@@ -36,6 +36,11 @@ class Widgetkit_Admin
         'widget-social-share-animation',
         'widget-social-share-collapse',
         'widget-post-carousel',
+        'wkpro-post-tab',
+        'wkpro-post-carousel',
+        'wkpro-post-list',
+        'wkpro-grid-slider',
+        'wkpro-headline-slider',
     ];
 
     public $widgetkit_woo_keys = [
@@ -312,6 +317,15 @@ class Widgetkit_Admin
                                     </li>
                                     <li>
                                         <div class="wk-grid wk-grid-small wk-child-width-1-3" wk-grid>
+
+                                            
+                                            
+                                            
+
+
+
+
+                                            
                                             
                                             <div>
                                                 <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
@@ -430,6 +444,89 @@ class Widgetkit_Admin
                                                     </label>
                                                 </div>
                                             </div>
+                                            
+
+                                            <!-- pro -->
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <span>
+                                                        <?php echo esc_html__('Post Tab', 'widgetkit-for-elementor'); ?>
+                                                        <span class="pro-text">
+                                                            <?php echo esc_html__('Pro', 'widgetkit-for-elementor'); ?>
+                                                        </span>
+                                                    </span>
+                                                    
+                                                    <label class="switch <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <input type="checkbox" id="wkpro-post-tab" name="wkpro-post-tab" <?php checked(1, $this->widgetkit_get_settings['wkpro-post-tab'], $this->pro_enable_status) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <!-- pro -->
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <span>
+                                                        <?php echo esc_html__('Post Carousel', 'widgetkit-for-elementor'); ?>
+                                                        <span class="pro-text">
+                                                            <?php echo esc_html__('Pro', 'widgetkit-for-elementor'); ?>
+                                                        </span>
+                                                    </span>
+                                                    
+                                                    <label class="switch <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <input type="checkbox" id="wkpro-post-carousel" name="wkpro-post-carousel" <?php checked(1, $this->widgetkit_get_settings['wkpro-post-carousel'], $this->pro_enable_status) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <!-- pro -->
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <span>
+                                                        <?php echo esc_html__('Post List', 'widgetkit-for-elementor'); ?>
+                                                        <span class="pro-text">
+                                                            <?php echo esc_html__('Pro', 'widgetkit-for-elementor'); ?>
+                                                        </span>
+                                                    </span>
+                                                    
+                                                    <label class="switch <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <input type="checkbox" id="wkpro-post-list" name="wkpro-post-list" <?php checked(1, $this->widgetkit_get_settings['wkpro-post-list'], $this->pro_enable_status) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <!-- pro -->
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <span>
+                                                        <?php echo esc_html__('Post Grid Slider', 'widgetkit-for-elementor'); ?>
+                                                        <span class="pro-text">
+                                                            <?php echo esc_html__('Pro', 'widgetkit-for-elementor'); ?>
+                                                        </span>
+                                                    </span>
+                                                
+                                                    <label class="switch <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <input type="checkbox" id="wkpro-grid-slider" name="wkpro-grid-slider" <?php checked(1, $this->widgetkit_get_settings['wkpro-grid-slider'], $this->pro_enable_status) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <!-- pro -->
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <span>
+                                                        <?php echo esc_html__('Post Headline Slider', 'widgetkit-for-elementor'); ?>    
+                                                        <span class="pro-text">
+                                                            <?php echo esc_html__('Pro', 'widgetkit-for-elementor'); ?>
+                                                        </span>
+                                                    </span>
+                                                    
+                                                    <label class="switch <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <input type="checkbox" id="wkpro-headline-slider" name="wkpro-headline-slider" <?php checked(1, $this->widgetkit_get_settings['wkpro-headline-slider'], $this->pro_enable_status) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div> 
+
                                             <div>
                                                 <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                     <?php echo __('Slider Animation', 'widgetkit-for-elementor'); ?>
@@ -940,6 +1037,14 @@ class Widgetkit_Admin
             'widget-social-share-collapse' => intval($settings['widget-social-share-collapse'] ? 1 : 0),
              // Post carousel
             'widget-post-carousel' => intval($settings['widget-post-carousel'] ? 1 : 0),
+            /**
+             * pro
+             */
+            'wkpro-post-tab' => intval($settings['wkpro-post-tab'] ? 1 : 0),
+            'wkpro-post-carousel' => intval($settings['wkpro-post-carousel'] ? 1 : 0),
+            'wkpro-post-list' => intval($settings['wkpro-post-list'] ? 1 : 0),
+            'wkpro-grid-slider' => intval($settings['wkpro-grid-slider'] ? 1 : 0),
+            'wkpro-headline-slider' => intval($settings['wkpro-headline-slider'] ? 1 : 0),
         ];
         $this->wk_woo_settings = [
             'wke-woo-product' => intval($settings['wke-woo-product'] ? 1 : 0),
