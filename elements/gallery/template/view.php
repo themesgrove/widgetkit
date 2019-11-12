@@ -41,10 +41,10 @@
 
 
 			<?php if ($galleries['colmun_width'] == 'auto'):?>
-				<div class="js-filter wk-grid-<?php echo $galleries['column_gap'];?> wk-text-center wk-child-width-<?php echo $galleries['colmun_width'];?> wk-margin-auto" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>" <?php echo $galleries['lightcase_enable'] == 'yes'? ' wk-lightbox="animation:' . $light_case_animation . '"' : '';?>  wk-grid>
+				<div class="js-filter wk-grid-<?php echo $galleries['column_gap'];?> wk-text-center wk-child-width-<?php echo $galleries['colmun_width'];?> wk-margin-auto" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>"  wk-grid>
 
 			<?php else: ?>
-				<div class="js-filter wk-grid-<?php echo $galleries['column_gap'];?> wk-text-center wk-child-width-<?php echo $galleries['colmun_layout'];?>" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>"  <?php echo $galleries['lightcase_enable'] == 'yes'? ' wk-lightbox="animation:' . $light_case_animation . '"' : '';?>  wk-grid>
+				<div class="js-filter wk-grid-<?php echo $galleries['column_gap'];?> wk-text-center wk-child-width-<?php echo $galleries['colmun_layout'];?>" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>"  wk-grid>
 			<?php endif; ?>
 	  		<?php foreach ($galleries['gallery_content'] as $gallery) :?>
 	  			<?php $tags = explode(',', $gallery['filter_tag']);?>
@@ -79,7 +79,7 @@
 							            	</a>
 						            	<?php endif; ?>
 						            	<?php if ($galleries['lightcase_enable'] == 'yes'):?>
-											<a class="uk-button uk-button-default icon" href="<?php echo $gallery['gallery_preview_image'] ['url']?>" uk-lightbox><span class="fa fa-link"></span></a>
+											<a class="uk-button uk-button-default icon" href="<?php echo $gallery['gallery_preview_image'] ['url']?>" <?php echo $galleries['lightcase_enable'] == 'yes'? ' wk-lightbox="animation:' . $light_case_animation . '"' : '';?>><span class="fa fa-link"></span></a>
 										<?php endif; ?>
 					            	</div>
 				            	<?php endif; ?>

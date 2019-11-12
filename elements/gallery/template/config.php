@@ -214,7 +214,7 @@ class wkfe_gallery extends Widget_Base {
 					'default'   => 'grid',
 					'options'   => [
 						'grid'     => esc_html__( 'Grid', 'widgetkit-for-elementor' ),
-						// 'auto'     => esc_html__( 'Auto', 'widgetkit-for-elementor' ),
+						'auto'     => esc_html__( 'Auto', 'widgetkit-for-elementor' ),
 					],
 				]
 		);
