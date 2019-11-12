@@ -7,6 +7,7 @@ use Elementor\Repeater;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Group_Control_Border;
+use Elementor\Group_Control_Box_Shadow;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -110,20 +111,11 @@ class wkfe_gallery extends Widget_Base {
 		);
 
 		$repeater->add_control(
-			'gallery_filter',
-			[
-				'label'   => esc_html__( 'Filter', 'widgetkit-for-elementor' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Business', 'widgetkit-for-elementor' ),
-			]
-		);
-
-		$repeater->add_control(
 			'filter_tag',
 			[
 				'label'   => esc_html__( 'Filter Tag', 'widgetkit-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'business, onepager', 'widgetkit-for-elementor' ),
+				'default' => esc_html__( 'business', 'widgetkit-for-elementor' ),
 			]
 		);
 
@@ -169,9 +161,8 @@ class wkfe_gallery extends Widget_Base {
 		                'gallery_title' => esc_html__( 'Switch Pro', 'widgetkit-for-elementor' ),
 		                'gallery_desc' => esc_html__( 'Multiple Business WordPress Theme', 'widgetkit-for-elementor'),
 		                'gallery_thumb_image' => '',
-		                'galleryo_filter' => esc_html__('Business', 'widgetkit-for-elementor'),
 		                'gallery_preview_image' => '',
-		                'gallery_tag' => esc_html__('business,onepage', 'widgetkit-for-elementor'),
+		                'filter_tag' => esc_html__('business', 'widgetkit-for-elementor'),
 		                'demo_link' => 'https://themesgrove.com/product/switch-pro/',
 		 
 		              ],
@@ -179,9 +170,8 @@ class wkfe_gallery extends Widget_Base {
 		                'gallery_title' => esc_html__( 'Exploore', 'widgetkit-for-elementor' ),
 		                'gallery_desc' => esc_html__( 'WordPress Bloging Theme', 'widgetkit-for-elementor'),
 		                'gallery_thumb_image' => '',
-		                'gallery_filter' => esc_html__('Blog', 'widgetkit-for-elementor'),
 		                'gallery_full_image' => '',
-		                'fgallery_tag' => esc_html__('business,blog', 'widgetkit-for-elementor'),
+		                'filter_tag' => esc_html__('business', 'widgetkit-for-elementor'),
 		                'demo_link' => 'https://themesgrove.com/product/exploore/',
 		 
 		              ],
@@ -189,9 +179,8 @@ class wkfe_gallery extends Widget_Base {
 		                'gallery_title' => esc_html__( 'Universidad', 'widgetkit-for-elementor' ),
 		                'gallery_desc'  => esc_html__( 'Education WordPress Theme', 'widgetkit-for-elementor'),
 		                'gallery_thumb_image' => '',
-		                'gallery_filter' => esc_html__('Education', 'widgetkit-for-elementor'),
 		                'gallery_preview_image' => '',
-		                'filter_tag' => esc_html__('education,blog', 'widgetkit-for-elementor'),
+		                'filter_tag' => esc_html__('education', 'widgetkit-for-elementor'),
 		                'demo_link' => 'https://themesgrove.com/product/universidad/',
 		 
 		              ]
@@ -224,8 +213,8 @@ class wkfe_gallery extends Widget_Base {
 					'type'      => Controls_Manager::SELECT,
 					'default'   => 'grid',
 					'options'   => [
-						'auto'     => esc_html__( 'Auto', 'widgetkit-for-elementor' ),
 						'grid'     => esc_html__( 'Grid', 'widgetkit-for-elementor' ),
+						// 'auto'     => esc_html__( 'Auto', 'widgetkit-for-elementor' ),
 					],
 				]
 		);
@@ -266,6 +255,20 @@ class wkfe_gallery extends Widget_Base {
                     ],
                 ]
         );
+
+        $this->add_control(
+			'hover_effect',
+				[
+					'label'     => esc_html__( 'Hover Effect', 'widgetkit-for-elementor' ),
+					'type'      => Controls_Manager::SELECT,
+					'default'   => 'square',
+					'options'   => [
+						'from-right'    => esc_html__( 'From Right', 'widgetkit-for-elementor' ),
+						'from-left'     => esc_html__( 'From Left', 'widgetkit-for-elementor' ),
+						'square'        => esc_html__( 'Square', 'widgetkit-for-elementor' ),
+					],
+				]
+		);
 
 
 		$this->end_controls_section();
@@ -355,7 +358,7 @@ class wkfe_gallery extends Widget_Base {
 		$this->add_control(
 			'filter_show_title',
 			[
-				'label'   => esc_html__( 'Title', 'widgetkit-for-elementor' ),
+				'label'   => esc_html__( 'Show All', 'widgetkit-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
 				'default' => esc_html__( 'All', 'widgetkit-for-elementor' ),
 				'condition' => [
@@ -490,6 +493,29 @@ class wkfe_gallery extends Widget_Base {
 	            ]
 	        );
 
+		    $this->add_responsive_control(
+				'filter_spacing',
+					[
+						'label'   => esc_html__( 'Spacing', 'widgetkit-for-elementor' ),
+						'type'    => Controls_Manager::SLIDER,
+						'default' => [
+						'size' =>60,
+						],
+						'range'  => [
+							'px' => [
+								'min' =>0,
+								'max' => 200,
+							],
+						],
+						'selectors' => [
+							'{{WRAPPER}} .wk-gallery .wk-tab' => 'margin-bottom:{{SIZE}}{{UNIT}};',
+						],
+						'condition'=> [
+			                'filter_enable' => 'yes',
+			            ],
+					]
+				);
+
 
 
 		    $this->start_controls_tabs( 'tabs_nav_style' );
@@ -582,12 +608,28 @@ class wkfe_gallery extends Widget_Base {
 		            ]
 		    );
 
-	    	$this->end_controls_tab();
+	    	$this->add_group_control(
+				Group_Control_Box_Shadow::get_type(),
+				[
+					'name'    => 'filter_box_shadow',
+					'label'     => esc_html__( 'Shadow', 'widgetkit-for-elementor' ),
+					'exclude' => [
+						'box_shadow_position',
+					],
+					'condition'=> [
+			            'filter_enable' => 'yes',
+			        ],
+					'selector' => '{{WRAPPER}} .wk-gallery .wk-tab li a:hover, {{WRAPPER}} .wk-gallery .wk-tab .wk-active a',
+				]
+			);
+
+	    $this->end_controls_tab();
 
 
 	    $this->end_controls_tabs();
 
 		$this->end_controls_section();
+
 
 		$this->start_controls_section(
 			'section_overlay_style',

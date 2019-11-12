@@ -4,29 +4,35 @@
     $galleries = $this->get_settings();
     $id = $this->get_id();
     $light_case_animation = $galleries['lightcase_animation'];
+    $gallery_tag_arr = [];
 ?>
 
 
 	<div class="wk-gallery" wk-filter="target: .js-filter">
 		<?php if ($galleries['filter_enable'] == 'yes'): ?>
 		<div class="wk-container wk-margin-auto">
-			<ul class="wk-flex-<?php echo $galleries['filter_layout_align'];?> wk-margin-medium-bottom" wk-tab>
-			 	<li class="wk-active" wk-filter-control><a href="#"><?php echo $galleries['filter_show_title'];?></a></li>
-				 	<?php 
-					 	$filters = array_unique(
-					 		array_filter(
-						 		array_map(function($item) {
-						 			return isset($item['gallery_filter'])?$item['gallery_filter']:null;
-						 		},
-						 		 $galleries['gallery_content']),
-						 		function($item) {return !!$item; }
-					 		)
-					 	); ?>
-					<?php foreach ($filters as $filter_tag) : ?>
-					   	<li wk-filter-control="[data-tags*='<?php echo strtolower($filter_tag. '_'.$id) ;?>']">
-					        <a href="#"><?php echo $filter_tag; ?></a>
-					    </li>
-				    <?php endforeach; ?>
+			<?php 
+				foreach ( $galleries['gallery_content'] as $key => $value) {
+					$split_data_arr = explode(',', $value['filter_tag']);
+					foreach($split_data_arr as $value){
+						$trimmed_value = trim($value);
+						if(!in_array($trimmed_value, $gallery_tag_arr)){
+							array_push($gallery_tag_arr, $trimmed_value);
+						}
+					}
+				}
+				
+			?>
+			<ul class="wk-flex-<?php echo $galleries['filter_layout_align'];?>" wk-tab>
+				<?php if ($galleries['filter_show_title']): ?>
+					<li class="wk-active" wk-filter-control><a href="#"><?php echo $galleries['filter_show_title'];?></a></li>
+				<?php endif; ?>
+				
+				<?php foreach($gallery_tag_arr as $tag_name): ?>
+					<li wk-filter-control=".<?php echo strtolower($tag_name.'_'.$id);?>">
+				        <a href="#"><?php echo $tag_name; ?></a>
+				    </li>
+				<?php endforeach; ?>
 			</ul> <!-- filter tags -->
 			
 		</div>			
@@ -35,16 +41,16 @@
 
 
 			<?php if ($galleries['colmun_width'] == 'auto'):?>
-				<div class="js-filter wk-grid-<?php echo $galleries['column_gap'];?> wk-text-center wk-child-width-<?php echo $galleries['colmun_width'];?> wk-margin-auto" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>" <?php echo $galleries['lightcase_enable'] == 'yes'? ' wk-lightbox="animation:' . '$light_case_animation' . '"' : '';?>  wk-grid>
+				<div class="js-filter wk-grid-<?php echo $galleries['column_gap'];?> wk-text-center wk-child-width-<?php echo $galleries['colmun_width'];?> wk-margin-auto" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>" <?php echo $galleries['lightcase_enable'] == 'yes'? ' wk-lightbox="animation:' . $light_case_animation . '"' : '';?>  wk-grid>
 
 			<?php else: ?>
-				<div class="js-filter wk-grid-<?php echo $galleries['column_gap'];?> wk-text-center wk-child-width-<?php echo $galleries['colmun_layout'];?>" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>"  <?php echo $galleries['lightcase_enable'] == 'yes'? ' wk-lightbox="animation:' .'$light_case_animation' . '"' : '';?>  wk-grid>
+				<div class="js-filter wk-grid-<?php echo $galleries['column_gap'];?> wk-text-center wk-child-width-<?php echo $galleries['colmun_layout'];?>" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>"  <?php echo $galleries['lightcase_enable'] == 'yes'? ' wk-lightbox="animation:' . $light_case_animation . '"' : '';?>  wk-grid>
 			<?php endif; ?>
 	  		<?php foreach ($galleries['gallery_content'] as $gallery) :?>
 	  			<?php $tags = explode(',', $gallery['filter_tag']);?>
-		        <div class="" data-tags="<?php foreach($tags as $tag ): echo strtolower($tag.'_'.$id) .' '; endforeach;?>">
+		        <div class="wk-flex-<?php echo $gallery['item_order'];?> <?php foreach($tags as $tag ): echo strtolower($tag.'_'.$id) .' '; endforeach;?>">
 		        <!-- 	<div class=""> -->
-			            <div class="wk-card wk-card-default wk-position-relative wk-overflow-hidden">
+			            <div class="wk-card wk-card-default wk-position-relative wk-overflow-hidden <?php echo $galleries['hover_effect'];?>">
 				            <?php if ($gallery['gallery_thumb_image']): ?>
 								<img src="<?php echo $gallery['gallery_thumb_image']['url']?>" alt="<?php echo $gallery['gallery_title'];?>">
 				            <?php endif ;?>
@@ -66,7 +72,7 @@
 				            	<?php endif; ?>
 				            	<?php if ($galleries['lightcase_enable'] == 'yes' || $galleries['link_enable'] == 'yes'):?>
 				            		
-					            	<div class="gallery-lightbox wk-margin-top">
+					            	<div class="gallery-lightbox wk-margin-top wk-text-center">
 					            		<?php if ($galleries['link_enable'] == 'yes'):?>
 							            	<a class="icon" href="<?php echo $gallery['demo_link']['url']; ?>" <?php echo $gallery['demo_link']['is_external'] ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
 							            		<span class="fa fa-angle-right"></span>
