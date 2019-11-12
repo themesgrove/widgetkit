@@ -15,64 +15,24 @@ Everything you need to create a stunning website with Elementor, WooCommerce, Le
 == Description ==
 Visually stunning and simple to use premium addons for Elementor page builder. Growing collection of free Elementor widgets, pre-designed section and page templates, extensions and much more.
 
-Merge WidgetKit with Elementor and take the experience of ultimate page building. WIth Widgetkit build any layouts in shortest time, it doesn’t matter whether the layout is simple or complex. If you can think it, you can build it with Widgetkit. 
-
-== Some of the best WP themes built with WidgetKit ==
+Merge WidgetKit with Elementor and take the experience of ultimate page building. WIth WidgetKit build any layouts in shortest time, it doesn’t matter whether the layout is simple or complex. If you can think it, you can build it with Widgetkit. 
 
 
-> <a href="https://1.envato.market/0OjO">Education WordPress Theme</a> with all major LMS eg: LifterLMS, LearnDash, Sensei supported.
-> <a href="https://1.envato.market/my0QZ">Tour & Travel Agency WordPress Theme</a> with booking, packaging and page builder.
-> Best <a href="https://1.envato.market/q6BPO">Games & Movie Review WP Themes</a> with review, rating, IMDB integration
-> <a href="https://1.envato.market/QdWkz">Event WordPress Theme</a> for tech, music, festival and social events.
+https://www.youtube.com/watch?v=9AbPw136tqk
 
+Elementor is a great tool for building websites, but without proper addons it might take more time and money. Even sometimes you do not get your preferred layouts and sections in spite of using premium addons.
 
+We aim to enhance your experience, it does not matter whether you are a developer or a designer. Our goal is to give you the perfect tool that is built for WordPress professionals.
 
-Elementor is a great tool for building website, but without proper addons it might take more time and money. Even sometimes you do not get your preferred layouts and sections in spite of using premium addons. 
+You can only decide to use WidgetKit after viewing it by yourself. See it by yourself from here-
 
-We aim to enhance your experience, it does not matter whether you are a developer or a designer. Our goal is to give you the perfect tool that is build for WordPress professionals. 
+##<a href="http://widgetkit.themesgrove.com/">Check Live Demo</a>
 
+== 25+ Free Elements And Counting ==
 
-
-You can only decide to use Widgetkit after viewing by yourself. See it by yourself from here-
-
-##<a href="http://widgetkit.themesgrove.com/">Live Demo</a>
-
-
-
-WidgetKit for Elementor is useful for :
-
-* Create any kind of complicated design without coding.
-* Fully responsive layout for all devices
-* Huge customization and easy to use.
-* Well decoration settings options.
-* Multiple feature on every block.
-* Compatible with any kind of theme.
-* User friendly structure.
-* And much more…
-
-== Features ==
-
-* Slider with animation.
-* Countdown.
-* 4 style team block 
-* Portfolio 4 style with filter 
-* Custom blog 5 items
-* Testimonial 3 styles
-* 4 Differents pricing with tab
-* Social share with animation 
-* Custom carousel with post 
-* Button with 10 hover animation 
-* Modal with shortcode and video
-* Feature hover effect with image and icon
-* Title Animation
-* Hover Image
-* Call to action
-
-
-This plugin offers following Elementor extensions or addons.
 <ul>
 	<li><a href="http://widgetkit.themesgrove.com/slider-demo/#box-slider">Slider Box</a> allows you to create slider with collapse animation.</li>
-	<li><a href="http://widgetkit.themesgrove.com/slider-demo/#parallax-slider">Slider Parallax </a>is a regular slider element with navbar and beautiful effects.</li>
+	<li><a href="http://widgetkit.themesgrove.com/slider-demo/#parallax-slider">Slider Parallax </a>is a regular slider element with navbar and beautiful effects</li>
 	<li><a href="http://widgetkit.themesgrove.com/slider-demo/#animation-slider">Slider Animation </a>allows you to create professional slider with huge animation effect and other customizations. </li>
 
 
@@ -85,13 +45,13 @@ This plugin offers following Elementor extensions or addons.
 	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-overlay">Team Overlay </a> shows the information of all team members in a section.</li>
 	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-social-verticle">Team Vertical Icon </a> shows the information of team members with different style.</li>
 	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-circle">Team Circle </a> allows you to display information of team members with unique animation and style.</li>
-	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-talent">Team Gardient </a> displays team information in a deafult way color gardient.</li>
+	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-talent">Team Gradient </a> displays team information in a default way color gradient.</li>
 
 	<li><a href="http://widgetkit.themesgrove.com/pricing-demo/#single-pricing">Pricing Single </a>displays pricing table in order to generate more sales.</li>
 	<li><a href="http://widgetkit.themesgrove.com/pricing-demo/#icon-pricing">Pricing Icon </a>is similar to Pricing 1 but with different customization and options.</li>
 	<li><a href="http://widgetkit.themesgrove.com/pricing-demo/#tab-pricing">Pricing Tab </a>comes with regular pricing options with tabbed style.</li>
 
-	<li><a href="http://widgetkit.themesgrove.com/testimonial-demo/#testimonial-carousel">Testimonial </a>shows you good things that your customers says about you. </li>
+	<li><a href="http://widgetkit.themesgrove.com/testimonial-demo/#testimonial-carousel">Testimonial </a>shows you good things that your customers say about you. </li>
 	<li><a href="http://widgetkit.themesgrove.com/testimonial-demo/#testimonial-single">Single Testimonial</a>is a fully responsive slider that shows testimonials. </li>
 
 	<li><a href="http://widgetkit.themesgrove.com/button-demo/">Button </a>lets you create stunning buttons with 10 hover animation.</li>
@@ -103,17 +63,72 @@ This plugin offers following Elementor extensions or addons.
 	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-sidebar">Blog Sidebar </a> lets you make 3 types of Post Carousels - Custom, Standard, & Sticky.</li>
 	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-carousel">Blog Carousel </a> displays blog posts with carousel.</li>
 	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-revert">Blog Revert </a> displays blog with regular settings and exclusive customization of thumbnail.</li>
-	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-image">Blog Image </a> allows you to aligment thumbnail image left to right.</li>
-	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-hover">Blog Hover Animation </a> allows you to show blogs with transparent background and other effects.</li>
+	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-image">Blog Image </a> allows you to alignment thumbnail image left to right.</li>
+	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-hover">Blog Hover Animation </a> allows you to show blogs with transparent background and other effects</li>
 
 	<li><a href="http://widgetkit.themesgrove.com/social-share/">Social Share Animation </a>  allows you to show social profile of yours with lucrative animations.</li>
-	<li><a href="http://widgetkit.themesgrove.com/text-animation/">Title Animation</a> 4 different of animation styles.</li>
+	<li><a href="http://widgetkit.themesgrove.com/text-animation/">Title Animation</a> 4 different animation styles .</li>
 
-	<li><a href="http://widgetkit.themesgrove.com/countdown-demo/">Countdown</a> helps to makes multi variation countdown.</li>
+	<li><a href="http://widgetkit.themesgrove.com/countdown-demo/">Countdown</a> helps to make multi variation countdown.</li>
 	<li><a href="http://widgetkit.themesgrove.com/hover-image/">Image with Hover</a> Get 5 differents hover effect with overlay color.</li>
 
 </ul>
- 
+
+
+==More Elements (10+) for Pro Version==
+
+<ul>
+	<li><a href="http://widgetkit.themesgrove.com/post-tab/">Post Tab</a> element showcases your categorized posts in a unique tabbed way, with a big preview on the left side.</li>
+	<li><a href="http://widgetkit.themesgrove.com/post-carousel/">Post Carousel</a> allows you to show all your posts in a carousel. All the posts are navigated automatically which helps your viewers to get an overview of every post. </li>
+	<li><a href="http://widgetkit.themesgrove.com/smart-list-2/">Smart List</a> element enables your viewers to showcase your posts smartly, where it becomes easier for your viewers to find and read every post.</li>
+	<li><a href="https://widgetkit.themesgrove.com/#">Grid Slider</a> helps you to showcase your posts in a grid layout. Till now you have seen only images in the grid, now it's time to use posts in the grid.</li>
+	<li><a href="https://widgetkit.themesgrove.com/#">Headline Slider</a> shows your posts like a story, where every headline comes before viewer one after one.</li>
+	<li><a href="https://widgetkit.themesgrove.com/#">Woo Products</a> element comes with a lot of customization and it’s advanced query helps you to showcase of all your WooCommerce products differently.</li>
+	<li><a href="https://widgetkit.themesgrove.com/#">Woo Product Carousel</a> enables you to showcase your physical and virtual products in a carousel-style with stunning animations.</li>
+	<li><a href="https://widgetkit.themesgrove.com/#">Woo Categories</a> helps you to showcase every categorized item in an organized way. </li>
+	<li><a href="https://widgetkit.themesgrove.com/#">Woo Recent Product</a> element comes with an elegant showcase of all your wooCommerce products where recent products automatically come in the first position.</li>
+	<li><a href="http://widgetkit.themesgrove.com/learndash-tab/">LearnDash Course Tab</a> permits you to showcase all your courses in a tabbed order.</li>
+	<li><a href="http://widgetkit.themesgrove.com/learndash-tab/">LearnDash Course List </a> organizes all your courses in a list order so that your viewer can easily find out their desired course.</li>
+	<li><a href="http://widgetkit.themesgrove.com/#">LearnPress Course Tab</a> allows you to display all your LearnPress courses in a tabbed order and it loads its data on demand. You can also showcase your course with carousel style. </li>
+	<li><a href="http://widgetkit.themesgrove.com/#">LearnPress Course List </a> element organize your LearnPress courses in a list order so that your viewer can easily find out their desired courses not to click anywhere.</li>
+
+</ul>
+
+
+
+== Highlighted Features ==
+
+<strong>Entirely Customizable</strong>
+Every element of WidgetKit comes with necessary control options, which allows you to discover more possibilities with an element. You can bring your imagination to reality with WidgetKit elements.
+
+<strong>Easy to do Complicate Design Without Coding</strong>
+It doesn’t matter what you have imagined in your mind. As long as you are using Widgetkit, you will be able to design every complicated design easily without any sort of coding, all by yourself. 
+
+<strong> Device Responsive</strong>
+Widgetkit is entirely device responsive. Your sections built with WidgetKit will always look same on every device.
+
+<strong>Uncompromisable Performance</strong>
+Widgetkit is developed with professional experienced developers. Therefore no messy codes or extra resources are loaded to slow down your site.
+
+
+<strong>Dedicated Support</strong>
+Widgetkit team is always ready to aid you in your every queries and problems regarding widgetkit. Ask your questions in the email support, we will try to reply and solve your problem asap. 
+
+
+==Support==
+* If you have any questions feel free to ask through the mail. We will be happy to reply to you.
+* For WidgetKit free support and discussion, you can contact us through our Facebook Group:
+<a href="https://www.facebook.com/groups/widgetkitcommunity/" target="_blank">https://www.facebook.com/groups/widgetkitcommunity/</a>
+
+
+== Some of the best WP themes built with WidgetKit ==
+
+
+> <a href="https://1.envato.market/0OjO">Education WordPress Theme</a> with all major LMS eg: LifterLMS, LearnDash, Sensei supported.
+> <a href="https://1.envato.market/my0QZ">Tour & Travel Agency WordPress Theme</a> with booking, packaging and page builder.
+> Best <a href="https://1.envato.market/q6BPO">Games & Movie Review WP Themes</a> with review, rating, IMDB integration
+> <a href="https://1.envato.market/QdWkz">Event WordPress Theme</a> for tech, music, festivals and social events.
+
 
 
 == Installation ==
@@ -135,13 +150,13 @@ This plugin offers following Elementor extensions or addons.
 
 == FAQ ==
 
-= Is Widgetkit compatible with any wordpress themes? =
-Yes of course! Widgetkit will work with any WordPress themes. 
+= Is WidgetKit compatible with any WordPress themes? =
+Yes of course! WidgetKit will work with any WordPress themes. 
 
-= Is Widgetkit fully free? =
-Yes! Widgetkit is absolutely free and provided to you by Themesgrove. There is no hidden charge, if you wish you can give small donation.
+= Is WidgetKit fully free? =
+Yes! WidgetKit is absolutely free and provided to you by Themesgrove. There is no hidden charge, if you wish you can give small donation.
 
-= As a theme developer, how can Widgetkit help me? =
+= As a theme developer, how can WidgetKit help me? =
 Widgetkit turns your theme functions to widgets and replaces code with a visual builder to reduce development time. 
 
 = What is the requirements to use Widgetkit? =
