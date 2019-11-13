@@ -28,8 +28,9 @@
 					<li class="wk-active" wk-filter-control><a href="#"><?php echo $galleries['filter_show_title'];?></a></li>
 				<?php endif; ?>
 				
-				<?php foreach($gallery_tag_arr as $tag_name): ?>
-					<li wk-filter-control=".<?php echo strtolower($tag_name.'_'.$id);?>">
+				<?php foreach($gallery_tag_arr as $tag_name): 
+					$tags_sorting = str_replace([" ", "&"], ["_", ""], $tag_name);?>
+					<li wk-filter-control=".<?php echo strtolower($tags_sorting.'_'.$id);?>">
 				        <a href="#"><?php echo $tag_name; ?></a>
 				    </li>
 				<?php endforeach; ?>
@@ -41,21 +42,23 @@
 
 
 			<?php if ($galleries['colmun_width'] == 'auto'):?>
-				<div class="js-filter wk-grid-<?php echo $galleries['column_gap'];?> wk-text-center wk-child-width-<?php echo $galleries['colmun_width'];?> wk-margin-auto" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>"  wk-grid>
+				<div class="js-filter wk-grid-<?php echo $galleries['column_gap'];?> wk-child-width-<?php echo $galleries['colmun_width'];?> wk-margin-auto" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>"  wk-grid>
 
 			<?php else: ?>
-				<div class="js-filter wk-grid-<?php echo $galleries['column_gap'];?> wk-text-center wk-child-width-<?php echo $galleries['colmun_layout'];?>" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>"  wk-grid>
+				<div class="js-filter wk-grid-<?php echo $galleries['column_gap'];?>  wk-child-width-<?php echo $galleries['colmun_layout'];?>" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>"  wk-grid>
 			<?php endif; ?>
 	  		<?php foreach ($galleries['gallery_content'] as $gallery) :?>
 	  			<?php $tags = explode(',', $gallery['filter_tag']);?>
-		        <div class="wk-flex-<?php echo $gallery['item_order'];?> <?php foreach($tags as $tag ): echo strtolower($tag.'_'.$id) .' '; endforeach;?>">
+		        <div class="wk-flex-<?php echo $gallery['item_order'];?> <?php foreach($tags as $tag ){
+		        	$tags_replace = str_replace([" ", "&"], ["_", ""], $tag);
+		        	echo strtolower($tags_replace.'_'.$id);}?>">
 		        <!-- 	<div class=""> -->
 			            <div class="wk-card wk-card-default wk-position-relative wk-overflow-hidden <?php echo $galleries['hover_effect'];?>">
 				            <?php if ($gallery['gallery_thumb_image']): ?>
 								<img src="<?php echo $gallery['gallery_thumb_image']['url']?>" alt="<?php echo $gallery['gallery_title'];?>">
 				            <?php endif ;?>
 
-				            <div class="wk-card-body wk-padding-small wk-position-absolute wk-position-center">
+				            <div class="wk-card-body wk-padding-small wk-position-absolute wk-position-center wk-text-center">
 				               <?php if ($gallery['demo_link']['url']): ?>
 				           		<a href="<?php echo $gallery['demo_link']['url']; ?>" <?php echo $gallery['demo_link']['is_external'] ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
 				            		<h5 class="wk-text-medium wk-margin-small wk-card-title"> <?php echo $gallery['gallery_title'];?>
