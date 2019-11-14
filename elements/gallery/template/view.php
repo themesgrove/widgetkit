@@ -82,7 +82,7 @@
 							            	</a>
 						            	<?php endif; ?>
 						            	<?php if ($galleries['lightcase_enable'] == 'yes'):?>
-											<a class="uk-button uk-button-default icon" href="<?php echo $gallery['gallery_preview_image'] ['url']?>" <?php echo $galleries['lightcase_enable'] == 'yes'? ' wk-lightbox="animation:' . $light_case_animation . '"' : '';?>><span class="fa fa-link"></span></a>
+											<a class="uk-button uk-button-default icon" href="<?php echo $gallery['gallery_thumb_image']['url']?>" <?php echo $galleries['lightcase_enable'] == 'yes'? ' wk-lightbox="animation:' . $light_case_animation . '"' : '';?>><span class="fa fa-link"></span></a>
 										<?php endif; ?>
 					            	</div>
 				            	<?php endif; ?>

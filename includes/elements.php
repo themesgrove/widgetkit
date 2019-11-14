@@ -52,6 +52,23 @@ class WKFE_Elements{
         ];
         $widgetkit_default_settings = array_fill_keys( $widgetkit_elements_keys, true ); 
 
+        /**
+         * get active component key from db
+         */
+        $get_active_component_from_db = get_option( 'widgetkit_save_settings', $widgetkit_default_settings );
+        /**
+         * if any diff found from db
+         * then merge with load key
+         * and update the db
+         */
+        if(array_diff_key($get_active_component_from_db, $widgetkit_default_settings)){
+            $merged_arr = array_merge($get_active_component_from_db, $widgetkit_default_settings);
+            update_option('widgetkit_save_settings', $merged_arr);
+        }
+        /**
+         * get the updated data from db
+         */
+
         $check_component_active = get_option( 'widgetkit_save_settings', $widgetkit_default_settings );
 
         if( $check_component_active['widget-gallery'] ) {
