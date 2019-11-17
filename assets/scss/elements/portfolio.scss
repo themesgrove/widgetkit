@@ -490,8 +490,9 @@
       margin: 0;
       padding: 0;
       position: absolute;
-      right: -1px;
+      right: 20px;
       top: -55px;
+      opacity:0;
       
       -webkit-transition: all 0.4s ease 0s;
          -moz-transition: all 0.4s ease 0s;
@@ -528,7 +529,7 @@
   }
   
   .tgx-portfolio .hover-3 .effect-3:hover .external-link {
-      top: 0;
+      top: 15px;opacity:1;
   }
   
   .icon-link:before{
