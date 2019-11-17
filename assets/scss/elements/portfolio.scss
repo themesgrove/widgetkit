@@ -72,7 +72,7 @@
     top: 5px;
     width: 100%;
     height: 1px;
-    background-color: #ed485f;
+    background-color: transparent;
     -webkit-transform: scale3d(0, 1, 1);
     transform: scale3d(0, 1, 1);
     -webkit-transition: -webkit-transform 0.1s;
@@ -85,7 +85,7 @@
     bottom: 5px;
     width: 100%;
     height: 1px;
-    background: #ed485f;
+    background: transparent;
     -webkit-transform: scale3d(0, 1, 1);
     transform: scale3d(0, 1, 1);
     -webkit-transition: -webkit-transform 0.1s;
