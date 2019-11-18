@@ -577,7 +577,7 @@ class wkfe_portfolio extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#056ddce8',
 				'selectors' => [
-					'{{WRAPPER}} .tgx-portfolio .hover-1 .portfolio-item a div,
+					'{{WRAPPER}} .tgx-portfolio .hover-1 .portfolio-item div, 
 					{{WRAPPER}}  .tgx-portfolio .hover-2 .overlay .overlay-spin:before,
 					{{WRAPPER}}  .tgx-portfolio .hover-3 .effect-3 .info,
 					{{WRAPPER}}  .tgx-portfolio .hover-4 .overlay-spin:before

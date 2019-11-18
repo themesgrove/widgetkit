@@ -22,9 +22,9 @@
     color: #fff;
     -webkit-clip-path: ellipse(45% 70% at 50% 2%);
    	clip-path: ellipse(45% 70% at 50% 2%);
-    height: 130px;
+    height: 150px;
     text-align: center;
-    padding-top: 25px;
+    padding-top: 0;
 }
 
 .tgx-single-pricing .tgx-single-heading .price .amount {
@@ -45,6 +45,7 @@
 .tgx-single-pricing .tgx-single-about .tgx-single-title{
 	font-size: 32px;
 	color:  #ed485f;
+    margin-bottom: 10px;
 }
 .tgx-single-pricing .tgx-single-features-list{
 	list-style: none;

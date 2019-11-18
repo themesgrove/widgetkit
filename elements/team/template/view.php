@@ -377,15 +377,22 @@
         <?php endif; ?>
     </div><!-- wk-grid-->
 
-    <?php if ($team['item_styles'] == 'screen_5'): ?>
+
         <script type="text/javascript">
-            jQuery(document).ready(function(){
-                jQuery("#<?php echo $id; ?>.wk-style-5 .wk-card-wrapper").hover(function(){
-                jQuery("#<?php echo $id; ?>.wk-style-5 .wk-text-normal").slideToggle("medium");
-              });
+            <?php if ($team['item_styles'] == 'screen_5'): ?>
+                jQuery(document).ready(function(){
+                    jQuery("#<?php echo $id; ?>.wk-style-5 .wk-card-wrapper").hover(function(){
+                    jQuery("#<?php echo $id; ?>.wk-style-5 .wk-text-normal").slideToggle("medium");
+                  });
+                });
+            <?php endif; ?>
+            jQuery(function($){
+                if(!$('body').hasClass('wk-team')){
+                    $('body').addClass('wk-team');
+                }
             });
 
         </script>
-        
-    <?php endif; ?>
+ 
+
 

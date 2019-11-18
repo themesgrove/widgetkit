@@ -7,13 +7,13 @@
                 <?php if ($contents['center_mode_enable'] == 'yes'): ?>
                     <ul class="wk-grid-<?php echo $contents['column_gap']?> wk-slider-items wk-child-width-1-2@s" wk-grid>
                 <?php else: ?>
-                      <ul class="wk-grid-<?php echo $contents['column_gap']?> wk-slider-items wk-flex wk-child-width-1-<?php echo $contents['item_column'];?>@m wk-child-width-1-2@s wk-child-width-1-<?php echo $contents['item_column'];?>@l" wk-grid>
+                      <ul class="wk-grid-<?php echo $contents['column_gap']?> wk-slider-items wk-child-width-1-<?php echo $contents['item_column'];?>@m wk-child-width-1-2@s wk-child-width-1-<?php echo $contents['item_column'];?>@l" wk-grid>
                 <?php endif; ?>
                     <?php if ($contents['item_option'] == 'custom_post'): ?>
                         <?php foreach ( $contents['custom_content'] as $content ) : ?>
                              <li class="wk-flex wk-flex-center wk-grid-match">
                                 <div class="wk-card <?php echo $content['content_meta'] || $content['content_title'] || $content['content_content']? 'wk-card-default' : '';?> wk-margin-small-bottom">
-                                    <?php if($content['content_thumb_image']):?>
+                                    <?php if($content['content_thumb_image']['url']):?>
                                         <?php if($contents['thumbnail_position'] == 'top'): ;?>
                                             <div class="wk-card-media-top wk-overflow-hidden">
                                                 <a class="wk-display-block" href="<?php echo $content['content_demo_link']['url']; ?>" <?php echo $content['content_demo_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
@@ -110,15 +110,23 @@
                      <?php  endwhile; endif; wp_reset_postdata(); ?>
                     <?php endif; ?>
                 </ul>
-                <?php if ($contents['arrow_enable']):?>
+                <?php if ($contents['arrow_enable'] == 'yes'):?>
                     <a class=" <?php echo $contents['arrow_position'] == 'out'? 'wk-position-center-left-out' : 'wk-position-center-left'; ?> wk-position-medium wk-slidenav-small <?php echo $contents['arrow_on_hover'] == 'yes'? 'wk-hidden-hover' : ''; ?> " href="#" wk-slidenav-previous wk-slider-item="previous"></a>
                     <a class="<?php echo $contents['arrow_position'] == 'out'? 'wk-position-center-right-out' : 'wk-position-center-right'; ?> wk-position-medium  wk-slidenav-small <?php echo $contents['arrow_on_hover'] == 'yes'? 'wk-hidden-hover' : ''; ?>  " href="#" wk-slidenav-next wk-slider-item="next"></a>
                 <?php endif; ?>
 
             </div>
-                <?php if ($contents['dot_enable']):?>
+                <?php if ($contents['dot_enable'] == 'yes'):?>
                     <ul class="wk-slider-nav wk-dotnav wk-flex-<?php echo $contents['dot_nav_align'];?> wk-margin-medium-top"></ul>
                 <?php endif; ?>
 
         </div>
+
+        <script>
+            jQuery(function($){
+                if(!$('body').hasClass('wk-content-carousel')){
+                    $('body').addClass('wk-content-carousel');
+                }
+            });
+        </script>
 

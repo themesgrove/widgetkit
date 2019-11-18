@@ -1,7 +1,16 @@
 //Content Carousel
 
 .content-carousel{
-  .wk-slider-items{
+    .wk-grid-column-small, .wk-grid-small{
+        margin-left:-15px;
+      }
+      .wk-grid-column-medium, .wk-grid-medium{
+        margin-left:-30px;
+      }
+      .wk-grid-column-large, .wk-grid-large{
+        margin-left:-70px;
+      }
+      .wk-slider-items{
     .wk-card{
       .wk-card-body{
         padding:10px 30px 15px;
