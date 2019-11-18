@@ -107,17 +107,6 @@ class wkfe_gallery extends Widget_Base {
 		        ]
 	    );
 
-	    // $repeater->add_control(
-	    //    'gallery_preview_image',
-		   //      [
-		   //        'label' => esc_html__( 'Preview Image', 'widgetkit-for-elementor' ),
-		   //        'type'  => Controls_Manager::MEDIA,
-		   //         'default'  => [
-					// 	'url' => Utils::get_placeholder_image_src(),
-					// ],
-		   //      ]
-	    // );
-
 	    
 		$repeater->add_control(
 			'demo_link',
@@ -135,19 +124,50 @@ class wkfe_gallery extends Widget_Base {
 		);
 
 
-		$repeater->add_control(
-            'item_order',
-                [
-                    'label'       => __( 'Orderby', 'widgetkit-for-elementor' ),
-                    'type' => Controls_Manager::SELECT,
-                    'default' => 'default',
-                    'options' => [
-                        'default' => __( 'Defualt', 'widgetkit-for-elementor' ),
-                        'first'   => __( 'First', 'widgetkit-for-elementor' ),
-                        'last'    => __( 'Last', 'widgetkit-for-elementor' ),
-                    ],
-                ]
-        );
+		// $repeater->add_control(
+  //           'item_order',
+  //               [
+  //                   'label'       => __( 'Orderby', 'widgetkit-for-elementor' ),
+  //                   'type' => Controls_Manager::SELECT,
+  //                   'default' => 'default',
+  //                   'options' => [
+  //                       'default' => __( 'Defualt', 'widgetkit-for-elementor' ),
+  //                       'first'   => __( 'First', 'widgetkit-for-elementor' ),
+  //                       'last'    => __( 'Last', 'widgetkit-for-elementor' ),
+  //                   ],
+  //               ]
+  //       );
+
+        $repeater->add_control(
+			'grid_control',
+			[
+				'label'   => esc_html__( 'Grid Control', 'widgetkit-for-elementor' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => esc_html__( 'width-1-2', 'widgetkit-for-elementor' ),
+				'options' => [
+                    'width-1-1' => __( '1', 'widgetkit-for-elementor' ),
+                    'width-1-2' => __( '2', 'widgetkit-for-elementor' ),
+                    'width-1-3' => __( '3', 'widgetkit-for-elementor' ),
+                    'width-1-4' => __( '4', 'widgetkit-for-elementor' ),
+                    'width-1-5' => __( '5', 'widgetkit-for-elementor' ),
+                    'width-1-6' => __( '6', 'widgetkit-for-elementor' ),
+                ],
+			]
+		);
+
+
+
+        // $repeater->add_responsive_control(
+        //     'grid_height',
+        //     [
+        //         'label'       => __( 'Grid Height', 'widgetkit-for-elementor' ),
+        //         'type'    => Controls_Manager::NUMBER,
+        //         'default' => 300,
+        //         'min'     => 1,
+        //         'max'     => 10900,
+        //         'step'    =>5,
+        //     ]
+        // );
 
 
 
@@ -163,7 +183,8 @@ class wkfe_gallery extends Widget_Base {
 		                'gallery_title' => esc_html__( 'Switch Pro', 'widgetkit-for-elementor' ),
 		                'gallery_desc' => esc_html__( 'Multiple Business WordPress Theme', 'widgetkit-for-elementor'),
 		                'gallery_thumb_image' => '',
-		                //'gallery_preview_image' => '',
+		                'grid_control' => '1-2',
+		                //'grid_height' => '260',
 		                'filter_tag' => esc_html__('business', 'widgetkit-for-elementor'),
 		                'demo_link' => 'https://themesgrove.com/product/switch-pro/',
 		 
@@ -172,7 +193,8 @@ class wkfe_gallery extends Widget_Base {
 		                'gallery_title' => esc_html__( 'Exploore', 'widgetkit-for-elementor' ),
 		                'gallery_desc' => esc_html__( 'WordPress Bloging Theme', 'widgetkit-for-elementor'),
 		                'gallery_thumb_image' => '',
-		                //'gallery_preview_image' => '',
+		                'grid_control' => '1-4',
+		                //'grid_height' => '260',
 		                'filter_tag' => esc_html__('business', 'widgetkit-for-elementor'),
 		                'demo_link' => 'https://themesgrove.com/product/exploore/',
 		 
@@ -181,9 +203,20 @@ class wkfe_gallery extends Widget_Base {
 		                'gallery_title' => esc_html__( 'Universidad', 'widgetkit-for-elementor' ),
 		                'gallery_desc'  => esc_html__( 'Education WordPress Theme', 'widgetkit-for-elementor'),
 		                'gallery_thumb_image' => '',
-		                //'gallery_preview_image' => '',
+		                'grid_control' => '1-4',
+		                //'grid_height' => '260',
 		                'filter_tag' => esc_html__('education', 'widgetkit-for-elementor'),
 		                'demo_link' => 'https://themesgrove.com/product/universidad/',
+		 
+		              ],
+		              [
+		                'gallery_title' => esc_html__( 'Switch Lite', 'widgetkit-for-elementor' ),
+		                'gallery_desc'  => esc_html__( 'WordPress Blog Theme', 'widgetkit-for-elementor'),
+		                'gallery_thumb_image' => '',
+		                'grid_control' => '1-1',
+		                //'grid_height' => '260',
+		                'filter_tag' => esc_html__('blog', 'widgetkit-for-elementor'),
+		                'demo_link' => 'https://themesgrove.com/product/switch-lite/',
 		 
 		              ]
 

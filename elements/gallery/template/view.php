@@ -8,7 +8,7 @@
 ?>
 
 
-	<div class="wk-gallery" wk-filter="target: .js-filter">
+	<div class="wk-gallery" <?php echo ($galleries['filter_enable'] == 'yes')? 'wk-filter="target: .js-filter"' : ''; ?> >
 		<?php if ($galleries['filter_enable'] == 'yes'): ?>
 		<div class="wk-container wk-margin-auto">
 			<?php 
@@ -42,16 +42,16 @@
 
 
 			<?php if ($galleries['colmun_width'] == 'auto'):?>
-				<div class="js-filter wk-grid-<?php echo $galleries['column_gap'];?> wk-child-width-<?php echo $galleries['colmun_width'];?> wk-margin-auto" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>"  wk-grid>
+				<div class="<?php echo ($galleries['filter_enable'] == 'yes')? 'js-filter' : ''; ?> wk-grid-<?php echo $galleries['column_gap'];?> wk-child-width-<?php echo $galleries['colmun_width'];?> wk-margin-auto wk-flex-right" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>">
 
 			<?php else: ?>
-				<div class="js-filter wk-grid-<?php echo $galleries['column_gap'];?>  wk-child-width-<?php echo $galleries['colmun_layout'];?>" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>"  wk-grid>
+				<div class="<?php echo ($galleries['filter_enable'] == 'yes')? 'js-filter' : ''; ?> wk-grid-<?php echo $galleries['column_gap'];?>  wk-child-width-<?php echo $galleries['colmun_layout'];?> wk-flex-right" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>">
 			<?php endif; ?>
 	  		<?php foreach ($galleries['gallery_content'] as $gallery) :?>
 	  			<?php $tags = explode(',', $gallery['filter_tag']);?>
-		        <div class="wk-flex-<?php echo $gallery['item_order'];?> <?php foreach($tags as $tag ){
+		        <div class="<?php foreach($tags as $tag ){
 		        	$tags_replace = str_replace([" ", "&"], ["_", ""], $tag);
-		        	echo strtolower($tags_replace.'_'.$id);}?>">
+		        	echo strtolower($tags_replace.'_'.$id);}?> wk-<?php echo $gallery['grid_control'];?>@m wk-width-1-1@s">
 		        <!-- 	<div class=""> -->
 			            <div class="wk-card wk-card-default wk-position-relative wk-overflow-hidden <?php echo $galleries['hover_effect'];?>">
 				            <?php if ($gallery['gallery_thumb_image']): ?>
