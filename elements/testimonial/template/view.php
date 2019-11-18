@@ -132,8 +132,7 @@
                             <?php elseif($testimonials['item_styles'] == 'screen_3'): ?>
                                 <div class="wk-flex wk-flex-center wk-grid-match">
                                     <div class="wk-card wk-card-default wk-grid-collapse wk-margin wk-testimonial-3 wk-flex-middle" wk-grid>
-                                  
-                                    <?php if($testimonials['thumbnail_position_horizontal'] == 'left'): ;?>
+                                    <?php if($testimonials['thumbnail_position_horizontal'] == 'left' && $testimonial['testimonial_thumb_image']['url']): ;?>
                                       <div class="wk-cover-container wk-width-1-2@m">
                                           <?php if($testimonial['testimonial_thumb_image']['url']):?>
                                        
@@ -179,7 +178,7 @@
 
                                         </div>
                                     </div>
-                                     <?php if($testimonials['thumbnail_position_horizontal'] == 'right'): ;?>
+                                     <?php if($testimonials['thumbnail_position_horizontal'] == 'right' && $testimonial['testimonial_thumb_image']['url']): ;?>
                                         <div class="wk-cover-container wk-width-1-2@m">
                                             <?php if($testimonial['testimonial_thumb_image']['url']):?>
                                              
@@ -402,4 +401,12 @@
                 <?php endif; ?>
 
         </div>
+        <script>
+            jQuery(function($){
+                if(!$('body').hasClass('wk-testimonial')){
+                    $('body').addClass('wk-testimonial');
+                }
+            });
+        </script>
+
 
