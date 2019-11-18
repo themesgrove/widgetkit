@@ -51,14 +51,14 @@
             <div class="tgx-price-table__price">
 
                 <?php if ( ! empty( $symbol ) ) : ?>
-                    <span class="tgx-price-table__currency"><strong><?php echo esc_attr($symbol); ?></strong></span>
+                    <span class="tgx-price-table__currency"><span><?php echo esc_attr($symbol); ?></span></span>
                 <?php endif; ?>
 
                 <?php if ( ! empty( $settings['price'] ) ) : ?>
-                    <span class="tgx-price-table__integer-part"><strong><?php echo esc_attr($settings['price']); ?></strong></span>
+                    <span class="tgx-price-table__integer-part"><span><?php echo esc_attr($settings['price']); ?></span></span>
                 <?php endif; ?>
                 <?php if ( ! empty( $settings['period'] ) ) : ?>
-                    <span class="tgx-price-table__period"><strong><?php echo esc_attr($settings['period']); ?></strong></span>
+                    <span class="tgx-price-table__period"><span><?php echo esc_attr($settings['period']); ?></span></span>
                 <?php endif; ?>
              
             </div>

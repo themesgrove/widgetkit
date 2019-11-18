@@ -160,7 +160,6 @@ class wkfe_team extends Widget_Base {
 								'deviantart',
 								'digg',
 								'dribbble',
-								'elementor',
 								'facebook',
 								'flickr',
 								'foursquare',
@@ -326,6 +325,32 @@ class wkfe_team extends Widget_Base {
 	                    ],
 	                ]
 	        );
+
+			    $this->add_control(
+					'image_position',
+					[
+						'label' => __( 'Image Position', 'widgetkit-for-elementor' ),
+						'description' => __( 'You must have a single colum', 'widgetkit-for-elementor' ),
+						'type' => Controls_Manager::CHOOSE,
+						'default' => 'left',
+						'options' => [
+							'left' => [
+								'title' => __( 'Left', 'widgetkit-for-elementor' ),
+								'icon' => 'eicon-h-align-left',
+							],
+							'right' => [
+								'title' => __( 'Right', 'widgetkit-for-elementor' ),
+								'icon' => 'eicon-h-align-right',
+							],
+						],
+						'toggle' => false,
+						'condition'   => [
+                        	'item_styles' => 'screen_3',
+                    	],
+					]
+				);
+	          
+
 	    $this->end_controls_section();
 
 			
@@ -357,6 +382,78 @@ class wkfe_team extends Widget_Base {
 	
 
 
+		$this->start_controls_section(
+            'section_style_shape',
+            [
+                'label' => esc_html__( 'Shape', 'widgetkit-for-elementor' ),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition'   => [
+                    'item_styles' => 'screen_6',
+                ],
+            ]
+        );
+
+	            $this->add_control(
+					'image_shape_bg_color',
+					[
+						'label'     => esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
+						'type'      => Controls_Manager::COLOR,
+						'default'   => '',
+						'selectors' => [
+							'{{WRAPPER}} .wk-team .wk-style-6 .wk-card-wrapper .wk-card-link' => 'background-color: {{VALUE}};',
+						],
+						'condition'   => [
+                        	'item_styles' => 'screen_6',
+                    	],
+					]
+				);
+
+				$this->add_control(
+		            'image_shape_radius',
+		            [
+		                'label' => esc_html__( 'Radius', 'widgetkit-for-elementor' ),
+		                'type'  => Controls_Manager::DIMENSIONS,
+		                'size_units' => [ 'px', '%' ],
+		                'placeholder' => [
+								'top' => '60',
+								'right' => '60',
+								'bottom' => '40',
+								'left' => '40',
+							],
+		                'selectors'  => [
+		                    '{{WRAPPER}} .wk-team .wk-style-6 .wk-card-wrapper .wk-card-link' => 'border-radius:50% 50% 50% 50%/{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                ],
+		                'condition'   => [
+                        	'item_styles' =>'screen_6',
+                    	],
+		            ]
+		        );
+
+
+				$this->add_control(
+	                'image_bg_position',
+	                [
+	                    'label'       => __( 'Background Size', 'widgetkit-for-elementor' ),
+	                    'type' => Controls_Manager::SELECT,
+	                    'default' => 'cover',
+	                    'options' => [
+	                        'auto'     => __( 'Auto', 'widgetkit-for-elementor' ),
+	                        'contain'  => __( 'Contain', 'widgetkit-for-elementor' ),
+	                        'cover'    => __( 'Cover', 'widgetkit-for-elementor' ),
+	                    ],
+	                    'condition'   => [
+                        	'item_styles' => 'screen_6',
+                    	],
+                    	'selectors' => [
+							'{{WRAPPER}} .wk-team .wk-style-6 .wk-card-wrapper .wk-card-hover-bg' => 'background-size: {{VALUE}};',
+						],
+                    	
+	                ]
+	            );
+
+        $this->end_controls_section();
+
+
 
 		$this->start_controls_section(
             'section_style_image',
@@ -366,31 +463,9 @@ class wkfe_team extends Widget_Base {
             ]
         );
 
-			    $this->add_control(
-					'image_position',
-					[
-						'label' => __( 'Position', 'elementor' ),
-						'type' => Controls_Manager::CHOOSE,
-						'default' => 'left',
-						'options' => [
-							'left' => [
-								'title' => __( 'Left', 'elementor' ),
-								'icon' => 'eicon-h-align-left',
-							],
-							'right' => [
-								'title' => __( 'Right', 'elementor' ),
-								'icon' => 'eicon-h-align-right',
-							],
-						],
-						'toggle' => false,
-						'condition'   => [
-                        	'item_styles' => 'screen_3',
-                    	],
-					]
-				);
-	          
 
-	           $this->add_responsive_control(
+
+	        $this->add_responsive_control(
 	            'image_size',
 	                [
 	                    'label'   => esc_html__( 'Size(%)', 'widgetkit-for-elementor' ),
@@ -407,7 +482,7 @@ class wkfe_team extends Widget_Base {
 	                    'selectors' => [
 	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-1 .wk-card-media-top img' => 'width: {{SIZE}}%;',
 	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-5 .wk-card-wrapper img'  => 'width: {{SIZE}}%;',
-	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-2 .wk-card-media-top a'  => 'width: {{SIZE}}%;',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-2 .wk-card-media-top a, {{WRAPPER}} .wk-team .wk-card.wk-style-2 .wk-card-media-top img'  => 'width: {{SIZE}}%;',
 	                    ],
 	                    'condition'   => [
                         	'item_styles' => ['screen_1', 'screen_2', 'screen_5'],
@@ -441,41 +516,7 @@ class wkfe_team extends Widget_Base {
 	                    ]
 	            );
 
-	            $this->add_control(
-					'image_shape_bg_color',
-					[
-						'label'     => esc_html__( 'Shape Color', 'widgetkit-for-elementor' ),
-						'type'      => Controls_Manager::COLOR,
-						'default'   => '',
-						'selectors' => [
-							'{{WRAPPER}} .wk-team .wk-style-6 .wk-card-wrapper .wk-card-link' => 'background-color: {{VALUE}};',
-						],
-						'condition'   => [
-                        	'item_styles' => 'screen_6',
-                    	],
-					]
-				);
 
-				$this->add_control(
-		            'image_shape_radius',
-		            [
-		                'label' => esc_html__( 'Shape Radius', 'widgetkit-for-elementor' ),
-		                'type'  => Controls_Manager::DIMENSIONS,
-		                'size_units' => [ 'px', '%' ],
-		                'placeholder' => [
-								'top' => '60',
-								'right' => '60',
-								'bottom' => '40',
-								'left' => '40',
-							],
-		                'selectors'  => [
-		                    '{{WRAPPER}} .wk-team .wk-style-6 .wk-card-wrapper .wk-card-link' => 'border-radius:50% 50% 50% 50%/{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-		                ],
-		                'condition'   => [
-                        	'item_styles' =>'screen_6',
-                    	],
-		            ]
-		        );
 
 
 		       //  $this->add_responsive_control(
@@ -517,26 +558,6 @@ class wkfe_team extends Widget_Base {
 					]
 				);
 
-				$this->add_control(
-	                'image_bg_position',
-	                [
-	                    'label'       => __( 'Background Size', 'widgetkit-for-elementor' ),
-	                    'type' => Controls_Manager::SELECT,
-	                    'default' => 'contain',
-	                    'options' => [
-	                        'auto'     => __( 'Auto', 'widgetkit-for-elementor' ),
-	                        'contain'  => __( 'Contain', 'widgetkit-for-elementor' ),
-	                        'cover'    => __( 'Cover', 'widgetkit-for-elementor' ),
-	                    ],
-	                    'condition'   => [
-                        	'item_styles' => 'screen_6',
-                    	],
-                    	'selectors' => [
-							'{{WRAPPER}} .wk-team .wk-style-6 .wk-card-wrapper .wk-card-hover-bg' => 'background-size: {{VALUE}};',
-						],
-                    	
-	                ]
-	            );
 
 	        	$this->add_control(
 					'image_border_color',
@@ -560,7 +581,7 @@ class wkfe_team extends Widget_Base {
 		                'type'  => Controls_Manager::DIMENSIONS,
 		                'size_units' => [ 'px', '%' ],
 		                'selectors'  => [
-		                    '{{WRAPPER}} .wk-team .wk-card.wk-style-2 .wk-card-media-top img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                    '{{WRAPPER}} .wk-team .wk-card.wk-style-2 .wk-card-media-top a, {{WRAPPER}} .wk-team .wk-card.wk-style-2 .wk-card-media-top img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                    '{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-left:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                    '{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-right:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                    '{{WRAPPER}} .wk-team .wk-style-4 .wk-card-wrapper img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',

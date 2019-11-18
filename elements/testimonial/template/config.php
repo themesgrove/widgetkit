@@ -210,6 +210,55 @@ class wkfe_testimonial extends Widget_Base {
 	                ]
 	        );
 
+
+
+			    $this->add_control(
+					'thumbnail_position_vertical',
+					[
+						'label' => __( 'Image Position', 'widgetkit-for-elementor' ),
+						'type' => Controls_Manager::CHOOSE,
+						'default' => 'top',
+						'options' => [
+							'top' => [
+								'title' => __( 'Top', 'widgetkit-for-elementor' ),
+								'icon' => 'eicon-v-align-top',
+							],
+							'bottom' => [
+								'title' => __( 'Bottom', 'widgetkit-for-elementor' ),
+								'icon' => 'eicon-v-align-bottom',
+							],
+						],
+						'toggle' => false,
+						'condition'   => [
+                        	'item_styles' => ['screen_1', 'screen_2', 'screen_4'],
+                    	],
+					]
+				);
+
+	            $this->add_control(
+					'thumbnail_position_horizontal',
+					[
+						'label' => __( 'Image Position', 'widgetkit-for-elementor' ),
+						'type' => Controls_Manager::CHOOSE,
+						'default' => 'left',
+						'options' => [
+							'left' => [
+								'title' => __( 'Left', 'widgetkit-for-elementor' ),
+								'icon' => 'eicon-h-align-left',
+							],
+							'right' => [
+								'title' => __( 'Right', 'widgetkit-for-elementor' ),
+								'icon' => 'eicon-h-align-right',
+							],
+						],
+						'toggle' => false,
+						'condition'   => [
+                        	'item_styles' => ['screen_3', 'screen_5'],
+                    	],
+					]
+				);
+
+
             $this->add_control(
                 'item_column',
                 [
@@ -219,8 +268,25 @@ class wkfe_testimonial extends Widget_Base {
                     'min'     => 1,
                     'max'     => 6,
                     'step'    => 1,
+                    'condition' => [
+		                    'center_mode_enable!' => 'yes',
+		            ],
                 ]
             );
+
+           	$this->add_control(
+	            'center_mode_enable',
+	                    [
+	                        'label'     => esc_html__( 'Center Mode', 'widgetkit-for-elementor' ),
+	                        'description' => 'You must have at least 4 items',
+	                        'type'      => Controls_Manager::SWITCHER,
+	                        'default'   => 'no',
+	                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+	                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
+
+	                    ]
+		        );
+
 
 
 	        $this->add_control(
@@ -277,17 +343,6 @@ class wkfe_testimonial extends Widget_Base {
 		           //      ]
 		           //  );
 
-		       	$this->add_control(
-	                'center_mode_enable',
-	                    [
-	                        'label'     => esc_html__( 'Center', 'widgetkit-for-elementor' ),
-	                        'description' => 'You must have at least 4 items',
-	                        'type'      => Controls_Manager::SWITCHER,
-	                        'default'   => 'no',
-	                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-	                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-	                    ]
-		        );
 
 
 		       	// $this->add_control(
@@ -308,25 +363,6 @@ class wkfe_testimonial extends Widget_Base {
 	                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
 	                    ]
 		        );
-
-	         //    $this->add_control(
-		        //     'content_infinite_mode',
-		        //         [
-		        //             'label' => __( 'Infinite Mode', 'widgetkit-for-elementor' ),
-		        //             'type'  => Controls_Manager::HEADING,
-		        //             'separator' => 'before',
-		        //         ]
-		        //     );
-	         //    $this->add_control(
-	         //        'infinite_mode_enable',
-	         //            [
-	         //                'label'     => esc_html__( 'Display Infinite', 'widgetkit-for-elementor' ),
-	         //                'type'      => Controls_Manager::SWITCHER,
-	         //                'default'   => 'no',
-	         //                'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-	         //                'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-	         //            ]
-		        // );
 
 		        // $this->add_control(
 		        //     'content_interval',
@@ -473,53 +509,6 @@ class wkfe_testimonial extends Widget_Base {
             ]
         );
 
-        
-
-			    $this->add_control(
-					'thumbnail_position_vertical',
-					[
-						'label' => __( 'Position', 'widgetkit-for-elementor' ),
-						'type' => Controls_Manager::CHOOSE,
-						'default' => 'top',
-						'options' => [
-							'top' => [
-								'title' => __( 'Top', 'widgetkit-for-elementor' ),
-								'icon' => 'eicon-v-align-top',
-							],
-							'bottom' => [
-								'title' => __( 'Bottom', 'widgetkit-for-elementor' ),
-								'icon' => 'eicon-v-align-bottom',
-							],
-						],
-						'toggle' => false,
-						'condition'   => [
-                        	'item_styles' => ['screen_1', 'screen_2', 'screen_4'],
-                    	],
-					]
-				);
-
-	            $this->add_control(
-					'thumbnail_position_horizontal',
-					[
-						'label' => __( 'Position', 'widgetkit-for-elementor' ),
-						'type' => Controls_Manager::CHOOSE,
-						'default' => 'left',
-						'options' => [
-							'left' => [
-								'title' => __( 'Left', 'widgetkit-for-elementor' ),
-								'icon' => 'eicon-h-align-left',
-							],
-							'right' => [
-								'title' => __( 'Right', 'widgetkit-for-elementor' ),
-								'icon' => 'eicon-h-align-right',
-							],
-						],
-						'toggle' => false,
-						'condition'   => [
-                        	'item_styles' => ['screen_3', 'screen_5'],
-                    	],
-					]
-				);
 
 	           
 

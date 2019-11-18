@@ -159,15 +159,15 @@ class wkfe_content_carousel extends Widget_Base {
                    'separator'  => 'before',
                   'default'     => [
                       [
-                        'content_category'    => esc_html__( 'Business', 'widgetkit-for-elementor' ),
-                        'content_title'       => esc_html__( 'Healthcare giant overcomes', 'widgetkit-for-elementor' ),
+                        'content_meta'    => esc_html__( 'Business', 'widgetkit-for-elementor' ),
+                        'content_title'       => esc_html__( 'Healthcare giant', 'widgetkit-for-elementor' ),
                         'content_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
                         'content_thumb_image' => '',
                         'content_demo_link'   => '#',
          
                       ],
                       [
-                        'content_category'    => esc_html__( 'Consumer', 'widgetkit-for-elementor' ),
+                        'content_meta'    => esc_html__( 'Consumer', 'widgetkit-for-elementor' ),
                         'content_title'       => esc_html__( 'A technology company', 'widgetkit-for-elementor' ),
                         'content_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
                         'content_thumb_image' => '',
@@ -175,7 +175,7 @@ class wkfe_content_carousel extends Widget_Base {
          
                       ],
                       [
-                        'content_category'    => esc_html__( 'Travel', 'widgetkit-for-elementor' ),
+                        'content_meta'    => esc_html__( 'Travel', 'widgetkit-for-elementor' ),
                         'content_title'       => esc_html__( 'Focus on core delivers', 'widgetkit-for-elementor' ),
                         'content_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
                         'content_thumb_image' => '',
@@ -183,7 +183,7 @@ class wkfe_content_carousel extends Widget_Base {
      
                         ],
                         [
-                        'content_category'    => esc_html__( 'Corporate', 'widgetkit-for-elementor' ),
+                        'content_meta'    => esc_html__( 'Corporate', 'widgetkit-for-elementor' ),
                         'content_title'       => esc_html__( 'Focus on core delivers', 'widgetkit-for-elementor' ),
                         'content_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
                         'content_thumb_image' => '',
@@ -423,6 +423,18 @@ class wkfe_content_carousel extends Widget_Base {
         );
 
             $this->add_control(
+                'center_mode_enable',
+                    [
+                        'label'     => esc_html__( 'Center Mode', 'widgetkit-for-elementor' ),
+                        'description' => 'You must have at least 4 items',
+                        'type'      => Controls_Manager::SWITCHER,
+                        'default'   => 'no',
+                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
+                    ]
+            );
+
+            $this->add_control(
                 'item_column',
                 [
                     'label'   => __( 'Number of Colum', 'widgetkit-for-elementor' ),
@@ -431,6 +443,9 @@ class wkfe_content_carousel extends Widget_Base {
                     'min'     => 1,
                     'max'     => 6,
                     'step'    => 1,
+                    'condition' => [
+                        'center_mode_enable!' => 'yes',
+                    ],
                 ]
             );
 
@@ -449,6 +464,27 @@ class wkfe_content_carousel extends Widget_Base {
 	                    ],
 	                ]
 	        );
+
+            $this->add_control(
+                'thumbnail_position',
+                    [
+                        'label' => __( 'Image Position', 'widgetkit-for-elementor' ),
+                        'type' => Controls_Manager::CHOOSE,
+                        'default' => 'top',
+                        'options' => [
+                            'top' => [
+                                'title' => __( 'Top', 'widgetkit-for-elementor' ),
+                                'icon' => 'eicon-v-align-top',
+                            ],
+                            'bottom' => [
+                                'title' => __( 'Bottom', 'widgetkit-for-elementor' ),
+                                'icon' => 'eicon-v-align-bottom',
+                            ],
+                        ],
+                        'toggle' => false,
+                        'separator' => 'before',
+                    ]
+                );
 
 	        $this->end_controls_section();
 
@@ -489,17 +525,7 @@ class wkfe_content_carousel extends Widget_Base {
 		           //      ]
 		           //  );
 
-		       	$this->add_control(
-	                'center_mode_enable',
-	                    [
-	                        'label'     => esc_html__( 'Center', 'widgetkit-for-elementor' ),
-	                        'description' => 'You must have at least 4 items',
-	                        'type'      => Controls_Manager::SWITCHER,
-	                        'default'   => 'no',
-	                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-	                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-	                    ]
-		        );
+
 
 
 		       	// $this->add_control(
@@ -650,19 +676,7 @@ class wkfe_content_carousel extends Widget_Base {
             ]
         );
 
-        
-	            $this->add_control(
-	                'thumbnail_position',
-	                [
-	                    'label'       => __( 'Position', 'widgetkit-for-elementor' ),
-	                    'type' => Controls_Manager::SELECT,
-	                    'default' => 'top',
-	                    'options' => [
-	                        'top'     => __( 'Top', 'widgetkit-for-elementor' ),
-	                        'bottom'  => __( 'Bottom', 'widgetkit-for-elementor' ),
-	                    ],
-	                ]
-	            );
+    
 	           
 
 	            $this->add_control(
@@ -714,7 +728,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                        'label'   => esc_html__( 'Height(px)', 'widgetkit-for-elementor' ),
 	                        'type'    => Controls_Manager::SLIDER,
 	                        'default' => [
-	                           'size' =>190,
+	                           'size' =>'',
 	                        ],
 	                        'range'  => [
 	                            'px' => [
