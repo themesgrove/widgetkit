@@ -482,7 +482,7 @@ class wkfe_team extends Widget_Base {
 	                    'selectors' => [
 	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-1 .wk-card-media-top img' => 'width: {{SIZE}}%;',
 	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-5 .wk-card-wrapper img'  => 'width: {{SIZE}}%;',
-	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-2 .wk-card-media-top a'  => 'width: {{SIZE}}%;',
+	                        '{{WRAPPER}} .wk-team .wk-card.wk-style-2 .wk-card-media-top a, {{WRAPPER}} .wk-team .wk-card.wk-style-2 .wk-card-media-top img'  => 'width: {{SIZE}}%;',
 	                    ],
 	                    'condition'   => [
                         	'item_styles' => ['screen_1', 'screen_2', 'screen_5'],
@@ -581,7 +581,7 @@ class wkfe_team extends Widget_Base {
 		                'type'  => Controls_Manager::DIMENSIONS,
 		                'size_units' => [ 'px', '%' ],
 		                'selectors'  => [
-		                    '{{WRAPPER}} .wk-team .wk-card.wk-style-2 .wk-card-media-top img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		                    '{{WRAPPER}} .wk-team .wk-card.wk-style-2 .wk-card-media-top a, {{WRAPPER}} .wk-team .wk-card.wk-style-2 .wk-card-media-top img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                    '{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-left:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                    '{{WRAPPER}} .wk-team .wk-style-3 .wk-card-media-right:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		                    '{{WRAPPER}} .wk-team .wk-style-4 .wk-card-wrapper img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
