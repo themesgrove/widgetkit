@@ -42,19 +42,21 @@
 
 
 			<?php if ($galleries['colmun_width'] == 'auto'):?>
-				<div class="<?php echo ($galleries['filter_enable'] == 'yes')? 'js-filter' : ''; ?> wk-grid-<?php echo $galleries['column_gap'];?> wk-child-width-<?php echo $galleries['colmun_width'];?> wk-margin-auto wk-flex-right" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>">
+				<div class="<?php echo ($galleries['filter_enable'] == 'yes')? 'js-filter' : ''; ?> wk-grid-<?php echo $galleries['column_gap'];?> wk-child-width-<?php echo $galleries['colmun_width'];?>" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>">
 
 			<?php else: ?>
-				<div class="<?php echo ($galleries['filter_enable'] == 'yes')? 'js-filter' : ''; ?> wk-grid-<?php echo $galleries['column_gap'];?>  wk-child-width-<?php echo $galleries['colmun_layout'];?> wk-flex-right" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>">
+				<div class="<?php echo ($galleries['filter_enable'] == 'yes')? 'js-filter' : ''; ?> wk-grid-<?php echo $galleries['column_gap'];?>  wk-child-width-<?php echo $galleries['colmun_layout'];?>" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>">
 			<?php endif; ?>
 	  		<?php foreach ($galleries['gallery_content'] as $gallery) :?>
 	  			<?php $tags = explode(',', $gallery['filter_tag']);?>
 		        <div class="<?php foreach($tags as $tag ){
 		        	$tags_replace = str_replace([" ", "&"], ["_", ""], $tag);
-		        	echo strtolower($tags_replace.'_'.$id);}?> wk-<?php echo $gallery['grid_control'];?>@m wk-width-1-1@s">
+		        	echo strtolower($tags_replace.'_'.$id);}?> " data-size="<?php echo $gallery['item_data_size'];?>">
 		        <!-- 	<div class=""> -->
 			            <div class="wk-card wk-card-default wk-position-relative wk-overflow-hidden <?php echo $galleries['hover_effect'];?>">
-				            <?php if ($gallery['gallery_thumb_image']): ?>
+
+
+				            <?php if ($gallery['gallery_thumb_image']['url']): ?>
 								<img src="<?php echo $gallery['gallery_thumb_image']['url']?>" alt="<?php echo $gallery['gallery_title'];?>">
 				            <?php endif ;?>
 
@@ -75,7 +77,7 @@
 				            	<?php endif; ?>
 				            	<?php if ($galleries['lightcase_enable'] == 'yes' || $galleries['link_enable'] == 'yes'):?>
 				            		
-					            	<div class="gallery-lightbox wk-margin-top wk-text-center">
+					            	<div class="gallery-lightbox wk-text-center">
 					            		<?php if ($galleries['link_enable'] == 'yes'):?>
 							            	<a class="icon" href="<?php echo $gallery['demo_link']['url']; ?>" <?php echo $gallery['demo_link']['is_external'] ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
 							            		<span class="fa fa-angle-right"></span>
@@ -93,3 +95,11 @@
 	        <?php endforeach; ?>
 	    </div>  <!-- contents -->
 	</div> <!-- target -->
+
+    <script>
+        jQuery(function($){
+            if(!$('body').hasClass('wk-gallery')){
+                $('body').addClass('wk-gallery');
+            }
+        });
+    </script>
