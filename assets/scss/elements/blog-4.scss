@@ -103,12 +103,13 @@
   left: 15px;
   background-color: #77d7b9;
   color: #fff;
-  padding: 0.8em;
+  padding: 10px 20px;
 }
 .hover-effect-1 .date span a {
     display: block;
     text-align: center;
     color: #fff;
+    font-size: 14px;
 }
 .hover-effect-1 .date .day {
   font-weight: 700;
@@ -195,6 +196,21 @@
 .hover-effect-1 .menu-content span {
   top: -10px;
 }
+
+.hover-effect-1  .entry-content,
+.hover-effect-2  .entry-content
+ {
+    font-size:14px;
+    max-width: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+.hover-effect-1  .entry-content p,
+.hover-effect-2  .entry-content p{
+  margin:10px 0;
+
+ }
 
 
 

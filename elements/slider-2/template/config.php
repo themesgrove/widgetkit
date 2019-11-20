@@ -600,7 +600,7 @@ class wkfe_slider_2 extends Widget_Base {
 					'label'  => esc_html__( 'Caption Width', 'widgetkit-for-elementor' ),
 					'type'   => Controls_Manager::SLIDER,
 					'default'  => [
-                        'size' => 1110,
+                        'size' => 700,
                     ],
 					'range'  => [
 						'px' => [
