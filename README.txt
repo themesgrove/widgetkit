@@ -4,8 +4,8 @@ Contributors: Themesgrove, parvezvai, themexpert
 Donate link: https://themesgrove.com/
 Tags: elementor, add-ons, elementor addons, elementor widgets, woocommerce, learndash, learnpress, widgets, woocommerce addons, learndash addons, sensei, sensei addons, countdown, timer, slider, team, testimonial, social-share, carousel, portfolio, pricing, widgetkit
 Requires at least: 4.0
-Tested up to: 5.2
-Stable tag: 1.5.8
+Tested up to: 5.3
+Stable tag: 2.0
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -40,7 +40,7 @@ You can only decide to use WidgetKit after viewing it by yourself. See it by you
 
 	<li><a href="http://widgetkit.themesgrove.com/portfolio-demo/">Filterable Portfolio </a>allows you to create stunning portfolio entries in a lucrative responsive grid.</li>
 
-
+	<li><a href="http://widgetkit.themesgrove.com/team">Team</a>Introduce your team members in an elegant way with the help of the team element. </li>
 	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-animation">Team Animation </a> displays team information in a different animation with click.</li>
 	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-overlay">Team Overlay </a> shows the information of all team members in a section.</li>
 	<li><a href="http://widgetkit.themesgrove.com/team-demo/#team-social-verticle">Team Vertical Icon </a> shows the information of team members with different style.</li>
@@ -59,7 +59,7 @@ You can only decide to use WidgetKit after viewing it by yourself. See it by you
 	<li><a href="http://widgetkit.themesgrove.com/modal-demo/">Modal </a>with 5 animations. You can use video, shortcode or any animation, that totally depends upon you.</li>
 
 	<li><a href="http://widgetkit.themesgrove.com/carousel/"> Post Carousel </a>lets you make 3 types of Post Carousels - Custom, Standard, & Sticky.</li>
-
+	<li><a href="http://widgetkit.themesgrove.com/content-carousel/">Content Carousel </a>lets you showcase each of your contents with a slider. Your visitors will be able to go through your contents very quickly with the help of this element.</li>
 	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-sidebar">Blog Sidebar </a> lets you make 3 types of Post Carousels - Custom, Standard, & Sticky.</li>
 	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-carousel">Blog Carousel </a> displays blog posts with carousel.</li>
 	<li><a href="http://widgetkit.themesgrove.com/custom-blog/#blog-revert">Blog Revert </a> displays blog with regular settings and exclusive customization of thumbnail.</li>
@@ -110,8 +110,15 @@ Widgetkit is entirely device responsive. Your sections built with WidgetKit will
 <strong>Uncompromisable Performance</strong>
 Widgetkit is developed with professional experienced developers. Therefore no messy codes or extra resources are loaded to slow down your site.
 
+==WooCommerce Integration & Elements==
+WidgetKit is not limited with general elements but it also allows you to customize your web store built with WooCommerce. There are four dedicated elements Woo Products, Woo Product Carousel, Woo Categories, Woo Recent Product. With these elements you can highlight and manage your product more effectively and thus boost your sales. 
 
-<strong>Dedicated Support</strong>
+==LMS Integration & Elements==
+If you are creating an education site you can make it more lucrative with WidgetKit. It doesn’t matter if you are using any LMS as WidgetKit provides integration and elements for popular 3 lms’s - LearnDash, Sensei & LearnPress. Be free and customize your site according to your own will with WidgetKit. 
+
+
+==Dedicated Support==
+
 Widgetkit team is always ready to aid you in your every queries and problems regarding widgetkit. Ask your questions in the email support, we will try to reply and solve your problem asap. 
 
 
@@ -173,6 +180,19 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+= 2.0 = 
+* New - Content Carousel element.
+* New - Team element.
+* New - Testimonial element.
+* New - Gallery element.
+* Update - Dashboard
+* Update - Pricing Element.
+* Update - Button + Modal Element. 
+* Update - Pros & Const Element. 
+* Update - Slider Element.
+* Update - Portfolio Element.
+* Fix - WooCommerce Integration error
+
 = 1.5.8 = 
 * New - Theme integration added for OceanWP, Astra.
 * New - Alignment option added in Filter Portfolio Element.
