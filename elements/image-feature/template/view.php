@@ -41,7 +41,7 @@
 
                     <?php else: ?>
                         <?php 
-                        Icons_Manager::render_icon( $settings['feature_icon_updated'], [ 'aria-hidden' => 'true' ] );
+                        Icons_Manager::render_icon( $settings['feature_icon_updated'], [ 'aria-hidden' => 'true','class' => 'feature-icon' ] );
                         ?>
                         <?php //if( $settings['feature_icon']):?>
                             <!-- <i class="feature-icon fa <?php //echo $settings['feature_icon'];?>"></i> -->

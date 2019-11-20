@@ -19,7 +19,9 @@
                 <ul class="lists">
                     <?php foreach($lists as $list): ?>
                         <li>
-                            <i class="<?php echo $list['single_feature_icon']; ?>"></i>
+                            <?php if ($list['single_feature_icon']):?>
+                                <i class="<?php echo $list['single_feature_icon']; ?>"></i>
+                             <?php endif;?>
                             <span>
                                 <?php echo $list['single_feature_input']; ?>
                             </span>

@@ -36,7 +36,15 @@
 
   .tgx-blog-1 .post-wrapper  .entry-content {
     font-size:14px;
+    max-width: inherit;
+    margin: 0;
+    padding: 0;
   }
+  .tgx-blog-1 .post-wrapper  .entry-content p{
+      margin:0;
+
+  }
+
   .tgx-blog-1 .post-wrapper  .entry-meta {
       margin: 0;
       padding: 0 5px 0 0;
@@ -47,7 +55,11 @@
 
   .tgx-blog-1 .post-wrapper .entry-footer {
     padding: 15px 0 30px;
+    max-width: inherit;
+    margin: 0;
   }
+
+
   .tgx-blog-1 .post-wrapper .entry-footer .content-btn i {
     padding-left: 5px;
     transition: all 0.3s ease;
@@ -75,6 +87,7 @@
   border: solid 1px #ddd;
   padding: 10px;
   font-size: 12px;
+  transition:all 0.3s ease;
 }
 
 .tgx-blog-1{
