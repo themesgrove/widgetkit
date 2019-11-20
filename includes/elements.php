@@ -24,8 +24,8 @@ class WKFE_Elements{
         $widgetkit_elements_keys = [
             'widget-slider-animation', 
             'widget-slider-content-animation', 
-            'widget-slider-box-animation', 
-            
+            'widget-slider-box-animation',
+            'widget-gallery',
             'widget-portfolio',
 
             'widget-pricing-single', 
@@ -83,6 +83,23 @@ class WKFE_Elements{
          * get the updated data from db
          */
 
+        /**
+         * get active component key from db
+         */
+        $get_active_component_from_db = get_option( 'widgetkit_save_settings', $widgetkit_default_settings );
+        /**
+         * if any diff found from db
+         * then merge with load key
+         * and update the db
+         */
+        if(array_diff_key($get_active_component_from_db, $widgetkit_default_settings)){
+            $merged_arr = array_merge($get_active_component_from_db, $widgetkit_default_settings);
+            update_option('widgetkit_save_settings', $merged_arr);
+        }
+        /**
+         * get the updated data from db
+         */
+
         $check_component_active = get_option( 'widgetkit_save_settings', $widgetkit_default_settings );
 
         if( $check_component_active['widget-animation-text'] ) {
@@ -116,6 +133,9 @@ class WKFE_Elements{
             require_once WK_PATH . '/elements/carousel/widget.php';
         }
         require_once WK_PATH . '/elements/click-tweet/widget.php';
+        if( $check_component_active['widget-gallery'] ) {
+            require_once WK_PATH . '/elements/gallery/widget.php';
+        }
         if( $check_component_active['widget-feature-box'] ) {
             require_once WK_PATH . '/elements/image-feature/widget.php'; // Feature Image/Icon Box
         }

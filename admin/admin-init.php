@@ -8,6 +8,7 @@ class Widgetkit_Admin
         'widget-slider-animation',
         'widget-slider-content-animation',
         'widget-slider-box-animation',
+        'widget-gallery',
         'widget-portfolio',
         'widget-pricing-single',
         'widget-pricing-icon',
@@ -395,6 +396,15 @@ class Widgetkit_Admin
                                                     <?php echo esc_html__('Feature Box', 'widgetkit-for-elementor'); ?>
                                                     <label class="switch">
                                                         <input type="checkbox" id="widget-feature-box" name="widget-feature-box" <?php checked(1, $this->widgetkit_get_settings['widget-feature-box'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Gallery', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-gallery" name="widget-gallery" <?php checked(1, $this->widgetkit_get_settings['widget-gallery'], true) ?>>
                                                         <span class="rectangle round"></span>
                                                     </label>
                                                 </div>
@@ -965,9 +975,6 @@ class Widgetkit_Admin
         } else {
             return;
         }
-        echo '<pre>';
-        var_dump($_POST['fields']);
-        echo '</pre>';
 
         $this->widgetkit_settings = [
             // Slider Animation
@@ -976,27 +983,24 @@ class Widgetkit_Admin
             'widget-slider-content-animation' => intval($settings['widget-slider-content-animation'] ? 1 : 0),
             // Slider Box Animation
             'widget-slider-box-animation' => intval($settings['widget-slider-box-animation'] ? 1 : 0),
-
+            // Gallery
+            'widget-gallery' => intval($settings['widget-gallery'] ? 1 : 0),
             // Portfolio
             'widget-portfolio' => intval($settings['widget-portfolio'] ? 1 : 0),
             // Feature section
             'widget-feature-box' => intval($settings['widget-feature-box'] ? 1 : 0),
-
             // Animation Text
             'widget-animation-text' => intval($settings['widget-animation-text'] ? 1 : 0),
             // Countdown
             'widget-countdown' => intval($settings['widget-countdown'] ? 1 : 0),
-
             // Pricing Single
             'widget-pricing-single' => intval($settings['widget-pricing-single'] ? 1 : 0),
             // Pricing Icon
             'widget-pricing-icon' => intval($settings['widget-pricing-icon'] ? 1 : 0),
             // Pricing Tab
             'widget-pricing-tab' => intval($settings['widget-pricing-tab'] ? 1 : 0),
-
             // Team 
             'widget-team' => intval($settings['widget-team'] ? 1 : 0),
-
             // Team Round
             'widget-team-round' => intval($settings['widget-team-round'] ? 1 : 0),
             // Team Animation
@@ -1005,14 +1009,12 @@ class Widgetkit_Admin
             'widget-team-verticle-icon' => intval($settings['widget-team-verticle-icon'] ? 1 : 0),
             // Team Overlay
             'widget-team-overlay' => intval($settings['widget-team-overlay'] ? 1 : 0),
-
             // Button
             'widget-button' => intval($settings['widget-button'] ? 1 : 0),
             // Hover Image
             'widget-hover-image' => intval($settings['widget-hover-image'] ? 1 : 0),
             // Post Carousel
             'widget-content-carousel' => intval($settings['widget-content-carousel'] ? 1 : 0),
-
             // Blog Revert
             'widget-blog-revert' => intval($settings['widget-blog-revert'] ? 1 : 0),
             // Blog Hover Animation
@@ -1023,10 +1025,8 @@ class Widgetkit_Admin
             'widget-blog-carousel' => intval($settings['widget-blog-carousel'] ? 1 : 0),
             // Blog Sidebar
             'widget-blog-sidebar' => intval($settings['widget-blog-sidebar'] ? 1 : 0),
-
              // Testimonial
             'widget-testimonial' => intval($settings['widget-testimonial'] ? 1 : 0),
-
             // Testimonial Single
             'widget-testimonial-single' => intval($settings['widget-testimonial-single'] ? 1 : 0),
             // Testimonial Center
