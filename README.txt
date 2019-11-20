@@ -184,7 +184,6 @@ PHP 5.4 or greater.
 * New - Content Carousel element.
 * New - Team element.
 * New - Testimonial element.
-* New - Gallery element.
 * Update - Dashboard
 * Update - Pricing Element.
 * Update - Button + Modal Element. 

@@ -8,7 +8,7 @@ class Widgetkit_Admin
         'widget-slider-animation',
         'widget-slider-content-animation',
         'widget-slider-box-animation',
-        'widget-gallery',
+        
         'widget-portfolio',
         'widget-pricing-single',
         'widget-pricing-icon',
@@ -400,15 +400,7 @@ class Widgetkit_Admin
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                                                    <?php echo esc_html__('Gallery', 'widgetkit-for-elementor'); ?>
-                                                    <label class="switch">
-                                                        <input type="checkbox" id="widget-gallery" name="widget-gallery" <?php checked(1, $this->widgetkit_get_settings['widget-gallery'], true) ?>>
-                                                        <span class="rectangle round"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
+                                            
                                             <div>
                                                 <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                     <?php echo esc_html__('Hover Image', 'widgetkit-for-elementor'); ?>
@@ -983,8 +975,7 @@ class Widgetkit_Admin
             'widget-slider-content-animation' => intval($settings['widget-slider-content-animation'] ? 1 : 0),
             // Slider Box Animation
             'widget-slider-box-animation' => intval($settings['widget-slider-box-animation'] ? 1 : 0),
-            // Gallery
-            'widget-gallery' => intval($settings['widget-gallery'] ? 1 : 0),
+            
             // Portfolio
             'widget-portfolio' => intval($settings['widget-portfolio'] ? 1 : 0),
             // Feature section

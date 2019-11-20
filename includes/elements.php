@@ -25,7 +25,6 @@ class WKFE_Elements{
             'widget-slider-animation', 
             'widget-slider-content-animation', 
             'widget-slider-box-animation',
-            'widget-gallery',
             'widget-portfolio',
 
             'widget-pricing-single', 
@@ -133,9 +132,7 @@ class WKFE_Elements{
             require_once WK_PATH . '/elements/carousel/widget.php';
         }
         require_once WK_PATH . '/elements/click-tweet/widget.php';
-        if( $check_component_active['widget-gallery'] ) {
-            require_once WK_PATH . '/elements/gallery/widget.php';
-        }
+        
         if( $check_component_active['widget-feature-box'] ) {
             require_once WK_PATH . '/elements/image-feature/widget.php'; // Feature Image/Icon Box
         }
