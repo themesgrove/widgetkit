@@ -5,7 +5,7 @@ Donate link: https://themesgrove.com/
 Tags: elementor, add-ons, elementor addons, elementor widgets, woocommerce, learndash, learnpress, widgets, woocommerce addons, learndash addons, sensei, sensei addons, countdown, timer, slider, team, testimonial, social-share, carousel, portfolio, pricing, widgetkit
 Requires at least: 4.0
 Tested up to: 5.3
-Stable tag: 2.0
+Stable tag: 2.1
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -180,6 +180,18 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+= 2.1 =
+* New - Gallery Element.
+* Update - Pros & Cons Element.
+* Update - Filterable Portfolio element.
+* Update - Pricing Single element.
+* Update - Team element.
+* Update - Feature Icon box element.
+* Update - Hover Image element.
+* Update - Slider Animation element.
+* Update - Blog Carousel element.
+* Update - Blog Image element.
+
 = 2.0 = 
 * New - Content Carousel element.
 * New - Team element.
