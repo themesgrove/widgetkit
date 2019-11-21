@@ -143,7 +143,7 @@
                             <span class="portfolio-buttons">
 
                                 <?php if($portfolio['portfolio_full_image']):?>
-                                    <a  data-rel="lightcase:slideshow" class="test-popup-link" href="<?php echo $portfolio['portfolio_full_image']['url'];?>" >
+                                    <a class="test-popup-link" href="<?php echo $portfolio['portfolio_full_image']['url'];?>" >
                                         <i class="fa fa-search"></i>
                                     </a>
                                 <?php endif; ?>
@@ -170,7 +170,7 @@
                                 <div class="overlay-panel">
                                     <div class="portfolio-btn text-center">
                                         <?php if($portfolio['portfolio_full_image']):?>
-                                            <a class="icon-search" data-rel="lightcase:slideshow" 
+                                            <a class="icon-search" 
                                                 href="<?php echo $portfolio['portfolio_full_image']['url'];?>">
                                                 <i class='fa fa-plus'></i>
                                             </a>
@@ -263,7 +263,7 @@
                             <span class="portfolio-buttons">
 
                                 <?php if($portfolio['portfolio_full_image']):?>
-                                    <a  data-rel="lightcase:slideshow" class="test-popup-link" href="<?php echo $portfolio['portfolio_thumb_image']['url'];?>" >
+                                    <a class="test-popup-link" href="<?php echo $portfolio['portfolio_thumb_image']['url'];?>" >
                                         <i class="fa fa-search"></i>
                                     </a>
                                 <?php endif; ?>

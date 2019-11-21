@@ -40,9 +40,14 @@
         $pcdt_style = $settings['widgetkit_countdown_style'] == 'd-u-s' ? ' side' : ' down';
         
         ?>
-            <div id="countDownContiner">
-                <div class="widgetkit-countdown<?php echo $pcdt_style; ?>" id="countdown-<?php echo esc_attr( $this->get_id() ); ?>"></div>
+            <div class="container">
+                <div class="row">
+                    <div id="countDownContiner">
+                        <div class="widgetkit-countdown<?php echo $pcdt_style; ?>" id="countdown-<?php echo esc_attr( $this->get_id() ); ?>"></div>
+                    </div>     
+                </div>
             </div>
+            
             <script>
                 ( function( $ ) {
                     $(document).ready( function() {
