@@ -23,7 +23,7 @@
     }
   }
 
-  .wk-card{
+  .wk-gallery-card{
       img{
         width:100%;
       }
@@ -97,7 +97,7 @@
           }
       }
 
-    .wk-card-body{
+    .wk-gallery-body{
        color:#fff;
        background:transparent;
       .wk-card-title{
@@ -126,7 +126,7 @@
           }
     }
     &:hover{
-       .wk-card-body{
+       .wk-gallery-body{
           opacity:1;
           transition:all 0.3s ease;
         }

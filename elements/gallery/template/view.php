@@ -51,16 +51,16 @@
 	  			<?php $tags = explode(',', $gallery['filter_tag']);?>
 		        <div class="<?php foreach($tags as $tag ){
 		        	$tags_replace = str_replace([" ", "&"], ["_", ""], $tag);
-		        	echo strtolower($tags_replace.'_'.$id);}?> " data-size="<?php echo $gallery['item_data_size'];?>">
+		        	echo strtolower($tags_replace.'_'.$id);}?>">
 		        <!-- 	<div class=""> -->
-			            <div class="wk-card wk-card-default wk-position-relative wk-overflow-hidden <?php echo $galleries['hover_effect'];?>">
+			            <div class="wk-gallery-card wk-position-relative wk-overflow-hidden <?php echo $galleries['hover_effect'];?>">
 
 
 				            <?php if ($gallery['gallery_thumb_image']['url']): ?>
 								<img src="<?php echo $gallery['gallery_thumb_image']['url']?>" alt="<?php echo $gallery['gallery_title'];?>">
 				            <?php endif ;?>
 
-				            <div class="wk-card-body wk-padding-small wk-position-absolute wk-position-center wk-text-center">
+				            <div class="wk-padding-small wk-position-absolute wk-position-center wk-text-center wk-gallery-body">
 				               <?php if ($gallery['demo_link']['url']): ?>
 				           		<a href="<?php echo $gallery['demo_link']['url']; ?>" <?php echo $gallery['demo_link']['is_external'] ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
 				            		<h5 class="wk-text-medium wk-margin-small wk-card-title"> <?php echo $gallery['gallery_title'];?>
