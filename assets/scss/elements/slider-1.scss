@@ -69,6 +69,7 @@
     left: 0;
     right: 0;
     color: #fff;
+    text-shadow:none;
   }
   .tgx-slider-1 .carousel .carousel-inner .item .carousel-caption .slider-title {
     color: #fff;
@@ -91,12 +92,27 @@
   }
   
   .tgx-slider-1 .carousel .carousel-indicators li {
-      width: 16px;
-      height: 16px;
+      width: 15px;
+      height: 15px;
       border-radius:2px;
       margin: 0 3px 0 0;
       border: 2px solid;
       transition: all 0.3s ease;
+      &:before{
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          border: 2px solid transparent;
+          width: 5px;
+          height: 5px;
+          border-radius: 1px;
+          top: 0;
+          bottom: 0;
+          z-index: -1;
+          margin:auto;
+
+      }
   }
   .tgx-slider-1 .carousel .carousel-indicators li.active {
       width: 15px;
@@ -109,15 +125,16 @@
   .tgx-slider-1 .carousel .carousel-indicators li.active:before {
       content: "";
       position: absolute;
-      left: 3px;
+      left: 0;
       right: 0;
       border: 2px solid #fff;
       width: 5px;
       height: 5px;
       border-radius: 1px;
-      top: 3px;
+      top: 0;
       bottom: 0;
       z-index: -1;
+      margin:auto;
   }
   
   .tgx-slider-1 .carousel:hover .carousel-control.left {

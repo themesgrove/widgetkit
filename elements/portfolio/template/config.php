@@ -229,13 +229,13 @@ class wkfe_portfolio extends Widget_Base {
 		$this->add_control(
 			'colmun_layout',
 				[
-					'label'     => esc_html__( 'Column Layout', 'widgetkit-for-elementor' ),
+					'label'     => esc_html__( 'Column Shows', 'widgetkit-for-elementor' ),
 					'type'      => Controls_Manager::SELECT,
 					'default'   => '4',
 					'options'   => [
-						'3'     => esc_html__( 'Colum 4', 'widgetkit-for-elementor' ),
-						'4'     => esc_html__( 'Colum 3', 'widgetkit-for-elementor' ),
-						'6'     => esc_html__( 'Colum 2', 'widgetkit-for-elementor' ),
+						'3'     => esc_html__( '4', 'widgetkit-for-elementor' ),
+						'4'     => esc_html__( '3', 'widgetkit-for-elementor' ),
+						'6'     => esc_html__( '2', 'widgetkit-for-elementor' ),
 					],
 				]
 		);
@@ -295,6 +295,56 @@ class wkfe_portfolio extends Widget_Base {
 		);
 
 		$this->add_control(
+			'portfolio_filter_show_title',
+			[
+				'label'   => esc_html__( 'Show Title', 'widgetkit-for-elementor' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => esc_html__( 'Show All', 'widgetkit-for-elementor' ),
+				'condition' => [
+					'filter_enable' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
+			'filter_hr',
+			[
+			'type' => \Elementor\Controls_Manager::DIVIDER,
+			]
+		);
+
+
+		$this->add_control(
+			'filter_color',
+			[
+				'label'     => esc_html__( 'Color', 'widgetkit-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#404040',
+				'selectors' => [
+					'{{WRAPPER}} .portfolio-filter>li>a' => 'color: {{VALUE}};',
+				],
+				'condition' => [
+	                'filter_enable' => 'yes',
+	            ],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+				[
+					'name'     => 'filter_typography',
+					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
+					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+					'selector' => '{{WRAPPER}} .portfolio-filter>li>a, {{WRAPPER}} .portfolio-filter.slash > li .filter-slash',
+					'condition'=> [
+		                'filter_enable' => 'yes',
+		            ],
+				]
+		);
+
+
+
+		$this->add_control(
 			'filter_layout_align',
 			[
 				'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
@@ -322,24 +372,6 @@ class wkfe_portfolio extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'filter_hr',
-			[
-			'type' => \Elementor\Controls_Manager::DIVIDER,
-			]
-		);
-		$this->add_control(
-			'portfolio_filter_show_title',
-			[
-				'label'   => esc_html__( 'Title', 'widgetkit-for-elementor' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Show All', 'widgetkit-for-elementor' ),
-				'condition' => [
-					'filter_enable' => 'yes',
-				],
-			]
-		);
-
 
 		$this->add_responsive_control(
 			'filter_spacing',
@@ -361,35 +393,8 @@ class wkfe_portfolio extends Widget_Base {
 					'condition' => [
 		                'filter_enable' => 'yes',
 		            ],
+		            'separator' => 'after',
 				]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-				[
-					'name'     => 'filter_typography',
-					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-					'selector' => '{{WRAPPER}} .portfolio-filter>li>a, {{WRAPPER}} .portfolio-filter.slash > li .filter-slash',
-					'condition'=> [
-		                'filter_enable' => 'yes',
-		            ],
-				]
-		);
-
-		$this->add_control(
-			'filter_color',
-			[
-				'label'     => esc_html__( 'Color', 'widgetkit-for-elementor' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '#404040',
-				'selectors' => [
-					'{{WRAPPER}} .portfolio-filter>li>a' => 'color: {{VALUE}};',
-				],
-				'condition' => [
-	                'filter_enable' => 'yes',
-	            ],
-			]
 		);
 
 		$this->add_control(
