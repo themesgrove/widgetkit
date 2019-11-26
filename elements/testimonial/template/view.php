@@ -9,7 +9,7 @@
                     <?php if ($testimonials['center_mode_enable'] == 'yes'): ?>
                       <div class="wk-grid-<?php echo $testimonials['column_gap']?> wk-slider-items wk-child-width-1-2@s" wk-grid>
                     <?php else: ?>
-                      <div class="wk-grid-<?php echo $testimonials['column_gap']?> wk-slider-items wk-flex wk-child-width-1-<?php echo $testimonials['item_column'];?>@m wk-child-width-1-2@s wk-child-width-1-<?php echo $testimonials['item_column'];?>@l" wk-grid>
+                      <div class="wk-grid-<?php echo $testimonials['column_gap']?> wk-slider-items wk-flex wk-child-width-1-<?php echo $testimonials['item_column'];?>@m wk-child-width-1-1@s wk-child-width-1-<?php echo $testimonials['item_column'];?>@l" wk-grid>
                     <?php endif; ?>
 
                         <?php foreach ( $testimonials['testimonial_content'] as $testimonial ) : ?>

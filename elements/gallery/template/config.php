@@ -664,7 +664,7 @@ class wkfe_gallery extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => 'rgba(0,0,0,0.66)',
 				'selectors' => [
-					'{{WRAPPER}} .wk-gallery .wk-card:before
+					'{{WRAPPER}} .wk-gallery .wk-gallery-card:before
 						'  => 'background: {{VALUE}};',
 				],
 			]
@@ -686,8 +686,8 @@ class wkfe_gallery extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .wk-gallery .wk-card .wk-card-body a .wk-card-title,
-					{{WRAPPER}} .wk-gallery .wk-card .wk-card-body .wk-card-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body a .wk-card-title,
+					{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .wk-card-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -699,7 +699,7 @@ class wkfe_gallery extends Widget_Base {
 					'name'     => 'overlay_title_typography',
 					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
 					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-					'selector' => '{{WRAPPER}} .wk-gallery .wk-card .wk-card-body .wk-card-title',
+					'selector' => '{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .wk-card-title',
 				]
 		);
 
@@ -719,7 +719,7 @@ class wkfe_gallery extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .wk-gallery .wk-card .wk-card-body .wk-text-desc' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .wk-text-desc' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -730,7 +730,7 @@ class wkfe_gallery extends Widget_Base {
 					'name'     => 'overlay_desc_typography',
 					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
 					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-					'selector' => '{{WRAPPER}} .wk-gallery .wk-card .wk-card-body .wk-text-desc',
+					'selector' => '{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .wk-text-desc',
 				]
 		);
 
@@ -751,7 +751,7 @@ class wkfe_gallery extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .wk-gallery .wk-card .wk-card-body .gallery-lightbox a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .gallery-lightbox a' => 'color: {{VALUE}};',
 					],
 			]
 		);
@@ -763,7 +763,7 @@ class wkfe_gallery extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .wk-gallery .wk-card .wk-card-body .gallery-lightbox a' => 'background-color: {{VALUE}}; border:1px solid {{VALUE}}; ',
+					'{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .gallery-lightbox a' => 'background-color: {{VALUE}}; border:1px solid {{VALUE}}; ',
 				],
 			]
 		);
@@ -775,7 +775,7 @@ class wkfe_gallery extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .wk-gallery .wk-card .wk-card-body .gallery-lightbox a:hover' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .gallery-lightbox a:hover' => 'background-color: {{VALUE}};'
 					 
 					],
 			]
@@ -788,7 +788,7 @@ class wkfe_gallery extends Widget_Base {
                 'type'  => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .wk-gallery .wk-card .wk-card-body .gallery-lightbox a
+                    '{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .gallery-lightbox a
                     ' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
@@ -809,7 +809,7 @@ class wkfe_gallery extends Widget_Base {
 						],
 					],
 					'selectors' => [
-						'{{WRAPPER}} .wk-gallery .wk-card .wk-card-body .gallery-lightbox' => 'margin-top:{{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .gallery-lightbox' => 'margin-top:{{SIZE}}{{UNIT}};',
 					],
 				]
 		);

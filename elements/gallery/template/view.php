@@ -42,10 +42,10 @@
 
 
 			<?php if ($galleries['colmun_width'] == 'auto'):?>
-				<div class="<?php echo ($galleries['filter_enable'] == 'yes')? 'js-filter' : ''; ?> wk-grid-<?php echo $galleries['column_gap'];?> wk-child-width-<?php echo $galleries['colmun_width'];?>" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>">
+				<div class="<?php echo ($galleries['filter_enable'] == 'yes')? 'js-filter' : ''; ?> wk-grid-<?php echo $galleries['column_gap'];?> wk-child-width-<?php echo $galleries['colmun_width'];?> wk-child-width-1-2@s" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>">
 
 			<?php else: ?>
-				<div class="<?php echo ($galleries['filter_enable'] == 'yes')? 'js-filter' : ''; ?> wk-grid-<?php echo $galleries['column_gap'];?>  wk-child-width-<?php echo $galleries['colmun_layout'];?>" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>">
+				<div class="<?php echo ($galleries['filter_enable'] == 'yes')? 'js-filter' : ''; ?> wk-grid-<?php echo $galleries['column_gap'];?>  wk-child-width-<?php echo $galleries['colmun_layout'];?>@m wk-child-width-1-2@s" wk-grid="masonry:<?php echo $galleries['masonary_enable'] == 'yes'? 'true' : 'false';?>">
 			<?php endif; ?>
 	  		<?php foreach ($galleries['gallery_content'] as $gallery) :?>
 	  			<?php $tags = explode(',', $gallery['filter_tag']);?>
