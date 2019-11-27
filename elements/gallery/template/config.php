@@ -29,7 +29,7 @@ class wkfe_gallery extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-apps';
+		return 'eicon-gallery-masonry wk-icon';
 	}
 
 	public function get_categories() {
@@ -107,7 +107,6 @@ class wkfe_gallery extends Widget_Base {
 					],
 		        ]
 	    );
-
 	    
 		$repeater->add_control(
 			'demo_link',
@@ -226,6 +225,18 @@ class wkfe_gallery extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+            'content_position',
+                [
+                    'label'       => __( 'Content Position', 'widgetkit-for-elementor' ),
+                    'type' => Controls_Manager::SELECT,
+                    'default' => 'overlay',
+                    'options' => [
+                        'overlay'   => __( 'Overlay', 'widgetkit-for-elementor' ),
+                        'bottom'    => __( 'Bottom', 'widgetkit-for-elementor' ),
+                    ],
+                ]
+        );
 
 		$this->add_control(
 			'colmun_width',
@@ -352,6 +363,20 @@ class wkfe_gallery extends Widget_Base {
 				]
 			);
 
+			$this->add_control(
+				'button_text',
+				[
+					'label'   => esc_html__( 'Link Text', 'widgetkit-for-elementor' ),
+					'description'   => esc_html__( 'When you set button text then link icon will hide', 'widgetkit-for-elementor' ),
+					'type'    => Controls_Manager::TEXT,
+					'default' => esc_html__( '', 'widgetkit-for-elementor' ),
+					'condition' => [
+						'link_enable' => 'yes',
+					],
+				]
+			);
+
+
 
 		$this->end_controls_section();
 
@@ -377,7 +402,7 @@ class wkfe_gallery extends Widget_Base {
 		$this->add_control(
 			'filter_show_title',
 			[
-				'label'   => esc_html__( 'Show All', 'widgetkit-for-elementor' ),
+				'label'   => esc_html__( 'Show All Text', 'widgetkit-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
 				'default' => esc_html__( 'All', 'widgetkit-for-elementor' ),
 				'condition' => [
@@ -652,10 +677,11 @@ class wkfe_gallery extends Widget_Base {
 		$this->start_controls_section(
 			'section_overlay_style',
 			[
-				'label' => esc_html__( 'Overlay', 'widgetkit-for-elementor' ),
+				'label' => esc_html__( 'Contents', 'widgetkit-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
+
 
 		$this->add_control(
 			'overlay_color',
@@ -664,7 +690,7 @@ class wkfe_gallery extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => 'rgba(0,0,0,0.66)',
 				'selectors' => [
-					'{{WRAPPER}} .wk-gallery .wk-gallery-card:before
+					'{{WRAPPER}} .wk-gallery .wk-gallery-card:before, {{WRAPPER}} .wk-gallery .content-bottom .caption-button .img-link:before
 						'  => 'background: {{VALUE}};',
 				],
 			]
@@ -692,7 +718,6 @@ class wkfe_gallery extends Widget_Base {
 			]
 		);
 
-
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 				[
@@ -702,6 +727,9 @@ class wkfe_gallery extends Widget_Base {
 					'selector' => '{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .wk-card-title',
 				]
 		);
+
+
+
 
 		$this->add_control(
             'gallery_desc_heading',
@@ -717,7 +745,7 @@ class wkfe_gallery extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Color', 'widgetkit-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#fff',
+				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .wk-text-desc' => 'color: {{VALUE}};',
 				],
@@ -738,7 +766,7 @@ class wkfe_gallery extends Widget_Base {
 		$this->add_control(
             'icon_heading',
             [
-                'label' => esc_html__( 'Icon', 'widgetkit-for-elementor' ),
+                'label' => esc_html__( 'Icon or Button', 'widgetkit-for-elementor' ),
                 'type'  => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -751,7 +779,10 @@ class wkfe_gallery extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .gallery-lightbox a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .gallery-lightbox a' => 'color: {{VALUE}}; border: 1px solid {{VALUE}};',
+					'{{WRAPPER}} .wk-gallery .content-bottom .caption-button .button-text' => 'color: {{VALUE}}; border: 1px solid {{VALUE}};',
+					'{{WRAPPER}} .wk-gallery .content-bottom .caption-button .top-icon' => 'color: {{VALUE}}; border: 1px solid {{VALUE}};',
+					
 					],
 			]
 		);
@@ -763,7 +794,9 @@ class wkfe_gallery extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .gallery-lightbox a' => 'background-color: {{VALUE}}; border:1px solid {{VALUE}}; ',
+					'{{WRAPPER}} .wk-gallery .content-overlay .wk-gallery-body .gallery-lightbox a' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .wk-gallery .content-bottom .caption-button .button-text' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .wk-gallery .content-bottom .caption-button .top-icon' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -775,11 +808,30 @@ class wkfe_gallery extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .gallery-lightbox a:hover' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .gallery-lightbox a:hover' => 'background: {{VALUE}}; border-color:{{VALUE}};',
+					'{{WRAPPER}} .wk-gallery .content-bottom .caption-button .button-text:hover' => 'background: {{VALUE}}; border-color:{{VALUE}};',
+					'{{WRAPPER}} .wk-gallery .content-bottom .caption-button .top-icon:hover' => 'background: {{VALUE}}; border-color:{{VALUE}};',
 					 
 					],
 			]
 		);
+
+
+		$this->add_control(
+            'button_padding',
+            [
+                'label' => esc_html__( 'Button Padding', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .wk-gallery .content-bottom .caption-button .button-text
+                    ' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'condition' => [
+					'content_position' => 'bottom',
+				],
+            ]
+        );
 
 		$this->add_control(
             'overlay_icon_border_radius',
@@ -788,11 +840,13 @@ class wkfe_gallery extends Widget_Base {
                 'type'  => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .gallery-lightbox a
+                    '{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .gallery-lightbox a, {{WRAPPER}} .wk-gallery .content-bottom .caption-button .top-icon, {{WRAPPER}} .wk-gallery .content-bottom .caption-button .button-text
                     ' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
+
+
 
 		$this->add_responsive_control(
 			'icon_spacing',
@@ -811,8 +865,123 @@ class wkfe_gallery extends Widget_Base {
 					'selectors' => [
 						'{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .gallery-lightbox' => 'margin-top:{{SIZE}}{{UNIT}};',
 					],
+					'condition'=> [
+			            'content_position' => 'overlay',
+			        ],
 				]
 		);
+
+		$this->add_control(
+            'caption_heading',
+            [
+                'label' => esc_html__( 'Caption', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::HEADING,
+                'separator' => 'before',
+                'condition' => [
+					'content_position' => 'bottom',
+				],
+            ]
+        );
+
+		$this->add_control(
+			'caption_bg_color',
+			[
+				'label'     => esc_html__( 'Background Color', 'widgetkit-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => [
+					'{{WRAPPER}} .wk-gallery .content-bottom .wk-gallery-body' => 'background: {{VALUE}};',
+				],
+				'condition' => [
+					'content_position' => 'bottom',
+				],
+			]
+		);
+
+
+		$this->add_control(
+			'caption_align',
+				[
+					'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
+					'type'  => Controls_Manager::CHOOSE,
+					'default'   => 'center',
+					'options' => [
+						'left'    => [
+							'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
+							'icon'  => 'eicon-text-align-left',
+						],
+						'center' => [
+							'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
+							'icon'  => 'eicon-text-align-center',
+						],
+						'right' => [
+							'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
+							'icon'  => 'eicon-text-align-left',
+						],
+					],
+					'condition' => [
+						'content_position' => 'bottom',
+					],
+				]
+			);
+
+		$this->add_control(
+            'caption_padding',
+            [
+                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .wk-gallery .content-bottom .wk-gallery-body
+                    ' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'condition' => [
+					'content_position' => 'bottom',
+				],
+            ]
+        );
+
+            $this->add_control(
+                'item_heading',
+                        [
+                            'label' => __( 'Item', 'widgetkit-for-elementor' ),
+                            'type'  => Controls_Manager::HEADING,
+                            'separator' => 'before',
+                             'condition' => [
+								'content_position' => 'bottom',
+							],
+                        ]
+                );
+
+	            $this->add_group_control(
+	                Group_Control_Box_Shadow::get_type(),
+	                [
+	                    'name' => 'item_box_shadow',
+	                    'label' => __( 'Normal Shadow', 'widgetkit-for-elementor' ),
+	                    'exclude' => [
+	                        'box_shadow_position',
+	                    ],
+	                    'selector' => '{{WRAPPER}} .wk-gallery .content-bottom',
+	                     'condition' => [
+							'content_position' => 'bottom',
+						],
+	                ]
+	            );
+
+	             $this->add_group_control(
+	                Group_Control_Box_Shadow::get_type(),
+	                [
+	                    'name' => 'item_hover_box_shadow',
+	                    'label' => __( 'Hover Shadow', 'widgetkit-for-elementor' ),
+	                    'exclude' => [
+	                        'box_shadow_position',
+	                    ],
+	                    'selector' => '{{WRAPPER}} .wk-gallery .content-bottom:hover',
+	                     'condition' => [
+							'content_position' => 'bottom',
+						],
+	                ]
+	            );
 
 
 

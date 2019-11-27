@@ -53,42 +53,98 @@
 		        	$tags_replace = str_replace([" ", "&"], ["_", ""], $tag);
 		        	echo strtolower($tags_replace.'_'.$id);}?>">
 		        <!-- 	<div class=""> -->
-			            <div class="wk-gallery-card wk-position-relative wk-overflow-hidden <?php echo $galleries['hover_effect'];?>">
+			            <div class="wk-gallery-card <?php echo $galleries['content_position'] == 'overlay' ? 'wk-position-relative' : '';?>  wk-overflow-hidden <?php echo $galleries['hover_effect'];?> content-<?php echo $galleries['content_position'];?>">
 
+							<?php if ($galleries['content_position'] == 'overlay'): ?>
 
-				            <?php if ($gallery['gallery_thumb_image']['url']): ?>
-								<img src="<?php echo $gallery['gallery_thumb_image']['url']?>" alt="<?php echo $gallery['gallery_title'];?>">
-				            <?php endif ;?>
+					            <?php if ($gallery['gallery_thumb_image']['url']): ?>
+					            	<img src="<?php echo $gallery['gallery_thumb_image']['url']?>" alt="<?php echo $gallery['gallery_title'];?>">
+					            <?php endif ;?>
 
-				            <div class="wk-padding-small wk-position-absolute wk-position-center wk-text-center wk-gallery-body">
-				               <?php if ($gallery['demo_link']['url']): ?>
-				           		<a href="<?php echo $gallery['demo_link']['url']; ?>" <?php echo $gallery['demo_link']['is_external'] ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
-				            		<h5 class="wk-text-medium wk-margin-small wk-card-title"> <?php echo $gallery['gallery_title'];?>
-				            		</h5>
-								</a>
-								<?php else: ?>
-									<h5 class="wk-text-medium wk-margin-small  wk-card-title"> 
-										<?php echo $gallery['gallery_title'];?>
-									</h5>
-				            	<?php endif ;?>
-				            	<?php if ($gallery['gallery_desc']): ?>
-				            		<p class="wk-text-desc wk-margin-remove wk-padding-small wk-padding-remove-top">
-				            			<?php echo $gallery['gallery_desc'];?></p>	
-				            	<?php endif; ?>
-				            	<?php if ($galleries['lightcase_enable'] == 'yes' || $galleries['link_enable'] == 'yes'):?>
-				            		
-					            	<div class="gallery-lightbox wk-text-center">
-					            		<?php if ($galleries['link_enable'] == 'yes'):?>
-							            	<a class="icon" href="<?php echo $gallery['demo_link']['url']; ?>" <?php echo $gallery['demo_link']['is_external'] ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
-							            		<span class="fa fa-angle-right"></span>
-							            	</a>
+					            <div class="wk-padding-small wk-position-absolute wk-position-center wk-text-center wk-gallery-body">
+						               <?php if ($gallery['demo_link']['url']): ?>
+						           		<a href="<?php echo $gallery['demo_link']['url']; ?>" <?php echo $gallery['demo_link']['is_external'] ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
+						            		<h5 class="wk-text-medium wk-margin-small wk-card-title"> <?php echo $gallery['gallery_title'];?>
+						            		</h5>
+										</a>
+										<?php else: ?>
+											<h5 class="wk-text-medium wk-margin-small  wk-card-title"> 
+												<?php echo $gallery['gallery_title'];?>
+											</h5>
+						            	<?php endif ;?>
+						            	<?php if ($gallery['gallery_desc']): ?>
+						            		<p class="wk-text-desc wk-margin-remove wk-padding-small wk-padding-remove-top">
+						            			<?php echo $gallery['gallery_desc'];?></p>	
 						            	<?php endif; ?>
-						            	<?php if ($galleries['lightcase_enable'] == 'yes'):?>
-											<a class="uk-button uk-button-default icon" href="<?php echo $gallery['gallery_thumb_image']['url']?>" <?php echo $galleries['lightcase_enable'] == 'yes'? ' wk-lightbox="animation:' . $light_case_animation . '"' : '';?>><span class="fa fa-link"></span></a>
-										<?php endif; ?>
-					            	</div>
-				            	<?php endif; ?>
-							</div> <!-- wk-body -->
+
+						            	<?php if ($galleries['lightcase_enable'] == 'yes' || $galleries['link_enable'] == 'yes'):?>
+							            	<div class="gallery-lightbox wk-text-center">
+							            		<?php if ($galleries['link_enable'] == 'yes'):?>
+									            	<a class="icon" href="<?php echo $gallery['demo_link']['url']; ?>" <?php echo $gallery['demo_link']['is_external'] ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
+									            		<span class="fa fa-link"></span>
+									            	</a>
+								            	<?php endif; ?>
+								            	<?php if ($galleries['lightcase_enable'] == 'yes'):?>
+													<a class="icon" href="<?php echo $gallery['gallery_thumb_image']['url']?>" <?php echo $galleries['lightcase_enable'] == 'yes'? ' wk-lightbox="animation:' . $light_case_animation . '"' : '';?>><span class="fa fa-search"></span></a>
+												<?php endif; ?>
+							            	</div>
+						            	<?php endif; ?>
+									</div> <!-- wk-body -->
+
+
+								<?php else: ?>
+									<div class="caption-button wk-position-relative wk-overflow-hidden">
+
+									    <?php if ($gallery['gallery_thumb_image']['url']): ?>
+							            	<?php if ($gallery['demo_link']['url']): ?>
+								            	<a class="img-link" href="<?php echo $gallery['demo_link']['url']; ?>" <?php echo $gallery['demo_link']['is_external'] ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
+								            		<img src="<?php echo $gallery['gallery_thumb_image']['url']?>" alt="<?php echo $gallery['gallery_title'];?>">
+								            	</a>
+							            	<?php else: ?>
+							            		<img class="img-link" src="<?php echo $gallery['gallery_thumb_image']['url']?>" alt="<?php echo $gallery['gallery_title'];?>">
+							            	<?php endif;?>
+							            <?php endif ;?>
+
+						            	<?php if ($galleries['lightcase_enable'] == 'yes' || $galleries['link_enable'] == 'yes'):?>
+							            	<div class="gallery-lightbox wk-text-center wk-position-absolute wk-position-center">
+							            		<?php if ($galleries['link_enable'] == 'yes'): ?>
+							            			 <?php if ($galleries['button_text']): ?>
+										            	<a class="button-text" href="<?php echo $gallery['demo_link']['url']; ?>" <?php echo $gallery['demo_link']['is_external'] ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
+										            	 	<?php echo $galleries['button_text']; ?>
+										            	</a>
+										            <?php else: ?>
+										            	<a class="top-icon" href="<?php echo $gallery['demo_link']['url']; ?>" <?php echo $gallery['demo_link']['is_external'] ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
+										            	 	<span class="fa fa-link"></span>
+										            	</a>		
+										            <?php endif; ?>
+							            		<?php endif; ?>
+
+								            	<?php if ($galleries['lightcase_enable'] == 'yes'):?>
+													<a class="top-icon" href="<?php echo $gallery['gallery_thumb_image']['url']?>" <?php echo $galleries['lightcase_enable'] == 'yes'? ' wk-lightbox="animation:' . $light_case_animation . '"' : '';?>><span class="fa fa-search"></span></a>
+												<?php endif; ?>
+							            	</div>
+						            	<?php endif; ?>
+									</div>
+
+						            <div class="wk-padding-small wk-text-<?php echo $galleries['caption_align'];?> wk-gallery-body">
+						               <?php if ($gallery['demo_link']['url']): ?>
+						           		<a href="<?php echo $gallery['demo_link']['url']; ?>" <?php echo $gallery['demo_link']['is_external'] ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
+						            		<h5 class="wk-text-medium wk-margin-small wk-card-title wk-margin-remove-top"> <?php echo $gallery['gallery_title'];?>
+						            		</h5>
+										</a>
+										<?php else: ?>
+											<h5 class="wk-text-medium wk-margin-small wk-card-title wk-margin-remove-top"> 
+												<?php echo $gallery['gallery_title'];?>
+											</h5>
+						            	<?php endif ;?>
+						            	<?php if ($gallery['gallery_desc']): ?>
+						            		<p class="wk-text-desc wk-margin-remove wk-padding-remove-top">
+						            			<?php echo $gallery['gallery_desc'];?></p>	
+						            	<?php endif; ?>
+									</div> <!-- wk-body -->
+
+					            <?php endif; ?>
+
 			            </div> <!-- wk-card -->
 		           <!--  </div> -->
 		        </div> <!-- tags -->
