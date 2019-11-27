@@ -26,7 +26,7 @@ class wkfe_modal_button extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-button';
+		return 'eicon-button wk-icon';
 	}
 
 	public function get_categories() {

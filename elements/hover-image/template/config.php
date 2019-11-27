@@ -30,7 +30,7 @@ class wkfe_hover_image extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-image-before-after';
+		return 'eicon-image-before-after wk-icon';
 	}
 
 	public function get_categories() {

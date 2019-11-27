@@ -30,7 +30,7 @@ class wkfe_countdown extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-countdown';
+		return 'eicon-countdown wk-icon';
 	}
 
 	public function get_categories() {

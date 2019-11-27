@@ -30,7 +30,7 @@ class wkfe_team extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-person';
+		return 'eicon-person wk-icon';
 	}
 
 	public function get_categories() {

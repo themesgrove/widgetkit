@@ -29,7 +29,7 @@ class wkfe_content_carousel extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-slider-album';
+		return 'eicon-slider-album wk-icon';
 	}
 
 	public function get_categories() {

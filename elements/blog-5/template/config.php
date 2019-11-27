@@ -28,7 +28,7 @@ class wkfe_blog_5 extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-sidebar';
+		return 'eicon-sidebar wk-icon';
 	}
 
 	public function get_categories() {

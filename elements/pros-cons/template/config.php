@@ -20,7 +20,7 @@ class WKFE_Feature_List_Config extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-editor-list-ul';
+		return 'eicon-editor-list-ul wk-icon';
 	}
 
 	public function get_categories() {

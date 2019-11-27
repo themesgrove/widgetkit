@@ -27,7 +27,7 @@ class wkfe_animation_text extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-animation-text';
+		return 'eicon-animation-text wk-icon';
 	}
 
 	public function get_categories() {

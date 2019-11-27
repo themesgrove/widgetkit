@@ -28,7 +28,7 @@ class wkfe_carousel extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-slider-push';
+		return 'eicon-slider-push wk-icon';
 	}
 
 	public function get_categories() {

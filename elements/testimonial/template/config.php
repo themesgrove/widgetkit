@@ -29,7 +29,7 @@ class wkfe_testimonial extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-testimonial';
+		return 'eicon-testimonial wk-icon';
 	}
 
 	public function get_categories() {

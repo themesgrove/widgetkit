@@ -38,13 +38,16 @@
                         <?php if( $team['social_share']):?>
                             <div class="wk-width-auto social-icons">
                                 <?php foreach ( $team['social_share'] as $social ) : ?>
-                                    <a href="<?php echo $social['social_link']['url']; ?>"  
-                                        <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                        
-                                        <?php 
-                                           Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
-                                        ?>
-                                    </a>
+                                    <?php if ($social['social_link']['url']): ?>
+                                        <a href="<?php echo $social['social_link']['url']; ?>"  
+                                            <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
+                                            
+                                            <?php 
+                                               Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
+                                            ?>
+                                        </a>
+                                    <?php endif ;?>
+                               
                                 <?php endforeach; ?>
                             </div> <!-- wk-width-auto-->
                         <?php endif; ?>
@@ -92,14 +95,15 @@
                         <?php if( $team['social_share']):?>
                             <div class="social-icons">
                                 <?php foreach ( $team['social_share'] as $social ) : ?>
-                                    <a href="<?php echo $social['social_link']['url']; ?>" 
-                                        <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                        
-                                        <?php 
-                                           Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
-                                        ?>
-                                        
-                                    </a>
+                                    <?php if ($social['social_link']['url']): ?>
+                                        <a href="<?php echo $social['social_link']['url']; ?>"  
+                                            <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
+                                            
+                                            <?php 
+                                               Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
+                                            ?>
+                                        </a>
+                                    <?php endif ;?>
                                 <?php endforeach; ?>
                             </div> <!-- wk-width-auto-->
                         <?php endif; ?>
@@ -149,13 +153,15 @@
                             <?php if( $team['social_share']):?>
                                 <div class="social-icons">
                                     <?php foreach ( $team['social_share'] as $social ) : ?>
-                                        <a href="<?php echo $social['social_link']['url']; ?>" 
-                                            <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                            
-                                            <?php 
-                                                Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
-                                            ?>
-                                        </a>
+                                        <?php if ($social['social_link']['url']): ?>
+                                            <a href="<?php echo $social['social_link']['url']; ?>"  
+                                                <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
+                                                
+                                                <?php 
+                                                   Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
+                                                ?>
+                                            </a>
+                                        <?php endif ;?>
                                     <?php endforeach; ?>
                                 </div> <!-- wk-width-auto-->
                             <?php endif; ?>
@@ -207,13 +213,15 @@
                                 <?php if( $team['social_share']):?>
                                     <div class="social-icons">
                                         <?php foreach ( $team['social_share'] as $social ) : ?>
-                                            <a href="<?php echo $social['social_link']['url']; ?>" 
-                                                <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                                
-                                            <?php 
-                                               Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
-                                            ?>
-                                            </a>
+                                            <?php if ($social['social_link']['url']): ?>
+                                                <a href="<?php echo $social['social_link']['url']; ?>"  
+                                                    <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
+                                                    
+                                                    <?php 
+                                                       Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
+                                                    ?>
+                                                </a>
+                                            <?php endif ;?>
                                         <?php endforeach; ?>
                                     </div> <!-- wk-width-auto-->
                                 <?php endif; ?>
@@ -261,13 +269,15 @@
                                 <?php if( $team['social_share']):?>
                                     <div class="social-icons">
                                         <?php foreach ( $team['social_share'] as $social ) : ?>
-                                            <a href="<?php echo $social['social_link']['url']; ?>" 
-                                                <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                                
-                                            <?php 
-                                                Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
-                                            ?>
-                                            </a>
+                                            <?php if ($social['social_link']['url']): ?>
+                                                <a href="<?php echo $social['social_link']['url']; ?>"  
+                                                    <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
+                                                    
+                                                    <?php 
+                                                       Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
+                                                    ?>
+                                                </a>
+                                            <?php endif ;?>
                                         <?php endforeach; ?>
                                     </div> <!-- wk-width-auto-->
                                 <?php endif; ?>
@@ -310,13 +320,15 @@
                             <?php if( $team['social_share']):?>
                                 <div class="wk-width-auto social-icons">
                                     <?php foreach ( $team['social_share'] as $social ) : ?>
-                                        <a href="<?php echo $social['social_link']['url']; ?>" 
-                                            <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                            
-                                            <?php 
-                                                Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
-                                            ?>
-                                        </a>
+                                        <?php if ($social['social_link']['url']): ?>
+                                            <a href="<?php echo $social['social_link']['url']; ?>"  
+                                                <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
+                                                
+                                                <?php 
+                                                   Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
+                                                ?>
+                                            </a>
+                                        <?php endif ;?>
                                     <?php endforeach; ?>
                                 </div> <!-- wk-width-auto-->
                             <?php endif; ?>
@@ -355,12 +367,15 @@
                             <?php if( $team['social_share']):?>
                                 <div class="wk-width-auto social-icons">
                                     <?php foreach ( $team['social_share'] as $social ) : ?>
-                                        <a href="<?php echo $social['social_link']['url']; ?>" 
-                                            <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
+                                        <?php if ($social['social_link']['url']): ?>
+                                            <a href="<?php echo $social['social_link']['url']; ?>"  
+                                                <?php echo $social['social_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
+                                                
                                                 <?php 
                                                    Icons_Manager::render_icon( $social['social_icon'], [ 'aria-hidden' => 'true' ] );
                                                 ?>
-                                        </a>
+                                            </a>
+                                        <?php endif ;?>
                                     <?php endforeach; ?>
                                 </div> <!-- wk-width-auto-->
                             <?php endif; ?>

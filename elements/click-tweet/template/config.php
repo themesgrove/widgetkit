@@ -20,7 +20,7 @@ class WKFE_Feature_Click_Tweet_Config extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-twitter-feed';
+		return 'eicon-twitter-feed wk-icon';
 	}
 
 	public function get_categories() {

@@ -28,7 +28,7 @@ class wkfe_portfolio extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-apps';
+		return 'eicon-apps wk-icon';
 	}
 
 	public function get_categories() {

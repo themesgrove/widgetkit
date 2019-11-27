@@ -94,7 +94,7 @@ a {
 }
 
 .cd-words-wrapper {
-  display: inline-block;
+  display: inline;
   position: relative;
   text-align: left;
 }

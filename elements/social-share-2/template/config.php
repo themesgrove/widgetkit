@@ -29,7 +29,7 @@ class wkfe_social_share_2 extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-social-icons';
+		return 'eicon-social-icons wk-icon';
 	}
 
 	public function get_categories() {

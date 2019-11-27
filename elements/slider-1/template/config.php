@@ -29,7 +29,7 @@ class wkfe_slider_1 extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-slider-video';
+		return 'eicon-slider-video wk-icon';
 	}
 
 	public function get_categories() {

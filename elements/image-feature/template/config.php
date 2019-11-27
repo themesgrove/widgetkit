@@ -28,7 +28,7 @@ class wkfe_image_feature extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-image-box';
+		return 'eicon-image-box wk-icon';
 	}
 
 	public function get_categories() {
