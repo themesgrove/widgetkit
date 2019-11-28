@@ -279,3 +279,18 @@
 
 
 }
+
+@media(max-width:768px){
+  .wk-gallery{
+     .wk-tab{
+       li {
+         a{
+            margin-bottom:15px;
+          }
+       }
+
+     } 
+
+  }
+}
+
