@@ -33,9 +33,6 @@
             }
         }
 
-        if ( ! empty( $settings['button_hover_animation'] ) ) {
-            $this->add_render_attribute( 'button', 'class', 'tgx-animation-' . $settings['button_hover_animation'] );
-        }
         ?>
         <div class="tgx-price-table text-<?php echo $settings['layout_position'];?>">
             <?php if ( $settings['title_position'] == 'top' ) : ?>
@@ -50,6 +47,15 @@
 
             <div class="tgx-price-table__price">
 
+             
+                <?php if ($settings['discount_price_switcher'] == 'yes'): ?>
+                    <?php if ($settings['discount_price'] && $settings['currency_position'] == 'before') : ?>
+                        <del><span class="tgx-price-table__discount-currency"><span><?php echo esc_attr($symbol); ?></span></span><span class="tgx-price-table__discount-part"><span><?php echo esc_attr($settings['discount_price']); ?></span></span></del>
+                    <?php endif; ?>
+                
+                <?php endif ;?>
+            
+
                 <?php if ( ! empty( $symbol ) ) : ?>
                     <span class="tgx-price-table__currency"><span><?php echo esc_attr($symbol); ?></span></span>
                 <?php endif; ?>
@@ -57,6 +63,15 @@
                 <?php if ( ! empty( $settings['price'] ) ) : ?>
                     <span class="tgx-price-table__integer-part"><span><?php echo esc_attr($settings['price']); ?></span></span>
                 <?php endif; ?>
+
+                <?php if ($settings['discount_price_switcher'] == 'yes'): ?>
+                    <?php if ($settings['discount_price'] && $settings['currency_position'] == 'after') : ?>
+                        <del><span class="tgx-price-table__discount-currency"><span><?php echo esc_attr($symbol); ?></span></span><span class="tgx-price-table__discount-part"><span><?php echo esc_attr($settings['discount_price']); ?></span></span></del>
+                    <?php endif; ?>
+                
+                <?php endif ;?>
+
+
                 <?php if ( ! empty( $settings['period'] ) ) : ?>
                     <span class="tgx-price-table__period"><span><?php echo esc_attr($settings['period']); ?></span></span>
                 <?php endif; ?>

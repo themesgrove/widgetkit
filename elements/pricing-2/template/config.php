@@ -112,6 +112,32 @@ class wkfe_pricing_2 extends Widget_Base {
 			]
 		);
 
+
+		$this->add_control(
+            'discount_price_switcher',
+                [
+                    'label'     => esc_html__( 'Discount', 'widgetkit-for-elementor' ),
+                    'type'      => Controls_Manager::SWITCHER,
+                    'default'   => 'no',
+                    'yes'  => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+                    'no'   => esc_html__( 'No', 'widgetkit-for-elementor' ),
+                    'separator' => 'before',
+                ]
+        );
+
+
+        $this->add_control(
+            'discount_price',
+            [
+                'label' => esc_html__( 'Original Price', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::TEXT,
+                'default' => '199',
+                'condition' => [
+                    'discount_price_switcher' => 'yes',
+                ],
+            ]
+        );
+
 		$this->end_controls_section();
 
 
@@ -463,7 +489,7 @@ class wkfe_pricing_2 extends Widget_Base {
         $this->add_control(
             'heading_about_style',
             [
-                'label' => esc_html__( 'About', 'widgetkit-for-elementor' ),
+                'label' => esc_html__( 'Description', 'widgetkit-for-elementor' ),
                 'type'  => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -472,7 +498,7 @@ class wkfe_pricing_2 extends Widget_Base {
         $this->add_control(
 			'heading_about_color',
 			[
-				'label' => esc_html__( 'About Color', 'widgetkit-for-elementor' ),
+				'label' => esc_html__( 'Color', 'widgetkit-for-elementor' ),
 				'type'  => Controls_Manager::COLOR,
 				'default'   => '#444',
 				'selectors' => [
@@ -489,6 +515,25 @@ class wkfe_pricing_2 extends Widget_Base {
                 'selector' => '{{WRAPPER}} .tgx-single-pricing .tgx-single-about .tgx-single-about',
             ]
         );
+        $this->add_control(
+			'pricing-2-description-spacing',
+			[
+				'label' => esc_html__( 'Spacing', 'widgetkit-for-elementor' ),
+				'type'  => Controls_Manager::SLIDER,
+				'default'  => [
+					'size' =>5,
+				],
+				'range'  => [
+					'px' => [
+						'min' => 1,
+						'max' => 10,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .tgx-single-pricing .tgx-single-about .tgx-single-about' => 'margin-top: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 
 	$this->end_controls_section();
 

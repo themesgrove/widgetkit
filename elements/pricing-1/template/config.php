@@ -129,14 +129,66 @@ class wkfe_pricing_1 extends Widget_Base {
             ]
         );
 
+
         $this->add_control(
             'period',
             [
                 'label' => esc_html__( 'Period', 'widgetkit-for-elementor' ),
                 'type'  => Controls_Manager::TEXT,
-                'default' => '/1 year',
+                'default' => '/ 1 year',
             ]
         );
+
+
+        $this->add_control(
+            'discount_price_switcher',
+                [
+                    'label'     => esc_html__( 'Discount', 'widgetkit-for-elementor' ),
+                    'type'      => Controls_Manager::SWITCHER,
+                    'default'   => 'no',
+                    'yes'  => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+                    'no'   => esc_html__( 'No', 'widgetkit-for-elementor' ),
+                    'separator' => 'before',
+                ]
+        );
+
+
+        $this->add_control(
+            'discount_price',
+            [
+                'label' => esc_html__( 'Original Price', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::TEXT,
+                'default' => '199',
+                'condition' => [
+                    'discount_price_switcher' => 'yes',
+                ],
+            ]
+        );
+
+
+            $this->add_control(
+                'currency_position',
+                    [
+                        'label' => __( 'Position', 'widgetkit-for-elementor' ),
+                        'type' => Controls_Manager::CHOOSE,
+                        'default' => 'before',
+                        'options' => [
+                            'before' => [
+                                'title' => __( 'Before', 'widgetkit-for-elementor' ),
+                                'icon' => 'eicon-h-align-left',
+                            ],
+                            'after' => [
+                                'title' => __( 'After', 'widgetkit-for-elementor' ),
+                               'icon' => 'eicon-h-align-right',
+                            ],
+                        ],
+                        'toggle' => false,
+                         'condition' => [
+                            'discount_price_switcher' => 'yes',
+                        ],
+                    ]
+                );
+
 
 
         $this->end_controls_section();
@@ -212,10 +264,77 @@ class wkfe_pricing_1 extends Widget_Base {
 
         $this->end_controls_section();
 
+
+        // $this->start_controls_section(
+        //     'section_ribbion',
+        //     [
+        //         'label' => esc_html__( 'Ribbon', 'widgetkit-for-elementor' ),
+        //     ]
+        // );
+
+
+        // $this->add_control(
+        //     'ribbon_switcher',
+        //         [
+        //             'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
+        //             'type'      => Controls_Manager::SWITCHER,
+        //             'default'   => 'no',
+        //             'yes'  => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+        //             'no'   => esc_html__( 'No', 'widgetkit-for-elementor' ),
+        //             'separator' => 'before',
+        //         ]
+        // );
+
+
+        // $this->add_control(
+        //     'ribbon_text',
+        //     [
+        //         'label' => esc_html__( 'Text', 'widgetkit-for-elementor' ),
+        //         'type'  => Controls_Manager::TEXT,
+        //         'default' => 'Popular',
+        //         'condition' => [
+        //             'ribbon_switcher' => 'yes',
+        //         ],
+        //     ]
+        // );
+
+        // $this->add_control(
+        //     'ribbon_position',
+        //             [
+        //                 'label' => __( 'Position', 'widgetkit-for-elementor' ),
+        //                 'type' => Controls_Manager::CHOOSE,
+        //                 'default' => 'top',
+        //                 'options' => [
+                        
+        //                     'left' => [
+        //                         'title' => __( 'left', 'widgetkit-for-elementor' ),
+        //                        'icon' => 'eicon-h-align-left',
+        //                     ],
+        //                     'top' => [
+        //                         'title' => __( 'Top', 'widgetkit-for-elementor' ),
+        //                         'icon' => 'eicon-v-align-top',
+        //                     ],
+        //                     'right' => [
+        //                         'title' => __( 'Right', 'widgetkit-for-elementor' ),
+        //                        'icon' => 'eicon-h-align-right',
+        //                     ],
+
+                           
+        //                 ],
+        //                 'toggle' => false,
+        //                  'condition' => [
+        //                     'ribbon_switcher' => 'yes',
+        //                 ],
+        //             ]
+        //         );
+
+        // $this->end_controls_section();
+
+
         $this->start_controls_section(
-            'section_footer',
+            'section_button',
             [
-                'label' => esc_html__( 'Footer', 'widgetkit-for-elementor' ),
+                'label' => esc_html__( 'Button', 'widgetkit-for-elementor' ),
             ]
         );
 
@@ -419,10 +538,12 @@ class wkfe_pricing_1 extends Widget_Base {
             ]
         );
 
+
+
         $this->add_control(
             'heading_currency_style',
             [
-                'label' => esc_html__( 'Currency Symbol', 'widgetkit-for-elementor' ),
+                'label' => esc_html__( 'Currency', 'widgetkit-for-elementor' ),
                 'type'  => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => [
@@ -469,6 +590,18 @@ class wkfe_pricing_1 extends Widget_Base {
         );
 
         $this->add_control(
+            'period_color',
+            [
+                'label' => esc_html__( 'Color', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::COLOR,
+                'default' => '#424c57',
+                'selectors' => [
+                    '{{WRAPPER}} .tgx-price-table__period' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
             'period_size',
             [
                 'label' => esc_html__( 'Size', 'widgetkit-for-elementor' ),
@@ -489,17 +622,61 @@ class wkfe_pricing_1 extends Widget_Base {
             ]
         );
 
+
         $this->add_control(
-            'period_color',
+            'heading_discount',
+            [
+                'label' => esc_html__( 'Discount', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::HEADING,
+                'separator' => 'before',
+                'condition' => [
+                    'discount_price_switcher' => 'yes',
+                ],
+            ]
+        );
+
+
+
+        $this->add_control(
+            'discount_color',
             [
                 'label' => esc_html__( 'Color', 'widgetkit-for-elementor' ),
                 'type'  => Controls_Manager::COLOR,
                 'default' => '#424c57',
                 'selectors' => [
-                    '{{WRAPPER}} .tgx-price-table__period' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .tgx-price-table__price del' => 'color: {{VALUE}}',
+                ],
+                'condition' => [
+                    'discount_price_switcher' => 'yes',
                 ],
             ]
         );
+
+        $this->add_control(
+            'dicount_size',
+            [
+                'label' => esc_html__( 'Size', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::SLIDER,
+               'default' => [
+                    'size' => 20,
+                    'unit' => 'px',
+                ],
+                'range'  => [
+                    'px' => [
+                        'min' => 20,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .tgx-price-table__price del' => 'font-size:{{SIZE}}{{UNIT}};',
+                ],
+                'condition' => [
+                    'discount_price_switcher' => 'yes',
+                ],
+            ]
+        );
+
+
 
         $this->add_control(
             'price_list_alignment',
@@ -524,6 +701,7 @@ class wkfe_pricing_1 extends Widget_Base {
                 'selectors' => [
                     '{{WRAPPER}} .tgx-price-table__price' => 'text-align: {{VALUE}}',
                 ],
+                'separator' => 'before',
             ]
         );
 
@@ -655,33 +833,20 @@ class wkfe_pricing_1 extends Widget_Base {
         $this->start_controls_section(
             'section_footer_style',
             [
-                'label' => esc_html__( 'Footer', 'widgetkit-for-elementor' ),
+                'label' => esc_html__( 'Button', 'widgetkit-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'show_label' => false,
             ]
         );
-        $this->add_control(
-            'button_list_alignment',
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
             [
-                'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
-                'type'  => Controls_Manager::CHOOSE,
-                'label_block' => false,
-                'options'  => [
-                    'left' => [
-                        'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
-                        'icon'  => 'fa fa-align-left',
-                    ],
-                    'center' => [
-                        'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
-                        'icon'  => 'fa fa-align-center',
-                    ],
-                    'right' => [
-                        'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
-                        'icon'  => 'fa fa-align-right',
-                    ],
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .tgx-price-table__footer' => 'text-align: {{VALUE}}',
+                'name'  => 'button_typography',
+                'label' => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
+                'selector'  => '{{WRAPPER}} .tgx-price-table__button',
+                'condition' => [
+                    'button_text!' => '',
                 ],
             ]
         );
@@ -707,17 +872,8 @@ class wkfe_pricing_1 extends Widget_Base {
             ]
         );
 
-        $this->add_control(
-            'heading_footer_button',
-            [
-                'label' => esc_html__( 'Button', 'widgetkit-for-elementor' ),
-                'type'  => Controls_Manager::HEADING,
-                'separator' => 'before',
-                'condition' => [
-                    'button_text!' => '',
-                ],
-            ]
-        );
+
+
 
         $this->start_controls_tabs( 'tabs_button_style' );
 
@@ -725,18 +881,6 @@ class wkfe_pricing_1 extends Widget_Base {
             'tab_button_normal',
             [
                 'label'     => esc_html__( 'Normal', 'widgetkit-for-elementor' ),
-                'condition' => [
-                    'button_text!' => '',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name'  => 'button_typography',
-                'label' => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-                'selector'  => '{{WRAPPER}} .tgx-price-table__button',
                 'condition' => [
                     'button_text!' => '',
                 ],
@@ -788,35 +932,6 @@ class wkfe_pricing_1 extends Widget_Base {
             ]
         );
 
-        $this->add_control(
-            'button_border_radius',
-            [
-                'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
-                'type'  => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%' ],
-                'selectors'  => [
-                    '{{WRAPPER}} .tgx-price-table__button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-                'condition' => [
-                    'button_text!' => '',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'button_text_padding',
-            [
-                'label' => esc_html__( 'Text Padding', 'widgetkit-for-elementor' ),
-                'type'  => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', 'em', '%' ],
-                'selectors'  => [
-                    '{{WRAPPER}} .tgx-price-table__button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-                'condition' => [
-                    'button_text!' => '',
-                ],
-            ]
-        );
 
         $this->end_controls_tab();
 
@@ -872,20 +987,51 @@ class wkfe_pricing_1 extends Widget_Base {
             ]
         );
 
+        // $this->add_control(
+        //     'button_hover_animation',
+        //     [
+        //         'label' => esc_html__( 'Animation', 'widgetkit-for-elementor' ),
+        //         'type'  => Controls_Manager::HOVER_ANIMATION,
+        //         'condition' => [
+        //             'button_text!' => '',
+        //         ],
+        //     ]
+        // );
+
+        $this->end_controls_tab();
+
+        $this->end_controls_tabs();
+
         $this->add_control(
-            'button_hover_animation',
+            'button_text_padding',
             [
-                'label' => esc_html__( 'Animation', 'widgetkit-for-elementor' ),
-                'type'  => Controls_Manager::HOVER_ANIMATION,
+                'label' => esc_html__( 'Text Padding', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', 'em', '%' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .tgx-price-table__button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'condition' => [
+                    'button_text!' => '',
+                ],
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_control(
+            'button_border_radius',
+            [
+                'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .tgx-price-table__button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
                 'condition' => [
                     'button_text!' => '',
                 ],
             ]
         );
-
-        $this->end_controls_tab();
-
-        $this->end_controls_tabs();
 
         $this->add_control(
             'btn_margin',
@@ -895,6 +1041,32 @@ class wkfe_pricing_1 extends Widget_Base {
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
                     '{{WRAPPER}} .tgx-price-table__button' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'button_list_alignment',
+            [
+                'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::CHOOSE,
+                'label_block' => false,
+                'options'  => [
+                    'left' => [
+                        'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
+                        'icon'  => 'fa fa-align-left',
+                    ],
+                    'center' => [
+                        'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
+                        'icon'  => 'fa fa-align-center',
+                    ],
+                    'right' => [
+                        'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
+                        'icon'  => 'fa fa-align-right',
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .tgx-price-table__footer' => 'text-align: {{VALUE}}',
                 ],
             ]
         );

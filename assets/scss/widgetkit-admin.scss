@@ -31,3 +31,16 @@
     }
     
 }
+
+.wk-icon:after {
+    content: "WK";
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 8px;
+    background: #f3b800;
+    padding: 5px;
+    font-family: Roboto;
+    border-radius: 0 4px 0 0;
+    color: #000;
+}

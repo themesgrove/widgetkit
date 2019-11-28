@@ -24,7 +24,7 @@
    	clip-path: ellipse(45% 70% at 50% 2%);
     height: 150px;
     text-align: center;
-    padding-top: 0;
+    padding-top: 20px;
 }
 
 .tgx-single-pricing .tgx-single-heading .price .amount {
@@ -55,10 +55,11 @@
 .tgx-single-pricing .tgx-single-features-list{
     margin:30px 0px 20px;
     font-size:14px;
+    padding:0;
 }
 
 .tgx-single-pricing .tgx-feature-item-2 {
-    padding: 3px 0;
+    padding: 10px 0;
 }
 
 .tgx-single-pricing .tgx-feature-item-2 i {
@@ -67,9 +68,8 @@
 
 .tgx-single-pricing .tgx-single-about {
     font-size: 14px;
+    margin-top: 10px;
 }
-
-
 
 .tgx-single-pricing .tgx-single-footer .tgx-single-btn {
     background-color: #ed485f;
