@@ -180,12 +180,11 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+
 == 2.1.1 ==
-New – Added a new WK tag to all elements.
-Update – 3 new layout options for the Gallery element.
-Update – Added discount option to Pricing Single element.
-Update – Responsive update to Testimonial element.
-Update – Spacing update to Animation Text.
+Improvement – 1 new layout options for the Gallery element.
+Improvement – Added discount option to Pricing Single element.
+Improvement – Responsive update to Testimonial element. 
 
 = 2.1 =
 * New - Gallery Element.
