@@ -94,7 +94,7 @@ a {
 }
 
 .cd-words-wrapper {
-  display: inline-block;
+  display: inline;
   position: relative;
   text-align: left;
 }
@@ -158,6 +158,7 @@ xrotate-1
   -webkit-animation: cd-rotate-1-out 1.2s;
   -moz-animation: cd-rotate-1-out 1.2s;
   animation: cd-rotate-1-out 1.2s;
+  visibility: hidden;
 }
 
 @-webkit-keyframes cd-rotate-1-in {
