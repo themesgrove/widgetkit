@@ -42,6 +42,7 @@ class Widgetkit_Admin
         'wkpro-post-list',
         'wkpro-grid-slider',
         'wkpro-headline-slider',
+        'widget-image-compare',
     ];
 
     public $widgetkit_woo_keys = [
@@ -601,6 +602,16 @@ class Widgetkit_Admin
                                                     </label>
                                                 </div>
                                             </div>
+
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Image Compare', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-image-compare" name="widget-image-compare" <?php checked(1, $this->widgetkit_get_settings['widget-image-compare'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
                             
                                             
                                             <div class="wk-width-1-1">
@@ -1035,8 +1046,10 @@ class Widgetkit_Admin
             'widget-social-share-animation' => intval($settings['widget-social-share-animation'] ? 1 : 0),
             // Social Share collapse
             'widget-social-share-collapse' => intval($settings['widget-social-share-collapse'] ? 1 : 0),
-             // Post carousel
+            // Post carousel
             'widget-post-carousel' => intval($settings['widget-post-carousel'] ? 1 : 0),
+            // Image compare
+            'widget-image-compare' => intval($settings['widget-image-compare'] ? 1 : 0),
             /**
              * pro
              */

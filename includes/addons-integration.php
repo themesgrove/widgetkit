@@ -52,6 +52,9 @@ class WKFE_Addons_Integration{
         wp_register_script( 'widgetkit-main', WK_URL.'dist/js/widgetkit.js' , array('jquery'), WK_VERSION, true);
         wp_register_script( 'uikit-js', WK_URL.'dist/js/uikit.min.js' , array('jquery'), WK_VERSION, true);
         wp_register_script( 'uikit-icons', WK_URL.'dist/js/uikit-icons.min.js' , array('jquery'), WK_VERSION, true);
+        wp_register_script( 'event-move', WK_URL.'dist/js/jquery.event.move.js' , array('jquery'), WK_VERSION, true);
+        wp_register_script( 'image-compare', WK_URL.'dist/js/jquery.image-compare.js' , array('jquery'), WK_VERSION, true);
+        // wp_register_script( 'vanilla-tilt', WK_URL.'dist/js/vanilla-tilt.js' , array('jquery'), WK_VERSION, true);
     }
 
 }

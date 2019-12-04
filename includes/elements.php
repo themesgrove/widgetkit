@@ -62,6 +62,8 @@ class WKFE_Elements{
             'widget-social-share-collapse',
 
             'widget-post-carousel',
+
+            'widget-image-compare',
         ];
         $widgetkit_default_settings = array_fill_keys( $widgetkit_elements_keys, true );
         
@@ -192,6 +194,9 @@ class WKFE_Elements{
         }
         if( $check_component_active['widget-team-animation'] ) {
             require_once WK_PATH . '/elements/team-4/widget.php';
+        }
+          if( $check_component_active['widget-image-compare'] ) {
+            require_once WK_PATH . '/elements/image-compare/widget.php';
         }
         
         
