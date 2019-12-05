@@ -43,6 +43,7 @@ class Widgetkit_Admin
         'wkpro-grid-slider',
         'wkpro-headline-slider',
         'widget-image-compare',
+        'widget-tilt-box',
     ];
 
     public $widgetkit_woo_keys = [
@@ -612,6 +613,17 @@ class Widgetkit_Admin
                                                     </label>
                                                 </div>
                                             </div>
+
+
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Tilt Box', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-tilt-box" name="widget-tilt-box" <?php checked(1, $this->widgetkit_get_settings['widget-tilt-box'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
                             
                                             
                                             <div class="wk-width-1-1">
@@ -1050,6 +1062,11 @@ class Widgetkit_Admin
             'widget-post-carousel' => intval($settings['widget-post-carousel'] ? 1 : 0),
             // Image compare
             'widget-image-compare' => intval($settings['widget-image-compare'] ? 1 : 0),
+
+             // Tilt Box
+            'widget-tilt-box' => intval($settings['widget-tilt-box'] ? 1 : 0),
+
+
             /**
              * pro
              */
