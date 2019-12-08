@@ -4,11 +4,11 @@
     use Elementor\Icons_Manager;
 ?>
     <div class="wk-tilt-box">
-        <div id="wk-tilt-<?php echo $id;?>" class="tilt-element <?php echo ($tilt_box['content_position']== 'overlay')? 'wk-flex wk-flex-middle wk-padding': '';?>" data-tilt  <?php echo ($tilt_box['select_effect'] == 'glare')? 'data-tilt-glare data-tilt-max-glare="0.8"' : '';?>  <?php echo ($tilt_box['select_effect'] == 'reverse')? 'data-tilt-reverse="true"' : '';?> <?php echo ($tilt_box['select_effect'] == 'floating')? 'data-tilt-reset="true"' : '';?> <?php echo ($tilt_box['select_effect'] == 'listening')? 'data-tilt-full-page-listening' : '';?>  <?php echo ($tilt_box['select_effect'] == 'x')? 'data-tilt-axis="y"' : '';?> <?php echo ($tilt_box['select_effect'] == 'y')? 'data-tilt-axis="x"' : '';?> >
+        <div id="wk-tilt-<?php echo $id;?>" class="tilt-element <?php echo ($tilt_box['content_position']== 'overlay')? 'wk-flex wk-flex-middle': '';?>" data-tilt  <?php echo ($tilt_box['select_effect'] == 'glare')? 'data-tilt-glare data-tilt-max-glare="0.8"' : '';?>  <?php echo ($tilt_box['select_effect'] == 'reverse')? 'data-tilt-reverse="true"' : '';?> <?php echo ($tilt_box['select_effect'] == 'floating')? 'data-tilt-reset="true"' : '';?> <?php echo ($tilt_box['select_effect'] == 'listening')? 'data-tilt-full-page-listening' : '';?>  <?php echo ($tilt_box['select_effect'] == 'x')? 'data-tilt-axis="y"' : '';?> <?php echo ($tilt_box['select_effect'] == 'y')? 'data-tilt-axis="x"' : '';?> >
 
             <?php if ($tilt_box['content_position']== 'overlay'):?>
                 <?php if ($tilt_box['content_icon'] || $tilt_box['content_title'] || $tilt_box['content_description'] || $tilt_box['content_button']):?>
-                    <div class="wk-tilt-card wk-text-<?php echo $tilt_box['content_align'];?> content-<?php echo $tilt_box['content_position'];?>">
+                    <div class="wk-tilt-card wk-text-<?php echo $tilt_box['content_align'];?> content-<?php echo $tilt_box['content_position'];?> wk-padding">
                         <?php if ($tilt_box['content_icon']):?>
                             <div class="wk-tilt-card-icon-top">
                                 <?php 
