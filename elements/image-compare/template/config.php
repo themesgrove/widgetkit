@@ -91,6 +91,8 @@ class wkfe_image_compare extends Widget_Base {
             ]
         );
 
+
+
         $this->add_control(
             'before_label',
             [
@@ -147,6 +149,18 @@ class wkfe_image_compare extends Widget_Base {
                 'name' => 'thumbnail',
                 'default' => 'full',
                 'separator' => 'before',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'image_border_radius',
+            [
+                'label' => __( 'Radius', 'widgetkit-for-elementor' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%' ],
+                'selectors' => [
+                    '{{WRAPPER}} .wk-image-compare .image-compare-container img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
             ]
         );
 
@@ -222,7 +236,7 @@ class wkfe_image_compare extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                  'selectors' => [
                     '{{WRAPPER}} .wk-image-compare  .image-compare-handle:before, {{WRAPPER}} .wk-image-compare .image-compare-handle:after' => 'background:{{VALUE}};',
-                    '{{WRAPPER}} .wk-image-compare .image-compare-handle' => 'color:{{VALUE}};',
+                    '{{WRAPPER}} .wk-image-compare .image-compare-handle' => 'border-color:{{VALUE}};',
                     '{{WRAPPER}} .wk-image-compare .image-compare-right-arrow' => 'border-left-color:{{VALUE}};',
                     '{{WRAPPER}} .wk-image-compare .image-compare-left-arrow' => 'border-right-color:{{VALUE}};',
                       '{{WRAPPER}} .wk-image-compare .image-compare-up-arrow' => 'border-bottom-color:{{VALUE}};',
