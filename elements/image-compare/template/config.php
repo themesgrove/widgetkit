@@ -236,7 +236,7 @@ class wkfe_image_compare extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                  'selectors' => [
                     '{{WRAPPER}} .wk-image-compare  .image-compare-handle:before, {{WRAPPER}} .wk-image-compare .image-compare-handle:after' => 'background:{{VALUE}};',
-                    '{{WRAPPER}} .wk-image-compare .image-compare-handle' => 'border-color:{{VALUE}};',
+                    '{{WRAPPER}} .wk-image-compare .image-compare-handle' => 'border-color:{{VALUE}} !important;',
                     '{{WRAPPER}} .wk-image-compare .image-compare-right-arrow' => 'border-left-color:{{VALUE}};',
                     '{{WRAPPER}} .wk-image-compare .image-compare-left-arrow' => 'border-right-color:{{VALUE}};',
                       '{{WRAPPER}} .wk-image-compare .image-compare-up-arrow' => 'border-bottom-color:{{VALUE}};',

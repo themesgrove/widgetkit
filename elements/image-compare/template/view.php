@@ -23,8 +23,8 @@
                 // orientation: 'vertical',
 
                 // label text
-                before_label: '<?php echo $image_compare['before_label']; ?>',
-                after_label: '<?php echo $image_compare['after_label']; ?>',
+                before_label: '<?php echo $image_compare['after_label']; ?>',
+                after_label: '<?php echo $image_compare['before_label']; ?>',
 
                 // enable/disable overlay
                 <?php if ($image_compare['hide_overlay'] == 'yes'):?>
