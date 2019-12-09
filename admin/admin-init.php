@@ -145,11 +145,11 @@ class Widgetkit_Admin
      */
     public function widgetkit_for_elementor_admin_page_scripts () {
         wp_enqueue_style( 'widgetkit-admin',  WK_URL.'/dist/css/wk-dashboard.css', array(), WK_VERSION, '' );
-        wp_enqueue_style( 'widgetkit-sweetalert2-css', plugins_url('/assets/css/sweetalert2.min.css', __FILE__ ));
+        // wp_enqueue_style( 'widgetkit-sweetalert2-css', plugins_url('/assets/css/sweetalert2.min.css', __FILE__ ));
         
         wp_enqueue_script('widgetkit-elementor-admin-js', plugins_url('/assets/js/admin.js', __FILE__) , array('jquery','jquery-ui-tabs'), '1.0' , true );
         wp_enqueue_script( 'widgetkit-sweet-js',  plugins_url('/assets/js/core.js', __FILE__), array( 'jquery' ), '1.0', true );
-		wp_enqueue_script( 'widgetkit-sweetalert2-js', plugins_url('/assets/js/sweetalert2.min.js', __FILE__), array( 'jquery', 'widgetkit-sweet-js' ), '1.0', true );
+		// wp_enqueue_script( 'widgetkit-sweetalert2-js', plugins_url('/assets/js/sweetalert2.min.js', __FILE__), array( 'jquery', 'widgetkit-sweet-js' ), '1.0', true );
         wp_enqueue_script( 'admin-notice-js', plugins_url('/assets/js/admin-notice.js', __FILE__), array( 'jquery' ), '1.0', true );
        /**
         * Load uikit only inside widgetkit setting page
@@ -159,8 +159,12 @@ class Widgetkit_Admin
         $current_url_slug = explode("=", $current_url);
         if($current_url && $current_url_slug[1] === 'widgetkit-settings' ){
             wp_enqueue_style( 'wkkit',  plugins_url('/dist/css/uikit.custom.min.css', dirname(__FILE__)  ));
+            wp_enqueue_style( 'widgetkit-sweetalert2-css', plugins_url('/assets/css/sweetalert2.min.css', __FILE__ ));
+
             wp_enqueue_script( 'wkkit',  plugins_url('/dist/js/uikit.min.js', dirname(__FILE__)  ));
             wp_enqueue_script( 'wkkit-icon',  plugins_url('/dist/js/uikit-icons.min.js', dirname(__FILE__)  ));
+            wp_enqueue_script( 'widgetkit-sweetalert2-js', plugins_url('/assets/js/sweetalert2.min.js', __FILE__), array( 'jquery', 'widgetkit-sweet-js' ), '1.0', true );
+
         }
     }
 
