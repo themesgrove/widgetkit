@@ -240,6 +240,7 @@ class wkfe_tilt_box extends Widget_Base {
                     'yes' => __( 'Yes', 'widgetkit-for-elementor' ),
                     'no' => __( 'No', 'widgetkit-for-elementor' ),
                     'return_value' => 'yes',
+                    'default'   => 'yes',
                     'separator' => 'before',
                 ]
             );

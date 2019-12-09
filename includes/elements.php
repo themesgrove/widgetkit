@@ -204,6 +204,10 @@ class WKFE_Elements{
             require_once WK_PATH . '/elements/tilt-box/widget.php';
         }
 
+         // if( $check_component_active['widget-tilt-box'] ) {
+            require_once WK_PATH . '/elements/contact-form/widget.php';
+        // }
+
     }
 
 }
