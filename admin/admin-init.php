@@ -45,6 +45,8 @@ class Widgetkit_Admin
         'widget-image-compare',
         'widget-tilt-box',
         'widget-contact-form',
+        'widget-pros-cons',
+        'widget-click-tweet'
     ];
 
     public $widgetkit_woo_keys = [
@@ -631,7 +633,27 @@ class Widgetkit_Admin
                                                 <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                     <?php echo esc_html__('Contact Form', 'widgetkit-for-elementor'); ?>
                                                     <label class="switch">
-                                                        <input type="checkbox" id="widget-tilt-box" name="widget-contact-form" <?php checked(1, $this->widgetkit_get_settings['widget-contact-form'], true) ?>>
+                                                        <input type="checkbox" id="widget-contact-form" name="widget-contact-form" <?php checked(1, $this->widgetkit_get_settings['widget-contact-form'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Pros Cons', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-pros-cons" name="widget-pros-cons" <?php checked(1, $this->widgetkit_get_settings['widget-pros-cons'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Click Tweet', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-click-tweet" name="widget-click-tweet" <?php checked(1, $this->widgetkit_get_settings['widget-click-tweet'], true) ?>>
                                                         <span class="rectangle round"></span>
                                                     </label>
                                                 </div>
