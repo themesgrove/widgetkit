@@ -17,6 +17,19 @@
         padding: 10px 20px;
 
       }
+      label{
+        display:block;
+      }
+      @media(max-width:768px){
+        padding:10px;
+      }
+
+      .wpuf-style{
+        li {
+            list-style: none;
+        }
+
+      } 
   }
 
 

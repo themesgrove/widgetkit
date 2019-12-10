@@ -30,5 +30,14 @@
             <?php endif;?>
         </div>
 
+        <script type="text/javascript">
+            jQuery(function($){
+                if(!$('body').hasClass('wk-contact-form')){
+                    $('body').addClass('wk-contact-form');
+                }
+            });
+
+        </script>
+
 
 
