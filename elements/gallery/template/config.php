@@ -780,11 +780,25 @@ class wkfe_gallery extends Widget_Base {
 				'default'   => '',
 				'selectors' => [
 					'{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .gallery-lightbox a' => 'color: {{VALUE}}; border: 1px solid {{VALUE}};',
-					'{{WRAPPER}} .wk-gallery .content-bottom .caption-button .button-text' => 'color: {{VALUE}}; border: 1px solid {{VALUE}};',
+					'{{WRAPPER}} .wk-gallery .content-bottom .caption-button .button-text' => 'color: {{VALUE}}; border-color: {{VALUE}};',
 					'{{WRAPPER}} .wk-gallery .content-bottom .caption-button .top-icon' => 'color: {{VALUE}}; border: 1px solid {{VALUE}};',
 					
 					],
 			]
+		);
+
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+				[
+					'name'     => 'overlay_button_typography',
+					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
+					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+					'selector' => '{{WRAPPER}} .wk-gallery .content-bottom .caption-button .button-text',
+					'condition' => [
+						'content_position' => 'bottom',
+					],
+				]
 		);
 
 		$this->add_control(
