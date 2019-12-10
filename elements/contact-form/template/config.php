@@ -338,7 +338,7 @@ class wkfe_contact_form extends Widget_Base {
                 ],
                 'size_units'            => [ 'px', 'em', '%' ],
                 'selectors'             => [
-                    '{{WRAPPER}} .wk-contact-form input[type="text"], {{WRAPPER}} .wk-contact-form input[type="email"], {{WRAPPER}} .wk-contact-form textarea' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .wk-contact-form input[type="text"], {{WRAPPER}} .wk-contact-form input[type="email"], {{WRAPPER}} .wk-contact-form textarea' => 'margin-bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -498,7 +498,7 @@ class wkfe_contact_form extends Widget_Base {
                 'type'                  => Controls_Manager::COLOR,
                 'default'               => '',
                 'selectors'             => [
-                    '{{WRAPPER}} .wk-contact-form button, {{WRAPPER}} .wk-contact-form input[type="button"], {{WRAPPER}} .wk-contact-form input[type="reset"], {{WRAPPER}} .wk-contact-form input[type="submit"]' => 'color: {{VALUE}} !important',
+                    '{{WRAPPER}} .wk-contact-form button, {{WRAPPER}} .wk-contact-form input[type="button"], {{WRAPPER}} .wk-contact-form input[type="reset"], {{WRAPPER}} .wk-contact-form input[type="submit"]' => 'color: {{VALUE}} !important;',
                 ],
             ]
         );
@@ -510,7 +510,7 @@ class wkfe_contact_form extends Widget_Base {
                 'type'                  => Controls_Manager::COLOR,
                 'default'               => '',
                 'selectors'             => [
-                    '{{WRAPPER}} .wk-contact-form button, {{WRAPPER}} .wk-contact-form input[type="button"], {{WRAPPER}} .wk-contact-form input[type="reset"], {{WRAPPER}} .wk-contact-form input[type="submit"]' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .wk-contact-form button, {{WRAPPER}} .wk-contact-form input[type="button"], {{WRAPPER}} .wk-contact-form input[type="reset"], {{WRAPPER}} .wk-contact-form input[type="submit"]' => 'background-color: {{VALUE}};',
                      '{{WRAPPER}} .wk-contact-form .wpuf-form .wpuf-submit input[type=submit]' => 'background-color: {{VALUE}} !important;',
                 ],
             ]
@@ -641,7 +641,7 @@ class wkfe_contact_form extends Widget_Base {
                 ],
                 'size_units'            => [ 'px', '%' ],
                 'selectors'             => [
-                    '{{WRAPPER}} .wk-contact-form button, {{WRAPPER}} .wk-contact-form input[type="button"], {{WRAPPER}} .wk-contact-form input[type="reset"], {{WRAPPER}} .wk-contact-form input[type="submit"], {{WRAPPER}} .wk-contact-form .wpuf-form .wpuf-submit input[type=submit]' => 'margin-top: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .wk-contact-form button, {{WRAPPER}} .wk-contact-form input[type="button"], {{WRAPPER}} .wk-contact-form input[type="reset"], {{WRAPPER}} .wk-contact-form input[type="submit"], {{WRAPPER}} .wk-contact-form .wpuf-form .wpuf-submit input[type=submit]' => 'margin-top: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -671,7 +671,7 @@ class wkfe_contact_form extends Widget_Base {
                 'type'                  => Controls_Manager::COLOR,
                 'default'               => '',
                 'selectors'             => [
-                    '{{WRAPPER}} .wk-contact-form button:hover, {{WRAPPER}} .wk-contact-form input[type="button"]:hover, {{WRAPPER}} .wk-contact-form input[type="reset"]:hover, {{WRAPPER}} .wk-contact-form input[type="submit"]:hover, {{WRAPPER}} .wk-contact-form .wpuf-form .wpuf-submit input[type=submit]:hover' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .wk-contact-form button:hover, {{WRAPPER}} .wk-contact-form input[type="button"]:hover, {{WRAPPER}} .wk-contact-form input[type="reset"]:hover, {{WRAPPER}} .wk-contact-form input[type="submit"]:hover, {{WRAPPER}} .wk-contact-form .wpuf-form .wpuf-submit input[type=submit]:hover' => 'color: {{VALUE}} !important;',
                 ],
             ]
         );
@@ -683,7 +683,7 @@ class wkfe_contact_form extends Widget_Base {
                 'type'                  => Controls_Manager::COLOR,
                 'default'               => '',
                 'selectors'             => [
-                    '{{WRAPPER}} .wk-contact-form button:hover, {{WRAPPER}} .wk-contact-form input[type="button"]:hover, {{WRAPPER}} .wk-contact-form input[type="reset"]:hover, {{WRAPPER}} .wk-contact-form input[type="submit"]:hover, {{WRAPPER}} .wk-contact-form .wpuf-form .wpuf-submit input[type=submit]:hover' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .wk-contact-form button:hover, {{WRAPPER}} .wk-contact-form input[type="button"]:hover, {{WRAPPER}} .wk-contact-form input[type="reset"]:hover, {{WRAPPER}} .wk-contact-form input[type="submit"]:hover, {{WRAPPER}} .wk-contact-form .wpuf-form .wpuf-submit input[type=submit]:hover' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -697,7 +697,7 @@ class wkfe_contact_form extends Widget_Base {
                 'type'                  => Controls_Manager::COLOR,
                 'default'               => '',
                 'selectors'             => [
-                    '{{WRAPPER}} .wk-contact-form button:hover, {{WRAPPER}} .wk-contact-form input[type="button"]:hover, {{WRAPPER}} .wk-contact-form input[type="reset"]:hover, {{WRAPPER}} .wk-contact-form input[type="submit"]:hover, {{WRAPPER}} .wk-contact-form .wpuf-form .wpuf-submit input[type=submit]:hover' => 'border-color: {{VALUE}}',
+                    '{{WRAPPER}} .wk-contact-form button:hover, {{WRAPPER}} .wk-contact-form input[type="button"]:hover, {{WRAPPER}} .wk-contact-form input[type="reset"]:hover, {{WRAPPER}} .wk-contact-form input[type="submit"]:hover, {{WRAPPER}} .wk-contact-form .wpuf-form .wpuf-submit input[type=submit]:hover' => 'border-color: {{VALUE}};',
                 ],
             ]
         );
@@ -749,7 +749,7 @@ class wkfe_contact_form extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .wk-contact-form .wpcf7-not-valid-tip, {{WRAPPER}} .wk-contact-form .wpforms-form label.wpforms-error' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .wk-contact-form .wpcf7-not-valid-tip, {{WRAPPER}} .wk-contact-form .wpforms-form label.wpforms-error' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
                     'error_messages' => 'show',
@@ -771,7 +771,7 @@ class wkfe_contact_form extends Widget_Base {
                 ],
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .wk-contact-form .wpcf7-not-valid-tip' => 'margin-top: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .wk-contact-form .wpcf7-not-valid-tip' => 'margin-top: {{SIZE}}{{UNIT}};',
                 ],
                 'condition' => [
                     'error_messages' => 'show',
@@ -797,7 +797,7 @@ class wkfe_contact_form extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .wk-contact-form .wpcf7-not-valid' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .wk-contact-form .wpcf7-not-valid' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
                     'error_messages' => 'show',
@@ -860,7 +860,7 @@ class wkfe_contact_form extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .wk-contact-form .wpcf7-validation-errors, {{WRAPPER}} .wk-contact-form .wpuf-form .wpuf-submit .wpuf-errors' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .wk-contact-form .wpcf7-validation-errors, {{WRAPPER}} .wk-contact-form .wpuf-form .wpuf-submit .wpuf-errors' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
                     'validation_errors' => 'show',
@@ -888,7 +888,7 @@ class wkfe_contact_form extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .wk-contact-form .wpcf7-validation-errors, {{WRAPPER}} .wk-contact-form .wpuf-form .wpuf-submit .wpuf-errors' => 'background: {{VALUE}}',
+                    '{{WRAPPER}} .wk-contact-form .wpcf7-validation-errors, {{WRAPPER}} .wk-contact-form .wpuf-form .wpuf-submit .wpuf-errors' => 'background: {{VALUE}};',
                 ],
                 'condition' => [
                     'validation_errors' => 'show',
