@@ -43,8 +43,15 @@
                     click_to_move: false
                 <?php endif; ?>
               
-            });       
+            });
+            if(!$('body').hasClass('wk-image-compare')){
+                $('body').addClass('wk-image-compare');
+            }       
         }); 
     </script>
+
+
+
+
 
 

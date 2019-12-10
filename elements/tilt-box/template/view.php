@@ -82,5 +82,14 @@
 
         </script>
     <?php endif; ?>
+    <script type="text/javascript">
+        jQuery(function($){
+            if(!$('body').hasClass('wk-tilt-box')){
+                $('body').addClass('wk-tilt-box');
+            }
+        });
+
+    </script>
+
 
 

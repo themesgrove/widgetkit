@@ -65,6 +65,7 @@ class WKFE_Elements{
 
             'widget-image-compare',
             'widget-tilt-box',
+            'widget-contact-form',
         ];
         $widgetkit_default_settings = array_fill_keys( $widgetkit_elements_keys, true );
         
@@ -204,9 +205,9 @@ class WKFE_Elements{
             require_once WK_PATH . '/elements/tilt-box/widget.php';
         }
 
-         // if( $check_component_active['widget-tilt-box'] ) {
+        if( $check_component_active['widget-contact-form'] ) {
             require_once WK_PATH . '/elements/contact-form/widget.php';
-        // }
+        }
 
     }
 

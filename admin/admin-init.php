@@ -44,6 +44,7 @@ class Widgetkit_Admin
         'wkpro-headline-slider',
         'widget-image-compare',
         'widget-tilt-box',
+        'widget-contact-form',
     ];
 
     public $widgetkit_woo_keys = [
@@ -624,6 +625,17 @@ class Widgetkit_Admin
                                                     </label>
                                                 </div>
                                             </div>
+
+
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Contact Form', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-tilt-box" name="widget-contact-form" <?php checked(1, $this->widgetkit_get_settings['widget-contact-form'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
                             
                                             
                                             <div class="wk-width-1-1">
@@ -1065,6 +1077,8 @@ class Widgetkit_Admin
 
              // Tilt Box
             'widget-tilt-box' => intval($settings['widget-tilt-box'] ? 1 : 0),
+            // Contact form
+            'widget-contact-form' => intval($settings['widget-contact-form'] ? 1 : 0),
 
 
             /**
