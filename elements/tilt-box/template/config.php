@@ -194,46 +194,8 @@ class wkfe_tilt_box extends Widget_Base {
             ]
         );
 
-
-            $this->add_control(
-                'content_position',
-                    [
-                        'label'       => __( 'Content Position', 'widgetkit-for-elementor' ),
-                        'type' => Controls_Manager::SELECT,
-                        'default' => 'overlay',
-                        'options' => [
-                            'overlay'   => __( 'Overlay', 'widgetkit-for-elementor' ),
-                            'bottom'    => __( 'Bottom', 'widgetkit-for-elementor' ),
-                        ],
-                        
-                    ]
-            );
-
-            $this->add_control(
-                'content_align',
-                [
-                    'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
-                    'type'  => Controls_Manager::CHOOSE,
-                    'default'   => 'left',
-                    'options' => [
-                        'left'    => [
-                            'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
-                            'icon'  => 'eicon-text-align-left',
-                        ],
-                        'center' => [
-                            'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
-                            'icon'  => 'eicon-text-align-center',
-                        ],
-                        'right' => [
-                            'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
-                            'icon'  => 'eicon-text-align-left',
-                        ],
-                    ],
-                ]
-            );
-
-            $this->add_control(
-                'effect_enable',
+        $this->add_control(
+            'effect_enable',
                 [
                     'label' => __( 'Effect Enable', 'widgetkit-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
@@ -267,6 +229,106 @@ class wkfe_tilt_box extends Widget_Base {
                         ],
                     ]
             );
+
+            $this->add_control(
+                'item_border_radius',
+                [
+                    'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
+                    'type'  => Controls_Manager::DIMENSIONS,
+                    'size_units' => [ 'px', '%' ],
+                    'selectors'  => [
+                        '{{WRAPPER}} .wk-tilt-box .tilt-element' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    ],
+                    
+                ]
+            );
+
+            $this->add_group_control(
+                Group_Control_Box_Shadow::get_type(),
+                [
+                    'name'                  => 'item_box_shadow',
+                    'selector'              => '{{WRAPPER}} .wk-tilt-box .tilt-element',
+                ]
+            );
+
+
+
+            $this->add_control(
+                'content_heading',
+                [
+                    'label' => esc_html__( 'Content', 'widgetkit-for-elementor' ),
+                    'type'  => Controls_Manager::HEADING,
+                    'separator' => 'before',
+                ]
+            );
+
+
+            $this->add_control(
+                'content_position',
+                    [
+                        'label'       => __( 'Display', 'widgetkit-for-elementor' ),
+                        'type' => Controls_Manager::SELECT,
+                        'default' => 'overlay',
+                        'options' => [
+                            'overlay'   => __( 'Overlay', 'widgetkit-for-elementor' ),
+                            'bottom'    => __( 'Bottom', 'widgetkit-for-elementor' ),
+                        ],
+                        
+                    ]
+            );
+
+            $this->add_control(
+                'content_overlay_position',
+                [
+                    'label' => __( 'Position', 'widgetkit-for-elementor' ),
+                    'type' => Controls_Manager::CHOOSE,
+                    'label_block' => false,
+                    'options' => [
+                        'top' => [
+                            'title' => __( 'Top', 'widgetkit-for-elementor' ),
+                            'icon' => 'eicon-v-align-top',
+                        ],
+                        'middle' => [
+                            'title' => __( 'Center', 'widgetkit-for-elementor' ),
+                            'icon' => 'eicon-h-align-center',
+                        ],
+                        'bottom' => [
+                            'title' => __( 'Bottom', 'widgetkit-for-elementor' ),
+                            'icon' => 'eicon-v-align-bottom',
+                        ],
+                    ],
+                    'default' => 'center',
+                    'condition' => [
+                        'content_position' => 'overlay',
+                    ],
+                ]
+            );
+
+
+            $this->add_control(
+                'content_align',
+                [
+                    'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
+                    'type'  => Controls_Manager::CHOOSE,
+                    'default'   => 'left',
+                    'options' => [
+                        'left'    => [
+                            'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
+                            'icon'  => 'eicon-text-align-left',
+                        ],
+                        'center' => [
+                            'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
+                            'icon'  => 'eicon-text-align-center',
+                        ],
+                        'right' => [
+                            'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
+                            'icon'  => 'eicon-text-align-left',
+                        ],
+                    ],
+                ]
+            );
+
+
 
 
         // $this->add_control(
@@ -307,7 +369,10 @@ class wkfe_tilt_box extends Widget_Base {
                 [
                     'label' => __( 'Color', 'widgetkit-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
-                     'selectors' => ['{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-icon-top' => 'color:{{VALUE}};',
+                     'selectors' => [
+                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-icon-top' => 'color:{{VALUE}};',
+                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-icon-top svg' => 'fill:{{VALUE}};',
+
                     ],
                 ]
             );
@@ -453,7 +518,7 @@ class wkfe_tilt_box extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'button_typography',
-                    'selector' => '{{WRAPPER}} .wk-tilt-box .wk-tilt-card.content-bottom .wk-tilt-card-body .wk-button',
+                    'selector' => '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-button',
                     'scheme' => Scheme_Typography::TYPOGRAPHY_3,
                 ]
             );
@@ -474,7 +539,8 @@ class wkfe_tilt_box extends Widget_Base {
                     'type'    => Controls_Manager::COLOR,
                     'default' => '',
                     'selectors' => [
-                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card.content-bottom .wk-tilt-card-body .wk-button' => 'color: {{VALUE}};',
+                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-button' => 'color: {{VALUE}};',
+                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-button:hover' => 'background-color: {{VALUE}};',
                     ],
                 ]
             );
@@ -486,7 +552,8 @@ class wkfe_tilt_box extends Widget_Base {
                     'type'  => Controls_Manager::COLOR,
                     'default' => '',
                     'selectors' => [
-                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card.content-bottom .wk-tilt-card-body .wk-button' => 'background-color: {{VALUE}};',
+                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-button' => 'background-color: {{VALUE}};',
+                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-button:hover' => 'color: {{VALUE}}; border-color:{{VALUE}};',
                     ],
                 ]
             );
@@ -498,7 +565,7 @@ class wkfe_tilt_box extends Widget_Base {
                     'label' => esc_html__( 'Border', 'widgetkit-for-elementor' ),
                     'placeholder' => '1px',
                     'default'   => '1px',
-                    'selector'  => '{{WRAPPER}} .wk-tilt-box .wk-tilt-card.content-bottom .wk-tilt-card-body .wk-button',
+                    'selector'  => '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-button',
                   
                 ]
             );
@@ -519,7 +586,7 @@ class wkfe_tilt_box extends Widget_Base {
                     'type' => Controls_Manager::COLOR,
                     'default' => '',
                     'selectors' => [
-                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card.content-bottom .wk-tilt-card-body .wk-button:hover' => 'color: {{VALUE}};',
+                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-button:hover' => 'color: {{VALUE}};',
                     ],
                 ]
             );
@@ -531,7 +598,7 @@ class wkfe_tilt_box extends Widget_Base {
                     'type'  => Controls_Manager::COLOR,
                     'default' => '',
                     'selectors' => [
-                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card.content-bottom .wk-tilt-card-body .wk-button:hover' => 'background-color: {{VALUE}};',
+                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-button:hover' => 'background-color: {{VALUE}};',
                     ],
 
                 ]
@@ -544,7 +611,7 @@ class wkfe_tilt_box extends Widget_Base {
                     'type'  => Controls_Manager::COLOR,
                     'default'   => '',
                     'selectors' => [
-                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card.content-bottom .wk-tilt-card-body .wk-button:hover' => 'border-color: {{VALUE}};',
+                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-button:hover' => 'border-color: {{VALUE}};',
                     ],
                 ]
             );
@@ -560,7 +627,7 @@ class wkfe_tilt_box extends Widget_Base {
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
-                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card.content-bottom .wk-tilt-card-body .wk-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     ],
                     'separator' => 'before',
                 ]
@@ -573,7 +640,7 @@ class wkfe_tilt_box extends Widget_Base {
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors'  => [
-                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card.content-bottom .wk-tilt-card-body .wk-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     ],
                     
                 ]
