@@ -5,7 +5,7 @@ Donate link: https://themesgrove.com/
 Tags: elementor, add-ons, elementor addons, elementor widgets, woocommerce, learndash, learnpress, widgets, woocommerce addons, learndash addons, sensei, sensei addons, countdown, timer, slider, team, testimonial, social-share, carousel, portfolio, pricing, widgetkit
 Requires at least: 4.0
 Tested up to: 5.3
-Stable tag: 2.1.2
+Stable tag: 2.2.0
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -181,7 +181,7 @@ PHP 5.4 or greater.
 
 == Changelog ==
 
-= 2.1.2 =
+= 2.2.0 =
 New – Tilt Box Element
 New – Image Compare Element
 New – Contact Form Element
