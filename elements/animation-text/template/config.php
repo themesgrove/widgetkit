@@ -23,7 +23,7 @@ class wkfe_animation_text extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Animation Text', 'widgetkit-for-elementor' );
+		return esc_html__( 'Animated Headline', 'widgetkit-for-elementor' );
 	}
 
 	public function get_icon() {

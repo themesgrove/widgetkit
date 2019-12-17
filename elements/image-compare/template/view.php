@@ -3,10 +3,11 @@
     $id = $this->get_id();
 ?>
     <div class="wk-image-compare">
-        <div class="row">
+         <div class="row">
             <div id="image-compare-<?php echo $id; ?>" class="image-compare-container">
-                <img src="<?php echo $image_compare['after_image']['url']; ?>" alt="After">
+                
                 <img src="<?php echo $image_compare['before_image']['url']; ?>" alt="before">
+                <img src="<?php echo $image_compare['after_image']['url']; ?>" alt="After">
             </div>
         </div>
     </div>
@@ -23,8 +24,9 @@
                 // orientation: 'vertical',
 
                 // label text
-                before_label: '<?php echo $image_compare['after_label']; ?>',
-                after_label: '<?php echo $image_compare['before_label']; ?>',
+                after_label: '<?php echo $image_compare['after_label']; ?>',
+                before_label: '<?php echo $image_compare['before_label']; ?>',
+               
 
                 // enable/disable overlay
                 <?php if ($image_compare['hide_overlay'] == 'yes'):?>
@@ -43,10 +45,7 @@
                     click_to_move: false
                 <?php endif; ?>
               
-            });
-            if(!$('body').hasClass('wk-image-compare')){
-                $('body').addClass('wk-image-compare');
-            }       
+            });       
         }); 
     </script>
 

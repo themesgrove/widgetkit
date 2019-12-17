@@ -73,7 +73,7 @@ class wkfe_contact_form extends Widget_Base {
                     [
                         'label'       => __( 'Contact Forms', 'widgetkit-for-elementor' ),
                         'type' => Controls_Manager::SELECT,
-                        'default' => 'overlay',
+                        'default' => 'contact-7',
                         'options' => [
                             'contact-7'   => __( 'Contact Form 7', 'widgetkit-for-elementor' ),
                             'weforms'     => __( 'Weforms', 'widgetkit-for-elementor' ),

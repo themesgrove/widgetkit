@@ -181,15 +181,15 @@ PHP 5.4 or greater.
 
 == Changelog ==
 
-== 2.1.1 ==
-New - Image Compare element
-New - Tilt Box element
-New - Contact Form element
+= 2.1.2 =
+New – Tilt Box Element
+New – Image Compare Element
+New – Contact Form Element
+Fix – Element disable enable issue in Widgetkit Dashboard
+Fix – Conflict with weDocs plugin.
 Improvement - Animation Headline element spacing
-Fix - Sweetalert conflict with weDocs plugin 
-Fix - Element enable disable problem in dashboard
 
-== 2.1.1 ==
+= 2.1.1 =
 Improvement – 1 new layout options for the Gallery element.
 Improvement – Added discount option to Pricing Single element.
 Improvement – Responsive update to Testimonial element. 

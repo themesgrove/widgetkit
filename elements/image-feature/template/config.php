@@ -24,7 +24,7 @@ class wkfe_image_feature extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Feature Image/Icon Box', 'widgetkit-for-elementor' );
+		return esc_html__( 'Info Box', 'widgetkit-for-elementor' );
 	}
 
 	public function get_icon() {

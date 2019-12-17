@@ -66,6 +66,8 @@ class WKFE_Elements{
             'widget-image-compare',
             'widget-tilt-box',
             'widget-contact-form',
+            'widget-pros-cons',
+            'widget-click-tweet',
         ];
         $widgetkit_default_settings = array_fill_keys( $widgetkit_elements_keys, true );
         
@@ -109,27 +111,35 @@ class WKFE_Elements{
         if( $check_component_active['widget-blog-image'] ) {
             require_once WK_PATH . '/elements/blog-5/widget.php';
         }
-        if( $check_component_active['widget-countdown'] ) {
-            require_once WK_PATH . '/elements/countdown/widget.php';
+        if( $check_component_active['widget-click-tweet'] ) {
+            require_once WK_PATH . '/elements/click-tweet/widget.php';
+        }
+        if( $check_component_active['widget-contact-form'] ) {
+            require_once WK_PATH . '/elements/contact-form/widget.php';
         }
         if( $check_component_active['widget-content-carousel'] ) {
             require_once WK_PATH . '/elements/content-carousel/widget.php';
         }
+        if( $check_component_active['widget-countdown'] ) {
+            require_once WK_PATH . '/elements/countdown/widget.php';
+        }
         if( $check_component_active['widget-post-carousel'] ) {
             require_once WK_PATH . '/elements/carousel/widget.php';
         }
-        require_once WK_PATH . '/elements/click-tweet/widget.php';
+        if( $check_component_active['widget-portfolio'] ) {
+            require_once WK_PATH . '/elements/portfolio/widget.php'; 
+        }
         if( $check_component_active['widget-gallery'] ) {
             require_once WK_PATH . '/elements/gallery/widget.php';
         }
-        if( $check_component_active['widget-feature-box'] ) {
-            require_once WK_PATH . '/elements/image-feature/widget.php'; // Feature Image/Icon Box
-        }
-        if( $check_component_active['widget-portfolio'] ) {
-            require_once WK_PATH . '/elements/portfolio/widget.php'; // Filterable Portfolio
-        }
         if( $check_component_active['widget-hover-image'] ) {
             require_once WK_PATH . '/elements/hover-image/widget.php';
+        }
+        if( $check_component_active['widget-feature-box'] ) {
+            require_once WK_PATH . '/elements/image-feature/widget.php';
+        }
+        if( $check_component_active['widget-image-compare'] ) {
+            require_once WK_PATH . '/elements/image-compare/widget.php';
         }
         if( $check_component_active['widget-pricing-single'] ) {
             require_once WK_PATH . '/elements/pricing-1/widget.php';
@@ -140,7 +150,11 @@ class WKFE_Elements{
         if( $check_component_active['widget-pricing-tab'] ) {
             require_once WK_PATH . '/elements/pricing-tab/widget.php';
         }
-        require_once WK_PATH . '/elements/pros-cons/widget.php';
+
+        if( $check_component_active['widget-pros-cons'] ) {
+            require_once WK_PATH . '/elements/pros-cons/widget.php';
+        }
+
         if( $check_component_active['widget-slider-animation'] ) {
             require_once WK_PATH . '/elements/slider-1/widget.php';
         }
@@ -180,17 +194,11 @@ class WKFE_Elements{
         if( $check_component_active['widget-team-animation'] ) {
             require_once WK_PATH . '/elements/team-4/widget.php';
         }
-        if( $check_component_active['widget-image-compare'] ) {
-            require_once WK_PATH . '/elements/image-compare/widget.php';
-        }
-        
         if( $check_component_active['widget-tilt-box'] ) {
             require_once WK_PATH . '/elements/tilt-box/widget.php';
         }
 
-        if( $check_component_active['widget-contact-form'] ) {
-            require_once WK_PATH . '/elements/contact-form/widget.php';
-        }
+        
 
     }
 
