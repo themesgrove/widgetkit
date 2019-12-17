@@ -219,7 +219,7 @@ class wkfe_tilt_box extends Widget_Base {
                             'glare'     => __( 'Glare', 'widgetkit-for-elementor' ),
                             'reverse'   => __( 'Reverse', 'widgetkit-for-elementor' ),
                             'floating'  => __( 'Floating', 'widgetkit-for-elementor' ),
-                            'listening'  => __( 'Listening', 'widgetkit-for-elementor' ),
+                            // 'listening'  => __( 'Listening', 'widgetkit-for-elementor' ),
                             'x'  => __( 'X axis', 'widgetkit-for-elementor' ),
                             'y'  => __( 'Y axis', 'widgetkit-for-elementor' ),
                         ],
