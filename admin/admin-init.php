@@ -1099,6 +1099,8 @@ class Widgetkit_Admin
             'widget-tilt-box' => intval($settings['widget-tilt-box'] ? 1 : 0),
             // Contact form
             'widget-contact-form' => intval($settings['widget-contact-form'] ? 1 : 0),
+            'widget-click-tweet' => intval($settings['widget-click-tweet'] ? 1 : 0),
+            'widget-pros-cons' => intval($settings['widget-pros-cons'] ? 1 : 0),
 
 
             /**
