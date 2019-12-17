@@ -66,6 +66,8 @@ class WKFE_Elements{
             'widget-image-compare',
             'widget-tilt-box',
             'widget-contact-form',
+            'widget-pros-cons',
+            'widget-click-tweet',
         ];
         $widgetkit_default_settings = array_fill_keys( $widgetkit_elements_keys, true );
         
@@ -118,7 +120,9 @@ class WKFE_Elements{
         if( $check_component_active['widget-post-carousel'] ) {
             require_once WK_PATH . '/elements/carousel/widget.php';
         }
-        require_once WK_PATH . '/elements/click-tweet/widget.php';
+        if( $check_component_active['widget-click-tweet'] ) {
+            require_once WK_PATH . '/elements/click-tweet/widget.php';
+        }
         if( $check_component_active['widget-gallery'] ) {
             require_once WK_PATH . '/elements/gallery/widget.php';
         }
@@ -140,7 +144,11 @@ class WKFE_Elements{
         if( $check_component_active['widget-pricing-tab'] ) {
             require_once WK_PATH . '/elements/pricing-tab/widget.php';
         }
-        require_once WK_PATH . '/elements/pros-cons/widget.php';
+
+        if( $check_component_active['widget-pros-cons'] ) {
+            require_once WK_PATH . '/elements/pros-cons/widget.php';
+        }
+
         if( $check_component_active['widget-slider-animation'] ) {
             require_once WK_PATH . '/elements/slider-1/widget.php';
         }

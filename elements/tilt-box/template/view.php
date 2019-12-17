@@ -1,10 +1,11 @@
 <?php
     $tilt_box = $this->get_settings();
+    $content_overlay_position = $tilt_box['content_overlay_position'];
     $id = $this->get_id();
     use Elementor\Icons_Manager;
 ?>
     <div class="wk-tilt-box">
-        <div id="wk-tilt-<?php echo $id;?>" class="tilt-element <?php echo ($tilt_box['content_position']== 'overlay')? 'wk-flex wk-flex-middle': '';?>" data-tilt  <?php echo ($tilt_box['select_effect'] == 'glare')? 'data-tilt-glare data-tilt-max-glare="0.8"' : '';?>  <?php echo ($tilt_box['select_effect'] == 'reverse')? 'data-tilt-reverse="true"' : '';?> <?php echo ($tilt_box['select_effect'] == 'floating')? 'data-tilt-reset="true"' : '';?> <?php echo ($tilt_box['select_effect'] == 'listening')? 'data-tilt-full-page-listening' : '';?>  <?php echo ($tilt_box['select_effect'] == 'x')? 'data-tilt-axis="y"' : '';?> <?php echo ($tilt_box['select_effect'] == 'y')? 'data-tilt-axis="x"' : '';?> >
+        <div id="wk-tilt-<?php echo $id;?>" class="tilt-element <?php echo ($tilt_box['content_position']== 'overlay')? 'wk-flex wk-flex-' .$content_overlay_position : '';?>" data-tilt  <?php echo ($tilt_box['select_effect'] == 'glare')? 'data-tilt-glare data-tilt-max-glare="0.8"' : '';?>  <?php echo ($tilt_box['select_effect'] == 'reverse')? 'data-tilt-reverse="true"' : '';?> <?php echo ($tilt_box['select_effect'] == 'floating')? 'data-tilt-reset="true"' : '';?> <?php echo ($tilt_box['select_effect'] == 'listening')? 'data-tilt-full-page-listening' : '';?>  <?php echo ($tilt_box['select_effect'] == 'x')? 'data-tilt-axis="y"' : '';?> <?php echo ($tilt_box['select_effect'] == 'y')? 'data-tilt-axis="x"' : '';?> >
 
             <?php if ($tilt_box['content_position']== 'overlay'):?>
                 <?php if ($tilt_box['content_icon'] || $tilt_box['content_title'] || $tilt_box['content_description'] || $tilt_box['content_button']):?>
@@ -76,7 +77,9 @@
 
             VanillaTilt.init(document.querySelector("#wk-tilt-<?php echo $id;?> .tilt-element"), {
                 max: 25,
-                speed: 400
+                speed: 400,
+
+                
         });
         
 
