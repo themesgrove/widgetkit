@@ -447,6 +447,70 @@ input:checked + .rectangle:before {
                 margin-top: 10px;
             }
         }
+        .wk-changelog{
+            .wk-text-bugfix{
+                color:#e91e63;
+            }
+            .wk-text-improved{
+                color:#9c27b0;
+            }
+
+            .wk-changelog-list{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 10px;
+                ul{
+                    li{
+                        border-bottom:solid 1px #dedede;
+                        padding-bottom:5px;
+                        &:first-child, 
+                        &:last-child{
+                            border-bottom:none;
+                        }
+                    }
+                    .release-version-date{
+                        h4{
+                            margin:0;
+                            font-size: 18px;
+                            margin-bottom:3px;
+                        }
+                        span{
+                            color:#c7c7c7;
+                            font-size: 12px;
+                        }
+                    }
+                }
+                .wk-changes{
+                    ul{
+                        background:white;
+                    }
+                }
+                .wkp-changes{
+                    position: relative;
+                    .wkp-headline{
+                        background: #f0506e;
+                        color: white;
+                        display: inline-block;
+                        margin: 15px 15px 0px;
+                        padding: 3px 5px;
+                        border-radius: 3px;
+                    }
+                    ul{
+                        position: relative;
+                        .pro-tag{
+                            position: absolute;
+                            right:10px;
+                            background:red;
+                            color:white;
+                            top:10px;
+                            padding:1px 4px;
+                            border-radius:2px;
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+            }
+        }
         
     }
 }
