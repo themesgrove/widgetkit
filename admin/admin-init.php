@@ -94,9 +94,11 @@ class Widgetkit_Admin
     /**
      * Register construct
      */
+    private $api_url = 'http://dev.wpplugin/wp-json/wk/changelog';
     public function __construct()
     {
         //$this->includes();
+        session_start();
         $this->init_hooks();
         
     }
@@ -142,7 +144,6 @@ class Widgetkit_Admin
         add_action('admin_init', [$this, 'widgetkit_for_elementor_admin_get_param_check']);
         // Build admin view and save
         add_action('wp_ajax_widgetkit_save_admin_addons_settings', [$this, 'widgetkit_for_elementor_sections_with_ajax']);
-        
     }
 
     /**
@@ -169,7 +170,6 @@ class Widgetkit_Admin
             wp_enqueue_script( 'wkkit',  plugins_url('/dist/js/uikit.min.js', dirname(__FILE__)  ));
             wp_enqueue_script( 'wkkit-icon',  plugins_url('/dist/js/uikit-icons.min.js', dirname(__FILE__)  ));
             wp_enqueue_script( 'widgetkit-sweetalert2-js', plugins_url('/assets/js/sweetalert2.min.js', __FILE__), array( 'jquery', 'widgetkit-sweet-js' ), '1.0', true );
-
         }
     }
 
@@ -1003,7 +1003,13 @@ class Widgetkit_Admin
                                     <li class="wk-changelog">
                                         <!-- WooCommerce -->
                                         <div class="wk-padding-remove">
-                                            
+
+                                            <?php 
+                                            $Parsedown = new Parsedown();
+                                            $get_changelog_data = $this->widgetkit_get_changelog_data();
+                                            $changelog_data = $get_changelog_data ? $get_changelog_data : $_SESSION['changes'];
+                                            ?>
+
                                             <div class="wk-changelog-list">
                                                 <div class="wk-changes">
                                                     <ul class="version version-2.2.0 wk-background-muted wk-padding-small wk-margin-small-bottom">
@@ -1048,65 +1054,19 @@ class Widgetkit_Admin
                                                         <li><span class="wk-text-improved">Improved </span> – Portfolio Element</li>
                                                     </ul>
                                                 </div>
-                                                <div class="wkp-changes wk-background-muted">
+                                                <div class="wkp-changes wk-background-muted wk-pro-changelog">
                                                     <h3 class="wkp-headline">WidgetKit Pro</h3>
-                                                    <ul class="version version-2.2.0 wk-background-muted wk-padding-small wk-margin-small-bottom">
-                                                        <li class="release-version-date"><h4>1.5.0</h4><span>19-12-2019</span></li>
-                                                        <li><span class="wk-text-success">New </span> – Sensei Course List Element</li>
-                                                        <li><span class="wk-text-success">New </span> – Sensei Course Tab Element</li>
-                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Responsive issue fixed in Woo Products Element</li>
-                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Responsive issue fixed in Woo Category Element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Typography config added for meta data in Smart List Element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Navigation disable option added in smart list element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Navigation tab disable option added in post tab element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Overlay background color change option added Woo Products Element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Custom SVG and icon option added in woo products element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Box shadow control added in Woo Products Element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Navigation enable disable option added in Woo Products Element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – 5 and 6 column option added in Woo Products Element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Icon duplicate issue updated in Woo Products Element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Sale badge enable and disable option added in Woo Products Element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Border Radius config added in Woo Products Element</li>
-                                                    </ul>
-                                                    <ul class="version version-2.0 wk-background-muted wk-padding-small wk-margin-small-bottom">
-                                                        <li class="release-version-date"><h4>1.4.0</h4><span>29-11-2019</span></li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Query updated for woo category element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Specific category query added in woo category element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Alignment issue Update in woo products element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Product star rating issue updated and new config added for color</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Header alignment option added in woo product element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Spacing config for title, meta and desc in woo products elements</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – 4 unique layout implemented in woo category element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Spacing config added for product carousel</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Style update in woo categories element</li>
-                                                        <li>=== LearnDash ===</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Price tag color background and color option added for learndash elements</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Course loading issue for first load in learndash course tab</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Title and description spacing option for learndash course list and tab element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Hover effect for learndash course tab element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Updated course short description for learndash course tab and list element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Responsive for learndash course tab element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Button typography option updated fo learndash course tab element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Button typography config updated for learndash course list element</li>
-                                                        <li>=== Posts Element ===</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Category config added in grid slider</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Grid slider overlay and meta typography updated</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Post meta style updated for twenty twenty theme in post tab</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Post meta style updated for twenty twenty theme in post carousel element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Headline slider element style updated for twenty twenty theme</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Headline slider duplication issue updated</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Post meta class updated for ajax call in post tab</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Button style update for both learndash course list and grid element</li>
-                                                        <li>=== LearnPress ===</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Responsive bug fix for course tab element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Title and description config updated in course tab and list element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Remove title word count config course list element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Add description show enable disable option in course list element</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Learnpress course tab element updated for responsive issue in grid layout</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Learnpress tab nav bottom spacing added</li>
-                                                        <li><span class="wk-text-improved">Improved </span> – Title and description spacing option in course list and tab element</li>
 
-                                                    </ul>
+                                                    <?php foreach($changelog_data as $data): ?>
+                                                        <div class="version version-<?php echo $data['plugin_version'];?> wk-background-muted wk-padding-small wk-margin-small-bottom">
+                                                            <div class="release-version-date"> 
+                                                                <h4><?php echo $data['plugin_version']; ?> </h4>
+                                                                <span> <?php echo $data['publish_date'] ?>  </span>
+                                                            </div>
+                                                            <?php echo $Parsedown->text($data['plugin_changelog']); ?>
+                                                        </div>
+                                                    <?php endforeach; ?>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -1137,7 +1097,7 @@ class Widgetkit_Admin
     <script type="text/javascript">window.Beacon('init', '940f4d8a-7f6f-432c-ae31-0ed5819fdbe4')</script>
 <?php
     }
-
+        
     /**
      * Register sections
      */
@@ -1257,6 +1217,25 @@ class Widgetkit_Admin
 
         return true;
         die();
+    }
+
+    public function widgetkit_get_changelog_data(){
+        
+        $curl = curl_init();
+        curl_setopt_array($curl, [
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_URL => $this->api_url,
+            // CURLOPT_USERAGENT => 'Codular Sample cURL Request'
+        ]);
+        $resp = curl_exec($curl);
+        curl_close($curl);
+        $res_data = json_decode($resp, true);
+        $changes_data = $res_data['changes'];
+        if($changes_data){
+            $_SESSION['changes'] = $changes_data;
+        }
+        return $changes_data;
+        
     }
 }
 

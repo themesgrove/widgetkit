@@ -1,5 +1,12 @@
 {
+    "name": "user/widgetkit-for-elementor",
+    "authors": [
+        {
+            "name": "Md. Anam Hossain",
+            "email": "anam@themexpert.com"
+        }
+    ],
     "require": {
-        "appsero/client": "^1.1"
+        "erusev/parsedown": "^1.7"
     }
 }

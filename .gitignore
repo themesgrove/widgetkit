@@ -5,3 +5,5 @@ vendor/
 *.zip
 dist/
 assets/bootstrap/
+/vendor/
+composer.lock

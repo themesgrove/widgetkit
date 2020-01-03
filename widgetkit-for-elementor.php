@@ -35,6 +35,10 @@ WC tested up to: 3.8.0
             add_action( 'init', array( $this, 'elementor_resources' ), -999 );
             add_action('admin_head', array($this, 'remove_all_admin_notice'));
             add_filter( 'elementor/utils/get_placeholder_image_src', [ __CLASS__, 'wk_placeholder_image' ] );
+            require_once(WK_PATH . 'vendor/autoload.php');
+            if(!class_exists('Parsedown')){
+                require_once(WK_PATH . 'vendor/erusev/parsedown/Parsedown.php');
+            }
         }
 
         public static function wk_placeholder_image() {

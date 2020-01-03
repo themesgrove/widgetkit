@@ -461,12 +461,12 @@ input:checked + .rectangle:before {
                 grid-gap: 10px;
                 ul{
                     li{
-                        border-bottom:solid 1px #dedede;
-                        padding-bottom:5px;
-                        &:first-child, 
-                        &:last-child{
-                            border-bottom:none;
-                        }
+                        // border-bottom:solid 1px #dedede;
+                        // padding-bottom:5px;
+                        // &:first-child, 
+                        // &:last-child{
+                        //     border-bottom:none;
+                        // }
                     }
                     .release-version-date{
                         h4{
@@ -506,6 +506,57 @@ input:checked + .rectangle:before {
                             padding:1px 4px;
                             border-radius:2px;
                             text-transform: capitalize;
+                        }
+                    }
+                }
+                .wk-pro-changelog{
+                    .version{
+                        .release-version-date{
+                            margin-bottom:6px;
+                            h4{
+                                margin:0;
+                                font-size: 18px;
+                                margin-bottom:3px;
+                            }
+                            span{
+                                color:#c7c7c7;
+                                font-size: 12px;
+                            }
+                        }
+                        ul{
+                            a[href="#new"] + ul{
+                                > li{
+                                    &:before{
+                                        content:'New -';
+                                        color:#32d296;
+                                        margin-right:3px; 
+                                    }
+                                    border-bottom:solid 1px #dedede;
+                                    padding-bottom:5px;
+                                }
+                            }
+                            a[href="#bugfix"] + ul{
+                                > li{
+                                    &:before{
+                                        content:'Bug Fix -';
+                                        color:#e91e63;
+                                        margin-right:3px; 
+                                    }
+                                    border-bottom:solid 1px #dedede;
+                                    padding-bottom:5px;
+                                }
+                            }
+                            a[href="#improved"] + ul{
+                                > li{
+                                    &:before{
+                                        content:'Improved -';
+                                        color:#9c27b0;
+                                        margin-right:3px; 
+                                    }
+                                    border-bottom:solid 1px #dedede;
+                                    padding-bottom:5px;
+                                }
+                            }
                         }
                     }
                 }
