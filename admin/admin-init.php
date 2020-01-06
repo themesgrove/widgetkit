@@ -95,21 +95,23 @@ class Widgetkit_Admin
      * Register construct
      */
     private $api_url = 'http://dev.wpplugin/wp-json/wk/changelog';
+    // private $api_url = 'https://widgetkit.themesgrove.com/wp-json/wk/changelog';
     public function __construct()
     {
         //$this->includes();
         session_start();
         $this->init_hooks();
-        
     }
-
+    
     /**
      * Register a custom opitons.
      */
 	public function widgetkit_for_elementor_admin_options(){
+        // $notification_count = 1;
 	    add_menu_page( 
 	        'Admin Menu',
-	        __( 'WidgetKit', 'widgetkit-for-elementor' ),
+            __( 'WidgetKit', 'widgetkit-for-elementor' ),
+            // $notification_count ? sprintf('WidgetKit <span class="awaiting-mod">%d</span>', $notification_count) : 'WidgetKit',
 	        'manage_options',
 	        'widgetkit-settings',
 	        array($this, 'display_settings_pages'),
@@ -1222,6 +1224,7 @@ class Widgetkit_Admin
     public function widgetkit_get_changelog_data(){
         
         $curl = curl_init();
+        // curl_setopt($curl,CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt_array($curl, [
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_URL => $this->api_url,

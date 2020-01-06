@@ -6,6 +6,7 @@
 				location.href = url;
 
 			});
+			$('#widgetkit-pro-update p').empty().append('There is a new version of this plugin is available. Please download from your <a href="https://themesgrove.com/account/">account</a>. <i>Automatic update is unavailable for this plugin.</i>');
 
 		});
 
