@@ -39,22 +39,10 @@ WC tested up to: 3.8.0
             if(!class_exists('Parsedown')){
                 require_once(WK_PATH . 'vendor/erusev/parsedown/Parsedown.php');
             }
-            add_filter ('pre_set_site_transient_update_plugins', [$this, 'wk_update_notification'] );
-
         }
 
         public static function wk_placeholder_image() {
             return WK_URL . 'dist/images/placeholder.jpg';
-        }
-        public function wk_update_notification ($transient)
-        {   
-            $obj = new stdClass();
-            $obj->slug = 'widgetkit-for-elementor';
-            $obj->new_version = '3.0';
-            $obj->url = 'https://xyz.com';
-            $obj->package = 'https://xyz.com/account/';
-            $transient->response['widgetkit-for-elementor/widgetkit-for-elementor'] = $obj;
-            return $transient;
         }
 
         public function activate(){

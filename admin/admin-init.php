@@ -94,8 +94,7 @@ class Widgetkit_Admin
     /**
      * Register construct
      */
-    private $api_url = 'http://dev.wpplugin/wp-json/wk/changelog';
-    // private $api_url = 'https://widgetkit.themesgrove.com/wp-json/wk/changelog';
+    private $api_url = 'https://widgetkit.themesgrove.com/wp-json/wk/changelog';
     public function __construct()
     {
         //$this->includes();
@@ -107,11 +106,9 @@ class Widgetkit_Admin
      * Register a custom opitons.
      */
 	public function widgetkit_for_elementor_admin_options(){
-        // $notification_count = 1;
 	    add_menu_page( 
 	        'Admin Menu',
             __( 'WidgetKit', 'widgetkit-for-elementor' ),
-            // $notification_count ? sprintf('WidgetKit <span class="awaiting-mod">%d</span>', $notification_count) : 'WidgetKit',
 	        'manage_options',
 	        'widgetkit-settings',
 	        array($this, 'display_settings_pages'),
@@ -768,7 +765,7 @@ class Widgetkit_Admin
                                                         <div class="wk-card-body wk-padding-remove">
                                                             <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
                                                                 <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('WooCommerce', 'widgetkit-for-elementor')?></h3>
-                                                                <a class="demo-button-for-pro wk-button-primary" href="https://widgetkit.themesgrove.com/woocommerce/"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
+                                                                <a class="demo-button-for-pro wk-button-primary" href="https://widgetkit.themesgrove.com/#pro-element" target="_blank"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
                                                                 <!-- <?php //if (!apply_filters('wkpro_enabled', false)): ?>
                                                                     <span class="wk-label">Pro</span>
                                                                 <?php //else:?>
@@ -824,7 +821,7 @@ class Widgetkit_Admin
                                                         <div class="wk-card-body wk-padding-remove">
                                                             <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
                                                                 <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('LearnDash', 'widgetkit-for-elementor')?></h3>
-                                                                <a class="demo-button-for-pro wk-button-primary" href="https://widgetkit.themesgrove.com/learndash/"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
+                                                                <a class="demo-button-for-pro wk-button-primary" href="https://widgetkit.themesgrove.com/#pro-element" target="_blank"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
                                                             </div>
                                                             <p><?php esc_html_e('Our learndash elments helps you to create your course landing page more smoothly.', 'widgetkit-for-elementor');?></p>
                                                         </div>
@@ -857,7 +854,7 @@ class Widgetkit_Admin
                                                         <div class="wk-card-body wk-padding-remove">
                                                             <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
                                                                 <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('LearnPress', 'widgetkit-for-elementor')?></h3>
-                                                                <a class="demo-button-for-pro wk-button-primary" href="https://widgetkit.themesgrove.com/learnpress/"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
+                                                                <a class="demo-button-for-pro wk-button-primary" href="https://widgetkit.themesgrove.com/#pro-element" target="_blank"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
                                                             </div>
                                                             <p><?php esc_html_e('Our more customizable learnpress elements lets you to build your site more quickly.', 'widgetkit-for-elementor');?></p>
                                                         </div>
@@ -890,7 +887,7 @@ class Widgetkit_Admin
                                                         <div class="wk-card-body wk-padding-remove">
                                                             <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
                                                                 <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('Sensei', 'widgetkit-for-elementor')?></h3>
-                                                                <a class="demo-button-for-pro wk-button-primary" href="https://widgetkit.themesgrove.com/sensei/"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
+                                                                <a class="demo-button-for-pro wk-button-primary" href="https://widgetkit.themesgrove.com/#pro-element" target="_blank"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
                                                             </div>
                                                             <p><?php esc_html_e('We are working hard to bring some niche elements which are integrated with Sensei.', 'widgetkit-for-elementor');?></p>
                                                         </div>
@@ -1224,7 +1221,7 @@ class Widgetkit_Admin
     public function widgetkit_get_changelog_data(){
         
         $curl = curl_init();
-        // curl_setopt($curl,CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($curl,CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt_array($curl, [
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_URL => $this->api_url,
