@@ -1012,6 +1012,11 @@ class Widgetkit_Admin
                                             <div class="wk-changelog-list">
                                                 <div class="wk-changes">
                                                     <ul class="version version-2.2.0 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                                                        <li class="release-version-date"><h4>2.2.1</h4><span>09-01-2020</span></li>
+                                                        <li><span class="wk-text-success">New </span> – Changelog Tab added in Dashboard</li>
+                                                        <li><span class="wk-text-improved">Improved </span> – Demo link updated in dashboard</li>
+                                                    </ul>
+                                                    <ul class="version version-2.2.0 wk-background-muted wk-padding-small wk-margin-small-bottom">
                                                         <li class="release-version-date"><h4>2.2.0</h4><span>17-12-2019</span></li>
                                                         <li><span class="wk-text-success">New </span> – Tilt Box Element</li>
                                                         <li><span class="wk-text-success">New </span> – Image Compare Element</li>
