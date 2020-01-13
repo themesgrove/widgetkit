@@ -68,6 +68,7 @@ class WKFE_Elements{
             'widget-contact-form',
             'widget-pros-cons',
             'widget-click-tweet',
+            'widget-video-popup',
         ];
         $widgetkit_default_settings = array_fill_keys( $widgetkit_elements_keys, true );
         
@@ -196,6 +197,9 @@ class WKFE_Elements{
         }
         if( $check_component_active['widget-tilt-box'] ) {
             require_once WK_PATH . '/elements/tilt-box/widget.php';
+        }
+        if( $check_component_active['widget-video-popup'] ) {
+            require_once WK_PATH . '/elements/video-popup/widget.php';
         }
 
         

@@ -72,3 +72,12 @@
         </div><!-- /.id -->
     </div> <!-- /#hero-unit -->
 
+        <script type="text/javascript">
+            jQuery(function($){
+                if(!$('body').hasClass('wk-slider-1')){
+                    $('body').addClass('wk-slider-1');
+                }
+            });
+
+        </script>
+

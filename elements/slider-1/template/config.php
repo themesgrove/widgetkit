@@ -64,7 +64,7 @@ class wkfe_slider_1 extends Widget_Base {
 		$this->start_controls_section(
 			'section_content',
 			[
-				'label' => esc_html__( 'Slider Content', 'widgetkit-for-elementor' ),
+				'label' => esc_html__( 'Content', 'widgetkit-for-elementor' ),
 			]
 		);
 
@@ -73,7 +73,7 @@ class wkfe_slider_1 extends Widget_Base {
 	    $repeater->add_control(
 		    'title',
 		      	[
-		          'label' => esc_html__( 'Slider Title', 'widgetkit-for-elementor' ),
+		          'label' => esc_html__( 'Title', 'widgetkit-for-elementor' ),
 		          'type'  => Controls_Manager::TEXTAREA,
 		          'default' => esc_html__( 'Jonathan Morgan', 'widgetkit-for-elementor' ),
 		    	]
@@ -117,7 +117,7 @@ class wkfe_slider_1 extends Widget_Base {
 		$repeater->add_control(
 		    'slider_content',
 		      	[
-		          'label' => esc_html__( 'Slider Description', 'widgetkit-for-elementor' ),
+		          'label' => esc_html__( 'Description', 'widgetkit-for-elementor' ),
 		          'type'  => Controls_Manager::TEXTAREA,
 		          'default' => esc_html__( 'Corem ipsum dolor si amet consectetur adipisic ingelit sed do adipisicido executiv
 						sunse pit lore kome.', 'widgetkit-for-elementor' ),
@@ -291,108 +291,6 @@ $this->start_controls_section(
 
 	$this->start_controls_tabs( 'caption_control' );
 
-		$this->start_controls_tab(
-	        'color_options',
-		          [
-		            'label' => esc_html__( 'Content Option', 'widgetkit-for-elementor' ),
-		          ]
-	    );
-
-		$this->add_responsive_control(
-			'content_spacing',
-				[
-					'label'  => esc_html__( 'Slider Content Specing', 'widgetkit-for-elementor' ),
-					'type'   => Controls_Manager::SLIDER,
-					'default'  => [
-                        'size' => 20,
-                    ],
-					'range'  => [
-						'px' => [
-							'min' => -20,
-							'max' => 50,
-						],
-					],
-					'selectors' => [
-						'{{WRAPPER}}  .tgx-slider-1 .carousel .carousel-inner .carousel-caption .slider-description' => 'padding-top: {{SIZE}}{{UNIT}};',
-					],
-				]
-			);
-
-		$this->add_control(
-			'content_color',
-				[
-					'label'     => esc_html__( 'Slider Content Color', 'widgetkit-for-elementor' ),
-					'type'      => Controls_Manager::COLOR,
-					'default'   => '#fff',
-					'selectors' => [
-						'{{WRAPPER}}  .tgx-slider-1 .carousel .carousel-inner .carousel-caption .slider-description' => 'color: {{VALUE}};',
-					],
-				]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-				[
-					'name'     => 'content_typography',
-					'label'    => esc_html__( 'Content Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-					'selector' => '{{WRAPPER}}  .tgx-slider-1 .carousel .carousel-inner .carousel-caption .slider-description',
-				]
-		);
-
-		$this->add_control(
-			'item_overlay_color',
-			[
-				'label'     => esc_html__( 'Slider Item Overlay Bg Color', 'widgetkit-for-elementor' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => 'rgba(7,16,38,0.83)',
-				'selectors' => [
-					'{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .item:before' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .tgx-slider-1 .carousel .carousel-control:before' => 'background-color: {{VALUE}};',
-				],
-			]
-		);
-
-        $this->add_responsive_control(
-			'desc_width',
-				[
-					'label'  => esc_html__( 'Description Width', 'widgetkit-for-elementor' ),
-					'type'   => Controls_Manager::SLIDER,
-					'default'  => [
-                        'size' => 600,
-                    ],
-					'range'  => [
-						'px' => [
-							'min' =>250,
-							'max' => 1200,
-						],
-					],
-					'selectors' => [
-						'{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .item .carousel-caption .slider-description' => 'width: {{SIZE}}{{UNIT}};',
-					],
-				]
-			);
-
-        $this->add_control(
-			'content_margin',
-				[
-					'label'     => esc_html__( 'Content Margin', 'widgetkit-for-elementor' ),
-					'type'      => Controls_Manager::SELECT,
-					'default'   => 'auto',
-					'options'   => [
-						'none'	  => esc_html__( 'None'),
-						'0'       => esc_html__( '0', 'widgetkit-for-elementor' ),
-						'auto'	  => esc_html__( 'Auto', 'widgetkit-for-elementor' ),
-
-					],
-					'selectors' => [
-						'{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .carousel-caption .slider-description' => 'margin: {{VALUE}};',
-					],
-				]
-		);
-
-
-        $this->end_controls_tab();
 
         $this->start_controls_tab(
 	        'typo_option',
@@ -405,7 +303,7 @@ $this->start_controls_section(
         $this->add_control(
 			'title_color',
 				[
-					'label'     => esc_html__( 'Slider Title Color', 'widgetkit-for-elementor' ),
+					'label'     => esc_html__( 'Color', 'widgetkit-for-elementor' ),
 					'type'      => Controls_Manager::COLOR,
 					'default'   => '#fff',
 					'selectors' => [
@@ -414,10 +312,21 @@ $this->start_controls_section(
 				]
 		);
 
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+				[
+					'name'     => 'title_typography',
+					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
+					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+					'selector' => '{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .item .carousel-caption .slider-title',
+				]
+		);
+
 		$this->add_control(
 			'title_highlight',
 				[
-					'label'     => esc_html__( 'Title Highlight Color', 'widgetkit-for-elementor' ),
+					'label'     => esc_html__( 'Highlight Color', 'widgetkit-for-elementor' ),
 					'type'      => Controls_Manager::COLOR,
 					'default'   => '#ed485f',
 					'selectors' => [
@@ -425,16 +334,6 @@ $this->start_controls_section(
 						 {{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .carousel-caption span,
 						 {{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .carousel-caption strong' => 'color: {{VALUE}};',
 					],
-				]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-				[
-					'name'     => 'title_typography',
-					'label'    => esc_html__( 'Title Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
-					'selector' => '{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .item .carousel-caption .slider-title',
 				]
 		);
 
@@ -481,7 +380,7 @@ $this->start_controls_section(
 		$this->add_responsive_control(
 	         'caption_align',
 		         [
-		           'label' => esc_html__( 'Caption Alignment', 'widgetkit-for-elementor' ),
+		           'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
 		           'type'  => Controls_Manager::CHOOSE,
 		           'default'   => 'center',
 		           'options' => [
@@ -511,6 +410,113 @@ $this->start_controls_section(
 
 
     $this->end_controls_tab();
+
+		$this->start_controls_tab(
+	        'color_options',
+		          [
+		            'label' => esc_html__( 'Content Option', 'widgetkit-for-elementor' ),
+		          ]
+	    );
+
+
+
+		$this->add_control(
+			'content_color',
+				[
+					'label'     => esc_html__( 'Color', 'widgetkit-for-elementor' ),
+					'type'      => Controls_Manager::COLOR,
+					'default'   => '#fff',
+					'selectors' => [
+						'{{WRAPPER}}  .tgx-slider-1 .carousel .carousel-inner .carousel-caption .slider-description' => 'color: {{VALUE}};',
+					],
+				]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+				[
+					'name'     => 'content_typography',
+					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
+					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+					'selector' => '{{WRAPPER}}  .tgx-slider-1 .carousel .carousel-inner .carousel-caption .slider-description',
+				]
+		);
+
+		$this->add_control(
+			'item_overlay_color',
+			[
+				'label'     => esc_html__( 'Overlay Bg Color', 'widgetkit-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => 'rgba(7,16,38,0.83)',
+				'selectors' => [
+					'{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .item:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .tgx-slider-1 .carousel .carousel-control:before' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+
+        $this->add_responsive_control(
+			'desc_width',
+				[
+					'label'  => esc_html__( 'Width', 'widgetkit-for-elementor' ),
+					'type'   => Controls_Manager::SLIDER,
+					'default'  => [
+                        'size' => 600,
+                    ],
+					'range'  => [
+						'px' => [
+							'min' =>250,
+							'max' => 1200,
+						],
+					],
+					'selectors' => [
+						'{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .item .carousel-caption .slider-description' => 'width: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+
+
+
+	        $this->add_control(
+				'content_margin',
+					[
+						'label'     => esc_html__( 'Margin', 'widgetkit-for-elementor' ),
+						'type'      => Controls_Manager::SELECT,
+						'default'   => 'auto',
+						'options'   => [
+							'none'	  => esc_html__( 'None'),
+							'0'       => esc_html__( '0', 'widgetkit-for-elementor' ),
+							'auto'	  => esc_html__( 'Auto', 'widgetkit-for-elementor' ),
+
+						],
+						'selectors' => [
+							'{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .carousel-caption .slider-description' => 'margin: {{VALUE}};',
+						],
+					]
+			);
+			$this->add_responsive_control(
+				'content_spacing',
+					[
+						'label'  => esc_html__( 'Spacing', 'widgetkit-for-elementor' ),
+						'type'   => Controls_Manager::SLIDER,
+						'default'  => [
+	                        'size' => 20,
+	                    ],
+						'range'  => [
+							'px' => [
+								'min' => -20,
+								'max' => 50,
+							],
+						],
+						'selectors' => [
+							'{{WRAPPER}}  .tgx-slider-1 .carousel .carousel-inner .carousel-caption .slider-description' => 'padding-top: {{SIZE}}{{UNIT}};',
+						],
+					]
+				);
+
+
+        $this->end_controls_tab();
+
     $this->end_controls_tabs();
 
 $this->end_controls_section();
@@ -536,30 +542,7 @@ $this->end_controls_section();
 					'selector' => '{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .carousel-caption .btn-slider',
 				]
 		);
-        $this->add_control(
-            'border_radius',
-            [
-                'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
-                'type'  => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%' ],
-                'selectors'  => [
-                    '{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .carousel-caption .btn-slider' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
 
-        $this->add_control(
-            'text_padding',
-            [
-                'label' => esc_html__( 'Text Padding', 'widgetkit-for-elementor' ),
-                'type'  => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', 'em', '%' ],
-                'selectors'  => [
-                    '{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .carousel-caption .btn-slider' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-                'separator' => 'before',
-            ]
-        );
 
   //      $this->add_responsive_control(
 		// 	'btn_text_size',
@@ -598,25 +581,7 @@ $this->end_controls_section();
 		// 	]
 		// );
 
-		$this->add_responsive_control(
-			'button_spacing',
-				[
-					'label'  => esc_html__( 'Button Specing', 'widgetkit-for-elementor' ),
-					'type'   => Controls_Manager::SLIDER,
-					'default'  => [
-						'size' => 30,
-					],
-					'range'  => [
-						'px' => [
-							'min' => 10,
-							'max' => 50,
-						],
-					],
-					'selectors' => [
-						'{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .carousel-caption .btn-slider' => 'margin: {{SIZE}}{{UNIT}} 0;',
-					],
-				]
-			);
+
 
 
 	$this->start_controls_tabs( 'tabs_button_style' );
@@ -631,7 +596,7 @@ $this->end_controls_section();
     $this->add_control(
         'button_text_color',
           [
-            'label' => esc_html__( 'Text Color', 'widgetkit-for-elementor' ),
+            'label' => esc_html__( 'Color', 'widgetkit-for-elementor' ),
             'type'  => Controls_Manager::COLOR,
             'default'   => '#fff',
             'selectors' => [
@@ -677,7 +642,7 @@ $this->end_controls_section();
     $this->add_control(
         'hover_color',
 		    [
-		        'label' => esc_html__( 'Text Color', 'widgetkit-for-elementor' ),
+		        'label' => esc_html__( 'Color', 'widgetkit-for-elementor' ),
 		        'type'  => Controls_Manager::COLOR,
 		        'default'   => ' #fff',
 		        'selectors' => [
@@ -714,6 +679,51 @@ $this->end_controls_section();
 
 
     $this->end_controls_tabs();
+
+        $this->add_control(
+            'border_radius',
+            [
+                'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .carousel-caption .btn-slider' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_control(
+            'text_padding',
+            [
+                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', 'em', '%' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .carousel-caption .btn-slider' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                
+            ]
+        );
+        $this->add_responsive_control(
+			'button_spacing',
+				[
+					'label'  => esc_html__( 'Spacing', 'widgetkit-for-elementor' ),
+					'type'   => Controls_Manager::SLIDER,
+					'default'  => [
+						'size' => 30,
+					],
+					'range'  => [
+						'px' => [
+							'min' => 10,
+							'max' => 50,
+						],
+					],
+					'selectors' => [
+						'{{WRAPPER}} .tgx-slider-1 .carousel .carousel-inner .carousel-caption .btn-slider' => 'margin: {{SIZE}}{{UNIT}} 0;',
+					],
+				]
+			);
 
 $this->end_controls_section();
 // Button options End

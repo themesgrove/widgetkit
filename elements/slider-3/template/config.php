@@ -325,7 +325,7 @@ class wkfe_slider_3 extends Widget_Base
             $this->add_responsive_control(
             'tgx_slider_3_description_spacing',
                 [
-                    'label'   => esc_html__( 'Speacing', 'widgetkit-for-elementor' ),
+                    'label'   => esc_html__( 'Spacing', 'widgetkit-for-elementor' ),
                     'type'    => Controls_Manager::SLIDER,
                     'default' => [
                         'size' => 25,
@@ -355,44 +355,6 @@ class wkfe_slider_3 extends Widget_Base
         );
 
 
-
-        $this->add_group_control(
-            Group_Control_Border::get_type(),
-            [
-                'name'  => 'border',
-                'label' => esc_html__( 'Border', 'widgetkit-for-elementor' ),
-                'placeholder' => '1px',
-                'default'   => '1px',
-                'selector'  => '{{WRAPPER}} .tgx-slider-3 .slide__link',
-                'separator' => 'before',
-            ]
-        );
-
-        $this->add_control(
-            'tgx_slider_3_button_border_radius',
-            [
-                'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
-                'type'  => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%' ],
-                'selectors'  => [
-                    '{{WRAPPER}} .tgx-slider-3 .slide__link' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'tgx_slider_3_button_text_padding',
-            [
-                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
-                'type'  => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', 'em', '%' ],
-                'selectors'  => [
-                    '{{WRAPPER}} .tgx-slider-3 .slide__link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-                'separator' => 'before',
-            ]
-        );
-
          $this->add_group_control(
                 Group_Control_Typography::get_type(),
                 [
@@ -403,25 +365,7 @@ class wkfe_slider_3 extends Widget_Base
                 ]
             );
 
-        $this->add_responsive_control(
-            'tgx_slider_3_button_spacing',
-                [
-                    'label'  => esc_html__( 'Button Specing', 'widgetkit-for-elementor' ),
-                    'type'   => Controls_Manager::SLIDER,
-                    'default' => [
-                        'size' => 10,
-                    ],
-                    'range'  => [
-                        'px' => [
-                            'min' => 10,
-                            'max' => 50,
-                        ],
-                    ],
-                    'selectors' => [
-                        '{{WRAPPER}} .tgx-slider-3 .slide__link' => 'margin: {{SIZE}}{{UNIT}} 0;',
-                    ],
-                ]
-            );
+
 
     $this->start_controls_tabs( 'tgx_slider_3_tabs_button_style' );
 
@@ -435,7 +379,7 @@ class wkfe_slider_3 extends Widget_Base
     $this->add_control(
         'tgx_slider_3_button_text_color',
           [
-            'label' => esc_html__( 'Text Color', 'widgetkit-for-elementor' ),
+            'label' => esc_html__( 'Color', 'widgetkit-for-elementor' ),
             'type'  => Controls_Manager::COLOR,
             'default'   => '#fff',
             'selectors' => [
@@ -455,6 +399,17 @@ class wkfe_slider_3 extends Widget_Base
                 ],
             ]
     );
+
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name'  => 'border',
+                'label' => esc_html__( 'Border', 'widgetkit-for-elementor' ),
+                'placeholder' => '1px',
+                'default'   => '1px',
+                'selector'  => '{{WRAPPER}} .tgx-slider-3 .slide__link',
+            ]
+        );
 
     $this->end_controls_tab();
 
@@ -505,6 +460,53 @@ class wkfe_slider_3 extends Widget_Base
 
 
     $this->end_controls_tabs();
+
+        $this->add_control(
+            'tgx_slider_3_button_border_radius',
+            [
+                'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .tgx-slider-3 .slide__link' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'separator' => 'before',
+
+            ]
+        );
+
+        $this->add_control(
+            'tgx_slider_3_button_text_padding',
+            [
+                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', 'em', '%' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .tgx-slider-3 .slide__link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                
+            ]
+        );
+
+        $this->add_responsive_control(
+            'tgx_slider_3_button_spacing',
+                [
+                    'label'  => esc_html__( 'Spacing', 'widgetkit-for-elementor' ),
+                    'type'   => Controls_Manager::SLIDER,
+                    'default' => [
+                        'size' => 10,
+                    ],
+                    'range'  => [
+                        'px' => [
+                            'min' => 10,
+                            'max' => 50,
+                        ],
+                    ],
+                    'selectors' => [
+                        '{{WRAPPER}} .tgx-slider-3 .slide__link' => 'margin: {{SIZE}}{{UNIT}} 0;',
+                    ],
+                ]
+        );
 $this->end_controls_section();
 
         $this->start_controls_section(
@@ -553,7 +555,7 @@ $this->end_controls_section();
             $this->add_responsive_control(
             'tgx_slider_3_nav_spacing',
                 [
-                    'label'  => esc_html__( 'Speacing', 'widgetkit-for-elementor' ),
+                    'label'  => esc_html__( 'Spacing', 'widgetkit-for-elementor' ),
                     'type'   => Controls_Manager::SLIDER,
                     'default' => [
                         'size' =>0,

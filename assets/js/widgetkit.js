@@ -55,6 +55,18 @@ jQuery(document).ready(function($){
       $('#hover-1 .portfolio-item').each( function() { $(this).hoverdir(); } );
     });
 
+          /**
+         * Magnific pop up for video
+         */
+        $('.popup-video').magnificPopup({
+            disableOn: 700,
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: false
+        });
+
 /* ========================================================================= */
 /*  SLider height browser js
 /* ========================================================================= */

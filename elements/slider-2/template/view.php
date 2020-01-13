@@ -136,7 +136,13 @@
      jQuery(window).resize(function(){
         $('#tgx-slider .carousel-inner .item') .css({'height': (($(window).height()))+'px'});
     });
+            if(!$('body').hasClass('wk-slider-2')){
+            $('body').addClass('wk-slider-2');
+        };
        });
+
+
+
 </script>
 
 

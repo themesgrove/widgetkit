@@ -46,7 +46,8 @@ class Widgetkit_Admin
         'widget-tilt-box',
         'widget-contact-form',
         'widget-pros-cons',
-        'widget-click-tweet'
+        'widget-click-tweet',
+        'widget-video-popup'
     ];
 
     public $widgetkit_woo_keys = [
@@ -478,6 +479,16 @@ class Widgetkit_Admin
                                                     <?php echo esc_html__('Pricing Tabs', 'widgetkit-for-elementor'); ?>
                                                     <label class="switch">
                                                         <input type="checkbox" id="widget-pricing-tab" name="widget-pricing-tab" <?php checked(1, $this->widgetkit_get_settings['widget-pricing-tab'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Video Popup', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-video-popup" name="widget-video-popup-tab" <?php checked(1, $this->widgetkit_get_settings['widget-video-popup-tab'], true) ?>>
                                                         <span class="rectangle round"></span>
                                                     </label>
                                                 </div>
@@ -1094,13 +1105,16 @@ class Widgetkit_Admin
             'widget-post-carousel' => intval($settings['widget-post-carousel'] ? 1 : 0),
             // Image compare
             'widget-image-compare' => intval($settings['widget-image-compare'] ? 1 : 0),
-
              // Tilt Box
             'widget-tilt-box' => intval($settings['widget-tilt-box'] ? 1 : 0),
             // Contact form
             'widget-contact-form' => intval($settings['widget-contact-form'] ? 1 : 0),
+            // Click to tweet
             'widget-click-tweet' => intval($settings['widget-click-tweet'] ? 1 : 0),
+            // Pros cons
             'widget-pros-cons' => intval($settings['widget-pros-cons'] ? 1 : 0),
+            // Video popup
+            'widget-video-popup' => intval($settings['widget-video-popup'] ? 1 : 0),
 
 
             /**
