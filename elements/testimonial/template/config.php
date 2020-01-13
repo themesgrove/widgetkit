@@ -276,15 +276,15 @@ class wkfe_testimonial extends Widget_Base {
 
            	$this->add_control(
 	            'center_mode_enable',
-	                    [
-	                        'label'     => esc_html__( 'Center Mode', 'widgetkit-for-elementor' ),
-	                        'description' => 'You must have at least 4 items',
-	                        'type'      => Controls_Manager::SWITCHER,
-	                        'default'   => 'no',
-	                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-	                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
+                    [
+                        'label'     => esc_html__( 'Center Mode', 'widgetkit-for-elementor' ),
+                        'description' => 'You must have at least 4 items',
+                        'type'      => Controls_Manager::SWITCHER,
+                        'default'   => 'no',
+                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
 
-	                    ]
+                    ]
 		        );
 
 

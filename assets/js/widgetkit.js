@@ -4,6 +4,8 @@ jQuery(document).ready(function($){
 /*  Portfolio filter js
 /* ========================================================================= */ 
 
+
+
       if($('.border').length){
         //portfolio filter
         jQuery(window).load(function(){
@@ -103,5 +105,11 @@ jQuery(document).ready(function($){
 
 // end of wrapper function  
 });
+
+// function addElement () { 
+
+// }
+
+
 
 

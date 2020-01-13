@@ -114,14 +114,14 @@ class wkfe_team extends Widget_Base {
 				[
 					'label' => __( 'Link', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::URL,
-					'dynamic' => [
-						'active'  => true,
-					],
+					// 'dynamic' => [
+					// 	'active'  => true,
+					// ],
 					'placeholder' => __( 'https://your-link.com', 'widgetkit-for-elementor' ),
 					'separator'   => 'after',
-					'condition'   => [
-                        'item_option' => 'single_content',
-                    ],
+					// 'condition'   => [
+     //                    'item_option' => 'single_content',
+     //                ],
                     'default' => [
 						'url' => 'https://www.themesgrove.com', 
 					],

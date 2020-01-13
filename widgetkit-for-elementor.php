@@ -105,3 +105,6 @@ WC tested up to: 3.8.0
 
     register_activation_hook( __FILE__, array($widgetkit_for_elementor, 'activate' ));
     register_deactivation_hook( __FILE__, array($widgetkit_for_elementor, 'deactivate' ));
+
+
+    
