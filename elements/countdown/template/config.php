@@ -384,7 +384,7 @@ class wkfe_countdown extends Widget_Base {
         );
 
 
-        $this->add_control(
+        $this->add_responsive_control(
             'widgetkit_countdown_item_alignment',
             [
                 'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
@@ -405,7 +405,7 @@ class wkfe_countdown extends Widget_Base {
                         'icon'  => 'fa fa-align-right',
                     ],
                    	'justify' => [
-						'title' => __( 'Justified', 'elementor' ),
+						'title' => __( 'Justified', 'widgetkit-for-elementor' ),
 						'icon' => 'fa fa-align-justify',
 					],
                 ],
