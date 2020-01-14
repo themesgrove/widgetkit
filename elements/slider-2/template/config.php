@@ -676,43 +676,6 @@ $this->end_controls_section();
 				]
 		);
 
-  //      $this->add_responsive_control(
-		// 	'btn_text_size',
-		// 		[
-		// 			'label'  => esc_html__( 'Button Text Size', 'widgetkit-for-elementor' ),
-		// 			'type'   => Controls_Manager::SLIDER,
-		// 			'default' => [
-  //                       'size' => 14,
-  //                   ],
-		// 			'range'  => [
-		// 				'px' => [
-		// 					'min' => 10,
-		// 					'max' => 24,
-		// 				],
-		// 			],
-		// 			'selectors' => [
-		// 				'{{WRAPPER}} .tgx-slider-2 .carousel-inner .carousel-caption .btn-slider' => 'font-size: {{SIZE}}{{UNIT}};',
-		// 			],
-		// 		]
-		// 	);
-
-  //      	$this->add_control(
-		// 	'text_transform',
-		// 	[
-		// 		'label'     => esc_html__( 'Button Text Transform', 'widgetkit-for-elementor' ),
-		// 		'type'      => Controls_Manager::SELECT,
-		// 		'default'   => 'uppercase',
-		// 		'options'   => [
-		// 			'uppercase'   => esc_html__( 'UPPERCASE', 'widgetkit-for-elementor' ),
-		// 			'lowercase'   => esc_html__( 'lowercase', 'widgetkit-for-elementor' ),
-		// 			'capitalize'  => esc_html__( 'Capitalize', 'widgetkit-for-elementor' ),
-		// 		],
-		// 		'selectors' => [
-		// 			'{{WRAPPER}} .tgx-slider-2 .carousel-inner .carousel-caption .btn-slider' => 'text-transform: {{VALUE}};',
-		// 		],
-		// 	]
-		// );
-
 
 
 	$this->start_controls_tabs( 'tabs_button_style' );

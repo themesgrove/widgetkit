@@ -124,55 +124,6 @@ class wkfe_gallery extends Widget_Base {
 		);
 
 
-		// $repeater->add_control(
-  //           'item_data_size',
-  //               [
-  //                   'label'       => __( 'Item Size', 'widgetkit-for-elementor' ),
-  //                   'type' => Controls_Manager::SELECT,
-  //                   'default' => 'small',
-  //                   'options' => [
-  //                       'small'    => __( 'Small', 'widgetkit-for-elementor' ),
-  //                       'medium'   => __( 'Medium', 'widgetkit-for-elementor' ),
-  //                       'large'    => __( 'Large', 'widgetkit-for-elementor' ),
-  //                   ],
-  //               ]
-  //       );
-
-  //       $repeater->add_control(
-		// 	'grid_control',
-		// 	[
-		// 		'label'   => esc_html__( 'Grid Control', 'widgetkit-for-elementor' ),
-		// 		'type' => Controls_Manager::SELECT,
-		// 		'default' => esc_html__( '', 'widgetkit-for-elementor' ),
-		// 		'options' => [
-  //                   '' => __( 'Auto', 'widgetkit-for-elementor' ),
-  //                   'width-1-1' => __( '1', 'widgetkit-for-elementor' ),
-  //                   'width-1-2' => __( '2', 'widgetkit-for-elementor' ),
-  //                   'width-1-3' => __( '3', 'widgetkit-for-elementor' ),
-  //                   'width-1-4' => __( '4', 'widgetkit-for-elementor' ),
-  //                   'width-1-5' => __( '5', 'widgetkit-for-elementor' ),
-  //                   'width-1-6' => __( '6', 'widgetkit-for-elementor' ),
-  //               ],
-		// 	]
-		// );
-
-
-
-        // $repeater->add_responsive_control(
-        //     'grid_height',
-        //     [
-        //         'label'       => __( 'Grid Height', 'widgetkit-for-elementor' ),
-        //         'type'    => Controls_Manager::NUMBER,
-        //         'default' => 300,
-        //         'min'     => 1,
-        //         'max'     => 1000,
-        //         'step'    =>5,
-        //     ]
-        // );
-
-
-
-
 		$this->add_control(
 		    'gallery_content',
 		      [

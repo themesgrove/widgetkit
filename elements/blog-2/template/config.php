@@ -104,11 +104,6 @@ class wkfe_blog_2 extends Widget_Base {
         $this->end_controls_tab();
 
 
-
-
-
-
-
         $this->start_controls_tab(
 	        'standard_post',
 	          [
