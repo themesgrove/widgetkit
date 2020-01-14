@@ -32,3 +32,12 @@
 
         </div>
     </div>
+
+    <script type="text/javascript">
+        jQuery(function($){
+              if(!$('body').hasClass('wk-pros-cons')){
+                  $('body').addClass('wk-pros-cons');
+              }
+        });
+
+    </script>

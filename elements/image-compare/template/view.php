@@ -49,6 +49,15 @@
         }); 
     </script>
 
+    <script type="text/javascript">
+          jQuery(function($){
+              if(!$('body').hasClass('wk-image-compare')){
+                  $('body').addClass('wk-image-compare');
+              }
+          });
+
+    </script>
+
 
 
 

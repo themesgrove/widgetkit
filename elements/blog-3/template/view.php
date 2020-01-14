@@ -88,3 +88,12 @@
             <?php endif; endwhile; wp_reset_postdata(); endif; ?>
         </div><!-- /.row -->    
     </div> <!-- /.section -->
+
+    <script type="text/javascript">
+          jQuery(function($){
+              if(!$('body').hasClass('wk-blog-revert')){
+                  $('body').addClass('wk-blog-revert');
+              }
+          });
+
+    </script>

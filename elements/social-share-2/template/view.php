@@ -50,3 +50,12 @@
 
 
     </script>
+
+    <script type="text/javascript">
+        jQuery(function($){
+            if(!$('body').hasClass('wk-social-share-collapse')){
+                $('body').addClass('wk-social-share-collapse');
+            }
+        });
+
+    </script>

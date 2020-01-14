@@ -89,3 +89,12 @@
 
 
     </script>
+
+    <script type="text/javascript">
+        jQuery(function($){
+            if(!$('body').hasClass('wk-testimonial-single')){
+                $('body').addClass('wk-testimonial-single');
+            }
+        });
+
+    </script>

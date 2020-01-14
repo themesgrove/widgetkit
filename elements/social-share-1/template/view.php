@@ -61,3 +61,11 @@
         },(jQuery));
 
     </script>
+    <script type="text/javascript">
+        jQuery(function($){
+            if(!$('body').hasClass('wk-social-share-animation')){
+                $('body').addClass('wk-social-share-animation');
+            }
+        });
+
+    </script>

@@ -82,3 +82,12 @@
 
       </div> <!-- .tgx-single-pricing -->
   </div><!-- .tgx-pricing-2 -->
+
+    <script type="text/javascript">
+          jQuery(function($){
+              if(!$('body').hasClass('wk-pricing-icon')){
+                  $('body').addClass('wk-pricing-icon');
+              }
+          });
+
+    </script>

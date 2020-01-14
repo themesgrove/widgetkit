@@ -55,3 +55,12 @@
             </div><!-- end .team wrap -->
         </div><!-- end .tema container -->
     </div> <!-- end .section -->
+
+    <script type="text/javascript">
+        jQuery(function($){
+            if(!$('body').hasClass('wk-team-round')){
+                $('body').addClass('wk-team-round');
+            }
+        });
+
+    </script>

@@ -111,28 +111,37 @@
 
     </div> <!-- /click btn -->
 
-   <?php if ($settings['button_options_select'] == 'modal'):?>
-    <div id="modal-button-<?php echo $id;?>" class="tgx-modal">
-        <div class="tgx-modal-content tgx-<?php echo $settings['modal_effect'];?>">
+    <?php if ($settings['button_options_select'] == 'modal'):?>
+        <div id="modal-button-<?php echo $id;?>" class="tgx-modal">
+            <div class="tgx-modal-content tgx-<?php echo $settings['modal_effect'];?>">
 
-            <header class="tgx-container tgx-teal"> 
-                <span onclick="document.getElementById('modal-button-<?php echo $id;?>').style.display='none'" 
-                class="tgx-button tgx-display-topright">&times;</span>
-                <h2><?php echo $settings['modal_tile'];?></h2>
-            </header><!-- /header -->
+                <header class="tgx-container tgx-teal"> 
+                    <span onclick="document.getElementById('modal-button-<?php echo $id;?>').style.display='none'" 
+                    class="tgx-button tgx-display-topright">&times;</span>
+                    <h2><?php echo $settings['modal_tile'];?></h2>
+                </header><!-- /header -->
 
-            <div class="tgx-container">
-                <?php if ($settings['modal_content'] == 'modal_shortcode'): ?>    
-                    <?php echo do_shortcode($settings['modal_shortcode']);?>
-                <?php elseif($settings['modal_content'] == 'modal_video'): ?>
-                    <?php echo $settings['modal_video'];?>
-                <?php else: ?>
-                    <?php echo do_shortcode($settings['modal_shortcode']);?>
-                <?php endif ?>
-            </div><!-- /tgx-container -->
+                <div class="tgx-container">
+                    <?php if ($settings['modal_content'] == 'modal_shortcode'): ?>    
+                        <?php echo do_shortcode($settings['modal_shortcode']);?>
+                    <?php elseif($settings['modal_content'] == 'modal_video'): ?>
+                        <?php echo $settings['modal_video'];?>
+                    <?php else: ?>
+                        <?php echo do_shortcode($settings['modal_shortcode']);?>
+                    <?php endif ?>
+                </div><!-- /tgx-container -->
 
-        </div><!-- /tgx-content -->
-    </div><!-- /modal-button -->
-<?php endif; ?>
+            </div><!-- /tgx-content -->
+        </div><!-- /modal-button -->
+    <?php endif; ?>
 </div><!-- /modal-container -->
+
+    <script type="text/javascript">
+          jQuery(function($){
+              if(!$('body').hasClass('wk-button-modal')){
+                  $('body').addClass('wk-button-modal');
+              }
+          });
+
+    </script>
 

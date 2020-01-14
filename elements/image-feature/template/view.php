@@ -96,3 +96,12 @@
             <?php endif; ?>           
         </div><!-- .block -->
     </div><!-- /.section -->
+
+    <script type="text/javascript">
+          jQuery(function($){
+              if(!$('body').hasClass('wk-info-box')){
+                  $('body').addClass('wk-info-box');
+              }
+          });
+
+    </script>

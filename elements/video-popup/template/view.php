@@ -62,3 +62,12 @@
             });
         });
     </script>
+
+    <script type="text/javascript">
+        jQuery(function($){
+            if(!$('body').hasClass('wk-video-popup')){
+                $('body').addClass('wk-video-popup');
+            }
+        });
+
+    </script>

@@ -192,3 +192,12 @@
         <?php endif ?>
     </div><!-- /.row -->     
 </div> <!-- /.section -->
+
+    <script type="text/javascript">
+          jQuery(function($){
+              if(!$('body').hasClass('wk-blog-sidebar')){
+                  $('body').addClass('wk-blog-sidebar');
+              }
+          });
+
+    </script>

@@ -119,3 +119,12 @@
                 </div>
             <?php endif; ?>
         </div>
+
+        <script type="text/javascript">
+              jQuery(function($){
+                  if(!$('body').hasClass('wk-pricing-single')){
+                      $('body').addClass('wk-pricing-single');
+                  }
+              });
+
+        </script>

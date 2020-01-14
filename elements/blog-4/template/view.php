@@ -185,3 +185,12 @@
     </div> <!-- row -->
 </div><!-- tgx-blog-4 -->
 
+    <script type="text/javascript">
+          jQuery(function($){
+              if(!$('body').hasClass('wk-blog-hover')){
+                  $('body').addClass('wk-blog-hover');
+              }
+          });
+
+    </script>
+

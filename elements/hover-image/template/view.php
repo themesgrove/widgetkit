@@ -49,3 +49,12 @@
         </figure><!-- hover animation -->
     </div> <!-- tgx-hover-image -->
 
+    <script type="text/javascript">
+          jQuery(function($){
+              if(!$('body').hasClass('wk-hover-image')){
+                  $('body').addClass('wk-hover-image');
+              }
+          });
+
+    </script>
+

@@ -23,3 +23,12 @@
 
         </div>
     </div>
+
+        <script type="text/javascript">
+          jQuery(function($){
+              if(!$('body').hasClass('wk-click-to-tweet')){
+                  $('body').addClass('wk-click-to-tweet');
+              }
+          });
+
+    </script>

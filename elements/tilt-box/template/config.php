@@ -237,7 +237,7 @@ class wkfe_tilt_box extends Widget_Base {
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
-                        '{{WRAPPER}} .wk-tilt-box .tilt-element' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .wk-tilt-box .tilt-element' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; overflow: hidden;',
                     ],
                     
                 ]
@@ -484,7 +484,7 @@ class wkfe_tilt_box extends Widget_Base {
             $this->add_responsive_control(
                 'description_spacing',
                 [
-                    'label' => __( 'Spacing', 'widgetkit-for-elementor' ),
+                    'label' => __( 'Bottom Spacing', 'widgetkit-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'default' => [
