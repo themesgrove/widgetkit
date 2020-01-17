@@ -577,7 +577,7 @@ class wkfe_tilt_box extends Widget_Base {
 
             $this->end_controls_tabs();
 
-            $this->add_control(
+            $this->add_responsive_control(
                 'button_border_radius',
                 [
                     'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
@@ -590,7 +590,7 @@ class wkfe_tilt_box extends Widget_Base {
                 ]
             );
 
-            $this->add_control(
+            $this->add_responsive_control(
                 'button_text_padding',
                 [
                     'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
@@ -624,7 +624,7 @@ class wkfe_tilt_box extends Widget_Base {
                     ],
                 ]
             );
-            $this->add_control(
+            $this->add_responsive_control(
                 'content_padding',
                 [
                     'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),

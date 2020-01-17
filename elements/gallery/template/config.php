@@ -782,7 +782,7 @@ class wkfe_gallery extends Widget_Base {
 		);
 
 
-		$this->add_control(
+		$this->add_responsive_control(
             'button_padding',
             [
                 'label' => esc_html__( 'Button Padding', 'widgetkit-for-elementor' ),
@@ -864,7 +864,7 @@ class wkfe_gallery extends Widget_Base {
 		);
 
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'caption_align',
 				[
 					'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
@@ -890,7 +890,7 @@ class wkfe_gallery extends Widget_Base {
 				]
 			);
 
-		$this->add_control(
+		$this->add_responsive_control(
             'caption_padding',
             [
                 'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
