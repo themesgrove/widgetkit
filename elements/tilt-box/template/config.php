@@ -378,7 +378,7 @@ class wkfe_tilt_box extends Widget_Base {
                 [
                     'label' => __( 'Color', 'widgetkit-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
-                     'selectors' => ['{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-tilt-card-title' => 'color:{{VALUE}};',
+                     'selectors' => ['{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-tilt-card-title a' => 'color:{{VALUE}};',
                     ],
                 ]
             );
