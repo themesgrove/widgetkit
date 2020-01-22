@@ -929,6 +929,18 @@ class wkfe_content_carousel extends Widget_Base {
 	            ]
 	        );
 
+            $this->add_control(
+                'content_border_radius',
+                [
+                    'label' => esc_html__( 'Radius', 'widgetkit-for-elementor' ),
+                    'type'  => Controls_Manager::DIMENSIONS,
+                    'size_units' => [ 'px', '%' ],
+                    'selectors'  => [
+                        '{{WRAPPER}} .content-carousel .wk-card' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; overflow:hidden;',
+                    ],
+                ]
+            );
+
         $this->end_controls_section();
 
 		// Navigation options Start
