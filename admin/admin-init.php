@@ -64,11 +64,13 @@ class Widgetkit_Admin
     public $widgetkit_lp_keys = [
         'wke-lp-course-list',
         'wke-lp-course-tab',
+        'wke-lp-course-category',
     ];
     
     public $widgetkit_sensei_keys = [
         'wke-sensei-course-list',
         'wke-sensei-course-tab',
+        'wke-sensei-course-category',
     ];
     private $pro_enable_status;
     
@@ -875,6 +877,13 @@ class Widgetkit_Admin
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
+                                                    <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                        <?php echo __('LearnPress Course Category', 'widgetkit-for-elementor'); ?>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-lp-course-category" name="wke-lp-course-category" <?php checked(1, $this->widgetkit_get_lp_settings['wke-lp-course-category'], $this->pro_enable_status) ?>>
+                                                            <span class="rectangle round"></span>
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- Sensei -->
@@ -906,6 +915,13 @@ class Widgetkit_Admin
                                                         <?php echo __('Sensei Course Tab', 'widgetkit-for-elementor'); ?>
                                                         <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
                                                             <input type="checkbox" id="wke-sensei-course-tab" name="wke-sensei-course-tab" <?php checked(1, $this->widgetkit_get_sensei_settings['wke-sensei-course-tab'], $this->pro_enable_status) ?>>
+                                                            <span class="rectangle round"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                        <?php echo __('Sensei Course Category', 'widgetkit-for-elementor'); ?>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-sensei-course-category" name="wke-sensei-course-category" <?php checked(1, $this->widgetkit_get_sensei_settings['wke-sensei-course-category'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
@@ -1208,10 +1224,12 @@ class Widgetkit_Admin
         $this->wk_lp_settings = [
             'wke-lp-course-list' => intval($settings['wke-lp-course-list'] ? 1 : 0),
             'wke-lp-course-tab' => intval($settings['wke-lp-course-tab'] ? 1 : 0),
+            'wke-lp-course-category' => intval($settings['wke-lp-course-category'] ? 1 : 0),
         ];
         $this->wk_sensei_settings = [
             'wke-sensei-course-list' => intval($settings['wke-sensei-course-list'] ? 1 : 0),
             'wke-sensei-course-tab' => intval($settings['wke-sensei-course-tab'] ? 1 : 0),
+            'wke-sensei-course-category' => intval($settings['wke-sensei-course-category'] ? 1 : 0),
         ];
         update_option('widgetkit_save_settings', $this->widgetkit_settings);
         update_option('widgetkit_save_woo_settings', $this->wk_woo_settings);
