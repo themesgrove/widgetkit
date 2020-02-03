@@ -117,3 +117,12 @@
     </div>  <!-- row -->
 </div><!-- tgx-blog-5 -->
 
+    <script type="text/javascript">
+          jQuery(function($){
+              if(!$('body').hasClass('wk-blog-image')){
+                  $('body').addClass('wk-blog-image');
+              }
+          });
+
+    </script>
+

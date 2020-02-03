@@ -371,27 +371,20 @@ class wkfe_countdown extends Widget_Base {
                 );
 
 
-            $this->add_responsive_control(
-			'widgetkit_countdown_separator_width',
-			[
-				'label'			=> esc_html__( 'Separator Width', 'widgetkit-for-elementor' ),
-				'type' 			=> Controls_Manager::SLIDER,
-				'default' 		=> [
-					'size' =>15,
-				],
-				'range' 		=> [
-					'px' 	=> [
-						'min' => 0,
-						'max' => 200,
-					]
-				],
-				'selectors'		=> [
-					'{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section' => 'margin: {{SIZE}}{{UNIT}};'
-				]
-			]
-		);
+		$this->add_control(
+            'widgetkit_countdown_separator_width',
+            [
+                'label' => esc_html__( 'Separator Spacing', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%' ],
+                'selectors'  => [
+                    '{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
 
-        $this->add_control(
+
+        $this->add_responsive_control(
             'widgetkit_countdown_item_alignment',
             [
                 'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
@@ -412,7 +405,7 @@ class wkfe_countdown extends Widget_Base {
                         'icon'  => 'fa fa-align-right',
                     ],
                    	'justify' => [
-						'title' => __( 'Justified', 'elementor' ),
+						'title' => __( 'Justified', 'widgetkit-for-elementor' ),
 						'icon' => 'fa fa-align-justify',
 					],
                 ],
@@ -475,25 +468,18 @@ class wkfe_countdown extends Widget_Base {
 			]
 		);
         
-        $this->add_responsive_control(
-			'widgetkit_countdown_digit_bg_size',
-		  	[
-		     	'label'			=> esc_html__( 'Padding', 'widgetkit-for-elementor' ),
-		     	'type' 			=> Controls_Manager::SLIDER,
-                'default'       => [
-                    'size'  => 25
-                ],
-				'range' => [
-					'px' => [
-						'min' => 1,
-						'max' => 400,
-					]
-				],
-				'selectors'		=> [
-					'{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section .widgetkit_countdown-amount' => 'padding: {{SIZE}}px;'
-				]
-		  	]
-		);
+
+			$this->add_control(
+	            'widgetkit_countdown_digit_bg_size',
+	            [
+	                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
+	                'type'  => Controls_Manager::DIMENSIONS,
+	                'size_units' => [ 'px', '%' ],
+	                'selectors'  => [
+	                    '{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section .widgetkit_countdown-amount' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+	                ],
+	            ]
+	        );
 
 
         
@@ -564,25 +550,19 @@ class wkfe_countdown extends Widget_Base {
                         ]
                     ]
                 );
-        $this->add_responsive_control(
-			'widgetkit_countdown_title_padding',
-		  	[
-		     	'label'			=> esc_html__( 'Padding', 'widgetkit-for-elementor' ),
-		     	'type' 			=> Controls_Manager::SLIDER,
-                'default'       => [
-                    'size'  => 0
-                ],
-				'range' => [
-					'px' => [
-						'min' => 1,
-						'max' => 100,
-					]
-				],
-				'selectors'		=> [
-					'{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section .widgetkit_countdown-period' => 'padding: {{SIZE}}{{UNIT}};'
-				]
-		  	]
-		);
+
+
+			$this->add_control(
+	            'widgetkit_countdown_title_padding',
+	            [
+	                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
+	                'type'  => Controls_Manager::DIMENSIONS,
+	                'size_units' => [ 'px', '%' ],
+	                'selectors'  => [
+	                    '{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section .widgetkit_countdown-period' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+	                ],
+	            ]
+	        );
 
 
 		$this->end_controls_section();

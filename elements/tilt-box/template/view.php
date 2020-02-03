@@ -20,7 +20,12 @@
 
                         <div class="wk-tilt-card-body">
                             <?php if ($tilt_box['content_title']):?>
-                                <h3 class="wk-tilt-card-title"><?php echo $tilt_box['content_title']; ?></h3>
+                                <h3 class="wk-tilt-card-title">
+                                    <a href="<?php echo $tilt_box['content_link']['url']; ?>" 
+                                        <?php echo $tilt_box['content_link']['is_external']? 'target="_blank"' : ''; ?>>
+                                        <?php echo $tilt_box['content_title']; ?>
+                                    </a>
+                                </h3>
                             <?php endif; ?>
 
                             <?php if ($tilt_box['content_description']):?>
@@ -50,7 +55,12 @@
 
                     <div class="wk-tilt-card-body">
                         <?php if ($tilt_box['content_title']):?>
-                            <h3 class="wk-tilt-card-title"><?php echo $tilt_box['content_title']; ?></h3>
+                            <h3 class="wk-tilt-card-title">
+                                <a href="<?php echo $tilt_box['content_link']['url']; ?>" 
+                                    <?php echo $tilt_box['content_link']['is_external']? 'target="_blank"' : ''; ?>>
+                                    <?php echo $tilt_box['content_title']; ?>
+                                </a>
+                            </h3>
                         <?php endif; ?>
 
                         <?php if ($tilt_box['content_description']):?>

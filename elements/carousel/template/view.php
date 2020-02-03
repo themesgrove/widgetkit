@@ -102,3 +102,12 @@
         </div><!-- /.perfecto-testimonial -->              
     </div><!-- /.section -->
 
+    <script type="text/javascript">
+          jQuery(function($){
+              if(!$('body').hasClass('wk-post-carousel')){
+                  $('body').addClass('wk-post-carousel');
+              }
+          });
+
+    </script>
+

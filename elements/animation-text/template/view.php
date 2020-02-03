@@ -39,3 +39,12 @@
             </h2> <!-- cd-headline -->
         </div> <!-- text-slide -->
     </div><!-- animation-text -->
+
+        <script type="text/javascript">
+            jQuery(function($){
+                if(!$('body').hasClass('wk-animation-headline')){
+                    $('body').addClass('wk-animation-headline');
+                }
+            });
+
+        </script>

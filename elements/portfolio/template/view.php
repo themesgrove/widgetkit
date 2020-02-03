@@ -282,3 +282,12 @@
             </div><!-- /.row -->  
         </div><!-- /.hover-effect -->
     </div> <!-- /.tgx-portfolio -->
+
+    <script type="text/javascript">
+          jQuery(function($){
+              if(!$('body').hasClass('wk-portfolio')){
+                  $('body').addClass('wk-portfolio');
+              }
+          });
+
+    </script>

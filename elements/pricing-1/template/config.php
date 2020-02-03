@@ -265,71 +265,6 @@ class wkfe_pricing_1 extends Widget_Base {
         $this->end_controls_section();
 
 
-        // $this->start_controls_section(
-        //     'section_ribbion',
-        //     [
-        //         'label' => esc_html__( 'Ribbon', 'widgetkit-for-elementor' ),
-        //     ]
-        // );
-
-
-        // $this->add_control(
-        //     'ribbon_switcher',
-        //         [
-        //             'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
-        //             'type'      => Controls_Manager::SWITCHER,
-        //             'default'   => 'no',
-        //             'yes'  => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-        //             'no'   => esc_html__( 'No', 'widgetkit-for-elementor' ),
-        //             'separator' => 'before',
-        //         ]
-        // );
-
-
-        // $this->add_control(
-        //     'ribbon_text',
-        //     [
-        //         'label' => esc_html__( 'Text', 'widgetkit-for-elementor' ),
-        //         'type'  => Controls_Manager::TEXT,
-        //         'default' => 'Popular',
-        //         'condition' => [
-        //             'ribbon_switcher' => 'yes',
-        //         ],
-        //     ]
-        // );
-
-        // $this->add_control(
-        //     'ribbon_position',
-        //             [
-        //                 'label' => __( 'Position', 'widgetkit-for-elementor' ),
-        //                 'type' => Controls_Manager::CHOOSE,
-        //                 'default' => 'top',
-        //                 'options' => [
-                        
-        //                     'left' => [
-        //                         'title' => __( 'left', 'widgetkit-for-elementor' ),
-        //                        'icon' => 'eicon-h-align-left',
-        //                     ],
-        //                     'top' => [
-        //                         'title' => __( 'Top', 'widgetkit-for-elementor' ),
-        //                         'icon' => 'eicon-v-align-top',
-        //                     ],
-        //                     'right' => [
-        //                         'title' => __( 'Right', 'widgetkit-for-elementor' ),
-        //                        'icon' => 'eicon-h-align-right',
-        //                     ],
-
-                           
-        //                 ],
-        //                 'toggle' => false,
-        //                  'condition' => [
-        //                     'ribbon_switcher' => 'yes',
-        //                 ],
-        //             ]
-        //         );
-
-        // $this->end_controls_section();
-
 
         $this->start_controls_section(
             'section_button',
@@ -987,16 +922,6 @@ class wkfe_pricing_1 extends Widget_Base {
             ]
         );
 
-        // $this->add_control(
-        //     'button_hover_animation',
-        //     [
-        //         'label' => esc_html__( 'Animation', 'widgetkit-for-elementor' ),
-        //         'type'  => Controls_Manager::HOVER_ANIMATION,
-        //         'condition' => [
-        //             'button_text!' => '',
-        //         ],
-        //     ]
-        // );
 
         $this->end_controls_tab();
 

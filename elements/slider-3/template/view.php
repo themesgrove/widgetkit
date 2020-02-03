@@ -48,3 +48,12 @@
                     
             </div> <!-- Slideshow -->
         </div> <!-- Slideshow -->
+
+        <script type="text/javascript">
+            jQuery(function($){
+                if(!$('body').hasClass('wk-slider-3')){
+                    $('body').addClass('wk-slider-3');
+                }
+            });
+
+        </script>

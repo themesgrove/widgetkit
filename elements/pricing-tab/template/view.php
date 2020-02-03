@@ -285,3 +285,12 @@
     </div><!-- pricing-content -->
     <?php $counter++; endforeach; endif; ?>
 </div> <!-- pricing-tab -->
+
+    <script type="text/javascript">
+          jQuery(function($){
+              if(!$('body').hasClass('wk-pricing-tab')){
+                  $('body').addClass('wk-pricing-tab');
+              }
+          });
+
+    </script>

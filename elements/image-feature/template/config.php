@@ -93,18 +93,6 @@ class wkfe_image_feature extends Widget_Base {
 		        ]
 	    );
 
-
-		// $this->add_control(
-		// 	'feature_icon',
-		// 	[
-		// 		'label' => esc_html__( 'Feature Icon', 'widgetkit-for-elementor' ),
-		// 		'type'  => Controls_Manager::ICON,
-		// 		'default'    => 'fa fa-clock-o',
-		// 		 'condition' => [
-		// 				'choose_media' => 'icon',
-		// 			],
-		// 	]
-		// );
 		$this->add_control(
             'feature_icon_updated',
             [

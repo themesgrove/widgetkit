@@ -412,9 +412,6 @@ class wkfe_content_carousel extends Widget_Base {
         $this->end_controls_section();
 
 
-	
-
-
 	    $this->start_controls_section(
             'section_layout',
             [
@@ -496,15 +493,6 @@ class wkfe_content_carousel extends Widget_Base {
 	            ]
 	        );
 
-	            // $this->add_control(
-		           //  'content_set_mode',
-		           //      [
-		           //          'label' => __( 'Sets Mode', 'widgetkit-for-elementor' ),
-		           //          'type'  => Controls_Manager::HEADING,
-		           //          'separator' => 'before',
-		           //      ]
-		           //  );
-
 	            $this->add_control(
 	                'set_mode_enable',
 	                    [
@@ -516,26 +504,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                    ]
 	        	);
 
-	            // $this->add_control(
-		           //  'content_center_mode',
-		           //      [
-		           //          'label' => __( 'Center Mode', 'widgetkit-for-elementor' ),
-		           //          'type'  => Controls_Manager::HEADING,
-		           //          'separator' => 'before',
-		           //      ]
-		           //  );
 
-
-
-
-		       	// $this->add_control(
-		        //     'content_autoplay_mode',
-		        //         [
-		        //             'label' => __( 'Autoplay Mode', 'widgetkit-for-elementor' ),
-		        //             'type'  => Controls_Manager::HEADING,
-		        //             'separator' => 'before',
-		        //         ]
-		        //     );
 	            $this->add_control(
 	                'autoplay_mode_enable',
 	                    [
@@ -547,33 +516,6 @@ class wkfe_content_carousel extends Widget_Base {
 	                    ]
 		        );
 
-	         //    $this->add_control(
-		        //     'content_infinite_mode',
-		        //         [
-		        //             'label' => __( 'Infinite Mode', 'widgetkit-for-elementor' ),
-		        //             'type'  => Controls_Manager::HEADING,
-		        //             'separator' => 'before',
-		        //         ]
-		        //     );
-	         //    $this->add_control(
-	         //        'infinite_mode_enable',
-	         //            [
-	         //                'label'     => esc_html__( 'Display Infinite', 'widgetkit-for-elementor' ),
-	         //                'type'      => Controls_Manager::SWITCHER,
-	         //                'default'   => 'no',
-	         //                'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-	         //                'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-	         //            ]
-		        // );
-
-		        // $this->add_control(
-		        //     'content_interval',
-		        //         [
-		        //             'label' => __( 'Interval', 'widgetkit-for-elementor' ),
-		        //             'type'  => Controls_Manager::HEADING,
-		        //             'separator' => 'before',
-		        //         ]
-		        //     );
 
 	            $this->add_control(
 	                'content_interval_option',
@@ -986,6 +928,18 @@ class wkfe_content_carousel extends Widget_Base {
 	                ],
 	            ]
 	        );
+
+            $this->add_control(
+                'content_border_radius',
+                [
+                    'label' => esc_html__( 'Radius', 'widgetkit-for-elementor' ),
+                    'type'  => Controls_Manager::DIMENSIONS,
+                    'size_units' => [ 'px', '%' ],
+                    'selectors'  => [
+                        '{{WRAPPER}} .content-carousel .wk-card' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; overflow:hidden;',
+                    ],
+                ]
+            );
 
         $this->end_controls_section();
 
