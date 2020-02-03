@@ -17,6 +17,4 @@ class WKFE_Admin_Resources{
         wp_enqueue_style( 'widgetkit_admin_resource', WK_URL.'dist/css/widgetkit-admin.css', array(), WK_VERSION, 'all');
     }
 }
-
 ?>
-
