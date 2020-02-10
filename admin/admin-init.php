@@ -101,7 +101,12 @@ class Widgetkit_Admin
     public function __construct()
     {
         //$this->includes();
-        session_start();
+        if(session_status() == PHP_SESSION_NONE){
+            session_start([
+                'read_and_close' => true,
+            ]);
+        }
+        // session_start();
         $this->init_hooks();
     }
     
@@ -1034,6 +1039,7 @@ class Widgetkit_Admin
                                             $Parsedown = new Parsedown();
                                             $get_changelog_data = $this->widgetkit_get_changelog_data();
                                             $changelog_data = $get_changelog_data ? $get_changelog_data : $_SESSION['changes'];
+                                            // $changelog_data = $get_changelog_data ? $get_changelog_data : '';
                                             ?>
 
                                             <div class="wk-changelog-list">
@@ -1257,17 +1263,11 @@ class Widgetkit_Admin
 
     public function widgetkit_get_changelog_data(){
         
-        $curl = curl_init();
-        curl_setopt($curl,CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt_array($curl, [
-            CURLOPT_RETURNTRANSFER => 1,
-            CURLOPT_URL => $this->api_url,
-            // CURLOPT_USERAGENT => 'Codular Sample cURL Request'
-        ]);
-        $resp = curl_exec($curl);
-        curl_close($curl);
-        $res_data = json_decode($resp, true);
-        $changes_data = $res_data['changes'];
+        $remote_api_data = wp_remote_get($this->api_url);
+        $response_data = wp_remote_retrieve_body($remote_api_data);
+        $data_arr = json_decode($response_data, true);
+        $changes_data = $data_arr['changes'];
+
         if($changes_data){
             $_SESSION['changes'] = $changes_data;
         }

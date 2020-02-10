@@ -18,7 +18,7 @@ class WKFE_Elements{
         require_once WK_PATH . '/elements/helper-functions.php';
         require_once WK_PATH . '/admin/admin-init.php';
         require_once WK_PATH . '/admin/notices/admin-notices.php';
-        require_once WK_PATH . '/admin/includes/system-info.php';
+        // require_once WK_PATH . '/admin/includes/system-info.php';
     }
     public function load_addon_files(){
         $widgetkit_elements_keys = [
