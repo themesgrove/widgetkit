@@ -56,6 +56,7 @@ class WKFE_Addons_Integration{
         wp_register_script( 'image-compare', WK_URL.'dist/js/jquery.image-compare.js' , array('jquery'), WK_VERSION, true);
         // wp_register_script( 'vanilla-tilt', WK_URL.'dist/js/vanilla-tilt.js' , array('jquery'), WK_VERSION, true);
         wp_register_script( 'youtube-popup', WK_URL.'dist/js/youtube-popup.js' , array('jquery'), WK_VERSION, true);
+        wp_register_script( 'magnific-popup', WK_URL.'dist/js/jquery.magnific-popup.js' , array('jquery'), WK_VERSION, true);
     }
 
 }
