@@ -1044,7 +1044,18 @@ class Widgetkit_Admin
 
                                             <div class="wk-changelog-list">
                                                 <div class="wk-changes">
-                                                    <ul class="version version-2.2.0 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                                                    <ul class="version version-2.3 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                                                        <li class="release-version-date"><h4>2.3</h4><span>12-02-2020</span></li>
+                                                        <li><span class="wk-text-success">New </span> – Video element added</li>
+                                                        <li><span class="wk-text-improved">Improved </span> – URL option added in Team Element</li>
+                                                        <li><span class="wk-text-improved">Improved </span> – URL option added in Tilt box Element</li>
+                                                        <li><span class="wk-text-improved">Improved </span> – Responsive style in Gallery Element</li>
+                                                        <li><span class="wk-text-improved">Improved </span> – Border Radius option added in Content Carousel</li>
+                                                        <li><span class="wk-text-improved">Improved </span> – Countdown element</li>
+                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Session issue while active the plugin</li>
+                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Site health warning</li>
+                                                    </ul>
+                                                    <ul class="version version-2.2.1 wk-background-muted wk-padding-small wk-margin-small-bottom">
                                                         <li class="release-version-date"><h4>2.2.1</h4><span>09-01-2020</span></li>
                                                         <li><span class="wk-text-success">New </span> – Changelog Tab added in Dashboard</li>
                                                         <li><span class="wk-text-improved">Improved </span> – Demo link updated in dashboard</li>

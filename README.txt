@@ -181,6 +181,16 @@ PHP 5.4 or greater.
 
 == Changelog ==
 
+= 2.3 =
+New – Video element added
+Update - URL option added in Team Element
+Update - URL option added in Tilt box Element
+Update - Responsive style in Gallery Element
+Update - Border Radius option added in Content Carousel
+Update - Countdown element
+Fix - Session issue while active the plugin
+Fix - Site health warning
+
 = 2.2.1 =
 New – Changelog Tab added in Dashboard
 Improvement - Demo link updated in dashboard
