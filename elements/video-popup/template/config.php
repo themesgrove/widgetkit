@@ -56,6 +56,7 @@ class wkfe_video_popup extends Widget_Base {
 			'widgetkit-main',
             // 'vanilla-tilt',
             'youtube-popup',
+            // 'magnific-popup',
             'uikit-js',
             'uikit-icons',
 		 ];
