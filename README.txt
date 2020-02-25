@@ -181,6 +181,10 @@ PHP 5.4 or greater.
 
 == Changelog ==
 
+= 2.3.1 =
+Fix – Fix session conflict with other plugin.
+Fix – Fix conflict with Easy Digital Download plugin.
+
 = 2.3 =
 New – Video element added
 Update - URL option added in Team Element

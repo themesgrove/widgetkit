@@ -1041,6 +1041,11 @@ class Widgetkit_Admin
 
                                             <div class="wk-changelog-list">
                                                 <div class="wk-changes">
+                                                    <ul class="version version-2.3.1 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                                                        <li class="release-version-date"><h4>2.3.1</h4><span>25-02-2020</span></li>
+                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Fix session conflict with other plugin.</li>
+                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Fix conflict with Easy Digital Download plugin.</li>
+                                                    </ul>
                                                     <ul class="version version-2.3 wk-background-muted wk-padding-small wk-margin-small-bottom">
                                                         <li class="release-version-date"><h4>2.3</h4><span>12-02-2020</span></li>
                                                         <li><span class="wk-text-success">New </span> – Video element added</li>
