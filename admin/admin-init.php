@@ -94,19 +94,16 @@ class Widgetkit_Admin
     private $widgetkit_get_lp_settings;
     private $widgetkit_get_sensei_settings;
 
+    private $transient_changelog_data;
+
     /**
      * Register construct
      */
     private $api_url = 'https://widgetkit.themesgrove.com/wp-json/wk/changelog';
     public function __construct()
     {
-        //$this->includes();
-        if(session_status() == PHP_SESSION_NONE){
-            session_start([
-                'read_and_close' => true,
-            ]);
-        }
-        // session_start();
+        //$this->includes();        
+        $this->transient_changelog_data = get_transient('changelog_data');
         $this->init_hooks();
     }
     
@@ -1038,8 +1035,8 @@ class Widgetkit_Admin
                                             <?php 
                                             $Parsedown = new Parsedown();
                                             $get_changelog_data = $this->widgetkit_get_changelog_data();
-                                            $changelog_data = $get_changelog_data ? $get_changelog_data : $_SESSION['changes'];
-                                            // $changelog_data = $get_changelog_data ? $get_changelog_data : '';
+                                            // $changelog_data = $get_changelog_data ? $get_changelog_data : $_SESSION['changes'];
+                                            $changelog_data = $get_changelog_data ?: $this->transient_changelog_data;
                                             ?>
 
                                             <div class="wk-changelog-list">
@@ -1279,10 +1276,12 @@ class Widgetkit_Admin
         $data_arr = json_decode($response_data, true);
         $changes_data = $data_arr['changes'];
 
-        if($changes_data){
-            $_SESSION['changes'] = $changes_data;
+        if(NULL === $this->transient_changelog_data){
+            set_transient('changelog_data', $changes_data, 0);
+            return $changes_data;
+        }else{
+            return $changes_data ?? $this->transient_changelog_data ;
         }
-        return $changes_data;
         
     }
 }
