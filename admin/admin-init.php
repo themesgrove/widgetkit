@@ -47,7 +47,8 @@ class Widgetkit_Admin
         'widget-contact-form',
         'widget-pros-cons',
         'widget-click-tweet',
-        'widget-video-popup'
+        'widget-video-popup',
+        'widget-lottie-animation'
     ];
 
     public $widgetkit_woo_keys = [
@@ -495,7 +496,19 @@ class Widgetkit_Admin
                                                 <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                     <?php echo esc_html__('Video Popup', 'widgetkit-for-elementor'); ?>
                                                     <label class="switch">
-                                                        <input type="checkbox" id="widget-video-popup" name="widget-video-popup-tab" <?php checked(1, $this->widgetkit_get_settings['widget-video-popup-tab'], true) ?>>
+
+                                                        <input type="checkbox" id="widget-video-popup" name="widget-video-popup-tab" <?php checked(1, $this->widgetkit_get_settings['widget-video-popup'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Lottie Animation', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+
+                                                        <input type="checkbox" id="widget-lottie-animation" name="widget-lottie-animation" <?php checked(1, $this->widgetkit_get_settings['widget-lottie-animation'], true) ?>>
                                                         <span class="rectangle round"></span>
                                                     </label>
                                                 </div>
@@ -1232,6 +1245,8 @@ class Widgetkit_Admin
             'widget-pros-cons' => intval($settings['widget-pros-cons'] ? 1 : 0),
             // Video popup
             'widget-video-popup' => intval($settings['widget-video-popup'] ? 1 : 0),
+            //Lottie animation
+            'widget-lottie-animation' => intval($settings['widget-lottie-animation'] ? 1 : 0),
 
 
             /**

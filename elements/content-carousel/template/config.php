@@ -78,8 +78,6 @@ class wkfe_content_carousel extends Widget_Base {
 		]
 	);
 
-
-
 		$this->add_control(
 			'item_option',
 				[
@@ -92,7 +90,6 @@ class wkfe_content_carousel extends Widget_Base {
 					],
 				]
 		);
-
 
 
 		$repeater = new Repeater();

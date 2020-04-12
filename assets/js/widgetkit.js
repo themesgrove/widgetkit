@@ -112,16 +112,83 @@ jQuery(document).ready(function($){
     var tweetText = $(this).parentsUntil(".wkfe-click-to-tweet").find('.tweet-text').text().trim();
     var tweetUrl = "https://twitter.com/share?url=" + encodeURIComponent(siteLink) +  "&text=" + encodeURIComponent(tweetText);
     window.open(tweetUrl, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=100,width=720,height=500");
-  })
-
+  });
 
 // end of wrapper function  
 });
 
-// function addElement () { 
 
-// }
+// Make sure you run this code under Elementor.
+jQuery( window ).on( 'elementor/frontend/init', function() {
+  elementorFrontend.hooks.addAction( 'frontend/element_ready/widgetkit-for-elementor-lottie-animation.default', function($scope,$) {
+    
 
+    let $animationWrapper = $scope.find('.lottie-animation-wrapper');
+
+    let $autoplay;
+    if( $animationWrapper.data('animation-play') == 'autoplay' ) {
+      $autoplay = true;
+    } else {
+      $autoplay = false;
+    }
+
+    if( $animationWrapper.length ) {
+      var animation = lottie.loadAnimation({
+        container: $animationWrapper[0], // the dom element
+        renderer: $animationWrapper.data('animation-renderer'),
+        loop: $animationWrapper.data('animation-loop'),
+        autoplay: $autoplay,
+        path: $animationWrapper.data('animation-path'), // the animation data
+      });
+    }
+
+    // on hover
+    if( $animationWrapper.data('animation-play') == 'onhover' ) {
+      $animationWrapper.on("mouseenter",function(){
+        animation.play();
+      });
+    }
+
+    // on click
+    if( $animationWrapper.data('animation-play') == 'onclick' ) {
+      $animationWrapper.on("click",function(){
+        animation.play();
+      });
+    }
+
+    // view port based
+    if( $animationWrapper.data('animation-play') == 'viewport' ) {
+      function isScrolledIntoView(elem) {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
+
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
+
+      isScrolledIntoView($animationWrapper);
+      $(window).scroll(function() {    
+          if(isScrolledIntoView($animationWrapper)) {
+            animation.play();
+          }    
+      });
+    }
+
+     // animation speed
+    if( $animationWrapper.data('animation-speed') ) {
+      animation.setSpeed(parseInt($animationWrapper.data('animation-speed')));
+    }
+
+     // animation reverse
+    if( $animationWrapper.data('animation-reverse') ) {
+      animation.setDirection(-1);
+    }
+
+  });
+
+} );
 
 
 
