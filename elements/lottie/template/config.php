@@ -4,6 +4,8 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
+use Elementor\Group_Control_Typography;
+use Elementor\Scheme_Typography;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -119,6 +121,15 @@ class wkfe_lottie_animation extends Widget_Base {
                 ],
                 'show_label'    => false
 			]
+        );
+        
+        $this->add_control(
+			'widget_caption',
+			[
+				'label' => __( 'Caption', 'widgetkit-pro'),
+				'type' => Controls_Manager::TEXT,
+                'label_block'   => true
+			]
 		);
 
         $this->end_controls_section();
@@ -219,30 +230,30 @@ class wkfe_lottie_animation extends Widget_Base {
                     )
                 ),
                 'selectors' => array(
-                    '{{WRAPPER}} .lottie-animation-wrapper' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} figure' => 'width: {{SIZE}}{{UNIT}};',
                 ),
             )
         );
         
         $this->add_responsive_control(
-                'height',
-                array(
-                    'label' => __( 'Height', 'widgetkit-for-elementor' ),
-                    'type' => Controls_Manager::SLIDER,
-                    'size_units' => array( '%' ),
-                    'range' => array(
-                        '%' => array(
-                            'min' => 1,
-                            'max' => 100,
-                        ),
+            'height',
+            array(
+                'label' => __( 'Height', 'widgetkit-for-elementor' ),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => array( '%' ),
+                'range' => array(
+                    '%' => array(
+                        'min' => 1,
+                        'max' => 100,
                     ),
-                    'default' => [
-                        'unit' => '%',
-                    ],
-                    'selectors' => array(
-                        '{{WRAPPER}} .lottie-animation-wrapper' => 'height: {{SIZE}}{{UNIT}};',
-                    ),
-                )
+                ),
+                'default' => [
+                    'unit' => '%',
+                ],
+                'selectors' => array(
+                    '{{WRAPPER}} figure' => 'height: {{SIZE}}{{UNIT}};',
+                ),
+            )
         );
 
         // Border and box shadow
@@ -250,7 +261,7 @@ class wkfe_lottie_animation extends Widget_Base {
             Group_Control_Border::get_type(),
             array(
                 'name'      => 'lottie_border',
-                'selector'  => '{{WRAPPER}} .lottie-animation-wrapper',
+                'selector'  => '{{WRAPPER}} figure',
                 'separator' => 'before',
             )
         );
@@ -262,7 +273,7 @@ class wkfe_lottie_animation extends Widget_Base {
                 'type'        => Controls_Manager::DIMENSIONS,
                 'size_units'  => array( 'px', '%' ),
                 'selectors'   => array(
-                    '{{WRAPPER}} .lottie-animation-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} figure' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ),
             )
         );
@@ -272,17 +283,121 @@ class wkfe_lottie_animation extends Widget_Base {
             array(
                 'name'      => 'lottie_box_shadow',
                 'exclude'   => array( 'box_shadow_position' ),
-                'selector'  => '{{WRAPPER}} .lottie-animation-wrapper',
+                'selector'  => '{{WRAPPER}} figure',
             )
         );
 
-		$this->end_controls_section();
+        $this->add_responsive_control(
+            'align',
+            array(
+                'label' => __( 'Alignment', 'widgetkit-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::CHOOSE,
+                'options' => array(
+                    'flex-start' => array(
+                        'title' => __( 'Left', 'widgetkit-for-elementor' ),
+                        'icon' => 'eicon-text-align-left',
+                    ),
+                    'center' => array(
+                        'title' => __( 'Center', 'widgetkit-for-elementor' ),
+                        'icon' => 'eicon-text-align-center',
+                    ),
+                    'flex-end' => array(
+                        'title' => __( 'Right', 'widgetkit-for-elementor' ),
+                        'icon' => 'eicon-text-align-right',
+                    ),
+                ),
+                'selectors' => array(
+                    '{{WRAPPER}} .elementor-widget-container'   => 'display: flex; justify-content: {{VALUE}};',
+                    '{{WRAPPER}} .elementor-widget-container a' => 'display: flex; justify-content: {{VALUE}};'
+                ),
+            )
+        );
+        
+        $this->add_control(
+            'caption_heading',
+            [
+                'label' => __( 'Caption', 'widgetkit-pro' ),
+                'type'  => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_control(
+            'caption_color',
+            [
+                'label'     => esc_html__( 'Color', 'widgetkit-pro' ),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => '',
+                'selectors' => [
+                    '{{WRAPPER}} figure figcaption' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+                [
+                    'name'     => 'caption_typography',
+                    'label'    => esc_html__( 'Typography', 'widgetkit-pro' ),
+                    'selector' => '{{WRAPPER}} figure figcaption',
+                    'scheme' => Scheme_Typography::TYPOGRAPHY_3,
+                ]
+        );
+
+        $this->add_control(
+			'margin',
+			[
+				'label' => __( 'Margin', 'widgetkit-pro' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} figure figcaption' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+        $this->add_control(
+			'padding',
+			[
+				'label' => __( 'Padding', 'widgetkit-pro' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} figure figcaption' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+        );
+
+        $this->add_responsive_control(
+            'caption_align',
+            array(
+                'label' => __( 'Alignment', 'widgetkit-for-elementor' ),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => array(
+                    'left' => array(
+                        'title' => __( 'Left', 'widgetkit-for-elementor' ),
+                        'icon' => 'eicon-text-align-left',
+                    ),
+                    'center' => array(
+                        'title' => __( 'Center', 'widgetkit-for-elementor' ),
+                        'icon' => 'eicon-text-align-center',
+                    ),
+                    'right' => array(
+                        'title' => __( 'Right', 'widgetkit-for-elementor' ),
+                        'icon' => 'eicon-text-align-right',
+                    ),
+                ),
+                'selectors' => array(
+                    '{{WRAPPER}} figure figcaption'   => 'text-align: {{VALUE}};',
+                ),
+            )
+        );
+        
+        $this->end_controls_section();
 
 	}
 
 	protected function render() {
 		require WK_PATH . '/elements/lottie/template/view.php';
 	}
-
 
 }

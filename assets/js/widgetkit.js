@@ -125,14 +125,15 @@ jQuery( window ).on( 'elementor/frontend/init', function() {
 
     let $animationWrapper = $scope.find('.lottie-animation-wrapper');
 
-    let $autoplay;
-    if( $animationWrapper.data('animation-play') == 'autoplay' ) {
-      $autoplay = true;
-    } else {
-      $autoplay = false;
-    }
-
     if( $animationWrapper.length ) {
+
+      let $autoplay;
+      if( $animationWrapper.data('animation-play') == 'autoplay' ) {
+        $autoplay = true;
+      } else {
+        $autoplay = false;
+      }
+      
       var animation = lottie.loadAnimation({
         container: $animationWrapper[0], // the dom element
         renderer: $animationWrapper.data('animation-renderer'),
@@ -140,51 +141,55 @@ jQuery( window ).on( 'elementor/frontend/init', function() {
         autoplay: $autoplay,
         path: $animationWrapper.data('animation-path'), // the animation data
       });
-    }
-
-    // on hover
-    if( $animationWrapper.data('animation-play') == 'onhover' ) {
-      $animationWrapper.on("mouseenter",function(){
-        animation.play();
+  
+      // on hover
+      $animationWrapper.on("mouseenter",function() {
+        if( $animationWrapper.data('animation-play') == 'onhover' ) {
+          animation.goToAndPlay(0);
+        }
       });
-    }
-
-    // on click
-    if( $animationWrapper.data('animation-play') == 'onclick' ) {
+  
+      // on click
       $animationWrapper.on("click",function(){
-        animation.play();
+        if( $animationWrapper.data('animation-play') == 'onclick' ) {
+          animation.goToAndPlay(0);
+        }
       });
+  
+      // view port based
+      if( $animationWrapper.data('animation-play') == 'viewport' ) {
+        function isScrolledIntoView(elem) {
+          var docViewTop = $(window).scrollTop();
+          var docViewBottom = docViewTop + $(window).height();
+  
+          var elemTop = $(elem).offset().top;
+          var elemBottom = elemTop + $(elem).height();
+  
+          return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+        }
+  
+        if(isScrolledIntoView($animationWrapper)) {
+          animation.play();
+        }
+
+        $(window).scroll(function() {    
+            if(isScrolledIntoView($animationWrapper)) {
+              animation.play();
+            }
+        });
+      }
+  
+       // animation speed
+      if( $animationWrapper.data('animation-speed') ) {
+        animation.setSpeed(parseInt($animationWrapper.data('animation-speed')));
+      }
+  
+       // animation reverse
+      if( $animationWrapper.data('animation-reverse') ) {
+        animation.setDirection(-1);
+      }
     }
 
-    // view port based
-    if( $animationWrapper.data('animation-play') == 'viewport' ) {
-      function isScrolledIntoView(elem) {
-        var docViewTop = $(window).scrollTop();
-        var docViewBottom = docViewTop + $(window).height();
-
-        var elemTop = $(elem).offset().top;
-        var elemBottom = elemTop + $(elem).height();
-
-        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-    }
-
-      isScrolledIntoView($animationWrapper);
-      $(window).scroll(function() {    
-          if(isScrolledIntoView($animationWrapper)) {
-            animation.play();
-          }    
-      });
-    }
-
-     // animation speed
-    if( $animationWrapper.data('animation-speed') ) {
-      animation.setSpeed(parseInt($animationWrapper.data('animation-speed')));
-    }
-
-     // animation reverse
-    if( $animationWrapper.data('animation-reverse') ) {
-      animation.setDirection(-1);
-    }
 
   });
 

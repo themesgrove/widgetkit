@@ -49,14 +49,20 @@
     } else {
         $this->add_render_attribute('wrapper','data-animation-reverse','false');
     }
-
+    
 ?>
-<?php if( $settings['choose_link'] == 'yes' && $settings['link']['url'] ) : ?>
-    <a <?php echo $this->get_render_attribute_string( 'link' ); ?>>
-<?php endif; ?>
+<figure>
+    <?php if( $settings['choose_link'] == 'yes' && $settings['link']['url'] ) : ?>
+        <a <?php echo $this->get_render_attribute_string( 'link' ); ?>>
+    <?php endif; ?>
 
-    <div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>></div>
+        <div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>></div>
 
-<?php if( $settings['choose_link'] == 'yes' && $settings['link']['url'] ) : ?>
-    </a>
-<?php endif; ?>
+    <?php if( $settings['choose_link'] == 'yes' && $settings['link']['url'] ) : ?>
+        </a>
+    <?php endif; ?>
+    
+    <?php if( !empty( $settings['widget_caption'] ) ): ?>
+        <figcaption><?php echo esc_html($settings['widget_caption']); ?></figcaption>
+    <?php endif; ?>
+</figure>
