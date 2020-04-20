@@ -69,6 +69,7 @@ class WKFE_Elements{
             'widget-pros-cons',
             'widget-click-tweet',
             'widget-video-popup',
+            'widget-lottie-animation',
         ];
         $widgetkit_default_settings = array_fill_keys( $widgetkit_elements_keys, true );
         
@@ -201,8 +202,9 @@ class WKFE_Elements{
         if( $check_component_active['widget-video-popup'] ) {
             require_once WK_PATH . '/elements/video-popup/widget.php';
         }
-
-        
+        if( $check_component_active['widget-lottie-animation'] ) {
+            require_once WK_PATH . '/elements/lottie/widget.php';
+        }
 
     }
 

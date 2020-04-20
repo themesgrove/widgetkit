@@ -49,6 +49,7 @@ class WKFE_Addons_Integration{
         wp_register_script( 'widgetkit-imagesloaded', WK_URL.'dist/js/imagesloaded.pkgd.min.js', array('jquery'), WK_VERSION, true);
         wp_register_script( 'widgetkit-slider', WK_URL.'dist/js/slider-3.js' , array('jquery'), WK_VERSION, true);
         wp_register_script( 'countdown', WK_URL.'dist/js/countdown.js' , array('jquery'), WK_VERSION, true);
+        wp_register_script( 'lottie-js', WK_URL.'dist/js/lottie.min.js' , array('jquery'), WK_VERSION, true);
         wp_register_script( 'widgetkit-main', WK_URL.'dist/js/widgetkit.js' , array('jquery'), WK_VERSION, true);
         wp_register_script( 'uikit-js', WK_URL.'dist/js/uikit.min.js' , array('jquery'), WK_VERSION, true);
         wp_register_script( 'uikit-icons', WK_URL.'dist/js/uikit-icons.min.js' , array('jquery'), WK_VERSION, true);
