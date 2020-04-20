@@ -60,6 +60,15 @@ class Widgetkit_Admin
     public $widgetkit_ld_keys = [
         'wke-ld-course-list',
         'wke-ld-course-tab',
+        'wke-ld-course-banner',
+        'wke-ld-course-certificate',
+        'wke-ld-course-enrollment',
+        'wke-ld-course-meta-info',
+        'wke-ld-course-progress',
+        'wke-ld-course-resource',
+        'wke-ld-course-tab-content',
+        'wke-ld-course-related-course',
+        'wke-ld-course-content',
     ];
 
     public $widgetkit_lp_keys = [
@@ -495,7 +504,7 @@ class Widgetkit_Admin
                                                 <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                     <?php echo esc_html__('Video Popup', 'widgetkit-for-elementor'); ?>
                                                     <label class="switch">
-                                                        <input type="checkbox" id="widget-video-popup" name="widget-video-popup-tab" <?php checked(1, $this->widgetkit_get_settings['widget-video-popup-tab'], true) ?>>
+                                                        <input type="checkbox" id="widget-video-popup" name="widget-video-popup" <?php checked(1, $this->widgetkit_get_settings['widget-video-popup'], true) ?>>
                                                         <span class="rectangle round"></span>
                                                     </label>
                                                 </div>
@@ -854,6 +863,69 @@ class Widgetkit_Admin
                                                         <?php echo __('LearnDash Course Tab', 'widgetkit-for-elementor'); ?>
                                                         <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
                                                             <input type="checkbox" id="wke-ld-course-tab" name="wke-ld-course-tab" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-tab'], $this->pro_enable_status) ?>>
+                                                            <span class="rectangle round"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                        <?php echo __('LearnDash Course Banner', 'widgetkit-for-elementor'); ?>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-ld-course-banner" name="wke-ld-course-banner" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-banner'], $this->pro_enable_status) ?>>
+                                                            <span class="rectangle round"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                        <?php echo __('LearnDash Course Certificate', 'widgetkit-for-elementor'); ?>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-ld-course-certificate" name="wke-ld-course-certificate" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-certificate'], $this->pro_enable_status) ?>>
+                                                            <span class="rectangle round"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                        <?php echo __('LearnDash Course Enrollment', 'widgetkit-for-elementor'); ?>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-ld-course-enrollment" name="wke-ld-course-enrollment" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-enrollment'], $this->pro_enable_status) ?>>
+                                                            <span class="rectangle round"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                        <?php echo __('LearnDash Course Meta Info', 'widgetkit-for-elementor'); ?>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-ld-course-meta-info" name="wke-ld-course-meta-info" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-meta-info'], $this->pro_enable_status) ?>>
+                                                            <span class="rectangle round"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                        <?php echo __('LearnDash Course Progress', 'widgetkit-for-elementor'); ?>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-ld-course-progress" name="wke-ld-course-progress" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-progress'], $this->pro_enable_status) ?>>
+                                                            <span class="rectangle round"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                        <?php echo __('LearnDash Course Resource', 'widgetkit-for-elementor'); ?>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-ld-course-resource" name="wke-ld-course-resource" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-resource'], $this->pro_enable_status) ?>>
+                                                            <span class="rectangle round"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                        <?php echo __('LearnDash Course Tab Content', 'widgetkit-for-elementor'); ?>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-ld-course-tab-content" name="wke-ld-course-tab-content" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-tab-content'], $this->pro_enable_status) ?>>
+                                                            <span class="rectangle round"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                        <?php echo __('LearnDash Related Course', 'widgetkit-for-elementor'); ?>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-ld-course-related-course" name="wke-ld-course-related-course" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-related-course'], $this->pro_enable_status) ?>>
+                                                            <span class="rectangle round"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                        <?php echo __('LearnDash Course Content', 'widgetkit-for-elementor'); ?>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-ld-course-content" name="wke-ld-course-content" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-content'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
@@ -1253,6 +1325,16 @@ class Widgetkit_Admin
         $this->wk_ld_settings = [
             'wke-ld-course-list' => intval($settings['wke-ld-course-list'] ? 1 : 0),
             'wke-ld-course-tab' => intval($settings['wke-ld-course-tab'] ? 1 : 0),
+            'wke-ld-course-banner' => intval($settings['wke-ld-course-banner'] ? 1 : 0),
+            'wke-ld-course-certificate' => intval($settings['wke-ld-course-certificate'] ? 1 : 0),
+            'wke-ld-course-enrollment' => intval($settings['wke-ld-course-enrollment'] ? 1 : 0),
+            'wke-ld-course-meta-info' => intval($settings['wke-ld-course-meta-info'] ? 1 : 0),
+            'wke-ld-course-progress' => intval($settings['wke-ld-course-progress'] ? 1 : 0),
+            'wke-ld-course-resource' => intval($settings['wke-ld-course-resource'] ? 1 : 0),
+            'wke-ld-course-tab-content' => intval($settings['wke-ld-course-tab-content'] ? 1 : 0),
+            'wke-ld-course-related-course' => intval($settings['wke-ld-course-related-course'] ? 1 : 0),
+            'wke-ld-course-content' => intval($settings['wke-ld-course-content'] ? 1 : 0),
+
         ];
         $this->wk_lp_settings = [
             'wke-lp-course-list' => intval($settings['wke-lp-course-list'] ? 1 : 0),
