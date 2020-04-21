@@ -69,7 +69,7 @@ class Widgetkit_Admin
         'wke-ld-course-resource',
         'wke-ld-course-tab-content',
         'wke-ld-course-related-course',
-        'wke-ld-course-content',
+        'wke-ld-course-curriculum',
     ];
 
     public $widgetkit_lp_keys = [
@@ -935,7 +935,7 @@ class Widgetkit_Admin
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('LearnDash Course Content', 'widgetkit-for-elementor'); ?>
                                                         <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
-                                                            <input type="checkbox" id="wke-ld-course-content" name="wke-ld-course-content" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-content'], $this->pro_enable_status) ?>>
+                                                            <input type="checkbox" id="wke-ld-course-curriculum" name="wke-ld-course-curriculum" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-curriculum'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
@@ -1345,7 +1345,7 @@ class Widgetkit_Admin
             'wke-ld-course-resource' => intval($settings['wke-ld-course-resource'] ? 1 : 0),
             'wke-ld-course-tab-content' => intval($settings['wke-ld-course-tab-content'] ? 1 : 0),
             'wke-ld-course-related-course' => intval($settings['wke-ld-course-related-course'] ? 1 : 0),
-            'wke-ld-course-content' => intval($settings['wke-ld-course-content'] ? 1 : 0),
+            'wke-ld-course-curriculum' => intval($settings['wke-ld-course-curriculum'] ? 1 : 0),
 
         ];
         $this->wk_lp_settings = [
