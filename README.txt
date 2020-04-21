@@ -4,8 +4,8 @@ Contributors: Themesgrove, parvezvai, themexpert
 Donate link: https://themesgrove.com/
 Tags: elementor, add-ons, elementor addons, elementor widgets, woocommerce, learndash, learnpress, widgets, woocommerce addons, learndash addons, sensei, sensei addons, countdown, timer, slider, team, testimonial, social-share, carousel, portfolio, pricing, widgetkit
 Requires at least: 4.0
-Tested up to: 5.3
-Stable tag: 2.3
+Tested up to: 5.4
+Stable tag: 2.3.2
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,7 +18,7 @@ Visually stunning and simple to use premium addons for Elementor page builder. G
 Merge WidgetKit with Elementor and take the experience of ultimate page building. WIth WidgetKit build any layouts in shortest time, it doesn’t matter whether the layout is simple or complex. If you can think it, you can build it with Widgetkit. 
 
 
-https://www.youtube.com/watch?v=9AbPw136tqk
+https://www.youtube.com/watch?v=7sh13OCwZ4A
 
 Elementor is a great tool for building websites, but without proper addons it might take more time and money. Even sometimes you do not get your preferred layouts and sections in spite of using premium addons.
 
@@ -28,7 +28,7 @@ You can only decide to use WidgetKit after viewing it by yourself. See it by you
 
 ##<a href="http://widgetkit.themesgrove.com/">Check Live Demo</a>
 
-== 25+ Free Elements And Counting ==
+== 28+ Free Elements And Counting ==
 
 <ul>
 	<li><a href="http://widgetkit.themesgrove.com/slider-demo/#box-slider">Slider Box</a> allows you to create slider with collapse animation.</li>
@@ -75,7 +75,7 @@ You can only decide to use WidgetKit after viewing it by yourself. See it by you
 </ul>
 
 
-==More Elements (10+) for Pro Version==
+==More Elements (17+) for Pro Version==
 
 <ul>
 	<li><a href="http://widgetkit.themesgrove.com/post-tab/">Post Tab</a> element showcases your categorized posts in a unique tabbed way, with a big preview on the left side.</li>
@@ -109,6 +109,10 @@ Widgetkit is entirely device responsive. Your sections built with WidgetKit will
 
 <strong>Uncompromisable Performance</strong>
 Widgetkit is developed with professional experienced developers. Therefore no messy codes or extra resources are loaded to slow down your site.
+
+==Lottiefiles Animation Integration==
+WidgetKit has brought brand new Lottie animation element, that let's you make your site attractable with lots of animations. Use the link or JSON files from the lottiefiles and make elegant sections instantly. Check out this video and do it yourself now. 
+https://youtu.be/roC1bZMJrWo
 
 ==WooCommerce Integration & Elements==
 WidgetKit is not limited with general elements but it also allows you to customize your web store built with WooCommerce. There are four dedicated elements Woo Products, Woo Product Carousel, Woo Categories, Woo Recent Product. With these elements you can highlight and manage your product more effectively and thus boost your sales. 
@@ -181,7 +185,13 @@ PHP 5.4 or greater.
 
 == Changelog ==
 
+= 2.3.2 =
+New – Lottie Animaiton Widget.
+New – Lottie Animaiton Library Integration.
+
 = 2.3.1 =
+Update – Padding and border radius option for testimonial.
+Fix – Gallery tag issue.
 Fix – Fix session conflict with other plugin.
 Fix – Fix conflict with Easy Digital Download plugin.
 

@@ -21,7 +21,7 @@ WC tested up to: 3.8.0
      */
     if( !defined( 'ABSPATH' ) ) exit; 
 
-    define('WK_VERSION', '2.3.1');
+    define('WK_VERSION', '2.3.2');
     define('WK_FILE', __FILE__); 
     define('WK_URL', plugins_url('/', __FILE__ ) );
     define('WK_PATH', plugin_dir_path( __FILE__ ) );
