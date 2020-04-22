@@ -70,6 +70,7 @@ class Widgetkit_Admin
         'wke-ld-course-tab-content',
         'wke-ld-course-related-course',
         'wke-ld-course-curriculum',
+        'wke-ld-course-instructor',
     ];
 
     public $widgetkit_lp_keys = [
@@ -939,6 +940,13 @@ class Widgetkit_Admin
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
+                                                    <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                        <?php echo __('LearnDash Course Instructor', 'widgetkit-for-elementor'); ?>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-ld-course-instructor" name="wke-ld-course-instructor" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-instructor'], $this->pro_enable_status) ?>>
+                                                            <span class="rectangle round"></span>
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- LearnPress -->
@@ -1351,6 +1359,7 @@ class Widgetkit_Admin
             'wke-ld-course-tab-content' => intval($settings['wke-ld-course-tab-content'] ? 1 : 0),
             'wke-ld-course-related-course' => intval($settings['wke-ld-course-related-course'] ? 1 : 0),
             'wke-ld-course-curriculum' => intval($settings['wke-ld-course-curriculum'] ? 1 : 0),
+            'wke-ld-course-instructor' => intval($settings['wke-ld-course-instructor'] ? 1 : 0),
 
         ];
         $this->wk_lp_settings = [
