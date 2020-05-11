@@ -9,9 +9,9 @@
 
     <div class="pricing-tab">
 
-        <?php if ( ! empty( $settings['pricing_tabs'] ) ) : ?>
-            <?php foreach( $settings['pricing_tabs'] as $item ) : ?>
-                <input type="radio" id="<?php echo $counter; ?>" name="tab" checked>
+        <?php $count = 0; if ( ! empty( $settings['pricing_tabs'] ) ) : ?>
+            <?php foreach( $settings['pricing_tabs'] as $item ) : $count++; ?>
+                <input class="<?php echo $count;?>" type="radio" id="<?php echo $counter; ?>" name="tab" <?php echo (0 == $counter) ? 'checked' : ''; ?>>
 
                 <label class="pricing-btn 
                     <?php if($pricing_count == '1'): ?>
