@@ -565,3 +565,138 @@ input:checked + .rectangle:before {
         
     }
 }
+
+
+
+.widgetkit-templates-wrapper {
+    img {
+        max-width: 100%;
+    }
+    .wk-label {
+        text-transform: uppercase;
+    }
+    .wk-card {
+        &:hover {
+            .wk-card-media-top {
+                .widget-template-image-hover {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+        a {
+            text-decoration: none;
+        }
+        .wk-card-media-top {
+            position: relative;
+            .widget-template-image-hover {
+                display: flex;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, .7);
+                align-items: center;
+                justify-content: center;
+                span.dashicons {
+                    color: #fff;
+                    font-size: 20px;
+                }
+                visibility: hidden;
+                opacity: 0;
+                transition: all 0.3s ease-in 0s;
+            }
+        }
+        .wk-card-body {
+            .widgetkit-library-template-name {
+                font-size: 14px;
+                color: #000;
+            }
+        }
+    }
+}
+
+.widgetkit-template-libray-single {
+    .wk-header__bottom {
+        a {
+            text-decoration: none;
+            color: #000;
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+    }
+    .widgetkit-single-template-wrapper {
+        .wk-label {
+            text-transform: uppercase;
+        }
+        img {
+            max-width: 100%;
+        }
+        .widgetkit-single-template-image {
+            padding-right: 10px;
+            max-height: 80vh;
+            overflow-y: scroll;
+        }
+    
+        .ele-template-importer {
+            &.importing {
+                padding-right: 25px;
+                span {
+                    display: block;
+                }
+            }
+            position: relative;
+            span {
+                display: none;
+                position: absolute;
+                top: 30%;
+                right: 5px;
+                font-size: 14px;
+                -webkit-animation: spin 2s linear infinite;
+                -moz-animation: spin 2s linear infinite;
+                animation: spin 2s linear infinite;
+                width: auto;
+                height: auto;
+            }
+        }
+    
+        .page-import-form {
+            position: relative;
+            input {
+                border-radius: 0;
+                max-width: 100%;
+            }
+            .button {
+                &.importing {
+                    padding-right: 25px;
+                    span {
+                        display: block;
+                    }
+                }
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin-left: -5px;
+                span {
+                    display: none;
+                    position: absolute;
+                    top: 30%;
+                    right: 5px;
+                    font-size: 14px;
+                    -webkit-animation: spin 2s linear infinite;
+                    -moz-animation: spin 2s linear infinite;
+                    animation: spin 2s linear infinite;
+                    width: auto;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

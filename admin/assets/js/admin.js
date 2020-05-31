@@ -29,11 +29,12 @@
 				fields: $( 'form#widgetkit-settings' ).serialize(),
 			},
             success: function( response ) {
-				swal(
-				  'Settings Saved!',
-				  'Click OK to continue',
-				  'success'
-				);
+				swal({
+					title: 'Settings Saved!',
+					text: 'Click OK to continue',
+					type: 'success',
+					confirmButtonColor: '#ed485f'
+				});
 			},
 			error: function() {
 				swal(
@@ -44,9 +45,6 @@
 		} );
 
 	} );
-
-
-
     
 } )(jQuery);
 

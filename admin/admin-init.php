@@ -162,6 +162,7 @@ class Widgetkit_Admin
         add_action('wp_ajax_widgetkit_save_admin_addons_settings', [$this, 'widgetkit_for_elementor_sections_with_ajax']);
     }
 
+    
     /**
      * Register scripts
      */
@@ -170,6 +171,7 @@ class Widgetkit_Admin
         // wp_enqueue_style( 'widgetkit-sweetalert2-css', plugins_url('/assets/css/sweetalert2.min.css', __FILE__ ));
         
         wp_enqueue_script('widgetkit-elementor-admin-js', plugins_url('/assets/js/admin.js', __FILE__) , array('jquery','jquery-ui-tabs'), '1.0' , true );
+        
         wp_enqueue_script( 'widgetkit-sweet-js',  plugins_url('/assets/js/core.js', __FILE__), array( 'jquery' ), '1.0', true );
 		// wp_enqueue_script( 'widgetkit-sweetalert2-js', plugins_url('/assets/js/sweetalert2.min.js', __FILE__), array( 'jquery', 'widgetkit-sweet-js' ), '1.0', true );
         wp_enqueue_script( 'admin-notice-js', plugins_url('/assets/js/admin-notice.js', __FILE__), array( 'jquery' ), '1.0', true );
@@ -179,7 +181,7 @@ class Widgetkit_Admin
         global $wp;  
         $current_url = add_query_arg(array($_GET), $wp->request);
         $current_url_slug = explode("=", $current_url);
-        if($current_url && $current_url_slug[1] === 'widgetkit-settings' ){
+        if($current_url && ( $current_url_slug[1] === 'widgetkit-settings' || ( $current_url_slug[1] === 'widgetkit-template-library' || $current_url_slug[1] === 'widgetkit-template-library&package' ) ) ){
             wp_enqueue_style( 'wkkit',  plugins_url('/dist/css/uikit.custom.min.css', dirname(__FILE__)  ));
             wp_enqueue_style( 'widgetkit-sweetalert2-css', plugins_url('/assets/css/sweetalert2.min.css', __FILE__ ));
 
