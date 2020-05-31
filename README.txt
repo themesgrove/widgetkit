@@ -5,7 +5,7 @@ Donate link: https://themesgrove.com/
 Tags: elementor, add-ons, elementor addons, elementor widgets, woocommerce, learndash, learnpress, widgets, woocommerce addons, learndash addons, sensei, sensei addons, countdown, timer, slider, team, testimonial, social-share, carousel, portfolio, pricing, widgetkit
 Requires at least: 4.0
 Tested up to: 5.4
-Stable tag: 2.3.2
+Stable tag: 2.3.3
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -184,6 +184,10 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+
+= 2.3.3 =
+Fix – Fix Pricing Tab Element selected tab.
+Fix – Fix Filterable Portfolio Element word spacing.
 
 = 2.3.2 =
 New – Lottie Animaiton Widget.
