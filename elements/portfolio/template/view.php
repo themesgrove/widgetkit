@@ -24,6 +24,7 @@
 
                      foreach ( $settings['portfolio_content'] as $filter ) {
                         $termname = strtolower($filter['portfolio_filter']);  
+                        $termname = str_replace(" ", "", $termname);
                         $termname = str_replace("", "", $termname);
                         if(!in_array($termname, $data)){
                                 $data[] = $termname;
@@ -49,6 +50,7 @@
 
                      foreach ( $settings['portfolio_content'] as $filter ) {
                         $termname = strtolower($filter['portfolio_filter']);  
+                        $termname = str_replace(" ", "", $termname);
                         $termname = str_replace("", "", $termname);
                         if(!in_array($termname, $data)){
                                 $data[] = $termname;
@@ -72,6 +74,7 @@
 
                      foreach ( $settings['portfolio_content'] as $filter ) {
                         $termname = strtolower($filter['portfolio_filter']);  
+                        $termname = str_replace(" ", "", $termname);
                         $termname = str_replace("", "", $termname);
                         if(!in_array($termname, $data)){
                                 $data[] = $termname;
@@ -96,6 +99,7 @@
 
                      foreach ( $settings['portfolio_content'] as $filter ) {
                         $termname = strtolower($filter['portfolio_filter']);  
+                        $termname = str_replace(" ", "", $termname);
                         $termname = str_replace("", "", $termname);
                         if(!in_array($termname, $data)){
                                 $data[] = $termname;
