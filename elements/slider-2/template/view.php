@@ -54,12 +54,13 @@
                                             <?php echo $slider['slider_content']; ?>
                                         </p>
                                     <?php endif; ?>
-
+                                    
+                                    <?php if($slider['btn_text']): ?>
                                     <span class="slider-action">
                                         <a class="btn btn-slider animated animate-delay-3 <?php echo $slider['btn_animation']; ?>" href="<?php echo $slider['btn_link']['url']; ?>"> <?php echo $slider['btn_text']; ?>
                                         </a>
                                     </span>
-                     
+                                    <?php endif; ?>    
                                 </div>
                             </div>
 
