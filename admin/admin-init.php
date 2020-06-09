@@ -296,7 +296,7 @@ class Widgetkit_Admin
 
         $this->widgetkit_get_settings = get_option( 'widgetkit_save_settings', $this->widgetkit_default_settings );
         $this->widgetkit_get_woo_settings = get_option( 'widgetkit_save_woo_settings', $this->widgetkit_woo_settings );
-        $this->widgetkit_get_woo_single_settings = get_option( 'widgetkit_save_woo_settings', $this->widgetkit_woo_single_settings );
+        $this->widgetkit_get_woo_single_settings = get_option( 'widgetkit_save_woo_single_settings', $this->widgetkit_woo_single_settings );
         $this->widgetkit_get_ld_settings = get_option( 'widgetkit_save_ld_settings', $this->widgetkit_ld_settings );
         $this->widgetkit_get_lp_settings = get_option( 'widgetkit_save_lp_settings', $this->widgetkit_lp_settings );
         $this->widgetkit_get_sensei_settings = get_option( 'widgetkit_save_sensei_settings', $this->widgetkit_sensei_settings );
@@ -884,84 +884,84 @@ class Widgetkit_Admin
                                                 <div class="woo-elements woo-single-elements">
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Thumbnail', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> ">
                                                             <input type="checkbox" id="wke-woo-single-product-thumbnail" name="wke-woo-single-product-thumbnail" <?php checked(1, $this->widgetkit_get_woo_single_settings['wke-woo-single-product-thumbnail'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Title', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> ">
                                                             <input type="checkbox" id="wke-woo-single-product-title" name="wke-woo-single-product-title" <?php checked(1, $this->widgetkit_get_woo_single_settings['wke-woo-single-product-title'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Price', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
                                                             <input type="checkbox" id="wke-woo-single-product-price" name="wke-woo-single-product-price" <?php checked(1, $this->widgetkit_get_woo_single_settings['wke-woo-single-product-price'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Short Description', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
                                                             <input type="checkbox" id="wke-woo-single-product-short-description" name="wke-woo-single-product-short-description" <?php checked(1, $this->widgetkit_get_woo_single_settings['wke-woo-single-product-short-description'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Stock Status', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
                                                             <input type="checkbox" id="wke-woo-single-product-stock-status" name="wke-woo-single-product-stock-status" <?php checked(1, $this->widgetkit_get_woo_single_settings['wke-woo-single-product-stock-status'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Rating', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
                                                             <input type="checkbox" id="wke-woo-single-product-rating" name="wke-woo-single-product-rating" <?php checked(1, $this->widgetkit_get_woo_single_settings['wke-woo-single-product-rating'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Cart Button', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
                                                             <input type="checkbox" id="wke-woo-single-product-cart-button" name="wke-woo-single-product-cart-button" <?php checked(1, $this->widgetkit_get_woo_single_settings['wke-woo-single-product-cart-button'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('SKU', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
                                                             <input type="checkbox" id="wke-woo-single-product-sku" name="wke-woo-single-product-sku" <?php checked(1, $this->widgetkit_get_woo_single_settings['wke-woo-single-product-sku'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Categories', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
                                                             <input type="checkbox" id="wke-woo-single-product-categories" name="wke-woo-single-product-categories" <?php checked(1, $this->widgetkit_get_woo_single_settings['wke-woo-single-product-categories'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Additional Information', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
                                                             <input type="checkbox" id="wke-woo-single-product-additional-information" name="wke-woo-single-product-additional-information" <?php checked(1, $this->widgetkit_get_woo_single_settings['wke-woo-single-product-additional-information'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Review', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> ">
                                                             <input type="checkbox" id="wke-woo-single-product-review" name="wke-woo-single-product-review" <?php checked(1, $this->widgetkit_get_woo_single_settings['wke-woo-single-product-review'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
                                                     </div>
                                                     <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                         <?php echo __('Related Product', 'widgetkit-for-elementor'); ?>
-                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?> <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
                                                             <input type="checkbox" id="wke-woo-single-product-related-product" name="wke-woo-single-product-related-product" <?php checked(1, $this->widgetkit_get_woo_single_settings['wke-woo-single-product-related-product'], $this->pro_enable_status) ?>>
                                                             <span class="rectangle round"></span>
                                                         </label>
@@ -1481,7 +1481,7 @@ class Widgetkit_Admin
             'wke-woo-categories' => intval($settings['wke-woo-categories'] ? 1 : 0),
             'wke-woo-recent-product' => intval($settings['wke-woo-recent-product'] ? 1 : 0),
         ];
-        $this->$wk_woo_single_settings = [
+        $this->wk_woo_single_settings = [
             'wke-woo-single-product-title' => intval($settings['wke-woo-single-product-title'] ? 1 : 0),
             'wke-woo-single-product-price' => intval($settings['wke-woo-single-product-price'] ? 1 : 0),
             'wke-woo-single-product-short-description' => intval($settings['wke-woo-single-product-short-description'] ? 1 : 0),
