@@ -1,14 +1,8 @@
 <?php
 // Silence is golden.
-
     $settings = $this->get_settings();
     $id = $this->get_id();
-
-
-
 ?>
-
-
     <!-- Animation Slider start -->
     <section id="tgx-hero-unit" class="tgx-slider-2">
         <div class="row">
@@ -141,9 +135,6 @@
             $('body').addClass('wk-slider-2');
         };
        });
-
-
-
 </script>
 
 

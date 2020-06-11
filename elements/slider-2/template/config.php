@@ -44,6 +44,7 @@ class wkfe_slider_2 extends Widget_Base {
             'widgetkit_bs',
             'owl-css',
             'animate-css',
+            'fontawesome',
             'widgetkit_main',
         ];
     }
