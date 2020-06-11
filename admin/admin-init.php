@@ -1261,6 +1261,11 @@ class Widgetkit_Admin
 
                                             <div class="wk-changelog-list">
                                                 <div class="wk-changes">
+                                                    <ul class="version version-2.3.4 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                                                        <li class="release-version-date"><h4>2.3.4</h4><span>11-06-2020</span></li>
+                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Fix button markup if there is no button text for slider content widget.</li>
+                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Fix Font Awesome Icon not loading in slider content element.</li>
+                                                    </ul>
                                                     <ul class="version version-2.3.3 wk-background-muted wk-padding-small wk-margin-small-bottom">
                                                         <li class="release-version-date"><h4>2.3.3</h4><span>31-05-2020</span></li>
                                                         <li><span class="wk-text-bugfix">Bug Fix </span> – Fix Pricing Tab Element selected tab.</li>
