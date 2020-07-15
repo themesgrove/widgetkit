@@ -58,6 +58,7 @@ class WKFE_Elements{
             'widget-hover-image',
             'widget-feature-box',
 
+            'widget-search',
             'widget-social-share-animation',
             'widget-social-share-collapse',
 
@@ -157,6 +158,9 @@ class WKFE_Elements{
             require_once WK_PATH . '/elements/pros-cons/widget.php';
         }
 
+        if( $check_component_active['widget-search'] ) {
+            require_once WK_PATH . '/elements/search/widget.php';
+        }
         if( $check_component_active['widget-slider-animation'] ) {
             require_once WK_PATH . '/elements/slider-1/widget.php';
         }

@@ -1,0 +1,39 @@
+.wkfe-search{
+    .wkfe-search-wrapper{
+        .click-handler{
+            cursor: pointer;
+        }
+        position: relative;
+        .wkfe-search-form-wrapper{
+            position: absolute;
+            right:0;
+            top:20px;
+            opacity:0;
+            transition:all 0.3s ease;
+            z-index:-1;
+            display:inline-block;
+            form{
+                display:flex;
+                align-items:center;
+                justify-content: center;
+                input[type="text"]{
+                    &:focus{
+                        outline:none;
+                    }
+                    border-radius:2px 0px 0px 2px;
+                }
+                input[type="submit"]{
+                    border-radius:0px 2px 2px 0px;
+                    padding:15px 25px;
+                }
+            }
+        }
+        .wkfe-search-form-wrapper.active{
+            position: absolute;
+            right:0;
+            top:30px;
+            opacity:1;
+            z-index:9;
+        }
+    }
+}

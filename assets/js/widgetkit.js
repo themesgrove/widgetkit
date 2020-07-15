@@ -114,6 +114,15 @@ jQuery(document).ready(function($){
     window.open(tweetUrl, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=100,width=720,height=500");
   });
 
+  /**
+   * search
+   */
+  $(".wkfe-search .click-handler").on('click', function(e){
+    var parentID = $(this).parent().attr("id");
+    $("#"+parentID).find('.wkfe-search-form-wrapper').toggleClass('active');
+    // alert(parentID);
+  });
+
 // end of wrapper function  
 });
 

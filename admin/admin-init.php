@@ -13,6 +13,7 @@ class Widgetkit_Admin
         'widget-pricing-single',
         'widget-pricing-icon',
         'widget-pricing-tab',
+        'widget-search',
 
         'widget-testimonial',
 
@@ -644,6 +645,16 @@ class Widgetkit_Admin
                                                 </div>
                                             </div>
 
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo __('Search', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-search" name="widget-search" <?php checked(1, $this->widgetkit_get_settings['widget-search'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                    <!-- <div class="wk-position-top-left wk-label">Pro</div> -->
+                                                </div>
+                                            </div>
                                             <div>
                                                 <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                     <?php echo __('Slider Animation', 'widgetkit-for-elementor'); ?>
@@ -1397,6 +1408,8 @@ class Widgetkit_Admin
         $this->widgetkit_settings = [
             // Slider Animation
             'widget-slider-animation' => intval($settings['widget-slider-animation'] ? 1 : 0),
+            // search
+            'widget-search' => intval($settings['widget-search'] ? 1 : 0),
             // Slider Content Animation
             'widget-slider-content-animation' => intval($settings['widget-slider-content-animation'] ? 1 : 0),
             // Slider Box Animation
