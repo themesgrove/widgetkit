@@ -129,7 +129,17 @@ class wkfe_site_social extends Widget_Base {
                 'type'    => Controls_Manager::TEXT,
                 'default' => esc_html__( '#', 'widgetkit-for-elementor' ),
             ]
-        );
+		);
+		$repeater->add_control(
+			'site_social_platform_hover_color',
+			[
+				'label' => __( 'Hover Color', 'widgetkit-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .wkfe-site-social .wkfe-site-social-platform-wrapper a:hover' => 'color: {{VALUE}}',
+				],
+			]
+		);
 
         $this->add_control(
             'site_social_default_list',
@@ -140,14 +150,17 @@ class wkfe_site_social extends Widget_Base {
                     [
                         'social_icon_picker' => esc_html__( 'fa fa-facebook', 'widgetkit-for-elementor' ),
                         'social_link' => esc_html__( '#', 'widgetkit-for-elementor' ),
+                        'site_social_platform_hover_color' => esc_html__( '#3b5999', 'widgetkit-for-elementor' ),
                     ],
                     [
-                        'social_icon_picker' => esc_html__( 'fa fa-twitter', 'widgetkit-for-elementor' ),
+						'social_icon_picker' => esc_html__( 'fa fa-twitter', 'widgetkit-for-elementor' ),
                         'social_link' => esc_html__( '#', 'widgetkit-for-elementor' ),
+						'site_social_platform_hover_color' => esc_html__( '#55acee', 'widgetkit-for-elementor' ),
                     ],
                     [
-                        'social_icon_picker' => esc_html__( 'fa fa-youtube', 'widgetkit-for-elementor' ),
+						'social_icon_picker' => esc_html__( 'fa fa-youtube', 'widgetkit-for-elementor' ),
                         'social_link' => esc_html__( '#', 'widgetkit-for-elementor' ),
+						'site_social_platform_hover_color' => esc_html__( '#cd201f', 'widgetkit-for-elementor' ),
                     ],
                 ],
                 // 'title_field' => '{{{ social_icon_picker }}}',
@@ -322,8 +335,9 @@ class wkfe_site_social extends Widget_Base {
 				[
 					'label' => __( 'Color', 'widgetkit-pro' ),
 					'type' => Controls_Manager::COLOR,
+					'default' => "#131418",
 					'selectors' => [
-						'{{WRAPPER}} .wkfe-site-social .wkfe-site-social-platform-wrapper a' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .wkfe-site-social .wkfe-site-social-platform-wrapper a' => 'color: {{VALUE}} !important',
 					],
 				]
 			);

@@ -4,6 +4,7 @@
     $site_social_default_list = widgetkit_for_elementor_array_get($settings, 'site_social_default_list');
     $site_social_icon_alignment = widgetkit_for_elementor_array_get($settings, 'site_social_icon_alignment');
     $site_social_platform_position = widgetkit_for_elementor_array_get($settings, 'site_social_platform_position');
+    $site_social_platform_icon_color = widgetkit_for_elementor_array_get($settings, 'site_social_platform_icon_color');
 
 ?>
 
@@ -14,8 +15,9 @@
                 <div class="social-platforms">
                     <?php 
                         foreach($site_social_default_list as $site_social):
+                            $site_social_hover_color = $site_social["site_social_platform_hover_color"];
                             ?>
-                                <a href="<?php echo $site_social['social_link'];?>"><i class="<?php echo $site_social['social_icon_picker'];?>"></i></a>
+                                <a style="color: <?php echo $site_social_platform_icon_color; ?>" onMouseOver="this.style.color='<?php echo $site_social_hover_color; ?>'" onMouseOut="this.style.color='<?php echo $site_social_platform_icon_color; ?>'" href="<?php echo $site_social['social_link'];?>"><i class="<?php echo $site_social['social_icon_picker'];?>"></i></a>
                             <?php 
                         endforeach;
                     ?>
