@@ -119,6 +119,7 @@ jQuery(document).ready(function($){
    */
   $(".wkfe-search .click-handler").on('click', function(e){
     var parentID = $(this).parent().attr("id");
+    $(this).toggleClass('active');
     $("#"+parentID).find('.wkfe-search-form-wrapper').toggleClass('active');
   });
 

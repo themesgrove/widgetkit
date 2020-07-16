@@ -179,7 +179,7 @@ class wkfe_search extends Widget_Base {
                 $this->start_controls_tab(
                     'search_icon_style_hover',
                     [
-                        'label' => __('Hover', 'widgetkit-pro'),
+                        'label' => __('Hover/Active', 'widgetkit-pro'),
                     ]
                 );
 					$this->add_control(
@@ -189,16 +189,18 @@ class wkfe_search extends Widget_Base {
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-search .click-handler:hover' => 'color: {{VALUE}}',
+								'{{WRAPPER}} .wkfe-search .click-handler.active' => 'color: {{VALUE}}',
 							],
 						]
 					);
 					$this->add_control(
-						'search_icn_hover_background_color',
+						'search_icon_hover_background_color',
 						[
 							'label' => __( 'Background', 'widgetkit-pro' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-search .click-handler:hover' => 'background: {{VALUE}} !important',
+								'{{WRAPPER}} .wkfe-search .click-handler.active' => 'background: {{VALUE}} !important',
 							],
 						]
 					);
@@ -263,7 +265,35 @@ class wkfe_search extends Widget_Base {
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
-
+			$this->add_control(
+				'search_box_hover_background_color',
+				[
+					'label' => __( 'Background', 'widgetkit-pro' ),
+					'type' => Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper' => 'background: {{VALUE}} !important',
+					],
+				]
+			);
+			$this->add_group_control(
+                Group_Control_Border::get_type(), 
+                [
+                    'name'          => 'search_box_border',
+                    'selector'      => '{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper',
+                ]
+			);
+			// icon padding 
+			$this->add_responsive_control(
+                'search_box_padding',
+                [
+                    'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
+                    'type'  => Controls_Manager::DIMENSIONS,
+                    'size_units' => [ 'px', '%' ],
+                    'selectors'  => [
+                        '{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+                ]
+            );
 			/**
              * Input
              */

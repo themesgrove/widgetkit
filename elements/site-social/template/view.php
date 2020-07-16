@@ -1,6 +1,6 @@
 <?php
     $settings = $this->get_settings();
-    $tsocial_icon_picker_for_handleritle = widgetkit_for_elementor_array_get($settings, 'social_icon_picker_for_handler');
+    $social_icon_picker_for_handler = widgetkit_for_elementor_array_get($settings, 'social_icon_picker_for_handler');
     $site_social_default_list = widgetkit_for_elementor_array_get($settings, 'site_social_default_list');
     $site_social_icon_alignment = widgetkit_for_elementor_array_get($settings, 'site_social_icon_alignment');
     $site_social_platform_position = widgetkit_for_elementor_array_get($settings, 'site_social_platform_position');
@@ -9,7 +9,7 @@
 
     <div class="wkfe-site-social">
         <div id="wkfe-site-social-<?php echo $this->get_id(); ?>" class="wkfe-site-social-wrapper wkfe-site-social-<?php echo $this->get_id(); ?>">
-            <span class="click-handler"> <i class="<?php echo $tsocial_icon_picker_for_handleritle['value'];?>"></i> </span>
+            <span class="click-handler"> <i class="<?php echo $social_icon_picker_for_handler['value'];?>"></i> </span>
             <div class="<?php echo $site_social_icon_alignment; ?> wkfe-site-social-platform-wrapper">
                 <div class="social-platforms">
                     <?php 

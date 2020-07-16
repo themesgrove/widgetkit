@@ -2,11 +2,11 @@
     .wkfe-search-wrapper{
         .click-handler{
             cursor: pointer;
+            display:inline-block;
         }
         position: relative;
         .wkfe-search-form-wrapper{
             position: absolute;
-            right:0;
             top:20px;
             opacity:0;
             transition:all 0.3s ease;
@@ -28,9 +28,17 @@
                 }
             }
         }
-        .wkfe-search-form-wrapper.active{
-            position: absolute;
+        .wkfe-search-form-wrapper.left{
+            left:0;
+        }
+        .wkfe-search-form-wrapper.center{
+            left:0;
             right:0;
+        }
+        .wkfe-search-form-wrapper.right{
+            right:0;
+        }
+        .wkfe-search-form-wrapper.active{
             top:30px;
             opacity:1;
             z-index:9;
