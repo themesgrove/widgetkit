@@ -59,6 +59,7 @@ class WKFE_Elements{
             'widget-feature-box',
 
             'widget-search',
+            'widget-site-social',
             'widget-social-share-animation',
             'widget-social-share-collapse',
 
@@ -160,6 +161,9 @@ class WKFE_Elements{
 
         if( $check_component_active['widget-search'] ) {
             require_once WK_PATH . '/elements/search/widget.php';
+        }
+        if( $check_component_active['widget-site-social'] ) {
+            require_once WK_PATH . '/elements/site-social/widget.php';
         }
         if( $check_component_active['widget-slider-animation'] ) {
             require_once WK_PATH . '/elements/slider-1/widget.php';

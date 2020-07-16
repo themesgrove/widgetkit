@@ -14,6 +14,7 @@ class Widgetkit_Admin
         'widget-pricing-icon',
         'widget-pricing-tab',
         'widget-search',
+        'widget-site-social',
 
         'widget-testimonial',
 
@@ -650,6 +651,16 @@ class Widgetkit_Admin
                                                     <?php echo __('Search', 'widgetkit-for-elementor'); ?>
                                                     <label class="switch">
                                                         <input type="checkbox" id="widget-search" name="widget-search" <?php checked(1, $this->widgetkit_get_settings['widget-search'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                    <!-- <div class="wk-position-top-left wk-label">Pro</div> -->
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo __('Site Social', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-site-social" name="widget-site-social" <?php checked(1, $this->widgetkit_get_settings['widget-site-social'], true) ?>>
                                                         <span class="rectangle round"></span>
                                                     </label>
                                                     <!-- <div class="wk-position-top-left wk-label">Pro</div> -->
@@ -1410,6 +1421,8 @@ class Widgetkit_Admin
             'widget-slider-animation' => intval($settings['widget-slider-animation'] ? 1 : 0),
             // search
             'widget-search' => intval($settings['widget-search'] ? 1 : 0),
+            // widget-site-social
+            'widget-site-social' => intval($settings['widget-site-social'] ? 1 : 0),
             // Slider Content Animation
             'widget-slider-content-animation' => intval($settings['widget-slider-content-animation'] ? 1 : 0),
             // Slider Box Animation

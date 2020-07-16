@@ -120,7 +120,15 @@ jQuery(document).ready(function($){
   $(".wkfe-search .click-handler").on('click', function(e){
     var parentID = $(this).parent().attr("id");
     $("#"+parentID).find('.wkfe-search-form-wrapper').toggleClass('active');
-    // alert(parentID);
+  });
+
+  /**
+   * site social
+   */
+  $(".wkfe-site-social .click-handler").on('click', function(e){
+    var parentID = $(this).parent().attr("id");
+    $(this).toggleClass('active');
+    $("#"+parentID).find('.wkfe-site-social-platform-wrapper').toggleClass('active');
   });
 
 // end of wrapper function  

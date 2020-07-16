@@ -1,0 +1,47 @@
+.wkfe-site-social{
+    .wkfe-site-social-wrapper{
+        .click-handler{
+            cursor: pointer;
+            display:inline-block;
+        }
+        position: relative;
+        .wkfe-site-social-platform-wrapper{
+            position: absolute;
+            top:20px;
+            opacity:0;
+            transition:all 0.3s ease;
+            z-index:-1;
+            display:inline-block;
+            .socail-platforms{
+                display:flex;
+                align-items:center;
+                justify-content: center;
+                input[type="text"]{
+                    &:focus{
+                        outline:none;
+                    }
+                    border-radius:2px 0px 0px 2px;
+                }
+                input[type="submit"]{
+                    border-radius:0px 2px 2px 0px;
+                    padding:15px 25px;
+                }
+            }
+        }
+        .wkfe-site-social-platform-wrapper.left{
+            left:0;
+        }
+        .wkfe-site-social-platform-wrapper.center{
+            left:0;
+            right:0;
+        }
+        .wkfe-site-social-platform-wrapper.right{
+            right:0;
+        }
+        .wkfe-site-social-platform-wrapper.active{
+            top:30px;
+            opacity:1;
+            z-index:9;
+        }
+    }
+}
