@@ -60,9 +60,20 @@ class wkfe_search extends Widget_Base {
 	$this->start_controls_section(
 		'section_text_content',
 		[
-			'label' => esc_html__( 'Position', 'widgetkit-for-elementor' ),
+			'label' => esc_html__( 'Icon', 'widgetkit-for-elementor' ),
 		]
 	);
+		$this->add_control(
+			'search_icon_for_handler',
+			[
+				'label' => esc_html__( 'Icon', 'widgetkit-for-elementor' ),
+				'type'              => Controls_Manager::ICONS,
+				'default'    =>  [
+					'value'     => 'fa fa-search',
+				],
+				'label_block'   => true,
+			]
+		);
 
 		$this->add_responsive_control(
 			'search_icon_alignment',
