@@ -117,19 +117,31 @@ jQuery(document).ready(function($){
   /**
    * search
    */
-  $(".wkfe-search .click-handler").on('click', function(e){
+  $(".wkfe-search .search-click-handler").on('click', function(e){
     var parentID = $(this).parent().attr("id");
     $(this).toggleClass('active');
     $("#"+parentID).find('.wkfe-search-form-wrapper').toggleClass('active');
+    if($('.wkfe-site-social .wkfe-site-social-platform-wrapper').hasClass('active')){
+      $('.wkfe-site-social .wkfe-site-social-platform-wrapper').removeClass('active');
+    }
+    if($('.wkfe-site-social .site-social-click-handler').hasClass('active')){
+      $('.wkfe-site-social .site-social-click-handler').removeClass('active');
+    }
   });
 
   /**
    * site social
    */
-  $(".wkfe-site-social .click-handler").on('click', function(e){
+  $(".wkfe-site-social .site-social-click-handler").on('click', function(e){
     var parentID = $(this).parent().attr("id");
     $(this).toggleClass('active');
     $("#"+parentID).find('.wkfe-site-social-platform-wrapper').toggleClass('active');
+    if($('.wkfe-search .wkfe-search-form-wrapper').hasClass('active')){
+      $('.wkfe-search .wkfe-search-form-wrapper').removeClass('active');
+    }
+    if($('.wkfe-search .search-click-handler').hasClass('active')){
+      $('.wkfe-search .search-click-handler').removeClass('active');
+    }
   });
 
 // end of wrapper function  

@@ -1,4 +1,5 @@
 <?php
+    use Elementor\Icons_Manager;
     $settings = $this->get_settings();
     $social_icon_picker_for_handler = widgetkit_for_elementor_array_get($settings, 'social_icon_picker_for_handler');
     $site_social_default_list = widgetkit_for_elementor_array_get($settings, 'site_social_default_list');
@@ -10,7 +11,9 @@
 
     <div class="wkfe-site-social">
         <div id="wkfe-site-social-<?php echo $this->get_id(); ?>" class="wkfe-site-social-wrapper wkfe-site-social-<?php echo $this->get_id(); ?>">
-            <span class="click-handler"> <i class="<?php echo $social_icon_picker_for_handler['value'];?>"></i> </span>
+            <div class="site-social-click-handler click-handler"> 
+                <?php Icons_Manager::render_icon( $settings['social_icon_picker_for_handler'], [ 'aria-hidden' => 'true', 'class' => 'social-handler-icon' ] ); ?>
+            </div>
             <div class="<?php echo $site_social_icon_alignment; ?> wkfe-site-social-platform-wrapper">
                 <div class="social-platforms">
                     <?php 

@@ -3,6 +3,9 @@
         .click-handler{
             cursor: pointer;
             display:inline-block;
+            svg{
+                height:auto;
+            }
         }
         position: relative;
         .wkfe-site-social-platform-wrapper{

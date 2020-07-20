@@ -150,6 +150,26 @@ class wkfe_search extends Widget_Base {
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
+			$this->add_control(
+				'search_handler_icon_size',
+				[
+					'label'   => esc_html__( 'Size', 'widgetkit-for-elementor' ),
+					'type'    => Controls_Manager::SLIDER,
+					'default' => [
+						'size' =>16,
+					],
+					'range'  => [
+						'px' => [
+							'min' => 0,
+							'max' => 100,
+						],
+					],
+					'selectors' => [
+						'{{WRAPPER}} .wkfe-search .search-click-handler' => 'font-size: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .wkfe-search .search-click-handler svg' => 'width: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
 			/**
              * tabs normal
              */
