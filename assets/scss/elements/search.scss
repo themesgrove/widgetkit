@@ -46,7 +46,7 @@
         }
         .wkfe-search-form-wrapper.active{
             top:30px;
-            opacity:1;
+            opacity:1 !important;
             z-index:9;
         }
     }

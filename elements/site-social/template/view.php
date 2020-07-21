@@ -14,7 +14,7 @@
             <div class="site-social-click-handler click-handler"> 
                 <?php Icons_Manager::render_icon( $settings['social_icon_picker_for_handler'], [ 'aria-hidden' => 'true', 'class' => 'social-handler-icon' ] ); ?>
             </div>
-            <div class="<?php echo $site_social_icon_alignment; ?> wkfe-site-social-platform-wrapper">
+            <div style="display:none;" class="<?php echo $site_social_icon_alignment; ?> wkfe-site-social-platform-wrapper">
                 <div class="social-platforms">
                     <?php 
                         foreach($site_social_default_list as $site_social):
