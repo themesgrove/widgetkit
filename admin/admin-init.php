@@ -1283,6 +1283,12 @@ class Widgetkit_Admin
 
                                             <div class="wk-changelog-list">
                                                 <div class="wk-changes">
+                                                    <ul class="version version-2.3.5 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                                                        <li class="release-version-date"><h4>2.3.5</h4><span>21-07-2020</span></li>
+                                                        <li><span class="wk-text-success">New </span> – Search Element.</li>
+                                                        <li><span class="wk-text-success">New </span> – Site Social Element.</li>
+                                                        <li><span class="wk-text-improved">Improved </span> – Responsive config added for Content Carousel Element</li>
+                                                    </ul>
                                                     <ul class="version version-2.3.4 wk-background-muted wk-padding-small wk-margin-small-bottom">
                                                         <li class="release-version-date"><h4>2.3.4</h4><span>11-06-2020</span></li>
                                                         <li><span class="wk-text-bugfix">Bug Fix </span> – Fix button markup if there is no button text for slider content widget.</li>
