@@ -69,8 +69,9 @@ class wkfe_content_carousel extends Widget_Base {
         $cat_names = array();
         foreach( $terms as $t ):
             $cat_names[$t->term_id] = $t->name;
-        endforeach;
-
+		endforeach;
+		
+#	region content config
 	$this->start_controls_section(
 		'section_content',
 		[
@@ -407,8 +408,9 @@ class wkfe_content_carousel extends Widget_Base {
 
 
         $this->end_controls_section();
+#	end region content config
 
-
+#	region layout config
 	    $this->start_controls_section(
             'section_layout',
             [
@@ -428,7 +430,7 @@ class wkfe_content_carousel extends Widget_Base {
                     ]
             );
 
-            $this->add_control(
+            $this->add_responsive_control(
                 'item_column',
                 [
                     'label'   => __( 'Number of Colum', 'widgetkit-for-elementor' ),
@@ -441,10 +443,10 @@ class wkfe_content_carousel extends Widget_Base {
                         'center_mode_enable!' => 'yes',
                     ],
                 ]
-            );
+			);
 
 
-	        $this->add_control(
+			$this->add_control(
 	            'column_gap',
 	                [
 	                    'label'       => __( 'Colum Gap', 'widgetkit-for-elementor' ),
@@ -460,124 +462,127 @@ class wkfe_content_carousel extends Widget_Base {
 	        );
 
             $this->add_control(
-                'thumbnail_position',
-                    [
-                        'label' => __( 'Image Position', 'widgetkit-for-elementor' ),
-                        'type' => Controls_Manager::CHOOSE,
-                        'default' => 'top',
-                        'options' => [
-                            'top' => [
-                                'title' => __( 'Top', 'widgetkit-for-elementor' ),
-                                'icon' => 'eicon-v-align-top',
-                            ],
-                            'bottom' => [
-                                'title' => __( 'Bottom', 'widgetkit-for-elementor' ),
-                                'icon' => 'eicon-v-align-bottom',
-                            ],
-                        ],
-                        'toggle' => false,
-                        'separator' => 'before',
-                    ]
-                );
+			'thumbnail_position',
+				[
+					'label' => __( 'Image Position', 'widgetkit-for-elementor' ),
+					'type' => Controls_Manager::CHOOSE,
+					'default' => 'top',
+					'options' => [
+						'top' => [
+							'title' => __( 'Top', 'widgetkit-for-elementor' ),
+							'icon' => 'eicon-v-align-top',
+						],
+						'bottom' => [
+							'title' => __( 'Bottom', 'widgetkit-for-elementor' ),
+							'icon' => 'eicon-v-align-bottom',
+						],
+					],
+					'toggle' => false,
+					'separator' => 'before',
+				]
+			);
 
-	        $this->end_controls_section();
+		$this->end_controls_section();
+#	end region layout config
 
+#	region controls config
+		$this->start_controls_section(
+			'section_controls',
+			[
+				'label' => esc_html__( 'Controls', 'widgetkit-for-elementor' ),
+			]
+		);
 
-	       	$this->start_controls_section(
-	            'section_controls',
-	            [
-	                'label' => esc_html__( 'Controls', 'widgetkit-for-elementor' ),
-	            ]
-	        );
-
-	            $this->add_control(
-	                'set_mode_enable',
-	                    [
-	                        'label'     => esc_html__( 'Sets', 'widgetkit-for-elementor' ),
-	                        'type'      => Controls_Manager::SWITCHER,
-	                        'default'   => 'no',
-	                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-	                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-	                    ]
-	        	);
-
-
-	            $this->add_control(
-	                'autoplay_mode_enable',
-	                    [
-	                        'label'     => esc_html__( 'Autoplay', 'widgetkit-for-elementor' ),
-	                        'type'      => Controls_Manager::SWITCHER,
-	                        'default'   => 'no',
-	                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-	                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-	                    ]
-		        );
+			$this->add_control(
+				'set_mode_enable',
+					[
+						'label'     => esc_html__( 'Sets', 'widgetkit-for-elementor' ),
+						'type'      => Controls_Manager::SWITCHER,
+						'default'   => 'no',
+						'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+						'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
+					]
+			);
 
 
-	            $this->add_control(
-	                'content_interval_option',
-	                [
-	                    'label'   => __( 'Set Interval', 'widgetkit-for-elementor' ),
-	                    'type'    => Controls_Manager::NUMBER,
-	                    'default' => 5000,
-	                    'min'     => 100,
-	                    'max'     => 10000,
-	                    'step'    => 10,
-	                ]
-	            );
+			$this->add_control(
+				'autoplay_mode_enable',
+					[
+						'label'     => esc_html__( 'Autoplay', 'widgetkit-for-elementor' ),
+						'type'      => Controls_Manager::SWITCHER,
+						'default'   => 'no',
+						'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+						'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
+					]
+			);
 
 
-	        $this->end_controls_section();
-
-		    $this->start_controls_section(
-	            'navs_content',
-	                [
-	                    'label' => esc_html__( 'Navigation', 'widgetkit-for-elementor' ),
-	                ]
-	        );
-
-			        $this->add_control(
-		                'content_arrow_heading',
-		                [
-		                    'label' => __( 'Arrow', 'widgetkit-for-elementor' ),
-		                    'type'  => Controls_Manager::HEADING,
-		                    'separator' => 'before',
-		                ]
-		            );
-
-		            $this->add_control(
-		                'arrow_enable',
-		                    [
-		                        'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
-		                        'type'      => Controls_Manager::SWITCHER,
-		                        'default'   => 'no',
-		                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-		                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-		                    ]
-		            );
-					$this->add_control(
-		                'content_nav_heading',
-		                [
-		                    'label' => __( 'Dot', 'widgetkit-for-elementor' ),
-		                    'type'  => Controls_Manager::HEADING,
-		                    'separator' => 'before',
-		                ]
-		            );
-
-			        $this->add_control(
-		                'dot_enable',
-		                    [
-		                        'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
-		                        'type'      => Controls_Manager::SWITCHER,
-		                        'default'   => 'yes',
-		                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-		                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-		                    ]
-		            );
+			$this->add_control(
+				'content_interval_option',
+				[
+					'label'   => __( 'Set Interval', 'widgetkit-for-elementor' ),
+					'type'    => Controls_Manager::NUMBER,
+					'default' => 5000,
+					'min'     => 100,
+					'max'     => 10000,
+					'step'    => 10,
+				]
+			);
 
 
-	        $this->end_controls_section();
+		$this->end_controls_section();
+#	end region content config
 
+#	region naviagation config			
+		$this->start_controls_section(
+			'navs_content',
+				[
+					'label' => esc_html__( 'Navigation', 'widgetkit-for-elementor' ),
+				]
+		);
+
+				$this->add_control(
+					'content_arrow_heading',
+					[
+						'label' => __( 'Arrow', 'widgetkit-for-elementor' ),
+						'type'  => Controls_Manager::HEADING,
+						'separator' => 'before',
+					]
+				);
+
+				$this->add_control(
+					'arrow_enable',
+						[
+							'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
+							'type'      => Controls_Manager::SWITCHER,
+							'default'   => 'no',
+							'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+							'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
+						]
+				);
+				$this->add_control(
+					'content_nav_heading',
+					[
+						'label' => __( 'Dot', 'widgetkit-for-elementor' ),
+						'type'  => Controls_Manager::HEADING,
+						'separator' => 'before',
+					]
+				);
+
+				$this->add_control(
+					'dot_enable',
+						[
+							'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
+							'type'      => Controls_Manager::SWITCHER,
+							'default'   => 'yes',
+							'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+							'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
+						]
+				);
+
+
+		$this->end_controls_section();
+#	end region navigation config
 
 		/**
 		 * Pro control panel 

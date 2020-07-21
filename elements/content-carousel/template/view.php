@@ -7,7 +7,12 @@
                 <?php if ($contents['center_mode_enable'] == 'yes'): ?>
                     <ul class="wk-grid-<?php echo $contents['column_gap']?> wk-slider-items wk-child-width-1-2@s" wk-grid>
                 <?php else: ?>
-                      <ul class="wk-grid-<?php echo $contents['column_gap']?> wk-slider-items wk-child-width-1-<?php echo $contents['item_column'];?>@m wk-child-width-1-2@s wk-child-width-1-<?php echo $contents['item_column'];?>@l" wk-grid>
+                      <ul class="wk-grid-<?php echo $contents['column_gap']?> 
+                      wk-slider-items 
+                      wk-child-width-1-<?php echo $contents['item_column'];?>@l
+                      wk-child-width-1-<?php echo $contents['item_column_tablet'];?>@m 
+                      wk-child-width-1-<?php echo $contents['item_column_mobile'];?>@s" 
+                      wk-grid>
                 <?php endif; ?>
                     <?php if ($contents['item_option'] == 'custom_post'): ?>
                         <?php foreach ( $contents['custom_content'] as $content ) : ?>
