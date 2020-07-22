@@ -349,6 +349,25 @@ class wkfe_site_social extends Widget_Base {
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
+			$this->add_control(
+				'site_social_platforms_icon_size',
+				[
+					'label'   => esc_html__( 'Size', 'widgetkit-for-elementor' ),
+					'type'    => Controls_Manager::SLIDER,
+					'default' => [
+						'size' =>16,
+					],
+					'range'  => [
+						'px' => [
+							'min' => 0,
+							'max' => 100,
+						],
+					],
+					'selectors' => [
+						'{{WRAPPER}} .wkfe-site-social .social-platforms a' => 'font-size: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
 			// color 
 			$this->add_control(
 				'site_social_platform_icon_color',
