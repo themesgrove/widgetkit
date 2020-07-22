@@ -277,7 +277,7 @@ PHP 5.4 or greater.
 = 2.3.5 =
 New – Search Element.
 New – Site Social Element.
-Update - Add Responsive config for Content Carousel Element.  
+Update - Add Responsive config for Content Carousel Element.
 
 = 2.3.4 =
 Fix – Fix button markup if there is no button text for slider content widget.
