@@ -19,11 +19,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class wkfe_search extends Widget_Base {
 
 	public function get_name() {
-		return 'widgetkit-for-elementor-search';
+		return 'widgetkit-pro-search';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Search', 'widgetkit-for-elementor' );
+		return esc_html__( 'Search', 'widgetkit-pro' );
 	}
 
 	public function get_icon() {
@@ -60,13 +60,13 @@ class wkfe_search extends Widget_Base {
 	$this->start_controls_section(
 		'section_text_content',
 		[
-			'label' => esc_html__( 'Icon', 'widgetkit-for-elementor' ),
+			'label' => esc_html__( 'Icon', 'widgetkit-pro' ),
 		]
 	);
 		$this->add_control(
 			'search_icon_for_handler',
 			[
-				'label' => esc_html__( 'Icon', 'widgetkit-for-elementor' ),
+				'label' => esc_html__( 'Icon', 'widgetkit-pro' ),
 				'type'              => Controls_Manager::ICONS,
 				'default'    =>  [
 					'value'     => 'fa fa-search',
@@ -78,20 +78,20 @@ class wkfe_search extends Widget_Base {
 		$this->add_responsive_control(
 			'search_icon_alignment',
 			[
-				'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
+				'label' => esc_html__( 'Alignment', 'widgetkit-pro' ),
 				'type'  => Controls_Manager::CHOOSE,
 				'default'   => 'left',
 				'options' => [
 					'left'    => [
-						'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
+						'title' => esc_html__( 'Left', 'widgetkit-pro' ),
 						'icon'  => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
+						'title' => esc_html__( 'Center', 'widgetkit-pro' ),
 						'icon'  => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
+						'title' => esc_html__( 'Right', 'widgetkit-pro' ),
 						'icon'  => 'fa fa-align-right',
 					],
 				],
@@ -103,7 +103,7 @@ class wkfe_search extends Widget_Base {
 		$this->add_responsive_control(
 			'search_form_position',
 			[
-				'label' => esc_html__( 'Search Form Position', 'widgetkit-for-elementor' ),
+				'label' => esc_html__( 'Search Form Position', 'widgetkit-pro' ),
 				'type'  => Controls_Manager::DIMENSIONS,
 				'allowed_dimensions' => 'vertical',
 				'size_units' => [ 'px', '%' ],
@@ -116,6 +116,33 @@ class wkfe_search extends Widget_Base {
 	$this->end_controls_section();
 # 	end postion region 
 
+# 	start region search form config
+	$this->start_controls_section(
+		'section_text_search_form',
+		[
+			'label' => esc_html__( 'Search Form', 'widgetkit-pro' ),
+		]
+	);
+		$this->add_control(
+			'search_form_input_placeholder',
+				[
+					'label' => esc_html__( 'Input Placeholder', 'widgetkit-pro' ),
+					'type'  => Controls_Manager::TEXT,
+					'default' => esc_html__( 'Search here', 'widgetkit-pro' ),
+				]
+		);
+		$this->add_control(
+			'search_form_input_button_text',
+				[
+					'label' => esc_html__( 'Button', 'widgetkit-pro' ),
+					'type'  => Controls_Manager::TEXT,
+					'default' => esc_html__( 'Search', 'widgetkit-pro' ),
+				]
+		);
+	$this->end_controls_section();
+
+#	end region search form config
+
 	/**
 	 * Pro control panel 
 	 */
@@ -123,18 +150,18 @@ class wkfe_search extends Widget_Base {
 		$this->start_controls_section(
 			'section_widgetkit_pro_box',
 			[
-				'label' => esc_html__( 'Go Premium for more layout & feature', 'widgetkit-for-elementor' ),
+				'label' => esc_html__( 'Go Premium for more layout & feature', 'widgetkit-pro' ),
 			]
 		);
 			$this->add_control(
 				'wkfe_control_go_pro',
 				[
-					'label' => __('Unlock more possibilities', 'widgetkit-for-elementor'),
+					'label' => __('Unlock more possibilities', 'widgetkit-pro'),
 					'type' => Controls_Manager::CHOOSE,
 					'default' => '1',
 					'description' => '<div class="elementor-nerd-box">
-					<div class="elementor-nerd-box-message"> Get the  <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">Pro version</a> of <a href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">WidgetKit</a> for more stunning elements and customization options.</div>
-					<a class="widgetkit-go-pro elementor-nerd-box-link elementor-button elementor-button-default elementor-go-pro" href="https://themesgrove.com/widgetkit-for-elementor/" target="_blank">Go Pro</a>
+					<div class="elementor-nerd-box-message"> Get the  <a href="https://themesgrove.com/widgetkit-pro/" target="_blank">Pro version</a> of <a href="https://themesgrove.com/widgetkit-pro/" target="_blank">WidgetKit</a> for more stunning elements and customization options.</div>
+					<a class="widgetkit-go-pro elementor-nerd-box-link elementor-button elementor-button-default elementor-go-pro" href="https://themesgrove.com/widgetkit-pro/" target="_blank">Go Pro</a>
 					</div>',
 				]
 			);
@@ -146,14 +173,14 @@ class wkfe_search extends Widget_Base {
 		$this->start_controls_section(
 			'section_search_icon_layout',
 			[
-				'label' => esc_html__( 'Icon', 'widgetkit-for-elementor' ),
+				'label' => esc_html__( 'Icon', 'widgetkit-pro' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 			$this->add_control(
 				'search_handler_icon_size',
 				[
-					'label'   => esc_html__( 'Size', 'widgetkit-for-elementor' ),
+					'label'   => esc_html__( 'Size', 'widgetkit-pro' ),
 					'type'    => Controls_Manager::SLIDER,
 					'default' => [
 						'size' =>16,
@@ -292,7 +319,7 @@ class wkfe_search extends Widget_Base {
 		$this->start_controls_section(
 			'search_form_style',
 			[
-				'label' => esc_html__( 'Search Form', 'widgetkit-for-elementor' ),
+				'label' => esc_html__( 'Search Form', 'widgetkit-pro' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -335,37 +362,57 @@ class wkfe_search extends Widget_Base {
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
                 ]
-            );
-			$this->add_group_control(
-                Group_Control_Border::get_type(), 
-                [
-                    'name'          => 'search_input_border',
-                    'selector'      => '{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]',
-                ]
 			);
-			$this->add_control(
-                'search_form_input_border_radius',
-                [
-                    'label' => esc_html__( 'Border Radius', 'widgetkit-pro' ),
-                    'type'  => Controls_Manager::DIMENSIONS,
-                    'size_units' => [ 'px' ],
-                    'selectors'  => [
-                        '{{WRAPPER}}  .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    ],
-                ]
-			);
-			$this->add_responsive_control(
-                'search_input_padding',
-                [
-                    'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
-                    'type'  => Controls_Manager::DIMENSIONS,
-                    'size_units' => [ 'px', '%' ],
-                    'selectors'  => [
-                        '{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					],
-					'separator' => 'before'
-                ]
-			);
+				$this->add_control(
+					'search_form_input_color',
+					[
+						'label' => __( 'Color', 'widgetkit-pro' ),
+						'type' => Controls_Manager::COLOR,
+						'selectors' => [
+							'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'color: {{VALUE}}',
+						],
+					]
+				);
+				$this->add_control(
+					'search_form_input_background_color',
+					[
+						'label' => __( 'Background', 'widgetkit-pro' ),
+						'type' => Controls_Manager::COLOR,
+						'selectors' => [
+							'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'background: {{VALUE}}',
+						],
+					]
+				);
+				$this->add_group_control(
+					Group_Control_Border::get_type(), 
+					[
+						'name'          => 'search_input_border',
+						'selector'      => '{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]',
+					]
+				);
+				$this->add_control(
+					'search_form_input_border_radius',
+					[
+						'label' => esc_html__( 'Border Radius', 'widgetkit-pro' ),
+						'type'  => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px' ],
+						'selectors'  => [
+							'{{WRAPPER}}  .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'search_input_padding',
+					[
+						'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
+						'type'  => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', '%' ],
+						'selectors'  => [
+							'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+						'separator' => 'before'
+					]
+				);
 			/**
              * button
              */
