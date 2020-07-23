@@ -44,6 +44,8 @@ class Widgetkit_Admin
         'wkpro-post-list',
         'wkpro-grid-slider',
         'wkpro-headline-slider',
+        'wkpro-smart-toggle',
+        'wkpro-mobile-menu-toggle',
         'widget-image-compare',
         'widget-tilt-box',
         'widget-contact-form',
@@ -507,6 +509,22 @@ class Widgetkit_Admin
                                                     </label>
                                                 </div>
                                             </div>
+                                            <!-- pro -->
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <span>
+                                                        <?php echo esc_html__('Mobile Menu Toggle', 'widgetkit-for-elementor'); ?>    
+                                                        <span class="pro-text">
+                                                            <?php echo esc_html__('Pro', 'widgetkit-for-elementor'); ?>
+                                                        </span>
+                                                    </span>
+                                                    
+                                                    <label class="switch <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <input type="checkbox" id="wkpro-mobile-menu-toggle" name="wkpro-mobile-menu-toggle" <?php checked(1, $this->widgetkit_get_settings['wkpro-mobile-menu-toggle'], $this->pro_enable_status) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div> 
                                             <div>
                                                 <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                     <?php echo __('Pricing Single', 'widgetkit-for-elementor'); ?>
@@ -694,6 +712,22 @@ class Widgetkit_Admin
                                                     </label>
                                                 </div>
                                             </div>
+                                            <!-- pro -->
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <span>
+                                                        <?php echo esc_html__('Smart Toggle', 'widgetkit-for-elementor'); ?>    
+                                                        <span class="pro-text">
+                                                            <?php echo esc_html__('Pro', 'widgetkit-for-elementor'); ?>
+                                                        </span>
+                                                    </span>
+                                                    
+                                                    <label class="switch <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                        <input type="checkbox" id="wkpro-smart-toggle" name="wkpro-smart-toggle" <?php checked(1, $this->widgetkit_get_settings['wkpro-smart-toggle'], $this->pro_enable_status) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div> 
                                             <div>
                                                 <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                                                     <?php echo esc_html__('Social Share Animation', 'widgetkit-for-elementor'); ?>
@@ -1511,6 +1545,8 @@ class Widgetkit_Admin
             'wkpro-post-list' => intval($settings['wkpro-post-list'] ? 1 : 0),
             'wkpro-grid-slider' => intval($settings['wkpro-grid-slider'] ? 1 : 0),
             'wkpro-headline-slider' => intval($settings['wkpro-headline-slider'] ? 1 : 0),
+            'wkpro-smart-toggle' => intval($settings['wkpro-smart-toggle'] ? 1 : 0),
+            'wkpro-mobile-menu-toggle' => intval($settings['wkpro-mobile-menu-toggle'] ? 1 : 0),
         ];
         $this->wk_woo_settings = [
             'wke-woo-product' => intval($settings['wke-woo-product'] ? 1 : 0),
