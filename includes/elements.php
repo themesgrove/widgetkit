@@ -59,6 +59,7 @@ class WKFE_Elements{
             'widget-feature-box',
 
             'widget-search',
+            'widget-contact',
             'widget-site-social',
             'widget-social-share-animation',
             'widget-social-share-collapse',
@@ -117,6 +118,9 @@ class WKFE_Elements{
         }
         if( $check_component_active['widget-click-tweet'] ) {
             require_once WK_PATH . '/elements/click-tweet/widget.php';
+        }
+        if( $check_component_active['widget-contact'] ) {
+            require_once WK_PATH . '/elements/contact/widget.php';
         }
         if( $check_component_active['widget-contact-form'] ) {
             require_once WK_PATH . '/elements/contact-form/widget.php';

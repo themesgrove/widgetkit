@@ -15,6 +15,7 @@ class Widgetkit_Admin
         'widget-pricing-tab',
         'widget-search',
         'widget-site-social',
+        'widget-contact',
 
         'widget-testimonial',
 
@@ -432,6 +433,15 @@ class Widgetkit_Admin
                                                     <?php echo esc_html__('Click Tweet', 'widgetkit-for-elementor'); ?>
                                                     <label class="switch">
                                                         <input type="checkbox" id="widget-click-tweet" name="widget-click-tweet" <?php checked(1, $this->widgetkit_get_settings['widget-click-tweet'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Contact', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-contact" name="widget-contact" <?php checked(1, $this->widgetkit_get_settings['widget-contact'], true) ?>>
                                                         <span class="rectangle round"></span>
                                                     </label>
                                                 </div>
@@ -1463,6 +1473,8 @@ class Widgetkit_Admin
             'widget-search' => intval($settings['widget-search'] ? 1 : 0),
             // widget-site-social
             'widget-site-social' => intval($settings['widget-site-social'] ? 1 : 0),
+            // widget-contact
+            'widget-contact' => intval($settings['widget-contact'] ? 1 : 0),
             // Slider Content Animation
             'widget-slider-content-animation' => intval($settings['widget-slider-content-animation'] ? 1 : 0),
             // Slider Box Animation

@@ -16,18 +16,18 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class wkfe_search extends Widget_Base {
+class wkfe_contact extends Widget_Base {
 
 	public function get_name() {
-		return 'widgetkit-pro-search';
+		return 'widgetkit-pro-contact';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Search', 'widgetkit-pro' );
+		return esc_html__( 'Contact', 'widgetkit-pro' );
 	}
 
 	public function get_icon() {
-		return 'eicon-search wk-icon';
+		return 'eicon-tel-field wk-icon';
 	}
 
 	public function get_categories() {
@@ -119,7 +119,7 @@ class wkfe_search extends Widget_Base {
 
 # 	start region search form config
 	$this->start_controls_section(
-		'section_text_search_form',
+		'section_text_contact_form',
 		[
 			'label' => esc_html__( 'Search Form', 'widgetkit-pro' ),
 		]
@@ -174,7 +174,7 @@ class wkfe_search extends Widget_Base {
 #	start region search icon style
 	// Content options End
 		$this->start_controls_section(
-			'section_search_icon_layout',
+			'section_contact_icon_layout',
 			[
 				'label' => esc_html__( 'Icon', 'widgetkit-pro' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
@@ -542,7 +542,7 @@ class wkfe_search extends Widget_Base {
 	}
 
 	protected function render() {
-		require WK_PATH . '/elements/search/template/view.php';
+		require WK_PATH . '/elements/contact/template/view.php';
 	}
 
 

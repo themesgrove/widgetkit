@@ -107,7 +107,8 @@ class wkfe_site_social extends Widget_Base {
                 'label' => esc_html__( 'Icon', 'widgetkit-for-elementor' ),
 				'type'              => Controls_Manager::ICONS,
 				'default'    =>  [
-                    'value'     => 'fa fa-share-alt',
+					'value'     => 'fa fa-share-alt',
+					'library'   => 'fa-regular',
                 ],
                 'label_block'   => true,
             ]
