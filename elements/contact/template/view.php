@@ -1,32 +1,29 @@
 <?php
     use Elementor\Icons_Manager;
     $settings = $this->get_settings();
-    $search_icon_alignment = widgetkit_for_elementor_array_get($settings, 'search_icon_alignment');
-    $search_icon_for_handler = widgetkit_for_elementor_array_get($settings, 'search_icon_for_handler');
-    $search_form_input_placeholder = widgetkit_for_elementor_array_get($settings, 'search_form_input_placeholder');
-    $search_form_input_button_text = widgetkit_for_elementor_array_get($settings, 'search_form_input_button_text');
+    $contact_icon_handler = widgetkit_for_elementor_array_get($settings, 'contact_icon_handler');
+    $contact_header = widgetkit_for_elementor_array_get($settings, 'contact_header');
+    $contact_title = widgetkit_for_elementor_array_get($settings, 'contact_title');
+    $contact_content = widgetkit_for_elementor_array_get($settings, 'contact_content');
 ?>
 
-    <div class="wkfe-search">
-        <div id="wkfe-search-<?php echo $this->get_id(); ?>" class="wkfe-search-wrapper wkfe-search-<?php echo $this->get_id(); ?>">
-            <div class="search-click-handler click-handler"> 
-                <?php Icons_Manager::render_icon( $search_icon_for_handler, [ 'aria-hidden' => 'false', 'class' => 'search-handler-icon' ] ); ?>
+    <div class="wkfe-contact">
+        <div id="wkfe-contact-<?php echo $this->get_id(); ?>" class="wkfe-contact-wrapper wkfe-contact-<?php echo $this->get_id(); ?>">
+            <div class="contact-click-handler"> 
+                <?php Icons_Manager::render_icon( $contact_icon_handler, [ 'aria-hidden' => 'false', 'class' => 'contact-handler-icon' ] ); ?>
             </div>
-            <div class="<?php echo $search_icon_alignment; ?> wkfe-search-form-wrapper" style="display:none;">
-                <form action="<?php echo home_url( '/' ); ?>" method="get">
-                    <label class="screen-reader-text" for="search">Search in <?php echo home_url( '/' ); ?></label>
-                    <input placeholder="<?php echo esc_attr__($search_form_input_placeholder); ?>" type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
-                    <input type="submit" id="searchsubmit" value="<?php echo esc_attr__( $search_form_input_button_text ) ?>" />
-                </form>
+            <div class="wkfe-contact-content-wrapper" style="display:block;">
+                <div class="content-header"><?php echo $contact_header; ?></div>
+                <div class="content-title"><?php echo $contact_title; ?></div>
+                <div class="contact-content"><?php echo $contact_content; ?></div>
             </div>
         </div>
-    </div><!-- animation-text -->
+    </div>
 
     <script type="text/javascript">
         jQuery(function($){
-            if(!$('body').hasClass('wkfe-search')){
-                $('body').addClass('wkfe-search');
+            if(!$('body').hasClass('wkfe-contact')){
+                $('body').addClass('wkfe-contact');
             }
         });
-
     </script>

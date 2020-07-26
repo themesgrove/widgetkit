@@ -55,19 +55,6 @@ class wkfe_contact extends Widget_Base {
 
 	protected function _register_controls() {
 
-		// icon picker 
-		// contact details 
-			// header
-			// title
-			// description box for contact details
-
-		// icon style config
-		// title style config - color, typography, border
-		// header style config - color, typography, border
-		// description style config - color, typography
-		// total contact box style config - background color, padding
-
-
 #	region icon picker config start
 	// Content options Start
 	$this->start_controls_section(
@@ -77,12 +64,12 @@ class wkfe_contact extends Widget_Base {
 		]
 	);
 		$this->add_control(
-			'contact_icon_for_handler',
+			'contact_icon_handler',
 			[
 				'label' => esc_html__( 'Icon', 'widgetkit-pro' ),
 				'type'              => Controls_Manager::ICONS,
 				'default'    =>  [
-					'value'     => 'fa fa-search',
+					'value'     => 'fa fa-phone-alt',
 					'library'   => 'fa-regular',
 				],
 				'label_block'   => true,
@@ -103,7 +90,7 @@ class wkfe_contact extends Widget_Base {
 				[
 					'label' => esc_html__( 'Header', 'widgetkit-pro' ),
 					'type'  => Controls_Manager::TEXT,
-					'default' => esc_html__( 'Search here', 'widgetkit-pro' ),
+					'default' => esc_html__( 'Contact Us', 'widgetkit-pro' ),
 				]
 		);
 		$this->add_control(
@@ -111,7 +98,7 @@ class wkfe_contact extends Widget_Base {
 				[
 					'label' => esc_html__( 'Title', 'widgetkit-pro' ),
 					'type'  => Controls_Manager::TEXT,
-					'default' => esc_html__( 'Search', 'widgetkit-pro' ),
+					'default' => esc_html__( '880.132.165.4987', 'widgetkit-pro' ),
 				]
 		);
 		$this->add_control(
@@ -162,6 +149,31 @@ class wkfe_contact extends Widget_Base {
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
+			$this->add_responsive_control(
+				'contact_icon_alignment',
+				[
+					'label'  => esc_html__( 'Alignment', 'widgetkit-pro' ),
+					'type'  => Controls_Manager::CHOOSE,
+					'default' => 'center',
+					'options' => [
+						'left' => [
+							'title' => esc_html__( 'Left', 'widgetkit-pro' ),
+							'icon'  => 'fa fa-align-left',
+						],
+						'center' => [
+							'title' => esc_html__( 'Center', 'widgetkit-pro' ),
+							'icon'  => 'fa fa-align-center',
+						],
+						'right' => [
+							'title' => esc_html__( 'Right', 'widgetkit-pro' ),
+							'icon'  => 'fa fa-align-right',
+						],
+					],
+					'selectors' => [
+						'{{WRAPPER}} .wkfe-contact .contact-click-handler' => 'text-align: {{VALUE}};',
+					],
+				]
+			);
 			$this->add_control(
 				'contact_icon_size',
 				[
@@ -177,8 +189,8 @@ class wkfe_contact extends Widget_Base {
 						],
 					],
 					'selectors' => [
-						'{{WRAPPER}} .wkfe-search .search-click-handler' => 'font-size: {{SIZE}}{{UNIT}};',
-						'{{WRAPPER}} .wkfe-search .search-click-handler svg' => 'width: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .wkfe-contact .contact-click-handler svg' => 'width: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -201,7 +213,7 @@ class wkfe_contact extends Widget_Base {
 							'label' => __( 'Color', 'widgetkit-pro' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
-								'{{WRAPPER}} .wkfe-search .click-handler' => 'color: {{VALUE}}',
+								'{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon' => 'color: {{VALUE}}',
 							],
 						]
 					);
@@ -211,7 +223,7 @@ class wkfe_contact extends Widget_Base {
 							'label' => __( 'Background', 'widgetkit-pro' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
-								'{{WRAPPER}} .wkfe-search .click-handler' => 'background-color: {{VALUE}}',
+								'{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon' => 'background-color: {{VALUE}}',
 							],
 						]
 					);
@@ -231,8 +243,8 @@ class wkfe_contact extends Widget_Base {
 							'label' => __( 'Icon', 'widgetkit-pro' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
-								'{{WRAPPER}} .wkfe-search .click-handler:hover' => 'color: {{VALUE}}',
-								'{{WRAPPER}} .wkfe-search .click-handler.active' => 'color: {{VALUE}}',
+								'{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon:hover' => 'color: {{VALUE}}',
+								'{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon.active' => 'color: {{VALUE}}',
 							],
 						]
 					);
@@ -242,8 +254,8 @@ class wkfe_contact extends Widget_Base {
 							'label' => __( 'Background', 'widgetkit-pro' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
-								'{{WRAPPER}} .wkfe-search .click-handler:hover' => 'background: {{VALUE}} !important',
-								'{{WRAPPER}} .wkfe-search .click-handler.active' => 'background: {{VALUE}} !important',
+								'{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon:hover' => 'background: {{VALUE}} !important',
+								'{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon.active' => 'background: {{VALUE}} !important',
 							],
 						]
 					);
@@ -256,7 +268,7 @@ class wkfe_contact extends Widget_Base {
                 Group_Control_Border::get_type(), 
                 [
                     'name'          => 'contact_icon_border',
-					'selector'      => '{{WRAPPER}} .wkfe-search .click-handler',
+					'selector'      => '{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon',
 					'separator'		=> 'before'
                 ]
 			);
@@ -268,7 +280,7 @@ class wkfe_contact extends Widget_Base {
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
-                        '{{WRAPPER}} .wkfe-search .click-handler' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     ],
                 ]
             );
@@ -280,7 +292,7 @@ class wkfe_contact extends Widget_Base {
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
-                        '{{WRAPPER}} .wkfe-search .click-handler' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 					'separator' => 'before'
                 ]
@@ -293,7 +305,7 @@ class wkfe_contact extends Widget_Base {
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
-                        '{{WRAPPER}} .wkfe-search .click-handler' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     ],
                 ]
             );
@@ -315,7 +327,7 @@ class wkfe_contact extends Widget_Base {
 					'label' => __( 'Color', 'widgetkit-pro' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-header' => 'color: {{VALUE}}',
 					],
 				]
 			);
@@ -324,7 +336,7 @@ class wkfe_contact extends Widget_Base {
 				[
 					'label' => __( 'Typography', 'widgetkit-pro' ),
 					'name' => 'content_header_typography',
-					'selector' => '{{WRAPPER}} .smart-toggle-content .primary-title',
+					'selector' => '{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-header',
 				]
 			);
 			$this->add_control(
@@ -333,7 +345,7 @@ class wkfe_contact extends Widget_Base {
 					'label' => __( 'Background', 'widgetkit-pro' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'background: {{VALUE}}',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-header' => 'background: {{VALUE}}',
 					],
 				]
 			);
@@ -341,7 +353,7 @@ class wkfe_contact extends Widget_Base {
 				Group_Control_Border::get_type(), 
 				[
 					'name'          => 'content_header_border',
-					'selector'      => '{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]',
+					'selector'      => '{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-header',
 				]
 			);
 			$this->add_control(
@@ -351,7 +363,7 @@ class wkfe_contact extends Widget_Base {
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px' ],
 					'selectors'  => [
-						'{{WRAPPER}}  .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}}  .wkfe-contact .wkfe-contact-content-wrapper .content-header' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 				]
 			);
@@ -362,7 +374,7 @@ class wkfe_contact extends Widget_Base {
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'selectors'  => [
-						'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-header' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 					'separator' => 'before'
 				]
@@ -374,7 +386,7 @@ class wkfe_contact extends Widget_Base {
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'selectors'  => [
-						'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-header' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 					'separator' => 'before'
 				]
@@ -396,7 +408,7 @@ class wkfe_contact extends Widget_Base {
 					'label' => __( 'Color', 'widgetkit-pro' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-title' => 'color: {{VALUE}}',
 					],
 				]
 			);
@@ -405,7 +417,7 @@ class wkfe_contact extends Widget_Base {
 				[
 					'label' => __( 'Typography', 'widgetkit-pro' ),
 					'name' => 'content_title_typography',
-					'selector' => '{{WRAPPER}} .smart-toggle-content .primary-title',
+					'selector' => '{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-title',
 				]
 			);
 			$this->add_control(
@@ -414,7 +426,7 @@ class wkfe_contact extends Widget_Base {
 					'label' => __( 'Background', 'widgetkit-pro' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'background: {{VALUE}}',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-title' => 'background: {{VALUE}}',
 					],
 				]
 			);
@@ -422,7 +434,7 @@ class wkfe_contact extends Widget_Base {
 				Group_Control_Border::get_type(), 
 				[
 					'name'          => 'content_title_border',
-					'selector'      => '{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]',
+					'selector'      => '{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-title',
 				]
 			);
 			$this->add_control(
@@ -432,7 +444,7 @@ class wkfe_contact extends Widget_Base {
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px' ],
 					'selectors'  => [
-						'{{WRAPPER}}  .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 				]
 			);
@@ -443,7 +455,7 @@ class wkfe_contact extends Widget_Base {
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'selectors'  => [
-						'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 					'separator' => 'before'
 				]
@@ -455,7 +467,7 @@ class wkfe_contact extends Widget_Base {
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'selectors'  => [
-						'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 					'separator' => 'before'
 				]
@@ -478,7 +490,7 @@ class wkfe_contact extends Widget_Base {
 					'label' => __( 'Color', 'widgetkit-pro' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .contact-content' => 'color: {{VALUE}}',
 					],
 				]
 			);
@@ -487,7 +499,7 @@ class wkfe_contact extends Widget_Base {
 				[
 					'label' => __( 'Typography', 'widgetkit-pro' ),
 					'name' => 'content__typography',
-					'selector' => '{{WRAPPER}} .smart-toggle-content .primary-title',
+					'selector' => '{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .contact-content',
 				]
 			);
 			$this->add_control(
@@ -496,7 +508,7 @@ class wkfe_contact extends Widget_Base {
 					'label' => __( 'Background', 'widgetkit-pro' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'background: {{VALUE}}',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .contact-content' => 'background: {{VALUE}}',
 					],
 				]
 			);
@@ -504,7 +516,7 @@ class wkfe_contact extends Widget_Base {
 				Group_Control_Border::get_type(), 
 				[
 					'name'          => 'content__border',
-					'selector'      => '{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]',
+					'selector'      => '{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .contact-content',
 				]
 			);
 			$this->add_control(
@@ -514,7 +526,7 @@ class wkfe_contact extends Widget_Base {
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px' ],
 					'selectors'  => [
-						'{{WRAPPER}}  .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .contact-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 				]
 			);
@@ -525,7 +537,7 @@ class wkfe_contact extends Widget_Base {
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'selectors'  => [
-						'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .contact-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 					'separator' => 'before'
 				]
@@ -537,7 +549,7 @@ class wkfe_contact extends Widget_Base {
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'selectors'  => [
-						'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .contact-content' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 					'separator' => 'before'
 				]
@@ -554,13 +566,38 @@ class wkfe_contact extends Widget_Base {
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
+			$this->add_responsive_control(
+				'content_alignment',
+				[
+					'label'  => esc_html__( 'Alignment', 'widgetkit-pro' ),
+					'type'  => Controls_Manager::CHOOSE,
+					'default' => 'center',
+					'options' => [
+						'left' => [
+							'title' => esc_html__( 'Left', 'widgetkit-pro' ),
+							'icon'  => 'fa fa-align-left',
+						],
+						'center' => [
+							'title' => esc_html__( 'Center', 'widgetkit-pro' ),
+							'icon'  => 'fa fa-align-center',
+						],
+						'right' => [
+							'title' => esc_html__( 'Right', 'widgetkit-pro' ),
+							'icon'  => 'fa fa-align-right',
+						],
+					],
+					'selectors' => [
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper' => 'text-align: {{VALUE}};',
+					],
+				]
+			);
 			$this->add_control(
 				'contact_box_background_color',
 				[
 					'label' => __( 'Background', 'widgetkit-pro' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper' => 'background: {{VALUE}} !important',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper' => 'background: {{VALUE}} !important',
 					],
 				]
 			);
@@ -572,7 +609,7 @@ class wkfe_contact extends Widget_Base {
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
-                        '{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
                 ]
             );
