@@ -244,7 +244,7 @@ class wkfe_contact extends Widget_Base {
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon:hover' => 'color: {{VALUE}}',
-								'{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon.active' => 'color: {{VALUE}}',
+								'{{WRAPPER}} .wkfe-contact .contact-click-handler .icon-svg-wrapper.active .contact-handler-icon' => 'color: {{VALUE}}',
 							],
 						]
 					);
