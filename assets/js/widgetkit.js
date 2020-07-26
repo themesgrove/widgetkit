@@ -145,6 +145,15 @@ jQuery(document).ready(function($){
         $('.wkfe-search .search-click-handler').removeClass('active');
         }
     });
+    /**
+     * contact 
+     */
+    $('.wkfe-contact .wkfe-contact-content-wrapper').css('display' , 'block');
+    $(".wkfe-contact .contact-click-handler i").on('click', function(e){
+        var parentID = "#wkfe-contact-" + $(this).parent().data("handler") ;
+        $(this).parent().toggleClass('active');
+        $(parentID).find('.wkfe-contact-content-wrapper').toggleClass('active');
+    });
 
 // end of wrapper function  
 });

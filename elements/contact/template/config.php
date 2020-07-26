@@ -313,6 +313,77 @@ class wkfe_contact extends Widget_Base {
 #	end contact icon style
 
 
+#	start contact box style region
+		$this->start_controls_section(
+			'contact_box_style',
+			[
+				'label' => esc_html__( 'Contact Box', 'widgetkit-pro' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+			$this->add_responsive_control(
+				'search_form_position',
+				[
+					'label' => esc_html__( 'Box Position', 'widgetkit-pro' ),
+					'type'  => Controls_Manager::DIMENSIONS,
+					'allowed_dimensions' => 'vertical',
+					'size_units' => [ 'px', '%' ],
+					'selectors'  => [
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper.active' => 'top: {{TOP}}{{UNIT}};',
+					],
+				]
+			);
+			$this->add_responsive_control(
+				'content_alignment',
+				[
+					'label'  => esc_html__( 'Alignment', 'widgetkit-pro' ),
+					'type'  => Controls_Manager::CHOOSE,
+					'default' => 'center',
+					'options' => [
+						'left' => [
+							'title' => esc_html__( 'Left', 'widgetkit-pro' ),
+							'icon'  => 'fa fa-align-left',
+						],
+						'center' => [
+							'title' => esc_html__( 'Center', 'widgetkit-pro' ),
+							'icon'  => 'fa fa-align-center',
+						],
+						'right' => [
+							'title' => esc_html__( 'Right', 'widgetkit-pro' ),
+							'icon'  => 'fa fa-align-right',
+						],
+					],
+					'selectors' => [
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper' => 'text-align: {{VALUE}};',
+					],
+				]
+			);
+			$this->add_control(
+				'contact_box_background_color',
+				[
+					'label' => __( 'Background', 'widgetkit-pro' ),
+					'type' => Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper' => 'background: {{VALUE}} !important',
+					],
+				]
+			);
+			// icon padding 
+			$this->add_responsive_control(
+				'contact_box_padding',
+				[
+					'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
+					'type'  => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', '%' ],
+					'selectors'  => [
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+		$this->end_controls_section();
+#	end contact box style region 
+
+
 # 	start contact header style region
 		$this->start_controls_section(
 			'contact_Header_style',
@@ -555,66 +626,101 @@ class wkfe_contact extends Widget_Base {
 				]
 			);
 		$this->end_controls_section();
-#	end contact title style region
+#	end contact title style 
 
-
-#	start contact box style region
+# 	start triangle style region
 		$this->start_controls_section(
-			'contact_box_style',
+			'contact_triangle_style',
 			[
-				'label' => esc_html__( 'Contact Box', 'widgetkit-pro' ),
+				'label' => esc_html__( 'Triangle', 'widgetkit-pro' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
-			$this->add_responsive_control(
-				'content_alignment',
-				[
-					'label'  => esc_html__( 'Alignment', 'widgetkit-pro' ),
-					'type'  => Controls_Manager::CHOOSE,
-					'default' => 'center',
-					'options' => [
-						'left' => [
-							'title' => esc_html__( 'Left', 'widgetkit-pro' ),
-							'icon'  => 'fa fa-align-left',
-						],
-						'center' => [
-							'title' => esc_html__( 'Center', 'widgetkit-pro' ),
-							'icon'  => 'fa fa-align-center',
-						],
-						'right' => [
-							'title' => esc_html__( 'Right', 'widgetkit-pro' ),
-							'icon'  => 'fa fa-align-right',
-						],
-					],
-					'selectors' => [
-						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper' => 'text-align: {{VALUE}};',
-					],
-				]
-			);
+			
+			
 			$this->add_control(
-				'contact_box_background_color',
+				'triangle_background',
 				[
 					'label' => __( 'Background', 'widgetkit-pro' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper' => 'background: {{VALUE}} !important',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .arrow-up' => 'border-bottom-color: {{VALUE}}',
 					],
 				]
 			);
-			// icon padding 
-			$this->add_responsive_control(
-                'contact_box_padding',
-                [
-                    'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
-                    'type'  => Controls_Manager::DIMENSIONS,
-                    'size_units' => [ 'px', '%' ],
-                    'selectors'  => [
-                        '{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+			
+			$this->add_control(
+				'triangle_size',
+				[
+					'label'   => esc_html__( 'Size', 'widgetkit-pro' ),
+					'type'    => Controls_Manager::SLIDER,
+					'default' => [
+						'size' =>15,
 					],
-                ]
-            );
+					'range'  => [
+						'px' => [
+							'min' => 0,
+							'max' => 100,
+						],
+					],
+					'selectors' => [
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .arrow-up' => 'border-left-width: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .wkfe-contact .arrow-up' => 'border-bottom-width: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper.left .arrow-up' => 'border-right-width: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper.right .arrow-up' => 'border-right-width: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper.center .arrow-up' => 'border-right-width: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+			$this->add_responsive_control(
+				'triangle_top_right',
+				[
+					'label' => esc_html__( 'Position', 'widgetkit-pro' ),
+					'type'  => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', '%' ],
+					'allowed_dimensions' => ['top', 'right'],
+					'selectors'  => [
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .arrow-up.right' => 'top: {{TOP}}{{UNIT}}; right: {{RIGHT}}{{UNIT}};',
+					],
+					'condition' => [
+						'contact_icon_alignment' => 'right'
+					],
+				]
+			);
+			$this->add_responsive_control(
+				'trianle_top_left',
+				[
+					'label' => esc_html__( 'Position', 'widgetkit-pro' ),
+					'type'  => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', '%' ],
+					'allowed_dimensions' => ['top', 'left'],
+					'selectors'  => [
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .arrow-up.left' => 'top: {{TOP}}{{UNIT}}; left: {{LEFT}}{{UNIT}};',
+					],
+					'condition' => [
+						'contact_icon_alignment' => 'left'
+					],
+				]
+			);
+			$this->add_responsive_control(
+				'trianle_top_center',
+				[
+					'label' => esc_html__( 'Position', 'widgetkit-pro' ),
+					'type'  => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', '%' ],
+					'allowed_dimensions' => ['top'],
+					'selectors'  => [
+						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .arrow-up.center' => 'top: {{TOP}}{{UNIT}};',
+					],
+					'condition' => [
+						'contact_icon_alignment' => 'center'
+					],
+				]
+			);
+			
 		$this->end_controls_section();
-#	end contact box style region 
+#	end triangle title style region
+
 
 	}
 
