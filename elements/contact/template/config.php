@@ -113,6 +113,31 @@ class wkfe_contact extends Widget_Base {
 
 #	end contact content config
 
+        
+#   start position config region
+		$this->start_controls_section(
+			'section_control_contact_box_position',
+			[
+				'label' => __('Contact Box Position', 'widgetkit-pro'),
+			]
+		);
+
+			$this->add_control(
+				'contact_box_position',
+				[
+					'label' => __('Position', 'widgetkit-for-elementor'),
+					'type' => Controls_Manager::SELECT,
+					'default' => 'pos-relative',
+					'options' => [
+						'pos-relative' => __('Relative', 'widgetkit-for-elementor'),
+						'pos-absolute' => __('Absolute', 'widgetkit-for-elementor'),
+					],
+				]
+			);
+
+		$this->end_controls_section();
+#   end region position config
+
 #	start pro config for free user
 	/**
 	 * Pro control panel 

@@ -6,6 +6,7 @@
     $contact_header = widgetkit_for_elementor_array_get($settings, 'contact_header');
     $contact_title = widgetkit_for_elementor_array_get($settings, 'contact_title');
     $contact_content = widgetkit_for_elementor_array_get($settings, 'contact_content');
+    $contact_box_position = widgetkit_for_elementor_array_get($settings, 'contact_box_position');
 ?>
 
     <div class="wkfe-contact">
@@ -15,7 +16,7 @@
                     <?php Icons_Manager::render_icon( $contact_icon_handler, [ 'aria-hidden' => 'false', 'class' => 'contact-handler-icon' ] ); ?>
                 </div>
             </div>
-            <div class="<?php echo $contact_icon_alignment; ?> wkfe-contact-content-wrapper" style="display:none;">
+            <div class="<?php echo $contact_icon_alignment; ?> wkfe-contact-content-wrapper <?php echo $contact_box_position; ?>" style="display:none;">
                 <div class=" <?php echo $contact_icon_alignment; ?> arrow-up"></div>
                 <div class="content-header"><?php echo $contact_header; ?></div>
                 <div class="content-title"><?php echo $contact_title; ?></div>
