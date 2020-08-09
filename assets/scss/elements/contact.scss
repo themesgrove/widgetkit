@@ -57,14 +57,16 @@
     .wkfe-contact-content-wrapper.pos-absolute{
         position: fixed;
         top:0;
+        display:none !important;
     }
 
     .wkfe-contact-content-wrapper.active.pos-absolute{
         position: fixed;
-        display:block;
+        display:block !important;
         opacity:1;
         z-index: 99;
         top:45px;
+        display:block;
     }
 
 }

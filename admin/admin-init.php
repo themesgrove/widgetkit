@@ -16,6 +16,7 @@ class Widgetkit_Admin
         'widget-search',
         'widget-site-social',
         'widget-contact',
+        'widget-custom-post-card',
 
         'widget-testimonial',
 
@@ -469,6 +470,15 @@ class Widgetkit_Admin
                                                     <?php echo esc_html__('Countdown', 'widgetkit-for-elementor'); ?>
                                                     <label class="switch">
                                                         <input type="checkbox" id="widget-countdown" name="widget-countdown" <?php checked(1, $this->widgetkit_get_settings['widget-countdown'], true) ?>>
+                                                        <span class="rectangle round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                    <?php echo esc_html__('Custom Post Card', 'widgetkit-for-elementor'); ?>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="widget-custom-post-card" name="widget-custom-post-card" <?php checked(1, $this->widgetkit_get_settings['widget-custom-post-card'], true) ?>>
                                                         <span class="rectangle round"></span>
                                                     </label>
                                                 </div>
@@ -1475,6 +1485,10 @@ class Widgetkit_Admin
             'widget-site-social' => intval($settings['widget-site-social'] ? 1 : 0),
             // widget-contact
             'widget-contact' => intval($settings['widget-contact'] ? 1 : 0),
+            
+            // widget-custom-post-card
+            'widget-custom-post-card' => intval($settings['widget-custom-post-card'] ? 1 : 0),
+
             // Slider Content Animation
             'widget-slider-content-animation' => intval($settings['widget-slider-content-animation'] ? 1 : 0),
             // Slider Box Animation
