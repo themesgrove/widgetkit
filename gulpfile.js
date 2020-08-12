@@ -99,7 +99,7 @@ gulp.task('prepareUikit', () => {
     'mkdir custom && cp ../../assets/libs/uikit/less/custom.less ./custom/',
     'yarn',
     'yarn compile',
-    'yarn prefix -- -p wk',
+    'yarn prefix -p wk',
     'cp ./dist/css/uikit.custom.min.css ../../assets/css/',
     'cp ./dist/js/uikit.min.js ../../assets/js/',
     'cp ./dist/js/uikit-icons.min.js ../../assets/js/',
