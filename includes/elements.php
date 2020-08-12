@@ -58,7 +58,6 @@ class WKFE_Elements{
             'widget-hover-image',
             'widget-feature-box',
 
-            'widget-custom-post-card',
             'widget-search',
             'widget-contact',
             'widget-site-social',
@@ -131,9 +130,6 @@ class WKFE_Elements{
         }
         if( $check_component_active['widget-countdown'] ) {
             require_once WK_PATH . '/elements/countdown/widget.php';
-        }
-        if( $check_component_active['widget-custom-post-card'] ) {
-            require_once WK_PATH . '/elements/custom-post-card/widget.php';
         }
         if( $check_component_active['widget-post-carousel'] ) {
             require_once WK_PATH . '/elements/carousel/widget.php';
