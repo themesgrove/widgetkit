@@ -1328,6 +1328,10 @@ class Widgetkit_Admin
 
                                             <div class="wk-changelog-list">
                                                 <div class="wk-changes">
+                                                    <ul class="version version-2.3.6 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                                                        <li class="release-version-date"><h4>2.3.6</h4><span>12-08-2020</span></li>
+                                                        <li><span class="wk-text-improved">Improved </span> – Optimize resourse loading issue</li>
+                                                    </ul>
                                                     <ul class="version version-2.3.5 wk-background-muted wk-padding-small wk-margin-small-bottom">
                                                         <li class="release-version-date"><h4>2.3.5</h4><span>21-07-2020</span></li>
                                                         <li><span class="wk-text-success">New </span> – Search Element.</li>
