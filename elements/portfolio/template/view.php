@@ -3,6 +3,9 @@
 
     $settings = $this->get_settings();
     $id = $this->get_id();
+    $portfolio_hover_effect = widgetkit_for_elementor_array_get($settings, 'portfolio_hover_effect');
+    $hover_4_action = $portfolio_hover_effect == 'hover_4' ? widgetkit_for_elementor_array_get($settings, 'hover_4_action') : '';
+
 ?>
 
     <div class="tgx-portfolio">
@@ -238,8 +241,17 @@
                                         <img src="<?php echo $portfolio['portfolio_thumb_image']['url'];?>" alt="<?php echo $portfolio['portfolio_title']; ?>">
                                     <?php endif; ?>                                                             
                                 </div><!-- .overlay-spin -->
-                                    <div class="portfolio-content text-left">
-                                        <?php if($portfolio['portfolio_full_image']):?>
+                                <div class="portfolio-content text-left <?php echo $hover_4_action; ?>">
+                                    <?php if($portfolio['portfolio_full_image']):?>
+                                        <?php if($hover_4_action == 'demo_link' ): ?>
+                                            <a class="icon-search" href="<?php echo $portfolio['portfolio_demo_link'] ;?>">
+                                                <?php if ($portfolio['portfolio_title']): ?>   
+                                                    <h4 class="title">
+                                                        <?php echo $portfolio['portfolio_title'];?> 
+                                                    </h4>
+                                                <?php endif ?>
+                                            </a>
+                                        <?php else:?>
                                             <a class="icon-search" data-rel="lightcase:slideshow" 
                                                 href="<?php echo $portfolio['portfolio_full_image']['url'];?>">
                                                 <?php if ($portfolio['portfolio_title']): ?>   
@@ -248,10 +260,9 @@
                                                     </h4>
                                                 <?php endif ?>
                                             </a>
-                                        <?php endif; ?>
-                                    </div> <!-- /.portfolio-btn -->                      
-
-
+                                        <?php endif;?>
+                                    <?php endif; ?>
+                                </div> <!-- /.portfolio-btn -->                      
                             </div><!-- /.effcet 4 overlay -->
 
 

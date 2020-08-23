@@ -271,6 +271,21 @@ class wkfe_portfolio extends Widget_Base {
 					],
 				]
 		);
+		$this->add_control(
+			'hover_4_action',
+				[
+					'label'     => esc_html__( 'On Click Action', 'widgetkit-for-elementor' ),
+					'type'      => Controls_Manager::SELECT,
+					'default'   => 'image_popup',
+					'options'   => [
+						'image_popup'     => esc_html__( 'Image Popup', 'widgetkit-for-elementor' ),
+						'demo_link'     => esc_html__( 'Demo Link', 'widgetkit-for-elementor' ),
+					],
+					'condition' => [
+						'portfolio_hover_effect' => 'hover_4'
+					]
+				]
+		);
 
 		$this->end_controls_section();
 
