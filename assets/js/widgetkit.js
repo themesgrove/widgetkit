@@ -133,7 +133,7 @@ jQuery(document).ready(function($){
     /**
      * site social
      */
-    $('.wkfe-search .wkfe-site-social-platform-wrapper').css('display', 'block');
+    $('.wkfe-site-social .wkfe-site-social-platform-wrapper').css('display', 'block');
     $(".wkfe-site-social .site-social-click-handler").on('click', function(e){
         var parentID = $(this).parent().attr("id");
         $(this).toggleClass('active');
