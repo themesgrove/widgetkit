@@ -330,6 +330,9 @@ class Widgetkit_Admin
                                     <li><a class="wk-text-danger" href="#"><span class="wk-icon wk-margin-small-right" wk-icon="star"></span> Pro Features</a></li>
                                 <?php endif;?>
                                 <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="file-text"></span>Changelog</a></li>
+                                <?php if ( apply_filters('wkpro_enabled', false)) :?>
+                                    <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="file-text"></span>License</a></li>
+                                <?php endif; ?>
 
                             </ul>
                         </div>
@@ -1433,6 +1436,41 @@ class Widgetkit_Admin
                                             </div>
                                         </div>
                                     </li>
+                                    <?php if (apply_filters('wkpro_enabled', false)) :?>
+                                        <li class="wk-pro-license">
+                                            <div class="wk-padding-remove">
+
+                                                <h2>Activate Your License</h2>
+                                                
+                                                <div class="wk-padding-small wk-background-muted">
+                                                    <div class="wk-card">
+                                                        <div class="wk-card-header"><?php echo esc_html__('Enter your license key here, to activate WPOnepager Pro, and get feature updates, premium support and unlimited access to the template library.', 'widgetkit-for-elementor');?></div>
+                                                        <div class="wk-card-body">
+                                                            <ol>
+                                                                <li> <?php echo esc_html__('Log in to your account to get your license key.', 'widgetkit-for-elementor') ?> </li>
+                                                                <li> <?php echo esc_html__('If you don\'t yet have a license key, get WPOnepager Pro now.', 'widgetkit-for-elementor') ?> </li>
+                                                                <li> <?php echo esc_html__('Copy the license key from your account and paste it below.', 'widgetkit-for-elementor') ?> </li>
+                                                            </ol>
+                                                            <div class="license-checker-wrapper">
+                                                                <?php //wp_nonce_field( 'wk-pro-license' ); ?>
+                                                                <input class="wk-input" type="text" name="license-input" id="license-input">  
+                                                                <button class="verify-button wk-button wk-button-primary">Verify</button>
+                                                            </div>
+                                                            <div class="demo-text">
+                                                                <?php echo esc_html__('Your license key should look something like this: ', 'widgetkit-for-elementor');?>
+                                                                <code>fb351f05958872E193feb37a505a84be</code>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="wk-card">
+                                                        <div class="wk-card-body">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <?php endif; ?>
                                     
                                 </ul>
                             </div>

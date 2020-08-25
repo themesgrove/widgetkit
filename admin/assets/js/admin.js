@@ -45,6 +45,26 @@
 		} );
 
 	} );
+
+	$( '.wk-pro-license .license-checker-wrapper button.verify-button' ).on( 'click', function(e) {
+		e.preventDefault();
+		var wkProLicenseKey = $('.wk-pro-license .license-checker-wrapper input').val();
+		$.ajax( {
+			url: settings.ajaxurl,
+			type: 'post',
+			data: {
+				action: 'widgetkit_check_pro_license_key',
+				license: wkProLicenseKey,
+			},
+            success: function( response ) {
+				console.log(response);
+			},
+			error: function(error) {
+				console.log(error);
+			}
+		} );
+
+	} );
     
 } )(jQuery);
 
