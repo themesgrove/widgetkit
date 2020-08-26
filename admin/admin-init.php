@@ -1453,13 +1453,18 @@ class Widgetkit_Admin
                                                             </ol>
                                                             <div class="license-checker-wrapper">
                                                                 <?php //wp_nonce_field( 'wk-pro-license' ); ?>
-                                                                <input class="wk-input" type="text" name="license-input" id="license-input">  
-                                                                <button class="verify-button wk-button wk-button-primary">Verify</button>
+                                                                <input class="wk-input" type="text" name="license-input" id="license-input" value="<?php echo get_option('wk_pro_license_key') ?: ''; ?>">
+                                                                <?php if( get_option('wk_pro_license_key') ): ?>  
+                                                                    <button class="deactivate-license wk-button wk-button-primary">Deactivate</button>
+                                                                <?php else: ?>  
+                                                                    <button class="activate-license wk-button wk-button-primary">Activate</button>
+                                                                <?php endif;?>  
                                                             </div>
                                                             <div class="demo-text">
                                                                 <?php echo esc_html__('Your license key should look something like this: ', 'widgetkit-for-elementor');?>
                                                                 <code>fb351f05958872E193feb37a505a84be</code>
                                                             </div>
+                                                            <div class="response"></div>
                                                         </div>
                                                     </div>
                                                     <div class="wk-card">

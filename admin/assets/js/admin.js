@@ -46,18 +46,66 @@
 
 	} );
 
-	$( '.wk-pro-license .license-checker-wrapper button.verify-button' ).on( 'click', function(e) {
+	/**
+	 * activate license
+	 */
+	$( '.wk-pro-license .license-checker-wrapper button.activate-license' ).on( 'click', function(e) {
+		
 		e.preventDefault();
 		var wkProLicenseKey = $('.wk-pro-license .license-checker-wrapper input').val();
+		$('.wk-pro-license .response').empty();
+
+		if(wkProLicenseKey === ''){
+			alert('please enter a license');
+			return;
+		}
+		$(this).text('Activating');
+		
 		$.ajax( {
 			url: settings.ajaxurl,
 			type: 'post',
 			data: {
-				action: 'widgetkit_check_pro_license_key',
+				action: 'wk_pro_activate_license_key',
 				license: wkProLicenseKey,
 			},
             success: function( response ) {
-				console.log(response);
+				if('true' == response){
+					$('.wk-pro-license .license-checker-wrapper button.activate-license').text('Activated');
+					location.reload(true);
+				}else{
+					$('.wk-pro-license .license-checker-wrapper button.activate-license').text('Activate');
+					$('.wk-pro-license .response').empty();
+					$('.wk-pro-license .response').append(response);
+				}
+				
+			},
+			error: function(error) {
+				console.log(error);
+			}
+		} );
+
+	} );
+	/**
+	 * deactivate license
+	 */
+	$( '.wk-pro-license .license-checker-wrapper button.deactivate-license' ).on( 'click', function(e) {
+		e.preventDefault();
+		$(this).text('Deactivating');
+		$('.wk-pro-license .response').empty();
+		$.ajax( {
+			url: settings.ajaxurl,
+			type: 'post',
+			data: {
+				action: 'wk_pro_deactivate_license',
+			},
+            success: function( response ) {
+				if('true' == response ){
+					$('.wk-pro-license .license-checker-wrapper button.deactivate-license').text('Deactivated');
+					location.reload(true);
+				}else{
+					$('.wk-pro-license .license-checker-wrapper button.deactivate-license').text('Deactivate');
+					$('.wk-pro-license .response').text(response);
+				}
 			},
 			error: function(error) {
 				console.log(error);
