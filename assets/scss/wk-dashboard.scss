@@ -1,7 +1,4 @@
 /*pro css*/
-// html{
-//     background: transparent !important;
-// }
 .btn-pro {
     padding: 10px 30px;
     border: 1px solid #ed485f;
@@ -559,6 +556,32 @@ input:checked + .rectangle:before {
                             }
                         }
                     }
+                }
+            }
+        }
+        .wk-pro-license{
+            .wk-license-card{
+                ol{
+                    margin:0;
+                    margin-left:15px;
+                    padding:0;
+                }
+                .license-checker-wrapper{
+                    margin:30px 0px;
+                    display:flex;
+                    input#license-input{
+                        width:350px;
+                        height:40px;
+                        border-radius:4px 0px 0px 4px;
+                        margin:0;
+                    }
+                    button{
+                        height:40px;
+                        border-radius:0px 4px 4px 0px;
+                    }
+                }
+                .demo-text{
+
                 }
             }
         }
