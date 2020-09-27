@@ -1330,6 +1330,11 @@ class Widgetkit_Admin
 
                                             <div class="wk-changelog-list">
                                                 <div class="wk-changes">
+                                                    <ul class="version version-2.3.7 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                                                        <li class="release-version-date"><h4>2.3.7</h4><span>27-09-2020</span></li>
+                                                        <li><span class="wk-text-improved">Improved </span> – Dynamic option added for contact element</li>
+                                                        <li><span class="wk-text-improved">Improved </span> – Demo link option  added for full image in filterable portfolio element</li>
+                                                    </ul>
                                                     <ul class="version version-2.3.6 wk-background-muted wk-padding-small wk-margin-small-bottom">
                                                         <li class="release-version-date"><h4>2.3.6</h4><span>12-08-2020</span></li>
                                                         <li><span class="wk-text-improved">Improved </span> – Optimize resourse loading issue</li>
