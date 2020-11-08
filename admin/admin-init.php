@@ -240,7 +240,8 @@ class Widgetkit_Admin
     public function display_settings_pages()
     {
         $js_info = [
-            'ajaxurl' => admin_url('admin-ajax.php')
+            'ajaxurl' => admin_url('admin-ajax.php'),
+            'security_nonce' => wp_create_nonce('ajax-security-nonce')
         ];
         wp_localize_script('widgetkit-elementor-admin-js', 'settings', $js_info);
 
@@ -1527,6 +1528,13 @@ class Widgetkit_Admin
      */
     public function widgetkit_for_elementor_sections_with_ajax()
     {
+        if ( ! wp_verify_nonce( $_REQUEST['security'], 'ajax-security-nonce' ) ) // security_nonce
+        {
+            wp_send_json_error("No dirty business please", 400);
+            return false;
+            die ();
+        }
+
         if (isset($_POST['fields'])) {
             parse_str($_POST['fields'], $settings);
         } else {

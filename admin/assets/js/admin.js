@@ -27,6 +27,7 @@
 			data: {
 				action: 'widgetkit_save_admin_addons_settings',
 				fields: $( 'form#widgetkit-settings' ).serialize(),
+				security: settings.security_nonce
 			},
             success: function( response ) {
 				swal({
@@ -37,10 +38,11 @@
 				});
 			},
 			error: function() {
-				swal(
-				  'Oops...',
-				  'Something Wrong!',
-				);
+				swal({
+					type: 'error',
+					title: 'Bad Request',
+					text: 'No dirty business please !',
+				});
 			}
 		} );
 
