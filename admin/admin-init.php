@@ -1698,9 +1698,13 @@ class Widgetkit_Admin
     public function widgetkit_get_changelog_data(){
         
         $remote_api_data = wp_remote_get($this->api_url);
-        $response_data = wp_remote_retrieve_body($remote_api_data);
-        $data_arr = json_decode($response_data, true);
-        $changes_data = $data_arr['changes'];
+        $changes_data = '';
+
+        if($remote_api_data['response']['code'] == 200){
+            $response_data = wp_remote_retrieve_body($remote_api_data);
+            $data_arr = json_decode($response_data, true);
+            $changes_data = $data_arr['changes'];
+        }
 
         if(NULL === $this->transient_changelog_data){
             set_transient('changelog_data', $changes_data, 0);
