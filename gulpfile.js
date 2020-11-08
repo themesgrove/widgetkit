@@ -75,6 +75,7 @@ gulp.task('copy-resource', gulp.series(['copy-css-from-node-modules', 'copy-js-f
 gulp.task('clean', () => {
   return del([
       'dist/',
+      'widgetkit-for-elementor.zip',
   ]);
 });
 gulp.task('cleanBs', () => {
