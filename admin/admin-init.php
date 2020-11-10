@@ -191,7 +191,7 @@ class Widgetkit_Admin
     /**
      * Register scripts
      */
-    public function widgetkit_for_elementor_admin_page_scripts () {
+    public function widgetkit_for_elementor_admin_page_scripts ($page_slug_hook) {
         wp_enqueue_style( 'widgetkit-admin',  WK_URL.'/dist/css/wk-dashboard.css', array(), WK_VERSION, '' );
         // wp_enqueue_style( 'widgetkit-sweetalert2-css', plugins_url('/assets/css/sweetalert2.min.css', __FILE__ ));
         
@@ -205,7 +205,8 @@ class Widgetkit_Admin
         global $wp;  
         $current_url = add_query_arg(array($_GET), $wp->request);
         $current_url_slug = explode("=", $current_url);
-        if($current_url && ( $current_url_slug[1] === 'widgetkit-settings' || ( $current_url_slug[1] === 'widgetkit-template-library' || $current_url_slug[1] === 'widgetkit-template-library&package' ) ) ){
+        
+        if($current_url && ( 'toplevel_page_widgetkit-settings' === $page_slug_hook || ( 'toplevel_page_widgetkit-template-library' === $page_slug_hook || 'toplevel_page_widgetkit-template-library&package' === $page_slug_hook ) ) ){
             wp_enqueue_style( 'wkkit',  plugins_url('/dist/css/uikit.custom.min.css', dirname(__FILE__)  ));
             wp_enqueue_style( 'widgetkit-sweetalert2-css', plugins_url('/assets/css/sweetalert2.min.css', __FILE__ ));
 
