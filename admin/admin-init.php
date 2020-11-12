@@ -1332,6 +1332,10 @@ class Widgetkit_Admin
 
                                             <div class="wk-changelog-list">
                                                 <div class="wk-changes">
+                                                    <ul class="version version-2.3.7.2 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                                                        <li class="release-version-date"><h4>2.3.7.2</h4><span>12-11-2020</span></li>
+                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Fix slug conflict with wishlist member plugin.</li>
+                                                    </ul>
                                                     <ul class="version version-2.3.7.1 wk-background-muted wk-padding-small wk-margin-small-bottom">
                                                         <li class="release-version-date"><h4>2.3.7.1</h4><span>08-11-2020</span></li>
                                                         <li><span class="wk-text-improved">Improved </span> – Nonce verification added for security measurements.</li>
