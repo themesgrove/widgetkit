@@ -206,7 +206,17 @@ class Widgetkit_Admin
         $current_url = add_query_arg(array($_GET), $wp->request);
         $current_url_slug = explode("=", $current_url);
         
-        if($current_url && ( 'toplevel_page_widgetkit-settings' === $page_slug_hook || ( 'toplevel_page_widgetkit-template-library' === $page_slug_hook || 'toplevel_page_widgetkit-template-library&package' === $page_slug_hook ) ) ){
+        if(
+            $current_url && 
+            (
+                'toplevel_page_widgetkit-settings' === $page_slug_hook || 
+                ( 
+                    'toplevel_page_widgetkit-template-library' === $page_slug_hook ||
+                    'widgetkit_page_widgetkit-template-library' === $page_slug_hook ||
+                    'toplevel_page_widgetkit-template-library&package' === $page_slug_hook 
+                ) 
+            ) 
+        ){
             wp_enqueue_style( 'wkkit',  plugins_url('/dist/css/uikit.custom.min.css', dirname(__FILE__)  ));
             wp_enqueue_style( 'widgetkit-sweetalert2-css', plugins_url('/assets/css/sweetalert2.min.css', __FILE__ ));
 
