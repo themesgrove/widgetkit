@@ -274,6 +274,9 @@ PHP 5.4 or greater.
 
 == Changelog ==
 
+= 2.3.7.3 =
+Fix - widgetkit template library page style issue in dashboard.
+
 = 2.3.7.2 =
 Fix - Fix slug conflict with wishlist member plugin.
 
