@@ -580,7 +580,7 @@ class wkfe_testimonial extends Widget_Base {
 	                    'type'      => Controls_Manager::COLOR,
 	                    'default'   => 'rgba(0,0,0,0.05)',
 	                    'selectors' => [
-	                        '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body .quote svg' => 'color: {{VALUE}};',
+	                        '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body .quote svg' => 'fill: {{VALUE}};',
 	                    ],
 	                    'condition'   => [
                         	'item_styles' => ['screen_4'],
