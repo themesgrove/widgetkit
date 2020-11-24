@@ -801,7 +801,7 @@ class wkfe_testimonial extends Widget_Base {
 	                            ],
 	                        ],
 	                        'selectors' => [
-	                            '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body .wk-card-title' => 'padding: {{SIZE}}{{UNIT}} 0;',
+	                            '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body .wk-card-title' => 'padding: 0 0 {{SIZE}}{{UNIT}} ;',
 	                        ],
 	                    ]
 	            );
