@@ -13,7 +13,6 @@
                     <?php endif; ?>
 
                         <?php foreach ( $testimonials['testimonial_content'] as $testimonial ) : ?>
-
                            <?php if ($testimonials['item_styles'] == 'screen_1'):?>
                                <div class="wk-flex wk-flex-center wk-grid-match">
                                   <div class="wk-card wk-card-default wk-testimonial-1 wk-padding">

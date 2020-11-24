@@ -134,7 +134,9 @@ class wkfe_testimonial extends Widget_Base {
                       	'testimonial_title'       => esc_html__( 'Diego Alejandro', 'widgetkit-for-elementor' ),
                         'testimonial_designation'    => esc_html__( 'Whitero CEO, USA', 'widgetkit-for-elementor' ),
                         
-                        'testimonial_thumb_image' => '',
+                        'testimonial_thumb_image' =>  [
+							  'url'   => WK_URL . 'dist/images/user.png',
+							],
                         'content_demo_link'   => '#',
          
                       ],
@@ -143,7 +145,9 @@ class wkfe_testimonial extends Widget_Base {
                       	'testimonial_title'       => esc_html__( 'Miguel Angel', 'widgetkit-for-elementor' ),
                         'testimonial_designation'    => esc_html__( 'Managing Director', 'widgetkit-for-elementor' ),
                         
-                        'testimonial_thumb_image' => '',
+                        'testimonial_thumb_image' => [
+							'url'   => WK_URL . 'dist/images/user.png',
+						],
                         'content_demo_link'   => '#',
          
                       ],
@@ -152,7 +156,9 @@ class wkfe_testimonial extends Widget_Base {
                       	'testimonial_title'       => esc_html__( 'Hasrul Hisham', 'widgetkit-for-elementor' ),
                         'testimonial_designation'    => esc_html__( 'Lead Sofware ', 'widgetkit-for-elementor' ),
                         
-                        'testimonial_thumb_image' => '',
+                        'testimonial_thumb_image' => [
+							'url'   => WK_URL . 'dist/images/user.png',
+						],
                         'content_demo_link'   => '#',
          
                       ],
