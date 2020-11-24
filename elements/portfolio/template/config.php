@@ -40,6 +40,7 @@ class wkfe_portfolio extends Widget_Base {
 	public function get_style_depends() {
         return [
             'widgetkit_bs',
+            'fontawesome',
             'widgetkit_main',
         ];
     }

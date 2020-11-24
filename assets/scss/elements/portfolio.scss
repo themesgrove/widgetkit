@@ -16,6 +16,15 @@
   .tgx-portfolio .portfolio-filter{
       margin-bottom: 40px;
       margin-left:0px;
+      li{
+        margin:0;
+        &:first-child{
+          padding-left:0;
+        }
+        &:last-child{
+          padding-right:0;
+        }
+      }
   }
   .tgx-portfolio .portfolio-filter li a{
       font-size: 16px;
