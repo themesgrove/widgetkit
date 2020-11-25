@@ -4,7 +4,7 @@
 
 .wk-form-button-full-width{
   .wk-contact-form{
-      button, input[type="button"], input[type="reset"], input[type="submit"]{
+      button, input[type="button"], input[type="reset"], input[type="submit"], select{
          width:100%;
 
       }
@@ -13,16 +13,19 @@
 }
 
   .wk-contact-form{
-      button, input[type="button"], input[type="reset"], input[type="submit"]{
+    button, input[type="button"], input[type="reset"], input[type="submit"], select{
+      width:100%;
+   }
+      button, input[type="button"], input[type="reset"], input[type="submit"], select{
         padding: 10px 20px;
-
+        
       }
       label{
         display:block;
       }
-      @media(max-width:768px){
-        padding:10px;
-      }
+      // @media(max-width:768px){
+      //   padding:10px;
+      // }
 
       .wpuf-style{
         li {

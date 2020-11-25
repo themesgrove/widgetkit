@@ -350,7 +350,7 @@ class wkfe_contact_form extends Widget_Base {
                 'type'                  => Controls_Manager::DIMENSIONS,
                 'size_units'            => [ 'px', 'em', '%' ],
                 'selectors'             => [
-                    '{{WRAPPER}} .wk-contact-form input[type="text"], {{WRAPPER}} .wk-contact-form input[type="email"], {{WRAPPER}} .wk-contact-form textarea' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .wk-contact-form input[type="text"], {{WRAPPER}} .wk-contact-form input[type="date"], {{WRAPPER}} .wk-contact-form select,  {{WRAPPER}} .wk-contact-form input[type="email"], {{WRAPPER}} .wk-contact-form textarea' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
