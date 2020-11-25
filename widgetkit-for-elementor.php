@@ -90,15 +90,17 @@ WC tested up to: 3.8.0
             require_once(WK_PATH. 'includes/dependency.php');
             WKFE_Dependency::init();
         }
-        public function remove_all_admin_notice(){
+        public function remove_all_admin_notice($hook){
             global $wp;  
             $current_url = add_query_arg(array($_GET), $wp->request);
             $current_url_slug = explode("=", $current_url);
+            if(count($current_url_slug) > 1):
             if($current_url && $current_url_slug[1] === 'widgetkit-settings'){
                 if (is_super_admin()) {
                     remove_all_actions('admin_notices');
                 }
             }
+            endif;
         }
 
     }

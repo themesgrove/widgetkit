@@ -1,7 +1,16 @@
 //Go Between the Tabs
 ( function ( $ ){
     "use strict";
-    $(".widgetkit-settings-tabs").tabs();
+	$(".widgetkit-settings-tabs").tabs();
+	
+	$(document).ready(function(){
+		$(".wk-thank-you-notice button.notice-dismiss").on('click', function(e){
+			e.preventDefault();
+			var url = new URL(location.href);
+			url.searchParams.append('dismissed', 1);
+			location.href = url;
+		})
+	});
     
     
     $("a.widgetkit-tab-list-item").on("click", function () {
