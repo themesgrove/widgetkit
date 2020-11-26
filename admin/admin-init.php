@@ -1342,6 +1342,16 @@ class Widgetkit_Admin
 
                                             <div class="wk-changelog-list">
                                                 <div class="wk-changes">
+                                                    <ul class="version version-2.3.7.4 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                                                        <li class="release-version-date"><h4>2.3.7.4</h4><span>26-11-2020</span></li>
+                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Body padding issue for wk contact form element.</li>
+                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Thank you notice always visibility in dashboard.</li>
+                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Update Testimonial layout 4 image alignment issue.</li>
+                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Filterable porfolio padding issue.</li>
+                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Title spacing issue fixed for Testimonial element.</li>
+                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Placeholder image added for Testimonial element.</li>
+                                                        <li><span class="wk-text-bugfix">Bug Fix </span> – Quote color updated for Testimonial element.</li>
+                                                    </ul>
                                                     <ul class="version version-2.3.7.3 wk-background-muted wk-padding-small wk-margin-small-bottom">
                                                         <li class="release-version-date"><h4>2.3.7.3</h4><span>19-11-2020</span></li>
                                                         <li><span class="wk-text-bugfix">Bug Fix </span> – widgetkit template library page style issue in dashboard.</li>
