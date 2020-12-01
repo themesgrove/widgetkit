@@ -135,7 +135,7 @@ class wkfe_team extends Widget_Base {
                 Group_Control_Image_Size::get_type(),
                 [
                     'label' => esc_html__('Image size', 'widgetkit-for-elementor'),
-                    'name' => 'testimonial_image',
+                    'name' => 'team_image',
                     'default' => 'large',
                     'separator' => 'none',
                 ]

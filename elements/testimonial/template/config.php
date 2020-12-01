@@ -8,6 +8,8 @@ use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
+use Elementor\Group_Control_Image_Size;
+
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -59,6 +61,128 @@ class wkfe_testimonial extends Widget_Base {
 
 	protected function _register_controls() {
 
+
+#	start of layout
+		$this->start_controls_section(
+			'section_layout',
+			[
+				'label' => esc_html__( 'Layout', 'widgetkit-for-elementor' ),
+			]
+		);
+			$this->add_control(
+				'item_styles',
+					[
+						'label'       => __( 'Choose Screen', 'widgetkit-for-elementor' ),
+						'type' => Controls_Manager::SELECT,
+						'default' => 'screen_1',
+						'options' => [
+							'screen_1'   => __( 'Screen 1', 'widgetkit-for-elementor' ),
+							'screen_2'   => __( 'Screen 2', 'widgetkit-for-elementor' ),
+							'screen_3'   => __( 'Screen 3', 'widgetkit-for-elementor' ),
+							'screen_4'   => __( 'Screen 4', 'widgetkit-for-elementor' ),
+							'screen_5'   => __( 'Screen 5', 'widgetkit-for-elementor' ),
+						],
+					]
+			);
+			$this->add_control(
+				'thumbnail_position_vertical',
+				[
+					'label' => __( 'Image Position', 'widgetkit-for-elementor' ),
+					'type' => Controls_Manager::CHOOSE,
+					'default' => 'top',
+					'options' => [
+						'top' => [
+							'title' => __( 'Top', 'widgetkit-for-elementor' ),
+							'icon' => 'eicon-v-align-top',
+						],
+						'bottom' => [
+							'title' => __( 'Bottom', 'widgetkit-for-elementor' ),
+							'icon' => 'eicon-v-align-bottom',
+						],
+					],
+					'toggle' => false,
+					'condition'   => [
+						'item_styles' => ['screen_1', 'screen_2', 'screen_4'],
+					],
+				]
+			);
+			$this->add_control(
+				'thumbnail_position_horizontal',
+				[
+					'label' => __( 'Image Position', 'widgetkit-for-elementor' ),
+					'type' => Controls_Manager::CHOOSE,
+					'default' => 'left',
+					'options' => [
+						'left' => [
+							'title' => __( 'Left', 'widgetkit-for-elementor' ),
+							'icon' => 'eicon-h-align-left',
+						],
+						'right' => [
+							'title' => __( 'Right', 'widgetkit-for-elementor' ),
+							'icon' => 'eicon-h-align-right',
+						],
+					],
+					'toggle' => false,
+					'condition'   => [
+						'item_styles' => ['screen_3', 'screen_5'],
+					],
+				]
+			);
+			$this->add_control(
+				'item_column',
+				[
+					'label'   => __( 'Number of Colum', 'widgetkit-for-elementor' ),
+					'type'    => Controls_Manager::NUMBER,
+					'default' => 2,
+					'min'     => 1,
+					'max'     => 6,
+					'step'    => 1,
+					'condition' => [
+							'center_mode_enable!' => 'yes',
+					],
+				]
+			);
+			$this->add_control(
+				'center_mode_enable',
+				[
+					'label'     => esc_html__( 'Center Mode', 'widgetkit-for-elementor' ),
+					'description' => 'You must have at least 4 items',
+					'type'      => Controls_Manager::SWITCHER,
+					'default'   => 'no',
+					'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+					'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
+
+				]
+			);
+			$this->add_control(
+				'column_gap',
+				[
+					'label'       => __( 'Colum Gap', 'widgetkit-for-elementor' ),
+					'type' => Controls_Manager::SELECT,
+					'default' => 'medium',
+					'options' => [
+						'collapse'=> __( 'None', 'widgetkit-for-elementor' ),
+						'small'   => __( 'Small', 'widgetkit-for-elementor' ),
+						'medium'  => __( 'Medium', 'widgetkit-for-elementor' ),
+						'large'   => __( 'Large', 'widgetkit-for-elementor' ),
+					],
+				]
+			);
+			$this->add_group_control(
+                Group_Control_Image_Size::get_type(),
+                [
+                    'label' => esc_html__('Image size', 'widgetkit-for-elementor'),
+                    'name' => 'testimonial_image',
+                    'default' => 'large',
+                    'separator' => 'none',
+                ]
+            );
+
+		$this->end_controls_section();
+#	end of layout
+
+
+#	start of content
 	$this->start_controls_section(
 		'section_content',
 		[
@@ -66,8 +190,7 @@ class wkfe_testimonial extends Widget_Base {
 		]
 	);
 
-		$repeater = new Repeater();
-
+			$repeater = new Repeater();
 		    $repeater->add_control(
                 'testimonial_content',
                     [
@@ -76,7 +199,6 @@ class wkfe_testimonial extends Widget_Base {
                       'default' => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
                     ]
             );
-
             $repeater->add_control(
                 'testimonial_title',
                     [
@@ -85,7 +207,6 @@ class wkfe_testimonial extends Widget_Base {
                       'default' => esc_html__( 'Healthcare giant overcomes', 'widgetkit-for-elementor' ),
                     ]
             );
-
             $repeater->add_control(
                 'testimonial_designation',
                     [
@@ -94,7 +215,6 @@ class wkfe_testimonial extends Widget_Base {
                       'default' => esc_html__( 'Business', 'widgetkit-for-elementor' ),
                     ]
             );
-
             $repeater->add_control(
                'testimonial_thumb_image',
                     [
@@ -105,7 +225,6 @@ class wkfe_testimonial extends Widget_Base {
                       // ],
                     ]
             );
-
 	        $repeater->add_control(
 				'content_demo_link',
 				[
@@ -118,56 +237,52 @@ class wkfe_testimonial extends Widget_Base {
 					'separator'   => 'before',
 				]
 			);
-
-
-
         $this->add_control(
             'testimonial_content',
-              [
-                  'label'       => esc_html__( 'Testimonials', 'widgetkit-for-elementor' ),
-                  'type'        => Controls_Manager::REPEATER,
-                  'show_label'  => true,
-                   'separator'  => 'before',
-                  'default'     => [
-                      [
-                      	'testimonial_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
-                      	'testimonial_title'       => esc_html__( 'Diego Alejandro', 'widgetkit-for-elementor' ),
-                        'testimonial_designation'    => esc_html__( 'Whitero CEO, USA', 'widgetkit-for-elementor' ),
-                        
-                        'testimonial_thumb_image' =>  [
-							  'url'   => WK_URL . 'dist/images/user.png',
-							],
-                        'content_demo_link'   => '#',
-         
-                      ],
-        			  [
-                      	'testimonial_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
-                      	'testimonial_title'       => esc_html__( 'Miguel Angel', 'widgetkit-for-elementor' ),
-                        'testimonial_designation'    => esc_html__( 'Managing Director', 'widgetkit-for-elementor' ),
-                        
-                        'testimonial_thumb_image' => [
+			[
+				'label'       => esc_html__( 'Testimonials', 'widgetkit-for-elementor' ),
+				'type'        => Controls_Manager::REPEATER,
+				'show_label'  => true,
+				'separator'  => 'before',
+				'default'     => [
+					[
+					'testimonial_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
+					'testimonial_title'       => esc_html__( 'Diego Alejandro', 'widgetkit-for-elementor' ),
+					'testimonial_designation'    => esc_html__( 'Whitero CEO, USA', 'widgetkit-for-elementor' ),
+					
+					'testimonial_thumb_image' =>  [
 							'url'   => WK_URL . 'dist/images/user.png',
 						],
-                        'content_demo_link'   => '#',
-         
-                      ],
-                      [
-                      	'testimonial_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
-                      	'testimonial_title'       => esc_html__( 'Hasrul Hisham', 'widgetkit-for-elementor' ),
-                        'testimonial_designation'    => esc_html__( 'Lead Sofware ', 'widgetkit-for-elementor' ),
-                        
-                        'testimonial_thumb_image' => [
-							'url'   => WK_URL . 'dist/images/user.png',
-						],
-                        'content_demo_link'   => '#',
-         
-                      ],
-                  ],
-                  'fields'      => array_values( $repeater->get_controls() ),
-                  'title_field' => '{{{testimonial_title}}}',
-              ]
-            );
-
+					'content_demo_link'   => '#',
+		
+					],
+					[
+					'testimonial_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
+					'testimonial_title'       => esc_html__( 'Miguel Angel', 'widgetkit-for-elementor' ),
+					'testimonial_designation'    => esc_html__( 'Managing Director', 'widgetkit-for-elementor' ),
+					
+					'testimonial_thumb_image' => [
+						'url'   => WK_URL . 'dist/images/user.png',
+					],
+					'content_demo_link'   => '#',
+		
+					],
+					[
+					'testimonial_content'     => esc_html__( 'The image of a company is very important. Would you want to work with a consultation company whose office was in shambles', 'widgetkit-for-elementor' ),
+					'testimonial_title'       => esc_html__( 'Hasrul Hisham', 'widgetkit-for-elementor' ),
+					'testimonial_designation'    => esc_html__( 'Lead Sofware ', 'widgetkit-for-elementor' ),
+					
+					'testimonial_thumb_image' => [
+						'url'   => WK_URL . 'dist/images/user.png',
+					],
+					'content_demo_link'   => '#',
+		
+					],
+				],
+				'fields'      => array_values( $repeater->get_controls() ),
+				'title_field' => '{{{testimonial_title}}}',
+			]
+		);
 	        $this->add_control(
 				'custom_header_tag',
 				[
@@ -187,148 +302,17 @@ class wkfe_testimonial extends Widget_Base {
 					'default' => 'h4',
 				]
 			);
-
         $this->end_controls_section();
+#	end of content
 
-
-	
-
-
-	    $this->start_controls_section(
-            'section_layout',
-            [
-                'label' => esc_html__( 'Layout', 'widgetkit-for-elementor' ),
-            ]
-        );
-        	$this->add_control(
-	            'item_styles',
-	                [
-	                    'label'       => __( 'Choose Screen', 'widgetkit-for-elementor' ),
-	                    'type' => Controls_Manager::SELECT,
-	                    'default' => 'screen_1',
-	                    'options' => [
-	                        'screen_1'   => __( 'Screen 1', 'widgetkit-for-elementor' ),
-	                        'screen_2'   => __( 'Screen 2', 'widgetkit-for-elementor' ),
-	                        'screen_3'   => __( 'Screen 3', 'widgetkit-for-elementor' ),
-	                        'screen_4'   => __( 'Screen 4', 'widgetkit-for-elementor' ),
-	                        'screen_5'   => __( 'Screen 5', 'widgetkit-for-elementor' ),
-	                    ],
-	                ]
-	        );
-
-
-
-			    $this->add_control(
-					'thumbnail_position_vertical',
-					[
-						'label' => __( 'Image Position', 'widgetkit-for-elementor' ),
-						'type' => Controls_Manager::CHOOSE,
-						'default' => 'top',
-						'options' => [
-							'top' => [
-								'title' => __( 'Top', 'widgetkit-for-elementor' ),
-								'icon' => 'eicon-v-align-top',
-							],
-							'bottom' => [
-								'title' => __( 'Bottom', 'widgetkit-for-elementor' ),
-								'icon' => 'eicon-v-align-bottom',
-							],
-						],
-						'toggle' => false,
-						'condition'   => [
-                        	'item_styles' => ['screen_1', 'screen_2', 'screen_4'],
-                    	],
-					]
-				);
-
-	            $this->add_control(
-					'thumbnail_position_horizontal',
-					[
-						'label' => __( 'Image Position', 'widgetkit-for-elementor' ),
-						'type' => Controls_Manager::CHOOSE,
-						'default' => 'left',
-						'options' => [
-							'left' => [
-								'title' => __( 'Left', 'widgetkit-for-elementor' ),
-								'icon' => 'eicon-h-align-left',
-							],
-							'right' => [
-								'title' => __( 'Right', 'widgetkit-for-elementor' ),
-								'icon' => 'eicon-h-align-right',
-							],
-						],
-						'toggle' => false,
-						'condition'   => [
-                        	'item_styles' => ['screen_3', 'screen_5'],
-                    	],
-					]
-				);
-
-
-            $this->add_control(
-                'item_column',
-                [
-                    'label'   => __( 'Number of Colum', 'widgetkit-for-elementor' ),
-                    'type'    => Controls_Manager::NUMBER,
-                    'default' => 2,
-                    'min'     => 1,
-                    'max'     => 6,
-                    'step'    => 1,
-                    'condition' => [
-		                    'center_mode_enable!' => 'yes',
-		            ],
-                ]
-            );
-
-           	$this->add_control(
-	            'center_mode_enable',
-                    [
-                        'label'     => esc_html__( 'Center Mode', 'widgetkit-for-elementor' ),
-                        'description' => 'You must have at least 4 items',
-                        'type'      => Controls_Manager::SWITCHER,
-                        'default'   => 'no',
-                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-
-                    ]
-		        );
-
-
-
-	        $this->add_control(
-	            'column_gap',
-	                [
-	                    'label'       => __( 'Colum Gap', 'widgetkit-for-elementor' ),
-	                    'type' => Controls_Manager::SELECT,
-	                    'default' => 'medium',
-	                    'options' => [
-	                        'collapse'=> __( 'None', 'widgetkit-for-elementor' ),
-	                        'small'   => __( 'Small', 'widgetkit-for-elementor' ),
-	                        'medium'  => __( 'Medium', 'widgetkit-for-elementor' ),
-	                        'large'   => __( 'Large', 'widgetkit-for-elementor' ),
-	                    ],
-	                ]
-	        );
-
-	        $this->end_controls_section();
-
-
+#	start of controls
 	       	$this->start_controls_section(
 	            'section_controls',
 	            [
 	                'label' => esc_html__( 'Controls', 'widgetkit-for-elementor' ),
 	            ]
 	        );
-
-	            // $this->add_control(
-		           //  'content_set_mode',
-		           //      [
-		           //          'label' => __( 'Sets Mode', 'widgetkit-for-elementor' ),
-		           //          'type'  => Controls_Manager::HEADING,
-		           //          'separator' => 'before',
-		           //      ]
-		           //  );
-
+	            
 	            $this->add_control(
 	                'set_mode_enable',
 	                    [
@@ -339,26 +323,6 @@ class wkfe_testimonial extends Widget_Base {
 	                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
 	                    ]
 	        	);
-
-	            // $this->add_control(
-		           //  'content_center_mode',
-		           //      [
-		           //          'label' => __( 'Center Mode', 'widgetkit-for-elementor' ),
-		           //          'type'  => Controls_Manager::HEADING,
-		           //          'separator' => 'before',
-		           //      ]
-		           //  );
-
-
-
-		       	// $this->add_control(
-		        //     'content_autoplay_mode',
-		        //         [
-		        //             'label' => __( 'Autoplay Mode', 'widgetkit-for-elementor' ),
-		        //             'type'  => Controls_Manager::HEADING,
-		        //             'separator' => 'before',
-		        //         ]
-		        //     );
 	            $this->add_control(
 	                'autoplay_mode_enable',
 	                    [
@@ -369,16 +333,6 @@ class wkfe_testimonial extends Widget_Base {
 	                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
 	                    ]
 		        );
-
-		        // $this->add_control(
-		        //     'content_interval',
-		        //         [
-		        //             'label' => __( 'Interval', 'widgetkit-for-elementor' ),
-		        //             'type'  => Controls_Manager::HEADING,
-		        //             'separator' => 'before',
-		        //         ]
-		        //     );
-
 	            $this->add_control(
 	                'content_interval_option',
 	                [
@@ -390,94 +344,83 @@ class wkfe_testimonial extends Widget_Base {
 	                    'step'    => 10,
 	                ]
 	            );
+			$this->end_controls_section();
+#	end of controls
 
-
-	        $this->end_controls_section();
-
+# 	start of navigation
 		    $this->start_controls_section(
 	            'navs_content',
 	                [
 	                    'label' => esc_html__( 'Navigation', 'widgetkit-for-elementor' ),
 	                ]
 	        );
-
-			        $this->add_control(
-		                'content_arrow_heading',
-		                [
-		                    'label' => __( 'Arrow', 'widgetkit-for-elementor' ),
-		                    'type'  => Controls_Manager::HEADING,
-		                    'separator' => 'before',
-		                ]
-		            );
-
-		            $this->add_control(
-		                'arrow_enable',
-		                    [
-		                        'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
-		                        'type'      => Controls_Manager::SWITCHER,
-		                        'default'   => 'no',
-		                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-		                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-		                    ]
-		            );
-
-
-
-		            $this->add_control(
-		                'arrow_position',
-		                [
-		                    'label'       => __( 'Position', 'widgetkit-for-elementor' ),
-		                    'type' => Controls_Manager::SELECT,
-		                    'default'  => 'in',
-		                    'options'  => [
-		                        'in'   => __( 'In', 'widgetkit-for-elementor' ),
-		                        'out'  => __( 'Out', 'widgetkit-for-elementor' ),
-		                    ],
-		                   'condition' => [
-		                        'arrow_enable' => 'yes',
-		                    ],
-		                ]
-		            );
-
-		            $this->add_control(
-		                'arrow_on_hover',
-		                    [
-		                        'label'     => esc_html__( 'On Hover Mode', 'widgetkit-for-elementor' ),
-		                        'type'      => Controls_Manager::SWITCHER,
-		                        'default'   => 'no',
-		                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-		                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-		                    	'condition' => [
-									'arrow_enable' => 'yes',
-									'arrow_position' => 'in',
-								],
-		                    ]
-			        );
-
-		            
-					$this->add_control(
-		                'content_nav_heading',
-		                [
-		                    'label' => __( 'Dot', 'widgetkit-for-elementor' ),
-		                    'type'  => Controls_Manager::HEADING,
-		                    'separator' => 'before',
-		                ]
-		            );
-
-			        $this->add_control(
-		                'dot_enable',
-		                    [
-		                        'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
-		                        'type'      => Controls_Manager::SWITCHER,
-		                        'default'   => 'yes',
-		                        'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
-		                        'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
-		                    ]
-		            );
-
-
+				$this->add_control(
+					'content_arrow_heading',
+					[
+						'label' => __( 'Arrow', 'widgetkit-for-elementor' ),
+						'type'  => Controls_Manager::HEADING,
+						'separator' => 'before',
+					]
+				);
+				$this->add_control(
+					'arrow_enable',
+						[
+							'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
+							'type'      => Controls_Manager::SWITCHER,
+							'default'   => 'no',
+							'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+							'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
+						]
+				);
+				$this->add_control(
+					'arrow_position',
+					[
+						'label'       => __( 'Position', 'widgetkit-for-elementor' ),
+						'type' => Controls_Manager::SELECT,
+						'default'  => 'in',
+						'options'  => [
+							'in'   => __( 'In', 'widgetkit-for-elementor' ),
+							'out'  => __( 'Out', 'widgetkit-for-elementor' ),
+						],
+						'condition' => [
+							'arrow_enable' => 'yes',
+						],
+					]
+				);
+				$this->add_control(
+					'arrow_on_hover',
+						[
+							'label'     => esc_html__( 'On Hover Mode', 'widgetkit-for-elementor' ),
+							'type'      => Controls_Manager::SWITCHER,
+							'default'   => 'no',
+							'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+							'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
+							'condition' => [
+								'arrow_enable' => 'yes',
+								'arrow_position' => 'in',
+							],
+						]
+				);
+				$this->add_control(
+					'content_nav_heading',
+					[
+						'label' => __( 'Dot', 'widgetkit-for-elementor' ),
+						'type'  => Controls_Manager::HEADING,
+						'separator' => 'before',
+					]
+				);
+				$this->add_control(
+					'dot_enable',
+						[
+							'label'     => esc_html__( 'Display', 'widgetkit-for-elementor' ),
+							'type'      => Controls_Manager::SWITCHER,
+							'default'   => 'yes',
+							'yes'    => esc_html__( 'Yes', 'widgetkit-for-elementor' ),
+							'no'     => esc_html__( 'No', 'widgetkit-for-elementor' ),
+						]
+				);
 	        $this->end_controls_section();
-
+#	end of navigation
 
 			/**
 			 * Pro control panel 

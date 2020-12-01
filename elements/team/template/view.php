@@ -13,10 +13,10 @@
                 <div class="wk-card-media-top wk-overflow-hidden">
                     <?php if( $team['single_content_link']):?>
                         <a class="wk-display-block wk-text-center" href="<?php echo $team['single_content_link']['url']; ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                            <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'testimonial_image', 'single_image') ;?>
+                            <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
                         </a>
                     <?php else: ?>
-                        <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'testimonial_image', 'single_image') ;?>
+                        <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
                     <?php endif; ?>
                 </div> <!-- wk-card-image -->
 
@@ -69,10 +69,10 @@
                     <div class="wk-card-media-top wk-overflow-hidden">
                         <?php if( $team['single_content_link']):?>
                             <a class="wk-display-block" href="<?php echo $team['single_content_link']['url']; ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'testimonial_image', 'single_image') ;?>
+                                <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
                             </a>
                         <?php else: ?>
-                            <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'testimonial_image', 'single_image') ;?>
+                            <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
                         <?php endif; ?>
                     </div> <!-- wk-card-image -->
 
@@ -123,10 +123,10 @@
                         <div class="wk-card-media-left wk-cover-container wk-width-1-2@m wk-position-relative wk-overflow-hidden">
                             <?php if( $team['single_content_link']):?>
                                 <a class="wk-display-block" href="<?php echo $team['single_content_link']['url']; ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                    <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'testimonial_image', 'single_image') ;?>
+                                    <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
                                 </a>
                             <?php else: ?>
-                                <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'testimonial_image', 'single_image') ;?>
+                                <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
                             <?php endif; ?>
                         </div> <!-- wk-card-image -->
                     <?php endif; ?>
@@ -187,10 +187,10 @@
                     <div class="wk-card-wrapper wk-position-relative wk-transition-toggle wk-overflow-hidden">
                         <?php if( $team['single_content_link']):?>
                             <a class="wk-display-block" href="<?php echo $team['single_content_link']['url']; ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'testimonial_image', 'single_image') ;?>
+                                <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
                             </a>
                         <?php else: ?>
-                            <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'testimonial_image', 'single_image') ;?>
+                            <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
                         <?php endif; ?>
 
                          <div class="wk-card-body wk-padding-remove wk-position-bottom wk-background-muted">
@@ -240,11 +240,11 @@
                     <div class="wk-card-wrapper wk-position-relative wk-transition-toggle">
                         <?php if( $team['single_content_link']):?>
                             <a class="wk-display-block" href="<?php echo $team['single_content_link']['url']; ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'testimonial_image', 'single_image') ;?>
+                                <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
 
                             </a>
                         <?php else: ?>
-                            <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'testimonial_image', 'single_image') ;?>
+                            <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
 
                         <?php endif; ?>
 

@@ -1,10 +1,17 @@
 <?php
     $testimonials = $settings = $this->get_settings(); 
-    $id = $this->get_id();?>
+    $id = $this->get_id();
+    use Elementor\Group_Control_Image_Size;
+    ?>
 
 
 
     <div class="wk-testimonial" wk-slider="center:<?php echo $testimonials['center_mode_enable'] == 'yes'? 'true' :'false'; ?>; sets:<?php echo $testimonials['set_mode_enable'] == 'yes'? 'true' :'false'; ?>; autoplay:<?php echo $testimonials['autoplay_mode_enable'] == 'yes'? 'true' :'false'; ?>; autoplay-interval:<?php echo $testimonials['content_interval_option'];?>;">
+        <?php 
+            // echo '<pre>';
+            // var_dump($testimonials);
+            // echo '</pre>';
+        ?>
             <div class="wk-visible-toggle wk-light <?php echo $testimonials['arrow_position'] == 'in'? 'wk-position-relative' : '' ;?>" tabindex="-1">
                     <?php if ($testimonials['center_mode_enable'] == 'yes'): ?>
                       <div class="wk-grid-<?php echo $testimonials['column_gap']?> wk-slider-items wk-child-width-1-2@s" wk-grid>
@@ -19,7 +26,11 @@
                                     <?php if($testimonial['testimonial_thumb_image']['url']):?>
                                         <?php if($testimonials['thumbnail_position_vertical'] == 'top'): ;?>
                                             <div class="wk-card-media-top wk-overflow-hidden wk-padding-bottom">
-                                                <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php if($testimonial['testimonial_thumb_image']['id']): ?>
+                                                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials ); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
+                                                <?php else:?>
+                                                    <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php endif;?>
                                             </div>
                                         <?php endif; ?> 
                                     <?php endif; ?>
@@ -33,7 +44,11 @@
                                             <?php if($testimonials['thumbnail_position_vertical'] == 'bottom'):?>
                                           
                                               <div class="wk-card-media-bottom wk-overflow-hidden">
-                                                  <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php if($testimonial['testimonial_thumb_image']['id']): ?>
+                                                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials ); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
+                                                <?php else:?>
+                                                    <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php endif;?> 
                                               </div>
                                             <?php endif; ?> 
                                         <?php endif; ?> 
@@ -77,7 +92,11 @@
                                     <?php if($testimonial['testimonial_thumb_image']['url']):?>
                                         <?php if($testimonials['thumbnail_position_vertical'] == 'top'): ;?>
                                             <div class="wk-card-media-top wk-overflow-hidden wk-padding-bottom">
-                                                <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php if($testimonial['testimonial_thumb_image']['id']): ?>
+                                                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials ); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
+                                                <?php else:?>
+                                                    <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php endif;?>  
                                             </div>
                                         <?php endif; ?> 
                                     <?php endif; ?>
@@ -92,7 +111,11 @@
                                           <?php if($testimonials['thumbnail_position_vertical'] == 'bottom'):?>
                                         
                                             <div class="wk-card-media-bottom">
-                                                <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php if($testimonial['testimonial_thumb_image']['id']): ?>
+                                                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials ); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
+                                                <?php else:?>
+                                                    <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php endif;?>  
                                             </div>
                                           <?php endif; ?> 
                                       <?php endif; ?> 
@@ -136,7 +159,11 @@
                                           <?php if($testimonial['testimonial_thumb_image']['url']):?>
                                        
                                               <div class="wk-card-media-left wk-overflow-hidden wk-padding-bottom">
-                                                  <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php if($testimonial['testimonial_thumb_image']['id']): ?>
+                                                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials ); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
+                                                <?php else:?>
+                                                    <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php endif;?>  
                                               </div>
                                          
                                           <?php endif; ?>
@@ -182,7 +209,11 @@
                                             <?php if($testimonial['testimonial_thumb_image']['url']):?>
                                              
                                                 <div class="wk-card-media-right wk-overflow-hidden wk-padding-bottom">
+                                                <?php if($testimonial['testimonial_thumb_image']['id']): ?>
+                                                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials ); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
+                                                <?php else:?>
                                                     <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php endif;?>  
                                                 </div>
                                          
                                           <?php endif; ?>
@@ -197,7 +228,11 @@
                                       <?php if($testimonial['testimonial_thumb_image']['url']):?>
                                           <?php if($testimonials['thumbnail_position_vertical'] == 'top'): ;?>
                                               <div class="wk-card-media-top wk-overflow-hidden wk-padding-bottom">
-                                                  <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php if($testimonial['testimonial_thumb_image']['id']): ?>
+                                                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials ); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
+                                                <?php else:?>
+                                                    <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php endif;?>  
                                               </div>
                                           <?php endif; ?> 
                                       <?php endif; ?>
@@ -219,7 +254,11 @@
                                               <?php if($testimonials['thumbnail_position_vertical'] == 'bottom'):?>
                                             
                                                 <div class="wk-card-media-bottom wk-overflow-hidden">
+                                                <?php if($testimonial['testimonial_thumb_image']['id']): ?>
+                                                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials ); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
+                                                <?php else:?>
                                                     <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php endif;?>  
                                                 </div>
                                               <?php endif; ?> 
                                           <?php endif; ?> 
@@ -276,7 +315,11 @@
                                                         <div class="wk-width-auto">
                                                       
                                                             <div class="wk-card-media-left wk-overflow-hidden wk-padding-bottom">
-                                                                <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" width="80" height="80" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                                <?php if($testimonial['testimonial_thumb_image']['id']): ?>
+                                                                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials ); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
+                                                                <?php else:?>
+                                                                    <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                                <?php endif;?>  
                                                             </div>
                                                               
                                                         </div>
@@ -318,7 +361,11 @@
                                                         <div class="wk-width-auto">
                                                            
                                                             <div class="wk-card-media-right wk-overflow-hidden wk-padding-bottom">
-                                                                <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" width="80" height="80" alt="<?php echo $testimonial['testimonial_title']; ?>">   
+                                                            <?php if($testimonial['testimonial_thumb_image']['id']): ?>
+                                                                <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials ); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
+                                                            <?php else:?>
+                                                                <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                            <?php endif;?>   
                                                             </div>
                                                            
                                                         </div>
@@ -335,7 +382,11 @@
                                     <?php if($testimonial['testimonial_thumb_image']['url']):?>
                                         <?php if($testimonials['thumbnail_position'] == 'top'): ;?>
                                             <div class="wk-card-media-top wk-overflow-hidden wk-padding-bottom">
-                                                <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php if($testimonial['testimonial_thumb_image']['id']): ?>
+                                                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials ); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
+                                                <?php else:?>
+                                                    <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                                <?php endif;?>  
                                             </div>
                                         <?php endif; ?> 
                                     <?php endif; ?>
@@ -374,7 +425,11 @@
                                         <?php if($testimonials['thumbnail_position'] == 'bottom'):?>
                                       
                                           <div class="wk-card-media-bottom wk-overflow-hidden">
-                                              <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                            <?php if($testimonial['testimonial_thumb_image']['id']): ?>
+                                                <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials ); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
+                                            <?php else:?>
+                                                <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                                            <?php endif;?>  
                                           </div>
                                         <?php endif; ?> 
                                     <?php endif; ?> 
