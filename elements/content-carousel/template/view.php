@@ -1,6 +1,9 @@
 <?php
     $contents = $settings = $this->get_settings(); 
-    $id = $this->get_id();?>
+    $id = $this->get_id();
+    use Elementor\Group_Control_Image_Size;
+    
+    ?>
 
         <div class="content-carousel" wk-slider="center:<?php echo $contents['center_mode_enable'] == 'yes'? 'true' :'false'; ?>; sets:<?php echo $contents['set_mode_enable'] == 'yes'? 'true' :'false'; ?>; autoplay:<?php echo $contents['autoplay_mode_enable'] == 'yes'? 'true' :'false'; ?>; autoplay-interval:<?php echo $contents['content_interval_option'];?>;">
             <div class="wk-visible-toggle wk-light <?php echo $contents['arrow_position'] == 'in'? 'wk-position-relative' : ' '; ?> " tabindex="-1">
@@ -22,7 +25,11 @@
                                         <?php if($contents['thumbnail_position'] == 'top'): ;?>
                                             <div class="wk-card-media-top wk-overflow-hidden">
                                                 <a class="wk-display-block" href="<?php echo $content['content_demo_link']['url']; ?>" <?php echo $content['content_demo_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                                    <img src="<?php echo $content['content_thumb_image']['url'];?>" alt="<?php echo $content['content_title']; ?>">  
+                                                    <?php if($content['content_thumb_image']['id']): ?>
+                                                        <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($content['content_thumb_image']['id'], 'cc_image', $contents ); ?>" alt="<?php echo $content['content_title']; ?>">
+                                                    <?php else:?>
+                                                        <img src="<?php echo $content['content_thumb_image']['url'];?>" alt="<?php echo $content['content_title']; ?>">  
+                                                    <?php endif;?> 
                                                 </a> 
                                             </div>
                                         <?php endif; ?> 
@@ -49,7 +56,11 @@
                                     <?php if($contents['thumbnail_position'] == 'bottom'):?>
                                         <div class="wk-card-media-bottom wk-overflow-hidden">
                                             <a class="wk-display-block" href="<?php echo $content['content_demo_link']['url']; ?>" <?php echo $content['content_demo_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                                <img src="<?php echo $content['content_thumb_image']['url'];?>" alt="<?php echo $content['content_title']; ?>">  
+                                                <?php if($content['content_thumb_image']['id']): ?>
+                                                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($content['content_thumb_image']['id'], 'cc_image', $contents ); ?>" alt="<?php echo $content['content_title']; ?>">
+                                                <?php else:?>
+                                                    <img src="<?php echo $content['content_thumb_image']['url'];?>" alt="<?php echo $content['content_title']; ?>">  
+                                                <?php endif;?> 
                                             </a> 
                                         </div>
                                     <?php endif; ?> 
@@ -79,7 +90,8 @@
                                         <?php if($contents['thumbnail_position'] == 'top'): ;?>
                                             <div class="wk-card-media-top wk-overflow-hidden">
                                                 <a class="wk-display-block" href="<?php the_permalink();?>">
-                                                    <?php the_post_thumbnail($contents['thumbnail_size']);?> 
+                                                    <?php //the_post_thumbnail($contents['thumbnail_size']);?> 
+                                                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src(get_post_thumbnail_id(), 'cc_image', $contents );?>" alt="<?php the_title(); ?>">
                                                 </a>
                                             </div>
                                         <?php endif; ?>
@@ -106,7 +118,8 @@
                                     <?php if($contents['thumbnail_position'] == 'bottom'): ;?>
                                         <div class="wk-card-media-bottom wk-overflow-hidden">
                                             <a class="wk-display-block" href="<?php the_permalink();?>">
-                                                <?php the_post_thumbnail($contents['thumbnail_size']);?> 
+                                                <?php //the_post_thumbnail($contents['thumbnail_size']);?> 
+                                                <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src(get_post_thumbnail_id(), 'cc_image', $contents );?>" alt="<?php the_title(); ?>">
                                             </a>
                                         </div>
                                     <?php endif; ?>
