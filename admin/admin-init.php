@@ -1385,6 +1385,12 @@ class Widgetkit_Admin
 
                                             <div class="wk-changelog-list">
                                                 <div class="wk-changes">
+                                                    <ul class="version version-2.3.8 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                                                        <li class="release-version-date"><h4>2.3.8</h4><span>04-12-2020</span></li>
+                                                        <li><span class="wk-text-bugfix">Improved </span> – Image size option added in Content Carousel Element.</li>
+                                                        <li><span class="wk-text-bugfix">Improved </span> – Image size option added in Testimonial Element.</li>
+                                                        <li><span class="wk-text-bugfix">Improved </span> – Image size option added in Team Element.</li>
+                                                    </ul>
                                                     <ul class="version version-2.3.7.4 wk-background-muted wk-padding-small wk-margin-small-bottom">
                                                         <li class="release-version-date"><h4>2.3.7.4</h4><span>26-11-2020</span></li>
                                                         <li><span class="wk-text-bugfix">Bug Fix </span> – Body padding issue for wk contact form element.</li>
