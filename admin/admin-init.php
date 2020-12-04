@@ -101,12 +101,17 @@ class Widgetkit_Admin
         'wke-lp-course-tab',
         'wke-lp-course-category',
     ];
-    
+
     public $widgetkit_sensei_keys = [
         'wke-sensei-course-list',
         'wke-sensei-course-tab',
         'wke-sensei-course-category',
     ];
+    
+    public $widgetkit_lifter_keys = [
+        'wke-lifter-course-list',
+    ];
+        
     private $pro_enable_status;
     
     // Default settings
@@ -116,6 +121,7 @@ class Widgetkit_Admin
     private $widgetkit_ld_settings;
     private $widgetkit_lp_settings;
     private $widgetkit_sensei_settings;
+    private $widgetkit_lifter_settings;
     // widgetkit settings
     private $widgetkit_settings;
     private $wk_woo_settings;
@@ -123,6 +129,7 @@ class Widgetkit_Admin
     private $wk_ld_settings;
     private $wk_lp_settings;
     private $wk_sensei_settings;
+    private $wk_lifter_settings;
     // widgetkit get settings
     private $widgetkit_get_settings;
     private $widgetkit_get_woo_settings;
@@ -130,6 +137,7 @@ class Widgetkit_Admin
     private $widgetkit_get_ld_settings;
     private $widgetkit_get_lp_settings;
     private $widgetkit_get_sensei_settings;
+    private $widgetkit_get_lifter_settings;
 
     private $transient_changelog_data;
 
@@ -264,6 +272,7 @@ class Widgetkit_Admin
         $this->widgetkit_ld_settings = array_fill_keys( $this->widgetkit_ld_keys, true );
         $this->widgetkit_lp_settings = array_fill_keys( $this->widgetkit_lp_keys, true );
         $this->widgetkit_sensei_settings = array_fill_keys( $this->widgetkit_sensei_keys, true );
+        $this->widgetkit_lifter_settings = array_fill_keys( $this->widgetkit_lifter_keys, true );
        
 	    $this->widgetkit_get_settings = get_option( 'widgetkit_save_settings', $this->widgetkit_default_settings );
         $this->widgetkit_get_woo_settings = get_option( 'widgetkit_save_woo_settings', $this->widgetkit_woo_settings );
@@ -271,6 +280,7 @@ class Widgetkit_Admin
         $this->widgetkit_get_ld_settings = get_option( 'widgetkit_save_ld_settings', $this->widgetkit_ld_settings );
         $this->widgetkit_get_lp_settings = get_option( 'widgetkit_save_lp_settings', $this->widgetkit_lp_settings );
         $this->widgetkit_get_sensei_settings = get_option( 'widgetkit_save_sensei_settings', $this->widgetkit_sensei_settings );
+        $this->widgetkit_get_lifter_settings = get_option( 'widgetkit_save_lifter_settings', $this->widgetkit_lifter_settings );
         
         /**
          * Check if found any difference between db and local key
@@ -281,6 +291,7 @@ class Widgetkit_Admin
 	    $widgetkit_new_ld_settings = array_diff_key( $this->widgetkit_ld_settings, $this->widgetkit_get_ld_settings );
 	    $widgetkit_new_lp_settings = array_diff_key( $this->widgetkit_lp_settings, $this->widgetkit_get_lp_settings );
         $widgetkit_new_sensei_settings = array_diff_key( $this->widgetkit_sensei_settings, $this->widgetkit_get_sensei_settings );
+        $widgetkit_new_lifter_settings = array_diff_key( $this->widgetkit_lifter_settings, $this->widgetkit_get_lifter_settings );
         
         /**
          * If any difference found then update the db
@@ -309,6 +320,10 @@ class Widgetkit_Admin
             $widgetkit_updated_sensei_settings = array_merge( $this->widgetkit_get_sensei_settings, $widgetkit_new_sensei_settings );
             update_option( 'widgetkit_save_sensei_settings', $widgetkit_updated_sensei_settings );
         }
+        if( ! empty( $widgetkit_new_lifter_settings ) ) {
+            $widgetkit_updated_lifter_settings = array_merge( $this->widgetkit_get_lifter_settings, $widgetkit_new_lifter_settings );
+            update_option( 'widgetkit_save_lifter_settings', $widgetkit_updated_lifter_settings );
+        }
 
         $this->widgetkit_get_settings = get_option( 'widgetkit_save_settings', $this->widgetkit_default_settings );
         $this->widgetkit_get_woo_settings = get_option( 'widgetkit_save_woo_settings', $this->widgetkit_woo_settings );
@@ -316,6 +331,7 @@ class Widgetkit_Admin
         $this->widgetkit_get_ld_settings = get_option( 'widgetkit_save_ld_settings', $this->widgetkit_ld_settings );
         $this->widgetkit_get_lp_settings = get_option( 'widgetkit_save_lp_settings', $this->widgetkit_lp_settings );
         $this->widgetkit_get_sensei_settings = get_option( 'widgetkit_save_sensei_settings', $this->widgetkit_sensei_settings );
+        $this->widgetkit_get_lifter_settings = get_option( 'widgetkit_save_lifter_settings', $this->widgetkit_lifter_settings );
 
 ?>
 
@@ -1243,6 +1259,33 @@ class Widgetkit_Admin
                                                 </div>
                                             </div>
                                             
+                                            <!-- Lifter -->
+                                            <div class="wk-padding-small wk-background-muted">
+                                                <div class="" wk-grid>
+                                                    <div class="wk-width-auto@m wk-card-media-left wk-cover-container">
+                                                        <img src="<?php echo plugins_url('/assets/images/lifter-logo.png', __FILE__)?>" width="100">
+                                                    </div>
+                                                    <div class="wk-width-expand@m">
+                                                        <div class="wk-card-body wk-padding-remove">
+                                                            <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
+                                                                <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('Lifter', 'widgetkit-for-elementor')?></h3>
+                                                                <a class="demo-button-for-pro wk-button-primary" href="https://widgetkit.themesgrove.com/#pro-element" target="_blank"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
+                                                            </div>
+                                                            <p><?php esc_html_e('We are working hard to bring some niche elements which are integrated with Lifter.', 'widgetkit-for-elementor');?></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="woo-elements">
+                                                    <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                                                        <?php echo __('Lifter Course List', 'widgetkit-for-elementor'); ?>
+                                                        <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                                            <input type="checkbox" id="wke-lifter-course-list" name="wke-lifter-course-list" <?php checked(1, $this->widgetkit_get_lifter_settings['wke-lifter-course-list'], $this->pro_enable_status) ?>>
+                                                            <span class="rectangle round"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
                                         </div>
                                     </li>
                                     <!-- pro panel for free -->
@@ -1718,12 +1761,16 @@ class Widgetkit_Admin
             'wke-sensei-course-tab' => intval($settings['wke-sensei-course-tab'] ? 1 : 0),
             'wke-sensei-course-category' => intval($settings['wke-sensei-course-category'] ? 1 : 0),
         ];
+        $this->wk_lifter_settings = [
+            'wke-lifter-course-list' => intval($settings['wke-lifter-course-list'] ? 1 : 0),
+        ];
         update_option('widgetkit_save_settings', $this->widgetkit_settings);
         update_option('widgetkit_save_woo_settings', $this->wk_woo_settings);
         update_option('widgetkit_save_woo_single_settings', $this->wk_woo_single_settings);
         update_option('widgetkit_save_ld_settings', $this->wk_ld_settings);
         update_option('widgetkit_save_lp_settings', $this->wk_lp_settings);
         update_option('widgetkit_save_sensei_settings', $this->wk_sensei_settings);
+        update_option('widgetkit_save_lifter_settings', $this->wk_lifter_settings);
 
         return true;
         die();

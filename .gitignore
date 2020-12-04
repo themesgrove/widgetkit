@@ -6,4 +6,5 @@ vendor/
 dist/
 assets/bootstrap/
 /vendor/
-composer.lock
+/temp/
+yarn.lock
