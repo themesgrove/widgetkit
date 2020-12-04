@@ -44,7 +44,8 @@ class wkfe_team extends Widget_Base {
 	public function get_style_depends() {
         return [
             'widgetkit_bs',
-            'widgetkit_main',
+			'widgetkit_main',
+			'fontawesome',
             'uikit',
         ];
     }
