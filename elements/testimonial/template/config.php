@@ -915,6 +915,32 @@ class wkfe_testimonial extends Widget_Base {
 				);
 
 				$this->add_control(
+					'content_layout_align_for_layout_5',
+					[
+						'label' => __( 'Alignment', 'widgetkit-for-elementor' ),
+						'type' => Controls_Manager::CHOOSE,
+						'default' => 'center',
+						'options' => [
+							'left'    => [
+								'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
+								'icon'  => 'eicon-text-align-left',
+							],
+							'center' => [
+								'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
+								'icon'  => 'eicon-text-align-center',
+							],
+							'right' => [
+								'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
+								'icon'  => 'eicon-text-align-left',
+							],
+						],
+						'condition'   => [
+                        	'item_styles' => ['screen_5'],
+                    	],
+					]
+				);
+
+				$this->add_control(
 		            'content_item_padding',
 		            [
 		                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),

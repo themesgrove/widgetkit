@@ -4,14 +4,8 @@
     use Elementor\Group_Control_Image_Size;
     ?>
 
-
-
     <div class="wk-testimonial" wk-slider="center:<?php echo $testimonials['center_mode_enable'] == 'yes'? 'true' :'false'; ?>; sets:<?php echo $testimonials['set_mode_enable'] == 'yes'? 'true' :'false'; ?>; autoplay:<?php echo $testimonials['autoplay_mode_enable'] == 'yes'? 'true' :'false'; ?>; autoplay-interval:<?php echo $testimonials['content_interval_option'];?>;">
-        <?php 
-            // echo '<pre>';
-            // var_dump($testimonials);
-            // echo '</pre>';
-        ?>
+
             <div class="wk-visible-toggle wk-light <?php echo $testimonials['arrow_position'] == 'in'? 'wk-position-relative' : '' ;?>" tabindex="-1">
                     <?php if ($testimonials['center_mode_enable'] == 'yes'): ?>
                       <div class="wk-grid-<?php echo $testimonials['column_gap']?> wk-slider-items wk-child-width-1-2@s" wk-grid>
@@ -298,7 +292,7 @@
 
                               <?php elseif($testimonials['item_styles'] == 'screen_5'): ?>
                                   <div class="wk-flex wk-flex-center wk-grid-match">
-                                    <div class="wk-card wk-card-default wk-testimonial-5 wk-padding">
+                                    <div class="wk-card wk-card-default wk-testimonial-5 wk-padding wk-text-<?php echo $testimonials['content_layout_align_for_layout_5'] ?>">
 
                                       <div class="wk-card-body wk-padding-remove">
                                           <div class="wk-position-absolute quote" wk-icon="quote-right"></div>
@@ -308,8 +302,7 @@
                                                 </div>
                                             <?php endif; ?>
 
-
-                                            <div class="wk-grid-small wk-flex-middle" wk-grid>
+                                            <div class="wk-grid-small wk-flex wk-flex-middle wk-flex-<?php echo $testimonials['content_layout_align_for_layout_5'] ?>" wk-grid>
                                                 <?php if($testimonial['testimonial_thumb_image']['url']):?>
                                                     <?php if($testimonials['thumbnail_position_horizontal'] == 'left'): ;?>
                                                         <div class="wk-width-auto">
