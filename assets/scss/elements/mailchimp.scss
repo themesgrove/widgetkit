@@ -1,0 +1,26 @@
+
+.tx-newsletter-form-element{
+    display:flex;
+    align-items:center;
+}
+.tx-newsletter-form-element div.email{
+    width:100%;
+}
+.tx-newsletter-form-element div.email input[type="email"]:focus{
+    outline:none;
+}
+
+.tx-newsletter-form-element label{
+    display:none;
+}
+.tx-newsletter-form-element .name{
+    display:none;
+}
+@media(max-width:760px){
+    .tx-newsletter-form-element{
+        display:block;
+    }
+    .tx-newsletter-form-element input[type="submit"]{
+        width:100%;
+    }
+}

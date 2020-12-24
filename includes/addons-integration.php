@@ -58,6 +58,11 @@ class WKFE_Addons_Integration{
         // wp_register_script( 'vanilla-tilt', WK_URL.'dist/js/vanilla-tilt.js' , array('jquery'), WK_VERSION, true);
         wp_register_script( 'youtube-popup', WK_URL.'dist/js/youtube-popup.js' , array('jquery'), WK_VERSION, true);
         // wp_register_script( 'magnific-popup', WK_URL.'dist/js/jquery.magnific-popup.js' , array('jquery'), WK_VERSION, true);
+        $js_info = [
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'wkfe_security_nonce' => wp_create_nonce('wkfe-ajax-security-nonce')
+        ];
+        wp_localize_script('widgetkit-main', 'wkfelocalizesettings', $js_info);
     }
 
 }

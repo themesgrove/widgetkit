@@ -217,6 +217,9 @@ class WKFE_Elements{
         if( $check_component_active['widget-lottie-animation'] ) {
             require_once WK_PATH . '/elements/lottie/widget.php';
         }
+        // if( $check_component_active['widget-lottie-animation'] ) {
+            require_once WK_PATH . '/elements/mailchimp/widget.php';
+        // }
 
     }
 

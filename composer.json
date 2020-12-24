@@ -8,6 +8,7 @@
     ],
     "require": {
         "erusev/parsedown": "^1.7",
-        "appsero/client": "^1.1"
+        "appsero/client": "^1.1",
+        "drewm/mailchimp-api": "^2.5"
     }
 }
