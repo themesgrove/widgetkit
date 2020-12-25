@@ -30,6 +30,7 @@
     
     $( 'form#widgetkit-settings' ).on( 'submit', function(e) {
 		e.preventDefault();
+		$('form#widgetkit-settings button[type="submit"]').text('Please Wait').attr( 'disabled', true );
 		$.ajax( {
 			url: settings.ajaxurl,
 			type: 'post',
@@ -39,6 +40,7 @@
 				security: settings.security_nonce
 			},
             success: function( response ) {
+				$('form#widgetkit-settings button[type="submit"]').text('Save Settings').attr( 'disabled', false );
 				swal({
 					title: 'Settings Saved!',
 					text: 'Click OK to continue',
