@@ -34,6 +34,7 @@
                             <?php if ( apply_filters('wkpro_enabled', false)) :?>
                                 <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="file-text"></span>License</a></li>
                             <?php endif; ?>
+                            <li><a href="#"><span class="wk-icon wk-margin-small-right" wk-icon="unlock"></span>API Keys</a></li>
 
                         </ul>
                     </div>

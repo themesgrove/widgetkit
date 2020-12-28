@@ -27,7 +27,9 @@
        }
     });
    
-    
+    /**
+	 * dashboard settings save
+	 */
     $( 'form#widgetkit-settings' ).on( 'submit', function(e) {
 		e.preventDefault();
 		$('form#widgetkit-settings button[type="submit"]').text('Please Wait').attr( 'disabled', true );
@@ -58,6 +60,38 @@
 		} );
 
 	} );
+	/**
+	 * mailchimp activation and deactivation
+	 */
+	$('.mailchimp-api-key-wrapper button').on('click', function(e){
+		e.preventDefault();
+
+		var apiKey = $( '.mailchimp-api-key-wrapper input#mailchimp-api-key' ).val();
+		var listID = $( '.mailchimp-api-key-wrapper input#mailchimp-list-id' ).val();
+
+		var inputObj = {
+			'apiKey': apiKey,
+			'listID': listID,
+		};
+		$.ajax( {
+			url: settings.ajaxurl,
+			type: 'post',
+			data: {
+				action: 'wkfe_mailchimp_api_keys',
+				fields: inputObj,
+				security: settings.security_nonce
+			},
+            success: function( response ) {
+				if(response.data.success){
+					$('.wk-mailchimp-card .response').text(response.data.message);
+				}
+			},
+			error: function(error) {
+				console.log('error', error.responseJSON);
+				$('.wk-mailchimp-card .response').text(error.responseJSON.data);
+			}
+		} );
+	})
 
 	/**
 	 * activate license

@@ -6,24 +6,23 @@ jQuery(document).ready(function($){
 
     $('.tx-newsletter-form-element input[type="submit"]').on('click', function(e){
         e.preventDefault();
-        // console.log(wkfelocalizesettings.ajax_url);
         $.ajax({
             url: wkfelocalizesettings.ajax_url,
             type: 'post',
             data: {
                 action: 'wkfe_mailchimp_ajax_form_data_receiver',
-				fields: $( 'form#wkfe-mailchimp' ).serialize(),
-				security: wkfelocalizesettings.wkfe_security_nonce
+				        fields: $( 'form#wkfe-mailchimp' ).serialize(),
+				        security: wkfelocalizesettings.wkfe_security_nonce
             },
             // beforeSend: function() {
             //     $(rootID).find('.dynamic-layout .dynamic-cat-post-list').append( '<div class="ajax-content"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>' );
             // },
             success: function( response ) {
                 $('.wkfe-mailchimp-wrapper #mailchimp-status').append(response);
-                // console.log('response', response);
             },
             error: function(e) {
-                console.log(e);
+                console.log(e.responseJSON);
+                $('.wkfe-mailchimp-wrapper #mailchimp-status').text(e.responseJSON.data.message);
             }
         });
     });

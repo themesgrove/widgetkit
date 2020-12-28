@@ -82,6 +82,14 @@
                                         ?>
                                     </li>
                                 <?php endif; ?>
+
+                                <!-- API Keys -->
+                                <li class="wk-api-keys">
+                                    <?php 
+                                        require WK_PATH . '/admin/includes/api-keys.php';
+                                        WKFE_Dashboard_API_Keys::init();
+                                    ?>
+                                </li>
                                 
                             </ul>
                         </div>
