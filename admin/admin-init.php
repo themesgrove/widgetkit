@@ -52,7 +52,8 @@ class Widgetkit_Admin
         'widget-pros-cons',
         'widget-click-tweet',
         'widget-video-popup',
-        'widget-lottie-animation'
+        'widget-lottie-animation',
+        'widget-mailchimp'
     ];
 
     public $widgetkit_woo_keys = [
@@ -382,88 +383,47 @@ class Widgetkit_Admin
         }
 
         $this->widgetkit_settings = [
-            // Slider Animation
             'widget-slider-animation' => intval($settings['widget-slider-animation'] ? 1 : 0),
-            // search
             'widget-search' => intval($settings['widget-search'] ? 1 : 0),
-            // widget-site-social
             'widget-site-social' => intval($settings['widget-site-social'] ? 1 : 0),
-            // widget-contact
             'widget-contact' => intval($settings['widget-contact'] ? 1 : 0),
-            // Slider Content Animation
             'widget-slider-content-animation' => intval($settings['widget-slider-content-animation'] ? 1 : 0),
-            // Slider Box Animation
             'widget-slider-box-animation' => intval($settings['widget-slider-box-animation'] ? 1 : 0),
-            // Gallery
             'widget-gallery' => intval($settings['widget-gallery'] ? 1 : 0),            
-            // Portfolio
             'widget-portfolio' => intval($settings['widget-portfolio'] ? 1 : 0),
-            // Feature section
             'widget-feature-box' => intval($settings['widget-feature-box'] ? 1 : 0),
-            // Animation Text
             'widget-animation-text' => intval($settings['widget-animation-text'] ? 1 : 0),
-            // Countdown
             'widget-countdown' => intval($settings['widget-countdown'] ? 1 : 0),
-            // Pricing Single
             'widget-pricing-single' => intval($settings['widget-pricing-single'] ? 1 : 0),
-            // Pricing Icon
             'widget-pricing-icon' => intval($settings['widget-pricing-icon'] ? 1 : 0),
-            // Pricing Tab
             'widget-pricing-tab' => intval($settings['widget-pricing-tab'] ? 1 : 0),
-            // Team 
             'widget-team' => intval($settings['widget-team'] ? 1 : 0),
-            // Team Round
             'widget-team-round' => intval($settings['widget-team-round'] ? 1 : 0),
-            // Team Animation
             'widget-team-animation' => intval($settings['widget-team-animation'] ? 1 : 0),
-            // Team Verticle Icon
             'widget-team-verticle-icon' => intval($settings['widget-team-verticle-icon'] ? 1 : 0),
-            // Team Overlay
             'widget-team-overlay' => intval($settings['widget-team-overlay'] ? 1 : 0),
-            // Button
             'widget-button' => intval($settings['widget-button'] ? 1 : 0),
-            // Hover Image
             'widget-hover-image' => intval($settings['widget-hover-image'] ? 1 : 0),
-            // Post Carousel
             'widget-content-carousel' => intval($settings['widget-content-carousel'] ? 1 : 0),
-            // Blog Revert
             'widget-blog-revert' => intval($settings['widget-blog-revert'] ? 1 : 0),
-            // Blog Hover Animation
             'widget-blog-hover-animation' => intval($settings['widget-blog-hover-animation'] ? 1 : 0),
-            // Blog Image
             'widget-blog-image' => intval($settings['widget-blog-image'] ? 1 : 0),
-            // Blog carousel
             'widget-blog-carousel' => intval($settings['widget-blog-carousel'] ? 1 : 0),
-            // Blog Sidebar
             'widget-blog-sidebar' => intval($settings['widget-blog-sidebar'] ? 1 : 0),
-             // Testimonial
             'widget-testimonial' => intval($settings['widget-testimonial'] ? 1 : 0),
-            // Testimonial Single
             'widget-testimonial-single' => intval($settings['widget-testimonial-single'] ? 1 : 0),
-            // Testimonial Center
             'widget-testimonial-center' => intval($settings['widget-testimonial-center'] ? 1 : 0),
-            // Social Share Animation
             'widget-social-share-animation' => intval($settings['widget-social-share-animation'] ? 1 : 0),
-            // Social Share collapse
             'widget-social-share-collapse' => intval($settings['widget-social-share-collapse'] ? 1 : 0),
-            // Post carousel
             'widget-post-carousel' => intval($settings['widget-post-carousel'] ? 1 : 0),
-            // Image compare
             'widget-image-compare' => intval($settings['widget-image-compare'] ? 1 : 0),
-             // Tilt Box
             'widget-tilt-box' => intval($settings['widget-tilt-box'] ? 1 : 0),
-            // Contact form
             'widget-contact-form' => intval($settings['widget-contact-form'] ? 1 : 0),
-            // Click to tweet
             'widget-click-tweet' => intval($settings['widget-click-tweet'] ? 1 : 0),
-            // Pros cons
             'widget-pros-cons' => intval($settings['widget-pros-cons'] ? 1 : 0),
-            // Video popup
             'widget-video-popup' => intval($settings['widget-video-popup'] ? 1 : 0),
-            //Lottie animation
             'widget-lottie-animation' => intval($settings['widget-lottie-animation'] ? 1 : 0),
-
-
+            'widget-mailchimp' => intval($settings['widget-mailchimp'] ? 1 : 0),
             /**
              * pro
              */

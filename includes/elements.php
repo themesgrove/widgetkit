@@ -30,42 +30,31 @@ class WKFE_Elements{
             'widget-pricing-single', 
             'widget-pricing-icon', 
             'widget-pricing-tab',
-
             'widget-testimonial',
-
             'widget-testimonial-single',
             'widget-testimonial-center',
-
             'widget-team',
-
             'widget-team-overlay',
             'widget-team-verticle-icon',
             'widget-team-round',
-
             'widget-team-animation',
-
             'widget-blog-carousel',
             'widget-blog-sidebar',
             'widget-blog-revert',
             'widget-blog-hover-animation',
             'widget-blog-image',
-
             'widget-countdown',
             'widget-animation-text',
-
             'widget-content-carousel',
             'widget-button',
             'widget-hover-image',
             'widget-feature-box',
-
             'widget-search',
             'widget-contact',
             'widget-site-social',
             'widget-social-share-animation',
             'widget-social-share-collapse',
-
             'widget-post-carousel',
-
             'widget-image-compare',
             'widget-tilt-box',
             'widget-contact-form',
@@ -73,6 +62,7 @@ class WKFE_Elements{
             'widget-click-tweet',
             'widget-video-popup',
             'widget-lottie-animation',
+            'widget-mailchimp',
         ];
         $widgetkit_default_settings = array_fill_keys( $widgetkit_elements_keys, true );
         
@@ -149,6 +139,12 @@ class WKFE_Elements{
         if( $check_component_active['widget-image-compare'] ) {
             require_once WK_PATH . '/elements/image-compare/widget.php';
         }
+        if( $check_component_active['widget-lottie-animation'] ) {
+            require_once WK_PATH . '/elements/lottie/widget.php';
+        }
+        if( $check_component_active['widget-mailchimp'] ) {
+            require_once WK_PATH . '/elements/mailchimp/widget.php';
+        }
         if( $check_component_active['widget-pricing-single'] ) {
             require_once WK_PATH . '/elements/pricing-1/widget.php';
         }
@@ -158,11 +154,9 @@ class WKFE_Elements{
         if( $check_component_active['widget-pricing-tab'] ) {
             require_once WK_PATH . '/elements/pricing-tab/widget.php';
         }
-
         if( $check_component_active['widget-pros-cons'] ) {
             require_once WK_PATH . '/elements/pros-cons/widget.php';
         }
-
         if( $check_component_active['widget-search'] ) {
             require_once WK_PATH . '/elements/search/widget.php';
         }
@@ -214,13 +208,6 @@ class WKFE_Elements{
         if( $check_component_active['widget-video-popup'] ) {
             require_once WK_PATH . '/elements/video-popup/widget.php';
         }
-        if( $check_component_active['widget-lottie-animation'] ) {
-            require_once WK_PATH . '/elements/lottie/widget.php';
-        }
-        // if( $check_component_active['widget-lottie-animation'] ) {
-            require_once WK_PATH . '/elements/mailchimp/widget.php';
-        // }
-
     }
 
 }

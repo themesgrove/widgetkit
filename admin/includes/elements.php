@@ -157,6 +157,24 @@
                         </label>
                     </div>
                 </div>
+                <div>
+                    <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                        <?php echo esc_html__('Lottie Animation', 'widgetkit-for-elementor'); ?>
+                        <label class="switch">
+                            <input type="checkbox" id="widget-lottie-animation" name="widget-lottie-animation" <?php checked(1, $this->widgetkit_get_settings['widget-lottie-animation'], true) ?>>
+                            <span class="rectangle round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                        <?php echo esc_html__('Mailchimp', 'widgetkit-for-elementor'); ?>
+                        <label class="switch">
+                            <input type="checkbox" id="widget-mailchimp" name="widget-mailchimp" <?php checked(1, $this->widgetkit_get_settings['widget-mailchimp'], true) ?>>
+                            <span class="rectangle round"></span>
+                        </label>
+                    </div>
+                </div>
                 <!-- pro -->
                 <div>
                     <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
@@ -200,7 +218,6 @@
                         </label>
                     </div>
                 </div>
-
                 <div>
                     <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
                         <?php echo esc_html__('Video Popup', 'widgetkit-for-elementor'); ?>
@@ -210,18 +227,6 @@
                         </label>
                     </div>
                 </div>
-
-                <div>
-                    <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-                        <?php echo esc_html__('Lottie Animation', 'widgetkit-for-elementor'); ?>
-                        <label class="switch">
-
-                            <input type="checkbox" id="widget-lottie-animation" name="widget-lottie-animation" <?php checked(1, $this->widgetkit_get_settings['widget-lottie-animation'], true) ?>>
-                            <span class="rectangle round"></span>
-                        </label>
-                    </div>
-                </div>
-
                 <!-- pro -->
                 <div>
                     <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
