@@ -73,8 +73,8 @@ class wkfe_mailchimp extends Widget_Base
             [
                 'label'       => __( 'Placeholder Text', 'widgetkit-for-elementor' ),
                 'type'        => Controls_Manager::TEXT,
-                'default'     => __( 'Type your email here', 'widgetkit-for-elementor' ),
-                'placeholder' => __( 'Type your email address here', 'widgetkit-for-elementor' ),
+                'default'     => __( 'hello@widgetkit.com', 'widgetkit-for-elementor' ),
+                'placeholder' => __( 'hello@widgetkit.com', 'widgetkit-for-elementor' ),
             ]
         );
         $this->add_control(
@@ -106,7 +106,7 @@ class wkfe_mailchimp extends Widget_Base
             [
                 'label' => __( 'Input', 'widgetkit-for-elementor' ),
                 'name' => 'email_input_typography',
-                'selector' => '{{WRAPPER}}  .tx-newsletter-form-element input[type="email"]',
+                'selector' => '{{WRAPPER}}  .wkfe-newsletter-form-element input[type="email"]',
             ]
         );
 
@@ -115,7 +115,7 @@ class wkfe_mailchimp extends Widget_Base
             [
                 'label' => __( 'Button', 'widgetkit-for-elementor' ),
                 'name' => 'button_typography',
-                'selector' => '{{WRAPPER}}  .tx-newsletter-form-element input[type="submit"]',
+                'selector' => '{{WRAPPER}}  .wkfe-newsletter-form-element input[type="submit"]',
             ]
         );
 
@@ -129,46 +129,37 @@ class wkfe_mailchimp extends Widget_Base
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
-            $this->add_responsive_control(
-                'txnl-input-width',
+            $this->add_control(
+                'wkfe_email_input_color',
                 [
-                    'label' => esc_html__( 'Width', 'widgetkit-for-elementor' ),
-                    'type'  => Controls_Manager::SLIDER,
-                    'default' => [
-                        'size' =>100,
-                    ],
-                    'range'  => [
-                        '%' => [
-                            'max' => 100,
-                        ],
-                    ],
-                    'devices' => [ 'desktop', 'tablet', 'mobile' ],
-                    'desktop_default' => [
-                        'size' => 100,
-                        'unit' => '%',
-                    ],
-                    'tablet_default' => [
-                        'size' => 100,
-                        'unit' => '%',
-                    ],
-                    'mobile_default' => [
-                        'size' => 100,
-                        'unit' => '%',
-                    ],
+                    'label' => esc_html__( 'Color', 'widgetkit-for-elementor' ),
+                    'type'  => Controls_Manager::COLOR,
+                    'default' => '#000',
                     'selectors' => [
-                        '{{WRAPPER}} .tx-newsletter-form-element input[type="email"]' => 'width:{{SIZE}}%;',
+                        '{{WRAPPER}} .wkfe-newsletter-form-element input[type="email"]' => 'color: {{VALUE}};',
+                    ],
+                ]
+            );
+            $this->add_control(
+                'wkfe_email_input_background_color',
+                [
+                    'label' => esc_html__( 'Background', 'widgetkit-for-elementor' ),
+                    'type'  => Controls_Manager::COLOR,
+                    'default' => '#fff',
+                    'selectors' => [
+                        '{{WRAPPER}} .wkfe-newsletter-form-element input[type="email"]' => 'background-color: {{VALUE}};',
                     ],
                 ]
             );
             $this->add_responsive_control(
-                'txnl_input_margin',
+                'wkfe_input_margin',
                 [
                     'label' => esc_html__( 'Margin', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px' ],
                     'default' => [
                         'top' => 0,
-                        'right' => 20,
+                        'right' => 0,
                         'bottom' => 0,
                         'left' => 0,
                         'unit' => 'px',
@@ -176,7 +167,7 @@ class wkfe_mailchimp extends Widget_Base
                     ],
                     'devices' => [ 'desktop', 'tablet', 'mobile' ],
                     'desktop_default' => [
-                        'size' => 20,
+                        'size' => 0,
                         'unit' => 'px',
                     ],
                     'tablet_default' => [
@@ -188,7 +179,7 @@ class wkfe_mailchimp extends Widget_Base
                         'unit' => 'px',
                     ],
                     'selectors'  => [
-                        '{{WRAPPER}} .tx-newsletter-form-element div.email' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .wkfe-newsletter-form-element div.email' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     ],
                 ]
             );
@@ -198,15 +189,22 @@ class wkfe_mailchimp extends Widget_Base
                     'label' => __( 'Padding', 'widgetkit-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
+                    'default' => [
+                        'top' => '10',
+                        'right' => '30',
+                        'bottom' => '10',
+                        'left' => '30',
+                        'isLinked' => false,
+                    ],
                     'selectors' => [
-                        '{{WRAPPER}} .tx-newsletter-form-element input[type="email"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .wkfe-newsletter-form-element input[type="email"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     ],
                 ]
             );
             $this->add_group_control(
                 Group_Control_Border::get_type(),
                 [
-                    'name'  => 'txnl_input_border',
+                    'name'  => 'wkfe_input_border',
                     'label' => esc_html__( 'Border', 'widgetkit-for-elementor' ),
                     'placeholder' => '1px',
                     'default'   => '1px',
@@ -224,11 +222,29 @@ class wkfe_mailchimp extends Widget_Base
                             ],
                         ],
                         'color' => [
-                            'default' => '#df7027',
+                            'default' => '#ecb101',
                         ],
                     ],
-                    'selector'  => '{{WRAPPER}} .tx-newsletter-form-element input[type="email"]',
+                    'selector'  => '{{WRAPPER}} .wkfe-newsletter-form-element input[type="email"]',
                     'separator' => 'before',
+                ]
+            );
+            $this->add_control(
+                'wkfe_input_email_border_radius',
+                [
+                    'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
+                    'type'  => Controls_Manager::DIMENSIONS,
+                    'size_units' => [ 'px', '%' ],
+                    'default' => [
+                        'top' => '4',
+                        'right' => '0',
+                        'bottom' => '0',
+                        'left' => '4',
+                        'isLinked' => true,
+                    ],
+                    'selectors'  => [
+                        '{{WRAPPER}} .wkfe-newsletter-form-element input[type="email"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    ],
                 ]
             );
         
@@ -249,8 +265,15 @@ class wkfe_mailchimp extends Widget_Base
                 'label' => __( 'Button Padding', 'widgetkit-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
+                'default' => [
+                    'top' => '10',
+                    'right' => '30',
+                    'bottom' => '10',
+                    'left' => '30',
+                    'isLinked' => false,
+                ],
                 'selectors' => [
-                    '{{WRAPPER}} .tx-newsletter-form-element input[type="submit"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .wkfe-newsletter-form-element input[type="submit"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -270,25 +293,25 @@ class wkfe_mailchimp extends Widget_Base
             );
             
             $this->add_control(
-                'txnl_button_text_color',
+                'wkfe_button_text_color',
                 [
                     'label'   => esc_html__( 'Text', 'widgetkit-for-elementor' ),
                     'type'    => Controls_Manager::COLOR,
                     'default' => '#fff',
                     'selectors' => [
-                        '{{WRAPPER}}  .tx-newsletter-form-element input[type="submit"]' => 'color: {{VALUE}};',
+                        '{{WRAPPER}}  .wkfe-newsletter-form-element input[type="submit"]' => 'color: {{VALUE}};',
                     ],
                 ]
             );
 
             $this->add_control(
-                'txnl_button_background_color',
+                'wkfe_button_background_color',
                 [
                     'label' => esc_html__( 'Background', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::COLOR,
-                    'default' => '#df7027',
+                    'default' => '#ecb101',
                     'selectors' => [
-                        '{{WRAPPER}} .tx-newsletter-form-element input[type="submit"]' => 'background-color: {{VALUE}};',
+                        '{{WRAPPER}} .wkfe-newsletter-form-element input[type="submit"]' => 'background-color: {{VALUE}};',
                     ],
                 ]
             );
@@ -300,7 +323,7 @@ class wkfe_mailchimp extends Widget_Base
             $this->add_group_control(
                 Group_Control_Border::get_type(),
                 [
-                    'name'  => 'txnl_button_border',
+                    'name'  => 'wkfe_button_border',
                     'label' => esc_html__( 'Border', 'widgetkit-for-elementor' ),
                     'placeholder' => '1px',
                     'default'   => '1px',
@@ -318,11 +341,10 @@ class wkfe_mailchimp extends Widget_Base
                             ],
                         ],
                         'color' => [
-                            'default' => '#df7027',
+                            'default' => '#ecb101',
                         ],
                     ],
-                    'selector'  => '{{WRAPPER}} .tx-newsletter-form-element input[type="submit"]',
-                    'separator' => 'before',
+                    'selector'  => '{{WRAPPER}} .wkfe-newsletter-form-element input[type="submit"]',
                 ]
             );
             
@@ -340,25 +362,25 @@ class wkfe_mailchimp extends Widget_Base
             );
 
                 $this->add_control(
-                    'txnl_button_text_hover_color',
+                    'wkfe_button_text_hover_color',
                     [
                         'label'   => esc_html__( 'Text', 'widgetkit-for-elementor' ),
                         'type'    => Controls_Manager::COLOR,
-                        'default' => '#df7027',
+                        'default' => '#ecb101',
                         'selectors' => [
-                            '{{WRAPPER}}  .tx-newsletter-form-element input[type="submit"]:hover' => 'color: {{VALUE}};',
+                            '{{WRAPPER}}  .wkfe-newsletter-form-element input[type="submit"]:hover' => 'color: {{VALUE}};',
                         ],
                     ]
                 );
 
                 $this->add_control(
-                    'txnl_button_background_hover_color',
+                    'wkfe_button_background_hover_color',
                     [
                         'label' => esc_html__( 'Background', 'widgetkit-for-elementor' ),
                         'type'  => Controls_Manager::COLOR,
                         'default' => '#fff',
                         'selectors' => [
-                            '{{WRAPPER}} .tx-newsletter-form-element input[type="submit"]:hover' => 'background-color: {{VALUE}};',
+                            '{{WRAPPER}} .wkfe-newsletter-form-element input[type="submit"]:hover' => 'background-color: {{VALUE}};',
                         ],
                     ]
                 );
@@ -366,53 +388,46 @@ class wkfe_mailchimp extends Widget_Base
                 $this->add_group_control(
                     Group_Control_Border::get_type(),
                     [
-                        'name'  => 'txnl_button_hover_border',
+                        'name'  => 'wkfe_button_hover_border',
                         'label' => esc_html__( 'Border', 'widgetkit-for-elementor' ),
                         'placeholder' => '1px',
                         'default'   => '1px',
-                        'selector'  => '{{WRAPPER}} .tx-newsletter-form-element input[type="submit"]:hover',
-                        'separator' => 'before',
+                        'selector'  => '{{WRAPPER}} .wkfe-newsletter-form-element input[type="submit"]:hover',
                     ]
                 );
                 
-
             $this->end_controls_tab();
 
         $this->end_controls_tabs();
-        
-        $this->end_controls_section();
 
-        $this->start_controls_section(
-            'common_style',
+        $this->add_control(
+            'wkfe_submit_button_border_radius',
             [
-                'label' => __( 'Common', 'widgetkit-for-elementor' ),
-                'tab' => Controls_Manager::TAB_STYLE,
+                'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
+                'type'  => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%' ],
+                'default' => [
+                    'top' => '0',
+                    'right' => '4',
+                    'bottom' => '4',
+                    'left' => '0',
+                    'isLinked' => true,
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .wkfe-newsletter-form-element input[type="submit"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'separator' => 'before',
             ]
         );
-            $this->add_control(
-                'txnl_button_border_radius',
-                [
-                    'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
-                    'type'  => Controls_Manager::DIMENSIONS,
-                    'size_units' => [ 'px', '%' ],
-                    'selectors'  => [
-                        '{{WRAPPER}} .tx-newsletter-form-element input' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    ],
-                    'separator' => 'before',
-                ]
-            );
-        $this->end_controls_tab();
+        
+        $this->end_controls_section();
 
     }
 
     protected function render()
     {
-        $settings = $this->get_settings();
-        $form_input_placeholder_text = widgetkit_for_elementor_array_get($settings, 'placeholder_text');
-        $form_button_text = widgetkit_for_elementor_array_get($settings, 'button_text');
     ?>
     <?php
-        // include( plugin_dir_path( __FILE__ ) . '../templates/tx-newsletter.php');
         require WK_PATH . '/elements/mailchimp/template/view.php';
         ?>
     <?php

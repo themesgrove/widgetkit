@@ -1,26 +1,98 @@
 
-.tx-newsletter-form-element{
+.wkfe-newsletter-form-element{
     display:flex;
     align-items:center;
 }
-.tx-newsletter-form-element div.email{
+.wkfe-newsletter-form-element div.email{
     width:100%;
 }
-.tx-newsletter-form-element div.email input[type="email"]:focus{
+.wkfe-newsletter-form-element div.email input[type="email"]:focus{
     outline:none;
 }
 
-.tx-newsletter-form-element label{
+.wkfe-newsletter-form-element label{
     display:none;
 }
-.tx-newsletter-form-element .name{
+.wkfe-newsletter-form-element .name{
     display:none;
 }
+.wkfe-newsletter-form-element{
+    div.submit{
+        position: relative;
+        div.ajax-loading{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ecb101;
+        }
+        .lds-ellipsis {
+            display : flex;
+            height: auto;
+            align-items: center;
+        }
+        .lds-ellipsis div {
+            position                 : absolute;
+            top                      : auto;
+            width                    : 11px;
+            height                   : 11px;
+            border-radius            : 50%;
+            background               : #fff;
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+        .lds-ellipsis div:nth-child(1) {
+            left     : 6px;
+            animation: lds-ellipsis1 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(2) {
+            left     : 6px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(3) {
+            left     : 26px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(4) {
+            left     : 45px;
+            animation: lds-ellipsis3 0.6s infinite;
+        }
+        @keyframes lds-ellipsis1 {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        @keyframes lds-ellipsis3 {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(0);
+            }
+        }
+        @keyframes lds-ellipsis2 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(19px, 0);
+            }
+        }
+    }
+}
+
 @media(max-width:760px){
-    .tx-newsletter-form-element{
+    .wkfe-newsletter-form-element{
         display:block;
     }
-    .tx-newsletter-form-element input[type="submit"]{
+    .wkfe-newsletter-form-element input[type="submit"]{
         width:100%;
     }
 }
