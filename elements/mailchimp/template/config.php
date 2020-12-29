@@ -300,6 +300,7 @@ class wkfe_mailchimp extends Widget_Base
                     'default' => '#fff',
                     'selectors' => [
                         '{{WRAPPER}}  .wkfe-newsletter-form-element input[type="submit"]' => 'color: {{VALUE}};',
+                        '{{WRAPPER}}  .wkfe-newsletter-form-element div.loading-ring' => 'color: {{VALUE}};',
                     ],
                 ]
             );
@@ -312,6 +313,7 @@ class wkfe_mailchimp extends Widget_Base
                     'default' => '#ecb101',
                     'selectors' => [
                         '{{WRAPPER}} .wkfe-newsletter-form-element input[type="submit"]' => 'background-color: {{VALUE}};',
+                        '{{WRAPPER}} .wkfe-newsletter-form-element div.loading-ring' => 'background-color: {{VALUE}};',
                     ],
                 ]
             );

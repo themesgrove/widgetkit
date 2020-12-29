@@ -13,17 +13,17 @@ jQuery(document).ready(function($){
 				        security: wkfelocalizesettings.wkfe_security_nonce
             },
             beforeSend: function() {
-                $('form.wkfe-newsletter-form-element div.submit').append( '<div class="ajax-loading"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>' );
+                $('form.wkfe-newsletter-form-element div.submit').append( '<div class="loading-ring"></div>' );
             },
             success: function( response ) {
                 $('.wkfe-mailchimp-wrapper #mailchimp-status').css('margin-bottom', '20px').empty();
-                $('form.wkfe-newsletter-form-element div.submit div.ajax-loading').remove();
+                $('form.wkfe-newsletter-form-element div.submit div.loading-ring').remove();
                 $('.wkfe-mailchimp-wrapper #mailchimp-status').append(response);
             },
             error: function(e) {
                 console.log(e.responseJSON);
                 $('.wkfe-mailchimp-wrapper #mailchimp-status').empty().css('margin-bottom', '0px');
-                $('form.wkfe-newsletter-form-element div.submit div.ajax-loading').remove();
+                $('form.wkfe-newsletter-form-element div.submit div.loading-ring').remove();
                 $('.wkfe-mailchimp-wrapper #mailchimp-status').text(e.responseJSON.data.message);
             }
         });
