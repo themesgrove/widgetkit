@@ -38,8 +38,11 @@
 
                         </ul>
                     </div>
-                    <div class="wk-width-1-5 wk-text-right">
-                        <button type="submit" class="wk-button wk-button-danger widgetkit-save-button wk-flex wk-flex-right">Save Settings</button>
+                    <div class="wk-width-1-5 wk-text-right wk-dashboard-action-button">
+                        <div class="wk-dashboard-action-button-wrapper">
+                            <button type="submit" class="wk-button wk-button-danger widgetkit-save-button wk-flex wk-flex-right">Save Settings</button>
+                            <div class="loading-ring"></div>
+                        </div>
                     </div>
                 </div>
             </div>

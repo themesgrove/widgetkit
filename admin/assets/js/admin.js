@@ -32,7 +32,7 @@
 	 */
     $( 'form#widgetkit-settings' ).on( 'submit', function(e) {
 		e.preventDefault();
-		$('form#widgetkit-settings button[type="submit"]').text('Please Wait').attr( 'disabled', true );
+		$('form#widgetkit-settings button[type="submit"]').attr( 'disabled', true );
 		$.ajax( {
 			url: settings.ajaxurl,
 			type: 'post',
@@ -41,8 +41,12 @@
 				fields: $( 'form#widgetkit-settings' ).serialize(),
 				security: settings.security_nonce
 			},
+			beforeSend: function() {
+                $('form#widgetkit-settings .loading-ring').css('visibility', 'visible');
+            },
             success: function( response ) {
-				$('form#widgetkit-settings button[type="submit"]').text('Save Settings').attr( 'disabled', false );
+				$('form#widgetkit-settings button[type="submit"]').attr( 'disabled', false );
+				$('form#widgetkit-settings .loading-ring').css('visibility', 'hidden');
 				swal({
 					title: 'Settings Saved!',
 					text: 'Click OK to continue',
@@ -56,6 +60,7 @@
 					title: 'Bad Request',
 					text: 'No dirty business please !',
 				});
+				$('form#widgetkit-settings .loading-ring').css('visibility', 'hidden');
 			}
 		} );
 
