@@ -31,3 +31,30 @@
     }
     
 }
+
+#elementor-panel-category-widgetkit_elementor, 
+#elementor-panel-category-widgetkit_deprecated_elements,
+#elementor-panel-category-widgetkit_pro,
+#elementor-panel-category-widgetkit_pro_woo_single_product{
+    .elementor-element{
+        position:relative;
+        .icon i:after{
+            content: 'WK';
+            font-size: 10px;
+            position: absolute;
+            top: 5px;
+            right: 7px;
+            color:#b8860b;
+            background:#b8860b1f;
+            padding:2px;
+            border-radius:2px;
+        }
+        &:hover{
+            .icon, .title{
+                // color: #f3b800 !important;
+                color: #b8860b !important;
+            }
+        }
+    }
+    
+}
