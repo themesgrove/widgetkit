@@ -159,15 +159,24 @@
                     <div class="wkp-changes wk-background-muted wk-pro-changelog">
                         <h3 class="wkp-headline">WidgetKit Pro</h3>
 
-                        <?php foreach($changelog_data as $data): ?>
-                            <div class="version version-<?php echo $data['plugin_version'];?> wk-background-muted wk-padding-small wk-margin-small-bottom">
+                        <?php if($changelog_data): ?>
+                            <?php foreach($changelog_data as $data): ?>
+                                <div class="version version-<?php echo $data['plugin_version'];?> wk-background-muted wk-padding-small wk-margin-small-bottom">
+                                    <div class="release-version-date"> 
+                                        <h4><?php echo $data['plugin_version']; ?> </h4>
+                                        <span> <?php echo $data['publish_date'] ?>  </span>
+                                    </div>
+                                    <?php echo $Parsedown->text($data['plugin_changelog']); ?>
+                                </div>
+                            <?php endforeach;  ?>
+						<?php else: ?>
+							<div class="wk-background-muted wk-padding-small wk-margin-small-bottom">
                                 <div class="release-version-date"> 
-                                    <h4><?php echo $data['plugin_version']; ?> </h4>
-                                    <span> <?php echo $data['publish_date'] ?>  </span>
+                                    <h4>Something went wrong to retrive data.</h4>
                                 </div>
                                 <?php echo $Parsedown->text($data['plugin_changelog']); ?>
                             </div>
-                        <?php endforeach; ?>
+						<?php endif; ?>
 
                     </div>
                 </div>
@@ -178,7 +187,11 @@
         
             $remote_api_data = wp_remote_get($this->api_url);
             $changes_data = '';
-    
+
+            if ( is_wp_error( $remote_api_data ) ) {
+				return false;
+			}
+            
             if($remote_api_data['response']['code'] == 200){
                 $response_data = wp_remote_retrieve_body($remote_api_data);
                 $data_arr = json_decode($response_data, true);
