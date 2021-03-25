@@ -2,8 +2,8 @@
     $contents = $settings = $this->get_settings(); 
     $id = $this->get_id();
     $header_tag_arr_for_content_carousel = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
-    $content_carousel_custom_header_tag = wp_kses($contents['custom_header_tag'], $header_tag_arr_for_content_carousel);
-    $content_carousel_post_header_tag = wp_kses($contents['post_header_tag'], $header_tag_arr_for_content_carousel);
+    $content_carousel_custom_header_tag = esc_html(wp_kses($contents['custom_header_tag'], $header_tag_arr_for_content_carousel));
+    $content_carousel_post_header_tag = esc_html(wp_kses($contents['post_header_tag'], $header_tag_arr_for_content_carousel));
     use Elementor\Group_Control_Image_Size;
     
     ?>

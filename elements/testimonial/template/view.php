@@ -2,7 +2,7 @@
     $testimonials = $settings = $this->get_settings(); 
     $id = $this->get_id();
     $header_tag_arr_for_testimonial = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
-    $testimonial_header_tag = wp_kses($testimonials['custom_header_tag'], $header_tag_arr_for_testimonial);
+    $testimonial_header_tag = esc_html(wp_kses($testimonials['custom_header_tag'], $header_tag_arr_for_testimonial));
     use Elementor\Group_Control_Image_Size;
     ?>
 

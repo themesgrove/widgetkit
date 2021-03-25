@@ -5,7 +5,7 @@
     $id = $this->get_id();
 
     $header_tag_arr_for_slider_1 = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
-    $slider_1_header_tag = wp_kses($settings['heading_tag'], $header_tag_arr_for_slider_1);
+    $slider_1_header_tag = esc_html(wp_kses($settings['heading_tag'], $header_tag_arr_for_slider_1));
 
 ?>
 

@@ -4,7 +4,7 @@
     $team = $this->get_settings();
     $id = $this->get_id();
     $header_tag_arr_for_team = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
-    $team_header_tag = wp_kses($team['header_tag'], $header_tag_arr_for_team);
+    $team_header_tag = esc_html(wp_kses($team['header_tag'], $header_tag_arr_for_team));
     use Elementor\Group_Control_Image_Size;
 
 ?>

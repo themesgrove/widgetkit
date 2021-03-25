@@ -3,7 +3,7 @@
     $settings = $this->get_settings();
     $id = $this->get_id();
     $header_tag_arr_for_slider_2 = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
-    $slider_2_header_tag = wp_kses($settings['heading_tag'], $header_tag_arr_for_slider_2);
+    $slider_2_header_tag = esc_html(wp_kses($settings['heading_tag'], $header_tag_arr_for_slider_2));
 ?>
     <!-- Animation Slider start -->
     <section id="tgx-hero-unit" class="tgx-slider-2">
