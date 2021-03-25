@@ -4,6 +4,9 @@
     $settings = $this->get_settings();
     $id = $this->get_id();
 
+    $header_tag_arr_for_slider_1 = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
+    $slider_1_header_tag = wp_kses($settings['heading_tag'], $header_tag_arr_for_slider_1);
+
 ?>
 
 
@@ -30,9 +33,9 @@
 
                         <div class="carousel-caption ">
                             <?php if ($slider['title']):?>
-                                <<?php echo $settings['heading_tag'];?> class="slider-title animated animate-delay-1 <?php echo $slider['title_animation']; ?>">
+                                <<?php echo $slider_1_header_tag;?> class="slider-title animated animate-delay-1 <?php echo $slider['title_animation']; ?>">
                                         <?php echo $slider['title']; ?>                    
-                                </<?php echo $settings['heading_tag'];?>>
+                                </<?php echo $slider_1_header_tag;?>>
                             <?php endif; ?>
 
 

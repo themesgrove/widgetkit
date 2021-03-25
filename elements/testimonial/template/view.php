@@ -1,8 +1,8 @@
 <?php
     $testimonials = $settings = $this->get_settings(); 
     $id = $this->get_id();
-    $header_tag_arr = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
-    $custom_header_tag = wp_kses($contents['custom_header_tag'], $header_tag_arr);
+    $header_tag_arr_for_testimonial = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
+    $testimonial_header_tag = wp_kses($testimonials['custom_header_tag'], $header_tag_arr_for_testimonial);
     use Elementor\Group_Control_Image_Size;
     ?>
 
@@ -56,7 +56,7 @@
                                           <?php endif; ?>
 
                                         <?php if ($testimonial['testimonial_title']): ?>
-                                            <<?php echo $custom_header_tag;?>  class="wk-card-title wk-margin-remove">
+                                            <<?php echo $testimonial_header_tag;?>  class="wk-card-title wk-margin-remove">
                                                 <?php if ($testimonial['content_demo_link']): ?>
                                                      <a href="<?php echo $testimonial['content_demo_link']['url']; ?>" <?php echo $testimonial['content_demo_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>><?php echo $testimonial['testimonial_title']; ?></a>
                                                 <?php else: ?>
@@ -69,7 +69,7 @@
                                                     <?php endif; ?>
                                                 <?php endif; ?>
                                       
-                                          </<?php echo $custom_header_tag;?>>  
+                                          </<?php echo $testimonial_header_tag;?>>  
                                         <?php endif; ?>
 
                                         <?php if ($testimonial['testimonial_designation']): ?>
@@ -122,7 +122,7 @@
                                               <?php endif; ?>
                                         <?php endif; ?>
                                         <?php if ($testimonial['testimonial_title']): ?>
-                                            <<?php echo $custom_header_tag;?>  class="wk-card-title wk-margin-remove">
+                                            <<?php echo $testimonial_header_tag;?>  class="wk-card-title wk-margin-remove">
                                                 <?php if ($testimonial['content_demo_link']): ?>
                                                      <a href="<?php echo $testimonial['content_demo_link']['url']; ?>" <?php echo $testimonial['content_demo_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>><?php echo $testimonial['testimonial_title']; ?></a>
                                                 <?php else: ?>
@@ -134,7 +134,7 @@
                                                     <?php endif; ?>
                                                 <?php endif; ?>
 
-                                            </<?php echo $custom_header_tag;?>>  
+                                            </<?php echo $testimonial_header_tag;?>>  
                                           <?php endif; ?>
 
                                           <?php if ($testimonial['testimonial_designation']): ?>
@@ -178,7 +178,7 @@
                                           <?php endif; ?>
 
                                           <?php if ($testimonial['testimonial_title']): ?>
-                                            <<?php echo $custom_header_tag;?>  class="wk-card-title wk-margin-remove">
+                                            <<?php echo $testimonial_header_tag;?>  class="wk-card-title wk-margin-remove">
                                                 <?php if ($testimonial['content_demo_link']): ?>
                                                      <a href="<?php echo $testimonial['content_demo_link']['url']; ?>" <?php echo $testimonial['content_demo_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>><?php echo $testimonial['testimonial_title']; ?></a>
                                                 <?php else: ?>
@@ -189,7 +189,7 @@
                                                         <span class="wk-text-meta wk-inline-block right"><?php echo $testimonial['testimonial_designation']; ?></span>
                                                     <?php endif; ?>
                                                 <?php endif; ?>
-                                          </<?php echo $custom_header_tag;?>>  
+                                          </<?php echo $testimonial_header_tag;?>>  
                                         <?php endif; ?>
 
                                             <?php if ($testimonial['testimonial_designation']): ?>
@@ -266,7 +266,7 @@
                                             <?php endif; ?>
 
                                           <?php if ($testimonial['testimonial_title']): ?>
-                                              <<?php echo $custom_header_tag;?>  class="wk-card-title wk-margin-remove">
+                                              <<?php echo $testimonial_header_tag;?>  class="wk-card-title wk-margin-remove">
                                                   <?php if ($testimonial['content_demo_link']): ?>
                                                        <a href="<?php echo $testimonial['content_demo_link']['url']; ?>" <?php echo $testimonial['content_demo_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>><?php echo $testimonial['testimonial_title']; ?></a>
                                                   <?php else: ?>
@@ -279,7 +279,7 @@
                                                       <?php endif; ?>
                                                   <?php endif; ?>
                                         
-                                            </<?php echo $custom_header_tag;?>>  
+                                            </<?php echo $testimonial_header_tag;?>>  
                                           <?php endif; ?>
 
                                           <?php if ($testimonial['testimonial_designation']): ?>
@@ -329,7 +329,7 @@
                                                     <?php endif; ?>
 
                                                   <?php if ($testimonial['testimonial_title']): ?>
-                                                      <<?php echo $custom_header_tag;?>  class="wk-card-title wk-margin-remove">
+                                                      <<?php echo $testimonial_header_tag;?>  class="wk-card-title wk-margin-remove">
                                                           <?php if ($testimonial['content_demo_link']): ?>
                                                                <a href="<?php echo $testimonial['content_demo_link']['url']; ?>" <?php echo $testimonial['content_demo_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>><?php echo $testimonial['testimonial_title']; ?></a>
                                                           <?php else: ?>
@@ -342,7 +342,7 @@
                                                               <?php endif; ?>
                                                           <?php endif; ?>
                                                 
-                                                    </<?php echo $custom_header_tag;?>>  
+                                                    </<?php echo $testimonial_header_tag;?>>  
                                                   <?php endif; ?>
 
                                                   <?php if ($testimonial['testimonial_designation']): ?>
@@ -396,7 +396,7 @@
                                               <?php endif; ?>
                                         <?php endif; ?>
                                         <?php if ($testimonial['testimonial_title']): ?>
-                                            <<?php echo $custom_header_tag;?>  class="wk-card-title wk-margin-remove">
+                                            <<?php echo $testimonial_header_tag;?>  class="wk-card-title wk-margin-remove">
                                                 <?php if ($testimonial['content_demo_link']): ?>
                                                      <a href="<?php echo $testimonial['content_demo_link']['url']; ?>" <?php echo $testimonial['content_demo_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>><?php echo $testimonial['testimonial_title']; ?></a>
                                                 <?php else: ?>
@@ -407,7 +407,7 @@
                                                         <span class="wk-text-meta wk-inline-block right"><?php echo $testimonial['testimonial_designation']; ?></span>
                                                     <?php endif; ?>
                                                 <?php endif; ?>
-                                        </<?php echo $custom_header_tag;?>>  
+                                        </<?php echo $testimonial_header_tag;?>>  
                                         <?php endif; ?>
 
                                         <?php if ($testimonial['testimonial_designation']): ?>

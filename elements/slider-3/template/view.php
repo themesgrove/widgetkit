@@ -1,5 +1,7 @@
 <?php
     $settings = $this->get_settings();
+    $header_tag_arr_for_slider_3 = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
+    $slider_3_header_tag = wp_kses($settings['heading_tag'], $header_tag_arr_for_slider_3);
 ?>
         <div class="tgx-slider-3">
             <div class="slideshow">
@@ -11,7 +13,7 @@
                             <div class="slide__img" style="background-image: url(<?php echo esc_url( $sliders['tgx_slider_3_image']['url']); ?>)"></div>
 
                                 <?php if($sliders['tgx_slider_3_title']): ?>
-                                    <<?php echo $settings['heading_tag'];?> class="slide__title"><?php echo  $sliders['tgx_slider_3_title']; ?></<?php echo $settings['heading_tag'];?>>
+                                    <<?php echo $slider_3_header_tag;?> class="slide__title"><?php echo  $sliders['tgx_slider_3_title']; ?></<?php echo $slider_3_header_tag;?>>
                                 <?php endif; ?>
 
                                 <?php if($sliders['tgx_slider_3_subtitle']): ?>

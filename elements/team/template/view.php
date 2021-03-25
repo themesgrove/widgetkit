@@ -3,8 +3,8 @@
     use Elementor\Icons_Manager;
     $team = $this->get_settings();
     $id = $this->get_id();
-    $header_tag_arr = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
-    $header_tag = wp_kses($contents['header_tag'], $header_tag_arr);
+    $header_tag_arr_for_team = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
+    $team_header_tag = wp_kses($team['header_tag'], $header_tag_arr_for_team);
     use Elementor\Group_Control_Image_Size;
 
 ?>
@@ -26,7 +26,7 @@
                     <div class="wk-grid-small wk-flex-top" wk-grid>
                         <?php if( $team['single_title']):?>
                             <div class="wk-width-expand">
-                                <<?php echo $header_tag;?> class="wk-card-title wk-margin-remove">
+                                <<?php echo $team_header_tag;?> class="wk-card-title wk-margin-remove">
                                     <?php if( $team['single_content_link']):?>
                                         <a class="wk-display-block" href="<?php echo $team['single_content_link']['url']; ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                             <?php echo $team['single_title']; ?>
@@ -34,7 +34,7 @@
                                     <?php else: ?>
                                         <?php echo $team['single_title']; ?>
                                     <?php endif; ?>
-                                </<?php echo $header_tag;?>>
+                                </<?php echo $team_header_tag;?>>
                             </div> <!-- wk-width-expand-->
                         <?php endif; ?>
 
@@ -80,7 +80,7 @@
 
                      <div class="wk-card-body">
                         <?php if( $team['single_title']):?>
-                            <<?php echo $header_tag;?> class="wk-card-title wk-margin-remove">
+                            <<?php echo $team_header_tag;?> class="wk-card-title wk-margin-remove">
                                 <?php if( $team['single_content_link']):?>
                                     <a class="wk-display-block" href="<?php echo $team['single_content_link']['url']; ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                         <?php echo $team['single_title']; ?>
@@ -88,7 +88,7 @@
                                 <?php else: ?>
                                     <?php echo $team['single_title']; ?>
                                 <?php endif; ?>
-                            </<?php echo $header_tag;?>>
+                            </<?php echo $team_header_tag;?>>
                         <?php endif; ?>
 
                         <?php if( $team['single_designation']):?>
@@ -135,7 +135,7 @@
                     <div class="wk-width-1-2@m">
                          <div class="wk-card-body">
                             <?php if( $team['single_title']):?>
-                                <<?php echo $header_tag;?> class="wk-card-title wk-margin-remove">
+                                <<?php echo $team_header_tag;?> class="wk-card-title wk-margin-remove">
                                     <?php if( $team['single_content_link']):?>
                                         <a class="wk-display-block" href="<?php echo $team['single_content_link']['url']; ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                             <?php echo $team['single_title']; ?>
@@ -143,7 +143,7 @@
                                     <?php else: ?>
                                         <?php echo $team['single_title']; ?>
                                     <?php endif; ?>
-                                </<?php echo $header_tag;?>>
+                                </<?php echo $team_header_tag;?>>
                             <?php endif; ?>
 
                             <?php if( $team['single_designation']):?>
@@ -198,7 +198,7 @@
                          <div class="wk-card-body wk-padding-remove wk-position-bottom wk-background-muted">
                             <div class="info-wrapper wk-position-relative wk-padding-small">
                                 <?php if( $team['single_title']):?>
-                                    <<?php echo $header_tag;?> class="wk-card-title wk-margin-remove">
+                                    <<?php echo $team_header_tag;?> class="wk-card-title wk-margin-remove">
                                         <?php if( $team['single_content_link']):?>
                                             <a class="wk-display-block" href="<?php echo $team['single_content_link']['url']; ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                                 <?php echo $team['single_title']; ?>
@@ -206,7 +206,7 @@
                                         <?php else: ?>
                                             <?php echo $team['single_title']; ?>
                                         <?php endif; ?>
-                                    </<?php echo $header_tag;?>>
+                                    </<?php echo $team_header_tag;?>>
                                 <?php endif; ?>
 
                                 <?php if( $team['single_designation']):?>
@@ -253,7 +253,7 @@
                          <div class="wk-card-body wk-padding-remove wk-position-bottom wk-background-muted">
                             <div class="info-wrapper wk-position-relative wk-padding-small">
                                 <?php if( $team['single_title']):?>
-                                    <<?php echo $header_tag;?> class="wk-card-title wk-margin-remove">
+                                    <<?php echo $team_header_tag;?> class="wk-card-title wk-margin-remove">
                                         <?php if( $team['single_content_link']):?>
                                             <a class="wk-display-block" href="<?php echo $team['single_content_link']['url']; ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                                 <?php echo $team['single_title']; ?>
@@ -261,7 +261,7 @@
                                         <?php else: ?>
                                             <?php echo $team['single_title']; ?>
                                         <?php endif; ?>
-                                    </<?php echo $header_tag;?>>
+                                    </<?php echo $team_header_tag;?>>
                                 <?php endif; ?>
 
                                 <?php if( $team['single_designation']):?>
@@ -303,7 +303,7 @@
                         <div class="wk-card-media"></div>
                         <div class="wk-card-body wk-position-relative">
                             <?php if( $team['single_title']):?>
-                                <<?php echo $header_tag;?> class="wk-card-title wk-margin-remove">
+                                <<?php echo $team_header_tag;?> class="wk-card-title wk-margin-remove">
                                     <?php if( $team['single_content_link']):?>
                                         <a class="wk-display-block" href="<?php echo $team['single_content_link']['url']; ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                             <?php echo $team['single_title']; ?>
@@ -311,7 +311,7 @@
                                     <?php else: ?>
                                         <?php echo $team['single_title']; ?>
                                     <?php endif; ?>
-                                </<?php echo $header_tag;?>>
+                                </<?php echo $team_header_tag;?>>
                             <?php endif; ?>
 
                             <?php if( $team['single_designation']):?>
@@ -357,7 +357,7 @@
                         <div class="wk-grid-small wk-flex-middle" wk-grid>
                             <?php if( $team['single_title']):?>
                                 <div class="wk-width-expand">
-                                    <<?php echo $header_tag;?> class="wk-card-title wk-margin-remove">
+                                    <<?php echo $team_header_tag;?> class="wk-card-title wk-margin-remove">
                                         <?php if( $team['single_content_link']):?>
                                             <a class="wk-display-block" href="<?php echo $team['single_content_link']['url']; ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                                 <?php echo $team['single_title']; ?>
@@ -365,7 +365,7 @@
                                         <?php else: ?>
                                             <?php echo $team['single_title']; ?>
                                         <?php endif; ?>
-                                    </<?php echo $header_tag;?>>
+                                    </<?php echo $team_header_tag;?>>
                                 </div> <!-- wk-width-expand-->
                             <?php endif; ?>
 
