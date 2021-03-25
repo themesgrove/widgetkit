@@ -4,6 +4,9 @@
 ************************************************************************/
 .tgx-slider-2 {
     position: relative;
+    .carousel.slide{
+      width:100%;
+    }
   }
   .tgx-slider-2 .carousel {
     overflow: hidden;
