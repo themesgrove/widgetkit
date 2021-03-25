@@ -4,8 +4,8 @@ Contributors: Themesgrove, parvezvai, themexpert
 Donate link: https://themesgrove.com/
 Tags: elementor, add-ons, elementor addons, elementor widgets, woocommerce, learndash, learnpress, widgets, woocommerce addons, learndash addons, sensei, sensei addons, countdown, timer, slider, team, testimonial, social-share, carousel, portfolio, pricing, widgetkit
 Requires at least: 5.0
-Tested up to: 5.5.3
-Stable tag: 2.3.9
+Tested up to: 5.7
+Stable tag: 2.3.10
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -273,6 +273,15 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+
+= 2.3.10 =
+Fix - Elementor compatible tag added for Content Carousel element.
+Fix - Elementor compatible tag added for Slider Animation element.
+Fix - Elementor compatible tag added for Slider Content element.
+Fix - Elementor compatible tag added for Slider Box element.
+Fix - Elementor compatible tag added for Team element.
+Fix - Elementor compatible tag added for Testimonial element.
+Update - Slider Content Style issue.
 
 = 2.3.9 =
 New - Mailchimp element.
