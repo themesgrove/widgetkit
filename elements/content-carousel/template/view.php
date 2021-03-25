@@ -1,6 +1,9 @@
 <?php
     $contents = $settings = $this->get_settings(); 
     $id = $this->get_id();
+    $header_tag_arr = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
+    $custom_header_tag = wp_kses($contents['custom_header_tag'], $header_tag_arr);
+    $post_header_tag = wp_kses($contents['post_header_tag'], $header_tag_arr);
     use Elementor\Group_Control_Image_Size;
     
     ?>
@@ -40,13 +43,14 @@
                                             <span class="wk-text-meta wk-inline-block"><?php echo $content['content_meta']; ?></span>
                                         <?php endif; ?>
                                         <?php if ($content['content_title']): ?>
-                                            <<?php echo $contents['custom_header_tag'];?>  class="wk-card-title wk-margin-remove">
+                                            
+                                            <<?php echo $custom_header_tag;?>  class="wk-card-title wk-margin-remove">
                                                 <?php if ($content['content_demo_link']): ?>
                                                      <a href="<?php echo $content['content_demo_link']['url']; ?>" <?php echo $content['content_demo_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>><?php echo $content['content_title']; ?></a>
                                                 <?php else: ?>
                                                         <?php echo $content['content_title']; ?>
                                                 <?php endif; ?>  
-                                            </<?php echo $contents['custom_header_tag'];?>>  
+                                            </<?php echo $custom_header_tag;?>>  
                                         <?php endif; ?>
                                         <?php if ($content['content_content']): ?>
                                             <p class=" wk-margin-small-bottom"><?php echo $content['content_content']; ?></p>
@@ -104,11 +108,11 @@
                                             
                                         <?php endif; ?>
                                        
-                                        <<?php echo $contents['post_header_tag'];?>  class="wk-card-title wk-margin-remove">    
+                                        <<?php echo $post_header_tag;?>  class="wk-card-title wk-margin-remove">    
                                             <a href="<?php the_permalink();?>"><?php echo wp_trim_words( get_the_title(), $contents['title_word'], ' ' );?>    
                                             </a>
 
-                                        </<?php echo $contents['post_header_tag'];?>>
+                                        </<?php echo $post_header_tag;?>>
                                         <?php if ( $contents['content_enable'] == 'yes' ): ?>
                                             <p class="wk-margin-small-bottom">
                                                 <?php echo wp_trim_words( get_the_content(), $contents['content_word'], ' ' );?>
