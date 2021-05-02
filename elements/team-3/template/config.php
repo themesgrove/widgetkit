@@ -6,7 +6,7 @@ use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Utils;
 use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Typography;
+Use Elementor\Core\Schemes\Typography;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -264,7 +264,7 @@ class wkfe_team_3 extends Widget_Base {
 				[
 					'name'     => 'title_typography',
 					'label'    => esc_html__( 'Title Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-team-3 .team-container .team-each-wrap .team-info .team-title',
 				]
 		);
@@ -296,7 +296,7 @@ class wkfe_team_3 extends Widget_Base {
 				[
 					'name'     => 'designation_typography',
 					'label'    => esc_html__( 'Designation Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-team-3 .team-container .team-each-wrap .team-info .team-designation',
 				]
 		);
@@ -356,7 +356,7 @@ class wkfe_team_3 extends Widget_Base {
 					[
 						'name'     => 'description_typography',
 						'label'    => esc_html__( 'Description Typography', 'widgetkit-for-elementor' ),
-						'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+						'scheme'   => Typography::TYPOGRAPHY_4,
 						'selector' => '{{WRAPPER}} .tgx-team-3 .team-container .team-content',
 					]
 			);

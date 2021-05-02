@@ -3,7 +3,7 @@
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Scheme_Typography;
+Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
@@ -243,7 +243,7 @@ class wkfe_blog_4 extends Widget_Base {
 	                'selector' => '
 	                {{WRAPPER}} .hover-effect-1 .date span a,
 	                {{WRAPPER}} .hover-effect-2 .date span a',
-	                'scheme'   => Scheme_Typography::TYPOGRAPHY_3,
+	                'scheme'   => Typography::TYPOGRAPHY_3,
 		           'condition' => [
 						'blog_4_date_enable' => 'yes',
 					],
@@ -320,7 +320,7 @@ class wkfe_blog_4 extends Widget_Base {
                 'name'     => 'title_typography',
                 'selector' => '{{WRAPPER}} .hover-effect-1 .wrapper .entry-title,
                 {{WRAPPER}} .hover-effect-2 .wrapper .entry-title',
-                'scheme'   => Scheme_Typography::TYPOGRAPHY_3,
+                'scheme'   => Typography::TYPOGRAPHY_3,
             ]
         );
 
@@ -406,7 +406,7 @@ class wkfe_blog_4 extends Widget_Base {
                 'selector' => '
 	                {{WRAPPER}} .hover-effect-1 .wrapper .entry-content,
 	                {{WRAPPER}} .hover-effect-2 .wrapper .entry-content',
-                'scheme'  => Scheme_Typography::TYPOGRAPHY_3,
+                'scheme'  => Typography::TYPOGRAPHY_3,
             ]
         );
 

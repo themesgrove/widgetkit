@@ -6,7 +6,7 @@ use Elementor\Utils;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
 use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Typography;
+Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -468,7 +468,7 @@ class wkfe_slider_2 extends Widget_Base {
 				[
 					'name'     => 'title_typography',
 					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-slider-2 .carousel-inner .item .carousel-caption .slider-title',
 				]
 		);
@@ -572,7 +572,7 @@ class wkfe_slider_2 extends Widget_Base {
 				[
 					'name'     => 'content_typography',
 					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-slider-2 .carousel-inner .carousel-caption .slider-description',
 				]
 		);
@@ -672,7 +672,7 @@ $this->end_controls_section();
 				[
 					'name'     => 'btn_text_size',
 					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-slider-2 .carousel-inner .carousel-caption .btn-slider',
 				]
 		);

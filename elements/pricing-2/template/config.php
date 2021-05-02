@@ -5,7 +5,7 @@ use Elementor\Controls_Manager;
 use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Typography;
+Use Elementor\Core\Schemes\Typography;
 use Elementor\Utils;
 use Elementor\Group_Control_Border;
 

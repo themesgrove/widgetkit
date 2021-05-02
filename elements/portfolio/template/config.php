@@ -5,7 +5,7 @@ use Elementor\Utils;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
 use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Typography;
+Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -350,7 +350,7 @@ class wkfe_portfolio extends Widget_Base {
 				[
 					'name'     => 'filter_typography',
 					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .portfolio-filter>li>a, {{WRAPPER}} .portfolio-filter.slash > li .filter-slash',
 					'condition'=> [
 		                'filter_enable' => 'yes',
@@ -635,7 +635,7 @@ class wkfe_portfolio extends Widget_Base {
 				[
 					'name'     => 'overlay_title_typography',
 					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-portfolio .portfolio-item .title',
 				]
 		);
@@ -690,7 +690,7 @@ class wkfe_portfolio extends Widget_Base {
 				[
 					'name'     => 'overlay_desc_typography',
 					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-portfolio .portfolio-item .desc',
 				]
 		);

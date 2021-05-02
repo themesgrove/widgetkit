@@ -3,7 +3,7 @@
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Scheme_Typography;
+Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
@@ -193,7 +193,7 @@ class wkfe_blog_2 extends Widget_Base {
             [
                 'name'     => 'title_typography',
                 'selector' => '{{WRAPPER}} .tgx-blog-2 .custom-sticky-post .entry-title',
-                'scheme'   => Scheme_Typography::TYPOGRAPHY_3,
+                'scheme'   => Typography::TYPOGRAPHY_3,
             ]
         );
 
@@ -241,7 +241,7 @@ class wkfe_blog_2 extends Widget_Base {
                 'name'     => 'standard_posttitle_typography',
                 'label'     => esc_html__( 'Standard Post Typography', 'widgetkit-for-elementor' ),
                 'selector' => '{{WRAPPER}} .tgx-blog-2 .custom-standard-post .entry-title',
-                'scheme'   => Scheme_Typography::TYPOGRAPHY_3,
+                'scheme'   => Typography::TYPOGRAPHY_3,
             ]
         );
 
@@ -261,7 +261,7 @@ class wkfe_blog_2 extends Widget_Base {
             [
                 'name'     => 'description_typography',
                 'selector' => '{{WRAPPER}} .tgx-blog-2 .custom-sticky-post .entry-content',
-                'scheme'   => Scheme_Typography::TYPOGRAPHY_3,
+                'scheme'   => Typography::TYPOGRAPHY_3,
             ]
         );
 
@@ -318,7 +318,7 @@ class wkfe_blog_2 extends Widget_Base {
 	            [
 	                'name'     => 'meta_typography',
 	                'selector' => '{{WRAPPER}} .tgx-blog-2 .custom-sticky-post .blog-details .author-meta',
-	                'scheme'   => Scheme_Typography::TYPOGRAPHY_3,
+	                'scheme'   => Typography::TYPOGRAPHY_3,
 	            ]
         );
 

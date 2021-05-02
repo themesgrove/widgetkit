@@ -1,5 +1,5 @@
 <?php
-use Elementor\Scheme_Typography;
+Use Elementor\Core\Schemes\Typography;
 use Elementor\Utils;
 use Elementor\Control_Media;
 use Elementor\Controls_Manager;
@@ -388,7 +388,7 @@ class wkfe_tilt_box extends Widget_Base {
                     [
                         'name'     => 'title_typography',
                         'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-                        'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+                        'scheme'   => Typography::TYPOGRAPHY_4,
                         'selector' => '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-tilt-card-title',
                     ]
             );
@@ -432,7 +432,7 @@ class wkfe_tilt_box extends Widget_Base {
                     [
                         'name'     => 'desc_typography',
                         'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-                        'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+                        'scheme'   => Typography::TYPOGRAPHY_4,
                         'selector' => '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-tilt-card-desc',
                     ]
             );
@@ -476,7 +476,7 @@ class wkfe_tilt_box extends Widget_Base {
                 [
                     'name' => 'button_typography',
                     'selector' => '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-button',
-                    'scheme' => Scheme_Typography::TYPOGRAPHY_3,
+                    'scheme' => Typography::TYPOGRAPHY_3,
                 ]
             );
 

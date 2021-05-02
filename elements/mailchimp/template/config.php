@@ -5,7 +5,7 @@ use Elementor\Repeater;
 use Elementor\Scheme_Color;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Background;
-use Elementor\Scheme_Typography;
+Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 
 if (!defined('ABSPATH')) exit; // Exit if accessed directly

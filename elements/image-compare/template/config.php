@@ -1,5 +1,5 @@
 <?php
-use Elementor\Scheme_Typography;
+Use Elementor\Core\Schemes\Typography;
 use Elementor\Utils;
 use Elementor\Control_Media;
 use Elementor\Controls_Manager;
@@ -307,7 +307,7 @@ class wkfe_image_compare extends Widget_Base {
             [
                 'name' => 'label_typography',
                 'selector' => '{{WRAPPER}} .wk-image-compare .image-compare-before-label:before, {{WRAPPER}} .wk-image-compare .image-compare-after-label:before',
-                'scheme' => Scheme_Typography::TYPOGRAPHY_3,
+                'scheme' => Typography::TYPOGRAPHY_3,
             ]
         );
 

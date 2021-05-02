@@ -1,5 +1,5 @@
 <?php
-use Elementor\Scheme_Typography;
+Use Elementor\Core\Schemes\Typography;
 use Elementor\Utils;
 use Elementor\Control_Media;
 use Elementor\Controls_Manager;
@@ -308,7 +308,7 @@ protected function _register_controls()
             [
                 'name' => 'Content_typography',
                 'selector' => '{{WRAPPER}} .wk-video-popup-wrapper a.play-icon-text',
-                'scheme' => Scheme_Typography::TYPOGRAPHY_3,
+                'scheme' => Typography::TYPOGRAPHY_3,
                 'condition' => [
                     'video_style' => array('2'),
                 ],

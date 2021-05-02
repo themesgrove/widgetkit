@@ -3,7 +3,7 @@
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Scheme_Typography;
+Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
@@ -163,7 +163,7 @@ class wkfe_blog_1 extends Widget_Base {
             [
                 'name' => 'title_typography',
                 'selector' => '{{WRAPPER}} .tgx-blog-1 .post-wrapper .entry-title',
-                'scheme' => Scheme_Typography::TYPOGRAPHY_3,
+                'scheme' => Typography::TYPOGRAPHY_3,
             ]
         );
 
@@ -212,7 +212,7 @@ class wkfe_blog_1 extends Widget_Base {
             [
                 'name' => 'description_typography',
                 'selector' => '{{WRAPPER}} .tgx-blog-1 .post-wrapper .entry-content',
-                'scheme' => Scheme_Typography::TYPOGRAPHY_3,
+                'scheme' => Typography::TYPOGRAPHY_3,
             ]
         );
 
@@ -259,7 +259,7 @@ class wkfe_blog_1 extends Widget_Base {
 	                'name'     => 'meta_typography',
 	                'selector' => '{{WRAPPER}} .tgx-blog-1 .post-wrapper .entry-meta a,
 	                {{WRAPPER}} .tgx-blog-1 .entry-footer .btn-readmore',
-	                'scheme'   => Scheme_Typography::TYPOGRAPHY_3,
+	                'scheme'   => Typography::TYPOGRAPHY_3,
 	            ]
         );
 

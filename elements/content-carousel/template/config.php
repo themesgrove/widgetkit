@@ -5,7 +5,7 @@ use Elementor\Widget_Base;
 use Elementor\Utils;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Typography;
+Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Image_Size;
@@ -739,7 +739,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                [
 	                    'name'     => 'meta_typography',
 	                    'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-	                    'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+	                    'scheme'   => Typography::TYPOGRAPHY_4,
 	                    'selector' => '{{WRAPPER}} .content-carousel .wk-card .wk-card-body span',
 	                ]
 	        );
@@ -804,7 +804,7 @@ class wkfe_content_carousel extends Widget_Base {
                     [
                         'name'     => 'title_typography',
                         'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-                        'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+                        'scheme'   => Typography::TYPOGRAPHY_4,
                         'selector' => '{{WRAPPER}} .content-carousel .wk-card .wk-card-body .wk-card-title',
                     ]
             );
@@ -867,7 +867,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                    [
 	                        'name'     => 'content_typography',
 	                        'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-	                        'scheme'   => Scheme_Typography::TYPOGRAPHY_4,
+	                        'scheme'   => Typography::TYPOGRAPHY_4,
 	                        'selector' => '{{WRAPPER}} .content-carousel .wk-card .wk-card-body p',
 	                    ]
 	            );

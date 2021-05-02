@@ -5,7 +5,7 @@ use Elementor\Controls_Manager;
 use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Typography;
+Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
@@ -441,7 +441,7 @@ class wkfe_countdown extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'widgetkit_countdown_digit_typo',
-				'scheme'   => Scheme_Typography::TYPOGRAPHY_3,
+				'scheme'   => Typography::TYPOGRAPHY_3,
 				'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
 				'selector' => '{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section .widgetkit_countdown-amount',
 				'separator'		=> 'after'
@@ -507,7 +507,7 @@ class wkfe_countdown extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'widgetkit_countdown_unit_typo',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_3,
+				'scheme' => Typography::TYPOGRAPHY_3,
 				'selector' => '{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section .widgetkit_countdown-period',
 				'separator'		=> 'after'
 			]
