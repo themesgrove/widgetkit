@@ -4,9 +4,9 @@ Contributors: Themesgrove, parvezvai, themexpert
 Donate link: https://themesgrove.com/
 Tags: elementor, add-ons, elementor addons, elementor widgets, woocommerce, learndash, learnpress, widgets, woocommerce addons, learndash addons, sensei, sensei addons, countdown, timer, slider, team, testimonial, social-share, carousel, portfolio, pricing, widgetkit
 Requires at least: 5.0
-Tested up to: 5.7
-Stable tag: 2.3.10
-Requires PHP: 5.6
+Tested up to: 5.7.1
+Stable tag: 2.3.11
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -273,6 +273,10 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+
+= 2.3.11 =
+Fix - Elementor\Scheme_Typography Deprecation error fixed.
+Fix - Elementor\Scheme_Color Deprecation error fixed.
 
 = 2.3.10 =
 Fix - Elementor compatible tag added for Content Carousel element.

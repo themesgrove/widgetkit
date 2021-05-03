@@ -29,6 +29,21 @@
 
                 <div class="wk-changelog-list">
                     <div class="wk-changes">
+                        <ul class="version version-2.3.11 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                            <li class="release-version-date"><h4>2.3.11</h4><span>03-05-2021</span></li>
+                            <li><span class="wk-text-bugfix">Bug Fix </span> – Elementor\Scheme_Typography Deprecation error fixed.</li>
+                            <li><span class="wk-text-bugfix">Bug Fix </span> – Elementor\Scheme_Color Deprecation error fixed.</li>
+                        </ul>
+                        <ul class="version version-2.3.10 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                            <li class="release-version-date"><h4>2.3.10</h4><span>25-03-2021</span></li>
+                            <li><span class="wk-text-improved">Improved </span> – Elementor compatible tag added for Content Carousel element.</li>
+                            <li><span class="wk-text-improved">Improved </span> – Elementor compatible tag added for Slider Animation element.</li>
+                            <li><span class="wk-text-improved">Improved </span> – Elementor compatible tag added for Slider Content element.</li>
+                            <li><span class="wk-text-improved">Improved </span> – Elementor compatible tag added for Slider Box element.</li>
+                            <li><span class="wk-text-improved">Improved </span> – Elementor compatible tag added for Team element.</li>
+                            <li><span class="wk-text-improved">Improved </span> – Elementor compatible tag added for Testimonial element.</li>
+                            <li><span class="wk-text-improved">Improved </span> – Slider Content Style issue.</li>
+                        </ul>
                         <ul class="version version-2.3.9 wk-background-muted wk-padding-small wk-margin-small-bottom">
                             <li class="release-version-date"><h4>2.3.9</h4><span>29-12-2020</span></li>
                             <li><span class="wk-text-success">New </span> – Mailchimp Element.</li>
