@@ -29,6 +29,11 @@
 
                 <div class="wk-changelog-list">
                     <div class="wk-changes">
+                        <ul class="version version-2.3.12 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                            <li class="release-version-date"><h4>2.3.12</h4><span>18-05-2021</span></li>
+                            <li><span class="wk-text-bugfix">Bug Fix </span> – Live editing issue.</li>
+                            <li><span class="wk-text-bugfix">Bug Fix </span> – Content Carousel responsive issue.</li>
+                        </ul>
                         <ul class="version version-2.3.11 wk-background-muted wk-padding-small wk-margin-small-bottom">
                             <li class="release-version-date"><h4>2.3.11</h4><span>03-05-2021</span></li>
                             <li><span class="wk-text-bugfix">Bug Fix </span> – Elementor\Scheme_Typography Deprecation error fixed.</li>
