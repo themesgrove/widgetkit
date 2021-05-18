@@ -170,7 +170,7 @@ class wkfe_social_share_1 extends Widget_Base {
 			 
 			              ]
 			          ],
-			          'fields'      => array_values( $repeater->get_controls() ),
+			          'fields'      => $repeater->get_controls(),
 			          'title_field' => '{{{social_share_1_title}}}',
 			      ]
 			  );

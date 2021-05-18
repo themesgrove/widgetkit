@@ -159,7 +159,7 @@ class wkfe_gallery extends Widget_Base {
 
 
 		          ],
-		          'fields'      => array_values( $repeater->get_controls() ),
+		          'fields'      => $repeater->get_controls(),
 		          'title_field' => '{{{gallery_title}}}',
 		      ]
 		  );

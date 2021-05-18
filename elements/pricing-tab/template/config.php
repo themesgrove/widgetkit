@@ -758,7 +758,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
             'pricing_tabs',
             [
                 'type'    => Controls_Manager::REPEATER,
-                'fields'  => array_values( $repeater->get_controls() ),
+                'fields'  => $repeater->get_controls(),
                 'default' => [
                     [
                         'tab_title'    => esc_html__( 'Shared Hosting', 'widgetkit-for-elementor' ),

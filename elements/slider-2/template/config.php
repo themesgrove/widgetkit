@@ -262,7 +262,7 @@ class wkfe_slider_2 extends Widget_Base {
 		 
 		              ]
 		          ],
-		          'fields'      => array_values( $repeater->get_controls() ),
+		          'fields'      => $repeater->get_controls(),
 		          'title_field' => '{{{title}}}',
 		      ]
 		  );

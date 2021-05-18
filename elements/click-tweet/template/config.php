@@ -6,6 +6,8 @@ use Elementor\Repeater;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 Use Elementor\Core\Schemes\Typography;
+use Elementor\Controls_Stack;
+
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -48,7 +50,7 @@ class WKFE_Feature_Click_Tweet_Config extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		/**
 		 * Text input config

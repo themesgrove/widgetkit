@@ -241,6 +241,7 @@ class wkfe_content_carousel extends Widget_Base {
               [
                   'label'       => esc_html__( 'Custom Contents', 'widgetkit-for-elementor' ),
                   'type'        => Controls_Manager::REPEATER,
+                  'fields'      => $repeater->get_controls(),
                   'show_label'  => true,
                    'separator'  => 'before',
                   'default'     => [
@@ -277,7 +278,6 @@ class wkfe_content_carousel extends Widget_Base {
      
                         ],
                   ],
-                  'fields'      => array_values( $repeater->get_controls() ),
                   'title_field' => '{{{content_title}}}',
                   'condition'   => [
                         'item_option' => 'custom_post',
@@ -1294,6 +1294,9 @@ class wkfe_content_carousel extends Widget_Base {
 	protected function render() {
 		require WK_PATH . '/elements/content-carousel/template/view.php';
 	}
+	protected function _content_template()
+    {
+    }
 
 
 }

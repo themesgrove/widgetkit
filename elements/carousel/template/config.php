@@ -141,7 +141,7 @@ class wkfe_carousel extends Widget_Base {
 		 
 		              ],
 		          ],
-		          'fields'      => array_values( $repeater->get_controls() ),
+		          'fields'      => $repeater->get_controls(),
 		          'title_field' => '{{{project_title}}}',
 		          'condition'   => [
 		                'item_option' => 'custom_post',

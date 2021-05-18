@@ -126,7 +126,7 @@ class wkfe_slider_3 extends Widget_Base
                 [
                     'label'      => esc_html__( 'Sliders', 'widgetkit-for-elementor' ),
                     'type' => Controls_Manager::REPEATER,
-                    'fields'     => array_values( $repeater->get_controls() ),
+                    'fields'     => $repeater->get_controls(),
                     'show_label' => true,
 
 

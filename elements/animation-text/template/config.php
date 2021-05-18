@@ -89,7 +89,7 @@ class wkfe_animation_text extends Widget_Base {
             'animate_text_list',
             [
                 'type'    => Controls_Manager::REPEATER,
-                'fields'  => array_values( $repeater->get_controls() ),
+                'fields'  => $repeater->get_controls(),
                 'default' => [
                     [
                         'animate_text' => esc_html__( 'Professional', 'widgetkit-for-elementor' ),

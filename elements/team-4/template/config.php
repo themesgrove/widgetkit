@@ -180,7 +180,7 @@ class wkfe_team_4 extends Widget_Base {
 			 
 			              ]
 			          ],
-			          'fields'      => array_values( $repeater->get_controls() ),
+			          'fields'      => $repeater->get_controls(),
 			          'title_field' => '{{{team_4_title}}}',
 			      ]
 			  );

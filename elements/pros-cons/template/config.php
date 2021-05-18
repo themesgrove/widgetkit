@@ -171,7 +171,7 @@ class WKFE_Feature_List_Config extends Widget_Base {
             'feature_lists',
             [
                 'type'    => Controls_Manager::REPEATER,
-                'fields'  => array_values( $repeater->get_controls() ),
+                'fields'  => $repeater->get_controls(),
                 'default' => [
                     [
                         'single_feature_input' => esc_html__( 'This is my awesome feature.', 'widgetkit-for-elementor' ),

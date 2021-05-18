@@ -235,7 +235,7 @@ class wkfe_pricing_1 extends Widget_Base {
             'features_list',
             [
                 'type'    => Controls_Manager::REPEATER,
-                'fields'  => array_values( $repeater->get_controls() ),
+                'fields'  => $repeater->get_controls(),
                 'default' => [
                     [
                         'item_text' => esc_html__( 'Unlimited Domian Usage', 'widgetkit-for-elementor' ),

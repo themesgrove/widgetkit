@@ -4,11 +4,13 @@ use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Utils;
 use Elementor\Controls_Manager;
+use Elementor\Core\Schemes\Color;
 use Elementor\Group_Control_Typography;
 Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Image_Size;
+use Elementor\Controls_Stack;
 
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -59,7 +61,7 @@ class wkfe_testimonial extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 
 
 #	start of layout
@@ -242,6 +244,8 @@ class wkfe_testimonial extends Widget_Base {
 			[
 				'label'       => esc_html__( 'Testimonials', 'widgetkit-for-elementor' ),
 				'type'        => Controls_Manager::REPEATER,
+				'fields'      =>  $repeater->get_controls() ,
+
 				'show_label'  => true,
 				'separator'  => 'before',
 				'default'     => [
@@ -279,7 +283,6 @@ class wkfe_testimonial extends Widget_Base {
 		
 					],
 				],
-				'fields'      => array_values( $repeater->get_controls() ),
 				'title_field' => '{{{testimonial_title}}}',
 			]
 		);
@@ -588,6 +591,20 @@ class wkfe_testimonial extends Widget_Base {
 	                    ],
 	                ]
 	            );
+				$this->add_control(
+					'title_colord',
+					[
+						'label' => __( 'Title Color', 'plugin-domain' ),
+						'type' => \Elementor\Controls_Manager::COLOR,
+						'scheme' => [
+							'type' => \Elementor\Core\Schemes\Color::get_type(),
+							'value' => \Elementor\Core\Schemes\Color::COLOR_1,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .test-title' => 'color: {{VALUE}};',
+						],
+					]
+				);
 
 
 
@@ -1282,6 +1299,8 @@ class wkfe_testimonial extends Widget_Base {
 
 	protected function render() {
 		require WK_PATH . '/elements/testimonial/template/view.php';
+	}
+	protected function _content_template() {
 	}
 
 
