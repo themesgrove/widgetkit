@@ -5,7 +5,6 @@
     $content_carousel_custom_header_tag = esc_html(wp_kses($contents['custom_header_tag'], $header_tag_arr_for_content_carousel));
     $content_carousel_post_header_tag = esc_html(wp_kses($contents['post_header_tag'], $header_tag_arr_for_content_carousel));
     use Elementor\Group_Control_Image_Size;
-    
     ?>
 
         <div class="content-carousel" wk-slider="center:<?php echo $contents['center_mode_enable'] == 'yes'? 'true' :'false'; ?>; sets:<?php echo $contents['set_mode_enable'] == 'yes'? 'true' :'false'; ?>; autoplay:<?php echo $contents['autoplay_mode_enable'] == 'yes'? 'true' :'false'; ?>; autoplay-interval:<?php echo $contents['content_interval_option'];?>;">
@@ -16,8 +15,8 @@
                       <ul class="wk-grid-<?php echo $contents['column_gap']?> 
                       wk-slider-items 
                       wk-child-width-1-<?php echo $contents['item_column'];?>@l
-                      wk-child-width-1-<?php echo $contents['item_column_tablet'];?>@m 
-                      wk-child-width-1-<?php echo $contents['item_column_mobile'];?>@s" 
+                      wk-child-width-1-<?php echo is_int($contents['item_column_tablet']) ? $contents['item_column_tablet'] : 2 ;?>@m 
+                      wk-child-width-1-<?php echo is_int($contents['item_column_mobile']) ? $contents['item_column_mobile'] : 1 ;?>@s" 
                       wk-grid>
                 <?php endif; ?>
                     <?php if ($contents['item_option'] == 'custom_post'): ?>
