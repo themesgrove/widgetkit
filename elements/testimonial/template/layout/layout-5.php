@@ -1,4 +1,5 @@
 <?php
+use Elementor\Group_Control_Image_Size;
 ?>
 <div class="wk-flex wk-flex-center wk-grid-match">
     <div class="wk-card wk-card-default wk-testimonial-5 wk-padding wk-text-<?php echo $testimonials['content_layout_align_for_layout_5'] ?>">

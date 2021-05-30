@@ -1,4 +1,6 @@
-<?php ?>
+<?php
+use Elementor\Group_Control_Image_Size;
+?>
 <div class="wk-flex wk-flex-center wk-grid-match">
     <div class="wk-card wk-card-default wk-testimonial-4 wk-padding-large">
         <?php if($testimonial['testimonial_thumb_image']['url']):?>
