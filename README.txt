@@ -274,6 +274,9 @@ PHP 5.4 or greater.
 
 == Changelog ==
 
+= 2.3.13 =
+Fix - Namespace issue in testimonial element.
+
 = 2.3.12 =
 Fix - Live editing issue.
 Fix - Content Carousel responsive issue.
