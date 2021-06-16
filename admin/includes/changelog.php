@@ -30,6 +30,10 @@
                 <div class="wk-changelog-list">
                     <div class="wk-changes">
                         <ul class="version version-2.3.13 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                            <li class="release-version-date"><h4>2.3.14</h4><span>16-06-2021</span></li>
+                            <li><span class="wk-text-bugfix">Bug Fix </span> – Style issue.</li>
+                        </ul>
+                        <ul class="version version-2.3.13 wk-background-muted wk-padding-small wk-margin-small-bottom">
                             <li class="release-version-date"><h4>2.3.13</h4><span>30-05-2021</span></li>
                             <li><span class="wk-text-bugfix">Bug Fix </span> – Namespace issue in Testimonial element.</li>
                         </ul>
