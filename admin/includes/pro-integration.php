@@ -9,6 +9,7 @@
         private $widgetkit_get_lp_settings;
         private $widgetkit_get_sensei_settings;
         private $widgetkit_get_lifter_settings;
+        private $widgetkit_get_tutor_settings;
 
         public static function init(){
             if(null === self::$instance){
@@ -24,6 +25,7 @@
             $this->widgetkit_get_lp_settings = $pro_integration_data['widgetkit_get_lp_settings'];
             $this->widgetkit_get_sensei_settings = $pro_integration_data['widgetkit_get_sensei_settings'];
             $this->widgetkit_get_lifter_settings = $pro_integration_data['widgetkit_get_lifter_settings'];
+            $this->widgetkit_get_tutor_settings = $pro_integration_data['widgetkit_get_tutor_settings'];
             $this->pro_enable_status = apply_filters('wkpro_enabled', false);
             $this->wkfe_dashboard_pro_integration_content();
         }
@@ -380,7 +382,7 @@
                         <div class="wk-width-expand@m">
                             <div class="wk-card-body wk-padding-remove">
                                 <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
-                                    <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('Lifter', 'widgetkit-for-elementor')?></h3>
+                                    <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('LifterLMS', 'widgetkit-for-elementor')?></h3>
                                     <a class="demo-button-for-pro wk-button-primary" href="https://widgetkit.themesgrove.com/#pro-element" target="_blank"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
                                 </div>
                                 <p><?php esc_html_e('We are working hard to bring some niche elements which are integrated with Lifter.', 'widgetkit-for-elementor');?></p>
@@ -392,6 +394,32 @@
                             <?php echo __('Lifter Course List', 'widgetkit-for-elementor'); ?>
                             <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
                                 <input type="checkbox" id="wke-lifter-course-list" name="wke-lifter-course-list" <?php checked(1, $this->widgetkit_get_lifter_settings['wke-lifter-course-list'], $this->pro_enable_status) ?>>
+                                <span class="rectangle round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tutor -->
+                <div class="wk-padding-small wk-background-muted">
+                    <div class="" wk-grid>
+                        <div class="wk-width-auto@m wk-card-media-left wk-cover-container">
+                            <img src="<?php echo plugins_url('../assets/images/tutor-logo.png', __FILE__)?>" width="100">
+                        </div>
+                        <div class="wk-width-expand@m">
+                            <div class="wk-card-body wk-padding-remove">
+                                <div class="wk-flex wk-flex-between wk-flex-middle wk-margin-small-bottom">
+                                    <h3 class="wk-card-title wk-margin-remove-top wk-margin-remove-bottom"><?php esc_html_e('Tutor LMS', 'widgetkit-for-elementor')?></h3>
+                                    <a class="demo-button-for-pro wk-button-primary" href="https://widgetkit.themesgrove.com/#pro-element" target="_blank"><?php esc_html_e('Demo', 'widgetkit-for-elementor');?></a>
+                                </div>
+                                <p><?php esc_html_e('We are working hard to bring some niche elements which are integrated with Lifter.', 'widgetkit-for-elementor');?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="woo-elements">
+                        <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                            <?php echo __('Tutor Course List', 'widgetkit-for-elementor'); ?>
+                            <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                <input type="checkbox" id="wke-tutor-course-list" name="wke-tutor-course-list" <?php checked(1, $this->widgetkit_get_tutor_settings['wke-tutor-course-list'], $this->pro_enable_status) ?>>
                                 <span class="rectangle round"></span>
                             </label>
                         </div>

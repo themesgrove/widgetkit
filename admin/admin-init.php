@@ -111,6 +111,9 @@ class Widgetkit_Admin
     public $widgetkit_lifter_keys = [
         'wke-lifter-course-list',
     ];
+    public $widgetkit_tutor_keys = [
+        'wke-tutor-course-list',
+    ];
         
     private $pro_enable_status;
     
@@ -122,6 +125,7 @@ class Widgetkit_Admin
     private $widgetkit_lp_settings;
     private $widgetkit_sensei_settings;
     private $widgetkit_lifter_settings;
+    private $widgetkit_tutor_settings;
     // widgetkit settings
     private $widgetkit_settings;
     private $wk_woo_settings;
@@ -130,6 +134,7 @@ class Widgetkit_Admin
     private $wk_lp_settings;
     private $wk_sensei_settings;
     private $wk_lifter_settings;
+    private $wk_tutor_settings;
     // widgetkit get settings
     private $widgetkit_get_settings;
     private $widgetkit_get_woo_settings;
@@ -138,6 +143,7 @@ class Widgetkit_Admin
     private $widgetkit_get_lp_settings;
     private $widgetkit_get_sensei_settings;
     private $widgetkit_get_lifter_settings;
+    private $widgetkit_get_tutor_settings;
 
     private $all_option_data = [];
     private $pro_integration_data = [];
@@ -265,6 +271,7 @@ class Widgetkit_Admin
         $this->widgetkit_lp_settings = array_fill_keys( $this->widgetkit_lp_keys, true );
         $this->widgetkit_sensei_settings = array_fill_keys( $this->widgetkit_sensei_keys, true );
         $this->widgetkit_lifter_settings = array_fill_keys( $this->widgetkit_lifter_keys, true );
+        $this->widgetkit_tutor_settings = array_fill_keys( $this->widgetkit_tutor_keys, true );
        
 	    $this->widgetkit_get_settings = get_option( 'widgetkit_save_settings', $this->widgetkit_default_settings );
         $this->widgetkit_get_woo_settings = get_option( 'widgetkit_save_woo_settings', $this->widgetkit_woo_settings );
@@ -273,6 +280,7 @@ class Widgetkit_Admin
         $this->widgetkit_get_lp_settings = get_option( 'widgetkit_save_lp_settings', $this->widgetkit_lp_settings );
         $this->widgetkit_get_sensei_settings = get_option( 'widgetkit_save_sensei_settings', $this->widgetkit_sensei_settings );
         $this->widgetkit_get_lifter_settings = get_option( 'widgetkit_save_lifter_settings', $this->widgetkit_lifter_settings );
+        $this->widgetkit_get_tutor_settings = get_option( 'widgetkit_save_tutor_settings', $this->widgetkit_tutor_settings );
         
         /**
          * Check if found any difference between db and local key
@@ -284,6 +292,7 @@ class Widgetkit_Admin
 	    $widgetkit_new_lp_settings = array_diff_key( $this->widgetkit_lp_settings, $this->widgetkit_get_lp_settings );
         $widgetkit_new_sensei_settings = array_diff_key( $this->widgetkit_sensei_settings, $this->widgetkit_get_sensei_settings );
         $widgetkit_new_lifter_settings = array_diff_key( $this->widgetkit_lifter_settings, $this->widgetkit_get_lifter_settings );
+        $widgetkit_new_tutor_settings = array_diff_key( $this->widgetkit_tutor_settings, $this->widgetkit_get_tutor_settings );
         
         /**
          * If any difference found then update the db
@@ -316,6 +325,10 @@ class Widgetkit_Admin
             $widgetkit_updated_lifter_settings = array_merge( $this->widgetkit_get_lifter_settings, $widgetkit_new_lifter_settings );
             update_option( 'widgetkit_save_lifter_settings', $widgetkit_updated_lifter_settings );
         }
+        if( ! empty( $widgetkit_new_tutor_settings ) ) {
+            $widgetkit_updated_tutor_settings = array_merge( $this->widgetkit_get_tutor_settings, $widgetkit_new_tutor_settings );
+            update_option( 'widgetkit_save_tutor_settings', $widgetkit_updated_tutor_settings );
+        }
 
         $this->widgetkit_get_settings = get_option( 'widgetkit_save_settings', $this->widgetkit_default_settings );
         $this->widgetkit_get_woo_settings = get_option( 'widgetkit_save_woo_settings', $this->widgetkit_woo_settings );
@@ -324,6 +337,7 @@ class Widgetkit_Admin
         $this->widgetkit_get_lp_settings = get_option( 'widgetkit_save_lp_settings', $this->widgetkit_lp_settings );
         $this->widgetkit_get_sensei_settings = get_option( 'widgetkit_save_sensei_settings', $this->widgetkit_sensei_settings );
         $this->widgetkit_get_lifter_settings = get_option( 'widgetkit_save_lifter_settings', $this->widgetkit_lifter_settings );
+        $this->widgetkit_get_tutor_settings = get_option( 'widgetkit_save_tutor_settings', $this->widgetkit_tutor_settings );
 
         $this->all_option_data = [
             'widgetkit_get_settings' => $this->widgetkit_get_settings, 
@@ -333,7 +347,8 @@ class Widgetkit_Admin
                 'widgetkit_get_ld_settings' => $this->widgetkit_get_ld_settings, 
                 'widgetkit_get_lp_settings' => $this->widgetkit_get_lp_settings, 
                 'widgetkit_get_sensei_settings' => $this->widgetkit_get_sensei_settings, 
-                'widgetkit_get_lifter_settings' => $this->widgetkit_get_lifter_settings
+                'widgetkit_get_lifter_settings' => $this->widgetkit_get_lifter_settings,
+                'widgetkit_get_tutor_settings' => $this->widgetkit_get_tutor_settings
             ]
             
         ]
@@ -487,6 +502,9 @@ class Widgetkit_Admin
         $this->wk_lifter_settings = [
             'wke-lifter-course-list' => intval($settings['wke-lifter-course-list'] ? 1 : 0),
         ];
+        $this->wk_tutor_settings = [
+            'wke-tutor-course-list' => intval($settings['wke-tutor-course-list'] ? 1 : 0),
+        ];
         update_option('widgetkit_save_settings', $this->widgetkit_settings);
         update_option('widgetkit_save_woo_settings', $this->wk_woo_settings);
         update_option('widgetkit_save_woo_single_settings', $this->wk_woo_single_settings);
@@ -494,6 +512,7 @@ class Widgetkit_Admin
         update_option('widgetkit_save_lp_settings', $this->wk_lp_settings);
         update_option('widgetkit_save_sensei_settings', $this->wk_sensei_settings);
         update_option('widgetkit_save_lifter_settings', $this->wk_lifter_settings);
+        update_option('widgetkit_save_tutor_settings', $this->wk_tutor_settings);
 
         return true;
         die();
