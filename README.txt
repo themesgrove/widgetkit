@@ -275,7 +275,7 @@ PHP 5.4 or greater.
 == Changelog ==
 
 = 2.3.14 =
-Fix - Style issue
+Fix - Tutor LMS key and panel added.
 
 = 2.3.13 =
 Fix - Namespace issue in testimonial element.
