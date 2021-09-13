@@ -288,6 +288,13 @@
                                 <span class="rectangle round"></span>
                             </label>
                         </div>
+                        <div class="wk-card wk-background-default wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                            <?php echo __('LearnDash Course Content', 'widgetkit-for-elementor'); ?>
+                            <label class="switch  <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                                <input type="checkbox" id="wke-ld-course-content" name="wke-ld-course-content" <?php checked(1, $this->widgetkit_get_ld_settings['wke-ld-course-content'], $this->pro_enable_status) ?>>
+                                <span class="rectangle round"></span>
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <!-- LearnPress -->

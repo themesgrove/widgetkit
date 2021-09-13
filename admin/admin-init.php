@@ -93,7 +93,8 @@ class Widgetkit_Admin
         'wke-ld-course-related-course',
         'wke-ld-course-curriculum',
         'wke-ld-course-instructor',
-        'wke-ld-course-payments-button'
+        'wke-ld-course-payments-button',
+        'wke-ld-course-content'
     ];
 
     public $widgetkit_lp_keys = [
@@ -486,7 +487,8 @@ class Widgetkit_Admin
             'wke-ld-course-related-course' => intval($settings['wke-ld-course-related-course'] ? 1 : 0),
             'wke-ld-course-curriculum' => intval($settings['wke-ld-course-curriculum'] ? 1 : 0),
             'wke-ld-course-instructor' => intval($settings['wke-ld-course-instructor'] ? 1 : 0),
-            'wke-ld-course-payments-button' => intval($settings['wke-ld-course-payments-button'] ? 1 : 0)
+            'wke-ld-course-payments-button' => intval($settings['wke-ld-course-payments-button'] ? 1 : 0),
+            'wke-ld-course-content' => intval($settings['wke-ld-course-content'] ? 1 : 0)
 
         ];
         $this->wk_lp_settings = [
