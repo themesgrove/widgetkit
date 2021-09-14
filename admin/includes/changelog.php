@@ -29,9 +29,14 @@
 
                 <div class="wk-changelog-list">
                     <div class="wk-changes">
+                        <ul class="version version-2.3.14.1 wk-background-muted wk-padding-small wk-margin-small-bottom">
+                            <li class="release-version-date"><h4>2.3.14.1</h4><span>14-09-2021</span></li>
+                            <li><span class="wk-text-success">New </span> – LearnDash Course Content element key added.</li>
+                            <li><span class="wk-text-success">New </span> – Event List element key added.</li>
+                        </ul>
                         <ul class="version version-2.3.14 wk-background-muted wk-padding-small wk-margin-small-bottom">
                             <li class="release-version-date"><h4>2.3.14</h4><span>17-06-2021</span></li>
-                            <li><span class="wk-text-bugfix">Bug Fix </span> – Tutor LMS key and panel added..</li>
+                            <li><span class="wk-text-bugfix">Bug Fix </span> – Tutor LMS key and panel added.</li>
                         </ul>
                         <ul class="version version-2.3.13 wk-background-muted wk-padding-small wk-margin-small-bottom">
                             <li class="release-version-date"><h4>2.3.13</h4><span>30-05-2021</span></li>
