@@ -45,6 +45,7 @@ class Widgetkit_Admin
         'wkpro-grid-slider',
         'wkpro-headline-slider',
         'wkpro-smart-toggle',
+        'wkpro-event-list',
         'wkpro-mobile-menu-toggle',
         'widget-image-compare',
         'widget-tilt-box',
@@ -450,6 +451,7 @@ class Widgetkit_Admin
             'wkpro-headline-slider' => intval($settings['wkpro-headline-slider'] ? 1 : 0),
             'wkpro-smart-toggle' => intval($settings['wkpro-smart-toggle'] ? 1 : 0),
             'wkpro-mobile-menu-toggle' => intval($settings['wkpro-mobile-menu-toggle'] ? 1 : 0),
+            'wkpro-event-list' => intval($settings['wkpro-event-list'] ? 1 : 0),
         ];
         $this->wk_woo_settings = [
             'wke-woo-product' => intval($settings['wke-woo-product'] ? 1 : 0),

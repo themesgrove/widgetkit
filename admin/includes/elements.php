@@ -110,6 +110,22 @@
                         </label>
                     </div>
                 </div>
+                <!-- pro -->
+                <div>
+                    <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
+                        <span>
+                            <?php echo esc_html__('Event List', 'widgetkit-for-elementor'); ?>    
+                            <span class="pro-text">
+                                <?php echo esc_html__('Pro', 'widgetkit-for-elementor'); ?>
+                            </span>
+                        </span>
+                        
+                        <label class="switch <?php echo !$this->pro_enable_status ? 'disable' : ''; ?>">
+                            <input type="checkbox" id="wkpro-event-list" name="wkpro-event-list" <?php checked(1, $this->widgetkit_get_settings['wkpro-event-list'], $this->pro_enable_status) ?>>
+                            <span class="rectangle round"></span>
+                        </label>
+                    </div>
+                </div> 
 
                 <div>
                     <div class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
