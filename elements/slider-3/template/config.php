@@ -4,7 +4,6 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Utils;
 use Elementor\Repeater;
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Border;
 
@@ -65,7 +64,7 @@ class wkfe_slider_3 extends Widget_Base
 		 ];
 	}
 
-    protected function _register_controls(){
+    protected function register_controls(){
         /* slides content title subtitle button and button link */
         $this->start_controls_section(
             'section_tab',
@@ -286,13 +285,9 @@ class wkfe_slider_3 extends Widget_Base
                     'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
                     'name'     => 'slide_title_typography',
                     'selector' => '{{WRAPPER}} .tgx-slider-3  .slide__title',
-                    'scheme'   => Typography::TYPOGRAPHY_3,
                 ]
             );
         $this->end_controls_section();
-
-
-
 
         $this->start_controls_section(
             'description_typography',
@@ -318,7 +313,6 @@ class wkfe_slider_3 extends Widget_Base
                     'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
                     'name'     => 'slide_description_typography',
                     'selector' => '{{WRAPPER}} .tgx-slider-3  .slide__desc',
-                    'scheme'   => Typography::TYPOGRAPHY_3,
                 ]
             );
 
@@ -361,7 +355,6 @@ class wkfe_slider_3 extends Widget_Base
                     'label'     => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
                     'name'      => 'tgx_slider_3_button_typography',
                     'selector'  => '{{WRAPPER}} .tgx-slider-3 .slide__link',
-                    'scheme'    => Typography::TYPOGRAPHY_3,
                 ]
             );
 
@@ -536,7 +529,6 @@ $this->end_controls_section();
                     'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
                     'name'     => 'tgx_slider_3_nav_typography',
                     'selector' => '{{WRAPPER}} .tgx-slider-3 .slidenav__item, {{WRAPPER}} .tgx-slider-3 .divider',
-                    'scheme'   => Typography::TYPOGRAPHY_3,
                 ]
             );
 

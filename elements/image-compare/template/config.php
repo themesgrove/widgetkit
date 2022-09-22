@@ -1,5 +1,4 @@
 <?php
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Utils;
 use Elementor\Control_Media;
 use Elementor\Controls_Manager;
@@ -60,7 +59,7 @@ class wkfe_image_compare extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->start_controls_section(
 			'_section_images',
 			[
@@ -307,7 +306,6 @@ class wkfe_image_compare extends Widget_Base {
             [
                 'name' => 'label_typography',
                 'selector' => '{{WRAPPER}} .wk-image-compare .image-compare-before-label:before, {{WRAPPER}} .wk-image-compare .image-compare-after-label:before',
-                'scheme' => Typography::TYPOGRAPHY_3,
             ]
         );
 

@@ -6,7 +6,6 @@ use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Utils;
 use Elementor\Group_Control_Typography;
-Use Elementor\Core\Schemes\Typography;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -53,7 +52,7 @@ class wkfe_team_4 extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->start_controls_section(
 			'section_content_team_4',
 			[
@@ -318,7 +317,6 @@ class wkfe_team_4 extends Widget_Base {
 				[
 					'name'     => 'team_4_title_typography',
 					'label'    => esc_html__( 'Title Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-team-4.animation .title-wrapper span',
 				]
 		);
@@ -415,7 +413,6 @@ class wkfe_team_4 extends Widget_Base {
 				[
 					'name'     => 'team_4_designation_typography',
 					'label'    => esc_html__( 'Designation Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-team-4 .title-wrapper strong',
 				]
 		);
@@ -448,7 +445,6 @@ class wkfe_team_4 extends Widget_Base {
 					[
 						'name'     => 'team_4_description_typography',
 						'label'    => esc_html__( 'Description Typography', 'widgetkit-for-elementor' ),
-						'scheme'   => Typography::TYPOGRAPHY_4,
 						'selector' => '{{WRAPPER}} .tgx-team-4 .mc-description',
 					]
 			);

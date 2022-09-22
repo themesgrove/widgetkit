@@ -4,9 +4,7 @@ use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Utils;
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes\Color;
 use Elementor\Group_Control_Typography;
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Image_Size;
@@ -596,10 +594,6 @@ class wkfe_testimonial extends Widget_Base {
 					[
 						'label' => __( 'Title Color', 'plugin-domain' ),
 						'type' => \Elementor\Controls_Manager::COLOR,
-						'scheme' => [
-							'type' => \Elementor\Core\Schemes\Color::get_type(),
-							'value' => \Elementor\Core\Schemes\Color::COLOR_1,
-						],
 						'selectors' => [
 							'{{WRAPPER}} .test-title' => 'color: {{VALUE}};',
 						],
@@ -613,7 +607,6 @@ class wkfe_testimonial extends Widget_Base {
 	                    [
 	                        'name'     => 'content_typography',
 	                        'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-	                        'scheme'   => Typography::TYPOGRAPHY_4,
 	                        'selector' => '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body .wk-text-normal',
 	                    ]
 	            );
@@ -726,7 +719,6 @@ class wkfe_testimonial extends Widget_Base {
 	                    [
 	                        'name'     => 'title_typography',
 	                        'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-	                        'scheme'   => Typography::TYPOGRAPHY_4,
 	                        'selector' => '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body .wk-card-title',
 	                    ]
 	            );
@@ -792,7 +784,6 @@ class wkfe_testimonial extends Widget_Base {
 		                [
 		                    'name'     => 'designation_typography',
 		                    'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-		                    'scheme'   => Typography::TYPOGRAPHY_4,
 		                    'selector' => '{{WRAPPER}} .wk-testimonial .wk-card .wk-card-body span',
 		                ]
 		        );

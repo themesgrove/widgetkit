@@ -1,5 +1,4 @@
 <?php
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Utils;
 use Elementor\Control_Media;
 use Elementor\Controls_Manager;
@@ -62,7 +61,7 @@ class wkfe_video_popup extends Widget_Base {
 		 ];
 	}
 
-protected function _register_controls()
+protected function register_controls()
     {
 
     $this->start_controls_section(
@@ -308,7 +307,6 @@ protected function _register_controls()
             [
                 'name' => 'Content_typography',
                 'selector' => '{{WRAPPER}} .wk-video-popup-wrapper a.play-icon-text',
-                'scheme' => Typography::TYPOGRAPHY_3,
                 'condition' => [
                     'video_style' => array('2'),
                 ],

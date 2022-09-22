@@ -5,7 +5,6 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
-Use Elementor\Core\Schemes\Typography;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -44,7 +43,7 @@ class wkfe_lottie_animation extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		$this->start_controls_section(
 			'section_content',
@@ -339,7 +338,6 @@ class wkfe_lottie_animation extends Widget_Base {
                     'name'     => 'caption_typography',
                     'label'    => esc_html__( 'Typography', 'widgetkit-pro' ),
                     'selector' => '{{WRAPPER}} figure figcaption',
-                    'scheme' => Typography::TYPOGRAPHY_3,
                 ]
         );
 

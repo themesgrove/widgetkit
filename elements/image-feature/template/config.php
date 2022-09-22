@@ -4,7 +4,6 @@ use Elementor\Widget_Base;
 use Elementor\Utils;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 
@@ -53,7 +52,7 @@ class wkfe_image_feature extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		// Content options Start
 		$this->start_controls_section(
@@ -539,7 +538,6 @@ class wkfe_image_feature extends Widget_Base {
 				[
 					'name'     => 'title_typography',
 					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-image-feature .feature-title',
 				]
 		);
@@ -598,7 +596,6 @@ class wkfe_image_feature extends Widget_Base {
 				[
 					'name'     => 'desc_typography',
 					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-image-feature .feature-desc',
 				]
 		);

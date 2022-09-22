@@ -5,7 +5,6 @@ use Elementor\Utils;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
 use Elementor\Group_Control_Typography;
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 
@@ -56,7 +55,7 @@ class wkfe_gallery extends Widget_Base {
 		 ];
 	}
 	
-	protected function _register_controls() {
+	protected function register_controls() {
 			// Content options Start
 	$this->start_controls_section(
 		'section_content',
@@ -408,7 +407,6 @@ class wkfe_gallery extends Widget_Base {
 					[
 						'name'     => 'filter_typography',
 						'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-						'scheme'   => Typography::TYPOGRAPHY_4,
 						'selector' => '{{WRAPPER}} .wk-gallery .wk-tab li a',
 						'condition'=> [
 			                'filter_enable' => 'yes',
@@ -674,7 +672,6 @@ class wkfe_gallery extends Widget_Base {
 				[
 					'name'     => 'overlay_title_typography',
 					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .wk-card-title',
 				]
 		);
@@ -708,7 +705,6 @@ class wkfe_gallery extends Widget_Base {
 				[
 					'name'     => 'overlay_desc_typography',
 					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .wk-gallery .wk-gallery-card .wk-gallery-body .wk-text-desc',
 				]
 		);
@@ -744,7 +740,6 @@ class wkfe_gallery extends Widget_Base {
 				[
 					'name'     => 'overlay_button_typography',
 					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .wk-gallery .content-bottom .caption-button .button-text',
 					'condition' => [
 						'content_position' => 'bottom',

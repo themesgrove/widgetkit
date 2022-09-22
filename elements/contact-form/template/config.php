@@ -1,5 +1,4 @@
 <?php
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Utils;
 use Elementor\Control_Media;
 use Elementor\Controls_Manager;
@@ -59,7 +58,7 @@ class wkfe_contact_form extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 
         $this->start_controls_section(
             'section_contact',
@@ -237,7 +236,6 @@ class wkfe_contact_form extends Widget_Base {
                 [
                     'name'                  => 'label_typography',
                     'label'                 => __( 'Typography', 'widgetkit-for-elementor' ),
-                    'scheme'                => Typography::TYPOGRAPHY_4,
                     'selector'              => '{{WRAPPER}} .wk-contact-form label',
                 ]
             );
@@ -256,7 +254,6 @@ class wkfe_contact_form extends Widget_Base {
             [
                 'name'                  => 'field_typography',
                 'label'                 => __( 'Typography', 'widgetkit-for-elementor' ),
-                'scheme'                => Typography::TYPOGRAPHY_4,
                 'selector'              => '{{WRAPPER}} .wk-contact-form input[type="text"], {{WRAPPER}} .wk-contact-form input[type="email"], {{WRAPPER}} .wk-contact-form textarea',
             ]
         );
@@ -452,7 +449,6 @@ class wkfe_contact_form extends Widget_Base {
             [
                 'name'                  => 'typography_placeholder',
                 'label'                 => __( 'Typography', 'widgetkit-for-elementor' ),
-                'scheme'                => Typography::TYPOGRAPHY_4,
                 'selector'              => '{{WRAPPER}} .wk-contact-form ::-webkit-placeholder, {{WRAPPER}} .wk-contact-form ::placeholder',
             ]
         );
@@ -476,7 +472,6 @@ class wkfe_contact_form extends Widget_Base {
             [
                 'name'                  => 'button_typography',
                 'label'                 => __( 'Typography', 'widgetkit-for-elementor' ),
-                'scheme'                => Typography::TYPOGRAPHY_4,
                 'selector'              => '{{WRAPPER}} .wk-contact-form button, {{WRAPPER}} .wk-contact-form input[type="button"], {{WRAPPER}} .wk-contact-form input[type="reset"], {{WRAPPER}} .wk-contact-form input[type="submit"]',
                 'separator'             => 'before',
             ]
@@ -873,7 +868,6 @@ class wkfe_contact_form extends Widget_Base {
             [
                 'name' => 'validation_errors_typography',
                 'label' => __('Typography', 'widgetkit-for-elementor'),
-                'scheme' => Typography::TYPOGRAPHY_4,
                 'selector' => '{{WRAPPER}} .wk-contact-form .wpcf7-validation-errors, {{WRAPPER}} .wk-contact-form .wpuf-form .wpuf-submit .wpuf-errors',
                 'condition' => [
                     'validation_errors' => 'show',

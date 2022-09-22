@@ -6,7 +6,6 @@ use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Utils;
 use Elementor\Group_Control_Typography;
-Use Elementor\Core\Schemes\Typography;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -54,7 +53,7 @@ class wkfe_social_share_1 extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->start_controls_section(
 			'section_content_social_share_1',
 			[
@@ -333,7 +332,6 @@ class wkfe_social_share_1 extends Widget_Base {
 				[
 					'name'     => 'social_share_1_title_typography',
 					'label'    => esc_html__( 'Title Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .social-share-1 .contact .contact-wrapper .content aside .person-name',
 				]
 		);
@@ -387,7 +385,6 @@ class wkfe_social_share_1 extends Widget_Base {
 				[
 					'name'     => 'social_share_1_designation_typography',
 					'label'    => esc_html__( 'Designation Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .social-share-1 .contact .contact-wrapper .content aside p',
 				]
 		);
@@ -420,7 +417,6 @@ class wkfe_social_share_1 extends Widget_Base {
 					[
 						'name'     => 'social_share_1_button_typography',
 						'label'    => esc_html__( 'Description Typography', 'widgetkit-for-elementor' ),
-						'scheme'   => Typography::TYPOGRAPHY_4,
 						'selector' => '{{WRAPPER}} .social-share-1 .contact .contact-wrapper button',
 					]
 			);
@@ -536,22 +532,14 @@ class wkfe_social_share_1 extends Widget_Base {
 			]
 		);
 
-
-
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 				[
 					'name'     => 'social_share_1_social_title_typography',
 					'label'    => esc_html__( 'Title Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .social-share-1 .contact .social-share a .social-content .social-name',
 				]
 		);
-
-
-
-
-
 
 		$this->add_control(
             'social_share_1_hover_heading',
@@ -579,7 +567,6 @@ class wkfe_social_share_1 extends Widget_Base {
 					[
 						'name'     => 'social_share_1_social_email_typography',
 						'label'    => esc_html__( 'Email Typography', 'widgetkit-for-elementor' ),
-						'scheme'   => Typography::TYPOGRAPHY_4,
 						'selector' => '{{WRAPPER}} .social-share-1 .contact .social-share a .social-content span',
 					]
 			);
