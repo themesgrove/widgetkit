@@ -1,5 +1,4 @@
 <?php
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Utils;
 use Elementor\Control_Media;
 use Elementor\Controls_Manager;
@@ -60,7 +59,7 @@ class wkfe_tilt_box extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->start_controls_section(
 			'section_image',
 			[
@@ -388,7 +387,6 @@ class wkfe_tilt_box extends Widget_Base {
                     [
                         'name'     => 'title_typography',
                         'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-                        'scheme'   => Typography::TYPOGRAPHY_4,
                         'selector' => '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-tilt-card-title',
                     ]
             );
@@ -432,7 +430,6 @@ class wkfe_tilt_box extends Widget_Base {
                     [
                         'name'     => 'desc_typography',
                         'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-                        'scheme'   => Typography::TYPOGRAPHY_4,
                         'selector' => '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-tilt-card-desc',
                     ]
             );
@@ -476,7 +473,6 @@ class wkfe_tilt_box extends Widget_Base {
                 [
                     'name' => 'button_typography',
                     'selector' => '{{WRAPPER}} .wk-tilt-box .wk-tilt-card .wk-tilt-card-body .wk-button',
-                    'scheme' => Typography::TYPOGRAPHY_3,
                 ]
             );
 

@@ -2,10 +2,8 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
-use Elementor\Scheme_Color;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Background;
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
@@ -58,7 +56,7 @@ class wkfe_mailchimp extends Widget_Base
 		 ];
 	}
 
-    protected function _register_controls()
+    protected function register_controls()
     {
 
         /* slides content title subtitle button and button link */

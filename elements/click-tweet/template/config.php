@@ -5,7 +5,6 @@ use Elementor\Widget_Base;
 use Elementor\Repeater;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Controls_Stack;
 
 
@@ -144,7 +143,6 @@ class WKFE_Feature_Click_Tweet_Config extends Widget_Base {
 				[
 					'name'     => 'title_typography',
 					'label'    => esc_html__( 'Font', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .wkfe-click-to-tweet .tweet-text',
 				]
 		);
@@ -220,7 +218,6 @@ class WKFE_Feature_Click_Tweet_Config extends Widget_Base {
 						[
 							'name'     => 'button_typography',
 							'label'    => esc_html__( 'Font', 'widgetkit-for-elementor' ),
-							'scheme'   => Typography::TYPOGRAPHY_4,
 							'selector' => '{{WRAPPER}} .wkfe-click-to-tweet .button-wrapper button',
 						]
 				);

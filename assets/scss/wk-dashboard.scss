@@ -770,3 +770,8 @@ input:checked + .rectangle:before {
         }
     }
 }
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .td-banner img{
+        max-width: 200px!important;
+    }
+}

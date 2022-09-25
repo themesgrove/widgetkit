@@ -5,7 +5,6 @@ use Elementor\Widget_Base;
 use Elementor\Repeater;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-Use Elementor\Core\Schemes\Typography;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -53,7 +52,7 @@ class wkfe_contact extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 
 #	region icon picker config start
 	// Content options Start

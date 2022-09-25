@@ -3,7 +3,6 @@
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
@@ -55,7 +54,7 @@ class wkfe_blog_5 extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 
 			$terms = get_terms( array(
 	            'taxonomy' => 'category',
@@ -271,7 +270,6 @@ class wkfe_blog_5 extends Widget_Base {
             [
                 'name'     => 'title_typography',
                 'selector' => '{{WRAPPER}} .tgx-blog-5 .entry-title',
-                'scheme'   => Typography::TYPOGRAPHY_3,
             ]
         );
 
@@ -331,7 +329,6 @@ class wkfe_blog_5 extends Widget_Base {
                 'name'     => 'description_typography',
                 'selector' => '
 	                {{WRAPPER}} .tgx-blog-5 .entry-content .content',
-                'scheme'   => Typography::TYPOGRAPHY_3,
             ]
         );
 
@@ -396,7 +393,6 @@ class wkfe_blog_5 extends Widget_Base {
                 'name'     => 'button_typography',
                 'selector' => '
 	                {{WRAPPER}} .tgx-blog-5 .card-read',
-                'scheme'    => Typography::TYPOGRAPHY_3,
                 'condition' => [
 					'blog_5_button_enable' => 'yes',
 				],

@@ -5,7 +5,6 @@ use Elementor\Widget_Base;
 use Elementor\Repeater;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-Use Elementor\Core\Schemes\Typography;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -54,7 +53,7 @@ class wkfe_animation_text extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 
 	// Content options Start
 	$this->start_controls_section(
@@ -200,7 +199,6 @@ class wkfe_animation_text extends Widget_Base {
 				[
 					'name'     => 'animation_title_typography',
 					'label'    => esc_html__( 'Title Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .animation-text .text-slide .cd-headline',
 				]
 		);

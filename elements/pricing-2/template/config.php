@@ -5,7 +5,6 @@ use Elementor\Controls_Manager;
 use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Group_Control_Typography;
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Utils;
 use Elementor\Group_Control_Border;
 
@@ -55,7 +54,7 @@ class wkfe_pricing_2 extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 
 
 	$this->start_controls_section(

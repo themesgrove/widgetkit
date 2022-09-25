@@ -6,7 +6,6 @@ use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Utils;
 use Elementor\Group_Control_Typography;
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Box_Shadow;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -55,7 +54,7 @@ class wkfe_social_share_2 extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->start_controls_section(
 			'section_content_social_share_2',
 			[
@@ -316,7 +315,6 @@ class wkfe_social_share_2 extends Widget_Base {
 				[
 					'name'     => 'social_share_2_title_typography',
 					'label'    => esc_html__( 'Title Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-social-share-2.profile .profile-content .text .profile-name',
 				]
 		);
@@ -418,7 +416,6 @@ class wkfe_social_share_2 extends Widget_Base {
 				[
 					'name'     => 'social_share_2_designation_typography',
 					'label'    => esc_html__( 'Designation Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-social-share-2.profile .profile-content .text .profile-profession',
 				]
 		);

@@ -3,7 +3,6 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Utils;
@@ -55,7 +54,7 @@ class wkfe_hover_image extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->start_controls_section(
 			'section_hover_image',
 			[
@@ -527,7 +526,6 @@ class wkfe_hover_image extends Widget_Base {
 			[
 				'name' => 'hover_image_caption_title_typography',
 				'selector' => '{{WRAPPER}} .tgx-hover-image .image-caption .caption-title',
-				'scheme' => Typography::TYPOGRAPHY_3,
 			]
 		);
 
@@ -548,7 +546,6 @@ class wkfe_hover_image extends Widget_Base {
 			[
 				'name' => 'hover_image_caption_content_typography',
 				'selector' => '{{WRAPPER}} .widget-image-caption',
-				'scheme' => Typography::TYPOGRAPHY_3,
 			]
 		);
 

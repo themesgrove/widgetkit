@@ -4,7 +4,6 @@ use Elementor\Utils;
 use Elementor\Repeater;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Box_Shadow;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -56,8 +55,7 @@ class wkfe_testimonial_1 extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
-
+	protected function register_controls() {
 		
 	// Content options Start
 	$this->start_controls_section(
@@ -280,18 +278,11 @@ class wkfe_testimonial_1 extends Widget_Base {
 				[
 					'name'     => 'content_typography',
 					'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-testimonial-1 .testimoni-wrapper .testimony',
 				]
 		);
 
-
-
 		$this->end_controls_section();
-
-
-
-
 
 		$this->start_controls_section(
 			'section_name',
@@ -300,8 +291,6 @@ class wkfe_testimonial_1 extends Widget_Base {
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-
 
 		$this->add_control(
 			'name_color',
@@ -320,7 +309,6 @@ class wkfe_testimonial_1 extends Widget_Base {
 				[
 					'name'     => 'name_typography',
 					'label'    => esc_html__( 'Name Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-testimonial-1 .testimoni-wrapper .author .name',
 				]
 		);
@@ -344,7 +332,6 @@ class wkfe_testimonial_1 extends Widget_Base {
 				[
 					'name'     => 'designation_typography',
 					'label'    => esc_html__( 'Designation Typography', 'widgetkit-for-elementor' ),
-					'scheme'   => Typography::TYPOGRAPHY_4,
 					'selector' => '{{WRAPPER}} .tgx-testimonial-1 .testimoni-wrapper .author .designation',
 				]
 		);

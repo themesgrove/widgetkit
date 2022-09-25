@@ -5,7 +5,6 @@ use Elementor\Widget_Base;
 use Elementor\Repeater;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-Use Elementor\Core\Schemes\Typography;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -48,7 +47,7 @@ class WKFE_Feature_List_Config extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 
 	$this->start_controls_section(
 		'heading_layout', 
@@ -249,7 +248,6 @@ class WKFE_Feature_List_Config extends Widget_Base {
 			[
 				'name'     => 'title_typography',
 				'label'    => esc_html__( 'Font', 'widgetkit-for-elementor' ),
-				'scheme'   => Typography::TYPOGRAPHY_4,
 				'selector' => '{{WRAPPER}} .wkfe-feature-list h2.title span',
 			]
 	);
@@ -500,7 +498,6 @@ class WKFE_Feature_List_Config extends Widget_Base {
 			[
 				'name'     => 'feature_typography',
 				'label'    => esc_html__( 'Font', 'widgetkit-for-elementor' ),
-				'scheme'   => Typography::TYPOGRAPHY_4,
 				'selector' => '{{WRAPPER}} .wkfe-feature-list li span',
 			]
 	);

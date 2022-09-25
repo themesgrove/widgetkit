@@ -3,7 +3,6 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-Use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
@@ -51,7 +50,7 @@ class wkfe_modal_button extends Widget_Base {
 		 ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->start_controls_section(
 			'modal_section_button',
 			[
@@ -322,7 +321,6 @@ class wkfe_modal_button extends Widget_Base {
 			[
 				'name'     => 'modal_typography',
 				'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-				'scheme'   => Typography::TYPOGRAPHY_4,
 				'selector' => '{{WRAPPER}} .modal-container .click-btn button,
 				{{WRAPPER}} .modal-container .click-btn .button-normal,
 				{{WRAPPER}} .modal-container .btn-line a p',
@@ -563,7 +561,6 @@ class wkfe_modal_button extends Widget_Base {
 			[
 				'name'    => 'modal_title_typography',
 				'label'   => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
-				'scheme'  => Typography::TYPOGRAPHY_4,
 				'selector'=> '{{WRAPPER}} .tgx-teal h2',
 			]
 		);
