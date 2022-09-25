@@ -4,7 +4,7 @@ Contributors: Themesgrove, parvezvai, themexpert
 Donate link: https://themesgrove.com/
 Tags: elementor, add-ons, elementor addons, elementor widgets, woocommerce, learndash, learnpress, widgets, woocommerce addons, learndash addons, sensei, sensei addons, countdown, timer, slider, team, testimonial, social-share, carousel, portfolio, pricing, widgetkit
 Requires at least: 5.0
-Tested up to: 5.7.1
+Tested up to: 6.0.2
 Stable tag: 2.3.14
 Requires PHP: 7.0
 License: GPLv2 or later
