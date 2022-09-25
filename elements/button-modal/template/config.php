@@ -255,20 +255,16 @@ class wkfe_modal_button extends Widget_Base {
 				'options' => [
 					'left'    => [
 						'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
-						'icon'  => 'fa fa-align-left',
+						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
-						'icon'  => 'fa fa-align-center',
+						'icon'  => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
-						'icon'  => 'fa fa-align-right',
-					],
-					'justify' => [
-						'title' => esc_html__( 'Justified', 'widgetkit-for-elementor' ),
-						'icon'  => 'fa fa-align-justify',
-					],
+						'icon'  => 'eicon-text-align-right',
+					]
 				],
 				'selectors' => [
 					'{{WRAPPER}} .modal-container .click-btn,
