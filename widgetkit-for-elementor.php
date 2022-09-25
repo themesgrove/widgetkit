@@ -31,8 +31,8 @@ function wk_admin_notice__success()
 {
 ?>
     <div class="notice notice-success is-dismissible" style="padding: 30px 30px 20px">
-        <img style="max-width:200px" src="<?php echo esc_attr(plugin_dir_url(__FILE__) . 'assets/images/thrivedesk-logo.png'); ?>">
-        <h2><?php _e('Your customers deserve better customer support and You deserve the peace of mind. <a href="https://thrivedesk.com"><strong>Try ThriveDesk</strong></a>', 'widgetkit'); ?></h2>
+        <img style="max-width:200px" src="<?php echo esc_attr(plugin_dir_url(__FILE__) . 'admin/assets/images/thrivedesk-logo.png'); ?>">
+        <h2><?php _e('Your customers deserve better customer support and You deserve the peace of mind. <a href="https://www.thrivedesk.com/?ref=widgetkit"><strong>Try ThriveDesk</strong></a>', 'widgetkit'); ?></h2>
     </div>
 <?php
 }

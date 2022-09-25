@@ -20,7 +20,7 @@ class WKFE_Dashboard_Sidebar
 ?>
         <div wk-sticky="offset: 40">
             <div class="td-banner">
-                <a href="https://thrivedesk.com"><img style="max-width:260px; margin-bottom:20px" src="<?php echo plugins_url('../assets/images/td-banner.png', __FILE__) ?>"></a>
+                <a href="https://www.thrivedesk.com/?ref=widgetkit"><img style="max-width:260px; margin-bottom:20px" src="<?php echo plugins_url('../assets/images/td-banner.png', __FILE__) ?>"></a>
             </div>
         </div>
 <?php
