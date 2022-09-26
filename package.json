@@ -15,7 +15,7 @@
     "clean-css": "^4.2.1",
     "del": "^5.1.0",
     "gulp-clean": "^0.4.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "gulp-sort": "^2.0.0",
     "gulp-uglify-es": "^1.0.4",
     "gulp-wp-pot": "^2.3.5",
