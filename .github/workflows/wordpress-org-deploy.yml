@@ -24,10 +24,10 @@ jobs:
 
       - name: Build
         run: |
+          npm install bower -g
           npm install
-          bower install
           composer install
-          gulp package
+          npm run build
 
       - name: WordPress Plugin Deploy
         uses: 10up/action-wordpress-plugin-deploy@master
