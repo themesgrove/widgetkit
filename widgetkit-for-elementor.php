@@ -2,7 +2,7 @@
 /*
 Plugin Name: All-in-One Addons for Elementor - WidgetKit
 Description: Everything you need to create a stunning website with <strong>Elementor, WooCommerce, LearnDash, Sensei & LearnPress</strong> and more.
-Version: 2.3.14.1
+Version: 2.3.17
 Text Domain: widgetkit-for-elementor
 Author: Themesgrove
 Author URI: https://themesgrove.com
@@ -21,7 +21,7 @@ WC tested up to: 6.9.0
  */
 if (!defined('ABSPATH')) exit;
 
-define('WK_VERSION', '2.3.14.1');
+define('WK_VERSION', '2.3.17');
 define('WK_FILE', __FILE__);
 define('WK_URL', plugins_url('/', __FILE__));
 define('WK_PATH', plugin_dir_path(__FILE__));
