@@ -370,7 +370,7 @@ class wkfe_countdown extends Widget_Base {
                 );
 
 
-		$this->add_control(
+		$this->add_responsive_control(
             'widgetkit_countdown_separator_width',
             [
                 'label' => esc_html__( 'Separator Spacing', 'widgetkit-for-elementor' ),
@@ -393,20 +393,16 @@ class wkfe_countdown extends Widget_Base {
                 'options' => [
                     'left' => [
                         'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
-                        'icon'  => 'fa fa-align-left',
+                        'icon'  => 'eicon-text-align-left',
                     ],
                     'center' => [
                         'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
-                        'icon'  => 'fa fa-align-center',
+                        'icon'  => 'eicon-text-align-center',
                     ],
                     'right' => [
                         'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
-                        'icon'  => 'fa fa-align-right',
+                        'icon'  => 'eicon-text-align-right',
                     ],
-                   	'justify' => [
-						'title' => __( 'Justified', 'widgetkit-for-elementor' ),
-						'icon' => 'fa fa-align-justify',
-					],
                 ],
                 'selectors' => [
                     '{{WRAPPER}}  .widgetkit_countdown-row' => 'text-align: {{VALUE}}',
@@ -467,7 +463,7 @@ class wkfe_countdown extends Widget_Base {
 		);
         
 
-			$this->add_control(
+			$this->add_responsive_control(
 	            'widgetkit_countdown_digit_bg_size',
 	            [
 	                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
@@ -531,7 +527,7 @@ class wkfe_countdown extends Widget_Base {
 
 		$this->add_control('widgetkit_countdown_title_position',
                 [
-                    'label'         => esc_html__('Position', 'widgetkit-for-elementor'),
+                    'label'         => esc_html__('Spacing', 'widgetkit-for-elementor'),
                     'type'          => Controls_Manager::SLIDER,
                     'default' 		=> [
 					'size' => 36,
@@ -549,7 +545,7 @@ class wkfe_countdown extends Widget_Base {
                 );
 
 
-			$this->add_control(
+			$this->add_responsive_control(
 	            'widgetkit_countdown_title_padding',
 	            [
 	                'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
