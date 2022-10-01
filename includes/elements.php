@@ -208,6 +208,9 @@ class WKFE_Elements{
         if( $check_component_active['widget-video-popup'] ) {
             require_once WK_PATH . '/elements/video-popup/widget.php';
         }
+        if( $check_component_active['widget-video-popup'] ) {
+            require_once WK_PATH . '/elements/advanced-tab/widget.php';
+        }
     }
 
 }
