@@ -5,7 +5,7 @@ Donate link: https://themesgrove.com/
 Tags: elementor, add-ons, elementor addons, elementor widgets, woocommerce, learndash, learnpress, widgets, woocommerce addons, learndash addons, sensei, sensei addons, countdown, timer, slider, team, testimonial, social-share, carousel, portfolio, pricing, widgetkit
 Requires at least: 5.0
 Tested up to: 6.0.2
-Stable tag: 2.3.18
+Stable tag: 2.3.19
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -273,6 +273,12 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+= 2.3.19 =
+Fix – dist folder missing issue.
+
+= 2.3.18 =
+Fix – PHP fatal error.
+
 = 2.3.17 =
 Fix – Elementor latest version compatibility issues.
 
