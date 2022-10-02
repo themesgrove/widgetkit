@@ -4,7 +4,9 @@
   "description": "=== WidgetKit for Elementor ===",
   "main": "index.js",
   "scripts": {
-    "build": "gulp package"
+    "build": "gulp build",
+    "package": "gulp package",
+    "release": "npm run build && npm run package"
   },
   "keywords": [],
   "author": "",
