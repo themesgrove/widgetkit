@@ -342,39 +342,6 @@ class wkfe_advanced_tab extends Widget_Base {
 		);
 
 		$this->add_control(
-			'nav_text_align',
-			[
-				'type' => Controls_Manager::CHOOSE,
-				'label' => __( 'Text Alignment', 'widgetkit-for-elementor'),
-				'default' => 'center',
-				'toggle' => false,
-				'options' => [
-					'left' => [
-						'title' =>  __( 'Left', 'widgetkit-for-elementor'),
-						'icon' => 'eicon-text-align-left',
-					],
-					'center' => [
-						'title' =>  __( 'Center', 'widgetkit-for-elementor'),
-						'icon' => 'eicon-text-align-center',
-					],
-					'right' => [
-						'title' =>  __( 'Right', 'widgetkit-for-elementor'),
-						'icon' => 'eicon-text-align-right',
-					],
-				],
-				'selectors' => [
-					'(tablet+){{WRAPPER}} .td-tabs-{{ID}} > .td-tabs__nav > .td-tab__title--desktop' => 'justify-content: {{VALUE}};',
-				],
-				'selectors_dictionary' => [
-					'left' => 'flex-start',
-					'center' => 'center',
-					'right' => 'flex-end',
-				],
-				'style_transfer' => true,
-			]
-		);
-
-		$this->add_control(
 			'_heading_tab_icon',
 			[
 				'label' => __( 'Tab Icon', 'widgetkit-for-elementor'),
