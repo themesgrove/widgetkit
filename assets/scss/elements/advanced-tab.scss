@@ -19,9 +19,13 @@
       list-style: none;
       a{
         display: block;
+        transition: 0.5s;
         .wk-adv-tab-title{
           span{
             display: block;
+          }
+          .wk-adv-tab-title-text{
+            transition: 0.5s;
           }
         }
       }
