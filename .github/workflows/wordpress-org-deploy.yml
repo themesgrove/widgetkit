@@ -27,7 +27,7 @@ jobs:
           npm install bower -g
           npm install
           composer install
-          npm run build
+          npm run release
 
       - name: WordPress Plugin Deploy
         uses: 10up/action-wordpress-plugin-deploy@master

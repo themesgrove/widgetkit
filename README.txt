@@ -273,6 +273,12 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+= 2.3.19 =
+Fix – dist folder missing issue.
+
+= 2.3.18 =
+Fix – PHP fatal error.
+
 = 2.3.17 =
 Fix – Elementor latest version compatibility issues.
 
