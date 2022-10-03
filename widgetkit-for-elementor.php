@@ -2,7 +2,7 @@
 /*
 Plugin Name: All-in-One Addons for Elementor - WidgetKit
 Description: Everything you need to create a stunning website with <strong>Elementor, WooCommerce, LearnDash, Sensei & LearnPress</strong> and more.
-Version: 2.3.19
+Version: 2.4.19
 Text Domain: widgetkit-for-elementor
 Author: Themesgrove
 Author URI: https://themesgrove.com
@@ -21,7 +21,7 @@ WC tested up to: 6.9.0
  */
 if (!defined('ABSPATH')) exit;
 
-define('WK_VERSION', '2.3.19');
+define('WK_VERSION', '2.4.19');
 define('WK_FILE', __FILE__);
 define('WK_URL', plugins_url('/', __FILE__));
 define('WK_PATH', plugin_dir_path(__FILE__));
@@ -30,10 +30,12 @@ define('WK_PATH', plugin_dir_path(__FILE__));
 function wk_admin_notice__success()
 {
 ?>
-    <div class="notice notice-success is-dismissible" style="padding: 30px 30px 20px">
-        <img style="max-width:200px" src="<?php echo esc_attr(plugin_dir_url(__FILE__) . 'admin/assets/images/thrivedesk-logo.png'); ?>">
-        <h2><?php _e('Your customers deserve better customer support and You deserve the peace of mind. <a href="https://www.thrivedesk.com/?ref=widgetkit"><strong>Try ThriveDesk</strong></a>', 'widgetkit'); ?></h2>
-    </div>
+<div class="notice notice-success is-dismissible" style="padding: 30px 30px 20px">
+    <img style="max-width:200px"
+        src="<?php echo esc_attr(plugin_dir_url(__FILE__) . 'admin/assets/images/thrivedesk-logo.png'); ?>">
+    <h2><?php _e('Your customers deserve better customer support and You deserve the peace of mind. <a href="https://www.thrivedesk.com/?ref=widgetkit"><strong>Try ThriveDesk</strong></a>', 'widgetkit'); ?>
+    </h2>
+</div>
 <?php
 }
 add_action('admin_notices', 'wk_admin_notice__success');

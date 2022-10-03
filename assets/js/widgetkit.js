@@ -233,5 +233,27 @@ jQuery( window ).on( 'elementor/frontend/init', function() {
     });
 } );
 
+// Advanced Tab
+(function($) {
+    "use strict";
+	var AdvancedTabHandler = function () {
+        $('.wk-adv-tabs-nav li').first().addClass('active');
+		$('.wk-adv-tabs-nav a').on('click',function() {
+			// Check for active
+            $('.wk-adv-tabs-nav li').removeClass('active');
+			$(this).parent().addClass('active');
 
+			// Display active tab
+			let currentTab = $(this).attr('href');
+			$('.wk-tabs-content-wrap div').hide();
+			$(currentTab).show();
 
+			return false;
+		});
+	}
+
+	// Run this code under Elementor.
+    $(window).on('elementor/frontend/init', function() {
+        elementorFrontend.hooks.addAction('frontend/element_ready/wk-advanced-tabs.default', AdvancedTabHandler); 
+    });
+})(jQuery);
