@@ -54,7 +54,8 @@ class Widgetkit_Admin
         'widget-click-tweet',
         'widget-video-popup',
         'widget-lottie-animation',
-        'widget-mailchimp'
+        'widget-mailchimp',
+        'widget-advanced-tab',
     ];
 
     public $widgetkit_woo_keys = [
@@ -358,26 +359,45 @@ class Widgetkit_Admin
 ?>
 
 
-    <div class="wrap wk-dashboard-wrapper">
-        <div class="response-wrap"></div>
-        <form action="" method="POST" id="widgetkit-settings" name="widgetkit-settings">
-            <div class="wk-container">
-                <!-- header -->
-                <?php 
+<div class="wrap wk-dashboard-wrapper">
+    <div class="response-wrap"></div>
+    <form action="" method="POST" id="widgetkit-settings" name="widgetkit-settings">
+        <div class="wk-container">
+            <!-- header -->
+            <?php 
                     require WK_PATH . '/admin/includes/header.php';
                     WKFE_Dashboard_Header::init();
                 ?>
-                <!-- content -->
-                <?php 
+            <!-- content -->
+            <?php 
                     require WK_PATH . '/admin/includes/content.php';
                     new WKFE_Dashboard_Content($this->all_option_data);
                 ?>
-            </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
-    <script type="text/javascript">!function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});</script>
-    <script type="text/javascript">window.Beacon('init', '940f4d8a-7f6f-432c-ae31-0ed5819fdbe4')</script>
+<script type="text/javascript">
+! function(e, t, n) {
+    function a() {
+        var e = t.getElementsByTagName("script")[0],
+            n = t.createElement("script");
+        n.type = "text/javascript", n.async = !0, n.src = "https://beacon-v2.helpscout.net", e.parentNode.insertBefore(
+            n, e)
+    }
+    if (e.Beacon = n = function(t, n, a) {
+            e.Beacon.readyQueue.push({
+                method: t,
+                options: n,
+                data: a
+            })
+        }, n.readyQueue = [], "complete" === t.readyState) return a();
+    e.attachEvent ? e.attachEvent("onload", a) : e.addEventListener("load", a, !1)
+}(window, document, window.Beacon || function() {});
+</script>
+<script type="text/javascript">
+window.Beacon('init', '940f4d8a-7f6f-432c-ae31-0ed5819fdbe4')
+</script>
 <?php
     }
         
@@ -441,6 +461,7 @@ class Widgetkit_Admin
             'widget-video-popup' => intval($settings['widget-video-popup'] ? 1 : 0),
             'widget-lottie-animation' => intval($settings['widget-lottie-animation'] ? 1 : 0),
             'widget-mailchimp' => intval($settings['widget-mailchimp'] ? 1 : 0),
+            'widget-advanced-tab' => intval($settings['widget-advanced-tab'] ? 1 : 0),
             /**
              * pro
              */
