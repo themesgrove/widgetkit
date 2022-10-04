@@ -45,7 +45,7 @@ class wkfe_advanced_tab extends Widget_Base
 
 	public function get_categories()
 	{
-		return ['widgetkit-for-elementor'];
+		return ['widgetkit_elementor'];
 	}
 
 	/**
