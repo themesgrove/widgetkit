@@ -273,6 +273,9 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+= 2.4.1 =
+Fix – LearnDash course edit issue.
+
 = 2.4.0 =
 New – Advanced Tab element.
 
