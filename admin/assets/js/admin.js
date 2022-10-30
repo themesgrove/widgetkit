@@ -4,7 +4,7 @@
 	$(".widgetkit-settings-tabs").tabs();
 	
 	$(document).ready(function(){
-		$(".wk-thank-you-notice button.notice-dismiss").on('click', function(e){
+		$(".wk-td-ads-notice button.notice-dismiss").on('click', function(e){
 			e.preventDefault();
 			var url = new URL(location.href);
 			url.searchParams.append('dismissed', 1);

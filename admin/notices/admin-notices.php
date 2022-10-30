@@ -1,27 +1,26 @@
 <?php 
-add_action('admin_notices','widgetkit_for_elemetor_admin_notice');
-add_action('admin_init','widgetkit_for_elemetor_dismiss_admin_notice');
 
-
-function widgetkit_for_elemetor_admin_notice(){
-	//delete_option('notice_dissmissed');
-	if (get_option("wk-thank-you-notice")) {
+// Ads for ThriveDesk
+add_action('admin_notices', 'wk_td_admin_ads');
+add_action('admin_init','wk_td_ads_dismiss_notice');
+function wk_td_admin_ads()
+{
+	if (get_option("wk-td-ads-notice")) {
 		return;
 	}
-	$notice_container = 
-	<<<EOD
-	<div class="wk-thank-you-notice notice is-dismissible %s uniqueclass">
-	<p>%s</p>
-	</div>
-EOD;
-	$notice = "Thanks for using WidgetKit";
-	printf($notice_container, "notice-info", $notice);
-
+?>
+<div class="wk-td-ads-notice notice notice-success is-dismissible" style="padding: 30px 30px 20px">
+    <img style="max-width:200px"
+        src="<?php echo esc_attr(plugin_dir_url(__FILE__) . '../assets/images/thrivedesk-logo.png'); ?>">
+    <p style="font-size:16px">
+        <?php _e('Your customers deserve better customer support and You deserve the peace of mind. <a href="https://www.thrivedesk.com/?ref=widgetkit"><strong>Try ThriveDesk</strong></a>', 'widgetkit'); ?>
+    </p>
+</div>
+<?php
 }
 
-
-function widgetkit_for_elemetor_dismiss_admin_notice(){
+function wk_td_ads_dismiss_notice(){
 	if( isset($_GET['dismissed']) && $_GET['dismissed'] == 1 ){
-		update_option('wk-thank-you-notice', 1);
+		update_option('wk-td-ads-notice', 1);
 	}
 }
