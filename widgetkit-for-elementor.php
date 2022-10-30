@@ -26,21 +26,6 @@ define('WK_FILE', __FILE__);
 define('WK_URL', plugins_url('/', __FILE__));
 define('WK_PATH', plugin_dir_path(__FILE__));
 
-// Ads for ThriveDesk
-function wk_admin_notice__success()
-{
-?>
-<div class="notice notice-success is-dismissible" style="padding: 30px 30px 20px">
-    <img style="max-width:200px"
-        src="<?php echo esc_attr(plugin_dir_url(__FILE__) . 'admin/assets/images/thrivedesk-logo.png'); ?>">
-    <h2><?php _e('Your customers deserve better customer support and You deserve the peace of mind. <a href="https://www.thrivedesk.com/?ref=widgetkit"><strong>Try ThriveDesk</strong></a>', 'widgetkit'); ?>
-    </h2>
-</div>
-<?php
-}
-add_action('admin_notices', 'wk_admin_notice__success');
-
-
 class WidgetKit_For_Elementor
 {
 
