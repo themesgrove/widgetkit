@@ -177,15 +177,15 @@ function wkfe_mailchimp_api_keys(){
 		die ();
 	}
 
-	$mailChimp_api_key = $_REQUEST['fields']['apiKey'];
-	$mailChimp_list_id = $_REQUEST['fields']['listID'];
+	$mailChimp_api_key = sanitize_text_field ( $_REQUEST['fields']['apiKey'] );
+	$mailChimp_list_id = sanitize_text_field ( $_REQUEST['fields']['listID'] );
 	if(empty($mailChimp_api_key) || empty($mailChimp_list_id)){
 		wp_send_json_error("Please fill all input properly", 400);
 		return false;
 		die ();
 	}
-	update_option('wkfe_mailchimp_api_key', $mailChimp_api_key);
-	update_option('wkfe_mailchimp_list_id', $mailChimp_list_id);
+	update_option( 'wkfe_mailchimp_api_key', $mailChimp_api_key );
+	update_option( 'wkfe_mailchimp_list_id', $mailChimp_list_id );
 	$response = [
 		'success' => true,
 		'message' => 'All Data Updated'
