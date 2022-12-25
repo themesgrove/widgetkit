@@ -97,9 +97,10 @@
 .wk-tabs-content-wrap{
    .wk-tabs-content{
     display: none;
-    &.active{
+    &:first-child{
       display: block;
     }
+
   }
 }
 
