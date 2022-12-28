@@ -237,7 +237,7 @@ jQuery( window ).on( 'elementor/frontend/init', function() {
 (function($) {
     "use strict";
 	var AdvancedTabHandler = function () {
-        $('.wk-adv-tab-wrapper .wk-adv-tabs-nav li a:first-child').addClass('active');
+        $('.wk-adv-tab-wrapper .wk-adv-tabs-nav li:first-child a').addClass('active');
 		$('.wk-adv-tabs-nav li a').on('click',function(e) {
 			e.preventDefault();
             let $parent = $(e.target).parents(".wk-adv-tab-wrapper");
