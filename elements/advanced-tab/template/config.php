@@ -258,6 +258,26 @@ class wkfe_advanced_tab extends Widget_Base
 		);
 
 		$this->add_control(
+			'_enable_accordian_title',
+			[
+				'label' => __('Accordian', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'enable_tab_accordian_switcher',
+			[
+				'label' => __('Enable', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __('Yes', 'widgetkit-for-elementor'),
+				'label_off' => __('No', 'widgetkit-for-elementor'),
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->add_control(
 			'_heading_tab_title',
 			[
 				'label' => __('Tab Title', 'widgetkit-for-elementor'),
@@ -351,11 +371,7 @@ class wkfe_advanced_tab extends Widget_Base
 					'top' => [
 						'title' =>  __('Top', 'widgetkit-for-elementor'),
 						'icon' => 'eicon-v-align-top',
-					],
-					'right' => [
-						'title' =>  __('Right', 'widgetkit-for-elementor'),
-						'icon' => 'eicon-h-align-right',
-					],
+					]
 				],
 				'style_transfer' => true,
 			]
@@ -504,6 +520,8 @@ class wkfe_advanced_tab extends Widget_Base
 				'selectors' => [
 					'{{WRAPPER}} .wk-adv-tabs-nav .wk-adv-tab-title' => 'text-align: {{VALUE}};',
 					'{{WRAPPER}} .nav-pos-top.nav-icon-pos-left .wk-adv-tabs-nav li' => 'justify-content: {{VALUE}};',
+					'{{WRAPPER}} .nav-icon-pos-left .wk-adv-tabs-nav .no-nav-desc a' => 'justify-content: {{VALUE}};',
+					'{{WRAPPER}} .nav-icon-pos-top .wk-adv-tabs-nav li' => 'text-align: {{VALUE}};',
 				]
 			]
 		);
@@ -690,7 +708,7 @@ class wkfe_advanced_tab extends Widget_Base
 				'type' => Controls_Manager::COLOR,
 				'default' => '#444',
 				'selectors' => [
-					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active a' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -700,7 +718,7 @@ class wkfe_advanced_tab extends Widget_Base
 			[
 				'name' => 'nav_active_border',
 				'label' => __('Border', 'widgetkit-for-elementor'),
-				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active a'
+				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active'
 			]
 		);
 
@@ -709,7 +727,7 @@ class wkfe_advanced_tab extends Widget_Base
 			[
 				'name' => 'nav_active_box_shadow',
 				'label' => __('Box Shadow', 'widgetkit-for-elementor'),
-				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active a'
+				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active'
 			]
 		);
 
@@ -890,6 +908,7 @@ class wkfe_advanced_tab extends Widget_Base
 				'size_units' => ['px'],
 				'selectors' => [
 					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-icon>svg, {{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-icon>i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .nav-icon-pos-left .wk-adv-tab-title-icon>svg, {{WRAPPER}} .nav-icon-pos-left .wk-adv-tab-title-icon>i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

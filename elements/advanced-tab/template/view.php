@@ -9,7 +9,7 @@ $id_int = substr($this->get_id_int(), 0, 3);
 
 ?>
 <div class="wk-adv-tab-wrapper nav-pos-<?php echo $settings['nav_position'] ?> nav-icon-pos-<?php echo $settings['nav_icon_position'] ?> nav-align-<?php echo $settings['tab_nav_align'] ?>">
-    <div class="wk-adv-tabs-nav">
+    <div class="wk-adv-tabs-nav <?php echo $settings['enable_tab_accordian_switcher'] == 'yes' ? 'enable-accordian' : 'disable-accordian' ?>">
         <?php if ($settings['enable_tab_heading_switcher'] == 'yes') : ?>
             <div class="wk-adv-tab-heading">
                 <h3><?php echo $settings['heading_title'] ?></h3>
@@ -18,10 +18,10 @@ $id_int = substr($this->get_id_int(), 0, 3);
         <?php endif; ?>
         <ul>
             <?php foreach ($settings['tabs'] as $tab) : ?>
-                <li>
+                <li class="<?php echo $tab['description'] == '' ? 'no-nav-desc' : 'has-nav-desc' ?>">
                     <a href="#tab-<?php echo esc_attr($tab['_id'] . $id_int); ?>">
                         <?php if (($settings['nav_icon_position'] == 'left' && $tab['description'] == '') || ($settings['nav_icon_position'] == 'right' && $tab['description'] == '')) : ?>
-                            <?php if (!empty($tab['title']) || !empty($tab['description'])) : ?>
+                            <?php if (!empty($tab['title'])) : ?>
                                 <span class="wk-adv-tab-title">
                                     <?php if (!empty($tab['title']) && $settings['nav_icon_position'] == 'left') : ?>
                                         <span class="wk-adv-tab-title-text">
@@ -29,13 +29,6 @@ $id_int = substr($this->get_id_int(), 0, 3);
                                                 <?php Icons_Manager::render_icon($tab['icon'], ['aria-hidden' => 'true']); ?>
                                             <?php endif; ?>
                                             <?php echo esc_html($tab['title']); ?>
-                                        </span>
-                                    <?php else : ?>
-                                        <span class="wk-adv-tab-title-text">
-                                            <?php echo esc_html($tab['title']); ?>
-                                            <?php if ($tab['icon']['value'] != '') : ?>
-                                                <?php Icons_Manager::render_icon($tab['icon'], ['aria-hidden' => 'true']); ?>
-                                            <?php endif; ?>
                                         </span>
                                     <?php endif; ?>
                                     <?php if (!empty($tab['description'])) : ?>
