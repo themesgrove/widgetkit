@@ -238,8 +238,8 @@ jQuery( window ).on( 'elementor/frontend/init', function() {
     "use strict";
 	var AdvancedTabHandler = function () {
         $('.wk-adv-tab-wrapper .wk-adv-tabs-nav li a:first-child').addClass('active');
-        $('.wk-adv-tabs-nav li a').on('click',function(e) {
-            e.preventDefault();
+		$('.wk-adv-tabs-nav li a').on('click',function(e) {
+			e.preventDefault();
             let $parent = $(e.target).parents(".wk-adv-tab-wrapper");
             $parent.find('a').each((index, element) => {
           	    $(element).removeClass('active');
@@ -251,24 +251,7 @@ jQuery( window ).on( 'elementor/frontend/init', function() {
             $parent.find('.wk-tabs-content').hide();
 			$(currentTab).show();
 			return false;
-
 		});
-
-
-
-
-
-		// $('.wk-adv-tabs-nav li a').on('click',function() {
-		// 	// Check for active
-        //     $('.wk-adv-tabs-nav li').removeClass('active');
-		// 	$(this).parent().addClass('active');
-
-		// 	// Display active tab
-		// 	let currentTab = $(this).attr('href');
-		// 	$('.wk-tabs-content-wrap .wk-tabs-content').hide();
-		// 	$(currentTab).show();
-		// 	return false;
-		// });
 	}
 
 	// Run this code under Elementor.
