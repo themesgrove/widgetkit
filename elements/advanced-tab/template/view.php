@@ -8,8 +8,8 @@ $tabs = $settings['tabs'];
 $id_int = substr($this->get_id_int(), 0, 3);
 
 ?>
-<div class="wk-adv-tab-wrapper nav-pos-<?php echo $settings['nav_position'] ?> nav-icon-pos-<?php echo $settings['nav_icon_position'] ?> nav-align-<?php echo $settings['tab_nav_align'] ?>">
-    <div class="wk-adv-tabs-nav <?php echo $settings['enable_tab_accordian_switcher'] == 'yes' ? 'enable-accordian' : 'disable-accordian' ?>">
+<div class="wk-adv-tab-wrapper nav-pos-<?php echo $settings['nav_position'] ?> nav-icon-pos-<?php echo $settings['nav_icon_position'] ?> nav-align-<?php echo $settings['tab_nav_align'] ?> <?php echo $settings['enable_tab_accordian_switcher'] == 'yes' ? 'enable-accordian' : 'disable-accordian' ?>">
+    <div class="wk-adv-tabs-nav">
         <?php if ($settings['enable_tab_heading_switcher'] == 'yes') : ?>
             <div class="wk-adv-tab-heading">
                 <h3><?php echo $settings['heading_title'] ?></h3>
