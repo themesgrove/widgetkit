@@ -584,11 +584,23 @@ class wkfe_advanced_tab extends Widget_Base
 		$this->add_responsive_control(
 			'nav_margin',
 			[
-				'label' => __('Margin', 'widgetkit-for-elementor'),
+				'label' => __('Nav Area Margin', 'widgetkit-for-elementor'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
 					'{{WRAPPER}} .wk-adv-tabs-nav' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'nav_item_margin',
+			[
+				'label' => __('Nav Item Margin', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', 'em', '%'],
+				'selectors' => [
+					'{{WRAPPER}} .wk-adv-tabs-nav li' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -599,6 +611,7 @@ class wkfe_advanced_tab extends Widget_Base
 				'label' => __('Padding', 'widgetkit-for-elementor'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
+				'default' => [ '20px'],
 				'selectors' => [
 					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -869,7 +882,9 @@ class wkfe_advanced_tab extends Widget_Base
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-icon>svg' => 'fill: {{VALUE}};',
-					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-icon>i' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-icon>i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-text>svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-text>i' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -882,7 +897,9 @@ class wkfe_advanced_tab extends Widget_Base
 				'default' => '#fff',
 				'selectors' => [
 					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav li a:hover .wk-adv-tab-title-icon>svg' => 'fill: {{VALUE}};',
-					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav li a:hover .wk-adv-tab-title-icon>i' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav li a:hover .wk-adv-tab-title-icon>i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav li a:hover .wk-adv-tab-title-text>svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav li a:hover .wk-adv-tab-title-text>i' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -895,7 +912,9 @@ class wkfe_advanced_tab extends Widget_Base
 				'default' => '#fff',
 				'selectors' => [
 					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active .wk-adv-tab-title-icon>svg' => 'fill: {{VALUE}};',
-					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active .wk-adv-tab-title-icon>i' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active .wk-adv-tab-title-icon>i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active .wk-adv-tab-title-text>svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active .wk-adv-tab-title-text>i' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -909,6 +928,8 @@ class wkfe_advanced_tab extends Widget_Base
 				'selectors' => [
 					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-icon>svg, {{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-icon>i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .nav-icon-pos-left .wk-adv-tab-title-icon>svg, {{WRAPPER}} .nav-icon-pos-left .wk-adv-tab-title-icon>i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-text>svg, {{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-text>i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .nav-icon-pos-left .wk-adv-tab-title-text>svg, {{WRAPPER}} .nav-icon-pos-left .wk-adv-tab-title-text>i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -921,6 +942,8 @@ class wkfe_advanced_tab extends Widget_Base
 				'size_units' => ['px'],
 				'selectors' => [
 					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-icon' => 'font-size: {{SIZE}}px;',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-text>svg' => 'width: {{SIZE}}px;',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-text>i' => 'font-size: {{SIZE}}px;',
 				],
 			]
 		);
