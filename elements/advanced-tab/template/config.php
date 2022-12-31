@@ -41,6 +41,32 @@ class wkfe_advanced_tab extends Widget_Base
 			'toggle'
 		];
 	}
+	public function select_elementor_page($type)
+	{
+		$args  = [
+			'tax_query'      => [
+				[
+					'taxonomy' => 'elementor_library_type',
+					'field'    => 'slug',
+					'terms'    => $type,
+				],
+			],
+			'post_type'      => 'elementor_library',
+			'posts_per_page' => -1,
+		];
+		$query = new \WP_Query($args);
+
+		$posts = $query->posts;
+		foreach ($posts as $post) {
+			$items[$post->ID] = $post->post_title;
+		}
+
+		if (empty($items)) {
+			$items = [];
+		}
+
+		return $items;
+	}
 
 	public function get_categories()
 	{
@@ -194,19 +220,35 @@ class wkfe_advanced_tab extends Widget_Base
 			]
 		);
 
+		$saved_sections = ['0' => __('--- Select Section ---', 'widgetkit-for-elementor')];
+		$saved_sections = $saved_sections + $this->select_elementor_page('section');
+
 		$repeater->add_control(
 			'primary_templates',
 			[
-				'label' => __('Choose Template', 'widgetkit-for-elementor'),
-				'type' => 'eael-select2',
-				'source_name' => 'post_type',
-				'source_type' => 'elementor_library',
-				'label_block' => true,
+				'label'     => __('Sections', 'widgetkit-for-elementor'),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => $saved_sections,
+				'default'   => '0',
 				'condition' => [
 					'tabs_content_type' => 'template',
 				],
 			]
 		);
+
+		// $repeater->add_control(
+		// 	'primary_templates',
+		// 	[
+		// 		'label' => __('Choose Template', 'widgetkit-for-elementor'),
+		// 		'type' => 'eael-select2',
+		// 		'source_name' => 'post_type',
+		// 		'source_type' => 'elementor_library',
+		// 		'label_block' => true,
+		// 		'condition' => [
+		// 			'tabs_content_type' => 'template',
+		// 		],
+		// 	]
+		// );
 
 		$this->add_control(
 			'tabs',
