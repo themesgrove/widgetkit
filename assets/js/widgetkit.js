@@ -237,17 +237,19 @@ jQuery( window ).on( 'elementor/frontend/init', function() {
 (function($) {
     "use strict";
 	var AdvancedTabHandler = function () {
-        $('.wk-adv-tabs-nav li').first().addClass('active');
-		$('.wk-adv-tabs-nav a').on('click',function() {
-			// Check for active
-            $('.wk-adv-tabs-nav li').removeClass('active');
-			$(this).parent().addClass('active');
+        $('.wk-adv-tab-wrapper .wk-adv-tabs-nav li:first-child a').addClass('active');
+		$('.wk-adv-tabs-nav li a').on('click',function(e) {
+			e.preventDefault();
+            let $parent = $(e.target).parents(".wk-adv-tab-wrapper");
+            $parent.find('a').each((index, element) => {
+          	    $(element).removeClass('active');
+            })
+            $(e.target).closest('a').addClass('active');
 
 			// Display active tab
-			let currentTab = $(this).attr('href');
-			$('.wk-tabs-content-wrap div').hide();
+			let currentTab = $(e.target).closest('a').attr('href');
+            $parent.find('.wk-tabs-content').hide();
 			$(currentTab).show();
-
 			return false;
 		});
 	}

@@ -6,7 +6,6 @@ use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
-use Elementor\Icons_Manager;
 use Elementor\Utils;
 use Elementor\Repeater;
 
@@ -41,6 +40,32 @@ class wkfe_advanced_tab extends Widget_Base
 			'advanced tab',
 			'toggle'
 		];
+	}
+	public function select_elementor_page($type)
+	{
+		$args  = [
+			'tax_query'      => [
+				[
+					'taxonomy' => 'elementor_library_type',
+					'field'    => 'slug',
+					'terms'    => $type,
+				],
+			],
+			'post_type'      => 'elementor_library',
+			'posts_per_page' => -1,
+		];
+		$query = new \WP_Query($args);
+
+		$posts = $query->posts;
+		foreach ($posts as $post) {
+			$items[$post->ID] = $post->post_title;
+		}
+
+		if (empty($items)) {
+			$items = [];
+		}
+
+		return $items;
 	}
 
 	public function get_categories()
@@ -117,11 +142,24 @@ class wkfe_advanced_tab extends Widget_Base
 		);
 
 		$repeater = new Repeater();
+		
+		$repeater->add_control(
+			'icon',
+			[
+				'label' => __('Icon', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::ICONS,
+				'default' => [
+					'value' => 'fas fa-star',
+					'library' => 'fa-solid',
+				],
+			]
+		);
 
 		$repeater->add_control(
 			'title',
 			[
 				'type' => Controls_Manager::TEXT,
+				'label_block' => true,
 				'label' => __('Title', 'widgetkit-for-elementor'),
 				'default' => __('Tab Title', 'widgetkit-for-elementor'),
 				'placeholder' => __('Type Tab Title', 'widgetkit-for-elementor'),
@@ -142,26 +180,75 @@ class wkfe_advanced_tab extends Widget_Base
 		);
 
 		$repeater->add_control(
-			'icon',
+			'tabs_content_type',
 			[
-				'label' => __('Icon', 'widgetkit-for-elementor'),
-				'type' => Controls_Manager::ICONS,
-				'default' => [
-					'value' => 'fas fa-star',
-					'library' => 'fa-solid',
+				'label' => __('Content Type', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'content' => __('Content', 'widgetkit-for-elementor'),
+					'image' => __('Image', 'widgetkit-for-elementor'),
+					'template' => __('Saved Templates', 'widgetkit-for-elementor'),
 				],
+				'default' => 'content',
 			]
 		);
 
 		$repeater->add_control(
-			'content',
+            'tabs_tab_content',
+            [
+                'label' => esc_html__('Tab Content', 'widgetkit-for-elementor'),
+                'type' => Controls_Manager::WYSIWYG,
+                'default' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, neque qui velit. Magni dolorum quidem ipsam eligendi, totam, facilis laudantium cum accusamus ullam voluptatibus commodi numquam, error, est. Ea, consequatur.', 'widgetkit-for-elementor'),
+                'dynamic' => ['active' => true],
+                'condition' => [
+					'tabs_content_type' => 'content',
+                ],
+            ]
+        );
+
+		$repeater->add_control(
+			'tab_image',
 			[
-				'type' => Controls_Manager::WYSIWYG,
-				'label' => __('Description', 'widgetkit-for-elementor'),
-				'default' => __('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.', 'widgetkit-for-elementor'),
-				'placeholder' => __('Type Tab Description', 'widgetkit-for-elementor')
+				'label' => esc_html__('Choose Image', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::MEDIA,
+				'default' => [
+					'url' => Utils::get_placeholder_image_src(),
+				],
+				'condition' => [
+					'tabs_content_type' => 'image',
+				],
 			]
 		);
+
+		$saved_sections = ['0' => __('--- Select Section ---', 'widgetkit-for-elementor')];
+		$saved_sections = $saved_sections + $this->select_elementor_page('section');
+
+		$repeater->add_control(
+			'primary_templates',
+			[
+				'label'     => __('Sections', 'widgetkit-for-elementor'),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => $saved_sections,
+				'default'   => '0',
+				'condition' => [
+					'tabs_content_type' => 'template',
+				],
+			]
+		);
+
+		// $repeater->add_control(
+		// 	'primary_templates',
+		// 	[
+		// 		'label' => __('Choose Template', 'widgetkit-for-elementor'),
+		// 		'type' => 'eael-select2',
+		// 		'source_name' => 'post_type',
+		// 		'source_type' => 'elementor_library',
+		// 		'label_block' => true,
+		// 		'condition' => [
+		// 			'tabs_content_type' => 'template',
+		// 		],
+		// 	]
+		// );
 
 		$this->add_control(
 			'tabs',
@@ -173,11 +260,11 @@ class wkfe_advanced_tab extends Widget_Base
 				'default' => [
 					[
 						'title' => 'Tab 1',
-						'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore <br><br>et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+						'description' => '',
 					],
 					[
 						'title' => 'Tab 2',
-						'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore <br><br>et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+						'description' => '',
 					]
 				]
 			]
@@ -204,6 +291,26 @@ class wkfe_advanced_tab extends Widget_Base
 			'enable_tab_heading_switcher',
 			[
 				'label' => __('Show', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __('Yes', 'widgetkit-for-elementor'),
+				'label_off' => __('No', 'widgetkit-for-elementor'),
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->add_control(
+			'_enable_accordian_title',
+			[
+				'label' => __('Accordian', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'enable_tab_accordian_switcher',
+			[
+				'label' => __('Enable', 'widgetkit-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __('Yes', 'widgetkit-for-elementor'),
 				'label_off' => __('No', 'widgetkit-for-elementor'),
@@ -306,11 +413,7 @@ class wkfe_advanced_tab extends Widget_Base
 					'top' => [
 						'title' =>  __('Top', 'widgetkit-for-elementor'),
 						'icon' => 'eicon-v-align-top',
-					],
-					'right' => [
-						'title' =>  __('Right', 'widgetkit-for-elementor'),
-						'icon' => 'eicon-h-align-right',
-					],
+					]
 				],
 				'style_transfer' => true,
 			]
@@ -429,6 +532,264 @@ class wkfe_advanced_tab extends Widget_Base
 		);
 
 		$this->add_control(
+			'nav_title_desc_global_heading',
+			[
+				'label' => __('Global', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$this->add_responsive_control(
+			'tab_nav_align',
+			[
+				'label' => esc_html__('Alignment', 'widgetkit-for-elementor'),
+				'type'  => Controls_Manager::CHOOSE,
+				'default'  => 'center',
+				'options'  => [
+					'left'    => [
+						'title' => esc_html__('Left', 'widgetkit-for-elementor'),
+						'icon'  => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => esc_html__('Center', 'widgetkit-for-elementor'),
+						'icon'  => 'eicon-text-align-center',
+					],
+					'right' => [
+						'title' => esc_html__('Right', 'widgetkit-for-elementor'),
+						'icon'  => 'eicon-text-align-right',
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .wk-adv-tabs-nav .wk-adv-tab-title' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .nav-pos-top.nav-icon-pos-left .wk-adv-tabs-nav li' => 'justify-content: {{VALUE}};',
+					'{{WRAPPER}} .nav-icon-pos-left .wk-adv-tabs-nav .no-nav-desc a' => 'justify-content: {{VALUE}};',
+					'{{WRAPPER}} .nav-icon-pos-top .wk-adv-tabs-nav li' => 'text-align: {{VALUE}};',
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'nav_tab_width',
+			[
+				'label' => __('Nav Area Width', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => ['px', '%'],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 1000,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .nav-pos-left .wk-adv-tabs-nav, {{WRAPPER}} .nav-pos-right .wk-adv-tabs-nav' => 'flex: 0 0 {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .nav-pos-left .wk-tabs-content, {{WRAPPER}} .nav-pos-right .wk-tabs-content' => 'flex: 0 0 calc(100% - {{SIZE}}{{UNIT}});'
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'nav_margin_x',
+			[
+				'label' => __('Horizontal Margin (px)', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::NUMBER,
+				'step' => 'any',
+				'selectors' => [
+					'{{WRAPPER}} .nav-pos-left .wk-adv-tabs-nav li' => 'margin-right: {{VALUE}}px;',
+					'{{WRAPPER}} .nav-pos-left .wk-adv-tabs-nav .wk-adv-tab-heading' => 'margin-right: {{VALUE}}px;',
+					'{{WRAPPER}} .nav-pos-right .wk-adv-tabs-nav li' => 'margin-left: {{VALUE}}px;',
+					'{{WRAPPER}} .nav-pos-right .wk-adv-tabs-nav .wk-adv-tab-heading' => 'margin-left: {{VALUE}}px;',
+					'{{WRAPPER}} .nav-pos-top .wk-adv-tabs-nav li:not(:last-child)' => 'margin-right: {{VALUE}}px;',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'nav_margin_y',
+			[
+				'label' => __('Vertical Margin (px)', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::NUMBER,
+				'step' => 'any',
+				'selectors' => [
+					'{{WRAPPER}} .nav-pos-left .wk-adv-tabs-nav li:not(:last-child)' => 'margin-bottom: {{VALUE}}px;',
+					'{{WRAPPER}} .nav-pos-right .wk-adv-tabs-nav li:not(:last-child)' => 'margin-bottom: {{VALUE}}px;',
+					'{{WRAPPER}} .nav-pos-left .wk-adv-tabs-nav li' => 'margin-bottom: {{VALUE}}px;',
+					'{{WRAPPER}} .nav-pos-right .wk-adv-tabs-nav li' => 'margin-bottom: {{VALUE}}px;',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'nav_margin',
+			[
+				'label' => __('Nav Area Margin', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', 'em', '%'],
+				'selectors' => [
+					'{{WRAPPER}} .wk-adv-tabs-nav' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'nav_item_margin',
+			[
+				'label' => __('Nav Item Margin', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', 'em', '%'],
+				'selectors' => [
+					'{{WRAPPER}} .wk-adv-tabs-nav li' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'nav_padding',
+			[
+				'label' => __('Padding', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', 'em', '%'],
+				'default' => [ '20px'],
+				'selectors' => [
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'nav_border_radius',
+			[
+				'label' => __('Border Radius', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%'],
+				'selectors' => [
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->start_controls_tabs('_tab_nav_stats');
+		$this->start_controls_tab(
+			'_tab_nav_normal',
+			[
+				'label' => __('Normal', 'widgetkit-for-elementor'),
+			]
+		);
+
+		$this->add_control(
+			'nav_bg_bg',
+			[
+				'label' => esc_html__('Background Color', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#f5f5f5',
+				'selectors' => [
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'nav_border',
+				'label' => __('Border', 'widgetkit-for-elementor'),
+				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a'
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'nav_box_shadow',
+				'label' => __('Box Shadow', 'widgetkit-for-elementor'),
+				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a'
+			]
+		);
+
+		$this->end_controls_tab();
+		$this->start_controls_tab(
+			'_tab_nav_hover',
+			[
+				'label' => __('Hover', 'widgetkit-for-elementor'),
+			]
+		);
+
+		$this->add_control(
+			'nav_hover_bg_bg',
+			[
+				'label' => esc_html__('Background Color', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#444',
+				'selectors' => [
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a:hover' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'nav_hover_border',
+				'label' => __('Border', 'widgetkit-for-elementor'),
+				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a:hover'
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'nav_hover_box_shadow',
+				'label' => __('Box Shadow', 'widgetkit-for-elementor'),
+				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a:hover'
+			]
+		);
+
+		$this->end_controls_tab();
+		$this->start_controls_tab(
+			'_tab_nav_active',
+			[
+				'label' => __('Active', 'widgetkit-for-elementor'),
+			]
+		);
+
+		$this->add_control(
+			'nav_active_bg_bg',
+			[
+				'label' => esc_html__('Background Color', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#444',
+				'selectors' => [
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'nav_active_border',
+				'label' => __('Border', 'widgetkit-for-elementor'),
+				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active'
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'nav_active_box_shadow',
+				'label' => __('Box Shadow', 'widgetkit-for-elementor'),
+				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active'
+			]
+		);
+
+		$this->end_controls_tab();
+		$this->end_controls_tabs();
+
+		$this->add_control(
 			'nav_title_heading',
 			[
 				'label' => __('Title', 'widgetkit-for-elementor'),
@@ -453,8 +814,9 @@ class wkfe_advanced_tab extends Widget_Base
 			[
 				'label' => __('Hover Color', 'widgetkit-for-elementor'),
 				'type' => Controls_Manager::COLOR,
+				'default' => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-text:hover' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav li:hover .wk-adv-tab-title-text' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -464,6 +826,7 @@ class wkfe_advanced_tab extends Widget_Base
 			[
 				'label' => __('Active Color', 'widgetkit-for-elementor'),
 				'type' => Controls_Manager::COLOR,
+				'default' => '#fff',
 				'selectors' => [
 					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active .wk-adv-tab-title-text' => 'color: {{VALUE}};'
 				]
@@ -515,8 +878,9 @@ class wkfe_advanced_tab extends Widget_Base
 			[
 				'label' => __('Hover Color', 'widgetkit-for-elementor'),
 				'type' => Controls_Manager::COLOR,
+				'default' => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-desc' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav li:hover .wk-adv-tab-title-desc' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -526,6 +890,7 @@ class wkfe_advanced_tab extends Widget_Base
 			[
 				'label' => __('Active Color', 'widgetkit-for-elementor'),
 				'type' => Controls_Manager::COLOR,
+				'default' => '#fff',
 				'selectors' => [
 					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active .wk-adv-tab-title-desc' => 'color: {{VALUE}};'
 				]
@@ -540,225 +905,6 @@ class wkfe_advanced_tab extends Widget_Base
 				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-desc',
 			]
 		);
-
-		$this->add_control(
-			'nav_title_desc_global_heading',
-			[
-				'label' => __('Global', 'widgetkit-for-elementor'),
-				'type' => Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-		$this->add_responsive_control(
-			'tab_nav_align',
-			[
-				'label' => esc_html__('Alignment', 'widgetkit-for-elementor'),
-				'type'  => Controls_Manager::CHOOSE,
-				'default'  => 'center',
-				'options'  => [
-					'left'    => [
-						'title' => esc_html__('Left', 'widgetkit-for-elementor'),
-						'icon'  => 'eicon-text-align-left',
-					],
-					'center' => [
-						'title' => esc_html__('Center', 'widgetkit-for-elementor'),
-						'icon'  => 'eicon-text-align-center',
-					],
-					'right' => [
-						'title' => esc_html__('Right', 'widgetkit-for-elementor'),
-						'icon'  => 'eicon-text-align-right',
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .wk-adv-tabs-nav .wk-adv-tab-title' => 'text-align: {{VALUE}};',
-				]
-			]
-		);
-
-		$this->add_responsive_control(
-			'nav_tab_width',
-			[
-				'label' => __('Nav Area Width', 'widgetkit-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', '%'],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 1000,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .nav-pos-left .wk-adv-tabs-nav, {{WRAPPER}} .nav-pos-right .wk-adv-tabs-nav' => 'flex: 0 0 {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .nav-pos-left .wk-tabs-content, {{WRAPPER}} .nav-pos-right .wk-tabs-content' => 'flex: 0 0 calc(100% - {{SIZE}}{{UNIT}});'
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'nav_margin_x',
-			[
-				'label' => __('Horizontal Margin (px)', 'widgetkit-for-elementor'),
-				'type' => Controls_Manager::NUMBER,
-				'step' => 'any',
-				'selectors' => [
-
-					'{{WRAPPER}} .nav-pos-left .wk-adv-tabs-nav li' => 'margin-right: {{VALUE}}px;',
-					'{{WRAPPER}} .nav-pos-right .wk-adv-tabs-nav li' => 'margin-left: {{VALUE}}px;',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'nav_margin_y',
-			[
-				'label' => __('Vertical Margin (px)', 'widgetkit-for-elementor'),
-				'type' => Controls_Manager::NUMBER,
-				'step' => 'any',
-				'selectors' => [
-					'{{WRAPPER}} .nav-pos-left .wk-adv-tabs-nav li:not(:last-child)' => 'margin-bottom: {{VALUE}}px;',
-					'{{WRAPPER}} .nav-pos-right .wk-adv-tabs-nav li:not(:last-child)' => 'margin-bottom: {{VALUE}}px;',
-					'{{WRAPPER}} .nav-pos-left .wk-adv-tabs-nav li' => 'margin-bottom: {{VALUE}}px;',
-					'{{WRAPPER}} .nav-pos-right .wk-adv-tabs-nav li' => 'margin-bottom: {{VALUE}}px;',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'nav_padding',
-			[
-				'label' => __('Padding', 'widgetkit-for-elementor'),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => ['px', 'em', '%'],
-				'selectors' => [
-					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'nav_border_radius',
-			[
-				'label' => __('Border Radius', 'widgetkit-for-elementor'),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => ['px', '%'],
-				'selectors' => [
-					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->start_controls_tabs('_tab_nav_stats');
-		$this->start_controls_tab(
-			'_tab_nav_normal',
-			[
-				'label' => __('Normal', 'widgetkit-for-elementor'),
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'nav_bg_bg',
-				'types' => ['classic', 'gradient'],
-				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a'
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'nav_border',
-				'label' => __('Border', 'widgetkit-for-elementor'),
-				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a'
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'nav_box_shadow',
-				'label' => __('Box Shadow', 'widgetkit-for-elementor'),
-				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a'
-			]
-		);
-
-		$this->end_controls_tab();
-		$this->start_controls_tab(
-			'_tab_nav_hover',
-			[
-				'label' => __('Hover', 'widgetkit-for-elementor'),
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'nav_hover_bg_bg',
-				'types' => ['classic', 'gradient'],
-				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a:hover'
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'nav_hover_border',
-				'label' => __('Border', 'widgetkit-for-elementor'),
-				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a:hover'
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'nav_hover_box_shadow',
-				'label' => __('Box Shadow', 'widgetkit-for-elementor'),
-				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a:hover'
-			]
-		);
-
-		$this->end_controls_tab();
-		$this->start_controls_tab(
-			'_tab_nav_active',
-			[
-				'label' => __('Active', 'widgetkit-for-elementor'),
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'nav_active_bg_bg',
-				'types' => ['classic', 'gradient'],
-				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active a'
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'nav_active_border',
-				'label' => __('Border', 'widgetkit-for-elementor'),
-				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active a'
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'nav_active_box_shadow',
-				'label' => __('Box Shadow', 'widgetkit-for-elementor'),
-				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active a'
-			]
-		);
-
-		$this->end_controls_tab();
-		$this->end_controls_tabs();
 
 		$this->end_controls_section();
 
@@ -778,7 +924,9 @@ class wkfe_advanced_tab extends Widget_Base
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-icon>svg' => 'fill: {{VALUE}};',
-					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-icon>i' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-icon>i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-text>svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-text>i' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -788,9 +936,12 @@ class wkfe_advanced_tab extends Widget_Base
 			[
 				'label' => __('Hover Color', 'widgetkit-for-elementor'),
 				'type' => Controls_Manager::COLOR,
+				'default' => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a:hover .wk-adv-tab-title-icon>svg' => 'fill: {{VALUE}};',
-					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav a:hover .wk-adv-tab-title-icon>i' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav li a:hover .wk-adv-tab-title-icon>svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav li a:hover .wk-adv-tab-title-icon>i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav li a:hover .wk-adv-tab-title-text>svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav li a:hover .wk-adv-tab-title-text>i' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -800,9 +951,12 @@ class wkfe_advanced_tab extends Widget_Base
 			[
 				'label' => __('Active Color', 'widgetkit-for-elementor'),
 				'type' => Controls_Manager::COLOR,
+				'default' => '#fff',
 				'selectors' => [
 					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active .wk-adv-tab-title-icon>svg' => 'fill: {{VALUE}};',
-					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active .wk-adv-tab-title-icon>i' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active .wk-adv-tab-title-icon>i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active .wk-adv-tab-title-text>svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .active .wk-adv-tab-title-text>i' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -815,6 +969,9 @@ class wkfe_advanced_tab extends Widget_Base
 				'size_units' => ['px'],
 				'selectors' => [
 					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-icon>svg, {{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-icon>i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .nav-icon-pos-left .wk-adv-tab-title-icon>svg, {{WRAPPER}} .nav-icon-pos-left .wk-adv-tab-title-icon>i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-text>svg, {{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-text>i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .nav-icon-pos-left .wk-adv-tab-title-text>svg, {{WRAPPER}} .nav-icon-pos-left .wk-adv-tab-title-text>i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -827,6 +984,8 @@ class wkfe_advanced_tab extends Widget_Base
 				'size_units' => ['px'],
 				'selectors' => [
 					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-icon' => 'font-size: {{SIZE}}px;',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-text>svg' => 'width: {{SIZE}}px;',
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-adv-tabs-nav .wk-adv-tab-title-text>i' => 'font-size: {{SIZE}}px;',
 				],
 			]
 		);
@@ -842,10 +1001,88 @@ class wkfe_advanced_tab extends Widget_Base
 		);
 
 		$this->add_control(
+			'_heading_content_global',
+			[
+				'label' => __('Global', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_responsive_control(
+			'tab_img_align',
+			[
+				'label' => esc_html__('Alignment', 'widgetkit-for-elementor'),
+				'type'  => Controls_Manager::CHOOSE,
+				'default'  => 'left',
+				'options'  => [
+					'left'    => [
+						'title' => esc_html__('Left', 'widgetkit-for-elementor'),
+						'icon'  => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => esc_html__('Center', 'widgetkit-for-elementor'),
+						'icon'  => 'eicon-text-align-center',
+					],
+					'right' => [
+						'title' => esc_html__('Right', 'widgetkit-for-elementor'),
+						'icon'  => 'eicon-text-align-right',
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-tabs-content-wrap .wk-tabs-content' => 'text-align: {{VALUE}};',
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'content_padding',
+			[
+				'label' => __('Padding', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', 'em', '%'],
+				'selectors' => [
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-tabs-content-wrap .wk-tabs-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'tab_content_border',
+				'label' => __('Border', 'widgetkit-for-elementor'),
+				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-tabs-content-wrap .wk-tabs-content'
+			]
+		);
+
+		$this->add_control(
+			'content_border_radius',
+			[
+				'label' => __('Border Radius', 'widgetkit-for-elementor'),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%'],
+				'selectors' => [
+					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-tabs-content-wrap .wk-tabs-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'content_bg',
+				'types' => ['classic', 'gradient'],
+				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-tabs-content-wrap .wk-tabs-content',
+			]
+		);
+
+		$this->add_control(
 			'_heading_content_text',
 			[
 				'label' => __('Text', 'widgetkit-for-elementor'),
 				'type' => Controls_Manager::HEADING,
+				'separator' => 'before'
 			]
 		);
 
@@ -939,83 +1176,6 @@ class wkfe_advanced_tab extends Widget_Base
 				'name' => 'tab_img_box_shadow',
 				'label' => __('Box Shadow', 'widgetkit-for-elementor'),
 				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-tabs-content-wrap .wk-tabs-content img',
-			]
-		);
-
-		$this->add_control(
-			'_heading_content_global',
-			[
-				'label' => __('Global', 'widgetkit-for-elementor'),
-				'type' => Controls_Manager::HEADING,
-				'separator' => 'before'
-			]
-		);
-
-		$this->add_responsive_control(
-			'tab_img_align',
-			[
-				'label' => esc_html__('Alignment', 'widgetkit-for-elementor'),
-				'type'  => Controls_Manager::CHOOSE,
-				'default'  => 'center',
-				'options'  => [
-					'left'    => [
-						'title' => esc_html__('Left', 'widgetkit-for-elementor'),
-						'icon'  => 'eicon-text-align-left',
-					],
-					'center' => [
-						'title' => esc_html__('Center', 'widgetkit-for-elementor'),
-						'icon'  => 'eicon-text-align-center',
-					],
-					'right' => [
-						'title' => esc_html__('Right', 'widgetkit-for-elementor'),
-						'icon'  => 'eicon-text-align-right',
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-tabs-content-wrap .wk-tabs-content' => 'text-align: {{VALUE}};',
-				]
-			]
-		);
-
-		$this->add_responsive_control(
-			'content_padding',
-			[
-				'label' => __('Padding', 'widgetkit-for-elementor'),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => ['px', 'em', '%'],
-				'selectors' => [
-					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-tabs-content-wrap .wk-tabs-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'tab_content_border',
-				'label' => __('Border', 'widgetkit-for-elementor'),
-				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-tabs-content-wrap .wk-tabs-content'
-			]
-		);
-
-		$this->add_control(
-			'content_border_radius',
-			[
-				'label' => __('Border Radius', 'widgetkit-for-elementor'),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => ['px', '%'],
-				'selectors' => [
-					'{{WRAPPER}} .wk-adv-tab-wrapper .wk-tabs-content-wrap .wk-tabs-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'content_bg',
-				'types' => ['classic', 'gradient'],
-				'selector' => '{{WRAPPER}} .wk-adv-tab-wrapper .wk-tabs-content-wrap .wk-tabs-content',
 			]
 		);
 

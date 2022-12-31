@@ -15,7 +15,9 @@
     margin: 0;
     padding: 0;
     li{
-      margin-right: 5px;
+      &:last-child{
+        margin-right: 0;
+      }
       list-style: none;
       a{
         display: block;
@@ -29,7 +31,28 @@
           }
         }
       }
-    }  
+    }   
+  }
+}
+.enable-accordian{
+  .wk-adv-tabs-nav{
+    ul{
+      li{
+        .active{
+          .wk-adv-tab-title-desc{
+            display: block;
+            transition: 0.5s ease;
+            -webkit-transition: 0.5s ease;
+            -moz-transition: 0.5s ease;
+            -ms-transition: 0.5s ease;
+            -o-transition: 0.5s ease;
+          }
+        }
+        .wk-adv-tab-title-desc{
+            display: none;
+        }
+      }
+    }
   }
 }
 
@@ -39,6 +62,21 @@
       display: flex;
       li{
         flex: 1;
+        margin-right: 5px;
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.nav-pos-right{
+  ul{
+    li{
+      a {
+        display: flex;
+        // flex-direction: row-reverse;
       }
     }
   }
@@ -60,25 +98,14 @@
       a {
         display: flex;
       }
-    }
-   }
-}
-
-.nav-icon-pos-right{
-   ul {
-    li {
-      a {
-        display: flex;
-        flex-direction: row-reverse;
       }
-    }
    }
 }
 
 .nav-icon-pos-top.nav-align-center{
   .wk-adv-tabs-nav{
     li{
-      a{
+     a{
         text-align: center;
       }
     }
@@ -94,8 +121,15 @@
   }
 }
 
-.wk-tabs-content-wrap div:not(:first-child) {
-  display: none;
+.wk-tabs-content-wrap{
+   .wk-tabs-content{
+    display: none;
+    animation: fadeIn linear .3s;
+    -webkit-animation: fadeIn linear .3s;
+    &:first-child{
+      display: block;
+    }
+  }
 }
 
 @media (min-width:768px) {
@@ -111,13 +145,22 @@
     -ms-flex-direction: column;
     flex-direction: column;
   }
+  .wk-adv-tab-wrapper .wk-adv-tabs-nav ul li {
+    flex: 1 1 auto;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .nav-pos-left.enable-accordian,
+  .nav-pos-right.enable-accordian {
+    display: block;
+  }
 }
 
 @media only screen and (max-width: 767px) {
   .wk-adv-tab-wrapper{
     .wk-adv-tabs-nav{
       ul{
-        display: inline-block;
+        flex-wrap: wrap;
       }
     }
   }
@@ -138,5 +181,14 @@
           margin-right: 0;
         }
      }
+  }
+  .nav-pos-left .wk-adv-tabs-nav li {
+    margin-right: 0!important;
+  }
+  .nav-pos-right .wk-adv-tabs-nav li {
+    margin-left: 0!important;
+  }
+  .wk-adv-tab-wrapper .wk-adv-tabs-nav ul li {
+    flex: 1 1 auto;
   }
 }
