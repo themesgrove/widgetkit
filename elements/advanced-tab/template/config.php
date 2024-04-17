@@ -236,20 +236,6 @@ class wkfe_advanced_tab extends Widget_Base
 			]
 		);
 
-		// $repeater->add_control(
-		// 	'primary_templates',
-		// 	[
-		// 		'label' => __('Choose Template', 'widgetkit-for-elementor'),
-		// 		'type' => 'eael-select2',
-		// 		'source_name' => 'post_type',
-		// 		'source_type' => 'elementor_library',
-		// 		'label_block' => true,
-		// 		'condition' => [
-		// 			'tabs_content_type' => 'template',
-		// 		],
-		// 	]
-		// );
-
 		$this->add_control(
 			'tabs',
 			[
