@@ -6,18 +6,18 @@
 
 ?>
 
-    <div class="tgx-testimonial-2 <?php echo $id; ?>">
+    <div class="tgx-testimonial-2 <?php echo esc_attr($id); ?>">
           <?php foreach ( $settings['testimonial_option_2'] as $testimonial ) : ?>
             <div class="testimoni-wrapper text-center">
                   <?php if ($settings['testimoni_position'] == 'top'):?>
                       <div class="testimony">
-                          <p> <?php echo $testimonial['testimoni_content_2'];?></p>
+                          <p> <?php echo esc_html($testimonial['testimoni_content_2']);?></p>
                       </div>
                  <?php endif; ?>
                 <?php if ($testimonial['testimoni_image_2']):?>
                   <div class="author">
                         <span>
-                            <img class="testimonial-image" src="<?php echo $testimonial['testimoni_image_2']['url']; ?>" alt="<?php the_title(); ?>">
+                            <img class="testimonial-image" src="<?php echo esc_url($testimonial['testimoni_image_2']['url']); ?>" alt="<?php the_title(); ?>">
                         </span>     
                   </div>
                 <?php endif;?>
@@ -25,18 +25,18 @@
 
                 <div class="designation">                    
                      <?php if ($testimonial['title_2']):?>
-                        <h4 class="name"><?php echo $testimonial['title_2'];  ?></h4>
+                        <h4 class="name"><?php echo esc_html($testimonial['title_2']);  ?></h4>
                       <?php endif; ?>
 
                       <?php if ($testimonial['designation_2']):?>
-                        <p class="designation"><?php echo $testimonial['designation_2'];  ?></p>
+                        <p class="designation"><?php echo esc_html($testimonial['designation_2']);  ?></p>
                       <?php endif; ?>
                 </div>
 
 
               <?php if ($settings['testimoni_position'] == 'bottom'):?>
                     <div class="testimony">
-                        <p> <?php echo $testimonial['testimoni_content_2'];?></p>
+                        <p> <?php echo esc_html($testimonial['testimoni_content_2']);?></p>
                     </div>
               <?php endif; ?>
           </div>
@@ -45,7 +45,7 @@
 
     <script type='text/javascript'>
           jQuery(document).ready(function($) {
-            jQuery(".<?php echo $id; ?>").addClass("owl-carousel").owlCarousel({
+            jQuery(".<?php echo esc_attr($id); ?>").addClass("owl-carousel").owlCarousel({
                   pagination: false,
                   margin:10,
                   dots:false,

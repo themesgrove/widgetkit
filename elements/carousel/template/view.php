@@ -15,9 +15,8 @@
                     <figure class="project-wrap">
                         <div class="project-image" >
                             <?php if($project['project_thumb_image']):?>
-                                <a href="<?php echo $project['project_demo_link']; ?>">
-                                    <img src="<?php echo $project['project_thumb_image']['url'];?>" alt="<?php echo $project['project_title']; ?>">  
-                                    
+                                <a href="<?php echo esc_attr($project['project_demo_link']); ?>">
+                                    <img src="<?php echo esc_attr($project['project_thumb_image']['url']);?>" alt="<?php echo esc_attr($project['project_title']); ?>">  
                                 </a>
                                   
                             <?php endif; ?> 
@@ -25,7 +24,7 @@
                         <figcaption class="text-center">
                             <?php if ($project['project_title']): ?>
                                 <h5 class="title">
-                                    <a target="_blank" href="<?php echo $project['project_demo_link']; ?>"><?php echo $project['project_title']; ?>
+                                    <a target="_blank" href="<?php echo esc_attr($project['project_demo_link']); ?>"><?php echo esc_html($project['project_title']); ?>
                                     </a> 
                                 </h5>       
                             <?php endif ?>    

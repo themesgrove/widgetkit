@@ -8,17 +8,17 @@
     <!-- Animation Slider start -->
     <section id="tgx-hero-unit" class="tgx-slider-2">
         <div class="row">
-            <div id="<?php echo $id; ?>" class="carousel slide" data-ride="carousel" data-interval="
+            <div id="<?php echo esc_attr($id); ?>" class="carousel slide" data-ride="carousel" data-interval="
                  <?php if ($settings['slider_interval']):
-                     echo $settings['slider_interval'];
+                     echo esc_attr($settings['slider_interval']);
                  endif; ?>
-                " <?php echo ($settings['slider_data_pause'] == 'yes') ? '' : 'data-pause="false"'; ?>>
+                " <?php echo esc_attr($settings['slider_data_pause'] == 'yes') ? '' : 'data-pause="false"'; ?>>
                  <?php if ($settings['dot_enable']):?>
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
                         <?php for($i = 0; $i < count($settings['slider_option']); $i++):
                             $active = $i == 0 ? 'active' : '';?>
-                        <li data-target="#<?php echo $id; ?>" data-slide-to="<?php echo $i;?>" class="<?php echo $active;?>"></li>
+                        <li data-target="#<?php echo esc_attr($id); ?>" data-slide-to="<?php echo esc_attr($i);?>" class="<?php echo esc_attr($active);?>"></li>
                         <?php endfor; ?>
                     </ol>
                 <?php endif; ?>
@@ -28,7 +28,7 @@
                     <?php  $i = 0;?>
                     <?php foreach ( $settings['slider_option'] as $slider ) : ?>
                         <?php $active = $i == 0 ? 'active' : ''; ?>
-                        <div class="item <?php echo $active;?> slider-<?php echo $i;?>" style="background-image: url('<?php echo $slider['slider_image_2']['url'];?>');">
+                        <div class="item <?php echo esc_attr($active);?> slider-<?php echo esc_attr($i);?>" style="background-image: url('<?php echo esc_url($slider['slider_image_2']['url']);?>');">
 
                         <?php if ($settings['layout_align'] == 'left'): ?>
                             <?php if ($slider['slider_animation_image']['url']): ?> 
@@ -38,22 +38,22 @@
                             <?php endif; ?>
                                 <div class="carousel-caption ">
                                     <?php if ($slider['title']):?>
-                                        <<?php echo $slider_2_header_tag;?> class="slider-title animated animate-delay-1 <?php echo $slider['title_animation']; ?>">
-                                            <?php echo $slider['title']; ?>
-                                        </<?php echo $slider_2_header_tag;?>>
+                                        <<?php echo esc_attr($slider_2_header_tag);?> class="slider-title animated animate-delay-1 <?php echo $slider['title_animation']; ?>">
+                                            <?php echo esc_html($slider['title']); ?>
+                                        </<?php echo esc_attr($slider_2_header_tag);?>>
                                     <?php endif; ?>
 
 
                                     <?php if ($slider['slider_content']):?>
                                         <p class="slider-description animated animate-delay-2
-                                           <?php echo $slider['content_animation']; ?> ">
-                                            <?php echo $slider['slider_content']; ?>
+                                           <?php echo esc_attr($slider['content_animation']); ?> ">
+                                            <?php echo esc_html($slider['slider_content']); ?>
                                         </p>
                                     <?php endif; ?>
                                     
                                     <?php if($slider['btn_text']): ?>
                                     <span class="slider-action">
-                                        <a class="btn btn-slider animated animate-delay-3 <?php echo $slider['btn_animation']; ?>" href="<?php echo $slider['btn_link']['url']; ?>"> <?php echo $slider['btn_text']; ?>
+                                        <a class="btn btn-slider animated animate-delay-3 <?php echo esc_attr($slider['btn_animation']); ?>" href="<?php echo esc_url($slider['btn_link']['url']); ?>"> <?php echo esc_html($slider['btn_text']); ?>
                                         </a>
                                     </span>
                                     <?php endif; ?>    
@@ -62,8 +62,8 @@
 
                             <?php if ($slider['slider_animation_image']['url']): ?>        
                                 <div class="col-md-4 col-xs-12 col-sm-12">
-                                    <div class="carousel-image animated animate-delay-4 <?php echo $slider['image_animation']; ?>">
-                                        <img src="<?php echo $slider['slider_animation_image']['url'];?>" alt="animation-image" class="img-responsive">
+                                    <div class="carousel-image animated animate-delay-4 <?php echo esc_attr($slider['image_animation']); ?>">
+                                        <img src="<?php echo esc_url($slider['slider_animation_image']['url']);?>" alt="animation-image" class="img-responsive">
                                     </div>
                                 </div>
                             <?php endif ?>
@@ -72,8 +72,8 @@
 
                             <?php if ($slider['slider_animation_image']['url']): ?>        
                                 <div class="col-md-4 col-xs-12 col-sm-12">
-                                    <div class="carousel-image animated animate-delay-4 <?php echo $slider['image_animation']; ?>">
-                                        <img src="<?php echo $slider['slider_animation_image']['url'];?>" alt="animation-image" class="img-responsive">
+                                    <div class="carousel-image animated animate-delay-4 <?php echo esc_attr($slider['image_animation']); ?>">
+                                        <img src="<?php echo esc_url($slider['slider_animation_image']['url']);?>" alt="animation-image" class="img-responsive">
                                     </div>
                                 </div>
                             <?php endif ?>
@@ -85,20 +85,20 @@
                             <?php endif; ?>
                                 <div class="carousel-caption ">
                                     <?php if ($slider['title']):?>
-                                        <h2 class="slider-title animated animate-delay-1 <?php echo $slider['title_animation']; ?>">
-                                            <?php echo $slider['title']; ?>
+                                        <h2 class="slider-title animated animate-delay-1 <?php echo esc_attr($slider['title_animation']); ?>">
+                                            <?php echo esc_html($slider['title']); ?>
                                         </h2>
                                     <?php endif; ?>
 
                                     <?php if ($slider['slider_content']):?>
                                         <p class="slider-description animated animate-delay-2
-                                           <?php echo $slider['content_animation']; ?> ">
-                                            <?php echo $slider['slider_content']; ?>
+                                           <?php echo esc_attr($slider['content_animation']); ?> ">
+                                            <?php echo esc_html($slider['slider_content']); ?>
                                         </p>
                                     <?php endif; ?>
 
                                     <span class="slider-action">
-                                        <a class="btn btn-slider animated animate-delay-3 <?php echo $slider['btn_animation']; ?>" href="<?php echo $slider['btn_link']['url']; ?>"> <?php echo $slider['btn_text']; ?>
+                                        <a class="btn btn-slider animated animate-delay-3 <?php echo esc_attr($slider['btn_animation']); ?>" href="<?php echo esc_url($slider['btn_link']['url']); ?>"> <?php echo esc_html($slider['btn_text']); ?>
                                         </a>
                                     </span>
                      
@@ -112,11 +112,11 @@
 
             <?php if ($settings['arrow_enable']):?>
                 <!-- Left and right controls -->
-                <a class="left carousel-control hidden-xs" href="#<?php echo $id; ?>" role="button" data-slide="prev">
+                <a class="left carousel-control hidden-xs" href="#<?php echo esc_attr($id); ?>" role="button" data-slide="prev">
                     <span class="fa fa-angle-left" aria-hidden="true"></span>
                     <!-- <span class="sr-only"><?php esc_html_e('Previous', 'widgetkit-for-elementor');?></span> -->
                 </a>
-                <a class="right carousel-control hidden-xs" href="#<?php echo $id; ?>" role="button" data-slide="next">
+                <a class="right carousel-control hidden-xs" href="#<?php echo esc_attr($id); ?>" role="button" data-slide="next">
                     <span class="fa fa-angle-right" aria-hidden="true"></span>
                    <!--  <span class="sr-only"><?php esc_html_e('Next', 'widgetkit-for-elementor');?></span> -->
                 </a>

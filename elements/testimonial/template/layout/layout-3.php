@@ -9,9 +9,9 @@ use Elementor\Group_Control_Image_Size;
         
                 <div class="wk-card-media-left wk-overflow-hidden wk-padding-bottom">
                 <?php if($testimonial['testimonial_thumb_image']['id']): ?>
-                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials ); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
+                    <img src="<?php echo esc_url(Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials )); ?>" alt="<?php echo esc_attr($testimonial['testimonial_title']); ?>">
                 <?php else:?>
-                    <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                    <img src="<?php echo esc_url($testimonial['testimonial_thumb_image']['url']);?>" alt="<?php echo esc_attr($testimonial['testimonial_title']); ?>">  
                 <?php endif;?>  
                 </div>
             
@@ -22,32 +22,32 @@ use Elementor\Group_Control_Image_Size;
     <div class="wk-width-expand">
         <div class="wk-card-body">
             <?php if ($testimonial['testimonial_content']): ?>
-            <div class="wk-text-normal"><?php echo $testimonial['testimonial_content']; ?></div>
+            <div class="wk-text-normal"><?php echo esc_html($testimonial['testimonial_content']); ?></div>
             <?php endif; ?>
             <?php if ($testimonial['testimonial_designation']): ?>
                 <?php if ($testimonials['designation_position'] == 'vertical_top'): ?>
-                    <span class="wk-text-meta wk-inline-block top"><?php echo $testimonial['testimonial_designation']; ?></span>
+                    <span class="wk-text-meta wk-inline-block top"><?php echo esc_html($testimonial['testimonial_designation']); ?></span>
                 <?php endif; ?>
             <?php endif; ?>
 
             <?php if ($testimonial['testimonial_title']): ?>
-            <<?php echo $testimonial_header_tag;?>  class="wk-card-title wk-margin-remove">
+            <<?php echo esc_attr($testimonial_header_tag);?>  class="wk-card-title wk-margin-remove">
                 <?php if ($testimonial['content_demo_link']): ?>
-                        <a href="<?php echo $testimonial['content_demo_link']['url']; ?>" <?php echo $testimonial['content_demo_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>><?php echo $testimonial['testimonial_title']; ?></a>
+                        <a href="<?php echo esc_url($testimonial['content_demo_link']['url']); ?>" <?php echo esc_attr($testimonial['content_demo_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>><?php echo esc_html($testimonial['testimonial_title']); ?></a>
                 <?php else: ?>
-                        <?php echo $testimonial['testimonial_title']; ?>
+                        <?php echo esc_html($testimonial['testimonial_title']); ?>
                 <?php endif; ?> 
                 <?php if ($testimonial['testimonial_designation']): ?>
                     <?php if ($testimonials['designation_position'] == 'horizontal_right'): ?>
-                        <span class="wk-text-meta wk-inline-block right"><?php echo $testimonial['testimonial_designation']; ?></span>
+                        <span class="wk-text-meta wk-inline-block right"><?php echo esc_html($testimonial['testimonial_designation']); ?></span>
                     <?php endif; ?>
                 <?php endif; ?>
-            </<?php echo $testimonial_header_tag;?>>  
+            </<?php echo esc_attr($testimonial_header_tag);?>>  
         <?php endif; ?>
 
             <?php if ($testimonial['testimonial_designation']): ?>
                 <?php if ($testimonials['designation_position'] == 'vertical_bottom'): ?>
-                    <span class="wk-text-meta wk-inline-block bottom"><?php echo $testimonial['testimonial_designation']; ?></span>
+                    <span class="wk-text-meta wk-inline-block bottom"><?php echo esc_html($testimonial['testimonial_designation']); ?></span>
                 <?php endif; ?>
             <?php endif; ?>
 
@@ -59,9 +59,9 @@ use Elementor\Group_Control_Image_Size;
                 
                 <div class="wk-card-media-right wk-overflow-hidden wk-padding-bottom">
                 <?php if($testimonial['testimonial_thumb_image']['id']): ?>
-                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials ); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
+                    <img src="<?php echo esc_url(Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials )); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
                 <?php else:?>
-                    <img src="<?php echo $testimonial['testimonial_thumb_image']['url'];?>" alt="<?php echo $testimonial['testimonial_title']; ?>">  
+                    <img src="<?php echo esc_url($testimonial['testimonial_thumb_image']['url']);?>" alt="<?php echo esc_attr($testimonial['testimonial_title']); ?>">  
                 <?php endif;?>  
                 </div>
             

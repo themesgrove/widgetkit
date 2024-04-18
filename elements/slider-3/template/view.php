@@ -9,20 +9,20 @@
 
                     <?php $a = 0;?>
                     <?php foreach($settings['tgx_slider_3_sliders'] as $sliders): ?>
-                        <div class="text-center slider <?php echo ($a == 0) ? 'slide--current': ''; ?>">
+                        <div class="text-center slider <?php echo esc_attr($a == 0) ? 'slide--current': ''; ?>">
                             <div class="slide__img" style="background-image: url(<?php echo esc_url( $sliders['tgx_slider_3_image']['url']); ?>)"></div>
 
                                 <?php if($sliders['tgx_slider_3_title']): ?>
-                                    <<?php echo $slider_3_header_tag;?> class="slide__title"><?php echo  $sliders['tgx_slider_3_title']; ?></<?php echo $slider_3_header_tag;?>>
+                                    <<?php echo esc_attr($slider_3_header_tag);?> class="slide__title"><?php echo  esc_html($sliders['tgx_slider_3_title']); ?></<?php echo esc_attr($slider_3_header_tag);?>>
                                 <?php endif; ?>
 
                                 <?php if($sliders['tgx_slider_3_subtitle']): ?>
-                                    <p class="slide__desc"><?php echo  $sliders['tgx_slider_3_subtitle']; ?></p>
+                                    <p class="slide__desc"><?php echo esc_html($sliders['tgx_slider_3_subtitle']); ?></p>
                                 <?php endif; ?>
 
                                 <?php if($sliders['tgx_slider_3_button_text']): ?>
-                                    <a class="slide__link" href="<?php echo $sliders['tgx_slider_3_button_link']['url']; ?>">
-                                        <?php echo  $sliders['tgx_slider_3_button_text']; ?>
+                                    <a class="slide__link" href="<?php echo esc_url($sliders['tgx_slider_3_button_link']['url']); ?>">
+                                        <?php echo  esc_html($sliders['tgx_slider_3_button_text']); ?>
                                     </a>
                                 <?php endif; ?>
 
@@ -33,17 +33,17 @@
 
                 <nav class="slidenav">
                     <?php if ($settings['tgx_slider_3_nav_previous']): ?>
-                        <button class="slidenav__item slidenav__item--prev"><?php echo $settings['tgx_slider_3_nav_previous']; ?></button>
+                        <button class="slidenav__item slidenav__item--prev"><?php echo esc_html($settings['tgx_slider_3_nav_previous']); ?></button>
                     <?php endif; ?>
 
                     <?php if ($settings['tgx_slider_3_nav_divider']): ?>
                         <span class="divider">
-                            <?php echo $settings['tgx_slider_3_nav_divider']; ?>
+                            <?php echo esc_html($settings['tgx_slider_3_nav_divider']); ?>
                         </span>
                     <?php endif; ?>
 
                     <?php if ($settings['tgx_slider_3_nav_next']): ?>
-                        <button class="slidenav__item slidenav__item--next"><?php echo $settings['tgx_slider_3_nav_next']; ?></button>
+                        <button class="slidenav__item slidenav__item--next"><?php echo esc_html($settings['tgx_slider_3_nav_next']); ?></button>
                     <?php endif; ?>
 
                 </nav><!-- Slidenav -->

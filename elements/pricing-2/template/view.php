@@ -11,17 +11,17 @@
 
                           <?php if ( ! empty( $settings['single_currency_symbol'] ) ) : ?>
                               <span class="curency">
-                                  <?php echo $settings['single_currency_symbol'];  ?>
+                                  <?php echo esc_attr($settings['single_currency_symbol']); ?>
                               </span>
                           <?php endif; ?>
 
                           <?php if ( ! empty( $settings['pricing_2_price'] ) ) : ?>
-                              <span class="amount"><?php echo $settings['pricing_2_price']; ?></span>
+                              <span class="amount"><?php echo esc_html($settings['pricing_2_price']); ?></span>
                           <?php endif; ?>
 
                           <?php if ( ! empty( $settings['pricing_2_period'] ) ) : ?>
                               <span class="period">
-                                  <?php echo $settings['pricing_2_period']; ?>
+                                  <?php echo esc_html($settings['pricing_2_period']); ?>
                               </span>
                           <?php endif; ?>
 
@@ -29,23 +29,21 @@
 
                       <?php if ( ! empty( $settings['pricing_2_icon_image']['url'] ) ) : ?>
                           <div class="tgx-single-image">
-                            <img src="<?php echo $settings['pricing_2_icon_image']['url']; ?>" alt="<?php echo $settings['pricing_2_pricing_title']; ?>" />
+                            <img src="<?php echo esc_attr($settings['pricing_2_icon_image']['url']); ?>" alt="<?php echo esc_attr($settings['pricing_2_pricing_title']); ?>" />
                           </div><!-- .table-image -->
                       <?php endif; ?>
-
                 </div> <!-- .tx-table-heading -->
-
 
                 <div class="tgx-single-about">
                     <?php if ( ! empty( $settings['pricing_2_pricing_title'] ) ) : ?>
                         <h3 class="tgx-single-title"> 
-                            <?php echo $settings['pricing_2_pricing_title']; ?> 
+                            <?php echo esc_html($settings['pricing_2_pricing_title']); ?> 
                         </h3>
                     <?php endif; ?>
 
                     <?php if ( ! empty( $settings['pricing_2_pricing_about'] ) ) : ?>
                        <div class="tgx-single-about">
-                           <?php echo $settings['pricing_2_pricing_about']; ?>
+                           <?php echo esc_html($settings['pricing_2_pricing_about']); ?>
                        </div><!-- .single-about -->
                     <?php endif; ?>
 
@@ -60,7 +58,7 @@
                                     <i class="<?php echo esc_attr($item['item_icon_2']); ?>"></i>
                                 <?php endif; ?>
                                 <?php if ( ! empty( $item['item_text_2'] ) ) :
-                                    echo $item['item_text_2'];
+                                    echo esc_html($item['item_text_2']);
                                 else :
                                     echo '&nbsp;';
                                 endif;
@@ -74,8 +72,8 @@
 
         <?php if ( ! empty( $settings['single_button_text'] ) ) : ?>
             <div class="tgx-single-footer"> 
-                <a class="tgx-single-btn" href="<?php echo $settings['single_link']['url']; ?>">
-                    <?php echo $settings['single_button_text']; ?>
+                <a class="tgx-single-btn" href="<?php echo esc_attr($settings['single_link']['url']); ?>">
+                    <?php echo esc_html($settings['single_button_text']); ?>
                 </a> 
             </div><!-- .tgx-single-footer -->
         <?php endif; ?>

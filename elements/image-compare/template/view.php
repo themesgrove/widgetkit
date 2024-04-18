@@ -4,17 +4,17 @@
 ?>
     <div class="wk-image-compare">
          <div class="row">
-            <div id="image-compare-<?php echo $id; ?>" class="image-compare-container">
+            <div id="image-compare-<?php echo esc_attr($id); ?>" class="image-compare-container">
                 
-                <img src="<?php echo $image_compare['before_image']['url']; ?>" alt="before">
-                <img src="<?php echo $image_compare['after_image']['url']; ?>" alt="After">
+                <img src="<?php echo esc_attr($image_compare['before_image']['url']); ?>" alt="before">
+                <img src="<?php echo esc_attr($image_compare['after_image']['url']); ?>" alt="After">
             </div>
         </div>
     </div>
 
     <script>
         jQuery(document).ready(function(){
-            jQuery("#image-compare-<?php echo $id;?>").image_compare({
+            jQuery("#image-compare-<?php echo esc_attr($id);?>").image_compare({
 
                 //  How much of the before image is visible when the page loads
                 default_offset_pct: 0.5,

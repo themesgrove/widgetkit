@@ -4,7 +4,7 @@
     use Elementor\Icons_Manager;
 ?>
 
-        <div class="wk-contact-form <?php echo ($contact_form['button_align'] == 'center')? 'button-center':'';?> <?php echo ($contact_form['button_align'] == 'right')? 'button-right':'';?> <?php echo ($contact_form['button_width_type'] == 'custom')? 'wk-submit-button-custom':'';?>">
+        <div class="wk-contact-form <?php echo esc_attr(($contact_form['button_align'] == 'center')) ? 'button-center':'';?> <?php echo esc_attr(($contact_form['button_align'] == 'right')) ? 'button-right':'';?> <?php echo esc_attr(($contact_form['button_width_type'] == 'custom')) ? 'wk-submit-button-custom':'';?>">
             <?php if ($contact_form['contact_form_list'] == 'contact-7'):?>
                 <?php if (function_exists( 'wpcf7' ) ):?>
                     <?php echo do_shortcode( '[contact-form-7 id="' . $contact_form['choose_form_7'] . '" ]' ); ?>

@@ -43,7 +43,7 @@
             <div class="wk-countdown">
                 <div class="countdown-wrapper">
                     <div id="countDownContiner">
-                        <div class="widgetkit-countdown<?php echo $pcdt_style; ?>" id="countdown-<?php echo esc_attr( $this->get_id() ); ?>"></div>
+                        <div class="widgetkit-countdown<?php echo esc_attr($pcdt_style); ?>" id="countdown-<?php echo esc_attr( $this->get_id() ); ?>"></div>
                     </div>     
                 </div>
             </div>
