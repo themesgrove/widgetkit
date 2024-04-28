@@ -17,7 +17,7 @@
             <div class="wk-header wk-padding-small wk-card wk-card-default wk-margin-medium-top">
                 <div class="wk-header__top wk-margin-small-bottom">
                     <div class="wk-text-center wk-padding-small">
-                        <img src="<?php echo plugins_url('../assets/images/logo-t.svg', __FILE__)?>" width="200" wk-svg>
+                        <img src="<?php echo esc_url(plugins_url('../assets/images/logo-t.svg', __FILE__));?>" width="200" wk-svg>
                     </div>
                 </div>
                 <div class="wk-navbar wk-margin-small-top" wk-grid>

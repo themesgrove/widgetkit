@@ -51,20 +51,20 @@
             <script>
                 ( function( $ ) {
                     $(document).ready( function() {
-                        var label1 = '<?php echo $label; ?>',
-                            label2 = '<?php echo $labels1; ?>',
+                        var label1 = '<?php echo esc_attr($label); ?>',
+                            label2 = '<?php echo esc_attr($labels1); ?>',
                             newLabe1 = label1.split(','),
                             newLabe2 = label2.split(',');
                 
                         $('#countdown-<?php echo esc_attr( $this->get_id() ); ?>').widgetkit_countdown({
                             labels      : newLabe2,
                             labels1     : newLabe1,
-                            until       : new Date( '<?php echo $target_date; ?>'),
-                            format      : '<?php echo $format; ?>',
+                            until       : new Date( '<?php echo esc_attr($target_date); ?>'),
+                            format      : '<?php echo esc_attr($format); ?>',
                             padZeroes   : true,
                             <?php if( $expire_text ):  ?>
                             onExpiry    : function() {
-                                $(this).html("<?php echo $expire_text; ?>");
+                                $(this).html("<?php echo esc_html($expire_text); ?>");
                             },
                             <?php endif; ?>
                          
@@ -76,7 +76,7 @@
                         }
                         if( times.every( runTimer ) ) {
                             <?php if( $expire_text ):  ?>
-                            $('#countdown-<?php echo esc_attr( $this->get_id() ); ?>').html("<?php echo $expire_text; ?>");
+                            $('#countdown-<?php echo esc_attr( $this->get_id() ); ?>').html("<?php echo esc_html($expire_text); ?>");
                             <?php endif; ?>
                         }
                             if(!$('body').hasClass('wk-countdown')){

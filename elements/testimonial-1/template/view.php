@@ -6,10 +6,10 @@
 
 ?>
 
-    <div class="tgx-testimonial-1 <?php echo $id; ?>">
+    <div class="tgx-testimonial-1 <?php echo esc_attr($id); ?>">
           <?php foreach ( $settings['testimonial_option_1'] as $testimonial_1 ) : ?>
             <div class="testimoni-wrapper">
-                <div class="testimony"> <p> <?php echo $testimonial_1['testimoni_content_1'];?></p></div>
+                <div class="testimony"> <p> <?php echo esc_html($testimonial_1['testimoni_content_1']);?></p></div>
                 <div class="author">
                  <?php if ($testimonial_1['testimoni_image_1']['url']):?>
 
@@ -24,7 +24,7 @@
 
                        <?php if ($testimonial_1['testimoni_image_1']['url']):?>
                               <span>
-                                  <img class="testimonial-image" src="<?php echo $testimonial_1['testimoni_image_1']['url']; ?>">
+                                  <img class="testimonial-image" src="<?php echo esc_url($testimonial_1['testimoni_image_1']['url']); ?>">
                               </span>
                       <?php endif;?>
                         
@@ -39,11 +39,11 @@
                            <div class="col-md-8">
                         <?php endif;?>
                             <?php if ($testimonial_1['title_1']):?>
-                              <h4 class="name"><?php echo $testimonial_1['title_1'];  ?></h4>
+                              <h4 class="name"><?php echo esc_html($testimonial_1['title_1']);  ?></h4>
                             <?php endif; ?>
 
                             <?php if ($testimonial_1['designation_1']):?>
-                              <p class="designation"><?php echo $testimonial_1['designation_1'];  ?></p>
+                              <p class="designation"><?php echo esc_html($testimonial_1['designation_1']);  ?></p>
                             <?php endif; ?>
                      </div>
                 </div>
@@ -53,7 +53,7 @@
 
     <script type='text/javascript'>
           jQuery(document).ready(function($) {
-            jQuery(".<?php echo $id; ?>").addClass("owl-carousel").owlCarousel({
+            jQuery(".<?php echo esc_attr($id); ?>").addClass("owl-carousel").owlCarousel({
                   pagination: false,
                   margin:10,
                   dots:false,
@@ -81,7 +81,7 @@
                           items:1
                       },
                       1000:{
-                          items:<?php echo $settings['testimonial_items']; ?>
+                          items:<?php echo esc_attr($settings['testimonial_items']); ?>
                       }
                   }
                });

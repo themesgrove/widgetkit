@@ -38,7 +38,7 @@
                             <?php endif; ?>
                                 <div class="carousel-caption ">
                                     <?php if ($slider['title']):?>
-                                        <<?php echo esc_attr($slider_2_header_tag);?> class="slider-title animated animate-delay-1 <?php echo $slider['title_animation']; ?>">
+                                        <<?php echo esc_attr($slider_2_header_tag);?> class="slider-title animated animate-delay-1 <?php echo esc_attr($slider['title_animation']); ?>">
                                             <?php echo esc_html($slider['title']); ?>
                                         </<?php echo esc_attr($slider_2_header_tag);?>>
                                     <?php endif; ?>

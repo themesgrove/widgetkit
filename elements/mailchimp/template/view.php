@@ -19,7 +19,7 @@ $form_button_text = widgetkit_for_elementor_array_get($settings, 'button_text');
         </div>
         <div class="submit">
             <?php wp_nonce_field('wkfe-ajax-security-nonce'); ?>
-            <input type="submit" name="submit" id="submit" value="<?php echo $form_button_text ? $form_button_text : 'Submit'; ?>"/>
+            <input type="submit" name="submit" id="submit" value="<?php echo esc_attr($form_button_text) ? esc_attr($form_button_text) : 'Submit'; ?>"/>
         </div>
     </form>
 </div>

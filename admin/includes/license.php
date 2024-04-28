@@ -41,7 +41,7 @@
                             <?php endif; ?>
                             <div class="license-checker-wrapper">
                                 <?php //wp_nonce_field( 'wk-pro-license' ); ?>
-                                <input class="wk-input" type="text" name="license-input" id="license-input" value="<?php echo get_option('wk_pro_license_key') ?: ''; ?>">
+                                <input class="wk-input" type="text" name="license-input" id="license-input" value="<?php echo esc_attr(get_option('wk_pro_license_key')) ?: ''; ?>">
                                 <?php if( get_option('wk_pro_license_key') ): ?>  
                                     <button class="deactivate-license wk-button wk-button-primary">Deactivate</button>
                                 <?php else: ?>  

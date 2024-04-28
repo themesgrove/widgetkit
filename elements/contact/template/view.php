@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="<?php echo esc_attr($contact_icon_alignment); ?> wkfe-contact-content-wrapper <?php echo esc_attr($contact_box_position); ?>" style="display:none;">
-                <div class=" <?php echo $contact_icon_alignment; ?> arrow-up"></div>
+                <div class=" <?php echo esc_attr($contact_icon_alignment); ?> arrow-up"></div>
                 <div class="content-header">
                     <?php echo esc_html($dynamic_field_settings['contact_header']); ?>
                 </div>

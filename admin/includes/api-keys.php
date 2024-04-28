@@ -37,7 +37,7 @@
                         name="mailchimp-list-id" id="mailchimp-list-id"
                         value="<?php echo esc_attr( get_option('wkfe_mailchimp_list_id') ?: '' ); ?>">
 
-                    <?php echo wp_nonce_field('wkfe_security_nonce'); ?>
+                    <?php echo esc_attr(wp_nonce_field('wkfe_security_nonce')); ?>
 
                     <div class="action-button-wrapper">
                         <?php if( get_option('wkfe_mailchimp_api_key') || get_option('wkfe_mailchimp_list_id') ): ?>

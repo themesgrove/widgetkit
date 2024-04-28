@@ -10,7 +10,7 @@
         <div class="feature-list-wrapper">
 
             <div class="col-md-12 column">
-                <h2 class="title <?php echo 'layout-'.$alignment ?>">
+                <h2 class="title <?php echo 'layout-'. esc_attr($alignment);?>">
                     <span class="icon">
                         <i class="<?php echo esc_attr($icon); ?>"></i>
                     </span>

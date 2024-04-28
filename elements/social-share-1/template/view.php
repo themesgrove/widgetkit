@@ -17,7 +17,7 @@
                         <p><?php echo esc_html($settings['social_share_1_designation']);?></p>
                     </aside> <!-- aside -->
                       
-                    <button class="button-<?php echo $id;?>">
+                    <button class="button-<?php echo esc_attr($id);?>">
                         <i class="ion-android-close"></i>
                         <span><?php echo esc_html($settings['social_share_1_button_text']);?></span> 
                     </button><!-- button -->
@@ -30,7 +30,7 @@
                 <?php if ( ! empty( $settings['social_share_1_social_share'] ) ) : ?>
                     <?php foreach ( $settings['social_share_1_social_share'] as $social ) : ?>
                         <?php if ( ! empty( $social['social_share_1_social_link'] ) ) : ?>
-                            <a target="_blank" href="<?php  echo esc_attr($social['social_share_1_social_link']);?>" class="<?php  echo strtolower($social['social_share_1_title']);?>">
+                            <a target="_blank" href="<?php  echo esc_attr($social['social_share_1_social_link']);?>" class="<?php  echo esc_attr(strtolower($social['social_share_1_title']));?>">
                                 <div class="social-content">
                                     <h2 class="social-name">
                                         <?php echo esc_html($social['social_share_1_title']);?>
@@ -53,10 +53,10 @@
 
     <script type="text/javascript">
         jQuery(function($) {
-            jQuery('.button-<?php echo $id;?>').click(function(){
-                jQuery('.button-<?php echo $id;?>').toggleClass('active ');
-                jQuery('.btn-<?php echo $id;?>').toggleClass('active');
-                jQuery('.social-<?php echo $id;?>').toggleClass('active');
+            jQuery('.button-<?php echo esc_attr($id);?>').click(function(){
+                jQuery('.button-<?php echo esc_attr($id);?>').toggleClass('active ');
+                jQuery('.btn-<?php echo esc_attr($id);?>').toggleClass('active');
+                jQuery('.social-<?php echo esc_attr($id);?>').toggleClass('active');
             });
         },(jQuery));
 

@@ -194,12 +194,12 @@
 
                         <?php if($changelog_data): ?>
                             <?php foreach($changelog_data as $data): ?>
-                                <div class="version version-<?php echo $data['plugin_version'];?> wk-background-muted wk-padding-small wk-margin-small-bottom">
+                                <div class="version version-<?php echo esc_attr($data['plugin_version']);?> wk-background-muted wk-padding-small wk-margin-small-bottom">
                                     <div class="release-version-date"> 
-                                        <h4><?php echo $data['plugin_version']; ?> </h4>
-                                        <span> <?php echo $data['publish_date'] ?>  </span>
+                                        <h4><?php echo esc_html($data['plugin_version']); ?> </h4>
+                                        <span> <?php echo esc_html($data['publish_date']); ?>  </span>
                                     </div>
-                                    <?php echo $Parsedown->text($data['plugin_changelog']); ?>
+                                    <?php echo esc_attr($Parsedown->text($data['plugin_changelog'])); ?>
                                 </div>
                             <?php endforeach;  ?>
 						<?php else: ?>
@@ -207,7 +207,7 @@
                                 <div class="release-version-date"> 
                                     <h4>Something went wrong to retrive data.</h4>
                                 </div>
-                                <?php echo $Parsedown->text($data['plugin_changelog']); ?>
+                                <?php echo esc_attr($Parsedown->text($data['plugin_changelog'])); ?>
                             </div>
 						<?php endif; ?>
 

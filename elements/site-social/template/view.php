@@ -10,7 +10,7 @@
 ?>
 
     <div class="wkfe-site-social">
-        <div id="wkfe-site-social-<?php echo $this->get_id(); ?>" class="wkfe-site-social-wrapper wkfe-site-social-<?php echo $this->get_id(); ?>">
+        <div id="wkfe-site-social-<?php echo esc_attr($this->get_id()); ?>" class="wkfe-site-social-wrapper wkfe-site-social-<?php echo esc_attr($this->get_id()); ?>">
             <div class="site-social-click-handler click-handler"> 
                 <?php Icons_Manager::render_icon( $settings['social_icon_picker_for_handler'], [ 'aria-hidden' => 'true', 'class' => 'social-handler-icon' ] ); ?>
             </div>

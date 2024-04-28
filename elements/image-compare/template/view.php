@@ -20,12 +20,12 @@
                 default_offset_pct: 0.5,
 
                 // or vertical
-                orientation: '<?php echo $image_compare['orientation'];?>',
+                orientation: '<?php echo esc_attr($image_compare['orientation']);?>',
                 // orientation: 'vertical',
 
                 // label text
-                after_label: '<?php echo $image_compare['after_label']; ?>',
-                before_label: '<?php echo $image_compare['before_label']; ?>',
+                after_label: '<?php echo esc_attr($image_compare['after_label']); ?>',
+                before_label: '<?php echo esc_attr($image_compare['before_label']); ?>',
                
 
                 // enable/disable overlay

@@ -58,7 +58,7 @@
                         </div>
                         <figcaption class="text-center">
                             <h5 class="title">
-                                <a href="<?php the_permalink();?>"><?php echo wp_trim_words( get_the_title(), 3, ' ' );?></a>
+                                <a href="<?php the_permalink();?>"><?php echo esc_html(wp_trim_words( get_the_title(), 3, ' ' ));?></a>
                             </h5>
                             
                         </figcaption>                                                          
@@ -90,7 +90,7 @@
                         </div>
                         <figcaption class="text-center">
                             <h5 class="title">
-                                <a href="<?php the_permalink();?>"><?php echo wp_trim_words( get_the_title(), $settings['title_word'], ' ' );?>    
+                                <a href="<?php the_permalink();?>"><?php echo esc_html(wp_trim_words( get_the_title(), $settings['title_word'], ' ' ));?>    
                                 </a>
                             </h5>
                             

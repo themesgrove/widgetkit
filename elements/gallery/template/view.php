@@ -30,7 +30,7 @@
 				
 				<?php foreach($gallery_tag_arr as $tag_name): 
 					$tags_sorting = str_replace([" ", "&"], ["_", ""], $tag_name);?>
-					<li wk-filter-control=".<?php echo strtolower($tags_sorting.'_'.$id);?>">
+					<li wk-filter-control=".<?php echo esc_attr(strtolower($tags_sorting.'_'.$id));?>">
 				        <a href="#"><?php echo esc_html($tag_name); ?></a>
 				    </li>
 				<?php endforeach; ?>
@@ -51,7 +51,7 @@
 	  			<?php $tags = explode(',', $gallery['filter_tag']);?>
 		        <div class="<?php foreach($tags as $tag ){
 		        	$tags_replace = str_replace([" ", "&"], ["_", ""], $tag);
-		        	echo strtolower($tags_replace.'_'.$id);}?>">
+		        	echo esc_attr(strtolower($tags_replace.'_'.$id));}?>">
 		        <!-- 	<div class=""> -->
 			            <div class="wk-gallery-card <?php echo esc_attr($galleries['content_position']) == 'overlay' ? 'wk-position-relative' : '';?>  wk-overflow-hidden <?php echo esc_attr($galleries['hover_effect']);?> content-<?php echo esc_attr($galleries['content_position']);?>">
 
@@ -85,7 +85,7 @@
 									            	</a>
 								            	<?php endif; ?>
 								            	<?php if ($galleries['lightcase_enable'] == 'yes'):?>
-													<a class="icon" href="<?php echo esc_attr($gallery['gallery_thumb_image']['url']);?>" <?php echo esc_attr($galleries['lightcase_enable']) == 'yes'? ' wk-lightbox="animation:' . $light_case_animation . '"' : '';?>><span class="fa fa-search"></span></a>
+													<a class="icon" href="<?php echo esc_url($gallery['gallery_thumb_image']['url']);?>" <?php echo esc_attr($galleries['lightcase_enable']) == 'yes'? ' wk-lightbox="animation:' . esc_attr($light_case_animation) . '"' : '';?>><span class="fa fa-search"></span></a>
 												<?php endif; ?>
 							            	</div>
 						            	<?php endif; ?>
@@ -97,7 +97,7 @@
 
 									    <?php if ($gallery['gallery_thumb_image']['url']): ?>
 							            	<?php if ($gallery['demo_link']['url']): ?>
-								            	<a class="img-link" href="<?php echo $gallery['demo_link']['url']; ?>" <?php echo esc_attr($gallery['demo_link']['is_external']) ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
+								            	<a class="img-link" href="<?php echo esc_url($gallery['demo_link']['url']); ?>" <?php echo esc_attr($gallery['demo_link']['is_external']) ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
 								            		<img src="<?php echo esc_attr($gallery['gallery_thumb_image']['url']);?>" alt="<?php echo esc_attr($gallery['gallery_title']);?>">
 								            	</a>
 							            	<?php else: ?>
@@ -121,7 +121,7 @@
 							            		<?php endif; ?>
 
 								            	<?php if ($galleries['lightcase_enable'] == 'yes'):?>
-													<a class="top-icon" href="<?php echo esc_attr($gallery['gallery_thumb_image']['url']);?>" <?php echo esc_attr($galleries['lightcase_enable']) == 'yes'? ' wk-lightbox="animation:' . $light_case_animation . '"' : '';?>><span class="fa fa-search"></span></a>
+													<a class="top-icon" href="<?php echo esc_attr($gallery['gallery_thumb_image']['url']);?>" <?php echo esc_attr($galleries['lightcase_enable']) == 'yes'? ' wk-lightbox="animation:' . esc_attr($light_case_animation) . '"' : '';?>><span class="fa fa-search"></span></a>
 												<?php endif; ?>
 							            	</div>
 						            	<?php endif; ?>

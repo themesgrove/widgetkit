@@ -59,7 +59,7 @@ use Elementor\Group_Control_Image_Size;
                 
                 <div class="wk-card-media-right wk-overflow-hidden wk-padding-bottom">
                 <?php if($testimonial['testimonial_thumb_image']['id']): ?>
-                    <img src="<?php echo esc_url(Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials )); ?>" alt="<?php echo $testimonial['testimonial_title']; ?>">
+                    <img src="<?php echo esc_url(Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials )); ?>" alt="<?php echo esc_attr($testimonial['testimonial_title']); ?>">
                 <?php else:?>
                     <img src="<?php echo esc_url($testimonial['testimonial_thumb_image']['url']);?>" alt="<?php echo esc_attr($testimonial['testimonial_title']); ?>">  
                 <?php endif;?>  

@@ -107,108 +107,108 @@ class WKFE_Elements{
         if( $check_component_active['widget-blog-image'] ) {
             require_once WK_PATH . '/elements/blog-5/widget.php';
         }
-        // if( $check_component_active['widget-click-tweet'] ) {
-        //     require_once WK_PATH . '/elements/click-tweet/widget.php';
-        // }
-        // if( $check_component_active['widget-contact'] ) {
-        //     require_once WK_PATH . '/elements/contact/widget.php';
-        // }
-        // if( $check_component_active['widget-contact-form'] ) {
-        //     require_once WK_PATH . '/elements/contact-form/widget.php';
-        // }
+        if( $check_component_active['widget-click-tweet'] ) {
+            require_once WK_PATH . '/elements/click-tweet/widget.php';
+        }
+        if( $check_component_active['widget-contact'] ) {
+            require_once WK_PATH . '/elements/contact/widget.php';
+        }
+        if( $check_component_active['widget-contact-form'] ) {
+            require_once WK_PATH . '/elements/contact-form/widget.php';
+        }
         if( $check_component_active['widget-content-carousel'] ) {
             require_once WK_PATH . '/elements/content-carousel/widget.php';
         }
-        // if( $check_component_active['widget-countdown'] ) {
-        //     require_once WK_PATH . '/elements/countdown/widget.php';
-        // }
+        if( $check_component_active['widget-countdown'] ) {
+            require_once WK_PATH . '/elements/countdown/widget.php';
+        }
         if( $check_component_active['widget-post-carousel'] ) {
             require_once WK_PATH . '/elements/carousel/widget.php';
         }
-        // if( $check_component_active['widget-portfolio'] ) {
-        //     require_once WK_PATH . '/elements/portfolio/widget.php'; 
-        // }
-        // if( $check_component_active['widget-gallery'] ) {
-        //     require_once WK_PATH . '/elements/gallery/widget.php';
-        // }
-        // if( $check_component_active['widget-hover-image'] ) {
-        //     require_once WK_PATH . '/elements/hover-image/widget.php';
-        // }
-        // if( $check_component_active['widget-feature-box'] ) {
-        //     require_once WK_PATH . '/elements/image-feature/widget.php';
-        // }
-        // if( $check_component_active['widget-image-compare'] ) {
-        //     require_once WK_PATH . '/elements/image-compare/widget.php';
-        // }
-        // if( $check_component_active['widget-lottie-animation'] ) {
-        //     require_once WK_PATH . '/elements/lottie/widget.php';
-        // }
-        // if( $check_component_active['widget-mailchimp'] ) {
-        //     require_once WK_PATH . '/elements/mailchimp/widget.php';
-        // }
-        // if( $check_component_active['widget-pricing-single'] ) {
-        //     require_once WK_PATH . '/elements/pricing-1/widget.php';
-        // }
-        // if( $check_component_active['widget-pricing-icon'] ) {
-        //     require_once WK_PATH . '/elements/pricing-2/widget.php';
-        // }
-        // if( $check_component_active['widget-pricing-tab'] ) {
-        //     require_once WK_PATH . '/elements/pricing-tab/widget.php';
-        // }
-        // if( $check_component_active['widget-pros-cons'] ) {
-        //     require_once WK_PATH . '/elements/pros-cons/widget.php';
-        // }
-        // if( $check_component_active['widget-search'] ) {
-        //     require_once WK_PATH . '/elements/search/widget.php';
-        // }
-        // if( $check_component_active['widget-site-social'] ) {
-        //     require_once WK_PATH . '/elements/site-social/widget.php';
-        // }
-        // if( $check_component_active['widget-slider-animation'] ) {
-        //     require_once WK_PATH . '/elements/slider-1/widget.php';
-        // }
-        // if( $check_component_active['widget-slider-content-animation'] ) {
-        //     require_once WK_PATH . '/elements/slider-2/widget.php';
-        // }
-        // if( $check_component_active['widget-slider-box-animation'] ) {
-        //     require_once WK_PATH . '/elements/slider-3/widget.php';
-        // }
-        // if( $check_component_active['widget-social-share-animation'] ) {
-        //     require_once WK_PATH . '/elements/social-share-1/widget.php';
-        // }
-        // if( $check_component_active['widget-social-share-collapse'] ) {
-        //     require_once WK_PATH . '/elements/social-share-2/widget.php';
-        // }
-        // if( $check_component_active['widget-testimonial'] ) {
-        //     require_once WK_PATH . '/elements/testimonial/widget.php';
-        // }
-        // if( $check_component_active['widget-testimonial-center'] ) {
-        //     require_once WK_PATH . '/elements/testimonial-1/widget.php';
-        // }
-        // if( $check_component_active['widget-testimonial-single'] ) {
-        //     require_once WK_PATH . '/elements/testimonial-2/widget.php';
-        // }
-        // if( $check_component_active['widget-team'] ) {
-        //     require_once WK_PATH . '/elements/team/widget.php';
-        // }
-        // if( $check_component_active['widget-team-overlay'] ) {
-        //     require_once WK_PATH . '/elements/team-1/widget.php';
-        // }
-        // if( $check_component_active['widget-team-verticle-icon'] ) {
-        //     require_once WK_PATH . '/elements/team-2/widget.php';
-        // }
-        // if( $check_component_active['widget-team-round'] ) {
-        //     require_once WK_PATH . '/elements/team-3/widget.php';
-        // }
-        // if( $check_component_active['widget-team-animation'] ) {
-        //     require_once WK_PATH . '/elements/team-4/widget.php';
-        // }
-        // if( $check_component_active['widget-tilt-box'] ) {
-        //     require_once WK_PATH . '/elements/tilt-box/widget.php';
-        // }
-        // if( $check_component_active['widget-video-popup'] ) {
-        //     require_once WK_PATH . '/elements/video-popup/widget.php';
-        // }
+        if( $check_component_active['widget-portfolio'] ) {
+            require_once WK_PATH . '/elements/portfolio/widget.php'; 
+        }
+        if( $check_component_active['widget-gallery'] ) {
+            require_once WK_PATH . '/elements/gallery/widget.php';
+        }
+        if( $check_component_active['widget-hover-image'] ) {
+            require_once WK_PATH . '/elements/hover-image/widget.php';
+        }
+        if( $check_component_active['widget-feature-box'] ) {
+            require_once WK_PATH . '/elements/image-feature/widget.php';
+        }
+        if( $check_component_active['widget-image-compare'] ) {
+            require_once WK_PATH . '/elements/image-compare/widget.php';
+        }
+        if( $check_component_active['widget-lottie-animation'] ) {
+            require_once WK_PATH . '/elements/lottie/widget.php';
+        }
+        if( $check_component_active['widget-mailchimp'] ) {
+            require_once WK_PATH . '/elements/mailchimp/widget.php';
+        }
+        if( $check_component_active['widget-pricing-single'] ) {
+            require_once WK_PATH . '/elements/pricing-1/widget.php';
+        }
+        if( $check_component_active['widget-pricing-icon'] ) {
+            require_once WK_PATH . '/elements/pricing-2/widget.php';
+        }
+        if( $check_component_active['widget-pricing-tab'] ) {
+            require_once WK_PATH . '/elements/pricing-tab/widget.php';
+        }
+        if( $check_component_active['widget-pros-cons'] ) {
+            require_once WK_PATH . '/elements/pros-cons/widget.php';
+        }
+        if( $check_component_active['widget-search'] ) {
+            require_once WK_PATH . '/elements/search/widget.php';
+        }
+        if( $check_component_active['widget-site-social'] ) {
+            require_once WK_PATH . '/elements/site-social/widget.php';
+        }
+        if( $check_component_active['widget-slider-animation'] ) {
+            require_once WK_PATH . '/elements/slider-1/widget.php';
+        }
+        if( $check_component_active['widget-slider-content-animation'] ) {
+            require_once WK_PATH . '/elements/slider-2/widget.php';
+        }
+        if( $check_component_active['widget-slider-box-animation'] ) {
+            require_once WK_PATH . '/elements/slider-3/widget.php';
+        }
+        if( $check_component_active['widget-social-share-animation'] ) {
+            require_once WK_PATH . '/elements/social-share-1/widget.php';
+        }
+        if( $check_component_active['widget-social-share-collapse'] ) {
+            require_once WK_PATH . '/elements/social-share-2/widget.php';
+        }
+        if( $check_component_active['widget-testimonial'] ) {
+            require_once WK_PATH . '/elements/testimonial/widget.php';
+        }
+        if( $check_component_active['widget-testimonial-center'] ) {
+            require_once WK_PATH . '/elements/testimonial-1/widget.php';
+        }
+        if( $check_component_active['widget-testimonial-single'] ) {
+            require_once WK_PATH . '/elements/testimonial-2/widget.php';
+        }
+        if( $check_component_active['widget-team'] ) {
+            require_once WK_PATH . '/elements/team/widget.php';
+        }
+        if( $check_component_active['widget-team-overlay'] ) {
+            require_once WK_PATH . '/elements/team-1/widget.php';
+        }
+        if( $check_component_active['widget-team-verticle-icon'] ) {
+            require_once WK_PATH . '/elements/team-2/widget.php';
+        }
+        if( $check_component_active['widget-team-round'] ) {
+            require_once WK_PATH . '/elements/team-3/widget.php';
+        }
+        if( $check_component_active['widget-team-animation'] ) {
+            require_once WK_PATH . '/elements/team-4/widget.php';
+        }
+        if( $check_component_active['widget-tilt-box'] ) {
+            require_once WK_PATH . '/elements/tilt-box/widget.php';
+        }
+        if( $check_component_active['widget-video-popup'] ) {
+            require_once WK_PATH . '/elements/video-popup/widget.php';
+        }
         if( $check_component_active['widget-advanced-tab'] ) {
             require_once WK_PATH . '/elements/advanced-tab/widget.php';
         }

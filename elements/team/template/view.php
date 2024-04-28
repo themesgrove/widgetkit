@@ -15,10 +15,10 @@
                 <div class="wk-card-media-top wk-overflow-hidden">
                     <?php if( $team['single_content_link']):?>
                         <a class="wk-display-block wk-text-center" href="<?php echo esc_attr($team['single_content_link']['url']); ?>" <?php echo esc_attr($team['single_content_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                            <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
+                            <?php echo  esc_attr(Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image'));?>
                         </a>
                     <?php else: ?>
-                        <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
+                        <?php echo  esc_attr(Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image')) ;?>
                     <?php endif; ?>
                 </div> <!-- wk-card-image -->
 
@@ -71,10 +71,10 @@
                     <div class="wk-card-media-top wk-overflow-hidden">
                         <?php if( $team['single_content_link']):?>
                             <a class="wk-display-block" href="<?php echo esc_attr($team['single_content_link']['url']); ?>" <?php echo esc_attr($team['single_content_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
+                                <?php echo  esc_attr(Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image')) ;?>
                             </a>
                         <?php else: ?>
-                            <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
+                            <?php echo  esc_attr(Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image')) ;?>
                         <?php endif; ?>
                     </div> <!-- wk-card-image -->
 
@@ -125,10 +125,10 @@
                         <div class="wk-card-media-left wk-cover-container wk-width-1-2@m wk-position-relative wk-overflow-hidden">
                             <?php if( $team['single_content_link']):?>
                                 <a class="wk-display-block" href="<?php echo esc_attr($team['single_content_link']['url']); ?>" <?php echo esc_attr($team['single_content_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                    <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
+                                    <?php echo  esc_attr(Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image')) ;?>
                                 </a>
                             <?php else: ?>
-                                <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
+                                <?php echo esc_attr( Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') );?>
                             <?php endif; ?>
                         </div> <!-- wk-card-image -->
                     <?php endif; ?>
@@ -189,10 +189,10 @@
                     <div class="wk-card-wrapper wk-position-relative wk-transition-toggle wk-overflow-hidden">
                         <?php if( $team['single_content_link']):?>
                             <a class="wk-display-block" href="<?php echo esc_attr($team['single_content_link']['url']); ?>" <?php echo esc_attr($team['single_content_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
+                                <?php echo  esc_attr(Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image')) ;?>
                             </a>
                         <?php else: ?>
-                            <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
+                            <?php echo  esc_attr(Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image')) ;?>
                         <?php endif; ?>
 
                          <div class="wk-card-body wk-padding-remove wk-position-bottom wk-background-muted">
@@ -242,11 +242,11 @@
                     <div class="wk-card-wrapper wk-position-relative wk-transition-toggle">
                         <?php if( $team['single_content_link']):?>
                             <a class="wk-display-block" href="<?php echo esc_attr($team['single_content_link']['url']); ?>" <?php echo esc_attr($team['single_content_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
+                                <?php echo  esc_attr(Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image')) ;?>
 
                             </a>
                         <?php else: ?>
-                            <?php echo  Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image') ;?>
+                            <?php echo  esc_attr(Group_Control_Image_Size::get_attachment_image_html( $team, 'team_image', 'single_image')) ;?>
 
                         <?php endif; ?>
 
@@ -296,7 +296,7 @@
                 <div class="wk-card wk-style-6">
                     <div class="wk-card-wrapper">
                         <a class="wk-display-block wk-card-link" href="<?php echo esc_attr($team['single_content_link']['url']); ?>" <?php echo esc_attr($team['single_content_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                            <div class="wk-card-hover-bg" style="background-image:url(<?php echo $team['single_image']['url']; ?>);">
+                            <div class="wk-card-hover-bg" style="background-image:url(<?php echo esc_url($team['single_image']['url']); ?>);">
                                 
                             </div>
                         </a>
@@ -305,7 +305,7 @@
                             <?php if( $team['single_title']):?>
                                 <<?php echo esc_attr($team_header_tag);?> class="wk-card-title wk-margin-remove">
                                     <?php if( $team['single_content_link']):?>
-                                        <a class="wk-display-block" href="<?php echo esc_attr($team['single_content_link']['url']); ?>" <?php echo $team['single_content_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
+                                        <a class="wk-display-block" href="<?php echo esc_attr($team['single_content_link']['url']); ?>" <?php echo esc_attr($team['single_content_link']['is_external'])? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                             <?php echo esc_html($team['single_title']); ?>
                                         </a>
                                     <?php else: ?>
@@ -401,8 +401,8 @@
         <script type="text/javascript">
             <?php if ($team['item_styles'] == 'screen_5'): ?>
                 jQuery(document).ready(function(){
-                    jQuery("#<?php echo $id; ?>.wk-style-5 .wk-card-wrapper").hover(function(){
-                    jQuery("#<?php echo $id; ?>.wk-style-5 .wk-text-normal").slideToggle("medium");
+                    jQuery("#<?php echo esc_attr($id); ?>.wk-style-5 .wk-card-wrapper").hover(function(){
+                    jQuery("#<?php echo esc_attr($id); ?>.wk-style-5 .wk-text-normal").slideToggle("medium");
                   });
                 });
             <?php endif; ?>

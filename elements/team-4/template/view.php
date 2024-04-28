@@ -46,7 +46,7 @@
                         <?php if ( ! empty( $social['team_4_social_link'] ) ) : ?>
                             <a <?php if($social['team_4_social_link'] ['is_external'])
                                     { echo 'target="_blank"'; }else{ echo 'rel="nofollow"';}?>
-                            href="<?php  echo esc_attr($social['team_4_social_link']['url']);?>" class="<?php  echo strtolower($social['team_4_title']);?>">
+                            href="<?php  echo esc_attr($social['team_4_social_link']['url']);?>" class="<?php  echo esc_attr(strtolower($social['team_4_title']));?>">
                                  <i class="<?php echo esc_attr( $social['team_4_social_icon']); ?>"></i>
                             </a>
                         <?php endif; ?>
@@ -58,8 +58,8 @@
 
     <script type="text/javascript">
          jQuery(function($) {
-            jQuery('#tgx-team-<?php echo $id; ?> > .mc-btn-action').click(function () {
-                var card = $(this).parent('#tgx-team-<?php echo $id; ?>');
+            jQuery('#tgx-team-<?php echo esc_attr($id); ?> > .mc-btn-action').click(function () {
+                var card = $(this).parent('#tgx-team-<?php echo esc_attr($id); ?>');
                 var icon = $(this).children('i');
                 icon.addClass('fa-spin-fast');
 

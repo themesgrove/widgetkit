@@ -58,7 +58,7 @@
                                     <?php endif; ?> 
                                     <?php if($contents['thumbnail_position'] == 'bottom'):?>
                                         <div class="wk-card-media-bottom wk-overflow-hidden">
-                                            <a class="wk-display-block" href="<?php echo esc_url($content['content_demo_link']['url']); ?>" <?php echo $content['content_demo_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
+                                            <a class="wk-display-block" href="<?php echo esc_url($content['content_demo_link']['url']); ?>" <?php echo esc_attr($content['content_demo_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                                 <?php if($content['content_thumb_image']['id']): ?>
                                                     <img src="<?php echo esc_url(Group_Control_Image_Size::get_attachment_image_src($content['content_thumb_image']['id'], 'cc_image', $contents )); ?>" alt="<?php echo esc_attr($content['content_title']); ?>">
                                                 <?php else:?>

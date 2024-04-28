@@ -19,7 +19,7 @@
                                 <?php if ( ! empty( $social['social_link'] ) ) : ?>
                                     <a <?php if($social['social_link'] ['is_external'])
                                     { echo 'target="_blank"'; }else{ echo 'rel="nofollow"';}?>
-                                    href="<?php  echo $social['social_link']['url'];?>" class="<?php  echo strtolower($social['title']);?>">
+                                    href="<?php  echo esc_url($social['social_link']['url']);?>" class="<?php  echo esc_attr(strtolower($social['title']));?>">
                                          <i class="<?php echo esc_attr( $social['social_icon']); ?>"></i>
                                     </a>
                                 <?php endif; ?>
