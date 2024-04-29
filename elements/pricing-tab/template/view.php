@@ -21,7 +21,7 @@
                     <?php else: ?>
                         <?php echo esc_attr('col-md-4'); ?>
                     <?php endif; ?>
-                    " for="<?php echo esc_attr($counter; ?>">
+                    " for="<?php echo esc_attr($counter); ?>">
 
                     <h4 class="price-title"><?php echo esc_html($item['tab_title']); ?></h4>
 
@@ -99,7 +99,7 @@
 
                         <?php if ( ! empty( $item['pricing_details'] ) ) : ?>
                             <div class="tgx-pricing-tab-feature">
-                                <?php echo esc_html($item['pricing_details']); ?>
+                                <?php echo wp_kses_post($item['pricing_details']); ?>
                             </div><!-- pricing-tab-features -->
                         <?php endif; ?>
 
@@ -182,7 +182,7 @@
 
                         <?php if ( ! empty( $item['pricing_details_2'] ) ) : ?>
                              <div class="tgx-pricing-tab-feature">
-                                 <?php echo esc_html($item['pricing_details_2']); ?>
+                                 <?php echo wp_kses_post($item['pricing_details_2']); ?>
                              </div><!-- pricing-tab-feature -->
                         <?php endif; ?>
                     </div><!-- pricing-tab-wrapper -->
@@ -261,7 +261,7 @@
 
                     <?php if ( ! empty( $item['pricing_details_3'] ) ) : ?>
                         <div class="tgx-pricing-tab-feature">
-                             <?php echo esc_html($item['pricing_details_3']); ?>
+                             <?php echo wp_kses_post($item['pricing_details_3']); ?>
                         </div><!-- pricing-tab-feature -->
                     <?php endif; ?>
 

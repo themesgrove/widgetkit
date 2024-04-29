@@ -20,10 +20,10 @@
             <div class="<?php echo esc_attr($contact_icon_alignment); ?> wkfe-contact-content-wrapper <?php echo esc_attr($contact_box_position); ?>" style="display:none;">
                 <div class=" <?php echo esc_attr($contact_icon_alignment); ?> arrow-up"></div>
                 <div class="content-header">
-                    <?php echo esc_html($dynamic_field_settings['contact_header']); ?>
+                    <?php echo esc_html($contact_header); ?>
                 </div>
                 <div class="content-title">
-                    <?php echo esc_html($dynamic_field_settings['contact_title']); ?>
+                    <?php echo esc_html($contact_title); ?>
                 </div>
                 <div class="contact-content"><?php echo esc_html($contact_content); ?></div>
             </div>
