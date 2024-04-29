@@ -22,11 +22,11 @@
                             rel="nofollow" 
                         <?php endif; ?>
 
-                        href="<?php echo $settings['feature_link']['url'];?>"> 
-                            <h4 class="feature-title"><?php echo $settings['feature_title']; ?></h4>
+                        href="<?php echo esc_attr($settings['feature_link']['url']);?>"> 
+                            <h4 class="feature-title"><?php echo esc_html($settings['feature_title']); ?></h4>
                         </a>
                     <?php else: ?>
-                        <h4 class="feature-title"><?php echo $settings['feature_title']; ?></h4>
+                        <h4 class="feature-title"><?php echo esc_html($settings['feature_title']); ?></h4>
                     <?php endif; ?>
                 <?php endif; ?>
             <?php endif; ?>
@@ -36,7 +36,7 @@
 
                     <?php if ($settings['choose_media'] == 'image'): ?>
                         <?php if( $settings['feature_image']['url']):?>
-                            <img src="<?php echo $settings['feature_image']['url']; ?>" alt="<?php the_title(); ?>"> 
+                            <img src="<?php echo esc_attr($settings['feature_image']['url']); ?>" alt="<?php the_title(); ?>"> 
                         <?php endif; ?>
 
                     <?php else: ?>
@@ -56,7 +56,7 @@
                     <?php if ($settings['choose_media'] == 'image'): ?>
                         
                         <?php if( $settings['feature_image']['url']):?>
-                            <img class= "tgx-media" src="<?php echo $settings['feature_image']['url']; ?>" alt="<?php the_title(); ?>"> 
+                            <img class= "tgx-media" src="<?php echo esc_attr($settings['feature_image']['url']); ?>" alt="<?php the_title(); ?>"> 
                         <?php endif; ?>
 
                     <?php else: ?>
@@ -82,17 +82,17 @@
                         <?php else: ?>
                             rel="nofollow" 
                         <?php endif; ?>
-                        href="<?php echo $settings['feature_link']['url'];?>"> 
-                            <h4 class="feature-title"><?php echo $settings['feature_title']; ?></h4>
+                        href="<?php echo esc_attr($settings['feature_link']['url']);?>"> 
+                            <h4 class="feature-title"><?php echo esc_html($settings['feature_title']); ?></h4>
                         </a>
                     <?php else: ?>
-                         <h4 class="feature-title"><?php echo $settings['feature_title']; ?></h4>
+                         <h4 class="feature-title"><?php echo esc_html($settings['feature_title']); ?></h4>
                     <?php endif; ?>
                 <?php endif; ?>
             <?php endif; ?>
 
             <?php if ($settings['feature_content']):?>
-                <p class="feature-desc"><?php echo $settings['feature_content']; ?></p> 
+                <p class="feature-desc"><?php echo esc_html($settings['feature_content']); ?></p> 
             <?php endif; ?>           
         </div><!-- .block -->
     </div><!-- /.section -->

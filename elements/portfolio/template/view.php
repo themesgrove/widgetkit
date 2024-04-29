@@ -20,7 +20,7 @@
         <?php if ($settings['filter_layout'] == 'border'):?>
             <ul class="portfolio-filter border text-center">
                 <li>
-                    <a  class="mixitup-control-active" href="#" data-filter="*"><?php echo $settings['portfolio_filter_show_title'];?></a>
+                    <a  class="mixitup-control-active" href="#" data-filter="*"><?php echo esc_html($settings['portfolio_filter_show_title']);?></a>
                 </li>
                 <?php
                   $data = [];
@@ -35,7 +35,7 @@
                         ?>  
                         <?php if (!empty($filter['portfolio_filter'])): ?>
                             
-                        <li><a href="#" data-filter=".<?php echo $termname.'-'.$id;?>"><?php echo $filter['portfolio_filter']; ?></a></li>
+                        <li><a href="#" data-filter=".<?php echo esc_attr($termname).'-'. esc_attr($id);?>"><?php echo esc_html($filter['portfolio_filter']); ?></a></li>
                         <?php endif; ?>
                         <?php
                     }
@@ -46,7 +46,7 @@
 
             <ul class="portfolio-filter round text-center">
                 <li>
-                    <a  class="mixitup-control-active" href="#" data-filter="*"><?php echo $settings['portfolio_filter_show_title'];?></a>
+                    <a  class="mixitup-control-active" href="#" data-filter="*"><?php echo esc_html($settings['portfolio_filter_show_title']);?></a>
                 </li>
                 <?php
                   $data = [];
@@ -61,7 +61,7 @@
                         ?>  
                         <?php if (!empty($filter['portfolio_filter'])): ?>
                             
-                            <li><a href="#" data-filter=".<?php echo $termname.'-'.$id;?>"><?php echo $filter['portfolio_filter']; ?></a></li>
+                            <li><a href="#" data-filter=".<?php echo esc_attr($termname).'-'. esc_attr($id);?>"><?php echo esc_html($filter['portfolio_filter']); ?></a></li>
                         <?php endif; ?>
                         <?php
                     }
@@ -70,7 +70,7 @@
         <?php elseif($settings['filter_layout'] == 'slash'): ?>
            <ul class="portfolio-filter slash text-center">
                 <li>
-                    <a  class="mixitup-control-active" href="#" data-filter="*"><?php echo $settings['portfolio_filter_show_title'];?></a>
+                    <a  class="mixitup-control-active" href="#" data-filter="*"><?php echo esc_html($settings['portfolio_filter_show_title']);?></a>
                 </li>
                 <?php
                   $data = [];
@@ -86,7 +86,7 @@
 
                         <?php if (!empty($filter['portfolio_filter'])): ?>
                             
-                            <li><span class="filter-slash"><?php esc_html_e('/', 'widgetkit-for-elementor');?></span><a href="#" data-filter=".<?php echo $termname.'-'.$id;?>"><?php echo $filter['portfolio_filter']; ?></a></li>
+                            <li><span class="filter-slash"><?php esc_html_e('/', 'widgetkit-for-elementor');?></span><a href="#" data-filter=".<?php echo esc_attr($termname).'-'. esc_attr($id);?>"><?php echo esc_html($filter['portfolio_filter']); ?></a></li>
                         <?php endif; ?>
                         <?php
                     }
@@ -95,7 +95,7 @@
         <?php else: ?>
             <ul class="portfolio-filter round text-center">
                 <li>
-                    <a  class="mixitup-control-active" href="#" data-filter="*"><?php echo $settings['portfolio_filter_show_title'];?></a>
+                    <a  class="mixitup-control-active" href="#" data-filter="*"><?php echo esc_html($settings['portfolio_filter_show_title']);?></a>
                 </li>
                 <?php
                   $data = [];
@@ -109,7 +109,7 @@
                             }
                         ?>  
                         <?php if (!empty($filter['portfolio_filter'])): ?>
-                            <li><a href="#" data-filter=".<?php echo $termname.'-'.$id;?>"><?php echo $filter['portfolio_filter']; ?></a></li>
+                            <li><a href="#" data-filter=".<?php echo esc_attr($termname).'-'. esc_attr($id);?>"><?php echo esc_html($filter['portfolio_filter']); ?></a></li>
                         <?php endif; ?>
                         <?php
                     }
@@ -135,14 +135,14 @@
                     <?php foreach ( $settings['portfolio_content'] as $portfolio ) : ?>
                         <?php $tags = explode(',', $portfolio['filter_tag']);
                         ?>
-                        <div class="col-md-<?php echo $settings['colmun_layout'];?> col-sm-6 mix mix-<?php echo $id?> portfolio-item <?php foreach($tags as $tag ): echo strtolower($tag.'-'.$id).' '; endforeach;?>">
+                        <div class="col-md-<?php echo esc_attr($settings['colmun_layout']);?> col-sm-6 mix mix-<?php echo esc_attr($id);?> portfolio-item <?php foreach($tags as $tag ): echo esc_attr(strtolower($tag.'-'.$id)).' '; endforeach;?>">
 
 
                             <?php if ($settings['portfolio_hover_effect'] == 'hover_1'): ?>
 
                                 <?php if($portfolio['portfolio_thumb_image']):?>
                                     <span>
-                                        <img src="<?php echo $portfolio['portfolio_thumb_image']['url'];?>" alt="<?php echo $portfolio['portfolio_title']; ?>">
+                                        <img src="<?php echo esc_url($portfolio['portfolio_thumb_image']['url']);?>" alt="<?php echo esc_attr($portfolio['portfolio_title']); ?>">
                                         <div></div>    
                                     </span>
                                 <?php endif; ?>   
@@ -150,13 +150,13 @@
                             <span class="portfolio-buttons">
 
                                 <?php if($portfolio['portfolio_full_image']):?>
-                                    <a class="test-popup-link" href="<?php echo $portfolio['portfolio_full_image']['url'];?>" >
+                                    <a class="test-popup-link" href="<?php echo esc_url($portfolio['portfolio_full_image']['url']);?>" >
                                         <i class="fa fa-search"></i>
                                     </a>
                                 <?php endif; ?>
 
                                  <?php if($portfolio['portfolio_demo_link']):  ?>
-                                    <a href="<?php echo $portfolio['portfolio_demo_link'];?>" target="_blank">
+                                    <a href="<?php echo esc_url($portfolio['portfolio_demo_link']);?>" target="_blank">
                                         <i class="fa fa fa-link"></i>
                                     </a>
                                 <?php endif; ?>
@@ -170,7 +170,7 @@
                             <div class="overlay overlay-hover">
                                 <div class="overlay-spin" >
                                     <?php if($portfolio['portfolio_thumb_image']):?>
-                                        <img src="<?php echo $portfolio['portfolio_thumb_image']['url'];?>" alt="<?php echo $portfolio['portfolio_title']; ?>">
+                                        <img src="<?php echo esc_url($portfolio['portfolio_thumb_image']['url']);?>" alt="<?php echo esc_attr($portfolio['portfolio_title']); ?>">
                                     <?php endif; ?>                                                             
                                 </div><!-- .overlay-spin -->
 
@@ -178,13 +178,13 @@
                                     <div class="portfolio-btn text-center">
                                         <?php if($portfolio['portfolio_full_image']):?>
                                             <a class="icon-search" 
-                                                href="<?php echo $portfolio['portfolio_full_image']['url'];?>">
+                                                href="<?php echo esc_html($portfolio['portfolio_full_image']['url']);?>">
                                                 <i class='fa fa-plus'></i>
                                             </a>
                                         <?php endif; ?>
 
                                         <?php if($portfolio['portfolio_demo_link']):  ?>
-                                            <a target="_blank" href="<?php echo $portfolio['portfolio_demo_link'];?>" class="icon-link">
+                                            <a target="_blank" href="<?php echo esc_url($portfolio['portfolio_demo_link']);?>" class="icon-link">
                                                 <i class='fa fa-link'></i>
                                             </a>
                                         <?php endif; ?>
@@ -193,11 +193,11 @@
 
                                 <div class="portfolio-content text-left">
                                     <?php if ($portfolio['portfolio_title']): ?>   
-                                        <h4 class="title"><?php echo $portfolio['portfolio_title']; ?></h4>
+                                        <h4 class="title"><?php echo esc_html($portfolio['portfolio_title']); ?></h4>
                                     <?php endif ?>
 
                                     <?php if($portfolio['portfolio_desc']): ?>
-                                        <p class="desc"><?php echo $portfolio['portfolio_desc'];?></p>
+                                        <p class="desc"><?php echo esc_html($portfolio['portfolio_desc']);?></p>
                                     <?php endif; ?>
                                 </div><!-- /.portfolio-content -->
                             </div><!-- /.effcet 2 overlay -->
@@ -208,26 +208,26 @@
                             <div class="effect-3">
                                 <ul class="external-link">
                                     <li>
-                                        <a href="<?php echo $portfolio['portfolio_full_image']['url'];?>">
+                                        <a href="<?php echo esc_url($portfolio['portfolio_full_image']['url']);?>">
                                             <i class="fa fa-search"></i>
                                         </a>
                                     </li>
                                     <li> 
                                         <?php if($portfolio['portfolio_demo_link']):  ?>
-                                            <a target="_blank" href="<?php echo $portfolio['portfolio_demo_link'];?>" class="icon-link">
+                                            <a target="_blank" href="<?php echo esc_url($portfolio['portfolio_demo_link']);?>" class="icon-link">
                                                 <i class='fa fa-link'></i>
                                             </a>
                                         <?php endif; ?>
                                     </li>
                                 </ul>
-                                 <img src="<?php echo $portfolio['portfolio_thumb_image']['url'];?>" alt="<?php echo $portfolio['portfolio_title']; ?>">
+                                 <img src="<?php echo esc_url($portfolio['portfolio_thumb_image']['url']);?>" alt="<?php echo esc_attr($portfolio['portfolio_title']); ?>">
                                 <figcaption class="info">
                                     <?php if ($portfolio['portfolio_title']): ?>   
-                                        <h4 class="title"><?php echo $portfolio['portfolio_title']; ?></h4>
+                                        <h4 class="title"><?php echo esc_html($portfolio['portfolio_title']); ?></h4>
                                     <?php endif ?>
 
                                     <?php if($portfolio['portfolio_desc']): ?>
-                                        <p class="desc"><?php echo $portfolio['portfolio_desc'];?></p>
+                                        <p class="desc"><?php echo esc_html($portfolio['portfolio_desc']);?></p>
                                     <?php endif; ?>
                                 </figcaption>
                             </div> <!-- /.effect 3 -->
@@ -238,25 +238,25 @@
                             <div class="overlay overlay-hover">
                                 <div class="overlay-spin" >
                                     <?php if($portfolio['portfolio_thumb_image']):?>
-                                        <img src="<?php echo $portfolio['portfolio_thumb_image']['url'];?>" alt="<?php echo $portfolio['portfolio_title']; ?>">
+                                        <img src="<?php echo esc_url($portfolio['portfolio_thumb_image']['url']);?>" alt="<?php echo esc_attr($portfolio['portfolio_title']); ?>">
                                     <?php endif; ?>                                                             
                                 </div><!-- .overlay-spin -->
-                                <div class="portfolio-content text-left <?php echo $hover_4_action; ?>">
+                                <div class="portfolio-content text-left <?php echo esc_attr($hover_4_action); ?>">
                                     <?php if($portfolio['portfolio_full_image']):?>
                                         <?php if($hover_4_action == 'demo_link' ): ?>
-                                            <a class="icon-search" href="<?php echo $portfolio['portfolio_demo_link'] ;?>">
+                                            <a class="icon-search" href="<?php echo esc_url($portfolio['portfolio_demo_link']);?>">
                                                 <?php if ($portfolio['portfolio_title']): ?>   
                                                     <h4 class="title">
-                                                        <?php echo $portfolio['portfolio_title'];?> 
+                                                        <?php echo esc_html($portfolio['portfolio_title']);?> 
                                                     </h4>
                                                 <?php endif ?>
                                             </a>
                                         <?php else:?>
                                             <a class="icon-search" data-rel="lightcase:slideshow" 
-                                                href="<?php echo $portfolio['portfolio_full_image']['url'];?>">
+                                                href="<?php echo esc_url($portfolio['portfolio_full_image']['url']);?>">
                                                 <?php if ($portfolio['portfolio_title']): ?>   
                                                     <h4 class="title">
-                                                        <?php echo $portfolio['portfolio_title'];?> 
+                                                        <?php echo esc_html($portfolio['portfolio_title']);?> 
                                                     </h4>
                                                 <?php endif ?>
                                             </a>
@@ -270,7 +270,7 @@
 
                             <?php if($portfolio['portfolio_thumb_image']):?>
                                 <a href="">
-                                    <img src="<?php echo $portfolio['portfolio_thumb_image']['url'];?>" alt="<?php echo $portfolio['portfolio_title']; ?>">
+                                    <img src="<?php echo esc_url($portfolio['portfolio_thumb_image']['url']);?>" alt="<?php echo esc_attr($portfolio['portfolio_title']); ?>">
                                     <div></div>    
                                 </a>
                             <?php endif; ?>   
@@ -278,13 +278,13 @@
                             <span class="portfolio-buttons">
 
                                 <?php if($portfolio['portfolio_full_image']):?>
-                                    <a class="test-popup-link" href="<?php echo $portfolio['portfolio_thumb_image']['url'];?>" >
+                                    <a class="test-popup-link" href="<?php echo esc_url($portfolio['portfolio_thumb_image']['url']);?>" >
                                         <i class="fa fa-search"></i>
                                     </a>
                                 <?php endif; ?>
 
                                  <?php if($portfolio['portfolio_demo_link']):  ?>
-                                    <a href="<?php echo $portfolio['portfolio_demo_link'];?>" target="_blank">
+                                    <a href="<?php echo esc_url($portfolio['portfolio_demo_link']);?>" target="_blank">
                                         <i class="fa fa fa-link"></i>
                                     </a>
                                 <?php endif; ?>

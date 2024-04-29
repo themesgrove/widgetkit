@@ -6,18 +6,18 @@
 
 ?>
 
-    <div id="tgx-team-<?php echo $id; ?>" class="tgx-team-4 animation">
+    <div id="tgx-team-<?php echo esc_attr($id); ?>" class="tgx-team-4 animation">
                 <?php if ( ! empty( $settings['team_4_team_name'] ) ) : ?>
                     <?php if ( ! empty( $settings['image_external_link'] ) ) : ?>        
                         <a <?php if( $settings['image_external_link'] ['is_external'])
                                 { echo 'target="_blank"'; }else{ echo 'rel="nofollow"';}?>  
-                                href="<?php  echo $settings['image_external_link']['url'];?>">
+                                href="<?php  echo esc_attr($settings['image_external_link']['url']);?>">
                         <h2 class="title-wrapper">
-                        <span class="team-title"><?php echo $settings['team_4_team_name'];?></span>
+                        <span class="team-title"><?php echo esc_html($settings['team_4_team_name']);?></span>
                             <strong>
                                 <i class="ion-ios-star-half"></i>
                                 <?php if ( ! empty( $settings['team_4_designation'] ) ) : ?>
-                                    <?php echo $settings['team_4_designation'];?>
+                                    <?php echo esc_html($settings['team_4_designation']);?>
                                 <?php endif; ?>
                             </strong>
                         </h2>
@@ -26,11 +26,11 @@
                 <?php endif; ?>
         <div class="mc-content">
             <div class="img-container">
-                 <img src="<?php echo $settings['team_4_team_image']['url'];?>" alt="<?php echo $settings['team_4_team_name'];?>"> 
+                 <img src="<?php echo esc_attr($settings['team_4_team_image']['url']);?>" alt="<?php echo esc_attr($settings['team_4_team_name']);?>"> 
             </div>
             <?php if ( ! empty( $settings['team_4_content'] ) ) : ?>
                 <div class="mc-description">
-                    <p><?php echo $settings['team_4_content'] ?></p>
+                    <p><?php echo esc_html($settings['team_4_content']); ?></p>
                 </div>
             <?php endif; ?> 
         </div> <!-- /mc-content -->
@@ -46,7 +46,7 @@
                         <?php if ( ! empty( $social['team_4_social_link'] ) ) : ?>
                             <a <?php if($social['team_4_social_link'] ['is_external'])
                                     { echo 'target="_blank"'; }else{ echo 'rel="nofollow"';}?>
-                            href="<?php  echo $social['team_4_social_link']['url'];?>" class="<?php  echo strtolower($social['team_4_title']);?>">
+                            href="<?php  echo esc_attr($social['team_4_social_link']['url']);?>" class="<?php  echo esc_attr(strtolower($social['team_4_title']));?>">
                                  <i class="<?php echo esc_attr( $social['team_4_social_icon']); ?>"></i>
                             </a>
                         <?php endif; ?>
@@ -58,8 +58,8 @@
 
     <script type="text/javascript">
          jQuery(function($) {
-            jQuery('#tgx-team-<?php echo $id; ?> > .mc-btn-action').click(function () {
-                var card = $(this).parent('#tgx-team-<?php echo $id; ?>');
+            jQuery('#tgx-team-<?php echo esc_attr($id); ?> > .mc-btn-action').click(function () {
+                var card = $(this).parent('#tgx-team-<?php echo esc_attr($id); ?>');
                 var icon = $(this).children('i');
                 icon.addClass('fa-spin-fast');
 

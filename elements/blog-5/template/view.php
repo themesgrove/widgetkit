@@ -5,7 +5,7 @@
     $id = $this->get_id();
 ?>
 
-<div id=" <?php echo $id; ?>" class="tgx-blog-5">
+<div id=" <?php echo esc_attr($id); ?>" class="tgx-blog-5">
     <div class="row"> 
 
         <?php
@@ -42,9 +42,9 @@
                     <?php if ($settings['blog_5_image_postion'] == 'left'): ?>
                         <div class="image pull-left
                             <?php if ($settings['blog_5_layout_item_show'] == '12'): ?>
-                            <?php echo "col-md-5"; ?>
+                            <?php echo esc_attr("col-md-5"); ?>
                             <?php else: ?>
-                            <?php echo "col-md-6"; ?>
+                            <?php echo esc_attr("col-md-6"); ?>
                             <?php endif; ?>">
                             
                         <a href="<?php the_permalink(); ?>" ><?php the_post_thumbnail('full', array('class' => 'card-media')); ?></a>
@@ -53,13 +53,13 @@
 
                         <div class="card-body
                             <?php if ($settings['blog_5_layout_item_show'] == '12'): ?>
-                            <?php echo "col-md-7"; ?>
+                            <?php echo esc_attr("col-md-7"); ?>
                             <?php else: ?>
-                            <?php echo "col-md-6"; ?>
+                            <?php echo esc_attr("col-md-6"); ?>
                             <?php endif; ?>">
 
                             <?php if ($settings['blog_5_count_enable'] == 'yes'): ?>
-                                <span class="card-number card-circle subtle"><?php echo "0$i";?></span>
+                                <span class="card-number card-circle subtle"><?php echo esc_html("0$i");?></span>
                             <?php endif; ?>
 
                             <?php if ($settings['blog_5_author_enable'] == 'yes'): ?>          
@@ -92,16 +92,16 @@
 
                             <?php if ($settings['blog_5_count_enable'] == 'yes'): ?>
                                 <?php $count_posts = wp_count_posts();?>
-                                <span class="card-tag card-circle subtle"><?php echo $count_posts->publish;?></span>
+                                <span class="card-tag card-circle subtle"><?php echo esc_html($count_posts->publish);?></span>
                             <?php endif; ?>
                         </div><!-- card-body -->
 
                         <?php if ($settings['blog_5_image_postion'] == 'right'): ?>
                             <div class="image pull-right text-right
                                 <?php if ($settings['blog_5_layout_item_show'] == '12'): ?>
-                                <?php echo "col-md-5"; ?>
+                                <?php echo esc_attr("col-md-5"); ?>
                                 <?php else: ?>
-                                <?php echo "col-md-6"; ?>
+                                <?php echo esc_attr("col-md-6"); ?>
                                 <?php endif; ?>">
                                 
                             <a href="<?php the_permalink(); ?>" ><?php the_post_thumbnail('full', array('class' => 'card-media')); ?></a>

@@ -9,10 +9,10 @@
             <!-- First Team Block -->
             <div class="team-each-wrap">
                 <div class="team-block">
-                    <img src="<?php echo $settings['team_image']['url'];?>" alt="<?php echo $settings['team_name'];?>">   
+                    <img src="<?php echo esc_attr($settings['team_image']['url']);?>" alt="<?php echo esc_attr($settings['team_name']);?>">   
                     <?php if ( ! empty( $settings['content'] ) ) : ?>
                         <div class="team-content">
-                            <p><?php echo $settings['content'] ?></p>
+                            <p><?php echo esc_html($settings['content']); ?></p>
                         </div>
                     <?php endif; ?>             
                 </div>
@@ -24,14 +24,14 @@
                             <?php if ( ! empty( $settings['image_external_link'] ) ) : ?>        
                                 <a <?php if( $settings['image_external_link'] ['is_external'])
                                         { echo 'target="_blank"'; }else{ echo 'rel="nofollow"';}?>  
-                                        href="<?php  echo $settings['image_external_link']['url'];?>">
-                                <h4 class="team-title"><?php echo $settings['team_name'];?></h4>
+                                        href="<?php  echo esc_attr($settings['image_external_link']['url']);?>">
+                                <h4 class="team-title"><?php echo esc_html($settings['team_name']);?></h4>
                                 </a>
                             <?php endif; ?>
                         <?php endif; ?>
 
                         <?php if ( ! empty( $settings['designation'] ) ) : ?>
-                            <span class="team-designation"><?php echo $settings['designation'];?></span>
+                            <span class="team-designation"><?php echo esc_html($settings['designation']);?></span>
                         <?php endif; ?>
                     </div>
 
@@ -40,8 +40,8 @@
                             <?php foreach ( $settings['social_share_1'] as $social ) : ?>
                                 <?php if ( ! empty( $social['social_link'] ) ) : ?>
                                     <a <?php if($social['social_link'] ['is_external'])
-                                    { echo 'target="_blank"'; }else{ echo 'rel="nofollow"';}?> 
-                                            href="<?php  echo $social['social_link']['url'];?>" class="<?php  echo strtolower($social['title']);?>">
+                                    { echo esc_attr('target="_blank"'); }else{ echo esc_attr('rel="nofollow"');}?> 
+                                            href="<?php  echo esc_attr($social['social_link']['url']);?>" class="<?php  echo esc_attr(strtolower($social['title']));?>">
                                          <i class="<?php echo esc_attr( $social['social_icon']); ?>"></i>
                                     </a>
                                 <?php endif; ?>

@@ -15,7 +15,7 @@
             <div class="button-wrapper">
                 <button class="wkfe-tweet">
                     <span class="icon-wrapper">
-                        <i class="<?php echo esc_html($icon); ?>"></i>
+                        <i class="<?php echo esc_attr($icon); ?>"></i>
                     </span>
                     <?php echo esc_html($button_text); ?>
                 </button>

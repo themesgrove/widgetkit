@@ -7,30 +7,30 @@
     use Elementor\Group_Control_Image_Size;
     ?>
 
-        <div class="content-carousel" wk-slider="center:<?php echo $contents['center_mode_enable'] == 'yes'? 'true' :'false'; ?>; sets:<?php echo $contents['set_mode_enable'] == 'yes'? 'true' :'false'; ?>; autoplay:<?php echo $contents['autoplay_mode_enable'] == 'yes'? 'true' :'false'; ?>; autoplay-interval:<?php echo $contents['content_interval_option'];?>;">
-            <div class="wk-visible-toggle wk-light <?php echo $contents['arrow_position'] == 'in'? 'wk-position-relative' : ' '; ?> " tabindex="-1">
+        <div class="content-carousel" wk-slider="center:<?php echo esc_attr($contents['center_mode_enable']) == 'yes'? 'true' :'false'; ?>; sets:<?php echo esc_attr($contents['set_mode_enable']) == 'yes'? 'true' :'false'; ?>; autoplay:<?php echo esc_attr($contents['autoplay_mode_enable']) == 'yes'? 'true' :'false'; ?>; autoplay-interval:<?php echo esc_attr($contents['content_interval_option']);?>;">
+            <div class="wk-visible-toggle wk-light <?php echo esc_attr($contents['arrow_position']) == 'in'? 'wk-position-relative' : ' '; ?> " tabindex="-1">
                 <?php if ($contents['center_mode_enable'] == 'yes'): ?>
-                    <ul class="wk-grid-<?php echo $contents['column_gap']?> wk-slider-items wk-child-width-1-2@s" wk-grid>
+                    <ul class="wk-grid-<?php echo esc_attr($contents['column_gap']);?> wk-slider-items wk-child-width-1-2@s" wk-grid>
                 <?php else: ?>
-                      <ul class="wk-grid-<?php echo $contents['column_gap']?> 
+                      <ul class="wk-grid-<?php echo esc_attr($contents['column_gap']);?> 
                       wk-slider-items 
-                      wk-child-width-1-<?php echo $contents['item_column'];?>@l
-                      wk-child-width-1-<?php echo is_int($contents['item_column_tablet']) ? $contents['item_column_tablet'] : 2 ;?>@m 
-                      wk-child-width-1-<?php echo is_int($contents['item_column_mobile']) ? $contents['item_column_mobile'] : 1 ;?>@s" 
+                      wk-child-width-1-<?php echo esc_attr($contents['item_column']);?>@l
+                      wk-child-width-1-<?php echo esc_attr(is_int($contents['item_column_tablet'])) ? esc_attr($contents['item_column_tablet']) : 2 ;?>@m 
+                      wk-child-width-1-<?php echo esc_attr(is_int($contents['item_column_mobile'])) ? esc_attr($contents['item_column_mobile']) : 1 ;?>@s" 
                       wk-grid>
                 <?php endif; ?>
                     <?php if ($contents['item_option'] == 'custom_post'): ?>
                         <?php foreach ( $contents['custom_content'] as $content ) : ?>
                              <li class="wk-flex wk-flex-center wk-grid-match">
-                                <div class="wk-card <?php echo $content['content_meta'] || $content['content_title'] || $content['content_content']? 'wk-card-default' : '';?> wk-margin-small-bottom">
+                                <div class="wk-card <?php echo esc_attr($content['content_meta']) || $content['content_title'] || $content['content_content']? 'wk-card-default' : '';?> wk-margin-small-bottom">
                                     <?php if($content['content_thumb_image']['url']):?>
                                         <?php if($contents['thumbnail_position'] == 'top'): ;?>
                                             <div class="wk-card-media-top wk-overflow-hidden">
-                                                <a class="wk-display-block" href="<?php echo $content['content_demo_link']['url']; ?>" <?php echo $content['content_demo_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
+                                                <a class="wk-display-block" href="<?php echo esc_attr($content['content_demo_link']['url']); ?>" <?php echo esc_attr($content['content_demo_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                                     <?php if($content['content_thumb_image']['id']): ?>
-                                                        <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($content['content_thumb_image']['id'], 'cc_image', $contents ); ?>" alt="<?php echo $content['content_title']; ?>">
+                                                        <img src="<?php echo esc_url(Group_Control_Image_Size::get_attachment_image_src($content['content_thumb_image']['id'], 'cc_image', $contents )); ?>" alt="<?php echo esc_attr($content['content_title']); ?>">
                                                     <?php else:?>
-                                                        <img src="<?php echo $content['content_thumb_image']['url'];?>" alt="<?php echo $content['content_title']; ?>">  
+                                                        <img src="<?php echo esc_attr($content['content_thumb_image']['url']);?>" alt="<?php echo esc_attr($content['content_title']); ?>">  
                                                     <?php endif;?> 
                                                 </a> 
                                             </div>
@@ -39,30 +39,30 @@
                                     <?php if( $content['content_meta'] || $content['content_title'] || $content['content_content']):?>
                                     <div class="wk-card-body">
                                         <?php if ($content['content_meta']): ?>
-                                            <span class="wk-text-meta wk-inline-block"><?php echo $content['content_meta']; ?></span>
+                                            <span class="wk-text-meta wk-inline-block"><?php echo esc_html($content['content_meta']); ?></span>
                                         <?php endif; ?>
                                         <?php if ($content['content_title']): ?>
                                             
-                                            <<?php echo $content_carousel_custom_header_tag;?>  class="wk-card-title wk-margin-remove">
+                                            <<?php echo esc_attr($content_carousel_custom_header_tag);?>  class="wk-card-title wk-margin-remove">
                                                 <?php if ($content['content_demo_link']): ?>
-                                                     <a href="<?php echo $content['content_demo_link']['url']; ?>" <?php echo $content['content_demo_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>><?php echo $content['content_title']; ?></a>
+                                                     <a href="<?php echo esc_url($content['content_demo_link']['url']); ?>" <?php echo esc_attr($content['content_demo_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>><?php echo esc_html($content['content_title']); ?></a>
                                                 <?php else: ?>
-                                                        <?php echo $content['content_title']; ?>
+                                                        <?php echo esc_html($content['content_title']); ?>
                                                 <?php endif; ?>  
-                                            </<?php echo $content_carousel_custom_header_tag;?>>  
+                                            </<?php echo esc_attr($content_carousel_custom_header_tag);?>>  
                                         <?php endif; ?>
                                         <?php if ($content['content_content']): ?>
-                                            <p class=" wk-margin-small-bottom"><?php echo $content['content_content']; ?></p>
+                                            <p class=" wk-margin-small-bottom"><?php echo esc_html($content['content_content']); ?></p>
                                         <?php endif; ?>
                                     </div>
                                     <?php endif; ?> 
                                     <?php if($contents['thumbnail_position'] == 'bottom'):?>
                                         <div class="wk-card-media-bottom wk-overflow-hidden">
-                                            <a class="wk-display-block" href="<?php echo $content['content_demo_link']['url']; ?>" <?php echo $content['content_demo_link']['is_external']? 'target="_blank"' : '"rel="nofollow"'; ?>>
+                                            <a class="wk-display-block" href="<?php echo esc_url($content['content_demo_link']['url']); ?>" <?php echo esc_attr($content['content_demo_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
                                                 <?php if($content['content_thumb_image']['id']): ?>
-                                                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src($content['content_thumb_image']['id'], 'cc_image', $contents ); ?>" alt="<?php echo $content['content_title']; ?>">
+                                                    <img src="<?php echo esc_url(Group_Control_Image_Size::get_attachment_image_src($content['content_thumb_image']['id'], 'cc_image', $contents )); ?>" alt="<?php echo esc_attr($content['content_title']); ?>">
                                                 <?php else:?>
-                                                    <img src="<?php echo $content['content_thumb_image']['url'];?>" alt="<?php echo $content['content_title']; ?>">  
+                                                    <img src="<?php echo esc_url($content['content_thumb_image']['url']);?>" alt="<?php echo esc_html($content['content_title']); ?>">  
                                                 <?php endif;?> 
                                             </a> 
                                         </div>
@@ -94,7 +94,7 @@
                                             <div class="wk-card-media-top wk-overflow-hidden">
                                                 <a class="wk-display-block" href="<?php the_permalink();?>">
                                                     <?php //the_post_thumbnail($contents['thumbnail_size']);?> 
-                                                    <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src(get_post_thumbnail_id(), 'cc_image', $contents );?>" alt="<?php the_title(); ?>">
+                                                    <img src="<?php echo esc_url(Group_Control_Image_Size::get_attachment_image_src(get_post_thumbnail_id(), 'cc_image', $contents ));?>" alt="<?php the_title(); ?>">
                                                 </a>
                                             </div>
                                         <?php endif; ?>
@@ -107,14 +107,14 @@
                                             
                                         <?php endif; ?>
                                        
-                                        <<?php echo $content_carousel_post_header_tag;?>  class="wk-card-title wk-margin-remove">    
-                                            <a href="<?php the_permalink();?>"><?php echo wp_trim_words( get_the_title(), $contents['title_word'], ' ' );?>    
+                                        <<?php echo esc_attr($content_carousel_post_header_tag);?>  class="wk-card-title wk-margin-remove">    
+                                            <a href="<?php the_permalink();?>"><?php echo esc_html(wp_trim_words( get_the_title(), $contents['title_word'], ' ' ));?>    
                                             </a>
 
-                                        </<?php echo $content_carousel_post_header_tag;?>>
+                                        </<?php echo esc_attr($content_carousel_post_header_tag);?>>
                                         <?php if ( $contents['content_enable'] == 'yes' ): ?>
                                             <p class="wk-margin-small-bottom">
-                                                <?php echo wp_trim_words( get_the_content(), $contents['content_word'], ' ' );?>
+                                                <?php echo esc_html(wp_trim_words( get_the_content(), $contents['content_word'], ' ' ));?>
                                             </p>
                                         <?php endif; ?>
                                     </div>
@@ -122,7 +122,7 @@
                                         <div class="wk-card-media-bottom wk-overflow-hidden">
                                             <a class="wk-display-block" href="<?php the_permalink();?>">
                                                 <?php //the_post_thumbnail($contents['thumbnail_size']);?> 
-                                                <img src="<?php echo Group_Control_Image_Size::get_attachment_image_src(get_post_thumbnail_id(), 'cc_image', $contents );?>" alt="<?php the_title(); ?>">
+                                                <img src="<?php echo esc_url(Group_Control_Image_Size::get_attachment_image_src(get_post_thumbnail_id(), 'cc_image', $contents ));?>" alt="<?php the_title(); ?>">
                                             </a>
                                         </div>
                                     <?php endif; ?>
@@ -132,13 +132,13 @@
                     <?php endif; ?>
                 </ul>
                 <?php if ($contents['arrow_enable'] == 'yes'):?>
-                    <a class=" <?php echo $contents['arrow_position'] == 'out'? 'wk-position-center-left-out' : 'wk-position-center-left'; ?> wk-position-medium wk-slidenav-small <?php echo $contents['arrow_on_hover'] == 'yes'? 'wk-hidden-hover' : ''; ?> " href="#" wk-slidenav-previous wk-slider-item="previous"></a>
-                    <a class="<?php echo $contents['arrow_position'] == 'out'? 'wk-position-center-right-out' : 'wk-position-center-right'; ?> wk-position-medium  wk-slidenav-small <?php echo $contents['arrow_on_hover'] == 'yes'? 'wk-hidden-hover' : ''; ?>  " href="#" wk-slidenav-next wk-slider-item="next"></a>
+                    <a class=" <?php echo esc_attr($contents['arrow_position']) == 'out'? 'wk-position-center-left-out' : 'wk-position-center-left'; ?> wk-position-medium wk-slidenav-small <?php echo esc_attr($contents['arrow_on_hover']) == 'yes'? 'wk-hidden-hover' : ''; ?> " href="#" wk-slidenav-previous wk-slider-item="previous"></a>
+                    <a class="<?php echo esc_attr($contents['arrow_position']) == 'out'? 'wk-position-center-right-out' : 'wk-position-center-right'; ?> wk-position-medium  wk-slidenav-small <?php echo esc_attr($contents['arrow_on_hover']) == 'yes'? 'wk-hidden-hover' : ''; ?>  " href="#" wk-slidenav-next wk-slider-item="next"></a>
                 <?php endif; ?>
 
             </div>
                 <?php if ($contents['dot_enable'] == 'yes'):?>
-                    <ul class="wk-slider-nav wk-dotnav wk-flex-<?php echo $contents['dot_nav_align'];?> wk-margin-medium-top"></ul>
+                    <ul class="wk-slider-nav wk-dotnav wk-flex-<?php echo esc_attr($contents['dot_nav_align']);?> wk-margin-medium-top"></ul>
                 <?php endif; ?>
 
         </div>

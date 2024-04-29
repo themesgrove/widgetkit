@@ -35,7 +35,7 @@
 
             <?php if ( has_post_thumbnail() ): ?>
                 <div class="items">
-                    <div class="col-md-<?php echo $settings['blog_3_post_column'];?> col-<?php echo $settings['blog_3_post_show'];?>">
+                    <div class="col-md-<?php echo esc_attr($settings['blog_3_post_column']);?> col-<?php echo esc_attr($settings['blog_3_post_show']);?>">
                         <div class="blog-wrapper ">
                             <figure class="overlay overlay-hover">
                                 <a href="<?php the_permalink(); ?>">
@@ -55,7 +55,7 @@
                             <?php endif; ?>
 
                             <h3 class="title ">
-                                <a href="<?php the_permalink();?>"><?php echo wp_trim_words( get_the_title(),4, ''); ?></a>
+                                <a href="<?php the_permalink();?>"><?php echo esc_html(wp_trim_words( get_the_title(),4, '')); ?></a>
                             </h3>
 
                             <?php if ($settings['author_position'] == 'middle'): ?>
@@ -69,7 +69,7 @@
                             
 
                                 <p class="desc">
-                                     <?php echo wp_trim_words( get_the_content(),10, ''); ?>
+                                     <?php echo esc_html(wp_trim_words( get_the_content(),10, '')); ?>
                                 </p>
 
                             <?php if ($settings['author_position'] == 'bottom'): ?>

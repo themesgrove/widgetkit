@@ -6,7 +6,7 @@
 
 ?>
 
-	<div id="<?php echo $id;?>" class="tgx-blog-1">
+	<div id="<?php echo esc_attr($id);?>" class="tgx-blog-1">
             <?php
                 $post_formats = array('audio', 'image', 'video', 'link', 'gallery');
                     $blog = array(
@@ -86,7 +86,7 @@
                             <?php if ($settings['meta_position'] == 'bottom'):?>
                                 <footer class="entry-footer">
                                 <?php if ($settings['choose_meta_option'] == 'button'):?>
-                                  <a class="btn-readmore" href="<?php the_permalink();?>"><?php echo $settings['read_more_text'];?></a>
+                                  <a class="btn-readmore" href="<?php the_permalink();?>"><?php echo esc_html($settings['read_more_text']);?></a>
                                 <?php else: ?>
                                      <?php if ( 'post' === get_post_type() ) : ?>
                                         <div class="entry-meta">
@@ -120,7 +120,7 @@
 
     <script type='text/javascript'>
           jQuery(document).ready(function($) {
-            jQuery("#<?php echo $id; ?>").addClass("owl-carousel").owlCarousel({
+            jQuery("#<?php echo esc_attr($id); ?>").addClass("owl-carousel").owlCarousel({
                   pagination: false,
                   margin:10,
                   dots:false,
@@ -147,7 +147,7 @@
                           items:1
                       },
                       1000:{
-                          items:<?php echo $settings['post_item_show'];?>
+                          items:<?php echo esc_attr($settings['post_item_show']);?>
                       }
                   }
                });

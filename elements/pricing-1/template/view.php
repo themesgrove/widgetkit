@@ -34,12 +34,12 @@
         }
 
         ?>
-        <div class="tgx-price-table text-<?php echo $settings['layout_position'];?>">
+        <div class="tgx-price-table text-<?php echo esc_attr($settings['layout_position']);?>">
             <?php if ( $settings['title_position'] == 'top' ) : ?>
                 <?php if ( $settings['heading'] ) : ?>
                     <div class="tgx-price-table__header">
                         <?php if ( ! empty( $settings['heading'] ) ) : ?>
-                            <h4 class="tgx-price-table__heading"><?php echo esc_attr($settings['heading']); ?></h4>
+                            <h4 class="tgx-price-table__heading"><?php echo esc_html($settings['heading']); ?></h4>
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
@@ -82,7 +82,7 @@
                 <?php if ( $settings['heading'] ) : ?>
                     <div class="tgx-price-table__header">
                         <?php if ( ! empty( $settings['heading'] ) ) : ?>
-                            <h4 class="tgx-price-table__heading"><?php echo esc_attr($settings['heading']); ?></h4>
+                            <h4 class="tgx-price-table__heading"><?php echo esc_html($settings['heading']); ?></h4>
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
@@ -98,7 +98,7 @@
                                     <i class="<?php echo esc_attr($item['item_icon']); ?>"></i>
                                 <?php endif; ?>
                                 <?php if ( ! empty( $item['item_text'] ) ) :
-                                    echo $item['item_text'];
+                                    echo esc_html($item['item_text']);
                                 else :
                                     echo '&nbsp;';
                                 endif;
@@ -112,7 +112,7 @@
             <?php if ( ! empty( $settings['button_text'] ) || ! empty( $settings['footer_additional_info'] ) ) : ?>
                 <div class="tgx-price-table__footer">
                     <?php if ( ! empty( $settings['button_text'] ) ) : ?>
-                        <a <?php echo $this->get_render_attribute_string( 'button' ); ?>>
+                        <a <?php echo esc_attr($this->get_render_attribute_string( 'button' )); ?>>
                             <?php esc_html_e($settings['button_text'], 'widgetkit-for-elementor'); ?>
                         </a>
                     <?php endif; ?>

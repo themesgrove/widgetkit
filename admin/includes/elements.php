@@ -259,7 +259,7 @@
     <div>
         <div
             class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-            <?php echo __('Pricing Single', 'widgetkit-for-elementor'); ?>
+            <?php echo esc_html__('Pricing Single', 'widgetkit-for-elementor'); ?>
             <label class="switch">
                 <input type="checkbox" id="widget-pricing-single" name="widget-pricing-single"
                     <?php checked(1, $this->widgetkit_get_settings['widget-pricing-single'], true) ?>>
@@ -405,7 +405,7 @@
     <div>
         <div
             class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-            <?php echo __('Search', 'widgetkit-for-elementor'); ?>
+            <?php echo esc_html__('Search', 'widgetkit-for-elementor'); ?>
             <label class="switch">
                 <input type="checkbox" id="widget-search" name="widget-search"
                     <?php checked(1, $this->widgetkit_get_settings['widget-search'], true) ?>>
@@ -417,7 +417,7 @@
     <div>
         <div
             class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-            <?php echo __('Site Social', 'widgetkit-for-elementor'); ?>
+            <?php echo esc_html__('Site Social', 'widgetkit-for-elementor'); ?>
             <label class="switch">
                 <input type="checkbox" id="widget-site-social" name="widget-site-social"
                     <?php checked(1, $this->widgetkit_get_settings['widget-site-social'], true) ?>>
@@ -429,7 +429,7 @@
     <div>
         <div
             class="wk-card wk-card-default wk-card-hover wk-card-body wk-card-small wk-flex wk-flex-between wk-flex-middle">
-            <?php echo __('Slider Animation', 'widgetkit-for-elementor'); ?>
+            <?php echo esc_html__('Slider Animation', 'widgetkit-for-elementor'); ?>
             <label class="switch">
                 <input type="checkbox" id="widget-slider-animation" name="widget-slider-animation"
                     <?php checked(1, $this->widgetkit_get_settings['widget-slider-animation'], true) ?>>

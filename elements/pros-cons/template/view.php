@@ -10,9 +10,9 @@
         <div class="feature-list-wrapper">
 
             <div class="col-md-12 column">
-                <h2 class="title <?php echo 'layout-'.$alignment ?>">
+                <h2 class="title <?php echo 'layout-'. esc_attr($alignment);?>">
                     <span class="icon">
-                        <i class="<?php echo $icon; ?>"></i>
+                        <i class="<?php echo esc_attr($icon); ?>"></i>
                     </span>
                     <span class="title-text"><?php echo esc_html($title); ?></span>
                 </h2>
@@ -20,10 +20,10 @@
                     <?php foreach($lists as $list): ?>
                         <li>
                             <?php if ($list['single_feature_icon']):?>
-                                <i class="<?php echo $list['single_feature_icon']; ?>"></i>
+                                <i class="<?php echo esc_attr($list['single_feature_icon']); ?>"></i>
                              <?php endif;?>
                             <span>
-                                <?php echo $list['single_feature_input']; ?>
+                                <?php echo esc_html($list['single_feature_input']); ?>
                             </span>
                         </li>
                     <?php endforeach; ?>

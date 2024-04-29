@@ -53,10 +53,10 @@
 ?>
 <figure>
     <?php if( $settings['choose_link'] == 'yes' && $settings['link']['url'] ) : ?>
-        <a <?php echo $this->get_render_attribute_string( 'link' ); ?>>
+        <a <?php echo esc_attr($this->get_render_attribute_string( 'link' )); ?>>
     <?php endif; ?>
 
-        <div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>></div>
+        <div <?php echo esc_attr($this->get_render_attribute_string( 'wrapper' )); ?>></div>
 
     <?php if( $settings['choose_link'] == 'yes' && $settings['link']['url'] ) : ?>
         </a>
