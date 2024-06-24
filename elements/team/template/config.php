@@ -38,6 +38,28 @@ class wkfe_team extends Widget_Base {
 		return [ 'widgetkit_elementor' ];
 	}
 
+	protected function wk_render_team_title($team)
+	{
+		if ($team['single_title']) {
+			$this->add_render_attribute('single_title', 'class', 'wk-card-title wk-margin-remove');
+			$this->add_inline_editing_attributes('single_title', 'none');
+
+			$title_html = esc_html($team['single_title']);
+			if (!empty($team['single_content_link']['url'])) {
+				$title_html = '<a ' . $this->get_render_attribute_string('link') . '>' . $title_html . '</a>';
+			}
+
+			$html = sprintf(
+				'<%1$s %2$s>%3$s</%1$s>',
+				Utils::validate_html_tag($team['header_tag']),
+				$this->get_render_attribute_string('single_title'),
+				$title_html
+			);
+
+			Utils::print_unescaped_internal_string($html);
+		}
+	}
+
 	/**
 	 * A list of style that the widgets is depended in
 	 **/

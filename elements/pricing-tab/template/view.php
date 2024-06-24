@@ -8,7 +8,6 @@
 ?>
 
     <div class="pricing-tab">
-
         <?php $count = 0; if ( ! empty( $settings['pricing_tabs'] ) ) : ?>
             <?php foreach( $settings['pricing_tabs'] as $item ) : $count++; ?>
                 <input class="<?php echo esc_attr($count);?>" type="radio" id="<?php echo esc_attr($counter); ?>" name="tab" <?php echo (0 == $counter) ? 'checked' : ''; ?>>
@@ -30,8 +29,6 @@
                     </span><!-- pricing-subtitle-->
                 </label><!--  Pricing-button -->
 
-
-                  
             <div class="pricing-content row">
                 <div class="pricing-content-wrapper">
 
@@ -75,7 +72,7 @@
 
                             <?php if ( ! empty( $item['tab_image']['url'] ) ) : ?>
                                 <div class="tgx-pricing-tab-image">
-                                    <img src="<?php echo esc_attr($item['tab_image']['url']); ?>" alt="
+                                    <img src="<?php echo esc_url($item['tab_image']['url']); ?>" alt="
                                     <?php echo esc_html($item['pricing_title']); ?>" />
                                 </div>
                             <?php endif; ?>
@@ -107,7 +104,7 @@
 
                         <?php if ( ! empty( $item['button_text'] ) ) : ?>
                             <div class="tgx-pricing-tab-footer"> 
-                                <a class="tgx-pricing-tab-btn" href="<?php echo esc_attr($item['link']['url']); ?>">
+                                <a class="tgx-pricing-tab-btn" href="<?php echo esc_url($item['link']['url']); ?>">
                                     <?php echo esc_html($item['button_text']); ?>   
                                 </a> 
                             </div><!-- pricing-tab-footer -->
@@ -116,9 +113,6 @@
                </div><!-- col-md-3 -->
             <?php endif; ?>
 
-
-
-              
             <?php if ($item['pricing_tab_enable_2'] == 'yes'): ?>
                 <div class="
                      <?php if ($item['pricing_tab_enable_3'] == 'yes' & $item['pricing_tab_enable_2'] == 'yes' & $item['pricing_tab_enable_1'] == 'yes'): ?>
@@ -150,19 +144,17 @@
 
                                   <?php if ( ! empty( $item['period_2'] ) ) : ?>
                                         <span class="period"> 
-                                            <?php echo esc_attr($item['period_2']); ?>
+                                            <?php echo esc_html($item['period_2']); ?>
                                         </span>
                                   <?php endif; ?>
                             </div><!-- pricing-tab-cost -->
 
                             <?php if ( ! empty( $item['tab_image_2']['url'] ) ) : ?>
                                 <div class="tgx-pricing-tab-image">
-                                    <img src="<?php echo esc_attr($item['tab_image_2']['url']); ?>" alt="<?php echo esc_attr($item['pricing_title_2']); ?>" />
+                                    <img src="<?php echo esc_url($item['tab_image_2']['url']); ?>" alt="<?php echo esc_attr($item['pricing_title_2']); ?>" />
                                 </div>
                             <?php endif; ?>
-
                             </div><!-- pricing-tab-headeing -->
-
 
                             <div class="tgx-pricing-tab-about">
                                 <?php if ( ! empty( $item['pricing_title_2'] ) ) : ?>
@@ -178,8 +170,6 @@
                                 <?php endif; ?>
                             </div><!-- pricing-tab-about -->
 
-                      
-
                         <?php if ( ! empty( $item['pricing_details_2'] ) ) : ?>
                              <div class="tgx-pricing-tab-feature">
                                  <?php echo wp_kses_post($item['pricing_details_2']); ?>
@@ -187,23 +177,19 @@
                         <?php endif; ?>
                     </div><!-- pricing-tab-wrapper -->
 
-
                     <?php if ( ! empty( $item['button_text_2'] ) ) : ?>
                         <div class="tgx-pricing-tab-footer"> 
-                            <a class="tgx-pricing-tab-btn" href="<?php echo esc_attr($item['link_2']['url']); ?>">
+                            <a class="tgx-pricing-tab-btn" href="<?php echo esc_url($item['link_2']['url']); ?>">
                                  <?php echo esc_html($item['button_text_2']); ?>   
                             </a> 
                         </div><!-- pricing-tab-footer -->
                     <?php endif; ?>
                 </div><!-- pricing-tab -->
             </div><!-- col-md-4 -->
-
         <?php endif; ?>
-
 
         <?php if ($item['pricing_tab_enable_3'] == 'yes'): ?>
             <div class="
-
                 <?php if ($item['pricing_tab_enable_3'] == 'yes' & $item['pricing_tab_enable_2'] == 'yes' & $item['pricing_tab_enable_1'] == 'yes'): ?>
                     <?php echo esc_attr("col-xs-12 col-md-6 col-lg-4"); ?>
 
@@ -237,11 +223,9 @@
                                 <?php endif; ?>
                             </div><!-- pricing-tab-cost -->
 
-                          
-
                             <?php if ( ! empty( $item['tab_image_3']['url'] ) ) : ?>
                                 <div class="tgx-pricing-tab-image">
-                                    <img src="<?php echo esc_attr($item['tab_image_3']['url']); ?>" alt="<?php echo esc_attr($item['pricing_title_3']); ?>" />
+                                    <img src="<?php echo esc_url($item['tab_image_3']['url']); ?>" alt="<?php echo esc_attr($item['pricing_title_3']); ?>" />
                                 </div>
                             <?php endif; ?>
                         </div><!-- pricing-tab-headeing -->
@@ -268,7 +252,7 @@
                     </div><!-- pricing-tab-wrapper -->
                     <?php if ( ! empty( $item['button_text_3'] ) ) : ?>
                         <div class="tgx-pricing-tab-footer"> 
-                            <a class="tgx-pricing-tab-btn" href="<?php echo esc_attr($item['link_3']['url']); ?>">
+                            <a class="tgx-pricing-tab-btn" href="<?php echo esc_url($item['link_3']['url']); ?>">
                                 <?php echo esc_html($item['button_text_3']);?>
                             </a> 
                         </div><!-- pricing-tab-footer -->

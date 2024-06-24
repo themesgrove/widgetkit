@@ -1,6 +1,4 @@
 <?php
-
-
 use Elementor\Widget_Base;
 use Elementor\Utils;
 use Elementor\Controls_Manager;

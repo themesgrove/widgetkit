@@ -20,7 +20,7 @@
                         foreach($site_social_default_list as $site_social):
                             $site_social_hover_color = $site_social["site_social_platform_hover_color"];
                             ?>
-                                <a style="color: <?php echo esc_attr($site_social_platform_icon_color); ?>" onMouseOver="this.style.color='<?php echo esc_attr($site_social_hover_color); ?>'" onMouseOut="this.style.color='<?php echo esc_attr($site_social_platform_icon_color); ?>'" href="<?php echo esc_attr($site_social['social_link']);?>"><i class="<?php echo esc_attr($site_social['social_icon_picker']);?>"></i></a>
+                                <a style="color: <?php echo esc_attr($site_social_platform_icon_color); ?>" onMouseOver="this.style.color='<?php echo esc_attr($site_social_hover_color); ?>'" onMouseOut="this.style.color='<?php echo esc_attr($site_social_platform_icon_color); ?>'" href="<?php echo esc_url($site_social['social_link']);?>"><i class="<?php echo esc_attr($site_social['social_icon_picker']);?>"></i></a>
                             <?php 
                         endforeach;
                     ?>

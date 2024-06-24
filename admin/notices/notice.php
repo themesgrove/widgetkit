@@ -7,4 +7,4 @@ $notice = array(
 	Thank you!',
 
 );
-echo json_encode($notice);
+echo wp_json_encode($notice);

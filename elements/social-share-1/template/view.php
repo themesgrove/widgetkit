@@ -10,7 +10,7 @@
         <div class="contact">
             <div class="contact-wrapper">
                 <div class="content">
-                    <img src="<?php echo esc_attr($settings['social_share_1_image']['url']);?>" alt="<?php echo esc_attr($settings['social_share_1_name']);?>"> 
+                    <img src="<?php echo esc_url($settings['social_share_1_image']['url']);?>" alt="<?php echo esc_attr($settings['social_share_1_name']);?>"> 
 
                     <aside>
                         <h2 class="person-name"><?php echo esc_html($settings['social_share_1_name']);?></h2>
@@ -30,7 +30,7 @@
                 <?php if ( ! empty( $settings['social_share_1_social_share'] ) ) : ?>
                     <?php foreach ( $settings['social_share_1_social_share'] as $social ) : ?>
                         <?php if ( ! empty( $social['social_share_1_social_link'] ) ) : ?>
-                            <a target="_blank" href="<?php  echo esc_attr($social['social_share_1_social_link']);?>" class="<?php  echo esc_attr(strtolower($social['social_share_1_title']));?>">
+                            <a target="_blank" href="<?php  echo esc_url($social['social_share_1_social_link']);?>" class="<?php  echo esc_attr(strtolower($social['social_share_1_title']));?>">
                                 <div class="social-content">
                                     <h2 class="social-name">
                                         <?php echo esc_html($social['social_share_1_title']);?>

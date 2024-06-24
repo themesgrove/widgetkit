@@ -1,12 +1,6 @@
 <?php
-// Silence is golden.
-
     $settings = $this->get_settings();
-
-
 ?>
-
-
     <div class="animation-text">
         <div class="text-slide">
             <h2 class="cd-headline <?php if ($settings['choose_animation_text'] == 'rotate') {

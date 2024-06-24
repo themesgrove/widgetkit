@@ -11,7 +11,7 @@
                     <?php if ( ! empty( $settings['image_external_link'] ) ) : ?>        
                         <a <?php if( $settings['image_external_link'] ['is_external'])
                                 { echo 'target="_blank"'; }else{ echo 'rel="nofollow"';}?>  
-                                href="<?php  echo esc_attr($settings['image_external_link']['url']);?>">
+                                href="<?php  echo esc_url($settings['image_external_link']['url']);?>">
                         <h2 class="title-wrapper">
                         <span class="team-title"><?php echo esc_html($settings['team_4_team_name']);?></span>
                             <strong>
@@ -26,7 +26,7 @@
                 <?php endif; ?>
         <div class="mc-content">
             <div class="img-container">
-                 <img src="<?php echo esc_attr($settings['team_4_team_image']['url']);?>" alt="<?php echo esc_attr($settings['team_4_team_name']);?>"> 
+                 <img src="<?php echo esc_url($settings['team_4_team_image']['url']);?>" alt="<?php echo esc_attr($settings['team_4_team_name']);?>"> 
             </div>
             <?php if ( ! empty( $settings['team_4_content'] ) ) : ?>
                 <div class="mc-description">
@@ -46,7 +46,7 @@
                         <?php if ( ! empty( $social['team_4_social_link'] ) ) : ?>
                             <a <?php if($social['team_4_social_link'] ['is_external'])
                                     { echo 'target="_blank"'; }else{ echo 'rel="nofollow"';}?>
-                            href="<?php  echo esc_attr($social['team_4_social_link']['url']);?>" class="<?php  echo esc_attr(strtolower($social['team_4_title']));?>">
+                            href="<?php  echo esc_url($social['team_4_social_link']['url']);?>" class="<?php  echo esc_attr(strtolower($social['team_4_title']));?>">
                                  <i class="<?php echo esc_attr( $social['team_4_social_icon']); ?>"></i>
                             </a>
                         <?php endif; ?>
