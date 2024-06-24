@@ -273,6 +273,9 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+= 2.5.1 =
+Fix – Vulnerability and Security issues.
+
 = 2.5.0 =
 Fix – Security issues.
 
