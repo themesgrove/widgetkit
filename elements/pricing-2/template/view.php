@@ -29,7 +29,7 @@
 
                       <?php if ( ! empty( $settings['pricing_2_icon_image']['url'] ) ) : ?>
                           <div class="tgx-single-image">
-                            <img src="<?php echo esc_attr($settings['pricing_2_icon_image']['url']); ?>" alt="<?php echo esc_attr($settings['pricing_2_pricing_title']); ?>" />
+                            <img src="<?php echo esc_url($settings['pricing_2_icon_image']['url']); ?>" alt="<?php echo esc_attr($settings['pricing_2_pricing_title']); ?>" />
                           </div><!-- .table-image -->
                       <?php endif; ?>
                 </div> <!-- .tx-table-heading -->
@@ -72,7 +72,7 @@
 
         <?php if ( ! empty( $settings['single_button_text'] ) ) : ?>
             <div class="tgx-single-footer"> 
-                <a class="tgx-single-btn" href="<?php echo esc_attr($settings['single_link']['url']); ?>">
+                <a class="tgx-single-btn" href="<?php echo esc_url($settings['single_link']['url']); ?>">
                     <?php echo esc_html($settings['single_button_text']); ?>
                 </a> 
             </div><!-- .tgx-single-footer -->

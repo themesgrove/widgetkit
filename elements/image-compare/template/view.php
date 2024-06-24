@@ -6,8 +6,8 @@
          <div class="row">
             <div id="image-compare-<?php echo esc_attr($id); ?>" class="image-compare-container">
                 
-                <img src="<?php echo esc_attr($image_compare['before_image']['url']); ?>" alt="before">
-                <img src="<?php echo esc_attr($image_compare['after_image']['url']); ?>" alt="After">
+                <img src="<?php echo esc_url($image_compare['before_image']['url']); ?>" alt="before">
+                <img src="<?php echo esc_url($image_compare['after_image']['url']); ?>" alt="After">
             </div>
         </div>
     </div>

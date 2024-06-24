@@ -10,7 +10,7 @@
             <div class="team-each-wrap">
                 <div class="team-block">
                     <div class="team-image">            
-                            <img src="<?php echo esc_attr($settings['team_image']['url']);?>" alt="<?php echo esc_attr($settings['team_name']);?>"> 
+                            <img src="<?php echo esc_url($settings['team_image']['url']);?>" alt="<?php echo esc_attr($settings['team_name']);?>"> 
    
                     </div>
                     <?php if ( ! empty( $settings['social_share_2'] ) ) : ?>
@@ -34,7 +34,7 @@
                             <?php if ( ! empty( $settings['image_external_link'] ) ) : ?>        
                                 <a <?php if( $settings['image_external_link'] ['is_external'])
                                         { echo 'target="_blank"'; }else{ echo 'rel="nofollow"';}?>  
-                                        href="<?php  echo esc_attr($settings['image_external_link']['url']);?>">
+                                        href="<?php  echo esc_url($settings['image_external_link']['url']);?>">
                                 <h4 class="team-title"><?php echo esc_html($settings['team_name']);?></h4>
                                 </a>
                             <?php endif; ?>  

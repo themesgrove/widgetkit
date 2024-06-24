@@ -5,7 +5,7 @@
     use Elementor\Icons_Manager;
 ?>
     <div class="wk-tilt-box">
-        <div id="wk-tilt-<?php echo esc_attr($id);?>" class="tilt-element <?php echo esc_attr($tilt_box['content_position']== 'overlay')? 'wk-flex wk-flex-' .esc_attr($content_overlay_position) : '';?>" data-tilt  <?php echo esc_attr(esc_attr($tilt_box['select_effect']) == 'glare')? 'data-tilt-glare data-tilt-max-glare="0.8"' : '';?>  <?php echo ($tilt_box['select_effect'] == 'reverse')? 'data-tilt-reverse="true"' : '';?> <?php echo esc_attr($tilt_box['select_effect'] == 'floating')? 'data-tilt-reset="true"' : '';?> <?php echo esc_attr($tilt_box['select_effect'] == 'listening')? 'data-tilt-full-page-listening' : '';?>  <?php echo esc_attr($tilt_box['select_effect'] == 'x')? 'data-tilt-axis="y"' : '';?> <?php echo esc_attr($tilt_box['select_effect'] == 'y')? 'data-tilt-axis="x"' : '';?> >
+        <div id="wk-tilt-<?php echo esc_attr($id);?>" class="tilt-element <?php echo esc_attr($tilt_box['content_position']== 'overlay')? 'wk-flex wk-flex-' .esc_attr($content_overlay_position) : '';?>" data-tilt  <?php echo esc_attr($tilt_box['select_effect'] == 'glare')? 'data-tilt-glare data-tilt-max-glare="0.8"' : '';?>  <?php echo esc_attr($tilt_box['select_effect'] == 'reverse')? 'data-tilt-reverse="true"' : '';?> <?php echo esc_attr($tilt_box['select_effect'] == 'floating')? 'data-tilt-reset="true"' : '';?> <?php echo esc_attr($tilt_box['select_effect'] == 'listening')? 'data-tilt-full-page-listening' : '';?>  <?php echo esc_attr($tilt_box['select_effect'] == 'x')? 'data-tilt-axis="y"' : '';?> <?php echo esc_attr($tilt_box['select_effect'] == 'y')? 'data-tilt-axis="x"' : '';?> >
 
             <?php if ($tilt_box['content_position']== 'overlay'):?>
                 <?php if ($tilt_box['content_icon'] || $tilt_box['content_title'] || $tilt_box['content_description'] || $tilt_box['content_button']):?>
@@ -22,7 +22,7 @@
                             <?php if ($tilt_box['content_title']):?>
                                 <h3 class="wk-tilt-card-title">
                                     <a href="<?php echo esc_url($tilt_box['content_link']['url']); ?>" 
-                                        <?php echo esc_url($tilt_box['content_link']['is_external']) ? 'target="_blank"' : ''; ?>>
+                                        <?php echo esc_attr($tilt_box['content_link']['is_external']) ? 'target="_blank"' : ''; ?>>
                                         <?php echo esc_html($tilt_box['content_title']); ?>
                                     </a>
                                 </h3>

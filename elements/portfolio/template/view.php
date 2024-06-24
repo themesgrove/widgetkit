@@ -178,7 +178,7 @@
                                     <div class="portfolio-btn text-center">
                                         <?php if($portfolio['portfolio_full_image']):?>
                                             <a class="icon-search" 
-                                                href="<?php echo esc_html($portfolio['portfolio_full_image']['url']);?>">
+                                                href="<?php echo esc_url($portfolio['portfolio_full_image']['url']);?>">
                                                 <i class='fa fa-plus'></i>
                                             </a>
                                         <?php endif; ?>

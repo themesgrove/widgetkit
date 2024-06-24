@@ -27,7 +27,7 @@ class wkfe_testimonial extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Testimonial', 'widgetkit-for-elementor' );
+		return esc_html__( 'Testimonial Test', 'widgetkit-for-elementor' );
 	}
 
 	public function get_icon() {
@@ -284,25 +284,6 @@ class wkfe_testimonial extends Widget_Base {
 				'title_field' => '{{{testimonial_title}}}',
 			]
 		);
-	        $this->add_control(
-				'custom_header_tag',
-				[
-					'label' => __( 'Title HTML Tag', 'widgetkit-for-elementor' ),
-					'type'  => Controls_Manager::SELECT,
-					'options' => [
-						'h1' => 'H1',
-						'h2' => 'H2',
-						'h3' => 'H3',
-						'h4' => 'H4',
-						'h5' => 'H5',
-						'h6' => 'H6',
-						'div' => 'div',
-						'span' => 'span',
-						'p' => 'p',
-					],
-					'default' => 'h4',
-				]
-			);
         $this->end_controls_section();
 #	end of content
 

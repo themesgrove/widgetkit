@@ -3,15 +3,12 @@
 
     $settings = $this->get_settings();
     $id = $this->get_id();
-
 ?>
-
-
     <div id="<?php echo esc_attr($id);?>" class="tgx-social-share-2 profile">
 
         <?php if ($settings['social_share_2_image']):?> 
             <div class="photo">
-                <img src="<?php echo esc_attr($settings['social_share_2_image']['url']);?>" alt="<?php echo esc_attr($settings['social_share_2_name']);?>">
+                <img src="<?php echo esc_url($settings['social_share_2_image']['url']);?>" alt="<?php echo esc_attr($settings['social_share_2_name']);?>">
             </div>
         <?php endif;?>
 
@@ -28,7 +25,7 @@
             <?php if ( ! empty( $settings['social_share_2_social_share'] ) ) : ?>
                 <?php foreach ( $settings['social_share_2_social_share'] as $social ) : ?>
                     <?php if ( ! empty( $social['social_share_2_social_link'] ) ) : ?>
-                        <a target="_blank" href="<?php  echo esc_attr($social['social_share_2_social_link']);?>" class="<?php  echo esc_attr(strtolower($social['social_share_2_title']));?>">
+                        <a target="_blank" href="<?php  echo esc_url($social['social_share_2_social_link']);?>" class="<?php  echo esc_attr(strtolower($social['social_share_2_title']));?>">
                                 <i class="<?php echo esc_attr( $social['social_share_2_social_icon']); ?>"></i>
                         </a><!-- social-wrapper -->
                     <?php endif; ?>
