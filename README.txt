@@ -4,8 +4,8 @@ Contributors: Themesgrove, parvezvai, themexpert
 Donate link: https://themesgrove.com/
 Tags: elementor, add-ons, elementor addons, elementor widgets, woocommerce, learndash, learnpress, widgets, woocommerce addons, learndash addons, sensei, sensei addons, countdown, timer, slider, team, testimonial, social-share, carousel, portfolio, pricing, widgetkit
 Requires at least: 5.0
-Tested up to: 6.5.2
-Stable tag: 2.5.0
+Tested up to: 6.6.2
+Stable tag: 2.5.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -271,8 +271,13 @@ The latest version of Elementor.
 PHP 5.4 or greater.
 
 
-
 == Changelog ==
+= 2.5.2 =
+Fix – Vulnerability and Security issues of Blog Carousel.
+
+= 2.5.1 =
+Fix – Vulnerability and Security issues.
+
 = 2.5.0 =
 Fix – Security issues.
 
