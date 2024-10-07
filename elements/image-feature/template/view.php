@@ -1,13 +1,8 @@
 <?php
 // Silence is golden.
     use Elementor\Icons_Manager;
-
     $settings = $this->get_settings();
-
 ?>
-
-
-
     <div class="tgx-image-feature">               
         <!-- feature Start -->
         <div class="block drop-shadow ">
@@ -22,7 +17,7 @@
                             rel="nofollow" 
                         <?php endif; ?>
 
-                        href="<?php echo esc_attr($settings['feature_link']['url']);?>"> 
+                        href="<?php echo esc_url($settings['feature_link']['url']);?>"> 
                             <h4 class="feature-title"><?php echo esc_html($settings['feature_title']); ?></h4>
                         </a>
                     <?php else: ?>
@@ -36,7 +31,7 @@
 
                     <?php if ($settings['choose_media'] == 'image'): ?>
                         <?php if( $settings['feature_image']['url']):?>
-                            <img src="<?php echo esc_attr($settings['feature_image']['url']); ?>" alt="<?php the_title(); ?>"> 
+                            <img src="<?php echo esc_url($settings['feature_image']['url']); ?>" alt="<?php the_title(); ?>"> 
                         <?php endif; ?>
 
                     <?php else: ?>
@@ -56,7 +51,7 @@
                     <?php if ($settings['choose_media'] == 'image'): ?>
                         
                         <?php if( $settings['feature_image']['url']):?>
-                            <img class= "tgx-media" src="<?php echo esc_attr($settings['feature_image']['url']); ?>" alt="<?php the_title(); ?>"> 
+                            <img class= "tgx-media" src="<?php echo esc_url($settings['feature_image']['url']); ?>" alt="<?php the_title(); ?>"> 
                         <?php endif; ?>
 
                     <?php else: ?>
@@ -82,7 +77,7 @@
                         <?php else: ?>
                             rel="nofollow" 
                         <?php endif; ?>
-                        href="<?php echo esc_attr($settings['feature_link']['url']);?>"> 
+                        href="<?php echo esc_url($settings['feature_link']['url']);?>"> 
                             <h4 class="feature-title"><?php echo esc_html($settings['feature_title']); ?></h4>
                         </a>
                     <?php else: ?>

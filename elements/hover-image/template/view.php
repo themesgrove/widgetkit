@@ -1,8 +1,6 @@
 <?php
     $settings = $this->get_settings();
 ?>
-
-
     <div class="tgx-hover-image">
         <figure class="<?php echo esc_attr($settings['hover_image_hover_animation']); ?>">
 
@@ -10,8 +8,8 @@
                 
                 <div class="hover-image">
                     <?php if ( $settings['select_link_to'] == 'url' ):?>
-                        <a target="<?php  echo esc_attr($settings['hover_image_link']['is_external']) ? '_blank' : '_self'?>" href="<?php echo esc_attr($settings['hover_image_link']['url']);?>">
-                            <img src="<?php echo esc_attr($settings['hover_image']['url']); ?>" alt="hover-image">
+                        <a target="<?php  echo esc_attr($settings['hover_image_link']['is_external']) ? '_blank' : '_self'?>" href="<?php echo esc_url($settings['hover_image_link']['url']);?>">
+                            <img src="<?php echo esc_url($settings['hover_image']['url']); ?>" alt="hover-image">
                             <?php if ($settings['hover_image_caption_title']):?>
 
                                 <figcaption class="image-caption">
@@ -27,8 +25,8 @@
                             <?php endif; ?>
                         </a>
                     <?php else: ?>
-                        <a href="<?php echo esc_attr($settings['hover_image']['url']); ?>" data-elementor-open-lightbox="<?php echo esc_attr($settings['hover_image_lightbox']);?>">
-                            <img src="<?php echo esc_attr($settings['hover_image']['url']); ?>" alt="hover-image">
+                        <a href="<?php echo esc_url($settings['hover_image']['url']); ?>" data-elementor-open-lightbox="<?php echo esc_attr($settings['hover_image_lightbox']);?>">
+                            <img src="<?php echo esc_url($settings['hover_image']['url']); ?>" alt="hover-image">
                             <?php if ($settings['hover_image_caption_title']):?>
 
                                 <figcaption class="image-caption">

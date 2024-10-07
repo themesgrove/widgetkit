@@ -69,7 +69,7 @@ $id_int = substr($this->get_id_int(), 0, 3);
                     } ?>
                 <?php elseif ('image' == $tab['tabs_content_type']) : ?>
                     <?php if (!empty($tab['tab_image'])) {?>
-                        <img src="<?php esc_url($tab['tab_image']['url']);?>" alt="">
+                        <img src="<?php echo esc_url($tab['tab_image']['url']);?>" alt="">
                         <?php
                     } ?>
                 <?php endif; ?>

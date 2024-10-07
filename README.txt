@@ -272,6 +272,7 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+
 = 2.5.2 =
 Fix – Vulnerability and Security issues of Blog Carousel.
 

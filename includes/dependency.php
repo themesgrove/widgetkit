@@ -28,8 +28,13 @@ class WKFE_Dependency{
              * if plugin not found
              */
             $activation_url = wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=elementor'), 'install-plugin_elementor');
-            $message = sprintf(__('<strong>Widgetkit for Elementor</strong> requires <strong>Elementor</strong> plugin to be installed and activated. Please install <strong>Elementor</strong> to continue.', 'widgetkit-for-elementor'), '<strong>', '</strong>');
+            $message = sprintf(
+                __('<strong>Widgetkit for Elementor</strong> requires <strong>Elementor</strong> plugin to be installed and activated. Please install <strong>Elementor</strong> to continue.', 'widgetkit-for-elementor'),
+                '<strong>',
+                '</strong>'
+            );
             $button_text = __('Install Elementor Now', 'widgetkit-for-elementor');
+
         }else{
             /**
              * if found
@@ -38,8 +43,8 @@ class WKFE_Dependency{
             $message = __('<strong>Widgetkit for Elementor</strong> requires <strong>Elementor</strong> plugin to be active. Please activate Elementor to continue.', 'widgetkit-for-elementor');
             $button_text = __('Activate Elementor Now', 'widgetkit-for-elementor');
         }
-        $button = '<p><a href="' . $activation_url . '" class="button-primary">' . $button_text . '</a></p>';
-        printf('<div class="error"><p>%1$s</p>%2$s</div>', esc_html__($message, 'widgetkit'), esc_html__($button, 'widgetkit'));
+        $button = '<p><a href="' . esc_url($activation_url) . '" class="button-primary">' . esc_html($button_text) . '</a></p>';
+        printf('<div class="error"><p>%1$s</p>%2$s</div>', wp_kses_post($message), $button);
     }
 
     public function get_all_plugin_in_my_site($plugin_base_name){

@@ -1,9 +1,9 @@
 <?php
-    $testimonials = $settings = $this->get_settings(); 
-    $id = $this->get_id();
-    $header_tag_arr_for_testimonial = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
-    $testimonial_header_tag = esc_html(wp_kses($testimonials['custom_header_tag'], $header_tag_arr_for_testimonial));
-    use Elementor\Group_Control_Image_Size;
+use Elementor\Group_Control_Image_Size;
+$testimonials = $settings = $this->get_settings(); 
+$id = $this->get_id();
+$header_tag_arr_for_testimonial = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
+$testimonial_header_tag = esc_html(wp_kses($testimonials['custom_header_tag'], $header_tag_arr_for_testimonial));
 ?>
 
 <div class="wk-testimonial" wk-slider="center:<?php echo esc_attr($testimonials['center_mode_enable']) == 'yes'? 'true' :'false'; ?>; sets:<?php echo esc_attr($testimonials['set_mode_enable']) == 'yes'? 'true' :'false'; ?>; autoplay:<?php echo esc_attr($testimonials['autoplay_mode_enable']) == 'yes'? 'true' :'false'; ?>; autoplay-interval:<?php echo esc_attr($testimonials['content_interval_option']);?>;">

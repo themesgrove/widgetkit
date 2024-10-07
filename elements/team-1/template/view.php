@@ -9,7 +9,7 @@
             <!-- First Team Block -->
             <div class="team-each-wrap">
                 <div class="team-block">
-                    <img src="<?php echo esc_attr($settings['team_image']['url']);?>" alt="<?php echo esc_attr($settings['team_name']);?>">   
+                    <img src="<?php echo esc_url($settings['team_image']['url']);?>" alt="<?php echo esc_attr($settings['team_name']);?>">   
                     <?php if ( ! empty( $settings['content'] ) ) : ?>
                         <div class="team-content">
                             <p><?php echo esc_html($settings['content']); ?></p>
@@ -24,7 +24,7 @@
                             <?php if ( ! empty( $settings['image_external_link'] ) ) : ?>        
                                 <a <?php if( $settings['image_external_link'] ['is_external'])
                                         { echo 'target="_blank"'; }else{ echo 'rel="nofollow"';}?>  
-                                        href="<?php  echo esc_attr($settings['image_external_link']['url']);?>">
+                                        href="<?php  echo esc_url($settings['image_external_link']['url']);?>">
                                 <h4 class="team-title"><?php echo esc_html($settings['team_name']);?></h4>
                                 </a>
                             <?php endif; ?>
@@ -41,7 +41,7 @@
                                 <?php if ( ! empty( $social['social_link'] ) ) : ?>
                                     <a <?php if($social['social_link'] ['is_external'])
                                     { echo esc_attr('target="_blank"'); }else{ echo esc_attr('rel="nofollow"');}?> 
-                                            href="<?php  echo esc_attr($social['social_link']['url']);?>" class="<?php  echo esc_attr(strtolower($social['title']));?>">
+                                            href="<?php  echo esc_url($social['social_link']['url']);?>" class="<?php  echo esc_attr(strtolower($social['title']));?>">
                                          <i class="<?php echo esc_attr( $social['social_icon']); ?>"></i>
                                     </a>
                                 <?php endif; ?>

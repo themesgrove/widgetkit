@@ -58,12 +58,12 @@
 							<?php if ($galleries['content_position'] == 'overlay'): ?>
 
 					            <?php if ($gallery['gallery_thumb_image']['url']): ?>
-					            	<img src="<?php echo esc_attr($gallery['gallery_thumb_image']['url']);?>" alt="<?php echo esc_attr($gallery['gallery_title']);?>">
+					            	<img src="<?php echo esc_url($gallery['gallery_thumb_image']['url']);?>" alt="<?php echo esc_attr($gallery['gallery_title']);?>">
 					            <?php endif ;?>
 
 					            <div class="wk-padding-small wk-position-absolute wk-position-center wk-text-center wk-gallery-body">
 						               <?php if ($gallery['demo_link']['url']): ?>
-						           		<a href="<?php echo esc_attr($gallery['demo_link']['url']); ?>" <?php echo esc_attr($gallery['demo_link']['is_external']) ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
+						           		<a href="<?php echo esc_url($gallery['demo_link']['url']); ?>" <?php echo esc_attr($gallery['demo_link']['is_external']) ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
 						            		<h5 class="wk-text-medium wk-margin-small wk-card-title"> <?php echo esc_html($gallery['gallery_title']);?>
 						            		</h5>
 										</a>
@@ -80,7 +80,7 @@
 						            	<?php if ($galleries['lightcase_enable'] == 'yes' || $galleries['link_enable'] == 'yes'):?>
 							            	<div class="gallery-lightbox wk-text-center">
 							            		<?php if ($galleries['link_enable'] == 'yes'):?>
-									            	<a class="icon" href="<?php echo esc_attr($gallery['demo_link']['url']); ?>" <?php echo esc_attr($gallery['demo_link']['is_external']) ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
+									            	<a class="icon" href="<?php echo esc_url($gallery['demo_link']['url']); ?>" <?php echo esc_attr($gallery['demo_link']['is_external']) ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
 									            		<span class="fa fa-link"></span>
 									            	</a>
 								            	<?php endif; ?>
@@ -98,10 +98,10 @@
 									    <?php if ($gallery['gallery_thumb_image']['url']): ?>
 							            	<?php if ($gallery['demo_link']['url']): ?>
 								            	<a class="img-link" href="<?php echo esc_url($gallery['demo_link']['url']); ?>" <?php echo esc_attr($gallery['demo_link']['is_external']) ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
-								            		<img src="<?php echo esc_attr($gallery['gallery_thumb_image']['url']);?>" alt="<?php echo esc_attr($gallery['gallery_title']);?>">
+								            		<img src="<?php echo esc_url($gallery['gallery_thumb_image']['url']);?>" alt="<?php echo esc_attr($gallery['gallery_title']);?>">
 								            	</a>
 							            	<?php else: ?>
-							            		<img class="img-link" src="<?php echo esc_attr($gallery['gallery_thumb_image']['url']);?>" alt="<?php echo esc_attr($gallery['gallery_title']);?>">
+							            		<img class="img-link" src="<?php echo esc_url($gallery['gallery_thumb_image']['url']);?>" alt="<?php echo esc_attr($gallery['gallery_title']);?>">
 							            	<?php endif;?>
 							            <?php endif ;?>
 
@@ -109,11 +109,11 @@
 							            	<div class="gallery-lightbox wk-text-center wk-position-absolute wk-position-center">
 							            		<?php if ($galleries['link_enable'] == 'yes'): ?>
 							            			 <?php if ($galleries['button_text']): ?>
-										            	<a class="button-text" href="<?php echo esc_attr($gallery['demo_link']['url']); ?>" <?php echo esc_attr($gallery['demo_link']['is_external']) ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
+										            	<a class="button-text" href="<?php echo esc_url($gallery['demo_link']['url']); ?>" <?php echo esc_attr($gallery['demo_link']['is_external']) ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
 										            	 	<?php echo esc_html($galleries['button_text']); ?>
 										            	</a>
 										            <?php else: ?>
-										            	<a class="top-icon" href="<?php echo esc_attr($gallery['demo_link']['url']); ?>" <?php echo esc_attr($gallery['demo_link']['is_external']) ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
+										            	<a class="top-icon" href="<?php echo esc_url($gallery['demo_link']['url']); ?>" <?php echo esc_attr($gallery['demo_link']['is_external']) ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
 										            	<a class="top-icon" href="<?php echo esc_attr($gallery['demo_link']['url']); ?>" <?php echo esc_attr($gallery['demo_link']['is_external']) ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
 										            	 	<span class="fa fa-link"></span>
 										            	</a>		
@@ -121,7 +121,7 @@
 							            		<?php endif; ?>
 
 								            	<?php if ($galleries['lightcase_enable'] == 'yes'):?>
-													<a class="top-icon" href="<?php echo esc_attr($gallery['gallery_thumb_image']['url']);?>" <?php echo esc_attr($galleries['lightcase_enable']) == 'yes'? ' wk-lightbox="animation:' . esc_attr($light_case_animation) . '"' : '';?>><span class="fa fa-search"></span></a>
+													<a class="top-icon" href="<?php echo esc_url($gallery['gallery_thumb_image']['url']);?>" <?php echo esc_attr($galleries['lightcase_enable']) == 'yes'? ' wk-lightbox="animation:' . esc_attr($light_case_animation) . '"' : '';?>><span class="fa fa-search"></span></a>
 												<?php endif; ?>
 							            	</div>
 						            	<?php endif; ?>
@@ -129,7 +129,7 @@
 
 						            <div class="wk-padding-small wk-text-<?php echo esc_attr($galleries['caption_align']);?> wk-gallery-body">
 						               <?php if ($gallery['demo_link']['url']): ?>
-						           		<a href="<?php echo esc_attr($gallery['demo_link']['url']); ?>" <?php echo esc_attr($gallery['demo_link']['is_external']) ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
+						           		<a href="<?php echo esc_url($gallery['demo_link']['url']); ?>" <?php echo esc_attr($gallery['demo_link']['is_external']) ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
 						            		<h5 class="wk-text-medium wk-margin-small wk-card-title wk-margin-remove-top"> <?php echo esc_html($gallery['gallery_title']);?>
 						            		</h5>
 										</a>

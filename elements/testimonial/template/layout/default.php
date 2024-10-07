@@ -25,7 +25,7 @@ use Elementor\Group_Control_Image_Size;
                 <?php endif; ?>
         <?php endif; ?>
         <?php if ($testimonial['testimonial_title']): ?>
-            <<?php echo esc_attr($testimonial_header_tag);?>  class="wk-card-title wk-margin-remove">
+            <h4 class="wk-card-title wk-margin-remove">
                 <?php if ($testimonial['content_demo_link']): ?>
                         <a href="<?php echo esc_url($testimonial['content_demo_link']['url']); ?>" <?php echo esc_attr($testimonial['content_demo_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>><?php echo esc_html($testimonial['testimonial_title']); ?></a>
                 <?php else: ?>
@@ -36,7 +36,7 @@ use Elementor\Group_Control_Image_Size;
                         <span class="wk-text-meta wk-inline-block right"><?php echo esc_html($testimonial['testimonial_designation']); ?></span>
                     <?php endif; ?>
                 <?php endif; ?>
-        </<?php echo esc_attr($testimonial_header_tag);?>>  
+            </h4>  
         <?php endif; ?>
 
         <?php if ($testimonial['testimonial_designation']): ?>
