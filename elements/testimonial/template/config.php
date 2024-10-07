@@ -27,7 +27,7 @@ class wkfe_testimonial extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Testimonial Test', 'widgetkit-for-elementor' );
+		return esc_html__( 'Testimonial', 'widgetkit-for-elementor' );
 	}
 
 	public function get_icon() {
