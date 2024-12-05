@@ -81,7 +81,7 @@
                           items:1
                       },
                       1000:{
-                          items:<?php echo esc_attr($settings['testimonial_items']); ?>
+                          items: <?php echo wp_json_encode((int) $settings['testimonial_items']); ?>
                       }
                   }
                });
