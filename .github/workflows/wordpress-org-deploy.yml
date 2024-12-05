@@ -6,7 +6,7 @@ on:
 jobs:
   tag:
     name: New tag
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Clone
         uses: actions/checkout@v2
@@ -19,7 +19,7 @@ jobs:
       - name: Setup nodejs
         uses: actions/setup-node@v3
         with:
-          node-version: 14.15
+          node-version: "16.x"
           cache: "npm"
 
       - name: Build
@@ -31,6 +31,9 @@ jobs:
 
       - name: WordPress Plugin Deploy
         uses: 10up/action-wordpress-plugin-deploy@master
+        with:
+          slug: widgetkit-for-elementor
+          source-dir: ./ # Adjust if your plugin folder is different
         env:
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
