@@ -24,9 +24,18 @@ class WKFE_Appsero_Init{
         require_once WK_PATH . '/vendor/appsero/client/src/Client.php';
         }
 
-        $client = new Appsero\Client( '91bf222e-d4ce-4fdb-97dc-30a95fa0bff7', 'Widgetkit For Elementor', WK_FILE );
+        if (! class_exists('Appsero\Updater')) {
+            require __DIR__ . '/vendor/appsero/updater/src/Updater.php';
+        }
 
-        $client->insights()->init();
+        // $client = new Appsero\Client( '91bf222e-d4ce-4fdb-97dc-30a95fa0bff7', 'Widgetkit For Elementor', WK_FILE );
+
+        // $client->insights()->init();
+
+        $client = new Appsero\Client('a4a8da5b-b419-4656-98e9-4a42e9044891', 'Widgetkit For Elementor', WK_FILE);
+
+        // Active automatic updater
+        Appsero\Updater::init($client);
 
     }   
 
