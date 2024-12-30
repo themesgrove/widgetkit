@@ -2,7 +2,7 @@
 /*
 Plugin Name: All-in-One Addons for Elementor - WidgetKit
 Description: Everything you need to create a stunning website with <strong>Elementor, WooCommerce, LearnDash, Sensei & LearnPress</strong> and more.
-Version: 2.5.2
+Version: 2.5.3
 Text Domain: widgetkit-for-elementor
 Author: Themesgrove
 Author URI: https://themesgrove.com
@@ -12,7 +12,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 @package  WidgetKit_For_Elementor
 Domain Path: /languages
 WC requires at least: 5.0.0
-WC tested up to: 6.9.0
+WC tested up to: 9.5.1
 */
 
 /**
@@ -21,7 +21,7 @@ WC tested up to: 6.9.0
  */
 if (!defined('ABSPATH')) exit;
 
-define('WK_VERSION', '2.5.2');
+define('WK_VERSION', '2.5.3');
 define('WK_FILE', __FILE__);
 define('WK_URL', plugins_url('/', __FILE__));
 define('WK_PATH', plugin_dir_path(__FILE__));
@@ -31,7 +31,7 @@ class WidgetKit_For_Elementor
 
     public function __construct()
     {
-        add_action('plugins_loaded', array($this, 'plugin_setup'));
+        add_action('init', array($this, 'plugin_setup'));
         add_action('elementor/init', array($this, 'elementor_init'));
         add_action('init', array($this, 'elementor_resources'), -999);
         add_action('admin_head', array($this, 'remove_all_admin_notice'));

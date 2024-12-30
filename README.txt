@@ -4,8 +4,10 @@ Contributors: Themesgrove, parvezvai, themexpert
 Donate link: https://themesgrove.com/
 Tags: elementor, add-ons, elementor addons, elementor widgets, woocommerce, learndash, learnpress, widgets, woocommerce addons, learndash addons, sensei, sensei addons, countdown, timer, slider, team, testimonial, social-share, carousel, portfolio, pricing, widgetkit
 Requires at least: 5.0
-Tested up to: 6.7
-Stable tag: 2.5.2
+<<<<<<< HEAD
+Tested up to: 6.7.1
+Stable tag: 2.5.3
+>>>>>>> master
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -272,6 +274,9 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+= 2.5.3 =
+Fix - Ensured proper loading of translations to ensure compatibility with WordPress standards.
+Fix - Undefined array key issue of the testimonial element.
 
 = 2.5.2 =
 Fix – Vulnerability and Security issues of the Elementor Widgets.
