@@ -15,8 +15,8 @@
             <div class="<?php echo esc_attr($search_icon_alignment); ?> wkfe-search-form-wrapper" style="display:none;">
                 <form action="<?php echo esc_attr(home_url( '/' )); ?>" method="get">
                     <label class="screen-reader-text" for="search">Search in <?php echo esc_attr(home_url( '/' )); ?></label>
-                    <input placeholder="<?php echo esc_attr__($search_form_input_placeholder, 'widgetkit-for-elementor'); ?>" type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
-                    <input type="submit" id="searchsubmit" value="<?php echo esc_attr__( $search_form_input_button_text, 'widgetkit-for-elementor' ) ?>" />
+                    <input placeholder="<?php echo esc_attr($search_form_input_placeholder, 'widgetkit-for-elementor'); ?>" type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
+                    <input type="submit" id="searchsubmit" value="<?php echo esc_attr( $search_form_input_button_text, 'widgetkit-for-elementor' ) ?>" />
                 </form>
             </div>
         </div>
