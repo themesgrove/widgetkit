@@ -2,15 +2,16 @@
 
 Contributors: Themesgrove, parvezvai, themexpert
 Donate link: https://themesgrove.com/
-Tags: elementor, add-ons, elementor addons, elementor widgets, woocommerce, learndash, learnpress, widgets, woocommerce addons, learndash addons, sensei, sensei addons, countdown, timer, slider, team, testimonial, social-share, carousel, portfolio, pricing, widgetkit
+Tags: elementor widgets, woocommerce, widgets, sensei addons, widgetkit
 Requires at least: 5.0
-Tested up to: 6.7.1
+Tested up to: 6.8
 Stable tag: 2.5.4
 Requires PHP: 7.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPL3
+License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
-Everything you need to create a stunning website with Elementor, WooCommerce, LearnDash, LearnPress, and more. Growing collection of premium quality elements for FREE. Content widgets, creative widgets, dynamic widgets, and more to count on.
+
+Create stunning websites with Elementor using premium widgets for WooCommerce, LearnDash, and LearnPress. Free collection of content, creative, and dynamic widgets.
 
 == Description ==
 If <a href="https://wordpress.org/plugins/elementor/">Elementor page builder</a> elements are not enough, try WidgetKit Addon and boost your page building experience. More than 55+ creative elements come with WidgetKit. You will be able to come out from the boundary of ordinary design and do something creative. 
