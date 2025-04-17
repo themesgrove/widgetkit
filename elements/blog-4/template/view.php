@@ -53,7 +53,7 @@ $id = $this->get_id();
                                         <div class="date">
                                             <span>
                                                 <a href="<?php the_permalink(); ?>">
-                                                    <?php esc_html_e(date_i18n((get_option('date_format'))), 'widgetkit-for-elementor'); ?>
+                                                    <?php echo esc_html(date_i18n((get_option('date_format')))); ?>
                                                 </a>
                                             </span>
                                         </div> <!-- date -->
@@ -74,15 +74,16 @@ $id = $this->get_id();
                                             <header class="entry-header">
                                                 <h4 class="entry-title">
                                                     <a href="<?php the_permalink(); ?>">
-                                                        <?php esc_html_e(wp_trim_words(get_the_title(), 6, ''), 'widgetkit-for-elementor'); ?>
-
+                                                        <?php echo esc_html(wp_trim_words(get_the_title(), 6, '')); ?>
                                                     </a>
                                                 </h4>
                                             </header><!-- .entry-header -->
 
                                             <?php if (!in_array(get_post_format(), $blog_post_formats)) : ?>
                                                 <div class="entry-content">
-                                                    <p><?php esc_html_e(wp_trim_words(get_the_content(), $settings['blog_4_show_content'], ''), 'widgetkit-for-elementor'); ?></p>
+                                                    <p>
+                                                        <?php echo esc_html(wp_trim_words(get_the_content(), $settings['blog_4_show_content'], '')); ?>
+                                                    </p>
                                                 </div><!-- .entry-content -->
                                             <?php endif; ?>
 
@@ -153,16 +154,15 @@ $id = $this->get_id();
                                             <header class="entry-header">
                                                 <h4 class="entry-title">
                                                     <a href="<?php the_permalink(); ?>">
-                                                        <?php esc_html_e(wp_trim_words(get_the_title(), 6, ''), 'widgetkit-for-elementor'); ?>
-
+                                                        <?php echo esc_html(wp_trim_words(get_the_title(), 6, '')); ?>
                                                     </a>
                                                 </h4>
                                             </header><!-- .entry-header -->
 
                                             <?php if (!in_array(get_post_format(), $blog_post_formats)) : ?>
                                                 <div class="entry-content">
-                                                    <p><?php esc_html_e(wp_trim_words(get_the_content(), $settings['blog_4_show_content'], ''), 'widgetkit-for-elementor'); ?>
-
+                                                    <p>
+                                                        <?php echo esc_html(wp_trim_words(get_the_content(), $settings['blog_4_show_content'], '')); ?>
                                                     </p>
 
                                                 </div><!-- .entry-content -->
