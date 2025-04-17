@@ -82,7 +82,6 @@
 
     <?php if ($tilt_box['effect_enable'] == 'yes'):?> 
 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
         <script type="text/javascript">
 
             VanillaTilt.init(document.querySelector("#wk-tilt-<?php echo esc_attr($id);?> .tilt-element"), {

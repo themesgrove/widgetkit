@@ -21,6 +21,19 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class wkfe_tilt_box extends Widget_Base {
 
+    public function __construct($data = [], $args = null) {
+        parent::__construct($data, $args);
+        
+        // Register vanilla-tilt script
+        wp_register_script(
+            'vanilla-tilt',
+            'https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js',
+            [], // No dependencies
+            '1.7.0',
+            true // Load in footer
+        );
+    }
+
 	public function get_name() {
 		return 'widgetkit-for-elementor-tilt-box';
 	}
@@ -53,7 +66,7 @@ class wkfe_tilt_box extends Widget_Base {
 	public function get_script_depends() {
 		return [ 
 			'widgetkit-main',
-            // 'vanilla-tilt',
+            'vanilla-tilt',
             'uikit-js',
             'uikit-icons',
 		 ];
