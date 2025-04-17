@@ -71,15 +71,16 @@
                              <header class="entry-header">
                                 <h4 class="entry-title cart-title">
                                     <a href="<?php the_permalink();?>">
-                                        <?php esc_html_e(wp_trim_words( get_the_title(),6, ''), 'widgetkit-for-elementor'); ?>
-                                        
+                                        <?php echo esc_html(wp_trim_words(get_the_title(), 6, '')); ?>
                                     </a>
                                 </h4>       
                             </header><!-- .entry-header -->
 
                             <?php if (!in_array(get_post_format(), $blog_5_post_formats)):?>
                                 <div class="entry-content">
-                                    <p class="card-description content"><?php esc_html_e(wp_trim_words( get_the_content(),20, ''), 'widgetkit-for-elementor'); ?></p>
+                                    <p class="card-description content">
+                                        <?php echo esc_html(wp_trim_words(get_the_content(), 20, '')); ?>
+                                    </p>
                                 </div><!-- .entry-content -->
                             <?php endif; ?>
 
