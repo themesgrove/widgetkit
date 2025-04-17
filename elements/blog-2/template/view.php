@@ -47,7 +47,7 @@
                                 <header class="entry-header">
                                     <h4 class="entry-title">
                                         <a href="<?php the_permalink();?>">
-                                            <?php esc_html_e(wp_trim_words( get_the_title(),4, ''), 'widgetkit-for-elementor'); ?>
+                                            <?php echo esc_html(wp_trim_words(get_the_title(), 4, '')); ?>
                                         </a>
                                     </h4>       
                                 </header><!-- .entry-header -->
@@ -96,7 +96,7 @@
                                 <?php if ($settings['date_enable']): ?>
                                     
                                 <span class="date-format">
-                                   <?php esc_html_e(date_i18n((get_option('date_format'))), 'widgetkit-for-elementor'); ?>
+                                   <?php echo esc_html(date_i18n((get_option('date_format')))); ?>
                                 </span>
                                 <?php endif ?>
 
@@ -111,7 +111,9 @@
                                 </span>
                             <?php endif ?>
                              <h2 class="entry-header">
-                                 <a class="entry-title" href="<?php the_permalink();?>"><?php esc_html_e(wp_trim_words( get_the_title(),8, ''), 'widgetkit-for-elementor'); ?></a>
+                                 <a class="entry-title" href="<?php the_permalink();?>">
+                                    <?php echo esc_html(wp_trim_words(get_the_title(), 8, '')); ?>
+                                </a>
                             </h2>
                             <?php if ($settings['meta_position_2'] == 'bottom'):?>
                                 <span class="author-meta">
@@ -122,7 +124,7 @@
 
                             <?php if (!in_array(get_post_format(), $post_formats)):?>
                                 <div class="entry-content">
-                                    <p><?php esc_html_e(wp_trim_words( get_the_content(),35, ''), 'widgetkit-for-elementor'); ?></p>
+                                    <p><?php echo esc_html(wp_trim_words(get_the_content(), 35, '')); ?></p>
                                 </div><!-- .entry-content -->
                             <?php endif; ?>
                             
@@ -174,7 +176,7 @@
                                 <header class="entry-header">
                                     <h4 class="entry-title">
                                         <a href="<?php the_permalink();?>">
-                                            <?php esc_html_e(wp_trim_words( get_the_title(),4, ''), 'widgetkit-for-elementor'); ?>
+                                            <?php echo esc_html(wp_trim_words(get_the_title(), 4, '')); ?>
                                         </a>
                                     </h4>       
                                 </header><!-- .entry-header -->
