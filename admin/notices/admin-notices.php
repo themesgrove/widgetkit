@@ -13,7 +13,7 @@ function wk_td_admin_ads()
     <img style="max-width:200px"
         src="<?php echo esc_attr(plugin_dir_url(__FILE__) . '../assets/images/thrivedesk-logo.png'); ?>">
     <p style="font-size:16px">
-        <?php esc_html_e('Your customers deserve better customer support and You deserve the peace of mind.', 'widgetkit');?>
+        <?php esc_html_e('Your customers deserve better customer support and You deserve the peace of mind.', 'widgetkit-for-elementor');?>
 		 <a href="<?php echo esc_url('https://www.thrivedesk.com');?>"><strong>Try ThriveDesk</strong></a>
     </p>
 </div>
