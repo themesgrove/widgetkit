@@ -461,7 +461,7 @@ class wkfe_blog_1 extends Widget_Base {
 					'type'      => Controls_Manager::SELECT,
 					'default'   => 'bottom',
 					'options'   => [
-						'top'		=> esc_html__('Top'),
+						'top'		=> esc_html__('Top', 'widgetkit-for-elementor'),
 						'bottom'    => esc_html__( 'Bottom', 'widgetkit-for-elementor' ),
 					],
 					'condition' => [
