@@ -112,7 +112,7 @@
                 <div class="tgx-price-table__footer">
                     <?php if ( ! empty( $settings['button_text'] ) ) : ?>
                         <a <?php echo esc_attr($this->get_render_attribute_string( 'button' )); ?>>
-                            <?php esc_html_e($settings['button_text'], 'widgetkit-for-elementor'); ?>
+                            <?php echo esc_html($settings['button_text']); ?>
                         </a>
                     <?php endif; ?>
                 </div>
