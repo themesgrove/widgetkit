@@ -573,7 +573,7 @@ class wkfe_testimonial extends Widget_Base {
 				$this->add_control(
 					'title_colord',
 					[
-						'label' => __( 'Title Color', 'plugin-domain' ),
+						'label' => __( 'Title Color', 'widgetkit-for-elementor' ),
 						'type' => \Elementor\Controls_Manager::COLOR,
 						'selectors' => [
 							'{{WRAPPER}} .test-title' => 'color: {{VALUE}};',
