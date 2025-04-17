@@ -24,10 +24,10 @@ class wkfe_tilt_box extends Widget_Base {
     public function __construct($data = [], $args = null) {
         parent::__construct($data, $args);
         
-        // Register vanilla-tilt script
+        // Register vanilla-tilt script from local assets
         wp_register_script(
             'vanilla-tilt',
-            'https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js',
+            plugins_url('assets/js/vanilla-tilt.min.js', dirname(__FILE__)),
             [], // No dependencies
             '1.7.0',
             true // Load in footer
