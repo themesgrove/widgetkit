@@ -130,7 +130,7 @@ class wkfe_tilt_box extends Widget_Base {
                 [
                     'label' => __( 'Title', 'widgetkit-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( '', 'widgetkit-for-elementor' ),
+                    'default' => '',
                 ]
             );
 
@@ -139,7 +139,7 @@ class wkfe_tilt_box extends Widget_Base {
                 [
                     'label' => __( 'Description', 'widgetkit-for-elementor' ),
                     'type' => Controls_Manager::TEXTAREA,
-                    'default' => __( '', 'widgetkit-for-elementor' ),
+                    'default' => '',
                 ]
             );
 
@@ -148,7 +148,7 @@ class wkfe_tilt_box extends Widget_Base {
                 [
                     'label' => __( 'Button Text', 'widgetkit-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( '', 'widgetkit-for-elementor' ),
+                    'default' => '',
                 ]
             );
 
