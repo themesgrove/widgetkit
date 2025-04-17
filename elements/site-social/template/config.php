@@ -133,7 +133,7 @@ class wkfe_site_social extends Widget_Base {
 		$repeater->add_control(
 			'site_social_platform_hover_color',
 			[
-				'label' => __( 'Hover Color', 'widgetkit-pro' ),
+				'label' => __( 'Hover Color', 'widgetkit-for-elementor' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .wkfe-site-social .wkfe-site-social-platform-wrapper a:hover' => 'color: {{VALUE}}',
@@ -233,13 +233,13 @@ class wkfe_site_social extends Widget_Base {
                 $this->start_controls_tab(
                     'site_social_icon_style_normal',
                     [
-                        'label' => __('Normal', 'widgetkit-pro'),
+                        'label' => __('Normal', 'widgetkit-for-elementor'),
                     ]
                 );
 					$this->add_control(
 						'site_social_icon_color',
 						[
-							'label' => __( 'Color', 'widgetkit-pro' ),
+							'label' => __( 'Color', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-site-social .click-handler' => 'color: {{VALUE}}',
@@ -249,7 +249,7 @@ class wkfe_site_social extends Widget_Base {
 					$this->add_control(
 						'site_social_icon_background_color',
 						[
-							'label' => __( 'Background', 'widgetkit-pro' ),
+							'label' => __( 'Background', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-site-social .click-handler' => 'background-color: {{VALUE}}',
@@ -263,13 +263,13 @@ class wkfe_site_social extends Widget_Base {
                 $this->start_controls_tab(
                     'site_social_icon_style_hover',
                     [
-                        'label' => __('Hover/Active', 'widgetkit-pro'),
+                        'label' => __('Hover/Active', 'widgetkit-for-elementor'),
                     ]
                 );
 					$this->add_control(
 						'site_social_icon_hover_color',
 						[
-							'label' => __( 'Icon', 'widgetkit-pro' ),
+							'label' => __( 'Icon', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-site-social .click-handler:hover' => 'color: {{VALUE}}',
@@ -280,7 +280,7 @@ class wkfe_site_social extends Widget_Base {
 					$this->add_control(
 						'site_social_icon_hover_background_color',
 						[
-							'label' => __( 'Background', 'widgetkit-pro' ),
+							'label' => __( 'Background', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-site-social .click-handler:hover' => 'background: {{VALUE}} !important',
@@ -305,7 +305,7 @@ class wkfe_site_social extends Widget_Base {
 			$this->add_responsive_control(
                 'site_social_icon_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'widgetkit-pro' ),
+                    'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -317,7 +317,7 @@ class wkfe_site_social extends Widget_Base {
 			$this->add_responsive_control(
                 'site_social_icon_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
+                    'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -330,7 +330,7 @@ class wkfe_site_social extends Widget_Base {
 			$this->add_responsive_control(
                 'site_social_icon_margin',
                 [
-                    'label' => esc_html__( 'Margin', 'widgetkit-pro' ),
+                    'label' => esc_html__( 'Margin', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -372,7 +372,7 @@ class wkfe_site_social extends Widget_Base {
 			$this->add_control(
 				'site_social_platform_icon_color',
 				[
-					'label' => __( 'Color', 'widgetkit-pro' ),
+					'label' => __( 'Color', 'widgetkit-for-elementor' ),
 					'type' => Controls_Manager::COLOR,
 					'default' => "#131418",
 					'selectors' => [
@@ -384,7 +384,7 @@ class wkfe_site_social extends Widget_Base {
 			$this->add_control(
 				'site_social_platform_background_color',
 				[
-					'label' => __( 'Background', 'widgetkit-pro' ),
+					'label' => __( 'Background', 'widgetkit-for-elementor' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .wkfe-site-social .wkfe-site-social-platform-wrapper' => 'background-color: {{VALUE}}',
@@ -395,7 +395,7 @@ class wkfe_site_social extends Widget_Base {
 			$this->add_responsive_control(
                 'site_social_platform_icon_gap',
                 [
-                    'label' => esc_html__( 'Icon Gap', 'widgetkit-pro' ),
+                    'label' => esc_html__( 'Icon Gap', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::DIMENSIONS,
 					'allowed_dimensions' => 'horizontal',
                     'size_units' => [ 'px', '%' ],
@@ -409,7 +409,7 @@ class wkfe_site_social extends Widget_Base {
 			$this->add_responsive_control(
                 'site_social_platform_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
+                    'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -430,7 +430,7 @@ class wkfe_site_social extends Widget_Base {
 			$this->add_control(
                 'site_social_form_platform_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'widgetkit-pro' ),
+                    'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px' ],
                     'selectors'  => [
