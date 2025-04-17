@@ -22,7 +22,7 @@ class wkfe_contact extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Contact', 'widgetkit-pro' );
+		return esc_html__( 'Contact', 'widgetkit-for-elementor' );
 	}
 
 	public function get_icon() {
@@ -59,13 +59,13 @@ class wkfe_contact extends Widget_Base {
 	$this->start_controls_section(
 		'content_icon_picker',
 		[
-			'label' => esc_html__( 'Icon', 'widgetkit-pro' ),
+			'label' => esc_html__( 'Icon', 'widgetkit-for-elementor' ),
 		]
 	);
 		$this->add_control(
 			'contact_icon_handler',
 			[
-				'label' => esc_html__( 'Icon', 'widgetkit-pro' ),
+				'label' => esc_html__( 'Icon', 'widgetkit-for-elementor' ),
 				'type'              => Controls_Manager::ICONS,
 				'default'    =>  [
 					'value'     => 'fa fa-phone-alt',
@@ -81,15 +81,15 @@ class wkfe_contact extends Widget_Base {
 	$this->start_controls_section(
 		'section_text_contact_form',
 		[
-			'label' => esc_html__( 'Contact', 'widgetkit-pro' ),
+			'label' => esc_html__( 'Contact', 'widgetkit-for-elementor' ),
 		]
 	);
 		$this->add_control(
 			'contact_header',
 				[
-					'label' => esc_html__( 'Header', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Header', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::TEXT,
-					'default' => esc_html__( 'Contact Us', 'widgetkit-pro' ),
+					'default' => esc_html__( 'Contact Us', 'widgetkit-for-elementor' ),
 					'dynamic' => [
 						'active' => true,
 					]
@@ -98,9 +98,9 @@ class wkfe_contact extends Widget_Base {
 		$this->add_control(
 			'contact_title',
 				[
-					'label' => esc_html__( 'Title', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Title', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::TEXT,
-					'default' => esc_html__( '880.132.165.4987', 'widgetkit-pro' ),
+					'default' => esc_html__( '880.132.165.4987', 'widgetkit-for-elementor' ),
 					'dynamic' => [
 						'active' => true,
 					]
@@ -109,9 +109,9 @@ class wkfe_contact extends Widget_Base {
 		$this->add_control(
 			'contact_content',
 			[
-				'label'       => __( 'Content', 'widgetkit-pro' ),
+				'label'       => __( 'Content', 'widgetkit-for-elementor' ),
 				'type' => Controls_Manager::WYSIWYG,
-				'default' => esc_html__('In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.', 'widgetkit-pro'),
+				'default' => esc_html__('In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.', 'widgetkit-for-elementor'),
 			]
 		);
 	$this->end_controls_section();
@@ -123,7 +123,7 @@ class wkfe_contact extends Widget_Base {
 		$this->start_controls_section(
 			'section_control_contact_box_position',
 			[
-				'label' => __('Contact Box Position', 'widgetkit-pro'),
+				'label' => __('Contact Box Position', 'widgetkit-for-elementor'),
 			]
 		);
 
@@ -151,13 +151,13 @@ class wkfe_contact extends Widget_Base {
 		$this->start_controls_section(
 			'section_widgetkit_pro_box',
 			[
-				'label' => esc_html__( 'Go Premium for more layout & feature', 'widgetkit-pro' ),
+				'label' => esc_html__( 'Go Premium for more layout & feature', 'widgetkit-for-elementor' ),
 			]
 		);
 			$this->add_control(
 				'wkfe_control_go_pro',
 				[
-					'label' => __('Unlock more possibilities', 'widgetkit-pro'),
+					'label' => __('Unlock more possibilities', 'widgetkit-for-elementor'),
 					'type' => Controls_Manager::CHOOSE,
 					'default' => '1',
 					'description' => '<div class="elementor-nerd-box">
@@ -175,27 +175,27 @@ class wkfe_contact extends Widget_Base {
 		$this->start_controls_section(
 			'section_contact_icon_layout',
 			[
-				'label' => esc_html__( 'Icon', 'widgetkit-pro' ),
+				'label' => esc_html__( 'Icon', 'widgetkit-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 			$this->add_responsive_control(
 				'contact_icon_alignment',
 				[
-					'label'  => esc_html__( 'Alignment', 'widgetkit-pro' ),
+					'label'  => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::CHOOSE,
 					'default' => 'center',
 					'options' => [
 						'left' => [
-							'title' => esc_html__( 'Left', 'widgetkit-pro' ),
+							'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
 							'icon'  => 'eicon-text-align-left',
 						],
 						'center' => [
-							'title' => esc_html__( 'Center', 'widgetkit-pro' ),
+							'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
 							'icon'  => 'eicon-text-align-center',
 						],
 						'right' => [
-							'title' => esc_html__( 'Right', 'widgetkit-pro' ),
+							'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
 							'icon'  => 'eicon-text-align-right',
 						],
 					],
@@ -207,7 +207,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_control(
 				'contact_icon_size',
 				[
-					'label'   => esc_html__( 'Size', 'widgetkit-pro' ),
+					'label'   => esc_html__( 'Size', 'widgetkit-for-elementor' ),
 					'type'    => Controls_Manager::SLIDER,
 					'default' => [
 						'size' =>16,
@@ -234,13 +234,13 @@ class wkfe_contact extends Widget_Base {
                 $this->start_controls_tab(
                     'contact_icon_style_normal',
                     [
-                        'label' => __('Normal', 'widgetkit-pro'),
+                        'label' => __('Normal', 'widgetkit-for-elementor'),
                     ]
                 );
 					$this->add_control(
 						'contact_icon_color',
 						[
-							'label' => __( 'Color', 'widgetkit-pro' ),
+							'label' => __( 'Color', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon' => 'color: {{VALUE}}',
@@ -250,7 +250,7 @@ class wkfe_contact extends Widget_Base {
 					$this->add_control(
 						'contact_icon_background_color',
 						[
-							'label' => __( 'Background', 'widgetkit-pro' ),
+							'label' => __( 'Background', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon' => 'background-color: {{VALUE}}',
@@ -264,13 +264,13 @@ class wkfe_contact extends Widget_Base {
                 $this->start_controls_tab(
                     'contact_icon_style_hover',
                     [
-                        'label' => __('Hover/Active', 'widgetkit-pro'),
+                        'label' => __('Hover/Active', 'widgetkit-for-elementor'),
                     ]
                 );
 					$this->add_control(
 						'contact_icon_hover_color',
 						[
-							'label' => __( 'Icon', 'widgetkit-pro' ),
+							'label' => __( 'Icon', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon:hover' => 'color: {{VALUE}}',
@@ -281,7 +281,7 @@ class wkfe_contact extends Widget_Base {
 					$this->add_control(
 						'contact_icon_hover_background_color',
 						[
-							'label' => __( 'Background', 'widgetkit-pro' ),
+							'label' => __( 'Background', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-contact .contact-click-handler .contact-handler-icon:hover' => 'background: {{VALUE}} !important',
@@ -306,7 +306,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_responsive_control(
                 'contact_icon_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'widgetkit-pro' ),
+                    'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -318,7 +318,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_responsive_control(
                 'contact_icon_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
+                    'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -331,7 +331,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_responsive_control(
                 'contact_icon_margin',
                 [
-                    'label' => esc_html__( 'Margin', 'widgetkit-pro' ),
+                    'label' => esc_html__( 'Margin', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -347,14 +347,14 @@ class wkfe_contact extends Widget_Base {
 		$this->start_controls_section(
 			'contact_box_style',
 			[
-				'label' => esc_html__( 'Contact Box', 'widgetkit-pro' ),
+				'label' => esc_html__( 'Contact Box', 'widgetkit-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 			$this->add_responsive_control(
 				'search_form_position',
 				[
-					'label' => esc_html__( 'Box Position', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Box Position', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::DIMENSIONS,
 					'allowed_dimensions' => 'vertical',
 					'size_units' => [ 'px', '%' ],
@@ -366,20 +366,20 @@ class wkfe_contact extends Widget_Base {
 			$this->add_responsive_control(
 				'content_alignment',
 				[
-					'label'  => esc_html__( 'Alignment', 'widgetkit-pro' ),
+					'label'  => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::CHOOSE,
 					'default' => 'center',
 					'options' => [
 						'left' => [
-							'title' => esc_html__( 'Left', 'widgetkit-pro' ),
+							'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
 							'icon'  => 'fa fa-align-left',
 						],
 						'center' => [
-							'title' => esc_html__( 'Center', 'widgetkit-pro' ),
+							'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
 							'icon'  => 'fa fa-align-center',
 						],
 						'right' => [
-							'title' => esc_html__( 'Right', 'widgetkit-pro' ),
+							'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
 							'icon'  => 'fa fa-align-right',
 						],
 					],
@@ -391,7 +391,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_control(
 				'contact_box_background_color',
 				[
-					'label' => __( 'Background', 'widgetkit-pro' ),
+					'label' => __( 'Background', 'widgetkit-for-elementor' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper' => 'background: {{VALUE}} !important',
@@ -402,7 +402,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_responsive_control(
 				'contact_box_padding',
 				[
-					'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'selectors'  => [
@@ -418,14 +418,14 @@ class wkfe_contact extends Widget_Base {
 		$this->start_controls_section(
 			'contact_Header_style',
 			[
-				'label' => esc_html__( 'Header', 'widgetkit-pro' ),
+				'label' => esc_html__( 'Header', 'widgetkit-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 			$this->add_control(
 				'content_header_color',
 				[
-					'label' => __( 'Color', 'widgetkit-pro' ),
+					'label' => __( 'Color', 'widgetkit-for-elementor' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-header' => 'color: {{VALUE}}',
@@ -435,7 +435,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_group_control(
 				Group_Control_Typography::get_type(),
 				[
-					'label' => __( 'Typography', 'widgetkit-pro' ),
+					'label' => __( 'Typography', 'widgetkit-for-elementor' ),
 					'name' => 'content_header_typography',
 					'selector' => '{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-header',
 				]
@@ -443,7 +443,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_control(
 				'content_header_background',
 				[
-					'label' => __( 'Background', 'widgetkit-pro' ),
+					'label' => __( 'Background', 'widgetkit-for-elementor' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-header' => 'background: {{VALUE}}',
@@ -460,7 +460,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_control(
 				'content_header_border_radius',
 				[
-					'label' => esc_html__( 'Border Radius', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px' ],
 					'selectors'  => [
@@ -471,7 +471,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_responsive_control(
 				'content_header_padding',
 				[
-					'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'selectors'  => [
@@ -483,7 +483,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_responsive_control(
 				'content_header_margin',
 				[
-					'label' => esc_html__( 'Margin', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Margin', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'selectors'  => [
@@ -499,14 +499,14 @@ class wkfe_contact extends Widget_Base {
 		$this->start_controls_section(
 			'contact_title_style',
 			[
-				'label' => esc_html__( 'Title', 'widgetkit-pro' ),
+				'label' => esc_html__( 'Title', 'widgetkit-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 			$this->add_control(
 				'content_title_color',
 				[
-					'label' => __( 'Color', 'widgetkit-pro' ),
+					'label' => __( 'Color', 'widgetkit-for-elementor' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-title' => 'color: {{VALUE}}',
@@ -516,7 +516,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_group_control(
 				Group_Control_Typography::get_type(),
 				[
-					'label' => __( 'Typography', 'widgetkit-pro' ),
+					'label' => __( 'Typography', 'widgetkit-for-elementor' ),
 					'name' => 'content_title_typography',
 					'selector' => '{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-title',
 				]
@@ -524,7 +524,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_control(
 				'content_title_background',
 				[
-					'label' => __( 'Background', 'widgetkit-pro' ),
+					'label' => __( 'Background', 'widgetkit-for-elementor' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .content-title' => 'background: {{VALUE}}',
@@ -541,7 +541,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_control(
 				'content_title_border_radius',
 				[
-					'label' => esc_html__( 'Border Radius', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px' ],
 					'selectors'  => [
@@ -552,7 +552,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_responsive_control(
 				'content_title_padding',
 				[
-					'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'selectors'  => [
@@ -564,7 +564,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_responsive_control(
 				'content_title_margin',
 				[
-					'label' => esc_html__( 'Margin', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Margin', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'selectors'  => [
@@ -581,14 +581,14 @@ class wkfe_contact extends Widget_Base {
 		$this->start_controls_section(
 			'contact_contact_style',
 			[
-				'label' => esc_html__( 'Contact', 'widgetkit-pro' ),
+				'label' => esc_html__( 'Contact', 'widgetkit-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 			$this->add_control(
 				'content__color',
 				[
-					'label' => __( 'Color', 'widgetkit-pro' ),
+					'label' => __( 'Color', 'widgetkit-for-elementor' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .contact-content' => 'color: {{VALUE}}',
@@ -598,7 +598,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_group_control(
 				Group_Control_Typography::get_type(),
 				[
-					'label' => __( 'Typography', 'widgetkit-pro' ),
+					'label' => __( 'Typography', 'widgetkit-for-elementor' ),
 					'name' => 'content__typography',
 					'selector' => '{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .contact-content',
 				]
@@ -606,7 +606,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_control(
 				'content__background',
 				[
-					'label' => __( 'Background', 'widgetkit-pro' ),
+					'label' => __( 'Background', 'widgetkit-for-elementor' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .contact-content' => 'background: {{VALUE}}',
@@ -623,7 +623,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_control(
 				'content__border_radius',
 				[
-					'label' => esc_html__( 'Border Radius', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px' ],
 					'selectors'  => [
@@ -634,7 +634,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_responsive_control(
 				'content__padding',
 				[
-					'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'selectors'  => [
@@ -646,7 +646,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_responsive_control(
 				'content__margin',
 				[
-					'label' => esc_html__( 'Margin', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Margin', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'selectors'  => [
@@ -662,7 +662,7 @@ class wkfe_contact extends Widget_Base {
 		$this->start_controls_section(
 			'contact_triangle_style',
 			[
-				'label' => esc_html__( 'Triangle', 'widgetkit-pro' ),
+				'label' => esc_html__( 'Triangle', 'widgetkit-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -671,7 +671,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_control(
 				'triangle_background',
 				[
-					'label' => __( 'Background', 'widgetkit-pro' ),
+					'label' => __( 'Background', 'widgetkit-for-elementor' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .wkfe-contact .wkfe-contact-content-wrapper .arrow-up' => 'border-bottom-color: {{VALUE}}',
@@ -682,7 +682,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_control(
 				'triangle_size',
 				[
-					'label'   => esc_html__( 'Size', 'widgetkit-pro' ),
+					'label'   => esc_html__( 'Size', 'widgetkit-for-elementor' ),
 					'type'    => Controls_Manager::SLIDER,
 					'default' => [
 						'size' =>15,
@@ -705,7 +705,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_responsive_control(
 				'triangle_top_right',
 				[
-					'label' => esc_html__( 'Position', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Position', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'allowed_dimensions' => ['top', 'right'],
@@ -720,7 +720,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_responsive_control(
 				'trianle_top_left',
 				[
-					'label' => esc_html__( 'Position', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Position', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'allowed_dimensions' => ['top', 'left'],
@@ -735,7 +735,7 @@ class wkfe_contact extends Widget_Base {
 			$this->add_responsive_control(
 				'trianle_top_center',
 				[
-					'label' => esc_html__( 'Position', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Position', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', '%' ],
 					'allowed_dimensions' => ['top'],
