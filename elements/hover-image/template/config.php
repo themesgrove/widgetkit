@@ -152,12 +152,12 @@ class wkfe_hover_image extends Widget_Base {
 		$this->add_control(
 			'select_link_to',
 			[
-				'label' => __( 'Choose Lightbox', 'elementor' ),
+				'label' => __( 'Choose Lightbox', 'widgetkit-for-elementor' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'url',
 				'options' => [
-					'url' => __( 'URL', 'elementor' ),
-					'lightbox' => __( 'Lightbox', 'elementor' ),
+					'url' => __( 'URL', 'widgetkit-for-elementor' ),
+					'lightbox' => __( 'Lightbox', 'widgetkit-for-elementor' ),
 				],
 			]
 		);
