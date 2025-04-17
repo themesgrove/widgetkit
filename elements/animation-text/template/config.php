@@ -111,7 +111,7 @@ class wkfe_animation_text extends Widget_Base {
 		      	[
 		          'label' => esc_html__( 'Suffix Title', 'widgetkit-for-elementor' ),
 		          'type'  => Controls_Manager::TEXTAREA,
-		          'default' => esc_html__( '', 'widgetkit-for-elementor' ),
+		          'default' => '',
 		    	]
 	    );
 	$this->end_controls_section();
