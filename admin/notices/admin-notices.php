@@ -3,6 +3,7 @@
 // Ads for ThriveDesk
 add_action('admin_notices', 'wk_td_admin_ads');
 add_action('admin_init','wk_td_ads_dismiss_notice');
+
 function wk_td_admin_ads()
 {
 	if (get_option("wk-td-ads-notice")) {
@@ -20,8 +21,12 @@ function wk_td_admin_ads()
 <?php
 }
 
+/**
+ * Dismiss the ThriveDesk notice
+ */
 function wk_td_ads_dismiss_notice(){
-	if( isset($_GET['dismissed']) && $_GET['dismissed'] == 1 ){
-		update_option('wk-td-ads-notice', 1);
-	}
+    if( isset($_GET['dismissed']) && $_GET['dismissed'] == 1 && 
+        isset($_GET['nonce']) && wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['nonce'])), 'wk_td_dismiss_notice')){
+        update_option('wk-td-ads-notice', 1);
+    }
 }
