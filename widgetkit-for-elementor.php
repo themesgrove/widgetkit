@@ -103,7 +103,7 @@ class WidgetKit_For_Elementor
     public function remove_all_admin_notice($hook)
     {
         global $wp;
-        $current_url = add_query_arg(array($_GET), $wp->request);
+        $current_url = add_query_arg(array($_GET), $wp->request); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         $current_url_slug = explode("=", $current_url);
         if (count($current_url_slug) > 1) :
             if ($current_url && $current_url_slug[1] === 'widgetkit-settings') {
