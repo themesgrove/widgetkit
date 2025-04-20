@@ -82,13 +82,12 @@
 
     <?php if ($tilt_box['effect_enable'] == 'yes'):?> 
 
-        <script type="text/javascript">
+        <?php wp_enqueue_script('vanilla-tilt'); ?>
 
+        <script type="text/javascript">
             VanillaTilt.init(document.querySelector("#wk-tilt-<?php echo esc_attr($id);?> .tilt-element"), {
                 max: 25,
                 speed: 400,
-
-                
         });
         
 
