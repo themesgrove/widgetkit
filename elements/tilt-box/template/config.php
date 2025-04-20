@@ -21,21 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class wkfe_tilt_box extends Widget_Base {
 
-    public function __construct($data = [], $args = null) {
-        parent::__construct($data, $args);
-        
-        // Register vanilla-tilt script
-        wp_register_script(
-            'vanilla-tilt',
-            plugins_url('/dist/js/vanilla-tilt.min.js', WK_FILE),
-            array(), // No dependencies
-            '1.7.0', // Version number
-            array(
-                'strategy' => 'defer', // Load script in footer
-                'in_footer' => true
-            )
-        );
-    }
 
 	public function get_name() {
 		return 'widgetkit-for-elementor-tilt-box';
