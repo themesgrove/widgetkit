@@ -855,7 +855,7 @@ class wkfe_testimonial extends Widget_Base {
 	                [
 	                    'name' => 'content_box_shadow',
 	                    'label'     => esc_html__( 'Normal Box Shadow', 'widgetkit-for-elementor' ),
-	                    'exclude' => [
+	                    'exclude' => [ //phpcs:ignore
 	                        'box_shadow_position',
 	                    ],
 	                    'selector' => '{{WRAPPER}} .wk-testimonial .wk-card',
@@ -867,7 +867,7 @@ class wkfe_testimonial extends Widget_Base {
 	                [
 	                    'name' => 'content_hover_box_shadow',
 	                    'label'     => esc_html__( 'Hover Box Shadow', 'widgetkit-for-elementor' ),
-	                    'exclude' => [
+	                    'exclude' => [ //phpcs:ignore
 	                        'box_shadow_position',
 	                    ],
 	                    'selector' => '{{WRAPPER}} .wk-testimonial .wk-card:hover',
