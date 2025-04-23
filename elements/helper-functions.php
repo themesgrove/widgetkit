@@ -113,17 +113,21 @@ function wkfe_subscribe_core_enqueue(){
 }
 function wkfe_mailchimp_ajax_form_data_receiver(){
 	
-	if($_POST){
-		// parse form data in $mailchimp_data variable
-		parse_str($_POST['fields'], $mailchimp_data);
-	}
-	if(! wp_verify_nonce($mailchimp_data['_wpnonce'], 'wkfe-ajax-security-nonce')){
-		$err_response = [
-			'success' => false,
-			'message' => 'No dirty business, please!'
-		];
-		wp_send_json_error($err_response, 400);
-		die ();
+	if (
+		isset($_POST['widgetkit_mailchimp_nonce']) && 
+		wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['widgetkit_mailchimp_nonce'])), 'widgetkit_mailchimp_action') &&
+		isset($_POST['fields']) // Also check if 'fields' is set
+	) {
+		// Unslash and sanitize the fields input before parsing
+		$fields_data = sanitize_text_field(wp_unslash($_POST['fields']));
+		parse_str($fields_data, $mailchimp_data);
+		
+		// Now you can safely use $mailchimp_data
+		// ... rest of your processing logic ...
+
+	} elseif (isset($_POST['fields'])) { // Check if it's a POST request potentially missing nonce
+		// Nonce is invalid or not set, handle the error
+		wp_die(esc_html__('Security check failed!', 'widgetkit-for-elementor'));
 	}
 	
 	$apiKey = get_option('wkfe_mailchimp_api_key') ;
@@ -171,25 +175,37 @@ add_action( 'wp_ajax_wkfe_mailchimp_api_keys', 'wkfe_mailchimp_api_keys' );
 add_action( 'wp_ajax_nopriv_wkfe_mailchimp_api_keys', 'wkfe_mailchimp_api_keys' );
 
 function wkfe_mailchimp_api_keys(){
-	if(! wp_verify_nonce( $_REQUEST['security'], 'ajax-security-nonce')){
+	// Check if security nonce is set, unslash, sanitize, and verify it
+	if (
+		!isset($_REQUEST['security']) || 
+		!wp_verify_nonce(sanitize_text_field(wp_unslash($_REQUEST['security'])), 'ajax-security-nonce')
+	) {
 		wp_send_json_error("No dirty business please", 400);
 		return false;
-		die ();
 	}
 
-	$mailChimp_api_key = sanitize_text_field ( $_REQUEST['fields']['apiKey'] );
-	$mailChimp_list_id = sanitize_text_field ( $_REQUEST['fields']['listID'] );
+	// Check if fields array and specific keys are set
+	if (!isset($_REQUEST['fields']) || !isset($_REQUEST['fields']['apiKey']) || !isset($_REQUEST['fields']['listID'])) {
+		wp_send_json_error("Missing required fields", 400);
+		return false;
+	}
+
+	// Unslash and sanitize API key and List ID
+	$mailChimp_api_key = sanitize_text_field(wp_unslash($_REQUEST['fields']['apiKey']));
+	$mailChimp_list_id = sanitize_text_field(wp_unslash($_REQUEST['fields']['listID']));
+	
 	if(empty($mailChimp_api_key) || empty($mailChimp_list_id)){
 		wp_send_json_error("Please fill all input properly", 400);
 		return false;
-		die ();
 	}
+	
 	update_option( 'wkfe_mailchimp_api_key', $mailChimp_api_key );
 	update_option( 'wkfe_mailchimp_list_id', $mailChimp_list_id );
+	
 	$response = [
 		'success' => true,
 		'message' => 'All Data Updated'
 	];
+	
 	wp_send_json_success($response, 200 );
-	die();
 }
