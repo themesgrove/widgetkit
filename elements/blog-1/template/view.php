@@ -15,6 +15,7 @@ $id = $this->get_id();
         'post_status'       => 'publish',
         'posts_per_page'    => -1,
         'ignore_sticky_posts' => 1,
+        // phpcs:ignore
         'tax_query' => array(
             array(
                 'taxonomy' => 'post_format',
