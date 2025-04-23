@@ -16,6 +16,7 @@
                 'post_status'       => 'publish',
                 'posts_per_page'    => $settings['blog_5_post_item_show'],
                 'ignore_sticky_posts' => 1,
+                // phpcs:ignore
                  'tax_query' => array( array(
                     'taxonomy' => 'post_format',
                     'field' => 'slug',
