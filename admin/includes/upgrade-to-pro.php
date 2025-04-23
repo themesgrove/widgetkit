@@ -149,7 +149,7 @@
                     </div>
                 </div>
                 <div class="wk-width-1-1 wk-text-center">
-                    <div><a href="https://themesgrove.com/widgetkit-for-elementor/?utm_campaign=widgetkit-pro&utm_medium=wp-admin&utm_source=pro-feature-button" target="_blank" class="wk-button wk-button-primary">And Many More <span wk-icon="icon: arrow-right"></span></a></div>
+                    <div><a href="https://themesgrove.com/widgetkit-for-elementor/?utm_campaign=widgetkit-pro&utm_medium=wp-admin&utm_source=pro-feature-button" target="_blank" class="wk-button wk-button-primary">And Many More <span wk-icon="icon: arrow-right" style="display: inline-flex; vertical-align:middle;"></span></a></div>
                 </div>
             </div>
             <?php 
