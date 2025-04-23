@@ -279,7 +279,7 @@ class wkfe_social_share_2 extends Widget_Base {
             [
                 'name'    => 'profile_box_shadow',
                 'label'   => esc_html__( 'Box Shadow', 'widgetkit-for-elementor' ),
-                'exclude' => [
+                'exclude' => [ //phpcs:ignore
                     'box_shadow_position',
                 ],
                 'selector' => '{{WRAPPER}} .tgx-social-share-2.profile',
@@ -484,7 +484,7 @@ class wkfe_social_share_2 extends Widget_Base {
             [
                 'name'    => 'share_button_box_shadow',
                 'label'   => esc_html__( 'Box Shadow', 'widgetkit-for-elementor' ),
-                'exclude' => [
+                'exclude' => [ //phpcs:ignore
                     'box_shadow_position',
                 ],
                 'selector' => '{{WRAPPER}} .tgx-social-share-2.profile .profile-content .btn-bar:hover',
@@ -676,7 +676,7 @@ class wkfe_social_share_2 extends Widget_Base {
             [
                 'name'    => 'share_social_icon_box_shadow',
                 'label'   => esc_html__( 'Box Shadow', 'widgetkit-for-elementor' ),
-                'exclude' => [
+                'exclude' => [ //phpcs:ignore
                     'box_shadow_position',
                 ],
                 'selector' => '{{WRAPPER}} .tgx-social-share-2.profile .box a:hover:hover',
