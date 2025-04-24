@@ -8,7 +8,12 @@
 
         <?php if ($settings['social_share_2_image']):?> 
             <div class="photo">
-                <img src="<?php echo esc_url($settings['social_share_2_image']['url']);?>" alt="<?php echo esc_attr($settings['social_share_2_name']);?>">
+                <?php if (!empty($settings['social_share_2_image']['id'])) {
+                    echo wp_get_attachment_image($settings['social_share_2_image']['id'], 'full', false, array('alt' => esc_attr($settings['social_share_2_name'])));
+                } else {
+                    // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                    echo '<img src="' . esc_url($settings['social_share_2_image']['url']) . '" alt="' . esc_attr($settings['social_share_2_name']) . '">';
+                } ?>
             </div>
         <?php endif;?>
 
