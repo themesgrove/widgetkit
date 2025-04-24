@@ -199,15 +199,14 @@
                                         <h4><?php echo esc_html($data['plugin_version']); ?> </h4>
                                         <span> <?php echo esc_html($data['publish_date']); ?>  </span>
                                     </div>
-                                    <?php echo esc_attr($Parsedown->text($data['plugin_changelog'])); ?>
+                                    <?php echo wp_kses_post($Parsedown->text($data['plugin_changelog'])); ?>
                                 </div>
                             <?php endforeach;  ?>
 						<?php else: ?>
 							<div class="wk-background-muted wk-padding-small wk-margin-small-bottom">
                                 <div class="release-version-date"> 
-                                    <h4>Something went wrong to retrive data.</h4>
+                                    <h4>Something went wrong to retrieve data.</h4>
                                 </div>
-                                <?php echo esc_attr($Parsedown->text($data['plugin_changelog'])); ?>
                             </div>
 						<?php endif; ?>
 
