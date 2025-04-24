@@ -16,9 +16,13 @@
                         <div class="project-image" >
                             <?php if($project['project_thumb_image']):?>
                                 <a href="<?php echo esc_url($project['project_demo_link']); ?>">
-                                    <img src="<?php echo esc_url($project['project_thumb_image']['url']);?>" alt="<?php echo esc_attr($project['project_title']); ?>">  
+                                    <?php if (!empty($project['project_thumb_image']['id'])) {
+                                        echo wp_get_attachment_image($project['project_thumb_image']['id'], 'full', false, ['alt' => esc_attr($project['project_title'])]);
+                                    } elseif (!empty($project['project_thumb_image']['url'])) {
+                                        // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                        echo '<img src="' . esc_url($project['project_thumb_image']['url']) . '" alt="' . esc_attr($project['project_title']) . '">';
+                                    } ?>    
                                 </a>
-                                  
                             <?php endif; ?> 
                         </div>
                         <figcaption class="text-center">
