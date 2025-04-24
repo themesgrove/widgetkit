@@ -31,7 +31,12 @@
 
                     <?php if ($settings['choose_media'] == 'image'): ?>
                         <?php if( $settings['feature_image']['url']):?>
-                            <img src="<?php echo esc_url($settings['feature_image']['url']); ?>" alt="<?php the_title(); ?>"> 
+                            <?php if (!empty($settings['feature_image']['id'])) {
+                                echo wp_get_attachment_image($settings['feature_image']['id'], 'full', false, array('alt' => esc_attr(get_the_title())));
+                            } else {
+                                // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                echo '<img src="' . esc_url($settings['feature_image']['url']) . '" alt="' . esc_attr(get_the_title()) . '">'; 
+                            } ?>
                         <?php endif; ?>
 
                     <?php else: ?>
@@ -51,7 +56,12 @@
                     <?php if ($settings['choose_media'] == 'image'): ?>
                         
                         <?php if( $settings['feature_image']['url']):?>
-                            <img class= "tgx-media" src="<?php echo esc_url($settings['feature_image']['url']); ?>" alt="<?php the_title(); ?>"> 
+                            <?php if (!empty($settings['feature_image']['id'])) {
+                                echo wp_get_attachment_image($settings['feature_image']['id'], 'full', false, array('class' => 'tgx-media', 'alt' => esc_attr(get_the_title())));
+                            } else {
+                                // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                echo '<img class="tgx-media" src="' . esc_url($settings['feature_image']['url']) . '" alt="' . esc_attr(get_the_title()) . '">'; 
+                            } ?>
                         <?php endif; ?>
 
                     <?php else: ?>
