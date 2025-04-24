@@ -6,8 +6,19 @@
          <div class="row">
             <div id="image-compare-<?php echo esc_attr($id); ?>" class="image-compare-container">
                 
-                <img src="<?php echo esc_url($image_compare['before_image']['url']); ?>" alt="before">
-                <img src="<?php echo esc_url($image_compare['after_image']['url']); ?>" alt="After">
+                <?php if (!empty($image_compare['before_image']['id'])) {
+                    echo wp_get_attachment_image($image_compare['before_image']['id'], 'full', false, array('alt' => 'before'));
+                } else {
+                    // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                    echo '<img src="' . esc_url($image_compare['before_image']['url']) . '" alt="before">';
+                } ?>
+                
+                <?php if (!empty($image_compare['after_image']['id'])) {
+                    echo wp_get_attachment_image($image_compare['after_image']['id'], 'full', false, array('alt' => 'After'));
+                } else {
+                    // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                    echo '<img src="' . esc_url($image_compare['after_image']['url']) . '" alt="After">';
+                } ?>
             </div>
         </div>
     </div>
