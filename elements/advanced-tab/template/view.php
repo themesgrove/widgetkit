@@ -68,9 +68,13 @@ $id_int = substr($this->get_id_int(), 0, 3);
                         echo wp_kses_post(Plugin::$instance->frontend->get_builder_content($tab['primary_templates']));
                     } ?>
                 <?php elseif ('image' == $tab['tabs_content_type']) : ?>
-                    <?php if (!empty($tab['tab_image'])) {?>
-                        <img src="<?php echo esc_url($tab['tab_image']['url']);?>" alt="">
-                        <?php
+                    <?php if (!empty($tab['tab_image'])) {
+                        if (!empty($tab['tab_image']['id'])) {
+                            echo wp_get_attachment_image($tab['tab_image']['id'], 'full', false, array('alt' => ''));
+                        } else {
+                            // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                            echo '<img src="' . esc_url($tab['tab_image']['url']) . '" alt="">';
+                        }
                     } ?>
                 <?php endif; ?>
             </div>
