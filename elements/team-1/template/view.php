@@ -9,7 +9,12 @@
             <!-- First Team Block -->
             <div class="team-each-wrap">
                 <div class="team-block">
-                    <img src="<?php echo esc_url($settings['team_image']['url']);?>" alt="<?php echo esc_attr($settings['team_name']);?>">   
+                    <?php if (!empty($settings['team_image']['id'])) {
+                        echo wp_get_attachment_image($settings['team_image']['id'], 'full', false, ['alt' => esc_attr($settings['team_name'])]);
+                    } elseif (!empty($settings['team_image']['url'])) {
+                        // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                        echo '<img src="' . esc_url($settings['team_image']['url']) . '" alt="' . esc_attr($settings['team_name']) . '">';
+                    } ?>   
                     <?php if ( ! empty( $settings['content'] ) ) : ?>
                         <div class="team-content">
                             <p><?php echo esc_html($settings['content']); ?></p>
