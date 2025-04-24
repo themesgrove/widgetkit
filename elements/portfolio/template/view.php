@@ -142,7 +142,12 @@
 
                                 <?php if($portfolio['portfolio_thumb_image']):?>
                                     <span>
-                                        <img src="<?php echo esc_url($portfolio['portfolio_thumb_image']['url']);?>" alt="<?php echo esc_attr($portfolio['portfolio_title']); ?>">
+                                        <?php if (!empty($portfolio['portfolio_thumb_image']['id'])) {
+                                            echo wp_get_attachment_image($portfolio['portfolio_thumb_image']['id'], 'full', false, ['alt' => esc_attr($portfolio['portfolio_title'])]);
+                                        } elseif (!empty($portfolio['portfolio_thumb_image']['url'])) {
+                                            // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                            echo '<img src="' . esc_url($portfolio['portfolio_thumb_image']['url']) . '" alt="' . esc_attr($portfolio['portfolio_title']) . '">';
+                                        } ?>
                                         <div></div>    
                                     </span>
                                 <?php endif; ?>   
@@ -170,7 +175,12 @@
                             <div class="overlay overlay-hover">
                                 <div class="overlay-spin" >
                                     <?php if($portfolio['portfolio_thumb_image']):?>
-                                        <img src="<?php echo esc_url($portfolio['portfolio_thumb_image']['url']);?>" alt="<?php echo esc_attr($portfolio['portfolio_title']); ?>">
+                                         <?php if (!empty($portfolio['portfolio_thumb_image']['id'])) {
+                                            echo wp_get_attachment_image($portfolio['portfolio_thumb_image']['id'], 'full', false, ['alt' => esc_attr($portfolio['portfolio_title'])]);
+                                        } elseif (!empty($portfolio['portfolio_thumb_image']['url'])) {
+                                            // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                            echo '<img src="' . esc_url($portfolio['portfolio_thumb_image']['url']) . '" alt="' . esc_attr($portfolio['portfolio_title']) . '">';
+                                        } ?>
                                     <?php endif; ?>                                                             
                                 </div><!-- .overlay-spin -->
 
@@ -220,7 +230,12 @@
                                         <?php endif; ?>
                                     </li>
                                 </ul>
-                                 <img src="<?php echo esc_url($portfolio['portfolio_thumb_image']['url']);?>" alt="<?php echo esc_attr($portfolio['portfolio_title']); ?>">
+                                 <?php if (!empty($portfolio['portfolio_thumb_image']['id'])) {
+                                    echo wp_get_attachment_image($portfolio['portfolio_thumb_image']['id'], 'full', false, ['alt' => esc_attr($portfolio['portfolio_title'])]);
+                                } elseif (!empty($portfolio['portfolio_thumb_image']['url'])) {
+                                    // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                    echo '<img src="' . esc_url($portfolio['portfolio_thumb_image']['url']) . '" alt="' . esc_attr($portfolio['portfolio_title']) . '">';
+                                } ?>
                                 <figcaption class="info">
                                     <?php if ($portfolio['portfolio_title']): ?>   
                                         <h4 class="title"><?php echo esc_html($portfolio['portfolio_title']); ?></h4>
@@ -238,7 +253,12 @@
                             <div class="overlay overlay-hover">
                                 <div class="overlay-spin" >
                                     <?php if($portfolio['portfolio_thumb_image']):?>
-                                        <img src="<?php echo esc_url($portfolio['portfolio_thumb_image']['url']);?>" alt="<?php echo esc_attr($portfolio['portfolio_title']); ?>">
+                                         <?php if (!empty($portfolio['portfolio_thumb_image']['id'])) {
+                                            echo wp_get_attachment_image($portfolio['portfolio_thumb_image']['id'], 'full', false, ['alt' => esc_attr($portfolio['portfolio_title'])]);
+                                        } elseif (!empty($portfolio['portfolio_thumb_image']['url'])) {
+                                            // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                            echo '<img src="' . esc_url($portfolio['portfolio_thumb_image']['url']) . '" alt="' . esc_attr($portfolio['portfolio_title']) . '">';
+                                        } ?>
                                     <?php endif; ?>                                                             
                                 </div><!-- .overlay-spin -->
                                 <div class="portfolio-content text-left <?php echo esc_attr($hover_4_action); ?>">
@@ -270,7 +290,12 @@
 
                             <?php if($portfolio['portfolio_thumb_image']):?>
                                 <a href="">
-                                    <img src="<?php echo esc_url($portfolio['portfolio_thumb_image']['url']);?>" alt="<?php echo esc_attr($portfolio['portfolio_title']); ?>">
+                                     <?php if (!empty($portfolio['portfolio_thumb_image']['id'])) {
+                                        echo wp_get_attachment_image($portfolio['portfolio_thumb_image']['id'], 'full', false, ['alt' => esc_attr($portfolio['portfolio_title'])]);
+                                    } elseif (!empty($portfolio['portfolio_thumb_image']['url'])) {
+                                        // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                        echo '<img src="' . esc_url($portfolio['portfolio_thumb_image']['url']) . '" alt="' . esc_attr($portfolio['portfolio_title']) . '">';
+                                    } ?>
                                     <div></div>    
                                 </a>
                             <?php endif; ?>   
