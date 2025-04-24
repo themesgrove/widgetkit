@@ -26,7 +26,12 @@
                 <?php endif; ?>
         <div class="mc-content">
             <div class="img-container">
-                 <img src="<?php echo esc_url($settings['team_4_team_image']['url']);?>" alt="<?php echo esc_attr($settings['team_4_team_name']);?>"> 
+                 <?php if (!empty($settings['team_4_team_image']['id'])) {
+                     echo wp_get_attachment_image($settings['team_4_team_image']['id'], 'full', false, ['alt' => esc_attr($settings['team_4_team_name'])]);
+                 } elseif (!empty($settings['team_4_team_image']['url'])) {
+                    // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                     echo '<img src="' . esc_url($settings['team_4_team_image']['url']) . '" alt="' . esc_attr($settings['team_4_team_name']) . '">';
+                 } ?> 
             </div>
             <?php if ( ! empty( $settings['team_4_content'] ) ) : ?>
                 <div class="mc-description">
