@@ -27,9 +27,14 @@
 
                       </div> <!-- .price -->
 
-                      <?php if ( ! empty( $settings['pricing_2_icon_image']['url'] ) ) : ?>
+                      <?php if ( ! empty( $settings['pricing_2_icon_image'] ) ) : ?>
                           <div class="tgx-single-image">
-                            <img src="<?php echo esc_url($settings['pricing_2_icon_image']['url']); ?>" alt="<?php echo esc_attr($settings['pricing_2_pricing_title']); ?>" />
+                            <?php if (!empty($settings['pricing_2_icon_image']['id'])) {
+                                echo wp_get_attachment_image($settings['pricing_2_icon_image']['id'], 'full', false, ['alt' => esc_attr($settings['pricing_2_pricing_title'])]);
+                            } elseif (!empty($settings['pricing_2_icon_image']['url'])) {
+                                // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                echo '<img src="' . esc_url($settings['pricing_2_icon_image']['url']) . '" alt="' . esc_attr($settings['pricing_2_pricing_title']) . '" />';
+                            } ?>
                           </div><!-- .table-image -->
                       <?php endif; ?>
                 </div> <!-- .tx-table-heading -->
