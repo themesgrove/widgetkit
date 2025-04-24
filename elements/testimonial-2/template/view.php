@@ -17,7 +17,12 @@
                 <?php if ($testimonial['testimoni_image_2']):?>
                   <div class="author">
                         <span>
-                            <img class="testimonial-image" src="<?php echo esc_url($testimonial['testimoni_image_2']['url']); ?>" alt="<?php the_title(); ?>">
+                            <?php if (!empty($testimonial['testimoni_image_2']['id'])) {
+                                echo wp_get_attachment_image($testimonial['testimoni_image_2']['id'], 'full', false, array('class' => 'testimonial-image', 'alt' => esc_attr(get_the_title())));
+                            } else {
+                                // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                echo '<img class="testimonial-image" src="' . esc_url($testimonial['testimoni_image_2']['url']) . '" alt="' . esc_attr(get_the_title()) . '">';
+                            } ?>
                         </span>     
                   </div>
                 <?php endif;?>
