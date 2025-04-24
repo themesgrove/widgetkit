@@ -13,10 +13,20 @@ $id = $this->get_id();
             <div class="wk-card-media-top wk-overflow-hidden">
                 <?php if ($team['single_content_link']) : ?>
                     <a class="wk-display-block wk-text-center" href="<?php echo esc_attr($team['single_content_link']['url']); ?>" <?php echo esc_attr($team['single_content_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                        <img src="<?php echo esc_url($team['single_image']['url']) ?>" alt="">
+                        <?php if (!empty($team['single_image']['id'])) {
+                            echo wp_get_attachment_image($team['single_image']['id'], 'full', false, ['alt' => '']);
+                        } elseif (!empty($team['single_image']['url'])) {
+                            // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                            echo '<img src="' . esc_url($team['single_image']['url']) . '" alt="">';
+                        } ?>
                     </a>
                 <?php else : ?>
-                    <img src="<?php echo esc_url($team['single_image']['url']) ?>" alt="">
+                    <?php if (!empty($team['single_image']['id'])) {
+                        echo wp_get_attachment_image($team['single_image']['id'], 'full', false, ['alt' => '']);
+                    } elseif (!empty($team['single_image']['url'])) {
+                        // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                        echo '<img src="' . esc_url($team['single_image']['url']) . '" alt="">';
+                    } ?>
                 <?php endif; ?>
             </div> <!-- wk-card-image -->
 
@@ -60,10 +70,20 @@ $id = $this->get_id();
             <div class="wk-card-media-top wk-overflow-hidden">
                 <?php if ($team['single_content_link']) : ?>
                     <a class="wk-display-block" href="<?php echo esc_attr($team['single_content_link']['url']); ?>" <?php echo esc_attr($team['single_content_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                        <img src="<?php echo esc_url($team['single_image']['url']) ?>" alt="">
+                        <?php if (!empty($team['single_image']['id'])) {
+                            echo wp_get_attachment_image($team['single_image']['id'], 'full', false, ['alt' => '']);
+                        } elseif (!empty($team['single_image']['url'])) {
+                            // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                            echo '<img src="' . esc_url($team['single_image']['url']) . '" alt="">';
+                        } ?>
                     </a>
                 <?php else : ?>
-                    <img src="<?php echo esc_url($team['single_image']['url']) ?>" alt="">
+                    <?php if (!empty($team['single_image']['id'])) {
+                        echo wp_get_attachment_image($team['single_image']['id'], 'full', false, ['alt' => '']);
+                    } elseif (!empty($team['single_image']['url'])) {
+                        // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                        echo '<img src="' . esc_url($team['single_image']['url']) . '" alt="">';
+                    } ?>
                 <?php endif; ?>
             </div> <!-- wk-card-image -->
 
@@ -105,10 +125,20 @@ $id = $this->get_id();
                 <div class="wk-card-media-left wk-cover-container wk-width-1-2@m wk-position-relative wk-overflow-hidden">
                     <?php if ($team['single_content_link']) : ?>
                         <a class="wk-display-block" href="<?php echo esc_attr($team['single_content_link']['url']); ?>" <?php echo esc_attr($team['single_content_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                            <img src="<?php echo esc_url($team['single_image']['url']) ?>" alt="">
+                            <?php if (!empty($team['single_image']['id'])) {
+                                echo wp_get_attachment_image($team['single_image']['id'], 'full', false, ['alt' => '']);
+                            } elseif (!empty($team['single_image']['url'])) {
+                                // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                echo '<img src="' . esc_url($team['single_image']['url']) . '" alt="">';
+                            } ?>
                         </a>
                     <?php else : ?>
-                        <img src="<?php echo esc_url($team['single_image']['url']) ?>" alt="">
+                        <?php if (!empty($team['single_image']['id'])) {
+                            echo wp_get_attachment_image($team['single_image']['id'], 'full', false, ['alt' => '']);
+                        } elseif (!empty($team['single_image']['url'])) {
+                            // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                            echo '<img src="' . esc_url($team['single_image']['url']) . '" alt="">';
+                        } ?>
                     <?php endif; ?>
                 </div> <!-- wk-card-image -->
             <?php endif; ?>
@@ -145,10 +175,20 @@ $id = $this->get_id();
                 <div class="wk-card-media-right wk-cover-container wk-width-1-2@m wk-position-relative wk-overflow-hidden">
                     <?php if ($team['single_content_link']) : ?>
                         <a class="wk-display-block" href="<?php echo esc_attr($team['single_content_link']['url']); ?>" <?php echo esc_attr($team['single_content_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                            <img src="<?php echo esc_attr($team['single_image']['url']); ?>" alt="">
+                            <?php if (!empty($team['single_image']['id'])) {
+                                echo wp_get_attachment_image($team['single_image']['id'], 'full', false, ['alt' => '']);
+                            } elseif (!empty($team['single_image']['url'])) {
+                                // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                echo '<img src="' . esc_url($team['single_image']['url']) . '" alt="">';
+                            } ?>
                         </a>
                     <?php else : ?>
-                        <img src="<?php echo esc_attr($team['single_image']['url']); ?>" alt="">
+                        <?php if (!empty($team['single_image']['id'])) {
+                            echo wp_get_attachment_image($team['single_image']['id'], 'full', false, ['alt' => '']);
+                        } elseif (!empty($team['single_image']['url'])) {
+                            // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                            echo '<img src="' . esc_url($team['single_image']['url']) . '" alt="">';
+                        } ?>
                     <?php endif; ?>
                 </div> <!-- wk-card-image -->
             <?php endif; ?>
@@ -160,10 +200,20 @@ $id = $this->get_id();
             <div class="wk-card-wrapper wk-position-relative wk-transition-toggle wk-overflow-hidden">
                 <?php if ($team['single_content_link']) : ?>
                     <a class="wk-display-block" href="<?php echo esc_attr($team['single_content_link']['url']); ?>" <?php echo esc_attr($team['single_content_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                        <img src="<?php echo esc_url($team['single_image']['url']) ?>" alt="">
+                        <?php if (!empty($team['single_image']['id'])) {
+                            echo wp_get_attachment_image($team['single_image']['id'], 'full', false, ['alt' => '']);
+                        } elseif (!empty($team['single_image']['url'])) {
+                            // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                            echo '<img src="' . esc_url($team['single_image']['url']) . '" alt="">';
+                        } ?>
                     </a>
                 <?php else : ?>
-                    <img src="<?php echo esc_url($team['single_image']['url']) ?>" alt="">
+                    <?php if (!empty($team['single_image']['id'])) {
+                        echo wp_get_attachment_image($team['single_image']['id'], 'full', false, ['alt' => '']);
+                    } elseif (!empty($team['single_image']['url'])) {
+                        // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                        echo '<img src="' . esc_url($team['single_image']['url']) . '" alt="">';
+                    } ?>
                 <?php endif; ?>
 
                 <div class="wk-card-body wk-padding-remove wk-position-bottom wk-background-muted">
@@ -204,11 +254,21 @@ $id = $this->get_id();
             <div class="wk-card-wrapper wk-position-relative wk-transition-toggle">
                 <?php if ($team['single_content_link']) : ?>
                     <a class="wk-display-block" href="<?php echo esc_attr($team['single_content_link']['url']); ?>" <?php echo esc_attr($team['single_content_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                        <img src="<?php echo esc_url($team['single_image']['url']) ?>" alt="">
+                        <?php if (!empty($team['single_image']['id'])) {
+                            echo wp_get_attachment_image($team['single_image']['id'], 'full', false, ['alt' => '']);
+                        } elseif (!empty($team['single_image']['url'])) {
+                            // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                            echo '<img src="' . esc_url($team['single_image']['url']) . '" alt="">';
+                        } ?>
 
                     </a>
                 <?php else : ?>
-                    <img src="<?php echo esc_url($team['single_image']['url']) ?>" alt="">
+                    <?php if (!empty($team['single_image']['id'])) {
+                        echo wp_get_attachment_image($team['single_image']['id'], 'full', false, ['alt' => '']);
+                    } elseif (!empty($team['single_image']['url'])) {
+                        // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                        echo '<img src="' . esc_url($team['single_image']['url']) . '" alt="">';
+                    } ?>
 
                 <?php endif; ?>
 
@@ -290,10 +350,20 @@ $id = $this->get_id();
             <div class="wk-card-media-top wk-overflow-hidden">
                 <?php if ($team['single_content_link']) : ?>
                     <a class="wk-display-block" href="<?php echo esc_attr($team['single_content_link']['url']); ?>" <?php echo esc_attr($team['single_content_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                        <img src="<?php echo esc_attr($team['single_image']['url']); ?>" alt="">
+                        <?php if (!empty($team['single_image']['id'])) {
+                            echo wp_get_attachment_image($team['single_image']['id'], 'full', false, ['alt' => '']);
+                        } elseif (!empty($team['single_image']['url'])) {
+                            // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                            echo '<img src="' . esc_url($team['single_image']['url']) . '" alt="">';
+                        } ?>
                     </a>
                 <?php else : ?>
-                    <img src="<?php echo esc_attr($team['single_image']['url']); ?>" alt="">
+                    <?php if (!empty($team['single_image']['id'])) {
+                        echo wp_get_attachment_image($team['single_image']['id'], 'full', false, ['alt' => '']);
+                    } elseif (!empty($team['single_image']['url'])) {
+                        // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                        echo '<img src="' . esc_url($team['single_image']['url']) . '" alt="">';
+                    } ?>
                 <?php endif; ?>
             </div> <!-- wk-card-image -->
 
