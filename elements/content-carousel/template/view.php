@@ -26,9 +26,10 @@ $id = $this->get_id();
                                     <?php if ($contents['thumbnail_position'] == 'top') :; ?>
                                         <div class="wk-card-media-top wk-overflow-hidden">
                                             <a class="wk-display-block" href="<?php echo esc_url($content['content_demo_link']['url']); ?>" <?php echo esc_attr($content['content_demo_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                                <?php if ($content['content_thumb_image']['id']) : ?>
-                                                    <img src="<?php echo esc_url(Group_Control_Image_Size::get_attachment_image_src($content['content_thumb_image']['id'], 'cc_image', $contents)); ?>" alt="<?php echo esc_attr($content['content_title']); ?>">
+                                                <?php if (!empty($content['content_thumb_image']['id'])) : ?>
+                                                    <?php echo wp_get_attachment_image($content['content_thumb_image']['id'], 'full', false, ['alt' => esc_attr($content['content_title'])]); ?>
                                                 <?php else : ?>
+                                                    <?php // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage ?>
                                                     <img src="<?php echo esc_url($content['content_thumb_image']['url']); ?>" alt="<?php echo esc_attr($content['content_title']); ?>">
                                                 <?php endif; ?>
                                             </a>
@@ -68,9 +69,10 @@ $id = $this->get_id();
                                 <?php if ($contents['thumbnail_position'] == 'bottom') : ?>
                                     <div class="wk-card-media-bottom wk-overflow-hidden">
                                         <a class="wk-display-block" href="<?php echo esc_url($content['content_demo_link']['url']); ?>" <?php echo esc_attr($content['content_demo_link']['is_external']) ? 'target="_blank"' : '"rel="nofollow"'; ?>>
-                                            <?php if ($content['content_thumb_image']['id']) : ?>
-                                                <img src="<?php echo esc_url(Group_Control_Image_Size::get_attachment_image_src($content['content_thumb_image']['id'], 'cc_image', $contents)); ?>" alt="<?php echo esc_attr($content['content_title']); ?>">
+                                            <?php if (!empty($content['content_thumb_image']['id'])) : ?>
+                                                <?php echo wp_get_attachment_image($content['content_thumb_image']['id'], 'full', false, ['alt' => esc_attr($content['content_title'])]); ?>
                                             <?php else : ?>
+                                                <?php // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage ?>
                                                 <img src="<?php echo esc_url($content['content_thumb_image']['url']); ?>" alt="<?php echo esc_html($content['content_title']); ?>">
                                             <?php endif; ?>
                                         </a>
@@ -102,9 +104,15 @@ $id = $this->get_id();
                                         <?php if ($contents['thumbnail_position'] == 'top') :; ?>
                                             <div class="wk-card-media-top wk-overflow-hidden">
                                                 <a class="wk-display-block" href="<?php the_permalink(); ?>">
-                                                    <?php //the_post_thumbnail($contents['thumbnail_size']);
+                                                    <?php 
+                                                        $thumbnail_id = get_post_thumbnail_id();
+                                                        if (!empty($thumbnail_id)) {
+                                                            echo wp_get_attachment_image($thumbnail_id, 'full', false, ['alt' => esc_attr(get_the_title())]);
+                                                        } else {
+                                                            // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                                            the_post_thumbnail('full', ['alt' => esc_attr(get_the_title())]);
+                                                        }
                                                     ?>
-                                                    <img src="<?php echo esc_url(Group_Control_Image_Size::get_attachment_image_src(get_post_thumbnail_id(), 'cc_image', $contents)); ?>" alt="<?php the_title(); ?>">
                                                 </a>
                                             </div>
                                         <?php endif; ?>
@@ -145,9 +153,15 @@ $id = $this->get_id();
                                     <?php if ($contents['thumbnail_position'] == 'bottom') :; ?>
                                         <div class="wk-card-media-bottom wk-overflow-hidden">
                                             <a class="wk-display-block" href="<?php the_permalink(); ?>">
-                                                <?php //the_post_thumbnail($contents['thumbnail_size']);
+                                                <?php 
+                                                $thumbnail_id = get_post_thumbnail_id();
+                                                if (!empty($thumbnail_id)) {
+                                                    echo wp_get_attachment_image($thumbnail_id, 'full', false, ['alt' => esc_attr(get_the_title())]);
+                                                } else {
+                                                    // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                                    the_post_thumbnail('full', ['alt' => esc_attr(get_the_title())]);
+                                                }
                                                 ?>
-                                                <img src="<?php echo esc_url(Group_Control_Image_Size::get_attachment_image_src(get_post_thumbnail_id(), 'cc_image', $contents)); ?>" alt="<?php the_title(); ?>">
                                             </a>
                                         </div>
                                     <?php endif; ?>
