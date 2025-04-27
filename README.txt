@@ -2,7 +2,7 @@
 
 Contributors: Themesgrove, parvezvai, themexpert
 Donate link: https://themesgrove.com/
-Tags: elementor widgets, woocommerce, widgets, sensei addons, widgetkit
+Tags: elementor widgets, woocommerce addons, learndash addons, learnpress addons, sensei addons
 Requires at least: 5.0
 Tested up to: 6.8
 Stable tag: 2.5.4
