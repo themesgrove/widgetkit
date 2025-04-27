@@ -9,18 +9,18 @@
 
 
     if( $settings['choose_data_file_source'] == 'url' ) {
-        $this->add_render_attribute('wrapper','data-animation-path',esc_url($settings['json_file_link']));
+        $this->add_render_attribute('wrapper','data-animation-path',$settings['json_file_link']);
     }
 
     if( $settings['choose_data_file_source'] == 'upload' ) {
-        $this->add_render_attribute('wrapper','data-animation-path',esc_url($settings['json_file']['url']));
+        $this->add_render_attribute('wrapper','data-animation-path',$settings['json_file']['url']);
     }
 
     // animation renderer type
-    $this->add_render_attribute('wrapper','data-animation-renderer',esc_attr($settings['animation_renderer_type']));
+    $this->add_render_attribute('wrapper','data-animation-renderer', $settings['animation_renderer_type']);
     
     // Link
-    $this->add_render_attribute('link','href',esc_url($settings['link']['url']));
+    $this->add_render_attribute('link','href',$settings['link']['url']);
 
     if( $settings['link']['is_external'] ) {
         $this->add_render_attribute('link','target','_blank');
@@ -31,10 +31,10 @@
     }
 
     // animation play type
-    $this->add_render_attribute('wrapper','data-animation-play',esc_attr($settings['animation_play_type']));
+    $this->add_render_attribute('wrapper','data-animation-play',$settings['animation_play_type']);
 
     // animation speed
-    $this->add_render_attribute('wrapper','data-animation-speed',esc_attr($settings['animation_speed']));
+    $this->add_render_attribute('wrapper','data-animation-speed',$settings['animation_speed']);
 
     // animation loop
     if( $settings['choose_loop'] == 'yes' ) {
@@ -56,7 +56,7 @@
         <a <?php echo esc_attr($this->get_render_attribute_string( 'link' )); ?>>
     <?php endif; ?>
 
-        <div <?php echo esc_attr($this->get_render_attribute_string( 'wrapper' )); ?>></div>
+    <div <?php echo $this->get_render_attribute_string( 'wrapper' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>></div>
 
     <?php if( $settings['choose_link'] == 'yes' && $settings['link']['url'] ) : ?>
         </a>
