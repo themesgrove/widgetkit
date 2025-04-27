@@ -306,8 +306,8 @@ class wkfe_lottie_animation extends Widget_Base {
                     ),
                 ),
                 'selectors' => array(
-                    '{{WRAPPER}} .elementor-widget-container'   => 'display: flex; justify-content: {{VALUE}};',
-                    '{{WRAPPER}} .elementor-widget-container a' => 'display: flex; justify-content: {{VALUE}};'
+                    '{{WRAPPER}}'   => 'display: flex; justify-content: {{VALUE}};',
+                    '{{WRAPPER}} a' => 'display: flex; justify-content: {{VALUE}};'
                 ),
             )
         );
