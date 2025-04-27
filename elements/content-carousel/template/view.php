@@ -62,7 +62,7 @@ $id = $this->get_id();
                                         ?>
 
                                         <?php if ($content['content_content']) : ?>
-                                            <p class=" wk-margin-small-bottom"><?php echo esc_html($content['content_content']); ?></p>
+                                            <p class="wk-margin-small-bottom"><?php echo wp_kses_post($content['content_content']); ?></p>
                                         <?php endif; ?>
                                     </div>
                                 <?php endif; ?>
