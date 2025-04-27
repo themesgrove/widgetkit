@@ -370,6 +370,6 @@ class wkfe_image_compare extends Widget_Base {
     }
 
 
-    public function _content_template() {
+    public function content_template() {
     }
 }
