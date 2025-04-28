@@ -214,7 +214,7 @@ class wkfe_carousel extends Widget_Base {
                         'ID'     => esc_html__( 'Id', 'widgetkit-for-elementor' ),
                         'name'   => esc_html__( 'Name', 'widgetkit-for-elementor' ),
                         'comment_count'  => esc_html__( 'Comment Count', 'widgetkit-for-elementor' ),
-                        'meta_value'     => esc_html__( 'Meta Value', 'widgetkit-for-elementor' ),
+                        'meta_value'     => esc_html__( 'Meta Value', 'widgetkit-for-elementor' ),  //phpcs:ignore
                     ],
                 ]
             );

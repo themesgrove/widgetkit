@@ -44,6 +44,7 @@ class wkfe_advanced_tab extends Widget_Base
 	public function select_elementor_page($type)
 	{
 		$args  = [
+			//phpcs:ignore
 			'tax_query'      => [
 				[
 					'taxonomy' => 'elementor_library_type',

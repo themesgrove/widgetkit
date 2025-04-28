@@ -10,7 +10,12 @@
         <div class="contact">
             <div class="contact-wrapper">
                 <div class="content">
-                    <img src="<?php echo esc_url($settings['social_share_1_image']['url']);?>" alt="<?php echo esc_attr($settings['social_share_1_name']);?>"> 
+                    <?php if (!empty($settings['social_share_1_image']['id'])) {
+                        echo wp_get_attachment_image($settings['social_share_1_image']['id'], 'full', false, ['alt' => esc_attr($settings['social_share_1_name'])]);
+                    } elseif (!empty($settings['social_share_1_image']['url'])) {
+                        // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                        echo '<img src="' . esc_url($settings['social_share_1_image']['url']) . '" alt="' . esc_attr($settings['social_share_1_name']) . '">';
+                    } ?> 
 
                     <aside>
                         <h2 class="person-name"><?php echo esc_html($settings['social_share_1_name']);?></h2>

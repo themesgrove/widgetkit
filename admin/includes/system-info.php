@@ -105,7 +105,7 @@ function widgetkit_get_sysinfo()
     $return .= "\n" . '-- Webserver Configuration' . "\n";
     $return .= 'PHP Version:              ' . PHP_VERSION . "\n";
     $return .= 'MySQL Version:            ' . $wpdb->db_version() . "\n";
-    $return .= 'Webserver Info:           ' . $_SERVER['SERVER_SOFTWARE'] . "\n";
+    $return .= 'Webserver Info:           ' . (isset($_SERVER['SERVER_SOFTWARE']) ? sanitize_text_field(wp_unslash($_SERVER['SERVER_SOFTWARE'])) : 'Unknown') . "\n";
 
     // PHP configs... now we're getting to the important stuff
     $return .= "\n" . '-- PHP Configuration' . "\n";

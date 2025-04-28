@@ -70,10 +70,14 @@
                                     <?php endif; ?>
                                 </div>
 
-                            <?php if ( ! empty( $item['tab_image']['url'] ) ) : ?>
+                            <?php if ( ! empty( $item['tab_image'] ) ) : ?>
                                 <div class="tgx-pricing-tab-image">
-                                    <img src="<?php echo esc_url($item['tab_image']['url']); ?>" alt="
-                                    <?php echo esc_html($item['pricing_title']); ?>" />
+                                    <?php if (!empty($item['tab_image']['id'])) {
+                                        echo wp_get_attachment_image($item['tab_image']['id'], 'full', false, ['alt' => esc_attr($item['pricing_title'])]);
+                                    } elseif (!empty($item['tab_image']['url'])) {
+                                        // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                        echo '<img src="' . esc_url($item['tab_image']['url']) . '" alt="' . esc_attr($item['pricing_title']) . '" />';
+                                    } ?>
                                 </div>
                             <?php endif; ?>
 
@@ -149,9 +153,14 @@
                                   <?php endif; ?>
                             </div><!-- pricing-tab-cost -->
 
-                            <?php if ( ! empty( $item['tab_image_2']['url'] ) ) : ?>
+                            <?php if ( ! empty( $item['tab_image_2'] ) ) : ?>
                                 <div class="tgx-pricing-tab-image">
-                                    <img src="<?php echo esc_url($item['tab_image_2']['url']); ?>" alt="<?php echo esc_attr($item['pricing_title_2']); ?>" />
+                                    <?php if (!empty($item['tab_image_2']['id'])) {
+                                        echo wp_get_attachment_image($item['tab_image_2']['id'], 'full', false, ['alt' => esc_attr($item['pricing_title_2'])]);
+                                    } elseif (!empty($item['tab_image_2']['url'])) {
+                                        // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                        echo '<img src="' . esc_url($item['tab_image_2']['url']) . '" alt="' . esc_attr($item['pricing_title_2']) . '" />';
+                                    } ?>
                                 </div>
                             <?php endif; ?>
                             </div><!-- pricing-tab-headeing -->
@@ -223,9 +232,14 @@
                                 <?php endif; ?>
                             </div><!-- pricing-tab-cost -->
 
-                            <?php if ( ! empty( $item['tab_image_3']['url'] ) ) : ?>
+                            <?php if ( ! empty( $item['tab_image_3'] ) ) : ?>
                                 <div class="tgx-pricing-tab-image">
-                                    <img src="<?php echo esc_url($item['tab_image_3']['url']); ?>" alt="<?php echo esc_attr($item['pricing_title_3']); ?>" />
+                                    <?php if (!empty($item['tab_image_3']['id'])) {
+                                        echo wp_get_attachment_image($item['tab_image_3']['id'], 'full', false, ['alt' => esc_attr($item['pricing_title_3'])]);
+                                    } elseif (!empty($item['tab_image_3']['url'])) {
+                                        // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                        echo '<img src="' . esc_url($item['tab_image_3']['url']) . '" alt="' . esc_attr($item['pricing_title_3']) . '" />';
+                                    } ?>
                                 </div>
                             <?php endif; ?>
                         </div><!-- pricing-tab-headeing -->

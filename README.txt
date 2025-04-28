@@ -2,7 +2,7 @@
 
 Contributors: Themesgrove, parvezvai, themexpert
 Donate link: https://themesgrove.com/
-Tags: elementor widgets, woocommerce, widgets, sensei addons, widgetkit
+Tags: elementor widgets, woocommerce addons, learndash addons, learnpress addons, sensei addons
 Requires at least: 5.0
 Tested up to: 6.8
 Stable tag: 2.5.4
@@ -11,12 +11,12 @@ License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
 
-Create stunning websites with Elementor using premium widgets for WooCommerce, LearnDash, and LearnPress. Free collection of content, creative, and dynamic widgets.
+Build stunning websites with Elementor using premium widgets for WooCommerce, LearnDash & LearnPress. Free creative, content & dynamic widget pack.
 
 == Description ==
 If <a href="https://wordpress.org/plugins/elementor/">Elementor page builder</a> elements are not enough, try WidgetKit Addon and boost your page building experience. More than 55+ creative elements come with WidgetKit. You will be able to come out from the boundary of ordinary design and do something creative. 
 
-Merge WidgetKit with Elementor and take the experience of ultimate page building. Build any layout in the shortest time, doesn’t matter whether the layout is simple or complex. If you can think it, you can build it with WidgetKit.
+Merge WidgetKit with Elementor and take the experience of ultimate page building. Build any layout in the shortest time, doesn't matter whether the layout is simple or complex. If you can think it, you can build it with WidgetKit.
 
 https://www.youtube.com/watch?v=7sh13OCwZ4A
 
@@ -40,7 +40,7 @@ You can only decide to use WidgetKit after viewing it by yourself.
 Every element of WidgetKit comes with necessary control options, which allows you to discover more possibilities with an element. You can bring your imagination to reality with WidgetKit elements.
 
 <strong>Easy to do Complicate Design Without Coding</strong>
-It doesn’t matter what you have imagined in your mind. As long as you are using Widgetkit, you will be able to design every complicated design easily without any sort of coding, all by yourself.
+It doesn't matter what you have imagined in your mind. As long as you are using Widgetkit, you will be able to design every complicated design easily without any sort of coding, all by yourself.
 
 <strong><a href="https://widgetkit.themesgrove.com" target="_blank">29+ Premium Layouts</a></strong>
 With WidgetKit you get 29+ premium layouts that lets you build an entire page within minutes. Just choose a premium layout and insert it, its that simple. You will get a full native feel when you use this. 
@@ -67,7 +67,7 @@ https://youtu.be/roC1bZMJrWo
 WidgetKit is not limited to general elements but it also allows you to customize your web store built with WooCommerce. There are four dedicated elements Woo Products, Woo Product Carousel, Woo Categories, Woo Recent Product. With these elements, you can highlight and manage your product more effectively and thus boost your sales.
 
 <strong>Lms Integration & Elements</strong>
-If you are creating an education site you can make it more lucrative with WidgetKit. It doesn’t matter if you are using an LMS as WidgetKit provides integration and elements for popular 3 lms’s – LearnDash, Sensei & LearnPress. Be free and customize your site according to your own will with WidgetKit.
+If you are creating an education site you can make it more lucrative with WidgetKit. It doesn't matter if you are using an LMS as WidgetKit provides integration and elements for popular 3 lms's – LearnDash, Sensei & LearnPress. Be free and customize your site according to your own will with WidgetKit.
 
 <strong>Dedicated Support</strong>
 Widgetkit team is always ready to aid you in your queries and problem regarding widgetkit. Ask your questions in the email support, we will try to reply and solve your problem asap.
@@ -90,7 +90,7 @@ Widgetkit team is always ready to aid you in your queries and problem regarding 
 
 <li><a href="https://widgetkit.themesgrove.com/#">Click to Tweet</a> - A simple twitter button with lots of customization options.</li>
 
-<li><a href="https://widgetkit.themesgrove.com/contact-form/">Contact Form</a> - Forms are needed in every aspect and therefore WidgetKit brings Contact Form element. Now you don’t need to run for several plugins, make any kind of forms with WidgetKit.</li>
+<li><a href="https://widgetkit.themesgrove.com/contact-form/">Contact Form</a> - Forms are needed in every aspect and therefore WidgetKit brings Contact Form element. Now you don't need to run for several plugins, make any kind of forms with WidgetKit.</li>
 
 <li><a href="https://widgetkit.themesgrove.com/content-carousel/">Content Carousel</a> - Give wings to your content with the content carousel element of WidgetKit. Show content from the center, keep it standstill or autoplay it. You have the control to do everything.</li>
 
@@ -102,7 +102,7 @@ Widgetkit team is always ready to aid you in your queries and problem regarding 
 
 <li><a href="https://widgetkit.themesgrove.com/image-box">Hover Image</a> - Add different hover effect on images that intelligently show your credibility. Choose from five different hover effects and let glow your image.</li>
 
-<li><a href="https://widgetkit.themesgrove.com/info-box">Info Box</a> - Organize and show your site’s info smartly with Info box element of WidgetKit. Give your preferred info with the icon, link, text, and your info box will be ready.</li>
+<li><a href="https://widgetkit.themesgrove.com/info-box">Info Box</a> - Organize and show your site's info smartly with Info box element of WidgetKit. Give your preferred info with the icon, link, text, and your info box will be ready.</li>
 
 <li><a href="https://widgetkit.themesgrove.com/image-compare/">Image Compare</a> - Are you a designer or photo editor who often needs to showcase their elegant works in a before-after form in a slider? This is a perfect element for this type of work.</li>
 
@@ -118,13 +118,13 @@ Widgetkit team is always ready to aid you in your queries and problem regarding 
 
 <li><a href="https://widgetkit.themesgrove.com/slider">Slider Content</a> - This element comes with a regular slider, in addition, it has a content layout that allows you to highlight your content intelligently.</li>
 
-<li><a href="https://widgetkit.themesgrove.com/slider">Slider Box</a> - Slider box animation element lets you define your slider a little bit differently with box style. It’s a unique style that catches the focus of visitors easily.</li>
+<li><a href="https://widgetkit.themesgrove.com/slider">Slider Box</a> - Slider box animation element lets you define your slider a little bit differently with box style. It's a unique style that catches the focus of visitors easily.</li>
 
 <li><a href="https://widgetkit.themesgrove.com/social-share/">Social Share Animation</a> - Do you like people to share your posts? Well, then use the social share animation element. This element comes with lucrative animation that makes sharing more attractive to viewers.</li>
 
 <li><a href="https://widgetkit.themesgrove.com/social-share/">Social Share Collapse</a> - Highlight your portfolio section with a stylish social share collapse element that comes with collapsible social share buttons.</li>
 
-<li><a href="https://widgetkit.themesgrove.com/testimonial">Testimonial</a> - Create magnificent testimonials with uniques looks with WidgetKit’s testimonial element. Set your testimonials then enable the autoplay and let the social proofing work.</li>
+<li><a href="https://widgetkit.themesgrove.com/testimonial">Testimonial</a> - Create magnificent testimonials with uniques looks with WidgetKit's testimonial element. Set your testimonials then enable the autoplay and let the social proofing work.</li>
 
 <li><a href="https://widgetkit.themesgrove.com/team">Team</a> - A perfect element to introduce your team to your visitors. Showcase your team members with various styles using images, texts, social links, etc.</li>
 
@@ -141,7 +141,7 @@ Widgetkit team is always ready to aid you in your queries and problem regarding 
 <ol>
 <li><a href="https://widgetkit.themesgrove.com/post-tab/">Post Tab</a> - Design got no ending. Check out the post tab element demo and know for yourself how you can organize and showcase your posts.</li>
 
-<li><a href="https://widgetkit.themesgrove.com/post-carousel/">Post Carousel</a> - Engage with more visitors with the help of Post carousel element. Visitors don’t need to scroll through posts, the post will automatically slide one after the other.</li>
+<li><a href="https://widgetkit.themesgrove.com/post-carousel/">Post Carousel</a> - Engage with more visitors with the help of Post carousel element. Visitors don't need to scroll through posts, the post will automatically slide one after the other.</li>
 
 
 <li><a href="https://widgetkit.themesgrove.com/smart-list-2/">Smart List</a> - Show your posts smartly in a list with help of Smart list element of WidgetKit. A list is not only up to down, rather it can be shown in many ways. Try it with smart list element.</li>
@@ -190,7 +190,7 @@ Widgetkit team is always ready to aid you in your queries and problem regarding 
 
 <li><a href="https://widgetkit.themesgrove.com/#">Learndash Course Banner</a> - Highlight the banner of your Learndash course and attract more learners with help of Learndash course banner element of WidgetKit.</li>
 
-<li><a href="https://widgetkit.themesgrove.com/#">Learndash Course Certificate</a> - What’s the point if there is no proof of learning? Give this proof through certification and do it easily with Learndash course certificate element.</li>
+<li><a href="https://widgetkit.themesgrove.com/#">Learndash Course Certificate</a> - What's the point if there is no proof of learning? Give this proof through certification and do it easily with Learndash course certificate element.</li>
 
 <li><a href="https://widgetkit.themesgrove.com/#">Learndash Course Enrollment</a> - Make the enrollment process easy and help more students to enroll in your course with the Learndash course enrollment element. Give details of the period, course fee and any other details you like in one field.</li>
 

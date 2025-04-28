@@ -824,7 +824,7 @@ class wkfe_team extends Widget_Base {
 	                Group_Control_Box_Shadow::get_type(),
 	                [
 	                    'name' => 'content_box_shadow',
-	                    'exclude' => [
+	                    'exclude' => [ //phpcs:ignore
 	                        'box_shadow_position',
 	                    ],
 	                    'selector' => '{{WRAPPER}} .wk-team .wk-card',

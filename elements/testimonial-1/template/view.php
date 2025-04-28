@@ -24,7 +24,12 @@
 
                        <?php if ($testimonial_1['testimoni_image_1']['url']):?>
                               <span>
-                                  <img class="testimonial-image" src="<?php echo esc_url($testimonial_1['testimoni_image_1']['url']); ?>">
+                                  <?php if (!empty($testimonial_1['testimoni_image_1']['id'])) {
+                                      echo wp_get_attachment_image($testimonial_1['testimoni_image_1']['id'], 'full', false, ['class' => 'testimonial-image']);
+                                  } elseif (!empty($testimonial_1['testimoni_image_1']['url'])) {
+                                    // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                      echo '<img class="testimonial-image" src="' . esc_url($testimonial_1['testimoni_image_1']['url']) . '">';
+                                  } ?>
                               </span>
                       <?php endif;?>
                         

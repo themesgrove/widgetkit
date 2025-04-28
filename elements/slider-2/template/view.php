@@ -63,7 +63,14 @@ $id = $this->get_id();
                                     <?php if ($slider['slider_animation_image']['url']) : ?>
                                         <div class="col-md-4 col-xs-12 col-sm-12">
                                             <div class="carousel-image animated animate-delay-4 <?php echo esc_attr($slider['image_animation']); ?>">
-                                                <img src="<?php echo esc_url($slider['slider_animation_image']['url']); ?>" alt="animation-image" class="img-responsive">
+                                                <?php 
+                                                if (!empty($slider['slider_animation_image']['id'])) {
+                                                    echo wp_get_attachment_image($slider['slider_animation_image']['id'], 'full', false, array('class' => 'img-responsive'));
+                                                } else {
+                                                    // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                                    echo '<img src="' . esc_url($slider['slider_animation_image']['url']) . '" alt="' . esc_attr__('animation-image', 'widgetkit-for-elementor') . '" class="img-responsive">';
+                                                }
+                                                ?>
                                             </div>
                                         </div>
                                     <?php endif ?>
@@ -73,7 +80,14 @@ $id = $this->get_id();
                                     <?php if ($slider['slider_animation_image']['url']) : ?>
                                         <div class="col-md-4 col-xs-12 col-sm-12">
                                             <div class="carousel-image animated animate-delay-4 <?php echo esc_attr($slider['image_animation']); ?>">
-                                                <img src="<?php echo esc_url($slider['slider_animation_image']['url']); ?>" alt="animation-image" class="img-responsive">
+                                                <?php 
+                                                if (!empty($slider['slider_animation_image']['id'])) {
+                                                    echo wp_get_attachment_image($slider['slider_animation_image']['id'], 'full', false, array('class' => 'img-responsive'));
+                                                } else {
+                                                    // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+                                                    echo '<img src="' . esc_url($slider['slider_animation_image']['url']) . '" alt="' . esc_attr__('animation-image', 'widgetkit-for-elementor') . '" class="img-responsive">';
+                                                }
+                                                ?>
                                             </div>
                                         </div>
                                     <?php endif ?>

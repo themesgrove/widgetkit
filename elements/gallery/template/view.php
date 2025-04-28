@@ -57,8 +57,13 @@
 
 							<?php if ($galleries['content_position'] == 'overlay'): ?>
 
-					            <?php if ($gallery['gallery_thumb_image']['url']): ?>
-					            	<img src="<?php echo esc_url($gallery['gallery_thumb_image']['url']);?>" alt="<?php echo esc_attr($gallery['gallery_title']);?>">
+					            <?php if ($gallery['gallery_thumb_image']): ?>
+					            	<?php if (!empty($gallery['gallery_thumb_image']['id'])) {
+					            	    echo wp_get_attachment_image($gallery['gallery_thumb_image']['id'], 'full', false, ['alt' => esc_attr($gallery['gallery_title'])]);
+					            	} elseif (!empty($gallery['gallery_thumb_image']['url'])) {
+										// phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+					            	    echo '<img src="' . esc_url($gallery['gallery_thumb_image']['url']) . '" alt="' . esc_attr($gallery['gallery_title']) . '">';
+					            	} ?>
 					            <?php endif ;?>
 
 					            <div class="wk-padding-small wk-position-absolute wk-position-center wk-text-center wk-gallery-body">
@@ -95,13 +100,23 @@
 								<?php else: ?>
 									<div class="caption-button wk-position-relative wk-overflow-hidden">
 
-									    <?php if ($gallery['gallery_thumb_image']['url']): ?>
+									    <?php if ($gallery['gallery_thumb_image']): ?>
 							            	<?php if ($gallery['demo_link']['url']): ?>
 								            	<a class="img-link" href="<?php echo esc_url($gallery['demo_link']['url']); ?>" <?php echo esc_attr($gallery['demo_link']['is_external']) ? 'target="_blank"' : 'nofollow="nofollow"'; ?>>
-								            		<img src="<?php echo esc_url($gallery['gallery_thumb_image']['url']);?>" alt="<?php echo esc_attr($gallery['gallery_title']);?>">
+								            		<?php if (!empty($gallery['gallery_thumb_image']['id'])) {
+								            		    echo wp_get_attachment_image($gallery['gallery_thumb_image']['id'], 'full', false, ['alt' => esc_attr($gallery['gallery_title'])]);
+								            		} elseif (!empty($gallery['gallery_thumb_image']['url'])) {
+														// phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+								            		    echo '<img src="' . esc_url($gallery['gallery_thumb_image']['url']) . '" alt="' . esc_attr($gallery['gallery_title']) . '">';
+								            		} ?>
 								            	</a>
 							            	<?php else: ?>
-							            		<img class="img-link" src="<?php echo esc_url($gallery['gallery_thumb_image']['url']);?>" alt="<?php echo esc_attr($gallery['gallery_title']);?>">
+							            		<?php if (!empty($gallery['gallery_thumb_image']['id'])) {
+							            		    echo wp_get_attachment_image($gallery['gallery_thumb_image']['id'], 'full', false, ['class' => 'img-link', 'alt' => esc_attr($gallery['gallery_title'])]);
+							            		} elseif (!empty($gallery['gallery_thumb_image']['url'])) {
+													// phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+							            		    echo '<img class="img-link" src="' . esc_url($gallery['gallery_thumb_image']['url']) . '" alt="' . esc_attr($gallery['gallery_title']) . '">';
+							            		} ?>
 							            	<?php endif;?>
 							            <?php endif ;?>
 

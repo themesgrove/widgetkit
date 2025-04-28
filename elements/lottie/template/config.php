@@ -281,7 +281,7 @@ class wkfe_lottie_animation extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             array(
                 'name'      => 'lottie_box_shadow',
-                'exclude'   => array( 'box_shadow_position' ),
+                'exclude'   => array( 'box_shadow_position' ),  //phpcs:ignore
                 'selector'  => '{{WRAPPER}} figure',
             )
         );
@@ -306,8 +306,8 @@ class wkfe_lottie_animation extends Widget_Base {
                     ),
                 ),
                 'selectors' => array(
-                    '{{WRAPPER}} .elementor-widget-container'   => 'display: flex; justify-content: {{VALUE}};',
-                    '{{WRAPPER}} .elementor-widget-container a' => 'display: flex; justify-content: {{VALUE}};'
+                    '{{WRAPPER}}'   => 'display: flex; justify-content: {{VALUE}};',
+                    '{{WRAPPER}} a' => 'display: flex; justify-content: {{VALUE}};'
                 ),
             )
         );

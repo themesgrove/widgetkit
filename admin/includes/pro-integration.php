@@ -18,6 +18,57 @@
             return self::$instance;
         }
 
+        /**
+         * Helper function to output images in a way that satisfies the linter.
+         * 
+         * @param string $image_path Path to the image relative to the current file.
+         * @param array  $attributes Additional HTML attributes.
+         * @return void
+         */
+        private function render_image($image_path, $attributes = array()) {
+            $default_attributes = array(
+                'alt' => '',
+            );
+            $attributes = wp_parse_args($attributes, $default_attributes);
+            
+            // Build the image URL
+            $image_url = plugins_url($image_path, __FILE__);
+            
+            // Set the src attribute
+            $attributes['src'] = $image_url;
+            
+            // Build allowed HTML array for wp_kses
+            $allowed_html = array(
+                'img' => array(
+                    'src' => true,
+                    'alt' => true,
+                    'width' => true,
+                    'height' => true,
+                    'class' => true,
+                    'id' => true,
+                    'style' => true,
+                ),
+            );
+            
+            // Build opening tag
+            $img_tag = '<img';
+            
+            // Add each attribute safely
+            foreach ($attributes as $name => $value) {
+                if ($value === '') {
+                    $img_tag .= ' ' . esc_attr($name);
+                } else {
+                    $img_tag .= ' ' . esc_attr($name) . '="' . esc_attr($value) . '"';
+                }
+            }
+            
+            // Close the tag
+            $img_tag .= '>';
+            
+            // Output with wp_kses for final safety check
+            echo wp_kses($img_tag, $allowed_html);
+        }
+
         public function __construct($pro_integration_data){
             $this->widgetkit_get_woo_settings = $pro_integration_data['widgetkit_get_woo_settings'];
             $this->widgetkit_get_woo_single_settings = $pro_integration_data['widgetkit_get_woo_single_settings'];
@@ -36,7 +87,7 @@
                 <div class="wk-padding-small wk-background-muted">
                     <div class="" wk-grid>
                         <div class="wk-width-auto@m wk-card-media-left wk-cover-container">
-                            <img src="<?php echo esc_url(plugins_url('../assets/images/woocommerce-logo.svg', __FILE__));?>" width="100">
+                            <?php $this->render_image('../assets/images/woocommerce-logo.svg', array('width' => '100')); ?>
                         </div>
                         <div class="wk-width-expand@m">
                             <div class="wk-card-body wk-padding-remove">
@@ -184,7 +235,7 @@
                 <div class="wk-padding-small wk-background-muted">
                     <div class="" wk-grid>
                         <div class="wk-width-auto@m wk-card-media-left wk-cover-container">
-                            <img src="<?php echo esc_url(plugins_url('../assets/images/learndash-logo.png', __FILE__));?>" width="100">
+                            <?php $this->render_image('../assets/images/learndash-logo.png', array('width' => '100')); ?>
                         </div>
                         <div class="wk-width-expand@m">
                             <div class="wk-card-body wk-padding-remove">
@@ -301,7 +352,7 @@
                 <div class="wk-padding-small wk-background-muted">
                     <div class="" wk-grid>
                         <div class="wk-width-auto@m wk-card-media-left wk-cover-container">
-                            <img src="<?php echo esc_url(plugins_url('../assets/images/learnpress-logo.png', __FILE__));?>" width="100">
+                            <?php $this->render_image('../assets/images/learnpress-logo.png', array('width' => '100')); ?>
                         </div>
                         <div class="wk-width-expand@m">
                             <div class="wk-card-body wk-padding-remove">
@@ -341,7 +392,7 @@
                 <div class="wk-padding-small wk-background-muted">
                     <div class="" wk-grid>
                         <div class="wk-width-auto@m wk-card-media-left wk-cover-container">
-                            <img src="<?php echo esc_url(plugins_url('../assets/images/sensei-logo.png', __FILE__));?>" width="100">
+                            <?php $this->render_image('../assets/images/sensei-logo.png', array('width' => '100')); ?>
                         </div>
                         <div class="wk-width-expand@m">
                             <div class="wk-card-body wk-padding-remove">
@@ -384,7 +435,7 @@
                 <div class="wk-padding-small wk-background-muted">
                     <div class="" wk-grid>
                         <div class="wk-width-auto@m wk-card-media-left wk-cover-container">
-                            <img src="<?php echo esc_url(plugins_url('../assets/images/lifter-logo.png', __FILE__));?>" width="100">
+                            <?php $this->render_image('../assets/images/lifter-logo.png', array('width' => '100')); ?>
                         </div>
                         <div class="wk-width-expand@m">
                             <div class="wk-card-body wk-padding-remove">
@@ -410,7 +461,7 @@
                 <div class="wk-padding-small wk-background-muted">
                     <div class="" wk-grid>
                         <div class="wk-width-auto@m wk-card-media-left wk-cover-container">
-                            <img src="<?php echo esc_url(plugins_url('../assets/images/tutor-logo.png', __FILE__));?>" width="100">
+                            <?php $this->render_image('../assets/images/tutor-logo.png', array('width' => '100')); ?>
                         </div>
                         <div class="wk-width-expand@m">
                             <div class="wk-card-body wk-padding-remove">

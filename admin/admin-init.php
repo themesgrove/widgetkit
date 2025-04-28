@@ -212,7 +212,13 @@ class Widgetkit_Admin
         * Load uikit only inside widgetkit setting page
         */
         global $wp;  
-        $current_url = add_query_arg(array($_GET), $wp->request);
+
+        // Create nonce for admin page
+        $admin_nonce = wp_create_nonce('widgetkit_admin_page');
+        
+        // Add nonce to current URL
+        $current_url = add_query_arg(array('nonce' => $admin_nonce), $wp->request);
+
         $current_url_slug = explode("=", $current_url);
         
         if(
@@ -226,18 +232,22 @@ class Widgetkit_Admin
                 ) 
             ) 
         ){
-            wp_enqueue_style( 'wkkit',  plugins_url('/dist/css/uikit.custom.min.css', dirname(__FILE__)  ));
-            wp_enqueue_style( 'widgetkit-sweetalert2-css', plugins_url('/assets/css/sweetalert2.min.css', __FILE__ ));
+            wp_enqueue_style( 'wkkit',  plugins_url('/dist/css/uikit.custom.min.css', dirname(__FILE__)  ), array(), WK_VERSION );
+            wp_enqueue_style( 'widgetkit-sweetalert2-css', plugins_url('/assets/css/sweetalert2.min.css', __FILE__ ), array(), WK_VERSION );
 
-            wp_enqueue_script( 'wkkit',  plugins_url('/dist/js/uikit.min.js', dirname(__FILE__)  ));
-            wp_enqueue_script( 'wkkit-icon',  plugins_url('/dist/js/uikit-icons.min.js', dirname(__FILE__)  ));
+            wp_enqueue_script( 'wkkit',  plugins_url('/dist/js/uikit.min.js', dirname(__FILE__)  ), array(), WK_VERSION, true );
+            wp_enqueue_script( 'wkkit-icon',  plugins_url('/dist/js/uikit-icons.min.js', dirname(__FILE__)  ), array(), WK_VERSION, true );
             wp_enqueue_script( 'widgetkit-sweetalert2-js', plugins_url('/assets/js/sweetalert2.min.js', __FILE__), array( 'jquery' ), '1.0', true );
         }
     }
 
     public function widgetkit_for_elementor_admin_get_param_check()
     {
-        if (isset($_GET['dismissed']) && $_GET['dismissed'] == 1) {
+        // Create a nonce name
+        $nonce_name = wp_create_nonce('widgetkit_admin_dismiss_notice');
+        
+        if (isset($_GET['dismissed']) && $_GET['dismissed'] == 1 && 
+            isset($_GET['nonce']) && wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['nonce'])), $nonce_name)) {
             update_option('notice_dissmissed', 1);
         }
         $this->handle_external_redirects();
@@ -245,10 +255,10 @@ class Widgetkit_Admin
 
     public function handle_external_redirects()
     {
-        if (empty($_GET['page'])) {
+        if (empty($_GET['page'])) { // phpcs:ignore WordPress.Security.NonceVerification
             return;
         }
-        if ('widgetkit-gopro' === $_GET['page']) {
+        if ('widgetkit-gopro' === $_GET['page']) { // phpcs:ignore WordPress.Security.NonceVerification
             wp_redirect('https://themesgrove.com/widgetkit-for-elementor/?utm_source=wp-menu&utm_campaign=widgetkit_gopro&utm_medium=wp-dash');
             exit;
         }
@@ -406,15 +416,17 @@ window.Beacon('init', '940f4d8a-7f6f-432c-ae31-0ed5819fdbe4')
      */
     public function widgetkit_for_elementor_sections_with_ajax()
     {
-        if ( ! wp_verify_nonce( $_REQUEST['security'], 'ajax-security-nonce' ) ) // security_nonce
-        {
-            wp_send_json_error("No dirty business please", 400);
+        // Check if the security index exists and properly sanitize it
+        if (!isset($_REQUEST['security']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_REQUEST['security'])), 'ajax-security-nonce')) {
+            wp_send_json_error("Invalid security token", 400);
             return false;
-            die ();
         }
 
+        // Check if the fields index exists and sanitize it
         if (isset($_POST['fields'])) {
-            parse_str($_POST['fields'], $settings);
+            // Unslash and sanitize the fields input
+            $fields = sanitize_text_field(wp_unslash($_POST['fields'])); // Unslash and sanitize the input
+            parse_str($fields, $settings); // Parse the sanitized input
         } else {
             return;
         }

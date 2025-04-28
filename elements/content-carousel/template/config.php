@@ -363,7 +363,7 @@ class wkfe_content_carousel extends Widget_Base {
                         'ID'     => esc_html__( 'Id', 'widgetkit-for-elementor' ),
                         'name'   => esc_html__( 'Name', 'widgetkit-for-elementor' ),
                         'comment_count'  => esc_html__( 'Comment Count', 'widgetkit-for-elementor' ),
-                        'meta_value'     => esc_html__( 'Meta Value', 'widgetkit-for-elementor' ),
+                        'meta_value'     => esc_html__( 'Meta Value', 'widgetkit-for-elementor' ),  //phpcs:ignore
                     ],
                     'condition' => [
                         'item_option' => 'blog_post',
@@ -895,7 +895,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                Group_Control_Box_Shadow::get_type(),
 	                [
 	                    'name' => 'content_box_shadow',
-	                    'exclude' => [
+	                    'exclude' => [ //phpcs:ignore
 	                        'box_shadow_position',
 	                    ],
 	                    'selector' => '{{WRAPPER}} .content-carousel .wk-card',

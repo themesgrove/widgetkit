@@ -83,9 +83,9 @@
             </div>
         <?php else: ?>
         <a  
-        href="<?php echo esc_attr($settings['normal_btn_link']['url']);?>" 
+        href="<?php echo esc_url($settings['normal_btn_link']['url']); ?>" 
         class="btn-hover-<?php echo esc_attr($settings['button_modal_hover_effect']);?>  button-normal"
-        target="<?php echo esc_attr($settings['normal_btn_link']['is_external']) ? '_blank' : '';  ?>"
+        target="<?php echo esc_attr($settings['normal_btn_link']['is_external']) ? '_blank' : ''; ?>"
         rel="<?php echo esc_attr($settings['normal_btn_link']['nofollow']) ? 'nofollow' : ''; ?>"
         >
             <?php if ($settings['button_modal_hover_effect'] == 'bfm' || $settings['button_modal_hover_effect'] == 'fourcorner' ): ?>
@@ -122,13 +122,31 @@
                 </header><!-- /header -->
 
                 <div class="tgx-container">
-                    <?php if ($settings['modal_content'] == 'modal_shortcode'): ?>    
-                        <?php echo do_shortcode($settings['modal_shortcode']);?>
-                    <?php elseif($settings['modal_content'] == 'modal_video'): ?>
-                        <?php echo esc_html(html_entity_decode($settings['modal_video']));?>
-                    <?php else: ?>
-                        <?php echo do_shortcode($settings['modal_shortcode']);?>
-                    <?php endif ?>
+                <?php
+                        // Define allowed HTML tags and attributes for the iframe *before* the conditions
+                        $allowed_html_iframe = [
+                            'iframe' => [
+                                'src'             => true, // Allow src attribute
+                                'height'          => true, // Allow height attribute
+                                'width'           => true, // Allow width attribute
+                                'frameborder'     => true, // Allow frameborder attribute
+                                'allowfullscreen' => true, // Allow allowfullscreen attribute
+                                'allow'           => true, // For attributes like 'encrypted-media'
+                                'gesture'         => true, // For attributes like 'media'
+                            ],
+                        ];
+
+                        // Now check the content type and render accordingly
+                        if ( $settings['modal_content'] === 'modal_shortcode' ) {
+                            echo do_shortcode( $settings['modal_shortcode'] );
+                        } elseif ( $settings['modal_content'] === 'modal_video' ) {
+                            // Use the pre-defined allowed HTML for iframes
+                            echo wp_kses(html_entity_decode($settings['modal_video']), $allowed_html_iframe); // Decode HTML entities
+                        } else {
+                            // Fallback to shortcode as in the original code
+                            echo do_shortcode( $settings['modal_shortcode'] );
+                        }
+                    ?>
                 </div><!-- /tgx-container -->
 
             </div><!-- /tgx-content -->

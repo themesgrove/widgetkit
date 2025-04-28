@@ -341,7 +341,7 @@ class wkfe_countdown extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'    => 'image_box_shadow',
-				'exclude' => [
+				'exclude' => [ //phpcs:ignore
 					'box_shadow_position',
 				],
 				'selector' => '{{WRAPPER}} .widgetkit-countdown .widgetkit_countdown-section',

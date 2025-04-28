@@ -20,6 +20,7 @@
                             'post_status'       => 'publish',
                             'posts_per_page'    => $settings['standard_post_show'],
                             'ignore_sticky_posts' => 1,
+                            // phpcs:ignore
                              'tax_query' => array( array(
                                 'taxonomy' => 'post_format',
                                 'field' => 'slug',
@@ -75,14 +76,15 @@
                         'post_status'=>"publish",
                         'post_type'=>"post",
                         'orderby'=>"post_date",
-                               'tax_query' => array( array(
-                                        'taxonomy' => 'post_format',
-                                        'field' => 'slug',
-                                        'terms' => array('post-format-aside', 'post-format-gallery', 'post-format-link', 'post-format-image', 'post-format-quote', 'post-format-status', 'post-format-audio', 'post-format-chat', 'post-format-video'),
-                                        'operator' => 'NOT IN'
-                                       ) 
-                                    ),
-                        );
+                        // phpcs:ignore
+                        'tax_query' => array( array(
+                            'taxonomy' => 'post_format',
+                            'field' => 'slug',
+                            'terms' => array('post-format-aside', 'post-format-gallery', 'post-format-link', 'post-format-image', 'post-format-quote', 'post-format-status', 'post-format-audio', 'post-format-chat', 'post-format-video'),
+                            'operator' => 'NOT IN'
+                            ) 
+                        ),
+                    );
                     $postslist = get_posts( $args ); ?>
 
                 <?php foreach ($postslist as $post) :  setup_postdata($post); ?>
@@ -149,6 +151,7 @@
                             'post_status'       => 'publish',
                             'posts_per_page'    => $settings['standard_post_show'],
                             'ignore_sticky_posts' => 1,
+                            // phpcs:ignore
                              'tax_query' => array( array(
                                 'taxonomy' => 'post_format',
                                 'field' => 'slug',

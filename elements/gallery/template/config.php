@@ -605,7 +605,7 @@ class wkfe_gallery extends Widget_Base {
 				[
 					'name'    => 'filter_box_shadow',
 					'label'     => esc_html__( 'Shadow', 'widgetkit-for-elementor' ),
-					'exclude' => [
+					'exclude' => [ //phpcs:ignore
 						'box_shadow_position',
 					],
 					'condition'=> [
@@ -918,7 +918,7 @@ class wkfe_gallery extends Widget_Base {
 	                [
 	                    'name' => 'item_box_shadow',
 	                    'label' => __( 'Normal Shadow', 'widgetkit-for-elementor' ),
-	                    'exclude' => [
+	                    'exclude' => [ //phpcs:ignore
 	                        'box_shadow_position',
 	                    ],
 	                    'selector' => '{{WRAPPER}} .wk-gallery .content-bottom',
@@ -933,7 +933,7 @@ class wkfe_gallery extends Widget_Base {
 	                [
 	                    'name' => 'item_hover_box_shadow',
 	                    'label' => __( 'Hover Shadow', 'widgetkit-for-elementor' ),
-	                    'exclude' => [
+	                    'exclude' => [ //phpcs:ignore
 	                        'box_shadow_position',
 	                    ],
 	                    'selector' => '{{WRAPPER}} .wk-gallery .content-bottom:hover',

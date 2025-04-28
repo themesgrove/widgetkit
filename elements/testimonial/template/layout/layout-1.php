@@ -6,9 +6,10 @@ use Elementor\Group_Control_Image_Size;
         <?php if($testimonial['testimonial_thumb_image']['url']):?>
             <?php if($testimonials['thumbnail_position_vertical'] == 'top'): ;?>
                 <div class="wk-card-media-top wk-overflow-hidden wk-padding-bottom">
-                    <?php if($testimonial['testimonial_thumb_image']['id']): ?>
-                        <img src="<?php echo esc_url(Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials )); ?>" alt="<?php echo esc_attr($testimonial['testimonial_title']); ?>">
+                    <?php if(!empty($testimonial['testimonial_thumb_image']['id'])): ?>
+                        <?php echo wp_get_attachment_image($testimonial['testimonial_thumb_image']['id'], 'full', false, ['alt' => esc_attr($testimonial['testimonial_title'])]); ?>
                     <?php else:?>
+                        <?php // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage ?>
                         <img src="<?php echo esc_url($testimonial['testimonial_thumb_image']['url']);?>" alt="<?php echo esc_html($testimonial['testimonial_title']); ?>">  
                     <?php endif;?>
                 </div>
@@ -24,9 +25,10 @@ use Elementor\Group_Control_Image_Size;
                 <?php if($testimonials['thumbnail_position_vertical'] == 'bottom'):?>
                 
                     <div class="wk-card-media-bottom wk-overflow-hidden">
-                    <?php if($testimonial['testimonial_thumb_image']['id']): ?>
-                        <img src="<?php echo esc_url(Group_Control_Image_Size::get_attachment_image_src($testimonial['testimonial_thumb_image']['id'], 'testimonial_image', $testimonials )); ?>" alt="<?php echo esc_attr($testimonial['testimonial_title']); ?>">
+                    <?php if(!empty($testimonial['testimonial_thumb_image']['id'])): ?>
+                        <?php echo wp_get_attachment_image($testimonial['testimonial_thumb_image']['id'], 'full', false, ['alt' => esc_attr($testimonial['testimonial_title'])]); ?>
                     <?php else:?>
+                        <?php // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage ?>
                         <img src="<?php echo esc_url($testimonial['testimonial_thumb_image']['url']);?>" alt="<?php echo esc_attr($testimonial['testimonial_title']); ?>">  
                     <?php endif;?> 
                     </div>
