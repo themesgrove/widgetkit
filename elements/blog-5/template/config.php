@@ -166,7 +166,7 @@ class wkfe_blog_5 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'    => 'image_box_shadow',
-				'exclude' => [ // phpcs:ignore
+				'exclude' => [
 					'box_shadow_position',
 				],
 				'selector'=> '{{WRAPPER}} .tgx-blog-5 .card',

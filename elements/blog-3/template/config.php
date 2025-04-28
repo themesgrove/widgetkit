@@ -128,7 +128,7 @@ class wkfe_blog_3 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'    => 'image_box_shadow',
-				'exclude' => [ // phpcs:ignore
+				'exclude' => [
 					'box_shadow_position',
 				],
 				'selector'=> '{{WRAPPER}} .tgx-blog-3 .blog-info',
@@ -148,7 +148,7 @@ class wkfe_blog_3 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'    => 'image_box_shadow_hover',
-				'exclude' => [ // phpcs:ignore
+				'exclude' => [
 					'box_shadow_position',
 				],
 				'selector' => '{{WRAPPER}} .tgx-blog-3 .blog-wrapper:hover .blog-info',

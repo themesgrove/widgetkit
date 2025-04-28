@@ -410,7 +410,7 @@ class wkfe_image_feature extends Widget_Base {
             [
                 'name'    => 'item_box_shadow',
                 'label'   => esc_html__( 'Hover Box Shadow', 'widgetkit-for-elementor' ),
-                'exclude' => [ //phpcs:ignore
+                'exclude' => [
                     'box_shadow_position',
                 ],
                 'selector'=> '{{WRAPPER}} .tgx-image-feature .block:hover',

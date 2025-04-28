@@ -284,7 +284,7 @@ class wkfe_hover_image extends Widget_Base {
 				[
 					'name' => 'hover_image_box_shadow',
 					'label' => esc_html__( 'Normal Shadow', 'widgetkit-for-elementor' ),
-					'exclude' => [ //phpcs:ignore
+					'exclude' => [
 						'box_shadow_position',
 					],
 					'selector' => '{{WRAPPER}} .tgx-hover-image',
@@ -305,7 +305,7 @@ class wkfe_hover_image extends Widget_Base {
 			[
 				'name' => 'hover_image_hover_box_shadow',
 				'label' => esc_html__( 'Hover Shadow', 'widgetkit-for-elementor' ),
-				'exclude' => [ //phpcs:ignore
+				'exclude' => [
 					'box_shadow_position',
 				],
 				'selector' => '{{WRAPPER}} .tgx-hover-image:hover',
