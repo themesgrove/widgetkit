@@ -16,7 +16,7 @@
             ?>
             <div class="wk-card wk-card-default wk-grid-collapse wk-child-width-1-2@s wk-margin" wk-grid>
                 <div class="wk-card-media-left wk-cover-container">
-                    <img src="https://themesgrove.com/wp-content/uploads/2018/12/wigetkit-banner-bg.png" alt="" wk-cover>
+                    <img src="<?php echo esc_url(plugins_url('assets/images/wigetkit-banner-bg.png', WK_FILE)); ?>" alt="" wk-cover>
                     <canvas width="100" height="120"></canvas>
                 </div>
                 <div>

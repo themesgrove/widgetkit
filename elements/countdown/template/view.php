@@ -68,7 +68,7 @@
                             },
                             <?php endif; ?>
                          
-                            <?php echo $serverSync; ?>
+                            <?php echo esc_js($serverSync); ?>
                         });
                         times = $('#countdown-<?php echo esc_attr( $this->get_id() );?>').widgetkit_countdown('getTimes');
                         function runTimer( el ) {

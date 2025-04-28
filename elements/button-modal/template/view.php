@@ -125,7 +125,7 @@
                     <?php if ($settings['modal_content'] == 'modal_shortcode'): ?>    
                         <?php echo do_shortcode($settings['modal_shortcode']);?>
                     <?php elseif($settings['modal_content'] == 'modal_video'): ?>
-                        <?php echo html_entity_decode(esc_html($settings['modal_video']));?>
+                        <?php echo esc_html(html_entity_decode($settings['modal_video']));?>
                     <?php else: ?>
                         <?php echo do_shortcode($settings['modal_shortcode']);?>
                     <?php endif ?>

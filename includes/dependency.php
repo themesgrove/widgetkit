@@ -44,7 +44,7 @@ class WKFE_Dependency{
             $button_text = __('Activate Elementor Now', 'widgetkit-for-elementor');
         }
         $button = '<p><a href="' . esc_url($activation_url) . '" class="button-primary">' . esc_html($button_text) . '</a></p>';
-        printf('<div class="error"><p>%1$s</p>%2$s</div>', wp_kses_post($message), $button);
+        printf('<div class="error"><p>%1$s</p>%2$s</div>', wp_kses_post($message), wp_kses_post($button));
     }
 
     public function get_all_plugin_in_my_site($plugin_base_name){

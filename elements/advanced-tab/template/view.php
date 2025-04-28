@@ -65,7 +65,7 @@ $id_int = substr($this->get_id_int(), 0, 3);
                     <p><?php echo esc_html($tab['tabs_tab_content']); ?></p>
                 <?php elseif ('template' == $tab['tabs_content_type']) : ?>
                     <?php if (!empty($tab['primary_templates'])) {
-                        echo Plugin::$instance->frontend->get_builder_content($tab['primary_templates']);
+                        echo wp_kses_post(Plugin::$instance->frontend->get_builder_content($tab['primary_templates']));
                     } ?>
                 <?php elseif ('image' == $tab['tabs_content_type']) : ?>
                     <?php if (!empty($tab['tab_image'])) {?>

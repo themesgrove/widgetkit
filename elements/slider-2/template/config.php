@@ -86,7 +86,7 @@ class wkfe_slider_2 extends Widget_Base {
 					'type'      => Controls_Manager::SELECT,
 					'default'   => 'fadeInDown',
 					'options'   => [
-						'none'			   => esc_html__('None'),
+						'none'			   => esc_html__('None', 'widgetkit-for-elementor'),
 						'fadeInLeft'       => esc_html__( 'fadeInLeft', 'widgetkit-for-elementor' ),
 						'slideInRight'     => esc_html__( 'slideInRight', 'widgetkit-for-elementor' ),
 						'bounceIn'         => esc_html__( 'bounceIn', 'widgetkit-for-elementor' ),
@@ -132,7 +132,7 @@ class wkfe_slider_2 extends Widget_Base {
 					'type'      => Controls_Manager::SELECT,
 					'default'   => 'fadeInDown',
 					'options'   => [
-						'none'			   => esc_html__('None'),
+						'none'			   => esc_html__('None', 'widgetkit-for-elementor'),
 						'fadeInLeft'       => esc_html__( 'fadeInLeft', 'widgetkit-for-elementor' ),
 						'slideInRight'     => esc_html__( 'slideInRight', 'widgetkit-for-elementor' ),
 						'bounceIn'         => esc_html__( 'bounceIn', 'widgetkit-for-elementor' ),
@@ -176,7 +176,7 @@ class wkfe_slider_2 extends Widget_Base {
 					'type'      => Controls_Manager::SELECT,
 					'default'   => 'fadeInDown',
 					'options'   => [
-						'none'			   => esc_html__( 'None'),
+						'none'			   => esc_html__( 'None', 'widgetkit-for-elementor'),
 						'fadeInLeft'       => esc_html__( 'fadeInLeft', 'widgetkit-for-elementor' ),
 						'slideInRight'     => esc_html__( 'slideInRight', 'widgetkit-for-elementor' ),
 						'bounceIn'         => esc_html__( 'bounceIn', 'widgetkit-for-elementor' ),
@@ -210,7 +210,7 @@ class wkfe_slider_2 extends Widget_Base {
 					'type'      => Controls_Manager::SELECT,
 					'default'   => 'fadeInUp',
 					'options'   => [
-						'none'			   => esc_html__( 'None'),
+						'none'			   => esc_html__( 'None', 'widgetkit-for-elementor'),
 						'fadeInLeft'       => esc_html__( 'fadeInLeft', 'widgetkit-for-elementor' ),
 						'slideInRight'     => esc_html__( 'slideInRight', 'widgetkit-for-elementor' ),
 						'bounceIn'         => esc_html__( 'bounceIn', 'widgetkit-for-elementor' ),
@@ -271,14 +271,14 @@ class wkfe_slider_2 extends Widget_Base {
 					'type'      => Controls_Manager::SELECT,
 					'default'   => 'h2',
 					'options'   => [
-						'h1'			   => esc_html__('H1'),
-						'h2'			   => esc_html__('H2'),
-						'h3'			   => esc_html__('H3'),
-						'h4'			   => esc_html__('H4'),
-						'h5'			   => esc_html__('H5'),
-						'h6'			   => esc_html__('H6'),
-						'p'			       => esc_html__('P'),
-						'span'			   => esc_html__('Span'),
+						'h1'			   => esc_html__('H1', 'widgetkit-for-elementor'),
+						'h2'			   => esc_html__('H2', 'widgetkit-for-elementor'),
+						'h3'			   => esc_html__('H3', 'widgetkit-for-elementor'),
+						'h4'			   => esc_html__('H4', 'widgetkit-for-elementor'),
+						'h5'			   => esc_html__('H5', 'widgetkit-for-elementor'),
+						'h6'			   => esc_html__('H6', 'widgetkit-for-elementor'),
+						'p'			       => esc_html__('P', 'widgetkit-for-elementor'),
+						'span'			   => esc_html__('Span', 'widgetkit-for-elementor'),
 					],
 				]
 		);
@@ -611,7 +611,7 @@ class wkfe_slider_2 extends Widget_Base {
 					'type'      => Controls_Manager::SELECT,
 					'default'   => '0',
 					'options'   => [
-						'none'	  => esc_html__( 'None'),
+						'none'	  => esc_html__( 'None', 'widgetkit-for-elementor'),
 						'0'       => esc_html__( '0', 'widgetkit-for-elementor' ),
 						'auto'	  => esc_html__( 'Auto', 'widgetkit-for-elementor' ),
 

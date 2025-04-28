@@ -22,7 +22,7 @@ class wkfe_search extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Search', 'widgetkit-pro' );
+		return esc_html__( 'Search', 'widgetkit-for-elementor' );
 	}
 
 	public function get_icon() {
@@ -59,13 +59,13 @@ class wkfe_search extends Widget_Base {
 	$this->start_controls_section(
 		'section_text_content',
 		[
-			'label' => esc_html__( 'Icon', 'widgetkit-pro' ),
+			'label' => esc_html__( 'Icon', 'widgetkit-for-elementor' ),
 		]
 	);
 		$this->add_control(
 			'search_icon_for_handler',
 			[
-				'label' => esc_html__( 'Icon', 'widgetkit-pro' ),
+				'label' => esc_html__( 'Icon', 'widgetkit-for-elementor' ),
 				'type'              => Controls_Manager::ICONS,
 				'default'    =>  [
 					'value'     => 'fa fa-search',
@@ -78,20 +78,20 @@ class wkfe_search extends Widget_Base {
 		$this->add_responsive_control(
 			'search_icon_alignment',
 			[
-				'label' => esc_html__( 'Alignment', 'widgetkit-pro' ),
+				'label' => esc_html__( 'Alignment', 'widgetkit-for-elementor' ),
 				'type'  => Controls_Manager::CHOOSE,
 				'default'   => 'left',
 				'options' => [
 					'left'    => [
-						'title' => esc_html__( 'Left', 'widgetkit-pro' ),
+						'title' => esc_html__( 'Left', 'widgetkit-for-elementor' ),
 						'icon'  => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'widgetkit-pro' ),
+						'title' => esc_html__( 'Center', 'widgetkit-for-elementor' ),
 						'icon'  => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'widgetkit-pro' ),
+						'title' => esc_html__( 'Right', 'widgetkit-for-elementor' ),
 						'icon'  => 'fa fa-align-right',
 					],
 				],
@@ -103,7 +103,7 @@ class wkfe_search extends Widget_Base {
 		$this->add_responsive_control(
 			'search_form_position',
 			[
-				'label' => esc_html__( 'Search Form Position', 'widgetkit-pro' ),
+				'label' => esc_html__( 'Search Form Position', 'widgetkit-for-elementor' ),
 				'type'  => Controls_Manager::DIMENSIONS,
 				'allowed_dimensions' => 'vertical',
 				'size_units' => [ 'px', '%' ],
@@ -120,23 +120,23 @@ class wkfe_search extends Widget_Base {
 	$this->start_controls_section(
 		'section_text_search_form',
 		[
-			'label' => esc_html__( 'Search Form', 'widgetkit-pro' ),
+			'label' => esc_html__( 'Search Form', 'widgetkit-for-elementor' ),
 		]
 	);
 		$this->add_control(
 			'search_form_input_placeholder',
 				[
-					'label' => esc_html__( 'Input Placeholder', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Input Placeholder', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::TEXT,
-					'default' => esc_html__( 'Search here', 'widgetkit-pro' ),
+					'default' => esc_html__( 'Search here', 'widgetkit-for-elementor' ),
 				]
 		);
 		$this->add_control(
 			'search_form_input_button_text',
 				[
-					'label' => esc_html__( 'Button', 'widgetkit-pro' ),
+					'label' => esc_html__( 'Button', 'widgetkit-for-elementor' ),
 					'type'  => Controls_Manager::TEXT,
-					'default' => esc_html__( 'Search', 'widgetkit-pro' ),
+					'default' => esc_html__( 'Search', 'widgetkit-for-elementor' ),
 				]
 		);
 	$this->end_controls_section();
@@ -151,13 +151,13 @@ class wkfe_search extends Widget_Base {
 		$this->start_controls_section(
 			'section_widgetkit_pro_box',
 			[
-				'label' => esc_html__( 'Go Premium for more layout & feature', 'widgetkit-pro' ),
+				'label' => esc_html__( 'Go Premium for more layout & feature', 'widgetkit-for-elementor' ),
 			]
 		);
 			$this->add_control(
 				'wkfe_control_go_pro',
 				[
-					'label' => __('Unlock more possibilities', 'widgetkit-pro'),
+					'label' => __('Unlock more possibilities', 'widgetkit-for-elementor'),
 					'type' => Controls_Manager::CHOOSE,
 					'default' => '1',
 					'description' => '<div class="elementor-nerd-box">
@@ -175,14 +175,14 @@ class wkfe_search extends Widget_Base {
 		$this->start_controls_section(
 			'section_search_icon_layout',
 			[
-				'label' => esc_html__( 'Icon', 'widgetkit-pro' ),
+				'label' => esc_html__( 'Icon', 'widgetkit-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 			$this->add_control(
 				'search_handler_icon_size',
 				[
-					'label'   => esc_html__( 'Size', 'widgetkit-pro' ),
+					'label'   => esc_html__( 'Size', 'widgetkit-for-elementor' ),
 					'type'    => Controls_Manager::SLIDER,
 					'default' => [
 						'size' =>16,
@@ -209,13 +209,13 @@ class wkfe_search extends Widget_Base {
                 $this->start_controls_tab(
                     'search_icon_style_normal',
                     [
-                        'label' => __('Normal', 'widgetkit-pro'),
+                        'label' => __('Normal', 'widgetkit-for-elementor'),
                     ]
                 );
 					$this->add_control(
 						'search_icon_color',
 						[
-							'label' => __( 'Color', 'widgetkit-pro' ),
+							'label' => __( 'Color', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-search .click-handler' => 'color: {{VALUE}}',
@@ -225,7 +225,7 @@ class wkfe_search extends Widget_Base {
 					$this->add_control(
 						'search_icon_background_color',
 						[
-							'label' => __( 'Background', 'widgetkit-pro' ),
+							'label' => __( 'Background', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-search .click-handler' => 'background-color: {{VALUE}}',
@@ -239,13 +239,13 @@ class wkfe_search extends Widget_Base {
                 $this->start_controls_tab(
                     'search_icon_style_hover',
                     [
-                        'label' => __('Hover/Active', 'widgetkit-pro'),
+                        'label' => __('Hover/Active', 'widgetkit-for-elementor'),
                     ]
                 );
 					$this->add_control(
 						'search_icon_hover_color',
 						[
-							'label' => __( 'Icon', 'widgetkit-pro' ),
+							'label' => __( 'Icon', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-search .click-handler:hover' => 'color: {{VALUE}}',
@@ -256,7 +256,7 @@ class wkfe_search extends Widget_Base {
 					$this->add_control(
 						'search_icon_hover_background_color',
 						[
-							'label' => __( 'Background', 'widgetkit-pro' ),
+							'label' => __( 'Background', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-search .click-handler:hover' => 'background: {{VALUE}} !important',
@@ -281,7 +281,7 @@ class wkfe_search extends Widget_Base {
 			$this->add_responsive_control(
                 'search_icon_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'widgetkit-pro' ),
+                    'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -293,7 +293,7 @@ class wkfe_search extends Widget_Base {
 			$this->add_responsive_control(
                 'search_icon_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
+                    'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -306,7 +306,7 @@ class wkfe_search extends Widget_Base {
 			$this->add_responsive_control(
                 'search_icon_margin',
                 [
-                    'label' => esc_html__( 'Margin', 'widgetkit-pro' ),
+                    'label' => esc_html__( 'Margin', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -321,14 +321,14 @@ class wkfe_search extends Widget_Base {
 		$this->start_controls_section(
 			'search_form_style',
 			[
-				'label' => esc_html__( 'Search Form', 'widgetkit-pro' ),
+				'label' => esc_html__( 'Search Form', 'widgetkit-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 			$this->add_control(
 				'search_box_hover_background_color',
 				[
-					'label' => __( 'Background', 'widgetkit-pro' ),
+					'label' => __( 'Background', 'widgetkit-for-elementor' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper' => 'background: {{VALUE}} !important',
@@ -346,7 +346,7 @@ class wkfe_search extends Widget_Base {
 			$this->add_responsive_control(
                 'search_box_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
+                    'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -360,7 +360,7 @@ class wkfe_search extends Widget_Base {
             $this->add_control(
                 'search_form_input_style_header',
                 [
-                'label' => __( 'Input', 'widgetkit-pro' ),
+                'label' => __( 'Input', 'widgetkit-for-elementor' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
                 ]
@@ -368,7 +368,7 @@ class wkfe_search extends Widget_Base {
 				$this->add_control(
 					'search_form_input_color',
 					[
-						'label' => __( 'Color', 'widgetkit-pro' ),
+						'label' => __( 'Color', 'widgetkit-for-elementor' ),
 						'type' => Controls_Manager::COLOR,
 						'selectors' => [
 							'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'color: {{VALUE}}',
@@ -378,7 +378,7 @@ class wkfe_search extends Widget_Base {
 				$this->add_control(
 					'search_form_input_background_color',
 					[
-						'label' => __( 'Background', 'widgetkit-pro' ),
+						'label' => __( 'Background', 'widgetkit-for-elementor' ),
 						'type' => Controls_Manager::COLOR,
 						'selectors' => [
 							'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="text"]' => 'background: {{VALUE}}',
@@ -395,7 +395,7 @@ class wkfe_search extends Widget_Base {
 				$this->add_control(
 					'search_form_input_border_radius',
 					[
-						'label' => esc_html__( 'Border Radius', 'widgetkit-pro' ),
+						'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
 						'type'  => Controls_Manager::DIMENSIONS,
 						'size_units' => [ 'px' ],
 						'selectors'  => [
@@ -406,7 +406,7 @@ class wkfe_search extends Widget_Base {
 				$this->add_responsive_control(
 					'search_input_padding',
 					[
-						'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
+						'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
 						'type'  => Controls_Manager::DIMENSIONS,
 						'size_units' => [ 'px', '%' ],
 						'selectors'  => [
@@ -421,7 +421,7 @@ class wkfe_search extends Widget_Base {
             $this->add_control(
                 'search_form_button_style_heading',
                 [
-                'label' => __( 'Button', 'widgetkit-pro' ),
+                'label' => __( 'Button', 'widgetkit-for-elementor' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
                 ]
@@ -430,7 +430,7 @@ class wkfe_search extends Widget_Base {
 			$this->add_group_control(
                 Group_Control_Typography::get_type(),
                 [
-                    'label' => __( 'Typography', 'widgetkit-pro' ),
+                    'label' => __( 'Typography', 'widgetkit-for-elementor' ),
                     'name' => 'search_button_typography',
                     'selector' => '{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="submit"]',
                 ]
@@ -445,13 +445,13 @@ class wkfe_search extends Widget_Base {
                 $this->start_controls_tab(
                     'search_button_style_normal',
                     [
-                        'label' => __('Normal', 'widgetkit-pro'),
+                        'label' => __('Normal', 'widgetkit-for-elementor'),
                     ]
                 );
 					$this->add_control(
 						'search_button_color',
 						[
-							'label' => __( 'Button', 'widgetkit-pro' ),
+							'label' => __( 'Button', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="submit"]' => 'color: {{VALUE}}',
@@ -461,7 +461,7 @@ class wkfe_search extends Widget_Base {
 					$this->add_control(
 						'search_button_background_color',
 						[
-							'label' => __( 'Background', 'widgetkit-pro' ),
+							'label' => __( 'Background', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="submit"]' => 'background-color: {{VALUE}}',
@@ -475,13 +475,13 @@ class wkfe_search extends Widget_Base {
 				$this->start_controls_tab(
 					'search_button_style_hover',
 					[
-						'label' => __('Hover', 'widgetkit-pro'),
+						'label' => __('Hover', 'widgetkit-for-elementor'),
 					]
 				);
 					$this->add_control(
 						'search_button_hover_color',
 						[
-							'label' => __( 'button', 'widgetkit-pro' ),
+							'label' => __( 'button', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="submit"]:hover' => 'color: {{VALUE}}',
@@ -491,7 +491,7 @@ class wkfe_search extends Widget_Base {
 					$this->add_control(
 						'search_button_hover_background_color',
 						[
-							'label' => __( 'Background', 'widgetkit-pro' ),
+							'label' => __( 'Background', 'widgetkit-for-elementor' ),
 							'type' => Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .wkfe-search .wkfe-search-form-wrapper input[type="submit"]:hover' => 'background: {{VALUE}} !important',
@@ -514,7 +514,7 @@ class wkfe_search extends Widget_Base {
 			$this->add_control(
                 'search_form_button_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'widgetkit-pro' ),
+                    'label' => esc_html__( 'Border Radius', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px' ],
                     'selectors'  => [
@@ -526,7 +526,7 @@ class wkfe_search extends Widget_Base {
 			$this->add_responsive_control(
                 'search_form_button_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'widgetkit-pro' ),
+                    'label' => esc_html__( 'Padding', 'widgetkit-for-elementor' ),
                     'type'  => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [

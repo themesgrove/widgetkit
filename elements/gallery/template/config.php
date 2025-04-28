@@ -80,7 +80,7 @@ class wkfe_gallery extends Widget_Base {
 		      	[
 		          'label'   => esc_html__( 'Description', 'widgetkit-for-elementor' ),
 		          'type'    => Controls_Manager::TEXTAREA,
-		          'default' => esc_html__( '', 'widgetkit-for-elementor' ),
+		          'default' => '',
 		      	]
 		);
 
@@ -319,7 +319,7 @@ class wkfe_gallery extends Widget_Base {
 					'label'   => esc_html__( 'Link Text', 'widgetkit-for-elementor' ),
 					'description'   => esc_html__( 'When you set button text then link icon will hide', 'widgetkit-for-elementor' ),
 					'type'    => Controls_Manager::TEXT,
-					'default' => esc_html__( '', 'widgetkit-for-elementor' ),
+					'default' => '',
 					'condition' => [
 						'link_enable' => 'yes',
 					],

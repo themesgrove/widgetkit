@@ -82,14 +82,23 @@
 
     <?php if ($tilt_box['effect_enable'] == 'yes'):?> 
 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-        <script type="text/javascript">
+        <?php 
+            wp_enqueue_script(
+                'vanilla-tilt',
+                plugins_url('assets/js/vanilla-tilt.min.js', WK_FILE),
+                array(), // No dependencies
+                '1.7.0', // Version number
+                array(
+                    'strategy' => 'defer', // Load script in footer
+                    'in_footer' => true
+                )
+            );
+        ?>
 
+        <script type="text/javascript">
             VanillaTilt.init(document.querySelector("#wk-tilt-<?php echo esc_attr($id);?> .tilt-element"), {
                 max: 25,
                 speed: 400,
-
-                
         });
         
 

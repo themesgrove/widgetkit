@@ -125,7 +125,7 @@ class wkfe_lottie_animation extends Widget_Base {
         $this->add_control(
 			'widget_caption',
 			[
-				'label' => __( 'Caption', 'widgetkit-pro'),
+				'label' => __( 'Caption', 'widgetkit-for-elementor'),
 				'type' => Controls_Manager::TEXT,
                 'label_block'   => true
 			]
@@ -315,7 +315,7 @@ class wkfe_lottie_animation extends Widget_Base {
         $this->add_control(
             'caption_heading',
             [
-                'label' => __( 'Caption', 'widgetkit-pro' ),
+                'label' => __( 'Caption', 'widgetkit-for-elementor' ),
                 'type'  => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -324,7 +324,7 @@ class wkfe_lottie_animation extends Widget_Base {
         $this->add_control(
             'caption_color',
             [
-                'label'     => esc_html__( 'Color', 'widgetkit-pro' ),
+                'label'     => esc_html__( 'Color', 'widgetkit-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
@@ -336,7 +336,7 @@ class wkfe_lottie_animation extends Widget_Base {
             Group_Control_Typography::get_type(),
                 [
                     'name'     => 'caption_typography',
-                    'label'    => esc_html__( 'Typography', 'widgetkit-pro' ),
+                    'label'    => esc_html__( 'Typography', 'widgetkit-for-elementor' ),
                     'selector' => '{{WRAPPER}} figure figcaption',
                 ]
         );
@@ -344,7 +344,7 @@ class wkfe_lottie_animation extends Widget_Base {
         $this->add_control(
 			'margin',
 			[
-				'label' => __( 'Margin', 'widgetkit-pro' ),
+				'label' => __( 'Margin', 'widgetkit-for-elementor' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -356,7 +356,7 @@ class wkfe_lottie_animation extends Widget_Base {
         $this->add_control(
 			'padding',
 			[
-				'label' => __( 'Padding', 'widgetkit-pro' ),
+				'label' => __( 'Padding', 'widgetkit-for-elementor' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
