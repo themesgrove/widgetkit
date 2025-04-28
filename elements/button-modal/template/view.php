@@ -83,9 +83,9 @@
             </div>
         <?php else: ?>
         <a  
-        href="<?php echo esc_attr($settings['normal_btn_link']['url']);?>" 
+        href="<?php echo esc_url($settings['normal_btn_link']['url']); ?>" 
         class="btn-hover-<?php echo esc_attr($settings['button_modal_hover_effect']);?>  button-normal"
-        target="<?php echo esc_attr($settings['normal_btn_link']['is_external']) ? '_blank' : '';  ?>"
+        target="<?php echo esc_attr($settings['normal_btn_link']['is_external']) ? '_blank' : ''; ?>"
         rel="<?php echo esc_attr($settings['normal_btn_link']['nofollow']) ? 'nofollow' : ''; ?>"
         >
             <?php if ($settings['button_modal_hover_effect'] == 'bfm' || $settings['button_modal_hover_effect'] == 'fourcorner' ): ?>
