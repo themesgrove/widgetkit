@@ -281,7 +281,7 @@ class wkfe_lottie_animation extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             array(
                 'name'      => 'lottie_box_shadow',
-                'exclude'   => array( 'box_shadow_position' ),  //phpcs:ignore
+                'exclude'   => array( 'box_shadow_position' ),
                 'selector'  => '{{WRAPPER}} figure',
             )
         );

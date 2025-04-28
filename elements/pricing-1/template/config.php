@@ -409,7 +409,7 @@ class wkfe_pricing_1 extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name'    => 'layout_box_shadow',
-                'exclude' => [ //phpcs:ignore
+                'exclude' => [
                     'box_shadow_position',
                 ],
                 'selector' => '{{WRAPPER}} .tgx-price-table',

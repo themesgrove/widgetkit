@@ -895,7 +895,7 @@ class wkfe_content_carousel extends Widget_Base {
 	                Group_Control_Box_Shadow::get_type(),
 	                [
 	                    'name' => 'content_box_shadow',
-	                    'exclude' => [ //phpcs:ignore
+	                    'exclude' => [
 	                        'box_shadow_position',
 	                    ],
 	                    'selector' => '{{WRAPPER}} .content-carousel .wk-card',

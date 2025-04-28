@@ -187,7 +187,7 @@ class wkfe_blog_4 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'    => 'image_box_shadow',
-				'exclude' => [ // phpcs:ignore
+				'exclude' => [
 					'box_shadow_position',
 				],
 				'selector' => '{{WRAPPER}} .hover-effect-1 .wrapper, {{WRAPPER}} .hover-effect-2 .wrapper',
