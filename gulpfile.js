@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 var less = require('gulp-less');
 var shell = require("shelljs");
 // var path = require('path');
