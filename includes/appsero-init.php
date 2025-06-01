@@ -25,7 +25,7 @@ class WKFE_Appsero_Init{
         }
 
         if (! class_exists('Appsero\Updater')) {
-            require __DIR__ . '/vendor/appsero/updater/src/Updater.php';
+            require_once WK_PATH . '/vendor/appsero/updater/src/Updater.php';
         }
 
         $client = new Appsero\Client( '91bf222e-d4ce-4fdb-97dc-30a95fa0bff7', 'Widgetkit For Elementor', WK_FILE );
