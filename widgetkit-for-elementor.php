@@ -45,6 +45,10 @@ class WidgetKit_For_Elementor
         add_action('init', array($this, 'elementor_resources'), -999);
         add_action('admin_head', array($this, 'remove_all_admin_notice'));
         add_filter('elementor/utils/get_placeholder_image_src', [__CLASS__, 'wk_placeholder_image']);
+        
+        // Declare WooCommerce HPOS compatibility
+        add_action('before_woocommerce_init', array($this, 'declare_woocommerce_hpos_compatibility'));
+        
         require_once(WK_PATH . 'vendor/autoload.php');
         if (!class_exists('Parsedown')) {
             require_once(WK_PATH . 'vendor/erusev/parsedown/Parsedown.php');
@@ -63,6 +67,16 @@ class WidgetKit_For_Elementor
     public function deactivate()
     {
         flush_rewrite_rules();
+    }
+
+    /**
+     * Declare WooCommerce HPOS compatibility
+     */
+    public function declare_woocommerce_hpos_compatibility()
+    {
+        if (class_exists('\Automattic\WooCommerce\Utilities\FeaturesUtil')) {
+            \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility('custom_order_tables', WK_FILE, true);
+        }
     }
 
     public function plugin_setup()
