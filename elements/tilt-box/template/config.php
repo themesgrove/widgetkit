@@ -645,6 +645,6 @@ class wkfe_tilt_box extends Widget_Base {
     }
 
 
-    public function _content_template() {
+    public function content_template() {
     }
 }

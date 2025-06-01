@@ -323,6 +323,6 @@ protected function register_controls()
     }
 
 
-    public function _content_template() {
+    public function content_template() {
     }
 }
