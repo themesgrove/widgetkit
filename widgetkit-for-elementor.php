@@ -23,8 +23,17 @@ if (!defined('ABSPATH')) exit;
 
 define('WK_VERSION', '2.5.5');
 define('WK_FILE', __FILE__);
-define('WK_URL', plugins_url('/', __FILE__));
 define('WK_PATH', plugin_dir_path(__FILE__));
+
+// Define WK_URL only when plugins_url function is available
+if (!defined('WK_URL')) {
+    if (function_exists('plugins_url')) {
+        define('WK_URL', plugins_url('/', __FILE__));
+    } else {
+        // Fallback for early loading
+        define('WK_URL', plugin_dir_url(__FILE__));
+    }
+}
 
 class WidgetKit_For_Elementor
 {
@@ -117,7 +126,7 @@ class WidgetKit_For_Elementor
 
 if (class_exists('WidgetKit_For_Elementor')) {
     $widgetkit_for_elementor = new WidgetKit_For_Elementor();
+    
+    register_activation_hook(__FILE__, array($widgetkit_for_elementor, 'activate'));
+    register_deactivation_hook(__FILE__, array($widgetkit_for_elementor, 'deactivate'));
 }
-
-register_activation_hook(__FILE__, array($widgetkit_for_elementor, 'activate'));
-register_deactivation_hook(__FILE__, array($widgetkit_for_elementor, 'deactivate'));
