@@ -611,7 +611,7 @@ $this->end_controls_section();
     }
 
 
-    protected function _content_template()
+    protected function content_template()
     {
 
     }

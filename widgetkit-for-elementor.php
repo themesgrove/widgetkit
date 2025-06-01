@@ -2,7 +2,7 @@
 /*
 Plugin Name: All-in-One Addons for Elementor - WidgetKit
 Description: Everything you need to create a stunning website with <strong>Elementor, WooCommerce, LearnDash, Sensei & LearnPress</strong> and more.
-Version: 2.5.5
+Version: 2.5.6
 Text Domain: widgetkit-for-elementor
 Author: Themesgrove
 Author URI: https://themesgrove.com
@@ -21,10 +21,19 @@ WC tested up to: 9.5.1
  */
 if (!defined('ABSPATH')) exit;
 
-define('WK_VERSION', '2.5.5');
+define('WK_VERSION', '2.5.6');
 define('WK_FILE', __FILE__);
-define('WK_URL', plugins_url('/', __FILE__));
 define('WK_PATH', plugin_dir_path(__FILE__));
+
+// Define WK_URL only when plugins_url function is available
+if (!defined('WK_URL')) {
+    if (function_exists('plugins_url')) {
+        define('WK_URL', plugins_url('/', __FILE__));
+    } else {
+        // Fallback for early loading
+        define('WK_URL', plugin_dir_url(__FILE__));
+    }
+}
 
 class WidgetKit_For_Elementor
 {
@@ -36,6 +45,10 @@ class WidgetKit_For_Elementor
         add_action('init', array($this, 'elementor_resources'), -999);
         add_action('admin_head', array($this, 'remove_all_admin_notice'));
         add_filter('elementor/utils/get_placeholder_image_src', [__CLASS__, 'wk_placeholder_image']);
+        
+        // Declare WooCommerce HPOS compatibility
+        add_action('before_woocommerce_init', array($this, 'declare_woocommerce_hpos_compatibility'));
+        
         require_once(WK_PATH . 'vendor/autoload.php');
         if (!class_exists('Parsedown')) {
             require_once(WK_PATH . 'vendor/erusev/parsedown/Parsedown.php');
@@ -54,6 +67,16 @@ class WidgetKit_For_Elementor
     public function deactivate()
     {
         flush_rewrite_rules();
+    }
+
+    /**
+     * Declare WooCommerce HPOS compatibility
+     */
+    public function declare_woocommerce_hpos_compatibility()
+    {
+        if (class_exists('\Automattic\WooCommerce\Utilities\FeaturesUtil')) {
+            \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility('custom_order_tables', WK_FILE, true);
+        }
     }
 
     public function plugin_setup()
@@ -117,7 +140,7 @@ class WidgetKit_For_Elementor
 
 if (class_exists('WidgetKit_For_Elementor')) {
     $widgetkit_for_elementor = new WidgetKit_For_Elementor();
+    
+    register_activation_hook(__FILE__, array($widgetkit_for_elementor, 'activate'));
+    register_deactivation_hook(__FILE__, array($widgetkit_for_elementor, 'deactivate'));
 }
-
-register_activation_hook(__FILE__, array($widgetkit_for_elementor, 'activate'));
-register_deactivation_hook(__FILE__, array($widgetkit_for_elementor, 'deactivate'));

@@ -5,7 +5,7 @@ Donate link: https://themesgrove.com/
 Tags: elementor widgets, woocommerce addons, learndash addons, learnpress addons, sensei addons
 Requires at least: 5.0
 Tested up to: 6.8
-Stable tag: 2.5.5
+Stable tag: 2.5.6
 Requires PHP: 7.0
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt

@@ -1115,7 +1115,7 @@ class wkfe_team extends Widget_Base {
 		<!-- <h3>hello world</h3> -->
 		<?php 
 	}
-	protected function _content_template()
+	protected function content_template()
     {
     }
 
