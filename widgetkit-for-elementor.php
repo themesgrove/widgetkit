@@ -81,7 +81,6 @@ class WidgetKit_For_Elementor
 
     public function plugin_setup()
     {
-        $this->load_text_domain();
         $this->load_admin_files();
         if (is_admin()) {
             $this->check_dependency();
@@ -98,10 +97,6 @@ class WidgetKit_For_Elementor
         WKFE_PRO_Init::init();
         WKFE_Elements::init();
         WKFE_Admin_Resources::init();
-    }
-    public function load_text_domain()
-    {
-        load_plugin_textdomain('widgetkit-for-elementor');
     }
 
     public function elementor_init()
