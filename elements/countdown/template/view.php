@@ -11,9 +11,10 @@
         $format = implode('', $formats );
         $time = str_replace('-', '/', current_time('mysql') );
         $serverSync = '';
-        if( $settings['widgetkit_countdown_s_u_time'] == 'wp-time' ) : 
-            $serverSync = 'serverSync : function() { return new Date(\'' .$time .'\') }';
-        endif;
+
+        if ( $settings['widgetkit_countdown_s_u_time'] === 'wp-time' ) {
+            $serverSync = "function() { return new Date('" . esc_js( $time ) . "'); }";
+        }
         
         // Singular labels set up
         $y = !empty( $settings['widgetkit_countdown_year_singular'] ) ? $settings['widgetkit_countdown_year_singular'] : 'Year';
@@ -48,43 +49,53 @@
                 </div>
             </div>
             
-            <script>
-                ( function( $ ) {
-                    $(document).ready( function() {
-                        var label1 = '<?php echo esc_attr($label); ?>',
-                            label2 = '<?php echo esc_attr($labels1); ?>',
-                            newLabe1 = label1.split(','),
-                            newLabe2 = label2.split(',');
-                
-                        $('#countdown-<?php echo esc_attr( $this->get_id() ); ?>').widgetkit_countdown({
-                            labels      : newLabe2,
-                            labels1     : newLabe1,
-                            until       : new Date( '<?php echo esc_attr($target_date); ?>'),
-                            format      : '<?php echo esc_attr($format); ?>',
-                            padZeroes   : true,
-                            <?php if( $expire_text ):  ?>
-                            onExpiry    : function() {
-                                $(this).html("<?php echo esc_html($expire_text); ?>");
-                            },
-                            <?php endif; ?>
-                         
-                            <?php echo esc_js($serverSync); ?>
-                        });
-                        times = $('#countdown-<?php echo esc_attr( $this->get_id() );?>').widgetkit_countdown('getTimes');
-                        function runTimer( el ) {
-                            return el == 0;
-                        }
-                        if( times.every( runTimer ) ) {
-                            <?php if( $expire_text ):  ?>
-                            $('#countdown-<?php echo esc_attr( $this->get_id() ); ?>').html("<?php echo esc_html($expire_text); ?>");
-                            <?php endif; ?>
-                        }
-                            if(!$('body').hasClass('wk-countdown')){
-                            $('body').addClass('wk-countdown');
-                        };
-                    });
-                    
-                })( jQuery );
-                
-            </script>
+    <!-- Countdown JS -->
+    <script>
+        (function($){
+            $(document).ready(function(){
+                var labels  = <?php echo wp_json_encode( array_map('sanitize_text_field', explode(',', (string) $label)) ); ?>;
+                var labels1 = <?php echo wp_json_encode( array_map('sanitize_text_field', explode(',', (string) $labels1)) ); ?>;
+                var id      = <?php echo wp_json_encode( (string) $this->get_id() ); ?>;
+                var target  = <?php echo wp_json_encode( (string) $target_date ); ?>;
+                var format  = <?php echo wp_json_encode( (string) $format ); ?>;
+                var expireText = <?php echo wp_json_encode( wp_kses_post( $expire_text ) ); ?>;
 
+                var $el = $('#countdown-' + id);
+
+                $el.widgetkit_countdown({
+                    labels: labels,
+                    labels1: labels1,
+                    until: new Date( target ),
+                    format: format,
+                    padZeroes: true,
+                    <?php if ( $expire_text ): ?>
+                    onExpiry: function(){
+                        $(this).html( expireText );
+                    },
+                    <?php endif; ?>
+                    <?php
+                        if ( is_array( $serverSync ) ) {
+                            echo 'serverSync: ' . wp_json_encode( $serverSync ) . ',';
+                        } else {
+                            echo 'serverSync: ' . wp_json_encode( sanitize_text_field( (string) $serverSync ) ) . ',';
+                        }
+                    ?>
+                });
+
+                var times = $el.widgetkit_countdown('getTimes');
+
+                function runTimer(el){ return el === 0; }
+
+                if ( Array.isArray(times) && times.every(runTimer) ) {
+                <?php if ($expire_text): ?>
+                    $el.html( expireText );
+                <?php endif; ?>
+                }
+
+                if (!$('body').hasClass('wk-countdown')) {
+                $('body').addClass('wk-countdown');
+                }
+
+            });
+        })(jQuery);
+    </script>

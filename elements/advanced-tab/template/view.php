@@ -19,7 +19,7 @@ $id_int = substr($this->get_id_int(), 0, 3);
         <ul>
             <?php foreach ($settings['tabs'] as $tab) : ?>
                 <li class="<?php echo esc_attr( $tab['description'] ?? '' ) == '' ? 'no-nav-desc' : 'has-nav-desc' ?>">
-                    <a href="#tab-<?php echo esc_attr( ($tab['_id'] ?? '') . $id_int ); ?>">
+                    <a href="#tab-<?php echo esc_url( ($tab['_id'] ?? '') . $id_int ); ?>">
                         <?php if ( (($settings['nav_icon_position'] ?? 'left') === 'left' || ($settings['nav_icon_position'] ?? 'left') === 'right') && empty($tab['description'] ?? '') ) : ?>
                             <?php if (!empty($tab['title'] ?? '')) : ?>
                                 <span class="wk-adv-tab-title">
