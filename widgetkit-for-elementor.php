@@ -69,12 +69,16 @@ class WidgetKit_For_Elementor
         require_once(WK_PATH . 'includes/appsero-init.php');
         require_once(WK_PATH . 'includes/widgetkit-pro-init.php');
         require_once(WK_PATH . 'includes/elements.php');
+        require_once(WK_PATH . 'includes/helper.php');
         require_once(WK_PATH . 'includes/widgetkit-admin-resources.php');
+        require_once(WK_PATH . 'includes/pro-features.php');
+        require_once(WK_PATH . 'includes/modules/entrance-animation-effects.php');
 
         WKFE_Appsero_Init::init();
         WKFE_PRO_Init::init();
         WKFE_Elements::init();
         WKFE_Admin_Resources::init();
+        \WidgetKit\Modules\WK_Animation_Effects::init();
     }
     public function load_text_domain()
     {
