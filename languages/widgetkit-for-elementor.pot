@@ -1,138 +1,2872 @@
-# Copyright (C) 2018 WidgetKit_For_Elementor
+# WidgetKit_For_Elementor POT file
+# Copyright (C) 2025 WidgetKit_For_Elementor
 # This file is distributed under the same license as the WidgetKit_For_Elementor package.
 msgid ""
 msgstr ""
 "Project-Id-Version: WidgetKit_For_Elementor\n"
 "Report-Msgid-Bugs-To: https://themesgrove.com\n"
+"POT-Creation-Date: 2025-06-01 07:57:09+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: themesgrove <info@themesgrove.com>\n"
+"Language-Team: themesgrove <info@themesgrove.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
-"Last-Translator: themesgrove <info@themesgrove.com>\n"
-"Language-Team: themesgrove <info@themesgrove.com>\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Custom POT Generator\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;_nx;esc_html__;esc_attr__\n"
+"X-Poedit-Basepath: .\n"
 
-#: admin/admin-init.php:125
-msgid "Widgetkit"
+msgid "#"
 msgstr ""
 
-#: admin/admin-init.php:283
-msgid "WidgetKit for Elementor"
+msgid "#3b5999"
 msgstr ""
 
-#: admin/admin-init.php:415
-msgid "Slider Animation"
+msgid "#55acee"
 msgstr ""
 
-#: admin/admin-init.php:431
-msgid "Pricing Single"
+msgid "#cd201f"
 msgstr ""
 
-#: admin/admin-init.php:447
-msgid "Button & Modal"
+msgid "--- Select Section ---"
 msgstr ""
 
-#: admin/admin-init.php:463
-msgid "Testimonial Single"
+msgid "/"
 msgstr ""
 
-#: admin/admin-init.php:485
-msgid "Slider Content Animation"
+msgid "/ mo"
 msgstr ""
 
-#: admin/admin-init.php:499
-msgid "Pricing Icon"
+msgid "0"
 msgstr ""
 
-#: admin/admin-init.php:517
-msgid "Hover Image"
+msgid "1"
 msgstr ""
 
-#: admin/admin-init.php:533
-msgid "Testimonial Center"
+msgid "1st Tab Content"
 msgstr ""
 
-#: admin/admin-init.php:557
-msgid "Slider Box Animation"
+msgid "2"
 msgstr ""
 
-#: admin/admin-init.php:573
-msgid "Pricing Tabs"
+msgid "20"
 msgstr ""
 
-#: admin/admin-init.php:589
-msgid "Blog Revert"
+msgid "2nd Tab Content"
 msgstr ""
 
-#: admin/admin-init.php:605
-msgid "Social Share Animation"
+msgid "3"
 msgstr ""
 
-#: admin/admin-init.php:631
-msgid "Portfolio"
+msgid "3 Domain Tech Support"
 msgstr ""
 
-#: admin/admin-init.php:649
-msgid "Team Round"
+msgid "3rd Tab Content"
 msgstr ""
 
-#: admin/admin-init.php:667
-msgid "Blog Hover Animation"
+msgid "4"
 msgstr ""
 
-#: admin/admin-init.php:685
-msgid "Social Share Collapse"
+msgid "5"
 msgstr ""
 
-#: admin/admin-init.php:709
-msgid "Feature Box"
+msgid "6"
 msgstr ""
 
-#: admin/admin-init.php:729
-msgid "Team Animation"
+msgid "880.132.165.4987"
 msgstr ""
 
-#: admin/admin-init.php:747
-msgid "Blog Image"
+msgid "<b>10GB</b> Web Space"
 msgstr ""
 
-#: admin/admin-init.php:763
-msgid "Post Carousel"
+msgid "<b>10TB</b> Data Transfer"
 msgstr ""
 
-#: admin/admin-init.php:787
-msgid "Animation Text"
+msgid "<b>1</b> Website"
 msgstr ""
 
-#: admin/admin-init.php:805
-msgid "Team Verticle Icon"
+msgid "<b>90GB</b> SSD Space"
 msgstr ""
 
-#: admin/admin-init.php:821
+msgid "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/GqiST256XPA\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>"
+msgstr ""
+
+msgid "<strong>Widgetkit for Elementor</strong> requires <strong>Elementor</strong> plugin to be active. Please activate Elementor to continue."
+msgstr ""
+
+msgid "<strong>Widgetkit for Elementor</strong> requires <strong>Elementor</strong> plugin to be installed and activated. Please install <strong>Elementor</strong> to continue."
+msgstr ""
+
+msgid "A technology company"
+msgstr ""
+
+msgid "ASC"
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "Absolute"
+msgstr ""
+
+msgid "Accordian"
+msgstr ""
+
+msgid "Activate"
+msgstr ""
+
+msgid "Activate Elementor Now"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Active Bg Color"
+msgstr ""
+
+msgid "Active Color"
+msgstr ""
+
+msgid "Active/Hove Background Color"
+msgstr ""
+
+msgid "Active/hover Color"
+msgstr ""
+
+msgid "Add Units"
+msgstr ""
+
+msgid "Additional Information"
+msgstr ""
+
+msgid "Advanced Tab"
+msgstr ""
+
+msgid "After"
+msgstr ""
+
+msgid "Agency Membership"
+msgstr ""
+
+msgid "Alert"
+msgstr ""
+
+msgid "Alex Prokopenko"
+msgstr ""
+
+msgid "Alignment"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "Angle"
+msgstr ""
+
+msgid "Angle From Left"
+msgstr ""
+
+msgid "Animat Text Color"
+msgstr ""
+
+msgid "Animate Text"
+msgstr ""
+
+msgid "Animated Headline"
+msgstr ""
+
+msgid "Animation"
+msgstr ""
+
+msgid "Animation Options"
+msgstr ""
+
+msgid "Animation Renderer Type"
+msgstr ""
+
+msgid "Apikey Or Listid Missing."
+msgstr ""
+
+msgid "Area Bg Color"
+msgstr ""
+
+msgid "Arrow"
+msgstr ""
+
+msgid "Arrow Border Radius"
+msgstr ""
+
+msgid "Arrow Enable/Disable"
+msgstr ""
+
+msgid "Asscending"
+msgstr ""
+
+msgid "Author"
+msgstr ""
+
+msgid "Author Enable/Disable"
+msgstr ""
+
+msgid "Auto"
+msgstr ""
+
+msgid "Auto Play"
+msgstr ""
+
+msgid "Auto Play Enable/Disable"
+msgstr ""
+
+msgid "Autoplay"
+msgstr ""
+
+msgid "Awesome Post Widgets"
+msgstr ""
+
+msgid "Backgroound Color"
+msgstr ""
+
+msgid "Background"
+msgstr ""
+
+msgid "Background Attachment"
+msgstr ""
+
+msgid "Background Color"
+msgstr ""
+
+msgid "Background Control"
+msgstr ""
+
+msgid "Background Overlay"
+msgstr ""
+
+msgid "Background Repeat"
+msgstr ""
+
+msgid "Background Size"
+msgstr ""
+
+msgid "Background Transform"
+msgstr ""
+
+msgid "Baht"
+msgstr ""
+
+msgid "Basic Plan"
+msgstr ""
+
+msgid "Before"
+msgstr ""
+
+msgid "Bg Attachment"
+msgstr ""
+
+msgid "Bg Color"
+msgstr ""
+
+msgid "Bg Transform Width"
+msgstr ""
+
+msgid "Blog"
+msgstr ""
+
 msgid "Blog Carousel"
 msgstr ""
 
-#: admin/admin-init.php:841
-msgid "Countdown"
+msgid "Blog Hover Animation"
 msgstr ""
 
-#: admin/admin-init.php:857
-msgid "Team Overlay"
+msgid "Blog Image"
 msgstr ""
 
-#: admin/admin-init.php:873
+msgid "Blog Revert"
+msgstr ""
+
 msgid "Blog Sidebar"
 msgstr ""
 
-#: admin/admin-init.php:911
-msgid "System setup information useful for debugging purposes."
+msgid "Book Your Meeting"
 msgstr ""
 
-#: elements/helper-functions.php:8
-msgid "WidgetKit Elements"
+msgid "Border"
 msgstr ""
+
+msgid "Border Color"
+msgstr ""
+
+msgid "Border Hover Color"
+msgstr ""
+
+msgid "Border Left/Right"
+msgstr ""
+
+msgid "Border Radius"
+msgstr ""
+
+msgid "Border Size"
+msgstr ""
+
+msgid "Border Square"
+msgstr ""
+
+msgid "Border Top/Bottom"
+msgstr ""
+
+msgid "Border Width"
+msgstr ""
+
+msgid "Border/Quite Color"
+msgstr ""
+
+msgid "Both From Middle"
+msgstr ""
+
+msgid "Bottom"
+msgstr ""
+
+msgid "Bottom Spacing"
+msgstr ""
+
+msgid "Box"
+msgstr ""
+
+msgid "Box Background"
+msgstr ""
+
+msgid "Box Position"
+msgstr ""
+
+msgid "Box Shadow"
+msgstr ""
+
+msgid "Box Shadow Hover"
+msgstr ""
+
+msgid "Box Shadow Normal"
+msgstr ""
+
+msgid "Bubba"
+msgstr ""
+
+msgid "Build your shop quickly with our powerful WooCommerce Elements."
+msgstr ""
+
+msgid "Business"
+msgstr ""
+
+msgid "Button"
+msgstr ""
+
+msgid "Button + Modal"
+msgstr ""
+
+msgid "Button Animation"
+msgstr ""
+
+msgid "Button Icon"
+msgstr ""
+
+msgid "Button Link"
+msgstr ""
+
+msgid "Button Options"
+msgstr ""
+
+msgid "Button Padding"
+msgstr ""
+
+msgid "Button Style"
+msgstr ""
+
+msgid "Button Text"
+msgstr ""
+
+msgid "Button Width"
+msgstr ""
+
+msgid "By :"
+msgstr ""
+
+msgid "CEO, Ag Express"
+msgstr ""
+
+msgid "Canvas"
+msgstr ""
+
+msgid "Caption"
+msgstr ""
+
+msgid "Caption Position"
+msgstr ""
+
+msgid "Caption Width"
+msgstr ""
+
+msgid "Carousel Content"
+msgstr ""
+
+msgid "Cart Button"
+msgstr ""
+
+msgid "Categories"
+msgstr ""
+
+msgid "Center"
+msgstr ""
+
+msgid "Center Bg/Hover Color"
+msgstr ""
+
+msgid "Center Mode"
+msgstr ""
+
+msgid "Choose Animation"
+msgstr ""
+
+msgid "Choose Button"
+msgstr ""
+
+msgid "Choose Content"
+msgstr ""
+
+msgid "Choose Effect"
+msgstr ""
+
+msgid "Choose Form"
+msgstr ""
+
+msgid "Choose Hover Effect"
+msgstr ""
+
+msgid "Choose Image"
+msgstr ""
+
+msgid "Choose Lightbox"
+msgstr ""
+
+msgid "Choose Media"
+msgstr ""
+
+msgid "Choose Meta"
+msgstr ""
+
+msgid "Choose Screen"
+msgstr ""
+
+msgid "Choose Style"
+msgstr ""
+
+msgid "Circle Active Color"
+msgstr ""
+
+msgid "Circle Forground Color"
+msgstr ""
+
+msgid "Circle Radius"
+msgstr ""
+
+msgid "Click Here"
+msgstr ""
+
+msgid "Click Me"
+msgstr ""
+
+msgid "Click To Tweet"
+msgstr ""
+
+msgid "Click Tweet"
+msgstr ""
+
+msgid "Click to Move"
+msgstr ""
+
+msgid "Clip"
+msgstr ""
+
+msgid "Cloud Hosting"
+msgstr ""
+
+msgid "Color"
+msgstr ""
+
+msgid "Colum Gap"
+msgstr ""
+
+msgid "Column"
+msgstr ""
+
+msgid "Column 1"
+msgstr ""
+
+msgid "Column 2"
+msgstr ""
+
+msgid "Column 3"
+msgstr ""
+
+msgid "Column 4"
+msgstr ""
+
+msgid "Column Shows"
+msgstr ""
+
+msgid "Column Width"
+msgstr ""
+
+msgid "Comment Count"
+msgstr ""
+
+msgid "Comment Enable/Disable"
+msgstr ""
+
+msgid "Common"
+msgstr ""
+
+msgid "Consumer"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "Contact Box"
+msgstr ""
+
+msgid "Contact Box Position"
+msgstr ""
+
+msgid "Contact Form"
+msgstr ""
+
+msgid "Contact Form 7"
+msgstr ""
+
+msgid "Contact Forms"
+msgstr ""
+
+msgid "Contact Us"
+msgstr ""
+
+msgid "Contain"
+msgstr ""
+
+msgid "Content"
+msgstr ""
+
+msgid "Content Alignment"
+msgstr ""
+
+msgid "Content Animation"
+msgstr ""
+
+msgid "Content Caption"
+msgstr ""
+
+msgid "Content Carousel"
+msgstr ""
+
+msgid "Content Color"
+msgstr ""
+
+msgid "Content Layout"
+msgstr ""
+
+msgid "Content Option"
+msgstr ""
+
+msgid "Content Position"
+msgstr ""
+
+msgid "Content Spacing"
+msgstr ""
+
+msgid "Content Specing"
+msgstr ""
+
+msgid "Content Type"
+msgstr ""
+
+msgid "Content Word"
+msgstr ""
+
+msgid "Contents"
+msgstr ""
+
+msgid "Control"
+msgstr ""
+
+msgid "Controls"
+msgstr ""
+
+msgid "Copy the license key from your account and paste it below."
+msgstr ""
+
+msgid "Copyright Removal"
+msgstr ""
+
+msgid "Corner to Middle"
+msgstr ""
+
+msgid "Corporate"
+msgstr ""
+
+msgid "Count"
+msgstr ""
+
+msgid "Countdown"
+msgstr ""
+
+msgid "Cover"
+msgstr ""
+
+msgid "Create a Form First"
+msgstr ""
+
+msgid "Creative"
+msgstr ""
+
+msgid "Currency"
+msgstr ""
+
+msgid "Currency & Period Font Size"
+msgstr ""
+
+msgid "Currency Symbol"
+msgstr ""
+
+msgid "Custom"
+msgstr ""
+
+msgid "Custom Contents"
+msgstr ""
+
+msgid "Custom Items"
+msgstr ""
+
+msgid "Custom Symbol"
+msgstr ""
+
+msgid "DSC"
+msgstr ""
+
+msgid "Data Pause"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Date & Comment"
+msgstr ""
+
+msgid "Date Background Color"
+msgstr ""
+
+msgid "Date Bg Color"
+msgstr ""
+
+msgid "Date Color"
+msgstr ""
+
+msgid "Date Enable/Disable"
+msgstr ""
+
+msgid "Date format is (yyyy/mm/dd). Time format is (hh:mm:ss). Example: 2020-01-01 09:30."
+msgstr ""
+
+msgid "Date is over"
+msgstr ""
+
+msgid "Day"
+msgstr ""
+
+msgid "Day (Plural)"
+msgstr ""
+
+msgid "Day (Singular)"
+msgstr ""
+
+msgid "Deactivate"
+msgstr ""
+
+msgid "Dedicated Servers"
+msgstr ""
+
+msgid "Default"
+msgstr ""
+
+msgid "Demo"
+msgstr ""
+
+msgid "Demo Data Included"
+msgstr ""
+
+msgid "Demo Link"
+msgstr ""
+
+msgid "Desc"
+msgstr ""
+
+msgid "Desc Color"
+msgstr ""
+
+msgid "Descending"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Description Color"
+msgstr ""
+
+msgid "Description Options"
+msgstr ""
+
+msgid "Description Spacing"
+msgstr ""
+
+msgid "Description Typography"
+msgstr ""
+
+msgid "Description Width"
+msgstr ""
+
+msgid "Desgination Color"
+msgstr ""
+
+msgid "Designation"
+msgstr ""
+
+msgid "Designation Color"
+msgstr ""
+
+msgid "Designation Spacing"
+msgstr ""
+
+msgid "Designation Typography"
+msgstr ""
+
+msgid "Designer"
+msgstr ""
+
+msgid "Details Bg Color"
+msgstr ""
+
+msgid "Details Padding"
+msgstr ""
+
+msgid "Developer"
+msgstr ""
+
+msgid "Diego Alejandro"
+msgstr ""
+
+msgid "Disable"
+msgstr ""
+
+msgid "Discount"
+msgstr ""
+
+msgid "Display"
+msgstr ""
+
+msgid "Display Overlay"
+msgstr ""
+
+msgid "Divider"
+msgstr ""
+
+msgid "Dollar"
+msgstr ""
+
+msgid "Door"
+msgstr ""
+
+msgid "Dot"
+msgstr ""
+
+msgid "Dot & Arrow Hover Bg Color"
+msgstr ""
+
+msgid "Dot Border Radius"
+msgstr ""
+
+msgid "Dot Enable/Disable"
+msgstr ""
+
+msgid "Education"
+msgstr ""
+
+msgid "Education WordPress Theme"
+msgstr ""
+
+msgid "Edward Norton"
+msgstr ""
+
+msgid "Effect"
+msgstr ""
+
+msgid "Effect Enable"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Email Typography"
+msgstr ""
+
+msgid "Embed Video"
+msgstr ""
+
+msgid "Enable"
+msgstr ""
+
+msgid "Enable Pricing"
+msgstr ""
+
+msgid "Enable/Disable"
+msgstr ""
+
+msgid "Engineer"
+msgstr ""
+
+msgid "Enter your Vimeo link"
+msgstr ""
+
+msgid "Enter your YouTube link"
+msgstr ""
+
+msgid "Enter your image caption"
+msgstr ""
+
+msgid "Enter your license key here, to activate Widgetkit Pro, and get feature updates, premium support and unlimited access to the template library."
+msgstr ""
+
+msgid "Entry Plan"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Error Messages"
+msgstr ""
+
+msgid "Euro"
+msgstr ""
+
+msgid "Event List"
+msgstr ""
+
+msgid "Exploore"
+msgstr ""
+
+msgid "Explore It"
+msgstr ""
+
+msgid "Facebook"
+msgstr ""
+
+msgid "Fade"
+msgstr ""
+
+msgid "False"
+msgstr ""
+
+msgid "Feature"
+msgstr ""
+
+msgid "Feature Content"
+msgstr ""
+
+msgid "Feature Description"
+msgstr ""
+
+msgid "Feature Icon"
+msgstr ""
+
+msgid "Feature Items"
+msgstr ""
+
+msgid "Feature Layout"
+msgstr ""
+
+msgid "Feature Style"
+msgstr ""
+
+msgid "Feature Title"
+msgstr ""
+
+msgid "Features"
+msgstr ""
+
+msgid "Fields"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Filter Tag"
+msgstr ""
+
+msgid "Filterable Portfolio"
+msgstr ""
+
+msgid "Fixed"
+msgstr ""
+
+msgid "Floating"
+msgstr ""
+
+msgid "Focus"
+msgstr ""
+
+msgid "Focus on core delivers"
+msgstr ""
+
+msgid "Font"
+msgstr ""
+
+msgid "Font Size"
+msgstr ""
+
+msgid "Forum Support"
+msgstr ""
+
+msgid "Four Corner"
+msgstr ""
+
+msgid "Franc"
+msgstr ""
+
+msgid "Freelancer"
+msgstr ""
+
+msgid "From Bottom"
+msgstr ""
+
+msgid "From Category"
+msgstr ""
+
+msgid "From Left"
+msgstr ""
+
+msgid "From Opacity"
+msgstr ""
+
+msgid "From Right"
+msgstr ""
+
+msgid "From Spin"
+msgstr ""
+
+msgid "From Top"
+msgstr ""
+
+msgid "From Zoom"
+msgstr ""
+
+msgid "Front-end Developer"
+msgstr ""
+
+msgid "Full"
+msgstr ""
+
+msgid "Full Width"
+msgstr ""
+
+msgid "Galleries"
+msgstr ""
+
+msgid "Gallery"
+msgstr ""
+
+msgid "Gap"
+msgstr ""
+
+msgid "Get Pro"
+msgstr ""
+
+msgid "Get Started"
+msgstr ""
+
+msgid "Get Started Now"
+msgstr ""
+
+msgid "Github"
+msgstr ""
+
+msgid "Glare"
+msgstr ""
+
+msgid "Global"
+msgstr ""
+
+msgid "Go Premium for more layout & feature"
+msgstr ""
+
+msgid "Go Pro"
+msgstr ""
+
+msgid "Goliath"
+msgstr ""
+
+msgid "Google"
+msgstr ""
+
+msgid "Gradient"
+msgstr ""
+
+msgid "Gradient Color"
+msgstr ""
+
+msgid "Graphics Designer"
+msgstr ""
+
+msgid "Grid"
+msgstr ""
+
+msgid "Guilder"
+msgstr ""
+
+msgid "H1"
+msgstr ""
+
+msgid "H2"
+msgstr ""
+
+msgid "H3"
+msgstr ""
+
+msgid "H4"
+msgstr ""
+
+msgid "H5"
+msgstr ""
+
+msgid "H6"
+msgstr ""
+
+msgid "Handle"
+msgstr ""
+
+msgid "Harsul Hisham"
+msgstr ""
+
+msgid "Hasrul Hisham"
+msgstr ""
+
+msgid "He has appeared in more than 100 films and television shows."
+msgstr ""
+
+msgid "Header"
+msgstr ""
+
+msgid "Heading"
+msgstr ""
+
+msgid "Heading Tag"
+msgstr ""
+
+msgid "Healthcare giant"
+msgstr ""
+
+msgid "Healthcare giant overcomes"
+msgstr ""
+
+msgid "Heighlight Color"
+msgstr ""
+
+msgid "Height"
+msgstr ""
+
+msgid "Height(px)"
+msgstr ""
+
+msgid "Hide"
+msgstr ""
+
+msgid "Hide overlay with before and after label"
+msgstr ""
+
+msgid "High perfomance solution"
+msgstr ""
+
+msgid "Highlight Color"
+msgstr ""
+
+msgid "Horizontal"
+msgstr ""
+
+msgid "Horizontal Margin (px)"
+msgstr ""
+
+msgid "Hour (Singular)"
+msgstr ""
+
+msgid "Hours"
+msgstr ""
+
+msgid "Hours (Plural)"
+msgstr ""
+
+msgid "Hover"
+msgstr ""
+
+msgid "Hover 1"
+msgstr ""
+
+msgid "Hover 2"
+msgstr ""
+
+msgid "Hover 3"
+msgstr ""
+
+msgid "Hover 4"
+msgstr ""
+
+msgid "Hover Background Color"
+msgstr ""
+
+msgid "Hover Bg Color"
+msgstr ""
+
+msgid "Hover Box Shadow"
+msgstr ""
+
+msgid "Hover Color"
+msgstr ""
+
+msgid "Hover Effect"
+msgstr ""
+
+msgid "Hover Image"
+msgstr ""
+
+msgid "Hover Overlay Color"
+msgstr ""
+
+msgid "Hover Shadow"
+msgstr ""
+
+msgid "Hover/Active"
+msgstr ""
+
+msgid "Hover/Active Color"
+msgstr ""
+
+msgid "I am very proud of my product."
+msgstr ""
+
+msgid "I think your best bet would be to start or join a startup"
+msgstr ""
+
+msgid "I think your best bet would be to start or join a startup."
+msgstr ""
+
+msgid "Icon"
+msgstr ""
+
+msgid "Icon Background"
+msgstr ""
+
+msgid "Icon Bg Color"
+msgstr ""
+
+msgid "Icon Border Color"
+msgstr ""
+
+msgid "Icon Border Radius"
+msgstr ""
+
+msgid "Icon Color"
+msgstr ""
+
+msgid "Icon Font Size"
+msgstr ""
+
+msgid "Icon Gap"
+msgstr ""
+
+msgid "Icon Hover Background Color"
+msgstr ""
+
+msgid "Icon Hover Color"
+msgstr ""
+
+msgid "Icon Image"
+msgstr ""
+
+msgid "Icon Options"
+msgstr ""
+
+msgid "Icon Padding"
+msgstr ""
+
+msgid "Icon Position"
+msgstr ""
+
+msgid "Icon Size"
+msgstr ""
+
+msgid "Icon Spacing"
+msgstr ""
+
+msgid "Icon Width"
+msgstr ""
+
+msgid "Icon With Text"
+msgstr ""
+
+msgid "Icon or Button"
+msgstr ""
+
+msgid "Icon spacing"
+msgstr ""
+
+msgid "Icon/Image Margin"
+msgstr ""
+
+msgid "Icon/Image Size"
+msgstr ""
+
+msgid "Id"
+msgstr ""
+
+msgid "If you don\\'t yet have a license key, get Widgetkit Pro now."
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "Image Alignment"
+msgstr ""
+
+msgid "Image Animation"
+msgstr ""
+
+msgid "Image Border Radius"
+msgstr ""
+
+msgid "Image Compare"
+msgstr ""
+
+msgid "Image Gap"
+msgstr ""
+
+msgid "Image Popup"
+msgstr ""
+
+msgid "Image Position"
+msgstr ""
+
+msgid "Image Radius"
+msgstr ""
+
+msgid "Image Size (%)"
+msgstr ""
+
+msgid "Image size"
+msgstr ""
+
+msgid "Images"
+msgstr ""
+
+msgid "In"
+msgstr ""
+
+msgid "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt."
+msgstr ""
+
+msgid "Info Alignment"
+msgstr ""
+
+msgid "Info Bg Color"
+msgstr ""
+
+msgid "Info Box"
+msgstr ""
+
+msgid "Inherit"
+msgstr ""
+
+msgid "Input"
+msgstr ""
+
+msgid "Input & Textarea"
+msgstr ""
+
+msgid "Input Placeholder"
+msgstr ""
+
+msgid "Install Elementor Now"
+msgstr ""
+
+msgid "It will serve you whatever you want."
+msgstr ""
+
+msgid "Item"
+msgstr ""
+
+msgid "Item 1"
+msgstr ""
+
+msgid "Item 2"
+msgstr ""
+
+msgid "Item 3"
+msgstr ""
+
+msgid "Item Alignment"
+msgstr ""
+
+msgid "Item Bg Color"
+msgstr ""
+
+msgid "Item Gap"
+msgstr ""
+
+msgid "Item Hover Bg Color"
+msgstr ""
+
+msgid "Item Overlay"
+msgstr ""
+
+msgid "Item Overlay Bg Color"
+msgstr ""
+
+msgid "Item Padding"
+msgstr ""
+
+msgid "Item Positions"
+msgstr ""
+
+msgid "Item Radius"
+msgstr ""
+
+msgid "Items"
+msgstr ""
+
+msgid "Items Shows"
+msgstr ""
+
+msgid "JSON File"
+msgstr ""
+
+msgid "JSON File Source"
+msgstr ""
+
+msgid "JSON Link"
+msgstr ""
+
+msgid "Jazz"
+msgstr ""
+
+msgid "Jonathan Morgan"
+msgstr ""
+
+msgid "Justified"
+msgstr ""
+
+msgid "Kelly Chen"
+msgstr ""
+
+msgid "Krona"
+msgstr ""
+
+msgid "Label"
+msgstr ""
+
+msgid "Large"
+msgstr ""
+
+msgid "Layout"
+msgstr ""
+
+msgid "Layout Align"
+msgstr ""
+
+msgid "Layout Bg Color"
+msgstr ""
+
+msgid "Layout Position"
+msgstr ""
+
+msgid "Lead Sofware"
+msgstr ""
+
+msgid "LearnDash"
+msgstr ""
+
+msgid "LearnDash Course Banner"
+msgstr ""
+
+msgid "LearnDash Course Certificate"
+msgstr ""
+
+msgid "LearnDash Course Content"
+msgstr ""
+
+msgid "LearnDash Course Enrollment"
+msgstr ""
+
+msgid "LearnDash Course Instructor"
+msgstr ""
+
+msgid "LearnDash Course List"
+msgstr ""
+
+msgid "LearnDash Course Meta Info"
+msgstr ""
+
+msgid "LearnDash Course Payments Button"
+msgstr ""
+
+msgid "LearnDash Course Progress"
+msgstr ""
+
+msgid "LearnDash Course Resource"
+msgstr ""
+
+msgid "LearnDash Course Tab"
+msgstr ""
+
+msgid "LearnDash Course Tab Content"
+msgstr ""
+
+msgid "LearnDash Related Course"
+msgstr ""
+
+msgid "LearnDash Widgets"
+msgstr ""
+
+msgid "LearnPress"
+msgstr ""
+
+msgid "LearnPress Course Category"
+msgstr ""
+
+msgid "LearnPress Course List"
+msgstr ""
+
+msgid "LearnPress Course Tab"
+msgstr ""
+
+msgid "Left"
+msgstr ""
+
+msgid "Left From Right"
+msgstr ""
+
+msgid "Left Position"
+msgstr ""
+
+msgid "Lifter Course List"
+msgstr ""
+
+msgid "LifterLMS"
+msgstr ""
+
+msgid "Lightbox"
+msgstr ""
+
+msgid "Lightcase"
+msgstr ""
+
+msgid "Line Color"
+msgstr ""
+
+msgid "Line Right Position"
+msgstr ""
+
+msgid "Line Specing"
+msgstr ""
+
+msgid "Line Width"
+msgstr ""
+
+msgid "Link"
+msgstr ""
+
+msgid "Link Text"
+msgstr ""
+
+msgid "Link To"
+msgstr ""
+
+msgid "Link to"
+msgstr ""
+
+msgid "Linkedin"
+msgstr ""
+
+msgid "Lira"
+msgstr ""
+
+msgid "List Item"
+msgstr ""
+
+msgid "Listening"
+msgstr ""
+
+msgid "Loading"
+msgstr ""
+
+msgid "Local"
+msgstr ""
+
+msgid "Log in to your account to get your license key."
+msgstr ""
+
+msgid "Long Brive"
+msgstr ""
+
+msgid "Loop"
+msgstr ""
+
+msgid "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."
+msgstr ""
+
+msgid "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, neque qui velit. Magni dolorum quidem ipsam eligendi, totam, facilis laudantium cum accusamus ullam voluptatibus commodi numquam, error, est. Ea, consequatur."
+msgstr ""
+
+msgid "Lottie"
+msgstr ""
+
+msgid "Lottie Animation"
+msgstr ""
+
+msgid "Low cost hosting plan"
+msgstr ""
+
+msgid "Magnetized strongly enough pre vending domain overeus all initial results to estimate the in the big bang contradicted."
+msgstr ""
+
+msgid "MailChimp"
+msgstr ""
+
+msgid "Mailchimp"
+msgstr ""
+
+msgid "Managing Director"
+msgstr ""
+
+msgid "Margin"
+msgstr ""
+
+msgid "Margin Top"
+msgstr ""
+
+msgid "Marketting"
+msgstr ""
+
+msgid "Masonary"
+msgstr ""
+
+msgid "Medium"
+msgstr ""
+
+msgid "Medium Large"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "Meta"
+msgstr ""
+
+msgid "Meta Bg Color"
+msgstr ""
+
+msgid "Meta Color"
+msgstr ""
+
+msgid "Meta Position"
+msgstr ""
+
+msgid "Meta Spacing"
+msgstr ""
+
+msgid "Meta Value"
+msgstr ""
+
+msgid "Middle"
+msgstr ""
+
+msgid "Miguel Angel"
+msgstr ""
+
+msgid "Minute (Singular)"
+msgstr ""
+
+msgid "Minutes"
+msgstr ""
+
+msgid "Minutes (Plural)"
+msgstr ""
+
+msgid "Mobile Menu Toggle"
+msgstr ""
+
+msgid "Modal"
+msgstr ""
+
+msgid "Modal Content"
+msgstr ""
+
+msgid "Modal Effect"
+msgstr ""
+
+msgid "Modal Top Title"
+msgstr ""
+
+msgid "Modal Width"
+msgstr ""
+
+msgid "Month"
+msgstr ""
+
+msgid "Month (Singular)"
+msgstr ""
+
+msgid "Months (Plural)"
+msgstr ""
+
+msgid "Multiple Business WordPress Theme"
+msgstr ""
+
+msgid "My product feature is beautiful."
+msgstr ""
+
+msgid "My product is developed based on market niche."
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Name Color"
+msgstr ""
+
+msgid "Name Typography"
+msgstr ""
+
+msgid "Name/Designation"
+msgstr ""
+
+msgid "Nav"
+msgstr ""
+
+msgid "Nav & Arrow Bg Color"
+msgstr ""
+
+msgid "Nav & Arrow Icon Color"
+msgstr ""
+
+msgid "Nav Area Margin"
+msgstr ""
+
+msgid "Nav Area Width"
+msgstr ""
+
+msgid "Nav Enable/Disable"
+msgstr ""
+
+msgid "Nav Icon"
+msgstr ""
+
+msgid "Nav Item Margin"
+msgstr ""
+
+msgid "Nav Options"
+msgstr ""
+
+msgid "Nav Style"
+msgstr ""
+
+msgid "Navigation"
+msgstr ""
+
+msgid "Navs"
+msgstr ""
+
+msgid "Need Any Help?"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "No Repeat"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Normal"
+msgstr ""
+
+msgid "Normal Box Shadow"
+msgstr ""
+
+msgid "Normal Shadow"
+msgstr ""
+
+msgid "Number of Colum"
+msgstr ""
+
+msgid "Number of Column"
+msgstr ""
+
+msgid "Number of Post"
+msgstr ""
+
+msgid "ON Click"
+msgstr ""
+
+msgid "ON Hover"
+msgstr ""
+
+msgid "On Click Action"
+msgstr ""
+
+msgid "On Hover Mode"
+msgstr ""
+
+msgid "On expiry Text"
+msgstr ""
+
+msgid "Only applicable for desktop"
+msgstr ""
+
+msgid "Opacity (%)"
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "Order"
+msgstr ""
+
+msgid "Orderby"
+msgstr ""
+
+msgid "Orientation"
+msgstr ""
+
+msgid "Original Price"
+msgstr ""
+
+msgid "Our learndash elments helps you to create your course landing page more smoothly."
+msgstr ""
+
+msgid "Our more customizable learnpress elements lets you to build your site more quickly."
+msgstr ""
+
+msgid "Out"
+msgstr ""
+
+msgid "Overlay"
+msgstr ""
+
+msgid "Overlay Bg Color"
+msgstr ""
+
+msgid "Overlay Color"
+msgstr ""
+
+msgid "P"
+msgstr ""
+
+msgid "Padding"
+msgstr ""
+
+msgid "Period"
+msgstr ""
+
+msgid "Peseta"
+msgstr ""
+
+msgid "Peso"
+msgstr ""
+
+msgid "Pick your favourite quotes and use them as Tweets, or write your own Tweets for your reads to share"
+msgstr ""
+
+msgid "Placeholder"
+msgstr ""
+
+msgid "Placeholder Text"
+msgstr ""
+
+msgid "Play Background Size"
+msgstr ""
+
+msgid "Play Icon Size"
+msgstr ""
+
+msgid "Play Type"
+msgstr ""
+
+msgid "Play Video"
+msgstr ""
+
+msgid "Portfolio Content"
+msgstr ""
+
+msgid "Portfolio Contents"
+msgstr ""
+
+msgid "Portfolio Description"
+msgstr ""
+
+msgid "Portfolio Title"
+msgstr ""
+
+msgid "Position"
+msgstr ""
+
+msgid "Post"
+msgstr ""
+
+msgid "Post Background Color"
+msgstr ""
+
+msgid "Post Carousel"
+msgstr ""
+
+msgid "Post Column"
+msgstr ""
+
+msgid "Post Grid Slider"
+msgstr ""
+
+msgid "Post Headline Slider"
+msgstr ""
+
+msgid "Post List"
+msgstr ""
+
+msgid "Post Overlay Color"
+msgstr ""
+
+msgid "Post Query"
+msgstr ""
+
+msgid "Post Show"
+msgstr ""
+
+msgid "Post Shows"
+msgstr ""
+
+msgid "Post Tab"
+msgstr ""
+
+msgid "Pound Sterling"
+msgstr ""
+
+msgid "Prefix Title"
+msgstr ""
+
+msgid "Premium WooCommerce Widgets"
+msgstr ""
+
+msgid "Premium manages servers"
+msgstr ""
+
+msgid "Previous"
+msgstr ""
+
+msgid "Price"
+msgstr ""
+
+msgid "Price Bg Color"
+msgstr ""
+
+msgid "Price Color"
+msgstr ""
+
+msgid "Pricing"
+msgstr ""
+
+msgid "Pricing #1"
+msgstr ""
+
+msgid "Pricing #2"
+msgstr ""
+
+msgid "Pricing #3"
+msgstr ""
+
+msgid "Pricing Desc"
+msgstr ""
+
+msgid "Pricing Details"
+msgstr ""
+
+msgid "Pricing Icon"
+msgstr ""
+
+msgid "Pricing Plan"
+msgstr ""
+
+msgid "Pricing Single"
+msgstr ""
+
+msgid "Pricing Tab"
+msgstr ""
+
+msgid "Pricing Tabs"
+msgstr ""
+
+msgid "Pro"
+msgstr ""
+
+msgid "Pro Plan"
+msgstr ""
+
+msgid "Profession"
+msgstr ""
+
+msgid "Professional"
+msgstr ""
+
+msgid "Project Title"
+msgstr ""
+
+msgid "Pros"
+msgstr ""
+
+msgid "Pros & Cons"
+msgstr ""
+
+msgid "Push"
+msgstr ""
+
+msgid "Pyramid"
+msgstr ""
+
+msgid "Quote Color"
+msgstr ""
+
+msgid "Radius"
+msgstr ""
+
+msgid "Rating"
+msgstr ""
+
+msgid "Read More"
+msgstr ""
+
+msgid "Real"
+msgstr ""
+
+msgid "Related Product"
+msgstr ""
+
+msgid "Relative"
+msgstr ""
+
+msgid "Repeat"
+msgstr ""
+
+msgid "Repeat X"
+msgstr ""
+
+msgid "Repeat Y"
+msgstr ""
+
+msgid "Reverse"
+msgstr ""
+
+msgid "Review"
+msgstr ""
+
+msgid "Right"
+msgstr ""
+
+msgid "Right Position"
+msgstr ""
+
+msgid "Rotate"
+msgstr ""
+
+msgid "Round"
+msgstr ""
+
+msgid "Ruble"
+msgstr ""
+
+msgid "Rupee"
+msgstr ""
+
+msgid "Rupee (Indian)"
+msgstr ""
+
+msgid "SKU"
+msgstr ""
+
+msgid "SVG"
+msgstr ""
+
+msgid "Sadie"
+msgstr ""
+
+msgid "Saved Templates"
+msgstr ""
+
+msgid "Scale"
+msgstr ""
+
+msgid "Screen 1"
+msgstr ""
+
+msgid "Screen 2"
+msgstr ""
+
+msgid "Screen 3"
+msgstr ""
+
+msgid "Screen 4"
+msgstr ""
+
+msgid "Screen 5"
+msgstr ""
+
+msgid "Screen 6"
+msgstr ""
+
+msgid "Scroll"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Search Form"
+msgstr ""
+
+msgid "Search Form Position"
+msgstr ""
+
+msgid "Search here"
+msgstr ""
+
+msgid "Search here..."
+msgstr ""
+
+msgid "Second"
+msgstr ""
+
+msgid "Second (Singular)"
+msgstr ""
+
+msgid "Seconds (Plural)"
+msgstr ""
+
+msgid "Sections"
+msgstr ""
+
+msgid "Security check failed!"
+msgstr ""
+
+msgid "Select Contact Form 7"
+msgstr ""
+
+msgid "Select a WPForm"
+msgstr ""
+
+msgid "Select the time units that you want to display in countdown timer."
+msgstr ""
+
+msgid "Select weForm"
+msgstr ""
+
+msgid "Sensei"
+msgstr ""
+
+msgid "Sensei Course Category"
+msgstr ""
+
+msgid "Sensei Course List"
+msgstr ""
+
+msgid "Sensei Course Tab"
+msgstr ""
+
+msgid "Separator Spacing"
+msgstr ""
+
+msgid "Set Interval"
+msgstr ""
+
+msgid "Set Width"
+msgstr ""
+
+msgid "Set Your Date"
+msgstr ""
+
+msgid "Sets"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Shadow"
+msgstr ""
+
+msgid "Shape"
+msgstr ""
+
+msgid "Shape Radius"
+msgstr ""
+
+msgid "Share Hosting"
+msgstr ""
+
+msgid "Shared Hosting"
+msgstr ""
+
+msgid "Shekel"
+msgstr ""
+
+msgid "Short Brive"
+msgstr ""
+
+msgid "Short Description"
+msgstr ""
+
+msgid "Shortcode"
+msgstr ""
+
+msgid "Show"
+msgstr ""
+
+msgid "Show 1"
+msgstr ""
+
+msgid "Show 2"
+msgstr ""
+
+msgid "Show 3"
+msgstr ""
+
+msgid "Show 4"
+msgstr ""
+
+msgid "Show 6"
+msgstr ""
+
+msgid "Show All"
+msgstr ""
+
+msgid "Show All Text"
+msgstr ""
+
+msgid "Show Hide Pricing Table"
+msgstr ""
+
+msgid "Show Post"
+msgstr ""
+
+msgid "Show Title"
+msgstr ""
+
+msgid "Show your Love?"
+msgstr ""
+
+msgid "Sign Up"
+msgstr ""
+
+msgid "Site Social"
+msgstr ""
+
+msgid "Site Social Platform Position"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Size(%)"
+msgstr ""
+
+msgid "Size(px)"
+msgstr ""
+
+msgid "Slash"
+msgstr ""
+
+msgid "Slash Color"
+msgstr ""
+
+msgid "Slice"
+msgstr ""
+
+msgid "Slide"
+msgstr ""
+
+msgid "Slider Animation"
+msgstr ""
+
+msgid "Slider Box"
+msgstr ""
+
+msgid "Slider Box Animation"
+msgstr ""
+
+msgid "Slider Content"
+msgstr ""
+
+msgid "Slider Content Animation"
+msgstr ""
+
+msgid "Slider Height"
+msgstr ""
+
+msgid "Slider Image"
+msgstr ""
+
+msgid "Slider Interval"
+msgstr ""
+
+msgid "Slider Options"
+msgstr ""
+
+msgid "Sliders"
+msgstr ""
+
+msgid "Small"
+msgstr ""
+
+msgid "Smart Toggle"
+msgstr ""
+
+msgid "Social Community"
+msgstr ""
+
+msgid "Social Icon"
+msgstr ""
+
+msgid "Social Link"
+msgstr ""
+
+msgid "Social Links"
+msgstr ""
+
+msgid "Social Name"
+msgstr ""
+
+msgid "Social Platforms"
+msgstr ""
+
+msgid "Social Share"
+msgstr ""
+
+msgid "Social Share Animation"
+msgstr ""
+
+msgid "Social Share Collapse"
+msgstr ""
+
+msgid "Sorry something went wrong."
+msgstr ""
+
+msgid "Spacing"
+msgstr ""
+
+msgid "Span"
+msgstr ""
+
+msgid "Specing"
+msgstr ""
+
+msgid "Speed"
+msgstr ""
+
+msgid "Square"
+msgstr ""
+
+msgid "Standard"
+msgstr ""
+
+msgid "Standard Post"
+msgstr ""
+
+msgid "Standard Post Typography"
+msgstr ""
+
+msgid "Sticky"
+msgstr ""
+
+msgid "Sticky Post"
+msgstr ""
+
+msgid "Stock Status"
+msgstr ""
+
+msgid "Style"
+msgstr ""
+
+msgid "Sub Title"
+msgstr ""
+
+msgid "Submit"
+msgstr ""
+
+msgid "Submit Button"
+msgstr ""
+
+msgid "Subtitle"
+msgstr ""
+
+msgid "Suffix Title"
+msgstr ""
+
+msgid "Suitable for ~ <b>10,000</b> Visits Monthly"
+msgstr ""
+
+msgid "Switch Lite"
+msgstr ""
+
+msgid "Switch Pro"
+msgstr ""
+
+msgid "Tab Content"
+msgstr ""
+
+msgid "Tab Description"
+msgstr ""
+
+msgid "Tab Filter"
+msgstr ""
+
+msgid "Tab Heading"
+msgstr ""
+
+msgid "Tab Icon"
+msgstr ""
+
+msgid "Tab Subtitle"
+msgstr ""
+
+msgid "Tab Title"
+msgstr ""
+
+msgid "Team"
+msgstr ""
+
+msgid "Team Animation"
+msgstr ""
+
+msgid "Team Content"
+msgstr ""
+
+msgid "Team Description"
+msgstr ""
+
+msgid "Team Designation"
+msgstr ""
+
+msgid "Team Name"
+msgstr ""
+
+msgid "Team Overlay"
+msgstr ""
+
+msgid "Team Round"
+msgstr ""
+
+msgid "Team Verticle Icon"
+msgstr ""
+
+msgid "Teem Southy"
+msgstr ""
+
+msgid "Testimoni Typography"
+msgstr ""
+
+msgid "Testimonial"
+msgstr ""
+
+msgid "Testimonial Center"
+msgstr ""
+
+msgid "Testimonial Image"
+msgstr ""
+
+msgid "Testimonial Items"
+msgstr ""
+
+msgid "Testimonial Single"
+msgstr ""
+
+msgid "Testimonials"
+msgstr ""
+
+msgid "Testimonials Options"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Text Color"
+msgstr ""
+
+msgid "Text Padding"
+msgstr ""
+
+msgid "Text Settings"
+msgstr ""
+
+msgid "Thank you, you have been added to our mailing list."
+msgstr ""
+
+msgid "The image of a company is very important. Would you want to work with a consultation company whose office was in shambles"
+msgstr ""
+
+msgid "This Email address is already exists."
+msgstr ""
+
+msgid "This is my awesome feature."
+msgstr ""
+
+msgid "This is the place to present the bio of Jason. He is a cat and dog loving person, who loves sunday ice creams, Lady Gaga and everything Apple related."
+msgstr ""
+
+msgid "This will set the current time of the option that you will choose."
+msgstr ""
+
+msgid "Thumbnail"
+msgstr ""
+
+msgid "Tilt Box"
+msgstr ""
+
+msgid "Timer Depends On"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Title & Description"
+msgstr ""
+
+msgid "Title & Meta Hover Color"
+msgstr ""
+
+msgid "Title Animation"
+msgstr ""
+
+msgid "Title Caption"
+msgstr ""
+
+msgid "Title Color"
+msgstr ""
+
+msgid "Title HTML Tag"
+msgstr ""
+
+msgid "Title Heading Tag"
+msgstr ""
+
+msgid "Title Icon"
+msgstr ""
+
+msgid "Title Options"
+msgstr ""
+
+msgid "Title Padding"
+msgstr ""
+
+msgid "Title Position"
+msgstr ""
+
+msgid "Title Spacing"
+msgstr ""
+
+msgid "Title Specing"
+msgstr ""
+
+msgid "Title Typography"
+msgstr ""
+
+msgid "Title Word Count"
+msgstr ""
+
+msgid "Title/Designation"
+msgstr ""
+
+msgid "Top"
+msgstr ""
+
+msgid "Top Position"
+msgstr ""
+
+msgid "Top Title"
+msgstr ""
+
+msgid "Transparent"
+msgstr ""
+
+msgid "Travel"
+msgstr ""
+
+msgid "Triangle"
+msgstr ""
+
+msgid "True"
+msgstr ""
+
+msgid "Ttile Style"
+msgstr ""
+
+msgid "Ttitle Option"
+msgstr ""
+
+msgid "Tutor Course List"
+msgstr ""
+
+msgid "Tutor LMS"
+msgstr ""
+
+msgid "Tweet"
+msgstr ""
+
+msgid "Twitter"
+msgstr ""
+
+msgid "Type Tab Description"
+msgstr ""
+
+msgid "Type Tab Heading"
+msgstr ""
+
+msgid "Type Tab Title"
+msgstr ""
+
+msgid "Type your button text here"
+msgstr ""
+
+msgid "Typography"
+msgstr ""
+
+msgid "URL"
+msgstr ""
+
+msgid "Universidad"
+msgstr ""
+
+msgid "Unlimited"
+msgstr ""
+
+msgid "Unlimited Domian Usage"
+msgstr ""
+
+msgid "Unlock more possibilities"
+msgstr ""
+
+msgid "Upload Feature Image"
+msgstr ""
+
+msgid "Upload File"
+msgstr ""
+
+msgid "Upload Full Image"
+msgstr ""
+
+msgid "Upload Image"
+msgstr ""
+
+msgid "Upload Slider Animation Image"
+msgstr ""
+
+msgid "Upload Slider Image"
+msgstr ""
+
+msgid "Upload Team Image"
+msgstr ""
+
+msgid "Upload Thumb Image"
+msgstr ""
+
+msgid "Validation"
+msgstr ""
+
+msgid "Validation Errors"
+msgstr ""
+
+msgid "Vertical"
+msgstr ""
+
+msgid "Vertical Margin (px)"
+msgstr ""
+
+msgid "Verticle"
+msgstr ""
+
+msgid "Video"
+msgstr ""
+
+msgid "Video PopUp Text"
+msgstr ""
+
+msgid "Video Popup"
+msgstr ""
+
+msgid "Video Source"
+msgstr ""
+
+msgid "View Port Based"
+msgstr ""
+
+msgid "Vimeo"
+msgstr ""
+
+msgid "Visually"
+msgstr ""
+
+msgid "We Manage Your Business"
+msgstr ""
+
+msgid "We are"
+msgstr ""
+
+msgid "We are professional"
+msgstr ""
+
+msgid "We are working hard to bring some niche elements which are integrated with Lifter."
+msgstr ""
+
+msgid "We are working hard to bring some niche elements which are integrated with Sensei."
+msgstr ""
+
+msgid "We care your websites."
+msgstr ""
+
+msgid "Web Development"
+msgstr ""
+
+msgid "Week"
+msgstr ""
+
+msgid "Week (Singular)"
+msgstr ""
+
+msgid "Weeks (Plural)"
+msgstr ""
+
+msgid "Weforms"
+msgstr ""
+
+msgid "When you set button text then link icon will hide"
+msgstr ""
+
+msgid "Whitero CEO, USA"
+msgstr ""
+
+msgid "WidgetKit"
+msgstr ""
+
+msgid "Width"
+msgstr ""
+
+msgid "Width & Height"
+msgstr ""
+
+msgid "With elements pro you able to create different types of pages on your website."
+msgstr ""
+
+msgid "Won"
+msgstr ""
+
+msgid "Woo Categories"
+msgstr ""
+
+msgid "Woo Product Carousel"
+msgstr ""
+
+msgid "Woo Products"
+msgstr ""
+
+msgid "Woo Recent Product"
+msgstr ""
+
+msgid "WooCommerce"
+msgstr ""
+
+msgid "Word Count"
+msgstr ""
+
+msgid "WordPress Blog Theme"
+msgstr ""
+
+msgid "WordPress Bloging Theme"
+msgstr ""
+
+msgid "Wpforms"
+msgstr ""
+
+msgid "X axis"
+msgstr ""
+
+msgid "Y axis"
+msgstr ""
+
+msgid "Year (Singular)"
+msgstr ""
+
+msgid "Years"
+msgstr ""
+
+msgid "Years (Plural)"
+msgstr ""
+
+msgid "Yen/Yuan"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "You can add another tags like(business,coporate)"
+msgstr ""
+
+msgid "You must have a single colum"
+msgstr ""
+
+msgid "YouTube"
+msgstr ""
+
+msgid "Your License"
+msgstr ""
+
+msgid "Your customers deserve better customer support and You deserve the peace of mind."
+msgstr ""
+
+msgid "Your license key should look something like this:"
+msgstr ""
+
+msgid "[contact-form-7 id=\"4\" title=\"Corporate\"]"
+msgstr ""
+
+msgid "animation-image"
+msgstr ""
+
+msgid "blog"
+msgstr ""
+
+msgid "bounceIn"
+msgstr ""
+
+msgid "business"
+msgstr ""
+
+msgid "business, onepager"
+msgstr ""
+
+msgid "business,blog"
+msgstr ""
+
+msgid "business,onepage"
+msgstr ""
+
+msgid "button"
+msgstr ""
+
+msgid "by -"
+msgstr ""
+
+msgid "center"
+msgstr ""
+
+msgid "education"
+msgstr ""
+
+msgid "education,blog"
+msgstr ""
+
+msgid "fa fa-check"
+msgstr ""
+
+msgid "fa fa-facebook"
+msgstr ""
+
+msgid "fa fa-thumbs-up"
+msgstr ""
+
+msgid "fa fa-twitter"
+msgstr ""
+
+msgid "fa fa-youtube"
+msgstr ""
+
+msgid "fadeInDown"
+msgstr ""
+
+msgid "fadeInLeft"
+msgstr ""
+
+msgid "fadeInRightBig"
+msgstr ""
+
+msgid "fadeInUp"
+msgstr ""
+
+msgid "hello@widgetkit.com"
+msgstr ""
+
+msgid "http://your-link.com"
+msgstr ""
+
+msgid "https://themesgrove.com"
+msgstr ""
+
+msgid "https://themesgrove.com/product/switch-pro/"
+msgstr ""
+
+msgid "https://www.facebook.com/themesgrove"
+msgstr ""
+
+msgid "https://www.facebook.com/themexpert"
+msgstr ""
+
+msgid "https://www.github.com/themesgrove"
+msgstr ""
+
+msgid "https://www.google.com/themesgrove"
+msgstr ""
+
+msgid "https://www.linkedin.com/themesgrove"
+msgstr ""
+
+msgid "https://www.themexpert.com/wordpress-themes/switch-pro"
+msgstr ""
+
+msgid "https://www.twitter.com/themesgrove"
+msgstr ""
+
+msgid "https://your-link.com"
+msgstr ""
+
+msgid "left"
+msgstr ""
+
+msgid "lightSpeedIn"
+msgstr ""
+
+msgid "right"
+msgstr ""
+
+msgid "rotateIn"
+msgstr ""
+
+msgid "slideInRight"
+msgstr ""
+
+msgid "zoomIn"
+msgstr ""
+
+msgid "zoomInDown"
+msgstr ""
+
+msgid "|"
+msgstr ""
+

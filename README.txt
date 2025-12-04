@@ -4,8 +4,8 @@ Contributors: Themesgrove, parvezvai, themexpert
 Donate link: https://themesgrove.com/
 Tags: elementor widgets, woocommerce addons, learndash addons, learnpress addons, sensei addons
 Requires at least: 5.0
-Tested up to: 6.8
-Stable tag: 2.5.5
+Tested up to: 6.9
+Stable tag: 2.5.8
 Requires PHP: 7.0
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -273,6 +273,16 @@ PHP 5.4 or greater.
 
 
 == Changelog ==
+= 2.5.7 =
+New - Added GSAP Animations
+
+= 2.5.7 =
+Fix - Security and vulnerability issues.
+Fix - Countdown element default option not working.
+Fix - Text domain mismatch issue.
+
+= 2.5.6 =
+Fix - Vulnerability and Security issues.
 
 = 2.5.5 =
 Fix - Vulnerability and Security issues.

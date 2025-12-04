@@ -65,7 +65,7 @@
         <?php if ($settings['button_modal_hover_effect'] == 'border'): ?>
             <div class="btn-line btn-hover-<?php echo esc_attr($settings['button_modal_hover_effect']);?>">
                 <a 
-                href="<?php echo esc_attr($settings['normal_btn_link']['url']);?>" 
+                href="<?php echo esc_url($settings['normal_btn_link']['url']);?>" 
                 target="<?php echo esc_attr($settings['normal_btn_link']['is_external']) ? '_blank' : '';  ?>"
                 rel="<?php echo esc_attr($settings['normal_btn_link']['nofollow']) ? 'nofollow' : ''; ?>"
                 >

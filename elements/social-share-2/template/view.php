@@ -43,14 +43,12 @@
     <script type="text/javascript">
         jQuery(function($) {
 
-            jQuery('.click-<?php echo esc_attr($id);?>').click(function() {
+            jQuery('.click-<?php echo esc_attr($id);?>').on('click', function() {
                 jQuery(this).toggleClass('active');
                 return $('.box-<?php echo esc_attr($id);?>').toggleClass('open');
               });
 
             },(jQuery));
-
-
     </script>
 
     <script type="text/javascript">

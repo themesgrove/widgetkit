@@ -1272,7 +1272,7 @@ class wkfe_testimonial extends Widget_Base {
 	protected function render() {
 		require WK_PATH . '/elements/testimonial/template/view.php';
 	}
-	protected function _content_template() {
+	protected function content_template() {
 	}
 
 

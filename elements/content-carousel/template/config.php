@@ -1290,7 +1290,7 @@ class wkfe_content_carousel extends Widget_Base {
 	protected function render() {
 		require WK_PATH . '/elements/content-carousel/template/view.php';
 	}
-	protected function _content_template()
+	protected function content_template()
     {
     }
 
