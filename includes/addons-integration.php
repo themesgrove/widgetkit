@@ -15,6 +15,7 @@ class WKFE_Addons_Integration{
     public function __construct(){
         add_action( 'elementor/frontend/after_register_styles', array( $this, 'widgetkit_register_frontend_styles' ) );
         add_action( 'elementor/frontend/after_register_scripts', array( $this, 'widgetkit_register_frontend_scripts' ) );
+        add_action( 'elementor/frontend/before_enqueue_scripts', array( $this, 'widget_scripts' ) );
     }
     
     public function widgetkit_register_frontend_styles(){
@@ -53,6 +54,7 @@ class WKFE_Addons_Integration{
         wp_register_script( 'event-move', WK_URL.'dist/js/jquery.event.move.js' , array('jquery'), WK_VERSION, true);
         wp_register_script( 'image-compare', WK_URL.'dist/js/jquery.image-compare.js' , array('jquery'), WK_VERSION, true);
         wp_register_script( 'youtube-popup', WK_URL.'dist/js/youtube-popup.js' , array('jquery'), WK_VERSION, true);
+
         $js_info = [
             'ajax_url' => admin_url('admin-ajax.php'),
             'wkfe_security_nonce' => wp_create_nonce('wkfe-ajax-security-nonce')
@@ -60,4 +62,11 @@ class WKFE_Addons_Integration{
         wp_localize_script('widgetkit-main', 'wkfelocalizesettings', $js_info);
     }
 
+    public function widget_scripts() {
+            wp_enqueue_script('gsap-js', WK_URL . 'dist/js/gsap.min.js', array('jquery'), WK_VERSION, true);
+            wp_enqueue_script('SplitText-js', WK_URL . 'dist/js/SplitText.min.js', array('jquery'), WK_VERSION, true);
+            wp_enqueue_script('ScrollTrigger-js', WK_URL . 'dist/js/ScrollTrigger.min.js', array('jquery'), WK_VERSION, true);
+            wp_enqueue_script('ScrollToPlugin-js', WK_URL . 'dist/js/ScrollToPlugin.min.js', array('jquery'), WK_VERSION, true);
+            wp_enqueue_script('wk-animation-effect-js', WK_URL . 'dist/js/wk-animation-effect.js', array('jquery'), WK_VERSION, true);
+    }
 }
