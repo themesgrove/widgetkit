@@ -46,7 +46,7 @@ class WK_PRO_FEATURES
         $element->start_controls_section(
             '_section_wk_text_animation',
             [
-                'label' => sprintf('<i class="wk-logo"></i> %s <span class="wkpro_text">%s<span>', __('Text Animation', 'animation-addons-for-elementor'), __('Pro', 'animation-addons-for-elementor')),
+                'label' => sprintf('<i class="wk-logo"></i> %s <span class="wkpro_text">%s<span>', __('Text Animation', 'animation-addons-for-elementor'), __('WK', 'animation-addons-for-elementor')),
             ]
         );
 
@@ -69,7 +69,7 @@ class WK_PRO_FEATURES
         $element->start_controls_section(
             '_section_wk_image_animation',
             [
-                'label' => sprintf('<i class="wk-logo"></i> %s <span class="wkpro_text">%s<span>', __('Image Animation', 'animation-addons-for-elementor'), __('Pro', 'animation-addons-for-elementor')),
+                'label' => sprintf('<i class="wk-logo"></i> %s <span class="wkpro_text">%s<span>', __('Image Animation', 'animation-addons-for-elementor'), __('WK', 'animation-addons-for-elementor')),
             ]
         );
 

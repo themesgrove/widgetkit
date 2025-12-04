@@ -9,7 +9,7 @@ if (! function_exists('wk_element_get_settings')) {
 if (! function_exists('wk_get_pro_notice')) {
     function wk_get_pro_notice()
     {
-        $img_src     = esc_url(WK_URL . 'assets/images/wigetkit-banner-bg.png');
+        $img_src     = esc_url(WK_URL . 'assets/images/pro.png');
         $upgrade_url = esc_url('https://themesgrove.com/widgetkit-for-elementor/');
 
         return sprintf(
